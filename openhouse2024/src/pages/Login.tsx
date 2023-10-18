@@ -27,7 +27,7 @@ export default function LoginComponents() {
           type="button"
           className="bg-blue-500 rounded-md"
         >
-          Sign In of google
+          Sign In to google
         </button>
       </>
     );
