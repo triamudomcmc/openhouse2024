@@ -1,5 +1,4 @@
 import React from "react";
-import LoginComponents from "@/pages/Login";
 import Link from "next/dist/client/link";
 import { useSession, signIn, signOut } from "next-auth/react";
 import { useState, useEffect } from "react";
@@ -20,13 +19,14 @@ export default function Navbar() {
     )
 
     return (
-    <nav className="bg-white flex align-middle  justify-end gap-10 border-2 text-center z-20  ">
+    <div className=" fixed top-0 w-full">
+    <nav className="bg-white flex align-middle  justify-end gap-10 border-2 text-center z-20 top-0 ">
     <div className="flex w-1/3 justify-evenly ">
       <div className=" text-center py-2 ">
           <Link href="/" >Home</Link>
       </div>
       <div className=" text-center py-2 ">
-          <Link href="/">Link2</Link>
+          <Link href="/form">form</Link>
       </div>
       <div className=" text-center py-2 ">
           <Link href="/">Link3</Link>
@@ -35,15 +35,11 @@ export default function Navbar() {
           <Link href="/">Link4</Link>
       </div>
       <div className=" text-center py-2 ">
-          <Link href="/Login" className={inSession ? " flex text-center" : "hidden"} > account </Link>
-          <button className={inSession ? "hidden" : " flex text-center"} 
-          onClick={() => signIn('google')}
-          type="button"> 
-          sign in
-          </button>
+          <Link href="/account" className={inSession ? " flex text-center" : "hidden"} > account </Link>
+          <Link href="/login" className={inSession ? " hidden " : " flex text-center"} > login </Link>
       </div>
-      
     </div>
   </nav>
+  </div>
 );
 }
