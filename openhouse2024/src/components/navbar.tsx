@@ -37,7 +37,7 @@ export default function Navbar() {
       <div className=" text-center py-2 ">
           <Link href="/Login" className={inSession ? " flex text-center" : "hidden"} > account </Link>
           <button className={inSession ? "hidden" : " flex text-center"} 
-          onClick={() => signIn()}
+          onClick={() => signIn('google')}
           type="button"> 
           sign in
           </button>
