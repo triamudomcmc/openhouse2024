@@ -36,17 +36,17 @@ export default function Form() {
 
     function handleTypeChange(event: SelectChangeEvent) {
       setInfo(event.target.value);
-      typeCheck(event.target.value)
+      typeCheck(event.target.value);
     };
 
     function handleClubChange(event: SelectChangeEvent) {
         setClubInfo(event.target.value);
-        setProgramInfo('')
+        
       };
 
     function handleProgramChange(event: SelectChangeEvent) {
         setProgramInfo(event.target.value);
-        setClubInfo('')
+        
       };
     function typeCheck(type:string) {
         if (type === 'สายการเรียน') {  
@@ -54,13 +54,14 @@ export default function Form() {
         setClub(false)
         setType('สายการเรียน')
         setSelect(true)
-
+        setClubInfo('')
             }
             else if(type === 'ชมรม'){
                 setClub(true)
                 setProgram(false)
                 setType('ชมรม')
                 setSelect(true)
+                setProgramInfo('')
             }
             else {
             }
