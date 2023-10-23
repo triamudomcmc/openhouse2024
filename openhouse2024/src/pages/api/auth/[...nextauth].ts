@@ -8,5 +8,13 @@ export default NextAuth({
             clientSecret: process.env.CLIENT_SECRET!,
         })
     ],
+    pages: {
+        newUser: '/account/form'
+    },
+
+    jwt: {
+        maxAge: 60 * 60 * 24 * 30,
+    },
+
     secret: process.env.NEXTAUTH_SECRET
 })
