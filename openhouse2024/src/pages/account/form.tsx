@@ -14,6 +14,8 @@ import { useSession, signIn, signOut } from "next-auth/react";
 import { UserCard } from "../../components/UserCard";
 import Box from '@mui/material/Box';
 import TextField from '@mui/material/TextField';
+import Alert from '@mui/material/Alert';
+import AlertTitle from '@mui/material/AlertTitle';
 import axios from 'axios';
     
 export default function Form() {
@@ -110,7 +112,7 @@ export default function Form() {
       let config = {
         method: 'post',
         maxBodyLength: Infinity,
-        url: 'http://localhost:5000/api/roles/record',
+        url: 'https://openhouse2024-backend.vercel.app/api/roles/record',
         headers: { 
           'Content-Type': 'application/json'
         },
@@ -135,7 +137,7 @@ export default function Form() {
       let clubconfig = {
         method: 'get',
         maxBodyLength: Infinity,
-        url: 'http://localhost:5000/api/clubs/lists',
+        url: 'https://openhouse2024-backend.vercel.app/api/clubs/lists',
         headers: { }
       };
       
@@ -160,6 +162,7 @@ export default function Form() {
 
 
     return(
+    <>
         <div className=" flex justify-center">
         <div className=" flex mt-16 w-3/4 md:w-1/2 lg:w-1/3 border border-slate-500 rounded-lg justify-center align-middle flex-wrap">
             <div className=' w-full flex justify-center my-5'>
@@ -307,14 +310,26 @@ export default function Form() {
             <div className=' block my-5'>
                 <Button variant="outlined" onClick={handleSummit}>sumit</Button>
             </div>
-            <div className={error ? ' w-full flex align-middle justify-center' : ' hidden'}>
-                <p className=' text-red-500 text-center'>please provide a value or the user already summited</p>
-            </div>
-            <div className={succes ? ' w-full flex align-middle justify-center' : ' hidden'}>
-                <p className=' text-green-500'>Recorded successfully </p>
+            
+        </div>
+        
+        </div>
+        <div className={succes ? ' mt-5 w-full justify-end flex ' : 'hidden'} >
+            <div className='w-1/2 md:1/3 lg:w-1/4 flex justify-end'>
+                <Alert className=' w-full' severity="success">
+                    <AlertTitle>Success</AlertTitle>
+                    ระบบได้บันทึกข้อมูลแล้ว
+                 </Alert>
             </div>
         </div>
-        </div>
-
+        <div className={error ? 'mt-5 w-full justify-end flex ' : 'hidden'}>
+            <div className=' w-1/2 md:1/3 lg:w-1/4 flex justify-end'>
+            <Alert className='w-full' severity="error">
+                <AlertTitle>error</AlertTitle>
+                โปรดตรวจสอบข้อมูลและบัญชีให้ถูกต้อง
+            </Alert>
+            </div>
+            </div>
+            </>
     )
 }

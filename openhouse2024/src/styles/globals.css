@@ -4,6 +4,10 @@
 @tailwind utilities;
 
 
+body {
+  overflow-x: hidden;
+}
+
 @layer utilities {
     @variants responsive {
       /* Hide scrollbar for Chrome, Safari and Opera */

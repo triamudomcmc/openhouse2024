@@ -15,9 +15,10 @@ const config: Config = {
       },
       fontFamily: {
         Thai:['Noto Sans Thai']
-
-
-      }
+      },
+      screens: {
+        'sm': '300px',
+      },
     },
   },
   plugins: [],

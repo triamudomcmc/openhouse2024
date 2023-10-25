@@ -3,7 +3,7 @@ import { useSession, signIn, signOut } from "next-auth/react";
 import { useRouter } from 'next/navigation'
 import { useEffect,useState } from "react";
 import ClubWidget from "@/vectors/club/clubwidget";
-import PencilIcon from "@/vectors/club/pencil";
+import WhitePencilIcon from "@/vectors/club/whitePencil";
 import axios from "axios";
 
 export default function Club() {
@@ -31,7 +31,7 @@ export default function Club() {
     let config = {
       method: 'post',
       maxBodyLength: Infinity,
-      url: 'http://localhost:5000/api/roles/info',
+      url: 'https://openhouse2024-backend.vercel.app/api/roles/info',
       headers: { 
         'Content-Type': 'application/json'
       },
@@ -41,22 +41,34 @@ export default function Club() {
     async function makeRequest() {
       try {
         const response = await axios.request(config);
-        console.log(JSON.stringify(response.data.name));
-        setClubs(response.data.name)
-        setMembers(response.data.members)
+        console.log(JSON.stringify(response.data.info.name));
+        setClubs(response.data.info.name)
+        setMembers(response.data.info.members)
         console.log("succes")
-        if( response.data.status = 'ยังไม่มีการแก้ไข'){
+        if( response.data.info.status === 'ยังไม่มีการแก้ไข'){
           setNoEdit(true)
+          setAprove(false)
+          setDeny(false)
+          setReview(false)
           console.log('ยังไม่มีการแก้ไข')
         }
-         else if( response.data.status = 'อยู่ระหว่างการตรวจสอบ'){
+         else if( response.data.info.status === 'อยู่ระหว่างการตรวจสอบ'){
+          setNoEdit(false)
+          setAprove(false)
+          setDeny(false)
           setReview(true)
         }
-         else if( response.data.status = 'ไม่ผ่านการตรวจสอบ'){
+         else if( response.data.info.status === 'ไม่ผ่านการตรวจสอบ'){
+          setNoEdit(false)
+          setAprove(false)
           setDeny(true)
+          setReview(false)
         }
-         else if( response.data.status = 'ผ่านการตรวจสอบ'){
+         else if( response.data.info.status === 'ผ่านการตรวจสอบ'){
+          setNoEdit(false)
           setAprove(true)
+          setDeny(false)
+          setReview(false)
         }
       }
       catch (error) {
@@ -71,6 +83,7 @@ export default function Club() {
     useEffect(() => {
       makeRequest()
     })
+    
 
    
 
@@ -82,14 +95,14 @@ export default function Club() {
             <p className=" font-extrabold text-transparent text-5xl bg-clip-text bg-gradient-to-b from-[#81109D] to-[#D738A4] font-Thai "> ชมรม{clubs}</p>
             <p className=" font-extrabold text-transparent text-2xl bg-clip-text bg-gradient-to-b from-[#81109D] to-[#D738A4] font-Thai opacity-60"> {clubsE}</p>
             <p className=" text-[#141547] font-Thai opacity-60">สมาชิก {members} คน</p>
-            <div className=" w-full">
+            <div className=" w-full flex justify-center">
             <ClubWidget />
             </div>
             <button 
             onClick={HandleClick}
             className=" flex m-auto px-20 rounded-2xl bg-gradient-to-b from-[#7533A8] to-[#D62C9F] items-center drop-shadow ">
               <span className=" text-white ml-3 text-2xl mr-2 font-Thai">แก้ไข</span>
-               <PencilIcon />
+               <WhitePencilIcon />
             </button>
             <div className={ NoEdit ? "flex items-center justify-center my-3" : " hidden"}>
             <p className= "text-[#141547] flex items-center justify-center font-Thai">สถานะ : 

@@ -11,6 +11,15 @@ import Box from '@mui/material/Box';
 import TextField from '@mui/material/TextField';
 import PencilIcon from "@/vectors/club/pencil";
 import ClubBottom from "@/vectors/club/clubBottom";
+import TextBox from "@/vectors/club/textbox";
+import ClubBgM from "@/vectors/bg/ClubM";
+import ClubStar from "@/vectors/club/star";
+import ReviewWidget from "@/vectors/club/reviewWidget";
+import ReviewCard from "@/vectors/club/reviewCard";
+import ReviewCardR from "@/vectors/club/reviewCardR";
+import Alert from '@mui/material/Alert';
+import AlertTitle from '@mui/material/AlertTitle';
+import FormData from "form-data";
 
 export default function ClubEdit() {
   const [clubs, setClubs] = useState('');
@@ -19,10 +28,51 @@ export default function ClubEdit() {
   const [ig, setIg] = useState('');
   const [fb, setFb] = useState('');
   const [other, setOther] = useState('');
+  const [clubsactivity,setClubActivity] = useState('')
+  const [benefits,setBenefits] = useState('')
+  const [workings,setWorkings] = useState('')
+  const [review1,setReview1] = useState('')
+  const [review1Name,setReview1Name] = useState('')
+  const [review1Gen,setReview1Gen] = useState('')
+  const [review1Contact,setReview1Contact] = useState('')
+  const [review1EditMode,setReview1EditMode] = useState(false)
+  const [review1NameEditMode,setReview1NameEditMode] = useState(false)
+  const [review1GenEditMode,setReview1GenEditMode] = useState(false)
+  const [review1ContactEditMode,setReview1ContactEditMode] = useState(false)
+  const [review2,setReview2] = useState('')
+  const [review2Name,setReview2Name] = useState('')
+  const [review2Gen,setReview2Gen] = useState('')
+  const [review2Contact,setReview2Contact] = useState('')
+  const [review2EditMode,setReview2EditMode] = useState(false)
+  const [review2NameEditMode,setReview2NameEditMode] = useState(false)
+  const [review2GenEditMode,setReview2GenEditMode] = useState(false)
+  const [review2ContactEditMode,setReview2ContactEditMode] = useState(false)
+  const [review3,setReview3] = useState('')
+  const [review3Name,setReview3Name] = useState('')
+  const [review3Gen,setReview3Gen] = useState('')
+  const [review3Contact,setReview3Contact] = useState('')
+  const [review3EditMode,setReview3EditMode] = useState(false)
+  const [review3NameEditMode,setReview3NameEditMode] = useState(false)
+  const [review3GenEditMode,setReview3GenEditMode] = useState(false)
+  const [review3ContactEditMode,setReview3ContactEditMode] = useState(false)
   const [memberEditMode, setMemberEditMode] = useState(false);
   const [igEditMode, setIgEditMode] = useState(false);
   const [fbEditMode, setFbEditMode] = useState(false);
   const [otherEditMode, setOtherEditMode] = useState(false);
+  const [clubActivityEditMode, setClubActivityEditMode] = useState(false);
+  const [benefitsEditMode, setBenefitsEditMode] = useState(false);
+  const [workingsEditMode, setWorkingsEditMode] = useState(false);
+  const [image1, setImage1] = useState('');
+  const [image1File, setImage1File] = useState([]);
+  const [image2, setImage2] = useState('');
+  const [image2File, setImage2File] = useState([]);
+  const [image3, setImage3] = useState('');
+  const [image3File, setImage3File] = useState([]);
+  const [review1Profile, setReview1Profile] = useState('');
+  const [review2Profile, setReview2Profile] = useState('');
+  const [review3Profile, setReview3Profile] = useState('');  
+  const [editSuccess, seteditSuccess] = useState(false);
+  
   const router = useRouter();
 
   const { data: session } = useSession({
@@ -32,6 +82,125 @@ export default function ClubEdit() {
     },
   });
 
+  let dataEdit = JSON.stringify({
+    "email": session?.user?.email,
+    "members": member,
+    "ig": ig,
+    "facebook": fb,
+    "others": other,
+    "clubsactivity": clubsactivity,
+    "benefits": benefits,
+    "workings": workings,
+    "review_1.name": review1Name,
+    "review_1.gen": review1Gen,
+    "review_1.contact": review1Contact,
+    "review_1.review": review1,
+    "review_2.name": review2Name,
+    "review_2.gen": review2Gen,
+    "review_2.contact": review2Contact,
+    "review_2.review": review2,
+    "review_3.name": review3Name,
+    "review_3.gen": review3Gen,
+    "review_3.contact": review3Contact,
+    "review_3.review": review3
+  });
+
+  let configEdit = {
+    method: 'post',
+    maxBodyLength: Infinity,
+    url: 'https://openhouse2024-backend.vercel.app/api/clubs/edit',
+    headers: { 
+      'Content-Type': 'application/json'
+    },
+    data : dataEdit
+  };
+
+  async function EditRequest() {
+    try {
+      const response = await axios.request(configEdit);
+      console.log(JSON.stringify(response.data));
+      seteditSuccess(true)
+    }
+    catch (error) {
+      console.log(error);
+    }
+  }
+
+  function image1Request () {
+  let image1Data = new FormData();
+  image1Data.append('file', image1File);
+  image1Data.append('email', session?.user?.email);
+  image1Data.append('imageType', 'image1');
+
+  let image1Config = {
+    method: 'post',
+    maxBodyLength: Infinity,
+    url: 'https://openhouse2024-backend.vercel.app/api/clubs/upload-image',
+    headers: { 
+      'Content-Type': 'multipart/form-data'
+    },
+    data : image1Data
+  };
+
+  axios.request(image1Config)
+  .then((response) => {
+  console.log(JSON.stringify(response.data));
+  })
+  .catch((error) => {
+  console.log(error);
+  });
+}
+
+function image2Request () {
+  let image2Data = new FormData();
+  image2Data.append('file', image2File);
+  image2Data.append('email', session?.user?.email);
+  image2Data.append('imageType', 'image2');
+
+  let image2Config = {
+    method: 'post',
+    maxBodyLength: Infinity,
+    url: 'https://openhouse2024-backend.vercel.app/api/clubs/upload-image',
+    headers: { 
+      'Content-Type': 'multipart/form-data'
+    },
+    data : image2Data
+  };
+
+  axios.request(image2Config)
+  .then((response) => {
+  console.log(JSON.stringify(response.data));
+  })
+  .catch((error) => {
+  console.log(error);
+  });
+}
+
+  function image3Request () {
+    let image3Data = new FormData();
+    image3Data.append('file', image3File);
+    image3Data.append('email', session?.user?.email);
+    image3Data.append('imageType', 'image3');
+  
+    let image3Config = {
+      method: 'post',
+      maxBodyLength: Infinity,
+      url: 'https://openhouse2024-backend.vercel.app/api/clubs/upload-image',
+      headers: { 
+        'Content-Type': 'multipart/form-data'
+      },
+      data : image3Data
+    };
+  
+    axios.request(image3Config)
+    .then((response) => {
+    console.log(JSON.stringify(response.data));
+    })
+    .catch((error) => {
+    console.log(error);
+    });
+  }
+
 const data = JSON.stringify({
         "email": session?.user?.email
       });
@@ -39,7 +208,7 @@ const data = JSON.stringify({
       const config = {
         method: 'post',
         maxBodyLength: Infinity,
-        url: 'http://localhost:5000/api/roles/info',
+        url: 'https://openhouse2024-backend.vercel.app/api/roles/info',
         headers: {
           'Content-Type': 'application/json'
         },
@@ -49,12 +218,27 @@ const data = JSON.stringify({
       function request(){
       axios.request(config)
       .then((response) =>{
-          console.log(JSON.stringify(response.data.name));
-          setClubs(response.data.name);
-          setMember(response.data.members);
-          setIg(response.data.ig);
-          setFb(response.data.facebook);
-          setOther(response.data.others);
+          console.log(JSON.stringify(response.data.info.name));
+          setClubs(response.data.info.name);
+          setMember(response.data.info.members);
+          setIg(response.data.info.ig);
+          setFb(response.data.info.facebook);
+          setOther(response.data.info.others);
+          setClubActivity(response.data.info.clubsactivity);
+          setBenefits(response.data.info.benefits)
+          setWorkings(response.data.info.workings)
+          setReview1Name(response.data.info.review_1.name)
+          setReview1Gen(response.data.info.review_1.gen)
+          setReview1Contact(response.data.info.review_1.contact)
+          setReview1(response.data.info.review_1.review)
+          setReview2Name(response.data.info.review_2.name)
+          setReview2Gen(response.data.info.review_2.gen)
+          setReview2Contact(response.data.info.review_2.contact)
+          setReview2(response.data.info.review_2.review)
+          setReview3Name(response.data.info.review_3.name)
+          setReview3Gen(response.data.info.review_3.gen)
+          setReview3Contact(response.data.info.review_3.contact)
+          setReview3(response.data.info.review_3.review)
           console.log("success");
         }) .catch((error) => {
           console.log(error);
@@ -65,6 +249,21 @@ const data = JSON.stringify({
   const igRef = useRef<any>();
   const fbRef = useRef<any>();
   const otherRef = useRef<any>();
+  const clubActivityRef = useRef<any>();
+  const benefitsRef = useRef<any>();
+  const workingsRef = useRef<any>();
+  const review1Ref = useRef<any>();
+  const review1NameRef = useRef<any>();
+  const review1GenRef = useRef<any>();
+  const review1ContactRef = useRef<any>();
+  const review2Ref = useRef<any>();
+  const review2NameRef = useRef<any>();
+  const review2GenRef = useRef<any>();
+  const review2ContactRef = useRef<any>();
+  const review3Ref = useRef<any>();
+  const review3NameRef = useRef<any>();
+  const review3GenRef = useRef<any>();
+  const review3ContactRef = useRef<any>();
 
   useEffect(() => {
       // User email is available, make the API request
@@ -74,6 +273,13 @@ const data = JSON.stringify({
 
   function back() {
     router.push('/club');
+  }
+
+  function summit() {
+    EditRequest()
+    image1Request()
+    image2Request()
+    image3Request()
   }
 
   function turnOnMemberEditMode() {
@@ -96,6 +302,81 @@ const data = JSON.stringify({
     otherRef.current!.focus();
   }
 
+  function turnOnClubActivityEditMode() {
+    setClubActivityEditMode(true);
+    clubActivityRef.current!.focus();
+  }
+
+  function turnOnBenefitsEditMode() {
+    setBenefitsEditMode(true);
+    benefitsRef.current!.focus();
+  }
+
+  function turnOnWorkingsEditMode() {
+    setWorkingsEditMode(true);
+    workingsRef.current!.focus();
+  }
+
+  function turnOnReview1EditMode() {
+    setReview1EditMode(true);
+    review1Ref.current!.focus();
+  }
+
+  function turnOnReview1NameEditMode() {
+    setReview1NameEditMode(true);
+    review1NameRef.current!.focus();
+  }
+
+  function turnOnReview1GenEditMode() {
+    setReview1GenEditMode(true);
+    review1GenRef.current!.focus();
+  }
+
+  function turnOnReview1ContactEditMode() {
+    setReview1ContactEditMode(true);
+    review1ContactRef.current!.focus();
+  }
+
+  function turnOnReview2EditMode() {
+    setReview2EditMode(true);
+    review2Ref.current!.focus();
+  }
+
+  function turnOnReview2NameEditMode() {
+    setReview2NameEditMode(true);
+    review2NameRef.current!.focus();
+  }
+
+  function turnOnReview2GenEditMode() {
+    setReview2GenEditMode(true);
+    review2GenRef.current!.focus();
+  }
+
+  function turnOnReview2ContactEditMode() {
+    setReview2ContactEditMode(true);
+    review2ContactRef.current!.focus();
+  }
+
+  function turnOnReview3EditMode() {
+    setReview3EditMode(true);
+    review3Ref.current!.focus();
+  }
+
+  function turnOnReview3NameEditMode() {
+    setReview3NameEditMode(true);
+    review3NameRef.current!.focus();
+  }
+
+  function turnOnReview3GenEditMode() {
+    setReview3GenEditMode(true);
+    review3GenRef.current!.focus();
+  }
+
+  function turnOnReview3ContactEditMode() {
+    setReview3ContactEditMode(true);
+    review3ContactRef.current!.focus();
+  }
+
   function handleMemberChange(event: any) {
     setMember(event.target.value);
   }
@@ -107,40 +388,168 @@ const data = JSON.stringify({
   function handleFbChange(event: any) {
     setFb(event.target.value);
   }
+  function handleClubActivityChange(event:any) {
+    setClubActivity(event.target.value)
+  }
+
+  function handleBenefitsChange(event:any) {
+    setBenefits(event.target.value)
+  }
+
+  function handleWorkingsChange(event:any) {
+    setWorkings(event.target.value)
+  }
+
+  function handleReview1Change(event: any) {
+    setReview1(event.target.value);
+  }
+
+  function handleReview1NameChange(event: any) {
+    setReview1Name(event.target.value);
+  }
+
+  function handleReview1GenChange(event: any) {
+    setReview1Gen(event.target.value);
+  }
+
+  function handleReview1ContactChange(event: any) {
+    setReview1Contact(event.target.value);
+  }
+
+  function handleReview2Change(event: any) {
+    setReview2(event.target.value);
+  }
+
+  function handleReview2NameChange(event: any) {
+    setReview2Name(event.target.value);
+  }
+
+  function handleReview2GenChange(event: any) {
+    setReview2Gen(event.target.value);
+  }
+
+  function handleReview2ContactChange(event: any) {
+    setReview2Contact(event.target.value);
+  }
+
+  function handleReview3Change(event: any) {
+    setReview3(event.target.value);
+  }
+
+  function handleReview3NameChange(event: any) {
+    setReview3Name(event.target.value);
+  }
+
+  function handleReview3GenChange(event: any) {
+    setReview3Gen(event.target.value);
+  }
+
+  function handleReview3ContactChange(event: any) {
+    setReview3Contact(event.target.value);
+  }
 
   function handleOtherChange(event: any) {
     setOther(event.target.value);
   }
 
+  function handleImage1Change(event:any) {
+    console.log(event.target.files);
+    setImage1File(event.target.files[0]);
+    setImage1(URL.createObjectURL(event.target.files[0]));
+    const file = event.target.files[0];
+    const reader = new FileReader();
+
+    reader.readAsDataURL(file);
+  }
+
+  function handleImage2Change(event:any) {
+    console.log(event.target.files);
+    setImage2File(event.target.files[0]);
+    setImage2(URL.createObjectURL(event.target.files[0]));
+    const file = event.target.files[0];
+    const reader = new FileReader();
+
+    reader.readAsDataURL(file);
+  }
+
+  function handleImage3Change(event:any) {
+    console.log(event.target.files);
+    setImage3File(event.target.files[0]);
+    setImage3(URL.createObjectURL(event.target.files[0]));
+    const file = event.target.files[0];
+    const reader = new FileReader();
+    reader.readAsDataURL(file);
+  }
+
+  function handleReview1ProfileChange(event:any) {
+    console.log(event.target.files);
+    setReview1Profile(URL.createObjectURL(event.target.files[0]));
+    const file = event.target.files[0];
+    const reader = new FileReader();
+    reader.readAsDataURL(file);
+  }
+
+  function handleReview2ProfileChange(event:any) {
+    console.log(event.target.files);
+    setReview2Profile(URL.createObjectURL(event.target.files[0]));
+    const file = event.target.files[0];
+    const reader = new FileReader();
+    reader.readAsDataURL(file);
+  }
+
+  function handleReview3ProfileChange(event:any) {
+    console.log(event.target.files);
+    setReview3Profile(URL.createObjectURL(event.target.files[0]));
+    const file = event.target.files[0];
+    const reader = new FileReader();
+    reader.readAsDataURL(file);
+  }
+
+  
+
+
     return(
-        <>
-        <div className=" w-full -z-10">
+        <div className=" bg-[#5A2561] h-[4600px] w-full ">
+        <div className="hidden lg:block  lg:w-full lg:-z-10">
             <ClubBg />
         </div>
-        <div className=" absolute top-0 w-full">
-            <ClubTop />
-        </div>
-        <div className=" absolute bottom-auto z-10 w-full">
-            <ClubBottom />
+        <div className=" block w-full lg:hidden -z-10">
+            <ClubBgM />
         </div>
         <div className=" flex justify-center z-0">
             <div className=" w-1/2 absolute top-96">
             <button onClick={back} 
-                className="px-12 py-5 flex gap-2   text-white font-Thai ">
+                className="px-12 py-2 flex gap-2 align-middle   text-[#55247B] font-Thai ">
             <BackArrow />
-            <span className=" ml-3 text-2xl">ย้อนกลับ</span>
+            <span className=" ml-3 text-2xl align-middle">ย้อนกลับ</span>
             </button>
             
             
             </div>
-            <div className=" absolute mt-32 top-96">
-            <p className="  p-6 rounded-full  font-extrabold text-transparent text-5xl bg-clip-text bg-gradient-to-b from-[#81109D] to-[#D738A4] py-5 font-Thai border text-center mx-10 z-10"> ชมรม{clubs}</p>
-            <p className=" text-white text-center mt-12 font-Thai text-3xl">{clubsE} hello </p>
 
-            <div className=" py-5 flex gap-2  text-white font-Thai justify-between ">
+            <div className=" w-1/2 absolute top-96  lg:ml-[70vw] md:ml-[600px] mt-1">
+            <button onClick={summit} 
+                className="px-12 py-2 flex gap-2 align-middle bg-gradient-to-r rounded-full from-[#D62C9F] to-[#7533A8]  text-white font-Thai ">
+            <span className=" text-2xl align-middle">ส่งแก้ไข</span>
+            </button>
+            
+            
+            </div>
+
+            <div className={ editSuccess ? " fixed z-50 right-4 bottom-4" : "hidden"}>
+            <Alert severity="success">
+              <AlertTitle>Success</AlertTitle>
+                ระบบได้บันทึกข้อมูลของท่านแล้ว
+              </Alert>
+            </div>
+            <div className=" absolute mt-32 top-96 flex justify-center">
+            <p className="  p-6   font-extrabold text-transparent md:text-5xl sm:text-4xl bg-clip-text break-words w-[80vw] bg-gradient-to-b from-[#81109D] to-[#D738A4] py-5 font-Thai text-center mx-10 z-10"> ชมรม{clubs}</p>
+            <p className=" text-white text-center mt-12 font-Thai text-3xl">{clubsE}</p>
+
+            <div className=" flex text-white md:w-[500px] sm:w-[450px] sm:ml-2 left-1/2 absolute -translate-x-1/2  font-Thai mt-[200px] justify-between ">
               <UserIcon />
-              <p className=" text-3xl block text-center">สมาชิก <br /> 
-                <input className=" block h-10 w-20 align-middle items-center bg-transparent text-center"
+              <p className=" text-3xl block text-center text-transparent bg-clip-text bg-gradient-to-b from-[#632790] to-[#D738A4]">สมาชิก <br /> 
+                <input className=" block h-10 w-24 align-middle items-center bg-transparent text-center"
                 type="text"
                 ref={memberRef}
                 value={member}
@@ -156,14 +565,21 @@ const data = JSON.stringify({
               </p>
               
               <div className=" w-1 my-1 ">
-              <svg width="1" height="85" viewBox="0 0 1 85" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <line x1="0.5" y1="-2.18557e-08" x2="0.500004" y2="85" stroke="white"/>
+              <svg width="4" height="86" viewBox="0 0 4 86" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M2 2L2 84" stroke="url(#paint0_linear_250_1393)" stroke-width="4" stroke-linecap="round"/>
+                <defs>
+                  <linearGradient id="paint0_linear_250_1393" x1="-1.00003" y1="-21.1529" x2="-1.00003" y2="84" gradientUnits="userSpaceOnUse">
+                  <stop stop-color="#D738A4"/>
+                  <stop offset="1" stop-color="#7533A8"/>
+                  </linearGradient>
+                </defs>
               </svg>
+
               </div>
               <div className=" mt-1">
-              <p className=" flex text-white "> IG:
+              <p className=" flex text-[#8133A7] text-xl font-Thai "> IG:
               
-              <input className=" h-6 w-[154px] bg-transparent"
+              <input className=" h-7 w-[154px] text-xl bg-transparent font-Thai"
                 type="text"
                 ref={igRef}
                 value={ig}
@@ -177,9 +593,9 @@ const data = JSON.stringify({
                 </input>
                 <button onClick={turnOnIgEditMode}><PencilIcon/></button>
                 </p>
-                <p className=" flex text-white "> FB:
+                <p className=" flex text-[#8133A7] text-xl font-Thai "> FB:
               
-              <input className=" h-6 w-[154px] bg-transparent"
+              <input className=" h-7 w-[154px] bg-transparent font-Thai"
                 type="text"
                 ref={fbRef}
                 value={fb}
@@ -193,9 +609,9 @@ const data = JSON.stringify({
                 </input>
                 <button onClick={turnOnFbEditMode}><PencilIcon/></button>
                 </p>
-                <p className=" flex text-white w-[40px] "> อื่นๆ: 
+                <p className=" flex text-[#8133A7] w-[40px] text-xl font-Thai "> อื่นๆ: 
               
-              <input className=" h-6 w-[154px] bg-transparent"
+              <input className=" h-7 w-[154px] bg-transparent font-Thai"
                 type="text"
                 ref={otherRef}
                 value={other}
@@ -214,15 +630,406 @@ const data = JSON.stringify({
             
             
         </div>
-        <div className=" absolute top-96 mt-[420px] px-12 py-5 flex gap-2  text-white font-Thai ">
+        <div className=" absolute top-96 mt-[420px] justify-center flex gap-2  text-white font-Thai ">
               <ClubWidget/>
         </div>
-              <p className=" absolute top-96 mr-[600px] mt-[600px] px-12 py-5 flex gap-2  text-white font-Thai text-6xl ">ชมรมนี้</p>
-              <p className=" absolute top-96 mr-[660px] mt-[660px] px-12 py-5 flex gap-2  text-white font-Thai text-4xl ">ทำอะไร</p>
-              
+        {// first section
+         }
+              <p className=" absolute top-96 lg:mr-[600px] lg:mt-[600px] hidden lg:flex px-6 w-60 py-5  gap-2 font-semibold text-transparent bg-clip-text bg-gradient-to-b from-[#D738A4] to-[#FFDD77] font-Thai text-6xl ">ชมรมนี้</p>
+              <p className=" absolute top-96 lg:mr-[660px] lg:mt-[660px] hidden lg:flex px-14 w-60 py-5 gap-2 font-semibold  text-transparent bg-clip-text bg-gradient-to-b from-[#D738A4] to-[#FFDD77] font-Thai text-4xl ">ทำอะไร</p>
+              <p className=" absolute top-96 w-[200px] mt-[547px] leading-loose md:mr-[550px] sm:mr-[150px] font-semibold text-transparent bg-clip-text bg-gradient-to-b from-[#D738A4] to-[#FFDD77] font-Thai  text-3xl  lg:hidden ">ชมรมนี้ทำอะไร ?</p>
+              <svg className="absolute top-96 ml-0 lg:ml-[260px] lg:mt-[600px] md:mt-[630px] sm:mt-[630px] flex lg:w-[509px] lg:h-[309px] md:w-[772px] sm:h-[220px] " viewBox="0 0 509 307" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <rect width="509" height="307" rx="23" fill="#D9D9D9"/>
+              </svg>
+              <div className=" absolute top-96 lg:mt-[600px] md:mt-[630px] sm:mt-[630px] lg:ml-[260px] z-20 flex items-center justify-center lg:w-[509px] lg:h-[307px] md:w-[772px] md:h-[468px] sm:w-[363px] sm:h-[220px] ">
+                <label id="dropzone-file" className="flex flex-col items-center justify-center w-full h-full border-2rounded-[30px] cursor-pointer">
+                  <div className="flex flex-col items-center justify-center pt-5 pb-6  ">
+                    <svg className="w-8 h-8 text-gray-500" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 20 16">
+                      <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 13h3a3 3 0 0 0 0-6h-.025A5.56 5.56 0 0 0 16 6.5 5.5 5.5 0 0 0 5.207 5.021C5.137 5.017 5.071 5 5 5a4 4 0 0 0 0 8h2.167M10 15V6m0 0L8 8m2-2 2 2"/>
+                    </svg>
+                  </div>
+                  <input id="dropzone-file" type="file" className="hidden" accept=".png,.jpg,jpeg" onChange={handleImage1Change} />
+                </label>
+              </div> 
+              <p className=" absolute top-96 lg:ml-[270px] lg:mt-[910px] md:mt-[1100px] sm:mt-[860px] z-50 md:ml-0 flex  text-[#7533A8]  font-Thai text-lg opacity-75 ">ภาพบรรยากาศในชมรม</p>
+              <img className="absolute top-96 ml-0 lg:ml-[260px] lg:mt-[600px] md:mt-[630px] sm:mt-[630px] z-10  flex object-cover lg:h-[307px] lg:w-[509px] md:w-[772px] md:h-[468px] sm:w-[363px] sm:h-[220px] md:rounded-3xl sm:rounded-2xl " src={image1} />
+            <div className=" lg:flex absolute top-96 mr-[680px] mt-[730px] hidden  ">
+          <ClubStar/>
+          </div>
+        </div>
+        <div className=" absolute top-96 inset-0 m-auto  lg:mt-[920px] mt-[1150px] flex justify-center">
+          {// seccond section
+         }
+          <svg className="absolute top-96 ml-0 lg:mr-[280px] lg:mt-[0px] md:mt-[70px] flex lg:w-[509px] lg:h-[309px] w-[772px] " viewBox="0 0 509 307" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <rect width="509" height="307" rx="23" fill="#D9D9D9"/>
+              </svg>
+          <p className=" absolute top-96 lg:mr-[270px] lg:mt-[310px] md:mt-[540px] md:ml-0 flex  text-[#7533A8] font-Thai text-lg opacity-75 ">ภาพบรรยากาศในชมรม</p>
+          <p className=" absolute top-96 lg:ml-[600px] lg:mt-[0px] hidden lg:flex px-6 w-60 py-5  gap-2 font-semibold text-transparent bg-clip-text bg-gradient-to-br from-[#D738A4] to-[#FFDD77] leading-[4.5rem] font-Thai text-6xl ">ประโยชน์ที่ได้รับ</p>
+          <p className=" absolute top-96 lg:ml-[620px] lg:mt-[130px] hidden lg:flex px-14 w-76 py-5 gap-2 font-semibold  text-transparent bg-clip-text bg-gradient-to-b from-[#D738A4] to-[#FFDD77] font-Thai text-3xl ">จากการเข้าชมรม</p>
+          <p className=" absolute top-96 mt-[0px] leading-loose mr-[350px] font-semibold text-transparent bg-clip-text bg-gradient-to-b from-[#D738A4] to-[#FFDD77] font-Thai  text-3xl  lg:hidden ">ประโยชน์ที่ได้รับจากการเข้าชมรม</p>
+          <img className="absolute top-96 ml-0 lg:mr-[280px] lg:mt-[0px] md:mt-[70px]  flex object-cover lg:h-[307px] lg:w-[509px] md:w-[772px] md:h-[468px] sm:w-[363px] sm:h-[220px] rounded-3xl  " src={image2} />
+          <div className=" absolute top-0 lg:mt-[385px]  lg:mr-[300px] md:mt-[450px] z-20 flex items-center justify-center lg:w-[509px] lg:h-[307px] w-[772px] h-[468px]">
+                <label id="dropzone-file" className="flex flex-col items-center justify-center w-full h-full rounded-[30px] cursor-pointer">
+                  <div className="flex flex-col items-center justify-center pt-5 pb-6 ">
+                    <svg className="w-8 h-8  text-gray-500" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 20 16">
+                      <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 13h3a3 3 0 0 0 0-6h-.025A5.56 5.56 0 0 0 16 6.5 5.5 5.5 0 0 0 5.207 5.021C5.137 5.017 5.071 5 5 5a4 4 0 0 0 0 8h2.167M10 15V6m0 0L8 8m2-2 2 2"/>
+                    </svg>
+                  </div>
+                  <input id="dropzone-file" type="file" className="hidden" accept=".png,.jpg,jpeg" onChange={handleImage2Change} />
+                </label>
+              </div> 
+              <div className=" lg:flex absolute top-96 ml-[675px] mt-[200px] hidden  ">
+          
+          <ClubStar/>
+          </div>
+          {// Third section
+         }
+         
+         <svg className="absolute top-96 ml-0 lg:ml-[280px] lg:mt-[750px] md:mt-[1070px] flex lg:w-[509px] lg:h-[309px] w-[772px] " viewBox="0 0 509 307" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <rect width="509" height="307" rx="23" fill="#D9D9D9"/>
+              </svg>
+          <p className=" absolute top-96 lg:ml-[270px] lg:mt-[1060px] md:mt-[1540px] md:ml-0 flex  text-[#7533A8] font-Thai text-lg opacity-75 ">ภาพบรรยากาศในชมรม</p>
+          <p className=" absolute top-96 lg:mr-[550px] lg:mt-[750px] hidden lg:flex px-6 w-72 py-5  gap-2 font-semibold text-transparent bg-clip-text bg-gradient-to-br from-[#D738A4] to-[#FFDD77] leading-[4.5rem] font-Thai text-7xl ">ผลงาน</p>
+          <p className=" absolute top-96 lg:mr-[650px] lg:mt-[820px] hidden lg:flex px-14 w-60 py-5 gap-2 font-semibold  text-transparent bg-clip-text bg-gradient-to-b from-[#D738A4] to-[#FFDD77] font-Thai text-3xl ">ของชมรม</p>
+          <p className=" absolute top-96 mt-[1010px] leading-loose mr-[535px] font-semibold text-transparent bg-clip-text bg-gradient-to-b from-[#D738A4] to-[#FFDD77] font-Thai  text-3xl  lg:hidden ">ผลงานของชมรม</p>
+          <img className="absolute top-96 ml-0 lg:ml-[280px] lg:mt-[750px] md:mt-[1070px]  flex object-cover lg:h-[307px] lg:w-[509px] md:w-[772px] md:h-[468px] rounded-3xl " src={image3} />
+          <div className=" absolute top-0 lg:mt-[1135px] lg:ml-[275px] md:mt-[1450px] z-20 flex items-center justify-center lg:w-[509px] lg:h-[307px] w-[772px] h-[468px]">
+                <label id="dropzone-file" className="flex flex-col items-center justify-center w-full h-full rounded-[30px] cursor-pointer">
+                  <div className="flex flex-col items-center justify-center pt-5 pb-6  ">
+                    <svg className="w-8 h-8 text-gray-500" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 20 16">
+                      <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 13h3a3 3 0 0 0 0-6h-.025A5.56 5.56 0 0 0 16 6.5 5.5 5.5 0 0 0 5.207 5.021C5.137 5.017 5.071 5 5 5a4 4 0 0 0 0 8h2.167M10 15V6m0 0L8 8m2-2 2 2"/>
+                    </svg>
+                  </div>
+                  <input id="dropzone-file" type="file" className="hidden" accept=".png,.jpg,jpeg" onChange={handleImage3Change} />
+                </label>
+              </div>
+               <div className=" lg:flex absolute top-96 mr-[665px] mt-[880px] hidden  ">
+          
+          <ClubStar/>
+          </div>
+
+          <div className=" absolute top-96 lg:mt-[1400px] md:mt-[2000px] px-12 py-5 flex gap-2 lg:w-1/2  text-white font-Thai ">
+              <ReviewWidget/>
+        </div>
+        <div className=" absolute top-96 lg:mt-[1510px] md:mt-[2110px] sm:mt-[2110px] sm:w-[500px] px-12 py-5 flex gap-2 md:w-[850px] text-white font-Thai ">
+              <ReviewCard/>
+        </div>
+
+        <div className=" absolute top-96 lg:mt-[1910px] md:mt-[2500px] sm:mt-[2410px] sm:w-[500px] px-12 py-5 flex gap-2 md:w-[850px] text-white font-Thai ">
+              <ReviewCardR/>
+        </div>
+
+        <div className=" absolute top-96 lg:mt-[2310px] md:mt-[2900px] sm:mt-[2710px] sm:w-[500px] px-12 py-5 flex gap-2 md:w-[850px] text-white font-Thai ">
+              <ReviewCard/>
         </div>
         
+        </div>
 
-        </>
+        {
+          //text area------------------------------------------------------------------------------------------------------------
+        }
+
+        <div className=" absolute top-96 inset-0 m-auto   lg:mt-[970px] md:mt-[1200px] sm:mt-[900px] flex justify-center">
+          <textarea className=" text-[#582A88] bg-white text-lg break-words border-2 font-Thai h-60 md:ml-16 sm:ml-10 md:w-[750px] sm:w-[600px] sm:h-72 bg-transparent align-top resize-none "
+                ref={clubActivityRef}
+                value={clubsactivity}
+                readOnly ={!clubActivityEditMode}
+                onClick={turnOnClubActivityEditMode}
+                defaultValue=""
+                onBlur={() => setClubActivityEditMode(false)}
+                onChange={handleClubActivityChange}
+                >
+
+                </textarea>
+                <button className="md:ml-10  " onClick={turnOnClubActivityEditMode}><PencilIcon/></button>
+        </div>       
+
+        <div className=" absolute top-96 inset-0 m-auto  lg:mt-[1710px] mt-[2200px] flex justify-center">
+          <textarea className=" text-[#582A88] text-lg break-words border-2 font-Thai h-60 ml-16 w-[750px] bg-transparent align-top resize-none"
+                ref={benefitsRef}
+                value={benefits}
+                readOnly ={!benefitsEditMode}
+                onClick={turnOnBenefitsEditMode}
+                defaultValue=""
+                onBlur={() => setBenefitsEditMode(false)}
+                onChange={handleBenefitsChange}
+                >
+
+                </textarea>
+                <button className="ml-10" onClick={turnOnBenefitsEditMode}><PencilIcon/></button>
+          
+                
+        </div> 
+
+        <div className=" absolute top-96 inset-0 m-auto  lg:mt-[2430px] mt-[3200px] flex justify-center">
+          <textarea className=" text-[#582A88] text-lg break-words border-2 font-Thai h-60 ml-16 w-[750px] bg-transparent align-top resize-none"
+                ref={workingsRef}
+                value={workings}
+                readOnly ={!workingsEditMode}
+                onClick={turnOnWorkingsEditMode}
+                defaultValue=""
+                onBlur={() => setWorkingsEditMode(false)}
+                onChange={handleWorkingsChange}
+                >
+
+                </textarea>
+                <button className="ml-10" onClick={turnOnWorkingsEditMode}><PencilIcon/></button>
+        </div> 
+
+         {
+          //review 1----------------------------------------------------------------------------------------------------------------------------------
+          }
+          <div>
+        <div className=" absolute top-96 inset-0 m-auto  lg:mt-[2895px] md:mt-[3730px] sm:mt-[3790px] flex justify-center">
+          
+          <textarea className=" text-white bg-white text-md break-words font-Thai  md:w-[480px] md:ml-[300px] md:h-[266px] sm:w-[250px] sm:ml-[170px] sm:h-[120px] bg-transparent align-top resize-none"
+                ref={review1Ref}
+                value={review1}
+                readOnly ={!review1EditMode}
+                onClick={turnOnReview1EditMode}
+                defaultValue=""
+                onBlur={() => setReview1EditMode(false)}
+                onChange={handleReview1Change}
+                >
+
+                </textarea>
+                <button className="md:ml-10 sm:ml-5" onClick={turnOnReview1EditMode}><PencilIcon/></button>
+        </div>
+
+        <div className=" absolute top-96 inset-0 m-auto  lg:mt-[2900px] md:mt-[3730px] sm:mt-[3790px] md:mr-[485px] sm:mr-[180px]  flex justify-center">
+          <div className=" block w-[200px] ">
+          <svg className="block md:w-[153px] w-[90px]"  viewBox="0 0 153 153" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <rect width="152.941" height="152.941" rx="30" fill="#D9D9D9"/>
+          </svg>
+          <div className=" absolute top-0 lg:mt-[0px] lg:ml-[0px] md:mt-[0px] z-20 flex items-center justify-center md:h-[153px] md:w-[153px] sm:h-[90px] sm:w-[90px] ">
+                <label id="dropzone-file" className="flex flex-col items-center justify-center w-full h-full rounded-[30px] cursor-pointer">
+                  <div className="flex flex-col items-center justify-center pt-5 pb-6  ">
+                    <svg className="w-8 h-8" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 20 16">
+                      <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 13h3a3 3 0 0 0 0-6h-.025A5.56 5.56 0 0 0 16 6.5 5.5 5.5 0 0 0 5.207 5.021C5.137 5.017 5.071 5 5 5a4 4 0 0 0 0 8h2.167M10 15V6m0 0L8 8m2-2 2 2"/>
+                    </svg>
+                  </div>
+                  <input id="dropzone-file" type="file" className="hidden" accept=".png,.jpg,jpeg" onChange={handleReview1ProfileChange} />
+                </label>
+              </div>
+          <img className="absolute top-0 ml-0 lg:ml-[0px] lg:mt-[0px] md:mt-[0px] z-10  flex object-cover md:h-[153px] md:w-[153px] sm:h-[90px] sm:w-[90px] rounded-3xl " src={review1Profile} />
+          <div className=" block mt-1">
+              <input className=" text-white md:text-2xl sm:text-lg h-8 md:w-[148px] sm:w-[90px] bg-transparent font-Thai"
+                type="text"
+                ref={review1NameRef}
+                value={review1Name}
+                readOnly ={!review1NameEditMode}
+                placeholder="ชื่อ"
+                onClick={turnOnReview1NameEditMode}
+                onBlur={() => setReview1NameEditMode(false)}
+                onChange={handleReview1NameChange}
+                >
+                
+                </input>
+                <button onClick={turnOnReview1NameEditMode}><PencilIcon/></button>
+
+                <p className=" block text-[#291A54] text-xl font-Thai "> เตรียมอุดม
+              
+              <input className=" h-6 ml-1 w-[50px] text-[#291A54] bg-transparent font-Thai "
+                type="text"
+                maxLength={2}
+                ref={review1GenRef}
+                value={review1Gen}
+                readOnly ={!review1GenEditMode}
+                onClick={turnOnReview1GenEditMode}
+                onBlur={() => setReview1GenEditMode(false)}
+                onChange={handleReview1GenChange}
+                >
+
+                </input>
+                <button onClick={turnOnReview1GenEditMode}><PencilIcon/></button>
+                </p>
+              
+              <input className=" h-6 w-[148px] text-[#291A54] bg-transparent font-Thai"
+                type="text"
+                ref={review1ContactRef}
+                value={review1Contact}
+                readOnly ={!review1ContactEditMode}
+                onClick={turnOnReview1ContactEditMode}
+                placeholder="ช่องทางการติดต่อ"
+                onBlur={() => setReview1ContactEditMode(false)}
+                onChange={handleReview1ContactChange}
+                >
+
+                </input>
+                <button onClick={turnOnReview1ContactEditMode}><PencilIcon/></button>
+                </div>
+                </div>
+              </div>
+              </div>
+              {
+                //review 2----------------------------------------------------------------------------------------------------------
+              }
+              <div className="">
+              <div className=" absolute top-96 inset-0 m-auto  lg:mt-[3295px] lg:mr-0 md:mt-[4115px] md:mr-[270px] flex justify-center">
+                <button className=" mr-10" onClick={turnOnReview2EditMode}><PencilIcon/></button>
+                <textarea className=" text-white text-md break-words font-Thai  w-[480px] lg:mr-[280px] h-[266px] bg-transparent align-top resize-none"
+                ref={review2Ref}
+                value={review2}
+                readOnly ={!review2EditMode}
+                onClick={turnOnReview2EditMode}
+                defaultValue=""
+                onBlur={() => setReview2EditMode(false)}
+                onChange={handleReview2Change}
+                >
+
+                </textarea>
+                
+              </div>
+
+              <div className=" absolute top-96 inset-0 m-auto  lg:mt-[3300px] md:mt-[4120px] ml-[550px] flex justify-center">
+                <div className=" block">
+                  <svg className="block" width="153" height="153" viewBox="0 0 153 153" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <rect width="152.941" height="152.941" rx="30" fill="#D9D9D9"/>
+                  </svg>
+                  <div className=" absolute top-0 lg:mt-[0px] lg:ml-[0px] md:mt-[0px] z-20 flex items-center justify-center h-[153px] w-[153px] ">
+                <label id="dropzone-file" className="flex flex-col items-center justify-center w-full h-full rounded-[30px] cursor-pointer">
+                  <div className="flex flex-col items-center justify-center pt-5 pb-6  z-20  ">
+                    <svg className="w-8 h-8" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 20 16">
+                      <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 13h3a3 3 0 0 0 0-6h-.025A5.56 5.56 0 0 0 16 6.5 5.5 5.5 0 0 0 5.207 5.021C5.137 5.017 5.071 5 5 5a4 4 0 0 0 0 8h2.167M10 15V6m0 0L8 8m2-2 2 2"/>
+                    </svg>
+                  </div>
+                  <input id="dropzone-file" type="file" className="hidden" accept=".png,.jpg,jpeg" onChange={handleReview2ProfileChange} />
+                </label>
+                <img className="absolute top-0 ml-0 lg:ml-[0px] lg:mt-[0px] md:mt-[0px] z-10  flex object-cover h-[153px] w-[153px] rounded-3xl " src={review2Profile} />
+              </div>
+                  <div className=" block mt-1">
+              <input className=" text-white text-end text-2xl h-8 w-[148px] bg-transparent font-Thai"
+                type="text"
+                ref={review2NameRef}
+                value={review2Name}
+                readOnly ={!review2NameEditMode}
+                placeholder="ชื่อ"
+                onClick={turnOnReview2NameEditMode}
+                onBlur={() => setReview2NameEditMode(false)}
+                onChange={handleReview2NameChange}
+                >
+                
+                </input>
+                <button onClick={turnOnReview2NameEditMode}><PencilIcon/></button>
+
+                <p className=" block text-[#291A54] text-xl font-Thai text-end "> เตรียมอุดม
+              
+              <input className=" h-[28px] ml-1 w-[25px] text-[#291A54] text-end bg-transparent font-Thai"
+                type="text"
+                maxLength={2}
+                ref={review2GenRef}
+                value={review2Gen}
+                readOnly ={!review2GenEditMode}
+                onClick={turnOnReview2GenEditMode}
+                onBlur={() => setReview2GenEditMode(false)}
+                onChange={handleReview2GenChange}
+                >
+
+                </input>
+                <button onClick={turnOnReview2GenEditMode}><PencilIcon/></button>
+                </p>
+              
+              <input className=" h-6 w-[148px] text-end text-[#291A54] bg-transparent font-Thai"
+                type="text"
+                ref={review2ContactRef}
+                value={review2Contact}
+                readOnly ={!review2ContactEditMode}
+                onClick={turnOnReview2ContactEditMode}
+                placeholder="ช่องทางการติดต่อ"
+                onBlur={() => setReview2ContactEditMode(false)}
+                onChange={handleReview2ContactChange}
+                >
+
+                </input>
+                <button onClick={turnOnReview2ContactEditMode}><PencilIcon/></button>
+                </div>
+                </div>
+              </div>
+              </div>
+              {
+                //review 3---------------------------------------------------------------------------------------------------------------------
+              }
+          <div className="">
+          <div className=" absolute top-96 inset-0 m-auto  lg:mt-[3695px] md:mt-[4520px] sm:mt-[4390px] flex justify-center">
+          
+          <textarea className=" text-white text-md break-words font-Thai md:w-[480px] md:ml-[300px] sm:w-[250px] sm:ml-[170px] sm:h-[120px] md:h-[266px] bg-transparent align-top resize-none"
+                ref={review3Ref}
+                value={review3}
+                readOnly ={!review3EditMode}
+                onClick={turnOnReview3EditMode}
+                defaultValue=""
+                onBlur={() => setReview3EditMode(false)}
+                onChange={handleReview3Change}
+                >
+
+                </textarea>
+                <button className="md:ml-10 sm:ml-5" onClick={turnOnReview3EditMode}><PencilIcon/></button>
+        </div>
+        <div className=" absolute top-96 inset-0 m-auto  lg:mt-[3700px] md:mt-[4520px] mt-[1200px] mr-[485px] flex justify-center">
+                <div className=" block">
+                  <svg className="block" width="153" height="153" viewBox="0 0 153 153" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <rect width="152.941" height="152.941" rx="30" fill="#D9D9D9"/>
+                  </svg>
+                  <div className=" absolute top-0 lg:mt-[0px] lg:ml-[0px] md:mt-[0px] z-20 flex items-center justify-center h-[153px] w-[153px] ">
+                <label id="dropzone-file" className="flex flex-col items-center justify-center w-full h-full rounded-[30px] cursor-pointer">
+                  <div className="flex flex-col items-center justify-center pt-5 pb-6   ">
+                    <svg className="w-8 h-8 text-gray-500" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 20 16">
+                      <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 13h3a3 3 0 0 0 0-6h-.025A5.56 5.56 0 0 0 16 6.5 5.5 5.5 0 0 0 5.207 5.021C5.137 5.017 5.071 5 5 5a4 4 0 0 0 0 8h2.167M10 15V6m0 0L8 8m2-2 2 2"/>
+                    </svg>
+                  </div>
+                  <input id="dropzone-file" type="file" className="hidden" accept=".png,.jpg,jpeg" onChange={handleReview3ProfileChange} />
+                </label>
+              </div>
+          <img className="absolute top-0 ml-0 lg:ml-[0px] lg:mt-[0px] md:mt-[0px] z-10  flex object-cover h-[153px] w-[153px]  rounded-3xl " src={review3Profile} />
+                  <div className=" block mt-1">
+              <input className=" text-white text-2xl h-8 w-[148px] bg-transparent font-Thai"
+                type="text"
+                ref={review3NameRef}
+                value={review3Name}
+                readOnly ={!review3NameEditMode}
+                placeholder="ชื่อ"
+                onClick={turnOnReview3NameEditMode}
+                onBlur={() => setReview3NameEditMode(false)}
+                onChange={handleReview3NameChange}
+                >
+                
+                </input>
+                <button onClick={turnOnReview3NameEditMode}><PencilIcon/></button>
+
+                <p className=" block text-[#291A54] text-xl font-Thai "> เตรียมอุดม
+              
+              <input className=" h-6 ml-1 w-[50px] text-[#291A54] bg-transparent font-Thai"
+                type="text"
+                maxLength={2}
+                ref={review3GenRef}
+                value={review3Gen}
+                readOnly ={!review3GenEditMode}
+                onClick={turnOnReview3GenEditMode}
+                onBlur={() => setReview3GenEditMode(false)}
+                onChange={handleReview3GenChange}
+                >
+
+                </input>
+                <button onClick={turnOnReview3GenEditMode}><PencilIcon/></button>
+                </p>
+              
+              <input className=" h-6 w-[148px] text-[#291A54] bg-transparent font-Thai"
+                type="text"
+                ref={review3ContactRef}
+                value={review3Contact}
+                readOnly ={!review3ContactEditMode}
+                onClick={turnOnReview3ContactEditMode}
+                placeholder="ช่องทางการติดต่อ"
+                onBlur={() => setReview3ContactEditMode(false)}
+                onChange={handleReview3ContactChange}
+                >
+
+                </input>
+                <button onClick={turnOnReview3ContactEditMode}><PencilIcon/></button>
+                </div>
+                </div>
+              </div>
+        </div>
+        </div>
     )
 }
