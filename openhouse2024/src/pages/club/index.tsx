@@ -79,6 +79,10 @@ export default function Club() {
     function HandleClick (){
       router.push('/club/edit')
     }
+
+    function HandlePreview (){
+      router.push('/club/preview')
+    }
     
     useEffect(() => {
       makeRequest()
@@ -98,12 +102,20 @@ export default function Club() {
             <div className=" w-full flex justify-center">
             <ClubWidget />
             </div>
+            
             <button 
             onClick={HandleClick}
-            className=" flex m-auto px-20 rounded-2xl bg-gradient-to-b from-[#7533A8] to-[#D62C9F] items-center drop-shadow ">
-              <span className=" text-white ml-3 text-2xl mr-2 font-Thai">แก้ไข</span>
+            className=" flex m-auto w-80 rounded-2xl  bg-gradient-to-b from-[#7533A8] to-[#D62C9F] items-center justify-center text-center drop-shadow ">
+              <span className=" text-white ml-3 text-2xl mr-2 font-Thai text-center">แก้ไข</span>
                <WhitePencilIcon />
             </button>
+            <div>
+            <button 
+            onClick={HandlePreview}
+            className=" mt-5 flex m-auto w-80 rounded-2xl border-[#7533A8] border-2 items-center justify-center text-center drop-shadow ">
+              <span className=" text-[#7533A8] ml-3 text-2xl mr-2  font-Thai">พรีวิว</span>
+            </button>
+            </div>
             <div className={ NoEdit ? "flex items-center justify-center my-3" : " hidden"}>
             <p className= "text-[#141547] flex items-center justify-center font-Thai">สถานะ : 
             <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg" className=" mx-2 ">

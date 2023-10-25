@@ -76,12 +76,7 @@ export default function ClubEdit() {
   
   const router = useRouter();
 
-  const { data: session } = useSession({
-    required: true,
-    onUnauthenticated() {
-      router.push('/login'); // The user is not authenticated, handle it here.
-    },
-  });
+  const { data: session } = useSession();
 
   let dataEdit = JSON.stringify({
     "email": session?.user?.email,
@@ -219,7 +214,6 @@ const data = JSON.stringify({
       function request(){
       axios.request(config)
       .then((response) =>{
-          console.log(JSON.stringify(response.data.info.name));
           setClubs(response.data.info.name);
           setMember(response.data.info.members);
           setIg(response.data.info.ig);
@@ -875,7 +869,7 @@ const data = JSON.stringify({
               <div className="">
               <div className=" absolute top-96 inset-0 m-auto  lg:mt-[3295px] lg:mr-0 md:mt-[4115px] sm:mt-[4090px] md:mr-[270px] flex justify-center">
                 <button className=" md:mr-10 sm:mr-5" onClick={turnOnReview2EditMode}><PencilIcon/></button>
-                <textarea className=" text-white text-md break-words font-Thai  md:w-[480px] md:ml-[300px] md:h-[266px] sm:w-[250px] sm:mr-[170px] sm:h-[120px] bg-transparent align-top resize-none"
+                <textarea className=" text-white text-md break-words font-Thai   md:w-[480px] md:mr-[300px] md:h-[266px] sm:w-[250px] sm:mr-[170px] sm:h-[120px] bg-transparent align-top resize-none"
                 ref={review2Ref}
                 value={review2}
                 readOnly ={!review2EditMode}
@@ -922,7 +916,7 @@ const data = JSON.stringify({
 
                 <p className=" block text-[#291A54] md:text-xl md:mt-0 sm:-mt-3 sm:text-sm text-base  md:mr-0  font-Thai text-end "> เตรียมอุดม
               
-              <input className=" sm:h-4 md:h-6 ml-1  md:w-[50px] sm:w-[19px] text-[#291A54] bg-transparent font-Thai text-end"
+              <input className=" sm:h-4 md:h-6 ml-1  md:w-[35px] sm:w-[19px] text-[#291A54] bg-transparent font-Thai text-end"
                 type="text"
                 maxLength={2}
                 ref={review2GenRef}

@@ -1,4 +1,3 @@
-"use client";
 import { useSession, signIn, signOut } from "next-auth/react";
 import { useRouter } from 'next/navigation'
 import { useEffect } from "react";
@@ -13,7 +12,7 @@ import GoogleLogin from "@/vectors/login/LoginGoogle";
 import Register from "@/vectors/login/register";
 import Tucmc from "@/vectors/tucmc";
 
-export default function LoginPage() {
+export default function loginPage() {
   const { data: session } = useSession();
   const router = useRouter();
 
