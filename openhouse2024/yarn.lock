@@ -3504,6 +3504,11 @@ minimist@^1.2.0, minimist@^1.2.6:
   resolved "https://registry.yarnpkg.com/minimist/-/minimist-1.2.8.tgz#c1a464e7693302e082a075cee0c057741ac4772c"
   integrity sha512-2yyAR8qBkN3YuheJanUpWC5U3bb5osDywNB8RzDVlDwDHbocAJveqqj1u8+SVD7jkWT4yvsHCpWqqWqAxb0zCA==
 
+module-name@^0.0.1-security:
+  version "0.0.1-security"
+  resolved "https://registry.yarnpkg.com/module-name/-/module-name-0.0.1-security.tgz#69e165948f0420f9d388df6c8dc59d47250b45ff"
+  integrity sha512-yuuTU5MhBuxtUPjTIqBz3AR2z3yrBr7yjPvpHbKLu5N3iWBRji2RnNAysonzft26mMUO+vA2tB3uiAqbZ6jXAQ==
+
 monocle-ts@^2.3.11, monocle-ts@^2.3.13:
   version "2.3.13"
   resolved "https://registry.yarnpkg.com/monocle-ts/-/monocle-ts-2.3.13.tgz#7c8af489613cd5175df2ea3c02c57c6151995e5d"

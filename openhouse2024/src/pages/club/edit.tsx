@@ -20,6 +20,7 @@ import ReviewCardR from "@/vectors/club/reviewCardR";
 import Alert from '@mui/material/Alert';
 import AlertTitle from '@mui/material/AlertTitle';
 import FormData from "form-data";
+import Head from "next/head";
 
 export default function ClubEdit() {
   const [clubs, setClubs] = useState('');
@@ -509,11 +510,15 @@ const data = JSON.stringify({
 
 
     return(
+      <>
+      <Head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      </Head>
         <div className=" bg-[#5A2561] h-[4600px] w-full ">
-        <div className="hidden lg:block  lg:w-full lg:-z-10">
+        <div className="hidden lg:block  lg:w-screen lg:-z-10">
             <ClubBg />
         </div>
-        <div className=" block w-full lg:hidden -z-10">
+        <div className=" block w-screen lg:hidden -z-10">
             <ClubBgM />
         </div>
         <div className=" flex justify-center z-0">
@@ -527,7 +532,7 @@ const data = JSON.stringify({
             
             </div>
 
-            <div className=" w-1/2 absolute top-96  lg:ml-[70vw] md:ml-[600px] mt-1">
+            <div className=" w-1/2 absolute top-96  lg:ml-[70vw] md:ml-[600px] md:mt-0 sm:ml-12 sm:mt-[70px] mt-1">
             <button onClick={summit} 
                 className="px-12 py-2 flex gap-2 align-middle bg-gradient-to-r rounded-full from-[#D62C9F] to-[#7533A8]  text-white font-Thai ">
             <span className=" text-2xl align-middle">ส่งแก้ไข</span>
@@ -638,7 +643,7 @@ const data = JSON.stringify({
               <p className=" absolute top-96 lg:mr-[600px] lg:mt-[600px] hidden lg:flex px-6 w-60 py-5  gap-2 font-semibold text-transparent bg-clip-text bg-gradient-to-b from-[#D738A4] to-[#FFDD77] font-Thai text-6xl ">ชมรมนี้</p>
               <p className=" absolute top-96 lg:mr-[660px] lg:mt-[660px] hidden lg:flex px-14 w-60 py-5 gap-2 font-semibold  text-transparent bg-clip-text bg-gradient-to-b from-[#D738A4] to-[#FFDD77] font-Thai text-4xl ">ทำอะไร</p>
               <p className=" absolute top-96 w-[200px] mt-[547px] leading-loose md:mr-[550px] sm:mr-[150px] font-semibold text-transparent bg-clip-text bg-gradient-to-b from-[#D738A4] to-[#FFDD77] font-Thai  text-3xl  lg:hidden ">ชมรมนี้ทำอะไร ?</p>
-              <svg className="absolute top-96 ml-0 lg:ml-[260px] lg:mt-[600px] md:mt-[630px] sm:mt-[630px] flex lg:w-[509px] lg:h-[309px] md:w-[772px] sm:h-[220px] " viewBox="0 0 509 307" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <svg className="absolute top-96 ml-0 lg:ml-[260px] lg:mt-[600px] md:mt-[630px] sm:mt-[630px] flex lg:w-[509px] lg:h-[309px] md:w-[772px] md:h-[468px] sm:h-[220px] " viewBox="0 0 509 307" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <rect width="509" height="307" rx="23" fill="#D9D9D9"/>
               </svg>
               <div className=" absolute top-96 lg:mt-[600px] md:mt-[630px] sm:mt-[630px] lg:ml-[260px] z-20 flex items-center justify-center lg:w-[509px] lg:h-[307px] md:w-[772px] md:h-[468px] sm:w-[363px] sm:h-[220px] ">
@@ -660,15 +665,15 @@ const data = JSON.stringify({
         <div className=" absolute top-96 inset-0 m-auto  lg:mt-[920px] mt-[1150px] flex justify-center">
           {// seccond section
          }
-          <svg className="absolute top-96 ml-0 lg:mr-[280px] lg:mt-[0px] md:mt-[70px] flex lg:w-[509px] lg:h-[309px] w-[772px] " viewBox="0 0 509 307" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <svg className="absolute top-96 ml-0 lg:mr-[280px] lg:mt-[0px] md:mt-[70px] flex lg:w-[509px]  lg:h-[309px] md:w-[772px] sm:mt-[100px] sm:h-[220px] " viewBox="0 0 509 307" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <rect width="509" height="307" rx="23" fill="#D9D9D9"/>
               </svg>
-          <p className=" absolute top-96 lg:mr-[270px] lg:mt-[310px] md:mt-[540px] md:ml-0 flex  text-[#7533A8] font-Thai text-lg opacity-75 ">ภาพบรรยากาศในชมรม</p>
+          <p className=" absolute top-96 lg:mr-[270px] lg:mt-[310px] md:mt-[540px] sm:mt-[330px] md:ml-0 flex  text-[#7533A8] font-Thai text-lg opacity-75 ">ภาพบรรยากาศในชมรม</p>
           <p className=" absolute top-96 lg:ml-[600px] lg:mt-[0px] hidden lg:flex px-6 w-60 py-5  gap-2 font-semibold text-transparent bg-clip-text bg-gradient-to-br from-[#D738A4] to-[#FFDD77] leading-[4.5rem] font-Thai text-6xl ">ประโยชน์ที่ได้รับ</p>
           <p className=" absolute top-96 lg:ml-[620px] lg:mt-[130px] hidden lg:flex px-14 w-76 py-5 gap-2 font-semibold  text-transparent bg-clip-text bg-gradient-to-b from-[#D738A4] to-[#FFDD77] font-Thai text-3xl ">จากการเข้าชมรม</p>
-          <p className=" absolute top-96 mt-[0px] leading-loose mr-[350px] font-semibold text-transparent bg-clip-text bg-gradient-to-b from-[#D738A4] to-[#FFDD77] font-Thai  text-3xl  lg:hidden ">ประโยชน์ที่ได้รับจากการเข้าชมรม</p>
-          <img className="absolute top-96 ml-0 lg:mr-[280px] lg:mt-[0px] md:mt-[70px]  flex object-cover lg:h-[307px] lg:w-[509px] md:w-[772px] md:h-[468px] sm:w-[363px] sm:h-[220px] rounded-3xl  " src={image2} />
-          <div className=" absolute top-0 lg:mt-[385px]  lg:mr-[300px] md:mt-[450px] z-20 flex items-center justify-center lg:w-[509px] lg:h-[307px] w-[772px] h-[468px]">
+          <p className=" absolute top-96 md:mt-[0px] leading-loose md:mr-[350px] font-semibold text-transparent bg-clip-text bg-gradient-to-b from-[#D738A4] to-[#FFDD77] font-Thai  text-3xl  lg:hidden ">ประโยชน์ที่ได้รับจากการเข้าชมรม</p>
+          <img className="absolute top-96 ml-0 lg:mr-[280px] lg:mt-[0px] md:mt-[70px] sm:mt-[100px] flex object-cover lg:h-[307px] lg:w-[509px] md:w-[772px] md:h-[468px] sm:w-[363px] sm:h-[220px] md:rounded-3xl sm:rounded-2xl  " src={image2} />
+          <div className=" absolute top-0 lg:mt-[385px]  lg:mr-[300px] md:mt-[450px] sm:mt-[485px] z-20 flex items-center justify-center lg:w-[509px] lg:h-[307px] md:w-[772px] md:h-[468px] sm:w-[363px] sm:h-[220px] ">
                 <label id="dropzone-file" className="flex flex-col items-center justify-center w-full h-full rounded-[30px] cursor-pointer">
                   <div className="flex flex-col items-center justify-center pt-5 pb-6 ">
                     <svg className="w-8 h-8  text-gray-500" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 20 16">
@@ -685,15 +690,15 @@ const data = JSON.stringify({
           {// Third section
          }
          
-         <svg className="absolute top-96 ml-0 lg:ml-[280px] lg:mt-[750px] md:mt-[1070px] flex lg:w-[509px] lg:h-[309px] w-[772px] " viewBox="0 0 509 307" fill="none" xmlns="http://www.w3.org/2000/svg">
+         <svg className="absolute top-96 ml-0 lg:ml-[280px] lg:mt-[750px] md:mt-[1070px] flex lg:w-[509px] lg:h-[309px] md:w-[772px] sm:mt-[1100px] sm:h-[220px] " viewBox="0 0 509 307" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <rect width="509" height="307" rx="23" fill="#D9D9D9"/>
               </svg>
-          <p className=" absolute top-96 lg:ml-[270px] lg:mt-[1060px] md:mt-[1540px] md:ml-0 flex  text-[#7533A8] font-Thai text-lg opacity-75 ">ภาพบรรยากาศในชมรม</p>
+          <p className=" absolute top-96 lg:ml-[270px] lg:mt-[1060px] md:mt-[1540px] sm:mt-[1330px] md:ml-0 flex  text-[#7533A8] font-Thai text-lg opacity-75 ">ภาพบรรยากาศในชมรม</p>
           <p className=" absolute top-96 lg:mr-[550px] lg:mt-[750px] hidden lg:flex px-6 w-72 py-5  gap-2 font-semibold text-transparent bg-clip-text bg-gradient-to-br from-[#D738A4] to-[#FFDD77] leading-[4.5rem] font-Thai text-7xl ">ผลงาน</p>
           <p className=" absolute top-96 lg:mr-[650px] lg:mt-[820px] hidden lg:flex px-14 w-60 py-5 gap-2 font-semibold  text-transparent bg-clip-text bg-gradient-to-b from-[#D738A4] to-[#FFDD77] font-Thai text-3xl ">ของชมรม</p>
-          <p className=" absolute top-96 mt-[1010px] leading-loose mr-[535px] font-semibold text-transparent bg-clip-text bg-gradient-to-b from-[#D738A4] to-[#FFDD77] font-Thai  text-3xl  lg:hidden ">ผลงานของชมรม</p>
-          <img className="absolute top-96 ml-0 lg:ml-[280px] lg:mt-[750px] md:mt-[1070px]  flex object-cover lg:h-[307px] lg:w-[509px] md:w-[772px] md:h-[468px] rounded-3xl " src={image3} />
-          <div className=" absolute top-0 lg:mt-[1135px] lg:ml-[275px] md:mt-[1450px] z-20 flex items-center justify-center lg:w-[509px] lg:h-[307px] w-[772px] h-[468px]">
+          <p className=" absolute top-96 md:mt-[1010px] sm:mt-[1000px] leading-loose md:mr-[535px] font-semibold text-transparent bg-clip-text bg-gradient-to-b from-[#D738A4] to-[#FFDD77] font-Thai  text-3xl  lg:hidden ">ผลงานของชมรม</p>
+          <img className="absolute top-96 ml-0 lg:ml-[280px] lg:mt-[750px] md:mt-[1070px] sm:mt-[1100px]  flex object-cover lg:h-[307px] lg:w-[509px] md:w-[772px] md:h-[468px] sm:w-[363px] sm:h-[220px] md:rounded-3xl sm:rounded-2xl " src={image3} />
+          <div className=" absolute top-0 lg:mt-[1135px] lg:ml-[275px] md:mt-[1450px] sm:mt-[1485px] z-20 flex items-center justify-center lg:w-[509px] lg:h-[307px] md:w-[772px] md:h-[468px] sm:w-[363px] sm:h-[220px]">
                 <label id="dropzone-file" className="flex flex-col items-center justify-center w-full h-full rounded-[30px] cursor-pointer">
                   <div className="flex flex-col items-center justify-center pt-5 pb-6  ">
                     <svg className="w-8 h-8 text-gray-500" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 20 16">
@@ -708,7 +713,7 @@ const data = JSON.stringify({
           <ClubStar/>
           </div>
 
-          <div className=" absolute top-96 lg:mt-[1400px] md:mt-[2000px] px-12 py-5 flex gap-2 lg:w-1/2  text-white font-Thai ">
+          <div className=" absolute top-96 lg:mt-[1400px] md:mt-[2000px] sm:mt-[2000px] px-12 py-5 flex gap-2 lg:w-1/2  text-white font-Thai ">
               <ReviewWidget/>
         </div>
         <div className=" absolute top-96 lg:mt-[1510px] md:mt-[2110px] sm:mt-[2110px] sm:w-[500px] px-12 py-5 flex gap-2 md:w-[850px] text-white font-Thai ">
@@ -730,7 +735,7 @@ const data = JSON.stringify({
         }
 
         <div className=" absolute top-96 inset-0 m-auto   lg:mt-[970px] md:mt-[1200px] sm:mt-[900px] flex justify-center">
-          <textarea className=" text-[#582A88] bg-white text-lg break-words border-2 font-Thai h-60 md:ml-16 sm:ml-10 md:w-[750px] sm:w-[600px] sm:h-72 bg-transparent align-top resize-none "
+          <textarea className=" text-[#582A88]  text-lg break-words border-2 font-Thai h-60 md:ml-16 sm:ml-10 md:w-[750px] sm:w-[600px] sm:h-72 bg-transparent align-top resize-none "
                 ref={clubActivityRef}
                 value={clubsactivity}
                 readOnly ={!clubActivityEditMode}
@@ -744,8 +749,8 @@ const data = JSON.stringify({
                 <button className="md:ml-10  " onClick={turnOnClubActivityEditMode}><PencilIcon/></button>
         </div>       
 
-        <div className=" absolute top-96 inset-0 m-auto  lg:mt-[1710px] mt-[2200px] flex justify-center">
-          <textarea className=" text-[#582A88] text-lg break-words border-2 font-Thai h-60 ml-16 w-[750px] bg-transparent align-top resize-none"
+        <div className=" absolute top-96 inset-0 m-auto  lg:mt-[1710px] md:mt-[2200px] sm:mt-[1900px] flex justify-center">
+          <textarea className=" text-[#582A88] text-lg break-words border-2 font-Thai h-60 md:ml-16 sm:ml-10 md:w-[750px] sm:w-[600px] sm:h-72 bg-transparent align-top resize-none"
                 ref={benefitsRef}
                 value={benefits}
                 readOnly ={!benefitsEditMode}
@@ -756,13 +761,13 @@ const data = JSON.stringify({
                 >
 
                 </textarea>
-                <button className="ml-10" onClick={turnOnBenefitsEditMode}><PencilIcon/></button>
+                <button className="md:ml-10" onClick={turnOnBenefitsEditMode}><PencilIcon/></button>
           
                 
         </div> 
 
-        <div className=" absolute top-96 inset-0 m-auto  lg:mt-[2430px] mt-[3200px] flex justify-center">
-          <textarea className=" text-[#582A88] text-lg break-words border-2 font-Thai h-60 ml-16 w-[750px] bg-transparent align-top resize-none"
+        <div className=" absolute top-96 inset-0 m-auto  lg:mt-[2430px] md:mt-[3200px] sm:mt-[2900px] flex justify-center">
+          <textarea className=" text-[#582A88] text-lg break-words border-2 font-Thai h-60 md:ml-16 sm:ml-10 md:w-[750px] sm:w-[600px] sm:h-72 bg-transparent align-top resize-none"
                 ref={workingsRef}
                 value={workings}
                 readOnly ={!workingsEditMode}
@@ -773,7 +778,7 @@ const data = JSON.stringify({
                 >
 
                 </textarea>
-                <button className="ml-10" onClick={turnOnWorkingsEditMode}><PencilIcon/></button>
+                <button className="md:ml-10" onClick={turnOnWorkingsEditMode}><PencilIcon/></button>
         </div> 
 
          {
@@ -782,7 +787,7 @@ const data = JSON.stringify({
           <div>
         <div className=" absolute top-96 inset-0 m-auto  lg:mt-[2895px] md:mt-[3730px] sm:mt-[3790px] flex justify-center">
           
-          <textarea className=" text-white bg-white text-md break-words font-Thai  md:w-[480px] md:ml-[300px] md:h-[266px] sm:w-[250px] sm:ml-[170px] sm:h-[120px] bg-transparent align-top resize-none"
+          <textarea className=" text-white  text-md break-words font-Thai  md:w-[480px] md:ml-[300px] md:h-[266px] sm:w-[250px] sm:ml-[170px] sm:h-[120px] bg-transparent align-top resize-none"
                 ref={review1Ref}
                 value={review1}
                 readOnly ={!review1EditMode}
@@ -798,10 +803,10 @@ const data = JSON.stringify({
 
         <div className=" absolute top-96 inset-0 m-auto  lg:mt-[2900px] md:mt-[3730px] sm:mt-[3790px] md:mr-[485px] sm:mr-[180px]  flex justify-center">
           <div className=" block w-[200px] ">
-          <svg className="block md:w-[153px] w-[90px]"  viewBox="0 0 153 153" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <svg className="block md:w-[153px] w-[80px]"  viewBox="0 0 153 153" fill="none" xmlns="http://www.w3.org/2000/svg">
             <rect width="152.941" height="152.941" rx="30" fill="#D9D9D9"/>
           </svg>
-          <div className=" absolute top-0 lg:mt-[0px] lg:ml-[0px] md:mt-[0px] z-20 flex items-center justify-center md:h-[153px] md:w-[153px] sm:h-[90px] sm:w-[90px] ">
+          <div className=" absolute top-0 lg:mt-[0px] lg:ml-[0px] md:mt-[0px] z-20 flex items-center justify-center md:h-[153px] md:w-[153px] sm:h-[80px] sm:w-[80px] ">
                 <label id="dropzone-file" className="flex flex-col items-center justify-center w-full h-full rounded-[30px] cursor-pointer">
                   <div className="flex flex-col items-center justify-center pt-5 pb-6  ">
                     <svg className="w-8 h-8" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 20 16">
@@ -811,9 +816,9 @@ const data = JSON.stringify({
                   <input id="dropzone-file" type="file" className="hidden" accept=".png,.jpg,jpeg" onChange={handleReview1ProfileChange} />
                 </label>
               </div>
-          <img className="absolute top-0 ml-0 lg:ml-[0px] lg:mt-[0px] md:mt-[0px] z-10  flex object-cover md:h-[153px] md:w-[153px] sm:h-[90px] sm:w-[90px] rounded-3xl " src={review1Profile} />
-          <div className=" block mt-1">
-              <input className=" text-white md:text-2xl sm:text-lg h-8 md:w-[148px] sm:w-[90px] bg-transparent font-Thai"
+          <img className="absolute top-0 ml-0 lg:ml-[0px] lg:mt-[0px] md:mt-[0px] z-10  flex object-cover md:h-[153px] md:w-[153px] sm:h-[80px] sm:w-[80px] rounded-3xl " src={review1Profile} />
+          <div className=" block md:mt-1 -mt-1">
+              <input className=" text-white md:text-2xl sm:text-md sm:w-[90px] sm:h-6 md:h-8 md:w-[148px]  bg-transparent font-Thai"
                 type="text"
                 ref={review1NameRef}
                 value={review1Name}
@@ -827,9 +832,9 @@ const data = JSON.stringify({
                 </input>
                 <button onClick={turnOnReview1NameEditMode}><PencilIcon/></button>
 
-                <p className=" block text-[#291A54] text-xl font-Thai "> เตรียมอุดม
+                <p className=" block text-[#291A54] md:text-xl md:mt-0 sm:-mt-3 sm:text-sm text-base  font-Thai "> เตรียมอุดม
               
-              <input className=" h-6 ml-1 w-[50px] text-[#291A54] bg-transparent font-Thai "
+              <input className=" sm:h-4 md:h-6 ml-1  md:w-[50px] sm:w-[30px] text-[#291A54] bg-transparent font-Thai "
                 type="text"
                 maxLength={2}
                 ref={review1GenRef}
@@ -843,8 +848,8 @@ const data = JSON.stringify({
                 </input>
                 <button onClick={turnOnReview1GenEditMode}><PencilIcon/></button>
                 </p>
-              
-              <input className=" h-6 w-[148px] text-[#291A54] bg-transparent font-Thai"
+              <div className=" flex">
+              <input className=" sm:h-4 md:h-6 md:w-[148px] items-center w-[100px] text-[#291A54] sm:text-sm md:text-base bg-transparent font-Thai"
                 type="text"
                 ref={review1ContactRef}
                 value={review1Contact}
@@ -856,7 +861,10 @@ const data = JSON.stringify({
                 >
 
                 </input>
+              
                 <button onClick={turnOnReview1ContactEditMode}><PencilIcon/></button>
+               
+                </div>
                 </div>
                 </div>
               </div>
@@ -865,9 +873,9 @@ const data = JSON.stringify({
                 //review 2----------------------------------------------------------------------------------------------------------
               }
               <div className="">
-              <div className=" absolute top-96 inset-0 m-auto  lg:mt-[3295px] lg:mr-0 md:mt-[4115px] md:mr-[270px] flex justify-center">
-                <button className=" mr-10" onClick={turnOnReview2EditMode}><PencilIcon/></button>
-                <textarea className=" text-white text-md break-words font-Thai  w-[480px] lg:mr-[280px] h-[266px] bg-transparent align-top resize-none"
+              <div className=" absolute top-96 inset-0 m-auto  lg:mt-[3295px] lg:mr-0 md:mt-[4115px] sm:mt-[4090px] md:mr-[270px] flex justify-center">
+                <button className=" md:mr-10 sm:mr-5" onClick={turnOnReview2EditMode}><PencilIcon/></button>
+                <textarea className=" text-white text-md break-words font-Thai  md:w-[480px] md:ml-[300px] md:h-[266px] sm:w-[250px] sm:mr-[170px] sm:h-[120px] bg-transparent align-top resize-none"
                 ref={review2Ref}
                 value={review2}
                 readOnly ={!review2EditMode}
@@ -881,12 +889,12 @@ const data = JSON.stringify({
                 
               </div>
 
-              <div className=" absolute top-96 inset-0 m-auto  lg:mt-[3300px] md:mt-[4120px] ml-[550px] flex justify-center">
-                <div className=" block">
-                  <svg className="block" width="153" height="153" viewBox="0 0 153 153" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <div className=" absolute top-96 inset-0 m-auto  lg:mt-[3300px] md:mt-[4120px] sm:mt-[4090px] md:ml-[550px] sm:ml-[300px] flex justify-center">
+                <div className=" block   ">
+                  <svg className="block md:w-[153px] w-[80px] md:ml-0 sm:ml-[20px]"  viewBox="0 0 153 153" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <rect width="152.941" height="152.941" rx="30" fill="#D9D9D9"/>
                   </svg>
-                  <div className=" absolute top-0 lg:mt-[0px] lg:ml-[0px] md:mt-[0px] z-20 flex items-center justify-center h-[153px] w-[153px] ">
+                  <div className=" absolute top-0 lg:mt-[0px] lg:ml-[0px] md:mt-[0px] z-20 flex items-center justify-center md:h-[153px] md:w-[153px] sm:h-[80px] sm:w-[80px] md:ml-0 sm:ml-[20px] ">
                 <label id="dropzone-file" className="flex flex-col items-center justify-center w-full h-full rounded-[30px] cursor-pointer">
                   <div className="flex flex-col items-center justify-center pt-5 pb-6  z-20  ">
                     <svg className="w-8 h-8" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 20 16">
@@ -895,10 +903,10 @@ const data = JSON.stringify({
                   </div>
                   <input id="dropzone-file" type="file" className="hidden" accept=".png,.jpg,jpeg" onChange={handleReview2ProfileChange} />
                 </label>
-                <img className="absolute top-0 ml-0 lg:ml-[0px] lg:mt-[0px] md:mt-[0px] z-10  flex object-cover h-[153px] w-[153px] rounded-3xl " src={review2Profile} />
+                <img className="absolute top-0 ml-0 lg:ml-[0px] lg:mt-[0px] md:mt-[0px] z-10  flex object-cover md:h-[153px] md:w-[153px] sm:h-[80px] sm:w-[80px] md:rounded-3xl sm:rounded-2xl " src={review2Profile} />
               </div>
-                  <div className=" block mt-1">
-              <input className=" text-white text-end text-2xl h-8 w-[148px] bg-transparent font-Thai"
+                  <div className=" block md:mt-1 -mt-1">
+              <input className=" text-white md:text-2xl sm:text-md md:ml-0 sm:ml-[10px] sm:w-[90px] sm:h-6 md:h-8 md:w-[148px]  bg-transparent font-Thai text-end"
                 type="text"
                 ref={review2NameRef}
                 value={review2Name}
@@ -912,9 +920,9 @@ const data = JSON.stringify({
                 </input>
                 <button onClick={turnOnReview2NameEditMode}><PencilIcon/></button>
 
-                <p className=" block text-[#291A54] text-xl font-Thai text-end "> เตรียมอุดม
+                <p className=" block text-[#291A54] md:text-xl md:mt-0 sm:-mt-3 sm:text-sm text-base  md:mr-0  font-Thai text-end "> เตรียมอุดม
               
-              <input className=" h-[28px] ml-1 w-[25px] text-[#291A54] text-end bg-transparent font-Thai"
+              <input className=" sm:h-4 md:h-6 ml-1  md:w-[50px] sm:w-[19px] text-[#291A54] bg-transparent font-Thai text-end"
                 type="text"
                 maxLength={2}
                 ref={review2GenRef}
@@ -928,8 +936,8 @@ const data = JSON.stringify({
                 </input>
                 <button onClick={turnOnReview2GenEditMode}><PencilIcon/></button>
                 </p>
-              
-              <input className=" h-6 w-[148px] text-end text-[#291A54] bg-transparent font-Thai"
+                <div className=" flex">
+              <input className=" sm:h-4 md:h-6 md:w-[148px] items-center  w-[100px] text-[#291A54] sm:text-sm md:text-base bg-transparent font-Thai text-end"
                 type="text"
                 ref={review2ContactRef}
                 value={review2Contact}
@@ -942,6 +950,7 @@ const data = JSON.stringify({
 
                 </input>
                 <button onClick={turnOnReview2ContactEditMode}><PencilIcon/></button>
+                </div>
                 </div>
                 </div>
               </div>
@@ -965,12 +974,12 @@ const data = JSON.stringify({
                 </textarea>
                 <button className="md:ml-10 sm:ml-5" onClick={turnOnReview3EditMode}><PencilIcon/></button>
         </div>
-        <div className=" absolute top-96 inset-0 m-auto  lg:mt-[3700px] md:mt-[4520px] mt-[1200px] mr-[485px] flex justify-center">
-                <div className=" block">
-                  <svg className="block" width="153" height="153" viewBox="0 0 153 153" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <div className=" absolute top-96 inset-0 m-auto  lg:mt-[3700px] md:mt-[4520px] sm:mt-[4390px] md:mr-[485px] sm:mr-[180px] flex justify-center">
+                <div className=" block w-[200px]">
+                  <svg className="block md:w-[153px] w-[80px]"  viewBox="0 0 153 153" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <rect width="152.941" height="152.941" rx="30" fill="#D9D9D9"/>
                   </svg>
-                  <div className=" absolute top-0 lg:mt-[0px] lg:ml-[0px] md:mt-[0px] z-20 flex items-center justify-center h-[153px] w-[153px] ">
+                  <div className=" absolute top-0 lg:mt-[0px] lg:ml-[0px] md:mt-[0px] z-20 flex items-center justify-center md:h-[153px] md:w-[153px] sm:h-[80px] sm:w-[80px] ">
                 <label id="dropzone-file" className="flex flex-col items-center justify-center w-full h-full rounded-[30px] cursor-pointer">
                   <div className="flex flex-col items-center justify-center pt-5 pb-6   ">
                     <svg className="w-8 h-8 text-gray-500" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 20 16">
@@ -980,9 +989,9 @@ const data = JSON.stringify({
                   <input id="dropzone-file" type="file" className="hidden" accept=".png,.jpg,jpeg" onChange={handleReview3ProfileChange} />
                 </label>
               </div>
-          <img className="absolute top-0 ml-0 lg:ml-[0px] lg:mt-[0px] md:mt-[0px] z-10  flex object-cover h-[153px] w-[153px]  rounded-3xl " src={review3Profile} />
-                  <div className=" block mt-1">
-              <input className=" text-white text-2xl h-8 w-[148px] bg-transparent font-Thai"
+          <img className="absolute top-0 ml-0 lg:ml-[0px] lg:mt-[0px] md:mt-[0px] z-10  flex object-cover md:h-[153px] md:w-[153px] sm:h-[80px] sm:w-[80px]  rounded-3xl " src={review3Profile} />
+                  <div className=" block md:mt-1 -mt-1">
+              <input className=" text-white md:text-2xl sm:text-md sm:w-[90px] sm:h-6 md:h-8 md:w-[148px]  bg-transparent font-Thai"
                 type="text"
                 ref={review3NameRef}
                 value={review3Name}
@@ -996,9 +1005,9 @@ const data = JSON.stringify({
                 </input>
                 <button onClick={turnOnReview3NameEditMode}><PencilIcon/></button>
 
-                <p className=" block text-[#291A54] text-xl font-Thai "> เตรียมอุดม
+                <p className=" block text-[#291A54] md:text-xl md:mt-0 sm:-mt-3 sm:text-sm text-base  font-Thai "> เตรียมอุดม
               
-              <input className=" h-6 ml-1 w-[50px] text-[#291A54] bg-transparent font-Thai"
+              <input className=" sm:h-4 md:h-6 ml-1  md:w-[50px] sm:w-[30px] text-[#291A54] bg-transparent font-Thai"
                 type="text"
                 maxLength={2}
                 ref={review3GenRef}
@@ -1012,8 +1021,8 @@ const data = JSON.stringify({
                 </input>
                 <button onClick={turnOnReview3GenEditMode}><PencilIcon/></button>
                 </p>
-              
-              <input className=" h-6 w-[148px] text-[#291A54] bg-transparent font-Thai"
+                <div className=" flex">
+              <input className=" sm:h-4 md:h-6 md:w-[148px] items-center w-[100px] text-[#291A54] sm:text-sm md:text-base bg-transparent font-Thai"
                 type="text"
                 ref={review3ContactRef}
                 value={review3Contact}
@@ -1028,8 +1037,10 @@ const data = JSON.stringify({
                 <button onClick={turnOnReview3ContactEditMode}><PencilIcon/></button>
                 </div>
                 </div>
+                </div>
               </div>
         </div>
         </div>
+        </>
     )
 }
