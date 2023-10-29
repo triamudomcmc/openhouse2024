@@ -38,7 +38,7 @@ export default function Navbar() {
       </div>
       <div className=" text-center py-2 ">
           <Link href="/account" className={inSession ? " flex text-center" : "hidden"} > Account </Link>
-          <Link href="/login" className={inSession ? " hidden " : " flex text-center"} > Login </Link>
+          <Link href="/Login" className={inSession ? " hidden " : " flex text-center"} > Login </Link>
       </div>
     </div>
     </nav>

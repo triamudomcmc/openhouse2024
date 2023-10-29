@@ -82,7 +82,7 @@ export default function ProgramEdit() {
   const { data: session } = useSession({
     required: true,
     onUnauthenticated() {
-      router.push('/login'); // The user is not authenticated, handle it here.
+      router.push('/Login'); // The user is not authenticated, handle it here.
     },
   });
 

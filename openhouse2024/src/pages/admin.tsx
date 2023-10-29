@@ -103,7 +103,7 @@ export default function Adminpanel() {
   const { data: session } = useSession({
     required: true,
     onUnauthenticated() {
-      router.push("/login");
+      router.push("/Login");
     },
   });
 
