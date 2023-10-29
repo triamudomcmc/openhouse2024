@@ -19,7 +19,7 @@ import Alert from "@mui/material/Alert";
 import AlertTitle from "@mui/material/AlertTitle";
 import FormData from "form-data";
 
-export default function NewEdit() {
+export default function ProgramEdit() {
   const [clubs, setClubs] = useState("");
   const [member, setMember] = useState("");
   const [ig, setIg] = useState("");
@@ -354,7 +354,7 @@ export default function NewEdit() {
       })
       .catch((error) => {
         console.log(error);
-        router.push("");
+        router.push("/club");
       });
   }
 
@@ -655,74 +655,54 @@ export default function NewEdit() {
   }
 
   return (
-    <>
-      <div className=" bg-[#5A2561] h-[4600px] w-full ">
-        <div className="hidden lg:block  lg:w-screen lg:-z-10">
-          <ClubBg />
+    <div className=" bg-[#5A2561] h-full sm:min-h-[3500px]">
+      <div className=" relative w-full top-0 left-0">
+        <div className=" lg:block hidden">
+        <ClubBg />
         </div>
-        <div className=" block w-screen lg:hidden -z-10">
+        <div className=" lg:hidden block">
           <ClubBgM />
         </div>
-        <div className=" flex justify-center z-0">
-        <div className=" absolute left-1/2  md:top-[400px] sm:top-[400px] -translate-x-1/2 md:w-2/3 sm:w-full ">
-            <div className=" w-full justify-center flex">
-              <button
-                onClick={back}
-                className="md:px-12 py-2 flex gap-2 align-middle   text-[#55247B] font-Thai "
-              >
-                <BackArrow />
-                <span className=" ml-3 text-2xl align-middle">ย้อนกลับ</span>
-              </button>
-            </div>
-            <div className="w-full justify-center flex">
-              <button
-                onClick={summit}
-                className="px-12 py-2 flex gap-2 align-middle bg-gradient-to-r rounded-full from-[#D62C9F] to-[#7533A8]  text-white font-Thai "
-              >
-                <span className=" text-2xl align-middle">ส่งแก้ไข</span>
-              </button>
-            </div>
-        </div>
+        <div className=" flex justify-center">
+          <div className=" absolute md:top-[8%] sm:top-[5%] flex w-5/6 justify-evenly items-center">
+            <button className=" flex" onClick={back}>
+              <BackArrow />
+              <span className=" pl-2  text-2xl align-middle text-[#55247B]">
+                ย้อนกลับ
+              </span>
+            </button>
 
-          <div
-            className={editSuccess ? " fixed z-50 right-4 bottom-4" : "hidden"}
-          >
-            <Alert severity="success">
-              <AlertTitle>Success</AlertTitle>
-              ระบบได้บันทึกข้อมูลของท่านแล้ว
-            </Alert>
+            <button className=" text-white px-6 py-3 bg-gradient-to-r from-[#7533A8] to-[#D738A4] rounded-full " onClick={summit}>
+              ส่งการแก้ไข
+            </button>
           </div>
-          <div className={editFail ? " fixed z-50 right-4 bottom-4" : "hidden"}>
-            <Alert severity="error">
-              <AlertTitle>error</AlertTitle>
-              โปรดตรวจสอบข้อมูลแล้วลองอีกครั้ง
-            </Alert>
-          </div>
-          <div className=" absolute mt-32 top-96 flex justify-center">
-            <p className="  p-6   font-extrabold text-transparent md:text-5xl sm:text-4xl bg-clip-text break-words w-[80vw] bg-gradient-to-b from-[#81109D] to-[#D738A4] py-5 font-Thai text-center mx-10 z-10">
-              {" "}
+        </div>
+        <div className=" absolute md:top-[10%] sm:top-[8%] flex w-full justify-center">
+          <div className=" absolute w-5/6  ">
+            <p className="  p-6   font-extrabold text-transparent md:text-5xl sm:text-3xl bg-clip-text break-words bg-gradient-to-b from-[#81109D] to-[#D62C9F]  from-40% to-100% py-5 font-Thai text-center z-10">
               ชมรม{clubs}
             </p>
-
-            <div className=" flex text-white md:w-[500px] sm:w-[350px] sm:-ml-2 md:ml-2 left-1/2 absolute -translate-x-1/2  font-Thai mt-[150px] justify-between ">
-              <div className=" align-middle flex lg:ml-[20px] lg:mr-[40px] md:ml-[40px] md:mr-[20px] sm:ml-[20px] sm:mr-[10px]">
-                <svg
-                  className=" w-[150px] "
-                  viewBox="0 0 100 100"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <rect width="100" height="100" rx="23" fill="#D9D9D9" />
-                </svg>
-              </div>
-              <div className=" absolute w-[150px] h-[150px] mt-[8px] lg:ml-[20px] lg:mr-[40px] md:ml-[40px] md:mr-[20px] sm:ml-[20px] sm:mr-[10px] z-20  ">
+          </div>
+        </div>
+        <div className=" absolute lg:top-[13%] md:top-[12%] sm:top-[14%] flex w-full justify-center">
+          <div className=" absolute w-1/2 flex  justify-center gap-2 ">
+            <div className=" relative z-0 min-w-[200px] flex justify-center">
+              <svg
+                className=" w-[100px] relative "
+                viewBox="0 0 100 100"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <rect width="100" height="100" rx="23" fill="#D9D9D9" />
+              </svg>
+              <div className=" absolute w-[100px] h-[100px] z-10 top-1/2 -translate-y-1/2 left-1/2 -translate-x-1/2">
                 <label
                   id="dropzone-file"
                   className="flex flex-col items-center justify-center w-full h-full border-2rounded-[30px] cursor-pointer"
                 >
-                  <div className="flex flex-col items-center justify-center pt-5 pb-6  ">
+                  <div className="flex    ">
                     <svg
-                      className="w-8 h-8 text-gray-500"
+                      className="w-8 h-8 text-gray-500 "
                       aria-hidden="true"
                       xmlns="http://www.w3.org/2000/svg"
                       fill="none"
@@ -746,791 +726,838 @@ export default function NewEdit() {
                   />
                 </label>
               </div>
-              <img
-                className="absolute top-0  z-10 lg:ml-[20px] lg:mr-[40px] md:ml-[40px] md:mr-[20px] sm:ml-[20px] sm:mr-[10px] object-cover sm:w-[150px] sm:h-[150px] md:rounded-3xl sm:rounded-2xl "
-                src={logo}
-              />
-              <div className="  my-1 align-middle flex ">
-                <svg
-                  className=" w-[6px] "
-                  viewBox="0 0 4 86"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    d="M2 2L2 84"
-                    stroke="url(#paint0_linear_250_1393)"
-                    stroke-width="4"
-                    stroke-linecap="round"
-                  />
-                  <defs>
-                    <linearGradient
-                      id="paint0_linear_250_1393"
-                      x1="-1.00003"
-                      y1="-21.1529"
-                      x2="-1.00003"
-                      y2="84"
-                      gradientUnits="userSpaceOnUse"
-                    >
-                      <stop stop-color="#D738A4" />
-                      <stop offset="1" stop-color="#7533A8" />
-                    </linearGradient>
-                  </defs>
-                </svg>
-              </div>
-              <div className=" mt-1 max-md:ml-3 ">
-                <p className=" flex text-[#8133A7] text-xl font-Thai  ">
-                  {" "}
-                  สมาชิก:
-                  <input
-                    className=" h-7 w-[80px] text-xl bg-transparent font-Thai"
-                    type="text"
-                    ref={memberRef}
-                    value={member}
-                    onClick={turnOnMemberEditMode}
-                    defaultValue=""
-                    onBlur={() => setMemberEditMode(false)}
-                    onChange={handleMemberChange}
-                  ></input>
-                  <button onClick={turnOnMemberEditMode}>
-                    <PencilIcon />
-                  </button>
-                </p>
-                <p className=" flex text-[#8133A7] text-xl font-Thai ">
-                  {" "}
-                  IG:
-                  <input
-                    className=" h-7 w-[154px] sm:w-[100px] text-xl bg-transparent font-Thai"
-                    type="text"
-                    ref={igRef}
-                    value={ig}
-                    onClick={turnOnIgEditMode}
-                    defaultValue=""
-                    onBlur={() => setIgEditMode(false)}
-                    onChange={handleIgChange}
-                  ></input>
-                  <button onClick={turnOnIgEditMode}>
-                    <PencilIcon />
-                  </button>
-                </p>
-                <p className=" flex text-[#8133A7] text-xl font-Thai ">
-                  {" "}
-                  FB:
-                  <input
-                    className=" h-7 w-[154px] sm:w-[100px] bg-transparent font-Thai"
-                    type="text"
-                    ref={fbRef}
-                    value={fb}
-                    onClick={turnOnFbEditMode}
-                    defaultValue=""
-                    onBlur={() => setIgEditMode(false)}
-                    onChange={handleFbChange}
-                  ></input>
-                  <button onClick={turnOnFbEditMode}>
-                    <PencilIcon />
-                  </button>
-                </p>
-                <p className=" flex text-[#8133A7] w-[40px] text-xl font-Thai ">
-                  {" "}
-                  อื่นๆ:
-                  <input
-                    className=" h-7 w-[154px] sm:w-[100px] bg-transparent font-Thai"
-                    type="text"
-                    ref={otherRef}
-                    value={other}
-                    onClick={turnOnOtherEditMode}
-                    defaultValue=""
-                    onBlur={() => setIgEditMode(false)}
-                    onChange={handleOtherChange}
-                  ></input>
-                  <button onClick={turnOnOtherEditMode}>
-                    <PencilIcon />
-                  </button>
-                </p>
-              </div>
+            </div>
+            <div>
+              <svg
+                className=" w-[6px] "
+                viewBox="0 0 4 86"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M2 2L2 84"
+                  stroke="url(#paint0_linear_250_1393)"
+                  stroke-width="4"
+                  stroke-linecap="round"
+                />
+                <defs>
+                  <linearGradient
+                    id="paint0_linear_250_1393"
+                    x1="-1.00003"
+                    y1="-21.1529"
+                    x2="-1.00003"
+                    y2="84"
+                    gradientUnits="userSpaceOnUse"
+                  >
+                    <stop stop-color="#D738A4" />
+                    <stop offset="1" stop-color="#7533A8" />
+                  </linearGradient>
+                </defs>
+              </svg>
+            </div>
+            <div className="w-[200px]">
+              <p className=" flex  text-[#8133A7] text-xl  font-Thai  ">
+                {" "}
+                สมาชิก:
+                <input
+                  className=" h-7 text-xl bg-transparent w-[100px] font-Thai"
+                  type="text"
+                  ref={memberRef}
+                  value={member}
+                  onClick={turnOnMemberEditMode}
+                  defaultValue=""
+                  onBlur={() => setMemberEditMode(false)}
+                  onChange={handleMemberChange}
+                ></input>
+                <button onClick={turnOnMemberEditMode}>
+                  <PencilIcon />
+                </button>
+              </p>
+              <p className=" flex text-[#8133A7] w-[200px] text-xl font-Thai ">
+                {" "}
+                IG:
+                <input
+                  className=" h-7 w-[154px] sm:w-[100px] text-xl bg-transparent font-Thai"
+                  type="text"
+                  ref={igRef}
+                  value={ig}
+                  onClick={turnOnIgEditMode}
+                  defaultValue=""
+                  onBlur={() => setIgEditMode(false)}
+                  onChange={handleIgChange}
+                ></input>
+                <button onClick={turnOnIgEditMode}>
+                  <PencilIcon />
+                </button>
+              </p>
+              <p className=" flex text-[#8133A7] w-[200px] text-xl font-Thai ">
+                {" "}
+                FB:
+                <input
+                  className=" h-7 w-[154px] sm:w-[100px] bg-transparent font-Thai"
+                  type="text"
+                  ref={fbRef}
+                  value={fb}
+                  onClick={turnOnFbEditMode}
+                  defaultValue=""
+                  onBlur={() => setIgEditMode(false)}
+                  onChange={handleFbChange}
+                ></input>
+                <button onClick={turnOnFbEditMode}>
+                  <PencilIcon />
+                </button>
+              </p>
+              <p className=" flex text-[#8133A7] w-[200px] text-xl font-Thai ">
+                {" "}
+                อื่นๆ:
+                <input
+                  className=" h-7 w-[154px] sm:w-[100px] bg-transparent font-Thai"
+                  type="text"
+                  ref={otherRef}
+                  value={other}
+                  onClick={turnOnOtherEditMode}
+                  defaultValue=""
+                  onBlur={() => setIgEditMode(false)}
+                  onChange={handleOtherChange}
+                ></input>
+                <button onClick={turnOnOtherEditMode}>
+                  <PencilIcon />
+                </button>
+              </p>
             </div>
           </div>
-          <div className=" absolute top-96 mt-[420px] justify-center flex md:ml-[30px]  md:w-[600px] sm:w-[400px]  text-white font-Thai ">
+        </div>
+        <div className=" flex justify-center w-full absolute lg:top-[16%] md:top-[14%] sm:top-[20%]">
+          <div className=" md:w-1/2 sm:w-full ">
             <ClubWidget />
           </div>
-          {
-            // first section
-          }
-          <div className=" absolute top-0 left-0 w-full ">
-            <p className=" absolute top-96 lg:ml-[250px] lg:mt-[600px] hidden lg:flex w-60 py-5  gap-2 font-semibold text-transparent bg-clip-text bg-gradient-to-b from-[#D738A4] to-[#FFDD77] font-Thai text-left text-6xl ">
-              ชมรมนี้
-            </p>
-            <p className=" absolute top-96 lg:ml-[250px] lg:mt-[660px] hidden lg:flex  w-60 py-5 gap-2 font-semibold  text-transparent bg-clip-text bg-gradient-to-b from-[#D738A4] to-[#FFDD77] font-Thai text-left text-4xl ">
-              ทำอะไร
-            </p>
-            <p className=" absolute top-96 md:mt-[550px] sm:mt-[550px] leading-loose md:pr-[550px] w-full font-semibold text-transparent bg-clip-text bg-gradient-to-b from-[#D738A4] to-[#FFDD77] font-Thai text-center  text-3xl  lg:hidden ">
-            ชมรมนี้ทำอะไร
-          </p>
-          </div>
-          <svg
-            className="absolute top-96 ml-0 lg:ml-[260px] lg:mt-[600px] md:mt-[630px] sm:mt-[630px] flex lg:w-[509px] lg:h-[309px] md:w-[772px] md:h-[468px] sm:h-[220px] "
-            viewBox="0 0 509 307"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <rect width="509" height="307" rx="23" fill="#D9D9D9" />
-          </svg>
-          <div className=" absolute top-96 lg:mt-[600px] md:mt-[630px] sm:mt-[630px] lg:ml-[260px] z-20 flex items-center justify-center lg:w-[509px] lg:h-[307px] md:w-[772px] md:h-[468px] sm:w-[363px] sm:h-[220px] ">
-            <label
-              id="dropzone-file"
-              className="flex flex-col items-center justify-center w-full h-full border-2rounded-[30px] cursor-pointer"
-            >
-              <div className="flex flex-col items-center justify-center pt-5 pb-6  ">
-                <svg
-                  className="w-8 h-8 text-gray-500"
-                  aria-hidden="true"
-                  xmlns="http://www.w3.org/2000/svg"
-                  fill="none"
-                  viewBox="0 0 20 16"
-                >
-                  <path
-                    stroke="currentColor"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    stroke-width="2"
-                    d="M13 13h3a3 3 0 0 0 0-6h-.025A5.56 5.56 0 0 0 16 6.5 5.5 5.5 0 0 0 5.207 5.021C5.137 5.017 5.071 5 5 5a4 4 0 0 0 0 8h2.167M10 15V6m0 0L8 8m2-2 2 2"
-                  />
-                </svg>
-              </div>
-              <input
-                id="dropzone-file"
-                type="file"
-                className="hidden"
-                accept=".png,.jpg,jpeg"
-                onChange={handleImage1Change}
-              />
-            </label>
-          </div>
-          <p className=" absolute top-96 lg:ml-[270px] lg:mt-[910px] md:mt-[1100px] sm:mt-[860px] z-50 md:ml-0 flex  text-[#7533A8]  font-Thai text-lg opacity-75 ">
-            ภาพบรรยากาศในชมรม
-          </p>
-          <img
-            className="absolute top-96 ml-0 lg:ml-[260px] lg:mt-[600px] md:mt-[630px] sm:mt-[630px] z-10  flex object-cover lg:h-[307px] lg:w-[509px] md:w-[772px] md:h-[468px] sm:w-[363px] sm:h-[220px] md:rounded-3xl sm:rounded-2xl "
-            src={image1}
-          />
-          <div className=" lg:flex absolute top-96 mr-[680px] mt-[730px] hidden  ">
-            <ClubStar />
-          </div>
         </div>
-        <div className=" absolute top-96 inset-0 m-auto  lg:mt-[920px] mt-[1150px] flex justify-center">
-          {
-            // seccond section
-          }
-          <svg
-            className="absolute top-96 ml-0 lg:mr-[280px] lg:mt-[0px] md:mt-[70px] sm:mt-[100px] flex lg:w-[509px]   lg:h-[309px] md:w-[772px] md:h-[468px] sm:h-[220px] "
-            viewBox="0 0 509 307"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <rect width="509" height="307" rx="23" fill="#D9D9D9" />
-          </svg>
-          <p className=" absolute top-96 lg:mr-[270px] lg:mt-[310px] md:mt-[540px] sm:mt-[330px] md:ml-0 flex  text-[#7533A8] font-Thai text-lg opacity-75 ">
-            ภาพบรรยากาศในชมรม
-          </p>
-          <p className=" absolute top-96 lg:ml-[600px] lg:mt-[0px] hidden lg:flex px-6 w-60 py-5  gap-2 font-semibold text-transparent bg-clip-text bg-gradient-to-br from-[#D738A4] to-[#FFDD77] leading-[4.5rem] font-Thai text-6xl ">
-            ประโยชน์ที่ได้รับ
-          </p>
-          <p className=" absolute top-96 lg:ml-[620px] lg:mt-[130px] hidden lg:flex px-14 w-76 py-5 gap-2 font-semibold  text-transparent bg-clip-text bg-gradient-to-b from-[#D738A4] to-[#FFDD77] font-Thai text-3xl ">
-            จากการเข้าชมรม
-          </p>
-          <p className=" absolute top-96 md:mt-[0px] sm:mt-[20px] leading-loose md:mr-[350px] font-semibold text-transparent bg-clip-text bg-gradient-to-b from-[#D738A4] to-[#FFDD77] font-Thai  md:text-3xl  sm:text-2xl lg:hidden ">
-            ประโยชน์ที่ได้รับจากการเข้าชมรม
-          </p>
-          <img
-            className="absolute top-96 ml-0 lg:mr-[280px] lg:mt-[0px] md:mt-[70px] sm:mt-[100px] flex object-cover lg:h-[307px] lg:w-[509px] md:w-[772px] md:h-[468px] sm:w-[363px] sm:h-[220px] md:rounded-3xl sm:rounded-2xl  "
-            src={image2}
-          />
-          <div className=" absolute top-0 lg:mt-[385px]  lg:mr-[300px] md:mt-[450px] sm:mt-[485px] z-20 flex items-center justify-center lg:w-[509px] lg:h-[307px] md:w-[772px] md:h-[468px] sm:w-[363px] sm:h-[220px] ">
-            <label
-              id="dropzone-file"
-              className="flex flex-col items-center justify-center w-full h-full rounded-[30px] cursor-pointer"
-            >
-              <div className="flex flex-col items-center justify-center pt-5 pb-6 ">
-                <svg
-                  className="w-8 h-8  text-gray-500"
-                  aria-hidden="true"
-                  xmlns="http://www.w3.org/2000/svg"
-                  fill="none"
-                  viewBox="0 0 20 16"
-                >
-                  <path
-                    stroke="currentColor"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    stroke-width="2"
-                    d="M13 13h3a3 3 0 0 0 0-6h-.025A5.56 5.56 0 0 0 16 6.5 5.5 5.5 0 0 0 5.207 5.021C5.137 5.017 5.071 5 5 5a4 4 0 0 0 0 8h2.167M10 15V6m0 0L8 8m2-2 2 2"
-                  />
-                </svg>
-              </div>
-              <input
-                id="dropzone-file"
-                type="file"
-                className="hidden"
-                accept=".png,.jpg,jpeg"
-                onChange={handleImage2Change}
-              />
-            </label>
-          </div>
-          <div className=" lg:flex absolute top-96 ml-[675px] mt-[200px] hidden  ">
-            <ClubStar />
-          </div>
-          {
-            // Third section
-          }
-
-          <svg
-            className="absolute top-96 ml-0 lg:ml-[280px] lg:mt-[750px] md:mt-[1070px] sm:mt-[1100px] flex lg:w-[509px] lg:h-[309px] md:w-[772px] md:h-[468px] sm:h-[220px] "
-            viewBox="0 0 509 307"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <rect width="509" height="307" rx="23" fill="#D9D9D9" />
-          </svg>
-          <p className=" absolute top-96 lg:ml-[270px] lg:mt-[1060px] md:mt-[1540px] sm:mt-[1330px] md:ml-0 flex  text-[#7533A8] font-Thai text-lg opacity-75 ">
-            ภาพบรรยากาศในชมรม
-          </p>
-          <p className=" absolute top-96 lg:mr-[550px] lg:mt-[750px] hidden lg:flex px-6 w-72 py-5  gap-2 font-semibold text-transparent bg-clip-text bg-gradient-to-br from-[#D738A4] to-[#FFDD77] leading-[4.5rem] font-Thai text-7xl ">
-            ผลงาน
-          </p>
-          <p className=" absolute top-96 lg:mr-[650px] lg:mt-[820px] hidden lg:flex px-14 w-60 py-5 gap-2 font-semibold  text-transparent bg-clip-text bg-gradient-to-b from-[#D738A4] to-[#FFDD77] font-Thai text-3xl ">
-            ของชมรม
-          </p>
-          <p className=" absolute top-96 md:mt-[1010px] sm:mt-[1000px] leading-loose md:mr-[535px] sm:mr-[0px] font-semibold text-transparent bg-clip-text bg-gradient-to-b from-[#D738A4] to-[#FFDD77] font-Thai  text-3xl  lg:hidden ">
-            ผลงานของชมรม
-          </p>
-          <img
-            className="absolute top-96 ml-0 lg:ml-[280px] lg:mt-[750px] md:mt-[1070px] sm:mt-[1100px]  flex object-cover lg:h-[307px] lg:w-[509px] md:w-[772px] md:h-[468px] sm:w-[363px] sm:h-[220px] md:rounded-3xl sm:rounded-2xl "
-            src={image3}
-          />
-          <div className=" absolute top-0 lg:mt-[1135px] lg:ml-[275px] md:mt-[1450px] sm:mt-[1485px] z-20 flex items-center justify-center lg:w-[509px] lg:h-[307px] md:w-[772px] md:h-[468px] sm:w-[363px] sm:h-[220px]">
-            <label
-              id="dropzone-file"
-              className="flex flex-col items-center justify-center w-full h-full rounded-[30px] cursor-pointer"
-            >
-              <div className="flex flex-col items-center justify-center pt-5 pb-6  ">
-                <svg
-                  className="w-8 h-8 text-gray-500"
-                  aria-hidden="true"
-                  xmlns="http://www.w3.org/2000/svg"
-                  fill="none"
-                  viewBox="0 0 20 16"
-                >
-                  <path
-                    stroke="currentColor"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    stroke-width="2"
-                    d="M13 13h3a3 3 0 0 0 0-6h-.025A5.56 5.56 0 0 0 16 6.5 5.5 5.5 0 0 0 5.207 5.021C5.137 5.017 5.071 5 5 5a4 4 0 0 0 0 8h2.167M10 15V6m0 0L8 8m2-2 2 2"
-                  />
-                </svg>
-              </div>
-              <input
-                id="dropzone-file"
-                type="file"
-                className="hidden"
-                accept=".png,.jpg,jpeg"
-                onChange={handleImage3Change}
-              />
-            </label>
-          </div>
-          <div className=" lg:flex absolute top-96 mr-[665px] mt-[880px] hidden  ">
-            <ClubStar />
-          </div>
-
-          <div className=" absolute top-96 lg:mt-[1400px] md:mt-[2000px] sm:mt-[2000px] px-2 py-5 flex gap-2 lg:w-1/2 w-full  text-white font-Thai ">
-            <ReviewWidget />
-          </div>
-          <div className=" absolute top-96 lg:mt-[1510px] md:mt-[2110px] sm:mt-[2110px] sm:w-[470px] px-12 py-5 flex gap-2 md:w-[850px] text-white font-Thai ">
-            <ReviewCard />
-          </div>
-
-          <div
-            className={
-              review2On
-                ? "absolute top-96 lg:mt-[1910px] md:mt-[2500px] sm:mt-[2410px] sm:w-[470px] px-12 py-5 flex gap-2 md:w-[850px] text-white font-Thai "
-                : " hidden "
+        <div className=" flex justify-center w-full absolute lg:top-[19%] md:top-[16%] sm:top-[23%]">
+          <div className=" lg:w-1/2 md:w-2/3">
+            {
+              //section1
             }
-          >
-            <ReviewCardR />
-          </div>
-
-          <div
-            className={
-              review3On
-                ? "  absolute top-96 lg:mt-[2310px] md:mt-[2900px] sm:mt-[2710px] sm:w-[470px] px-12 py-5 flex gap-2 md:w-[850px] text-white font-Thai "
-                : "hidden"
-            }
-          >
-            <ReviewCard3 />
-          </div>
-        </div>
-
-        {
-          //text area------------------------------------------------------------------------------------------------------------
-        }
-
-        <div className=" absolute top-96 inset-0 m-auto   lg:mt-[970px] md:mt-[1200px] sm:mt-[900px] flex justify-center">
-          <textarea
-            className=" text-[#582A88]  text-lg break-words border-2 font-Thai h-60 md:ml-16 sm:ml-10 md:w-[750px]  sm:w-[600px] md:h-72 sm:h-[500px] bg-transparent align-top resize-none "
-            ref={clubActivityRef}
-            value={clubsactivity}
-            onClick={turnOnClubActivityEditMode}
-            defaultValue=""
-            onBlur={() => setClubActivityEditMode(false)}
-            onChange={handleClubActivityChange}
-          ></textarea>
-          <button className="md:ml-10  " onClick={turnOnClubActivityEditMode}>
-            <PencilIcon />
-          </button>
-        </div>
-
-        <div className=" absolute top-96 inset-0 m-auto  lg:mt-[1710px] md:mt-[2200px] sm:mt-[1900px] flex justify-center">
-          <textarea
-            className=" text-[#582A88] text-lg break-words border-2 font-Thai h-60 md:ml-16 sm:ml-10 md:w-[750px] sm:w-[600px] md:h-72 sm:h-[500px] bg-transparent align-top resize-none"
-            ref={benefitsRef}
-            value={benefits}
-            onClick={turnOnBenefitsEditMode}
-            defaultValue=""
-            onBlur={() => setBenefitsEditMode(false)}
-            onChange={handleBenefitsChange}
-          ></textarea>
-          <button className="md:ml-10" onClick={turnOnBenefitsEditMode}>
-            <PencilIcon />
-          </button>
-        </div>
-
-        <div className=" absolute top-96 inset-0 m-auto  lg:mt-[2430px] md:mt-[3200px] sm:mt-[2900px] flex justify-center">
-          <textarea
-            className=" text-[#582A88] text-lg break-words border-2 font-Thai h-60 md:ml-16 sm:ml-10 md:w-[750px] sm:w-[600px] md:h-72 sm:h-[500px] bg-transparent align-top resize-none"
-            ref={workingsRef}
-            value={workings}
-            onClick={turnOnWorkingsEditMode}
-            defaultValue=""
-            onBlur={() => setWorkingsEditMode(false)}
-            onChange={handleWorkingsChange}
-          ></textarea>
-          <button className="md:ml-10" onClick={turnOnWorkingsEditMode}>
-            <PencilIcon />
-          </button>
-        </div>
-
-        {
-          //review 1----------------------------------------------------------------------------------------------------------------------------------
-        }
-        <div>
-          <div className=" absolute top-96 inset-0 m-auto  lg:mt-[2895px] md:mt-[3730px] sm:mt-[3790px] flex justify-center">
-            <textarea
-              className=" text-white  text-md break-words font-Thai  md:w-[480px] md:ml-[300px] md:h-[266px] sm:w-[250px] sm:ml-[170px] sm:h-[120px] bg-transparent align-top resize-none"
-              ref={review1Ref}
-              value={review1}
-              onClick={turnOnReview1EditMode}
-              defaultValue=""
-              onBlur={() => setReview1EditMode(false)}
-              onChange={handleReview1Change}
-            ></textarea>
-            <button
-              className="md:ml-10 sm:ml-5"
-              onClick={turnOnReview1EditMode}
-            >
-              <PencilIcon />
-            </button>
-            
-          </div>
-
-          <div className=" absolute top-96 inset-0 m-auto  lg:mt-[2900px] md:mt-[3730px] sm:mt-[3790px] md:mr-[485px] sm:mr-[160px]  flex justify-center">
-            <div className=" block w-[200px] ">
-              <svg
-                className="block md:w-[153px] w-[60px]"
-                viewBox="0 0 153 153"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <rect width="152.941" height="152.941" rx="30" fill="#D9D9D9" />
-              </svg>
-              <div className=" absolute top-0 lg:mt-[0px] lg:ml-[0px] md:mt-[0px] z-20 flex items-center justify-center md:h-[153px] md:w-[153px] sm:h-[60px] sm:w-[60px] ">
-                <label
-                  id="dropzone-file"
-                  className="flex flex-col items-center justify-center w-full h-full rounded-[30px] cursor-pointer"
+            <p className="  font-semibold text-transparent bg-clip-text bg-gradient-to-b from-[#7533A8] to-[#D62C9F] font-Thai text-center  text-3xl py-5 block w-full  lg:hidden ">
+                ชมรมนี้ทำอะไร
+              </p>
+            <div className=" flex justify-center gap-3">
+              <p className="  font-semibold text-transparent bg-clip-text bg-gradient-to-b from-[#7533A8] to-[#D62C9F] font-Thai text-left min-w-52 text-5xl py-5 hidden lg:flex ">
+                ชมรมนี้
+                <br />
+                ทำอะไร
+              </p>
+              
+              <div className=" w-auto relative  ">
+                <svg
+                  className=" lg:w-[509px] lg:h-[307px] md:w-[772px] md:h-[468px] sm:h-[220px] "
+                  viewBox="0 0 509 307"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
                 >
-                  <div className="flex flex-col items-center justify-center pt-5 pb-6  ">
-                    <svg
-                      className="w-8 h-8"
-                      aria-hidden="true"
-                      xmlns="http://www.w3.org/2000/svg"
-                      fill="none"
-                      viewBox="0 0 20 16"
-                    >
-                      <path
-                        stroke="currentColor"
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                        stroke-width="2"
-                        d="M13 13h3a3 3 0 0 0 0-6h-.025A5.56 5.56 0 0 0 16 6.5 5.5 5.5 0 0 0 5.207 5.021C5.137 5.017 5.071 5 5 5a4 4 0 0 0 0 8h2.167M10 15V6m0 0L8 8m2-2 2 2"
-                      />
-                    </svg>
-                  </div>
-                  <input
+                  <rect width="509" height="307" rx="23" fill="#D9D9D9" />
+                </svg>
+                <div className=" absolute top-0 w-full h-full">
+                  <label
                     id="dropzone-file"
-                    type="file"
-                    className="hidden"
-                    accept=".png,.jpg,jpeg"
-                    onChange={handleReview1ProfileChange}
+                    className="flex flex-col items-center justify-center w-full h-full border-2rounded-[30px] cursor-pointer"
+                  >
+                    <div className="flex flex-col items-center justify-center pt-5 pb-6  z-20 w-full h-full ">
+                      <svg
+                        className="w-8 h-8 text-gray-500"
+                        aria-hidden="true"
+                        xmlns="http://www.w3.org/2000/svg"
+                        fill="none"
+                        viewBox="0 0 20 16"
+                      >
+                        <path
+                          stroke="currentColor"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                          stroke-width="2"
+                          d="M13 13h3a3 3 0 0 0 0-6h-.025A5.56 5.56 0 0 0 16 6.5 5.5 5.5 0 0 0 5.207 5.021C5.137 5.017 5.071 5 5 5a4 4 0 0 0 0 8h2.167M10 15V6m0 0L8 8m2-2 2 2"
+                        />
+                      </svg>
+                    </div>
+                    <input
+                      id="dropzone-file"
+                      type="file"
+                      className="hidden"
+                      accept=".png,.jpg,jpeg"
+                      onChange={handleImage1Change}
+                    />
+                  </label>
+                  <p className="  text-center text-[#7533A8] ">
+                    ภาพบรรยากาศในชมรม
+                  </p>
+                </div>
+                <div className=" absolute w-full top-0">
+                  <img
+                    className=" flex object-cover lg:h-[307px] lg:w-[509px] md:w-[772px] md:h-[468px] sm:w-[363px] sm:h-[220px] md:rounded-3xl sm:rounded-2xl z-10  "
+                    src={image1}
                   />
-                </label>
+                </div>
               </div>
-              <img
-                className="absolute top-0 ml-0 lg:ml-[0px] lg:mt-[0px] md:mt-[0px] z-10  flex object-cover md:h-[153px] md:w-[153px] sm:h-[60px] sm:w-[60px] rounded-3xl sm:rounded-xl "
-                src={review1Profile}
-              />
-              <div className=" block md:mt-1 -mt-1">
-                <input
-                  className=" text-white md:text-2xl sm:text-md sm:w-[90px] sm:h-6 md:h-8 md:w-[148px]  bg-transparent font-Thai"
-                  type="text"
-                  ref={review1NameRef}
-                  value={review1Name}
-                  placeholder="ชื่อ"
-                  onClick={turnOnReview1NameEditMode}
-                  onBlur={() => setReview1NameEditMode(false)}
-                  onChange={handleReview1NameChange}
-                ></input>
-                <button onClick={turnOnReview1NameEditMode}>
-                  <PencilIcon />
-                </button>
-
-                <p className=" block text-[#291A54] md:text-xl md:mt-0 sm:-mt-3 sm:text-sm text-base  font-Thai ">
-                  {" "}
-                  เตรียมอุดม
-                  <input
-                    className=" sm:h-4 md:h-6 ml-1  md:w-[50px] sm:w-[30px] text-[#291A54] bg-transparent font-Thai "
-                    type="text"
-                    maxLength={2}
-                    ref={review1GenRef}
-                    value={review1Gen}
-                    onClick={turnOnReview1GenEditMode}
-                    onBlur={() => setReview1GenEditMode(false)}
-                    onChange={handleReview1GenChange}
-                  ></input>
-                  <button onClick={turnOnReview1GenEditMode}>
+            </div>
+            <div className=" flex justify-center mt-10">
+              <div className=" w-full  justify-center hidden md:block">
+                <textarea
+                  className=" text-[#582A88]  text-lg break-words border-2 font-Thai  md:w-full sm:w-[300px]   h-72  bg-transparent align-top resize-none "
+                  ref={clubActivityRef}
+                  value={clubsactivity}
+                  onClick={turnOnClubActivityEditMode}
+                  defaultValue=""
+                  onBlur={() => setClubActivityEditMode(false)}
+                  onChange={handleClubActivityChange}
+                ></textarea>
+                <div className=" flex justify-center">
+                  <button className="  " onClick={turnOnClubActivityEditMode}>
                     <PencilIcon />
                   </button>
-                </p>
-                <div className=" flex">
-                  <input
-                    className=" sm:h-4 md:h-6 md:w-[148px] items-center w-[100px] text-[#291A54] sm:text-sm md:text-base bg-transparent font-Thai"
-                    type="text"
-                    ref={review1ContactRef}
-                    value={review1Contact}
-                    onClick={turnOnReview1ContactEditMode}
-                    placeholder="ช่องทางการติดต่อ"
-                    onBlur={() => setReview1ContactEditMode(false)}
-                    onChange={handleReview1ContactChange}
-                  ></input>
-
-                  <button onClick={turnOnReview1ContactEditMode}>
+                </div>
+              </div>
+              <div className=" w-full  justify-center flex md:hidden">
+                <textarea
+                  className=" text-[#582A88]  text-lg break-words border-2 font-Thai  md:w-full sm:w-[300px]   h-72 bg-transparent align-top resize-none "
+                  ref={clubActivityRef}
+                  value={clubsactivity}
+                  onClick={turnOnClubActivityEditMode}
+                  defaultValue=""
+                  onBlur={() => setClubActivityEditMode(false)}
+                  onChange={handleClubActivityChange}
+                ></textarea>
+                <div className=" flex justify-center">
+                  <button className="  " onClick={turnOnClubActivityEditMode}>
                     <PencilIcon />
                   </button>
                 </div>
               </div>
             </div>
-          </div>
-          <div className=" justify-center flex">
-            <button
-              className={
-                review2On
-                  ? "hidden"
-                  : " absolute top-0 md:mt-[3600px] sm:mt-[4400px] text-3xl bg-gradient-to-r from-[#7533A8] to-[#D738A4] w-[200px] h-[50px] rounded-[200px] text-white "
+            {
+              //section2
+            }<p className="  font-semibold text-transparent bg-clip-text bg-gradient-to-b from-[#7533A8] to-[#D62C9F] font-Thai text-center  text-2xl block w-full py-5  lg:hidden ">
+              ประโยชน์ที่ได้รับจากการเข้าชมรม
+              </p>
+            <div className=" flex justify-center gap-3 lg:mt-10">
+              <div className=" w-auto relative  ">
+                <svg
+                  className=" lg:w-[509px] lg:h-[307px] md:w-[772px] md:h-[468px] sm:h-[220px] "
+                  viewBox="0 0 509 307"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <rect width="509" height="307" rx="23" fill="#D9D9D9" />
+                </svg>
+                <div className=" absolute left-0 top-0 w-full h-full z-20">
+                  <label
+                    id="dropzone-file"
+                    className="flex flex-col items-center justify-center w-full h-full border-2rounded-[30px] cursor-pointer"
+                  >
+                    <div className="flex flex-col items-center justify-center pt-5 pb-6  ">
+                      <svg
+                        className="w-8 h-8 text-gray-500"
+                        aria-hidden="true"
+                        xmlns="http://www.w3.org/2000/svg"
+                        fill="none"
+                        viewBox="0 0 20 16"
+                      >
+                        <path
+                          stroke="currentColor"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                          stroke-width="2"
+                          d="M13 13h3a3 3 0 0 0 0-6h-.025A5.56 5.56 0 0 0 16 6.5 5.5 5.5 0 0 0 5.207 5.021C5.137 5.017 5.071 5 5 5a4 4 0 0 0 0 8h2.167M10 15V6m0 0L8 8m2-2 2 2"
+                        />
+                      </svg>
+                    </div>
+                    <input
+                      id="dropzone-file"
+                      type="file"
+                      className="hidden"
+                      accept=".png,.jpg,jpeg"
+                      onChange={handleImage2Change}
+                    />
+                  </label>
+                  <p className="  text-center text-[#7533A8] ">
+                    ภาพบรรยากาศในชมรม
+                  </p>
+                </div>
+                <div className=" absolute w-full top-0 z-10">
+                  <img
+                    className=" flex object-cover lg:h-[307px] lg:w-[509px] md:w-[772px] md:h-[468px] sm:w-[363px] sm:h-[220px] md:rounded-3xl sm:rounded-2xl z-10  "
+                    src={image2}
+                  />
+                </div>
+              </div>
+              <p className="  font-semibold text-transparent bg-clip-text bg-gradient-to-b from-[#7533A8] to-[#D62C9F] font-Thai text-left min-w-52 text-5xl py-5 hidden lg:block ">
+                ประโยชน์
+                <br />
+                ที่ได้รับ
+                <p className="  font-semibold text-transparent bg-clip-text bg-gradient-to-b from-[#7533A8] to-[#D62C9F] font-Thai text-left min-w-52 text-3xl  hidden lg:block ">
+                  จาการเข้าชมรม
+                </p>
+              </p>
+
+              
+            </div>
+            <div className=" flex justify-center mt-10">
+            <div className=" w-full  justify-center hidden md:block">
+                <textarea
+                  className=" text-[#582A88]  text-lg break-words border-2 font-Thai  md:w-full sm:w-[300px]   h-72  bg-transparent align-top resize-none "
+                  ref={benefitsRef}
+                  value={benefits}
+                  onClick={turnOnBenefitsEditMode}
+                  defaultValue=""
+                  onBlur={() => setBenefitsEditMode(false)}
+                  onChange={handleBenefitsChange}
+                ></textarea>
+                <div className=" flex justify-center">
+                  <button className="  " onClick={turnOnBenefitsEditMode}>
+                    <PencilIcon />
+                  </button>
+                </div>
+              </div>
+              <div className=" w-full  justify-center flex md:hidden">
+                <textarea
+                  className=" text-[#582A88]  text-lg break-words border-2 font-Thai  md:w-full sm:w-[300px]   h-72 bg-transparent align-top resize-none "
+                  ref={benefitsRef}
+                  value={benefits}
+                  onClick={turnOnBenefitsEditMode}
+                  defaultValue=""
+                  onBlur={() => setBenefitsEditMode(false)}
+                  onChange={handleBenefitsChange}
+                ></textarea>
+                <div className=" flex justify-center">
+                  <button className="  " onClick={turnOnBenefitsEditMode}>
+                    <PencilIcon />
+                  </button>
+                </div>
+              </div>
+            </div>
+            {
+              //section3
+            }<p className="  font-semibold text-transparent bg-clip-text bg-gradient-to-b from-[#7533A8] to-[#D62C9F] font-Thai text-center  text-3xl block w-full py-5  lg:hidden ">
+                ผลงานของชมรม
+              </p>
+            <div className=" flex justify-center gap-3 lg:mt-10">
+              <p className="  font-semibold text-transparent bg-clip-text bg-gradient-to-b from-[#7533A8] to-[#D62C9F] font-Thai text-left min-w-52 text-5xl py-5 hidden lg:flex ">
+                ผลงาน
+                <br />
+                ของชมรม
+              </p>
+
+              
+              <div className=" w-auto relative  ">
+                <svg
+                  className=" lg:w-[509px] lg:h-[307px] md:w-[772px] md:h-[468px] sm:h-[220px] "
+                  viewBox="0 0 509 307"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <rect width="509" height="307" rx="23" fill="#D9D9D9" />
+                </svg>
+                <div className=" absolute top-0 w-full h-full">
+                  <label
+                    id="dropzone-file"
+                    className="flex flex-col items-center justify-center w-full h-full border-2rounded-[30px] cursor-pointer"
+                  >
+                    <div className="flex flex-col items-center justify-center pt-5 pb-6  z-20 w-full h-full ">
+                      <svg
+                        className="w-8 h-8 text-gray-500"
+                        aria-hidden="true"
+                        xmlns="http://www.w3.org/2000/svg"
+                        fill="none"
+                        viewBox="0 0 20 16"
+                      >
+                        <path
+                          stroke="currentColor"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                          stroke-width="2"
+                          d="M13 13h3a3 3 0 0 0 0-6h-.025A5.56 5.56 0 0 0 16 6.5 5.5 5.5 0 0 0 5.207 5.021C5.137 5.017 5.071 5 5 5a4 4 0 0 0 0 8h2.167M10 15V6m0 0L8 8m2-2 2 2"
+                        />
+                      </svg>
+                    </div>
+                    <input
+                      id="dropzone-file"
+                      type="file"
+                      className="hidden"
+                      accept=".png,.jpg,jpeg"
+                      onChange={handleImage3Change}
+                    />
+                  </label>
+                  <p className="  text-center text-[#7533A8] ">
+                    ภาพบรรยากาศในชมรม
+                  </p>
+                </div>
+                <div className=" absolute w-full top-0">
+                  <img
+                    className=" flex object-cover lg:h-[307px] lg:w-[509px] md:w-[772px] md:h-[468px] sm:w-[363px] sm:h-[220px] md:rounded-3xl sm:rounded-2xl z-10  "
+                    src={image3}
+                  />
+                </div>
+              </div>
+            </div>
+            <div className=" flex justify-center mt-10">
+            <div className=" w-full  justify-center hidden md:block">
+                <textarea
+                  className=" text-[#582A88]  text-lg break-words border-2 font-Thai  md:w-full sm:w-[300px]   h-72  bg-transparent align-top resize-none "
+                  ref={workingsRef}
+                  value={workings}
+                  onClick={turnOnWorkingsEditMode}
+                  defaultValue=""
+                  onBlur={() => setBenefitsEditMode(false)}
+                  onChange={handleWorkingsChange}
+                ></textarea>
+                <div className=" flex justify-center">
+                  <button className="  " onClick={turnOnWorkingsEditMode}>
+                    <PencilIcon />
+                  </button>
+                </div>
+              </div>
+              <div className=" w-full  justify-center flex md:hidden">
+                <textarea
+                  className=" text-[#582A88]  text-lg break-words border-2 font-Thai  md:w-full sm:w-[300px]   h-72 bg-transparent align-top resize-none "
+                  ref={benefitsRef}
+                  value={benefits}
+                  onClick={turnOnBenefitsEditMode}
+                  defaultValue=""
+                  onBlur={() => setBenefitsEditMode(false)}
+                  onChange={handleBenefitsChange}
+                ></textarea>
+                <div className=" flex justify-center">
+                  <button className="  " onClick={turnOnWorkingsEditMode}>
+                    <PencilIcon />
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            {
+              //review1
+            }
+            <div>
+              <div className=" mt-10">
+                <ReviewWidget />
+              </div>
+              <div className=" w-full relative">
+                <ReviewCard />
+                <div className=" absolute top-0 mt-5 md:left-5 sm:left-2 h-full ">
+                  <svg
+                    className="block lg:h-[153px] lg:w-[153px] md:h-[100px] md:w-[100px] sm:h-[60px] sm:w-[60px]"
+                    viewBox="0 0 153 153"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <rect
+                      width="152.941"
+                      height="152.941"
+                      rx="30"
+                      fill="#D9D9D9"
+                    />
+                  </svg>
+                  <div className=" absolute top-0 lg:mt-[0px] lg:ml-[0px] md:mt-[0px] z-20 flex items-center justify-center lg:h-[153px] lg:w-[153px] md:h-[100px] md:w-[100px] sm:h-[60px] sm:w-[60px] ">
+                    <label
+                      id="dropzone-file"
+                      className="flex flex-col items-center justify-center w-auto h-auto rounded-[30px] cursor-pointer"
+                    >
+                      <div className="flex flex-col items-center justify-center pt-5 pb-6  ">
+                        <svg
+                          className="w-8 h-8"
+                          aria-hidden="true"
+                          xmlns="http://www.w3.org/2000/svg"
+                          fill="none"
+                          viewBox="0 0 20 16"
+                        >
+                          <path
+                            stroke="currentColor"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            stroke-width="2"
+                            d="M13 13h3a3 3 0 0 0 0-6h-.025A5.56 5.56 0 0 0 16 6.5 5.5 5.5 0 0 0 5.207 5.021C5.137 5.017 5.071 5 5 5a4 4 0 0 0 0 8h2.167M10 15V6m0 0L8 8m2-2 2 2"
+                          />
+                        </svg>
+                      </div>
+                      <input
+                        id="dropzone-file"
+                        type="file"
+                        className="hidden"
+                        accept=".png,.jpg,jpeg"
+                        onChange={handleReview1ProfileChange}
+                      />
+                    </label>
+                  </div>
+                  <img
+                    className="absolute top-0 left-0 z-10  flex object-cover lg:h-[153px] lg:w-[153px] md:h-[100px] md:w-[100px] sm:h-[60px] sm:w-[60px] rounded-3xl sm:rounded-xl "
+                    src={review1Profile}
+                  />
+                  <div className=" block md:mt-1 -mt-1 z-50 relative">
+                    <input
+                      className=" text-white md:text-2xl sm:text-md sm:w-[90px] sm:h-6 md:h-8 md:w-[148px]  bg-transparent font-Thai"
+                      type="text"
+                      ref={review1NameRef}
+                      value={review1Name}
+                      placeholder="ชื่อ"
+                      onClick={turnOnReview1NameEditMode}
+                      onBlur={() => setReview1NameEditMode(false)}
+                      onChange={handleReview1NameChange}
+                    ></input>
+                    <button onClick={turnOnReview1NameEditMode}>
+                      <PencilIcon />
+                    </button>
+
+                    <p className=" block text-[#291A54] md:text-xl md:mt-0 sm:-mt-3 sm:text-sm text-base  font-Thai ">
+                      {" "}
+                      เตรียมอุดม
+                      <input
+                        className=" sm:h-4 md:h-6 ml-1  md:w-[50px] sm:w-[30px] text-[#291A54] bg-transparent font-Thai "
+                        type="text"
+                        maxLength={2}
+                        ref={review1GenRef}
+                        value={review1Gen}
+                        onClick={turnOnReview1GenEditMode}
+                        onBlur={() => setReview1GenEditMode(false)}
+                        onChange={handleReview1GenChange}
+                      ></input>
+                      <button onClick={turnOnReview1GenEditMode}>
+                        <PencilIcon />
+                      </button>
+                    </p>
+                    <div className=" flex">
+                      <input
+                        className=" sm:h-4 md:h-6 md:w-[148px] items-center w-[100px] text-[#291A54] sm:text-sm md:text-base bg-transparent font-Thai"
+                        type="text"
+                        ref={review1ContactRef}
+                        value={review1Contact}
+                        onClick={turnOnReview1ContactEditMode}
+                        placeholder="ช่องทางการติดต่อ"
+                        onBlur={() => setReview1ContactEditMode(false)}
+                        onChange={handleReview1ContactChange}
+                      ></input>
+
+                      <button onClick={turnOnReview1ContactEditMode}>
+                        <PencilIcon />
+                      </button>
+                    </div>
+                  </div>
+                </div>
+                <div className=" absolute w-full top-5 h-3/4 right-0 flex justify-end">
+                  <textarea
+                    className=" text-white  text-md break-words font-Thai mr-10   md:w-3/5  md:h-full  bg-transparent align-top resize-none"
+                    ref={review1Ref}
+                    value={review1}
+                    onClick={turnOnReview1EditMode}
+                    defaultValue=""
+                    onBlur={() => setReview1EditMode(false)}
+                    onChange={handleReview1Change}
+                  ></textarea>
+                </div>
+              </div>
+              <div className=" w-full flex justify-center">
+                <button
+                  className={
+                    review2On
+                      ? "hidden"
+                      : "  mt-10 text-3xl bg-gradient-to-r from-[#7533A8] to-[#D738A4] w-[200px] h-[50px] rounded-[200px] text-white "
+                  }
+                  onClick={() => setReview2On(true)}
+                >
+                  {" "}
+                  + เพิ่มรีวิว
+                </button>
+              </div>
+
+              {
+                //review2
               }
-              onClick={() => setReview2On(true)}
-            >
-              {" "}
-              + เพิ่มรีวิว
-            </button>
-          </div>
-        </div>
-        {
-          //review 2----------------------------------------------------------------------------------------------------------
-        }
-        <div className={review2On ? "flex" : "hidden"}>
-          <div className=" absolute top-96 inset-0 m-auto  lg:mt-[3295px] lg:mr-0 md:mt-[4115px] sm:mt-[4090px] md:mr-[270px] flex justify-center">
-            <button
-              className=" md:mr-10 sm:mr-5"
-              onClick={turnOnReview2EditMode}
-            >
-              <PencilIcon />
-            </button>
-            <textarea
-              className=" text-white text-md break-words font-Thai   md:w-[480px] md:mr-[300px] md:h-[266px] sm:w-[250px] sm:mr-[170px] sm:h-[120px] bg-transparent align-top resize-none"
-              ref={review2Ref}
-              value={review2}
-              onClick={turnOnReview2EditMode}
-              defaultValue=""
-              onBlur={() => setReview2EditMode(false)}
-              onChange={handleReview2Change}
-            ></textarea>
-          </div>
-
-          <div className=" absolute top-96 inset-0 m-auto  lg:mt-[3300px] md:mt-[4120px] sm:mt-[4090px] md:ml-[550px] sm:ml-[230px] flex justify-center">
-            <div className=" block  ">
-              <div className=" flex justify-end">
-              <svg
-                className="block md:w-[153px] w-[60px] md:ml-0 sm:ml-[20px]"
-                viewBox="0 0 153 153"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <rect width="152.941" height="152.941" rx="30" fill="#D9D9D9" />
-              </svg>
-              <div className=" absolute top-0 lg:mt-[0px] lg:ml-[0px] md:mt-[0px] z-20 flex items-center justify-center md:h-[153px] md:w-[153px] sm:h-[60px] sm:w-[60px] md:ml-0 sm:ml-[20px] ">
-                <label
-                  id="dropzone-file"
-                  className="flex flex-col items-center justify-center w-full h-full rounded-[30px] cursor-pointer"
-                >
-                  <div className="flex flex-col items-center justify-center pt-5 pb-6  z-20  w-full h-full ">
-                    <svg
-                      className="w-8 h-8"
-                      aria-hidden="true"
-                      xmlns="http://www.w3.org/2000/svg"
-                      fill="none"
-                      viewBox="0 0 20 16"
+              <div className={review2On ? " w-full relative mt-10" : "hidden"}>
+                <ReviewCardR />
+                <div className=" absolute top-0 mt-5 md:right-5 sm:right-2 h-full justify-end ">
+                  <div className=" flex justify-end">
+                  <svg
+                    className="block lg:h-[153px] lg:w-[153px] md:h-[100px] md:w-[100px] sm:h-[60px] sm:w-[60px]"
+                    viewBox="0 0 153 153"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <rect
+                      width="152.941"
+                      height="152.941"
+                      rx="30"
+                      fill="#D9D9D9"
+                    />
+                  </svg>
+                  <div className=" absolute top-0  z-20 flex items-center justify-center lg:h-[153px] lg:w-[153px] md:h-[100px] md:w-[100px] sm:h-[60px] sm:w-[60px] ">
+                    <label
+                      id="dropzone-file"
+                      className="flex flex-col items-center justify-center w-full h-full rounded-[30px] cursor-pointer"
                     >
-                      <path
-                        stroke="currentColor"
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                        stroke-width="2"
-                        d="M13 13h3a3 3 0 0 0 0-6h-.025A5.56 5.56 0 0 0 16 6.5 5.5 5.5 0 0 0 5.207 5.021C5.137 5.017 5.071 5 5 5a4 4 0 0 0 0 8h2.167M10 15V6m0 0L8 8m2-2 2 2"
+                      <div className="flex flex-col items-center justify-center pt-5 pb-6  ">
+                        <svg
+                          className="w-8 h-8"
+                          aria-hidden="true"
+                          xmlns="http://www.w3.org/2000/svg"
+                          fill="none"
+                          viewBox="0 0 20 16"
+                        >
+                          <path
+                            stroke="currentColor"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            stroke-width="2"
+                            d="M13 13h3a3 3 0 0 0 0-6h-.025A5.56 5.56 0 0 0 16 6.5 5.5 5.5 0 0 0 5.207 5.021C5.137 5.017 5.071 5 5 5a4 4 0 0 0 0 8h2.167M10 15V6m0 0L8 8m2-2 2 2"
+                          />
+                        </svg>
+                      </div>
+                      <input
+                        id="dropzone-file"
+                        type="file"
+                        className="hidden"
+                        accept=".png,.jpg,jpeg"
+                        onChange={handleReview2ProfileChange}
                       />
-                    </svg>
+                    </label>
                   </div>
-                  <input
-                    id="dropzone-file"
-                    type="file"
-                    className="hidden"
-                    accept=".png,.jpg,jpeg"
-                    onChange={handleReview2ProfileChange}
+                  <img
+                    className="absolute top-0 right-0 z-10  flex object-cover lg:h-[153px] lg:w-[153px] md:h-[100px] md:w-[100px] sm:h-[60px] sm:w-[60px] rounded-3xl sm:rounded-xl "
+                    src={review2Profile}
                   />
-                </label>
-                <img
-                  className="absolute top-0 ml-0 lg:ml-[0px] lg:mt-[0px] md:mt-[0px] z-10  flex object-cover md:h-[153px] md:w-[153px] sm:h-[60px] sm:w-[60px] md:rounded-3xl sm:rounded-xl "
-                  src={review2Profile}
-                />
+                  </div>
+                  <div className=" block md:mt-1 -mt-1 relative z-50">
+                    <button onClick={turnOnReview2NameEditMode}>
+                      <PencilIcon />
+                    </button>
+                    <input
+                      className=" text-white md:text-2xl sm:text-md sm:w-[100px] sm:h-6 md:h-8 md:w-[148px]  bg-transparent font-Thai text-right"
+                      type="text"
+                      ref={review2NameRef}
+                      value={review2Name}
+                      placeholder="ชื่อ"
+                      onClick={turnOnReview2NameEditMode}
+                      onBlur={() => setReview1NameEditMode(false)}
+                      onChange={handleReview2NameChange}
+                    ></input>
+                    
+
+                    <p className=" block text-[#291A54] md:text-xl md:mt-0 sm:-mt-3 sm:text-sm text-base  font-Thai text-right ">
+                      <button onClick={turnOnReview2GenEditMode}>
+                        <PencilIcon />
+                      </button>
+                      {" "}
+                      เตรียมอุดม
+                      <input
+                        className=" sm:h-4 md:h-6 ml-1  md:w-[30px] sm:w-[30px] text-[#291A54] bg-transparent font-Thai text-right "
+                        type="text"
+                        maxLength={2}
+                        ref={review2GenRef}
+                        value={review2Gen}
+                        onClick={turnOnReview2GenEditMode}
+                        onBlur={() => setReview1GenEditMode(false)}
+                        onChange={handleReview2GenChange}
+                      ></input>
+                      
+                    </p>
+                    <div className=" flex">
+                      <button onClick={turnOnReview2ContactEditMode}>
+                        <PencilIcon />
+                      </button>
+                      <input
+                        className=" sm:h-4 md:h-6 md:w-[148px] items-center w-[100px] text-[#291A54] sm:text-sm md:text-base bg-transparent font-Thai text-right"
+                        type="text"
+                        ref={review2ContactRef}
+                        value={review2Contact}
+                        onClick={turnOnReview2ContactEditMode}
+                        placeholder="ช่องทางการติดต่อ"
+                        onBlur={() => setReview1ContactEditMode(false)}
+                        onChange={handleReview2ContactChange}
+                      ></input>
+
+                      
+                    </div>
+                  </div>
+                </div>
+                <div className=" absolute w-full top-5 h-3/4 left-0 flex justify-start">
+                  <textarea
+                    className=" text-white  text-md break-words font-Thai ml-10   md:w-3/5  md:h-full  bg-transparent align-top resize-none"
+                    ref={review2Ref}
+                    value={review2}
+                    onClick={turnOnReview2EditMode}
+                    defaultValue=""
+                    onBlur={() => setReview2EditMode(false)}
+                    onChange={handleReview2Change}
+                  ></textarea>
+                </div>
               </div>
-              </div>
-              <div className=" block md:mt-1 -mt-1">
-                <button onClick={turnOnReview2NameEditMode}>
-                  <PencilIcon />
+              <div
+                className={review2On ? " justify-center flex mt-5" : "hidden"}
+              >
+                <button
+                  className={review3On ? "hidden" : "  w-[65px] h-[65px]"}
+                  onClick={handleReview2Delete}
+                >
+                  <DeleteIcon />
                 </button>
-                <input
-                  className=" text-white md:text-2xl sm:text-md md:ml-0 sm:ml-[10px] sm:w-[90px] sm:h-6 md:h-8 md:w-[148px]  bg-transparent font-Thai text-end"
-                  type="text"
-                  ref={review2NameRef}
-                  value={review2Name}
-                  placeholder="ชื่อ"
-                  onClick={turnOnReview2NameEditMode}
-                  onBlur={() => setReview2NameEditMode(false)}
-                  onChange={handleReview2NameChange}
-                ></input>
-                
-                <div className=" flex ml-3">
-                  <button onClick={turnOnReview2GenEditMode}>
-                    <PencilIcon />
-                  </button>
-                <p className=" block text-[#291A54] md:text-xl md:mt-0  sm:text-sm text-base  md:mr-0  font-Thai text-end ">
+              </div>
+              <div
+                className={review2On ? " justify-center flex mt-5" : "hidden"}
+              >
+                <button
+                  className={
+                    review3On
+                      ? "hidden"
+                      : "  text-3xl bg-gradient-to-r from-[#7533A8] to-[#D738A4] w-[200px] h-[50px] rounded-[200px] text-white "
+                  }
+                  onClick={() => setReview3On(true)}
+                >
                   {" "}
-                  เตรียมอุดม
-                  <input
-                    className=" sm:h-4 md:h-6 ml-1  md:w-[35px] sm:w-[19px] text-[#291A54] bg-transparent font-Thai text-end"
-                    type="text"
-                    maxLength={2}
-                    ref={review2GenRef}
-                    value={review2Gen}
-                    onClick={turnOnReview2GenEditMode}
-                    onBlur={() => setReview2GenEditMode(false)}
-                    onChange={handleReview2GenChange}
-                  ></input>
-                  
-                </p>
+                  + เพิ่มรีวิว
+                </button>
+              </div>
+
+              {
+                //review3
+              }
+              <div className={review3On ? " w-full relative" : "hidden"}>
+                <ReviewCard />
+                <div className=" absolute top-0 mt-5 md:left-5 sm:left-2 h-full ">
+                  <svg
+                    className="block lg:h-[153px] lg:w-[153px] md:h-[100px] md:w-[100px] sm:h-[60px] sm:w-[60px]"
+                    viewBox="0 0 153 153"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <rect
+                      width="152.941"
+                      height="152.941"
+                      rx="30"
+                      fill="#D9D9D9"
+                    />
+                  </svg>
+                  <div className=" absolute top-0 lg:mt-[0px] lg:ml-[0px] md:mt-[0px] z-20 flex items-center justify-center lg:h-[153px] lg:w-[153px] md:h-[100px] md:w-[100px] sm:h-[60px] sm:w-[60px] ">
+                    <label
+                      id="dropzone-file"
+                      className="flex flex-col items-center justify-center w-full h-full rounded-[30px] cursor-pointer"
+                    >
+                      <div className="flex flex-col items-center justify-center pt-5 pb-6  ">
+                        <svg
+                          className="w-8 h-8"
+                          aria-hidden="true"
+                          xmlns="http://www.w3.org/2000/svg"
+                          fill="none"
+                          viewBox="0 0 20 16"
+                        >
+                          <path
+                            stroke="currentColor"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            stroke-width="2"
+                            d="M13 13h3a3 3 0 0 0 0-6h-.025A5.56 5.56 0 0 0 16 6.5 5.5 5.5 0 0 0 5.207 5.021C5.137 5.017 5.071 5 5 5a4 4 0 0 0 0 8h2.167M10 15V6m0 0L8 8m2-2 2 2"
+                          />
+                        </svg>
+                      </div>
+                      <input
+                        id="dropzone-file"
+                        type="file"
+                        className="hidden"
+                        accept=".png,.jpg,jpeg"
+                        onChange={handleReview3ProfileChange}
+                      />
+                    </label>
+                  </div>
+                  <img
+                    className="absolute top-0 left-0 z-10  flex object-cover lg:h-[153px] lg:w-[153px] md:h-[100px] md:w-[100px] sm:h-[60px] sm:w-[60px] rounded-3xl sm:rounded-xl "
+                    src={review3Profile}
+                  />
+                  <div className=" block md:mt-1 -mt-1 z-50 relative">
+                    <input
+                      className=" text-white md:text-2xl sm:text-md sm:w-[90px] sm:h-6 md:h-8 md:w-[148px]  bg-transparent font-Thai"
+                      type="text"
+                      ref={review3NameRef}
+                      value={review3Name}
+                      placeholder="ชื่อ"
+                      onClick={turnOnReview3NameEditMode}
+                      onBlur={() => setReview3NameEditMode(false)}
+                      onChange={handleReview3NameChange}
+                    ></input>
+                    <button onClick={turnOnReview3NameEditMode}>
+                      <PencilIcon />
+                    </button>
+
+                    <p className=" block text-[#291A54] md:text-xl md:mt-0 sm:-mt-3 sm:text-sm text-base  font-Thai ">
+                      {" "}
+                      เตรียมอุดม
+                      <input
+                        className=" sm:h-4 md:h-6 ml-1  md:w-[50px] sm:w-[30px] text-[#291A54] bg-transparent font-Thai "
+                        type="text"
+                        maxLength={2}
+                        ref={review3GenRef}
+                        value={review3Gen}
+                        onClick={turnOnReview3GenEditMode}
+                        onBlur={() => setReview3GenEditMode(false)}
+                        onChange={handleReview3GenChange}
+                      ></input>
+                      <button onClick={turnOnReview3GenEditMode}>
+                        <PencilIcon />
+                      </button>
+                    </p>
+                    <div className=" flex">
+                      <input
+                        className=" sm:h-4 md:h-6 md:w-[148px] items-center w-[100px] text-[#291A54] sm:text-sm md:text-base bg-transparent font-Thai"
+                        type="text"
+                        ref={review3ContactRef}
+                        value={review3Contact}
+                        onClick={turnOnReview3ContactEditMode}
+                        placeholder="ช่องทางการติดต่อ"
+                        onBlur={() => setReview3ContactEditMode(false)}
+                        onChange={handleReview3ContactChange}
+                      ></input>
+
+                      <button onClick={turnOnReview3ContactEditMode}>
+                        <PencilIcon />
+                      </button>
+                    </div>
+                  </div>
                 </div>
-                <div className=" flex">
-                  <button onClick={turnOnReview2ContactEditMode}>
-                    <PencilIcon />
-                  </button>
-                  <input
-                    className=" sm:h-4 md:h-6 md:w-[148px] items-center  w-[100px] text-[#291A54] sm:text-sm md:text-base bg-transparent font-Thai text-end"
-                    type="text"
-                    ref={review2ContactRef}
-                    value={review2Contact}
-                    onClick={turnOnReview2ContactEditMode}
-                    placeholder="ช่องทางการติดต่อ"
-                    onBlur={() => setReview2ContactEditMode(false)}
-                    onChange={handleReview2ContactChange}
-                  ></input>
-                  
+                <div className=" absolute w-full top-5 h-3/4 right-0 flex justify-end">
+                  <textarea
+                    className=" text-white  text-md break-words font-Thai mr-10   md:w-3/5  md:h-full  bg-transparent align-top resize-none"
+                    ref={review3Ref}
+                    value={review3}
+                    onClick={turnOnReview3EditMode}
+                    defaultValue=""
+                    onBlur={() => setReview3EditMode(false)}
+                    onChange={handleReview3Change}
+                  ></textarea>
                 </div>
+              </div>
+              <div className=" justify-center flex">
+                <button
+                  className={
+                    review3On ? " mt-5  w-[65px] h-[65px]" : "hidden "
+                  }
+                  onClick={handleReview3Delete}
+                >
+                  <DeleteIcon />
+                </button>
               </div>
             </div>
           </div>
-        </div>
-        <div className={review2On ? " justify-center flex" : "hidden"}>
-          <button
-            className={
-              review3On
-                ? "hidden"
-                : " absolute top-0 md:mt-[4000px] sm:mt-[4650px] w-[65px] h-[65px]"
-            }
-            onClick={handleReview2Delete}
-          >
-            <DeleteIcon />
-          </button>
-        </div>
-        <div className={review2On ? " justify-center flex" : "hidden"}>
-          <button
-            className={
-              review3On
-                ? "hidden"
-                : " absolute top-0 md:mt-[4100px] sm:mt-[4750px] text-3xl bg-gradient-to-r from-[#7533A8] to-[#D738A4] w-[200px] h-[50px] rounded-[200px] text-white "
-            }
-            onClick={() => setReview3On(true)}
-          >
-            {" "}
-            + เพิ่มรีวิว
-          </button>
-        </div>
-        {
-          //review 3---------------------------------------------------------------------------------------------------------------------
-        }
-        <div className={review3On ? "flex" : " hidden"}>
-          <div className=" absolute top-96 inset-0 m-auto  lg:mt-[3695px] md:mt-[4520px] sm:mt-[4390px] flex justify-center">
-            <textarea
-              className=" text-white text-md break-words font-Thai md:w-[480px] md:ml-[300px] sm:w-[250px] sm:ml-[170px] sm:h-[120px] md:h-[266px] bg-transparent align-top resize-none"
-              ref={review3Ref}
-              value={review3}
-              onClick={turnOnReview3EditMode}
-              defaultValue=""
-              onBlur={() => setReview3EditMode(false)}
-              onChange={handleReview3Change}
-            ></textarea>
-            <button
-              className="md:ml-10 sm:ml-5"
-              onClick={turnOnReview3EditMode}
-            >
-              <PencilIcon />
-            </button>
-          </div>
-          <div className=" absolute top-96 inset-0 m-auto  lg:mt-[3700px] md:mt-[4520px] sm:mt-[4390px] md:mr-[485px] sm:mr-[160px] flex justify-center">
-            <div className=" block w-[200px]">
-              <svg
-                className="block md:w-[153px] w-[60px]"
-                viewBox="0 0 153 153"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <rect width="152.941" height="152.941" rx="30" fill="#D9D9D9" />
-              </svg>
-              <div className=" absolute top-0 lg:mt-[0px] lg:ml-[0px] md:mt-[0px] z-20 flex items-center justify-center md:h-[153px] md:w-[153px] sm:h-[60px] sm:w-[60px] ">
-                <label
-                  id="dropzone-file"
-                  className="flex flex-col items-center justify-center w-full h-full rounded-[30px] cursor-pointer"
-                >
-                  <div className="flex flex-col items-center justify-center pt-5 pb-6   ">
-                    <svg
-                      className="w-8 h-8 text-gray-500"
-                      aria-hidden="true"
-                      xmlns="http://www.w3.org/2000/svg"
-                      fill="none"
-                      viewBox="0 0 20 16"
-                    >
-                      <path
-                        stroke="currentColor"
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                        stroke-width="2"
-                        d="M13 13h3a3 3 0 0 0 0-6h-.025A5.56 5.56 0 0 0 16 6.5 5.5 5.5 0 0 0 5.207 5.021C5.137 5.017 5.071 5 5 5a4 4 0 0 0 0 8h2.167M10 15V6m0 0L8 8m2-2 2 2"
-                      />
-                    </svg>
-                  </div>
-                  <input
-                    id="dropzone-file"
-                    type="file"
-                    className="hidden"
-                    accept=".png,.jpg,jpeg"
-                    onChange={handleReview3ProfileChange}
-                  />
-                </label>
-              </div>
-              <img
-                className="absolute top-0 ml-0 lg:ml-[0px] lg:mt-[0px] md:mt-[0px] z-10  flex object-cover md:h-[153px] md:w-[153px] sm:h-[60px] sm:w-[60px]  rounded-3xl sm:rounded-xl "
-                src={review3Profile}
-              />
-              <div className=" block md:mt-1 -mt-1">
-                <input
-                  className=" text-white md:text-2xl sm:text-md sm:w-[90px] sm:h-6 md:h-8 md:w-[148px]  bg-transparent font-Thai"
-                  type="text"
-                  ref={review3NameRef}
-                  value={review3Name}
-                  placeholder="ชื่อ"
-                  onClick={turnOnReview3NameEditMode}
-                  onBlur={() => setReview3NameEditMode(false)}
-                  onChange={handleReview3NameChange}
-                ></input>
-                <button onClick={turnOnReview3NameEditMode}>
-                  <PencilIcon />
-                </button>
-
-                <p className=" block text-[#291A54] md:text-xl md:mt-0 sm:-mt-3 sm:text-sm text-base  font-Thai ">
-                  {" "}
-                  เตรียมอุดม
-                  <input
-                    className=" sm:h-4 md:h-6 ml-1  md:w-[50px] sm:w-[30px] text-[#291A54] bg-transparent font-Thai"
-                    type="text"
-                    maxLength={2}
-                    ref={review3GenRef}
-                    value={review3Gen}
-                    onClick={turnOnReview3GenEditMode}
-                    onBlur={() => setReview3GenEditMode(false)}
-                    onChange={handleReview3GenChange}
-                  ></input>
-                  <button onClick={turnOnReview3GenEditMode}>
-                    <PencilIcon />
-                  </button>
-                </p>
-                <div className=" flex">
-                  <input
-                    className=" sm:h-4 md:h-6 md:w-[148px] items-center w-[100px] text-[#291A54] sm:text-sm md:text-base bg-transparent font-Thai"
-                    type="text"
-                    ref={review3ContactRef}
-                    value={review3Contact}
-                    onClick={turnOnReview3ContactEditMode}
-                    placeholder="ช่องทางการติดต่อ"
-                    onBlur={() => setReview3ContactEditMode(false)}
-                    onChange={handleReview3ContactChange}
-                  ></input>
-                  <button onClick={turnOnReview3ContactEditMode}>
-                    <PencilIcon />
-                  </button>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div className=" justify-center flex">
-          <button
-            className={
-              review3On
-                ? "absolute top-0 md:mt-[4400px] sm:mt-[5000px] w-[65px] h-[65px]"
-                : "hidden "
-            }
-            onClick={handleReview3Delete}
-          >
-            <DeleteIcon />
-          </button>
         </div>
       </div>
-    </>
+      <div
+            className={editSuccess ? " fixed z-50 right-4 bottom-4" : "hidden"}
+          >
+            <Alert severity="success">
+              <AlertTitle>Success</AlertTitle>
+              ระบบได้บันทึกข้อมูลของท่านแล้ว
+            </Alert>
+          </div>
+          <div className={editFail ? " fixed z-50 right-4 bottom-4" : "hidden"}>
+            <Alert severity="error">
+              <AlertTitle>error</AlertTitle>
+              โปรดตรวจสอบข้อมูลแล้วลองอีกครั้ง
+            </Alert>
+          </div>
+    </div>
+    
   );
 }

@@ -24,9 +24,9 @@ export default function LoginPage() {
       <div className="w-screen h-screen bg-gradient-to-b from-[#444DAF] from-0% via-[#8C7BD7] via-30% to-[#FAFAEE] to-100% shadow relative  " >
         <div className=" absolute top-1/2 -translate-y-1/2   xl:mr-[100px]  lg:mr-[00px] lg:right-40 max-lg:left-1/2 sm:top-1/2 lg:translate-x-0  sm:-translate-x-1/2  z-30  ">
         <button onClick={() => signIn('google')} 
-        className="px-8 py-5 border  gap-2 border-slate-200 bg-white opacity-80 backdrop-blur-sm rounded-full text-slate-700  hover:border-slate-400 lg:w-[400px] sm:w-[300px] hover:text-slate-900 hover:shadow transition duration-150 flex justify-center">
+        className="px-8 py-5 border h-20  gap-2 border-slate-200 bg-white opacity-80 backdrop-blur-sm rounded-full text-slate-700  hover:border-slate-400 lg:w-[400px] sm:w-[300px] hover:text-slate-900 hover:shadow transition duration-150 flex justify-center">
             <GoogleLogin />
-            <span className=" ml-3 lg:text-2xl sm:text-lg">Sign up with Google</span>
+            <p className=" ml-3 lg:text-2xl sm:text-lg align-middle items-center h-10">Sign up with Google</p>
         </button>
         </div>
 
