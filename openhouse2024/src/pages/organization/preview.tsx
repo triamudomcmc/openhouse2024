@@ -456,14 +456,14 @@ export default function OrganizationPreview() {
           <div className=" absolute top-96 lg:mt-[1400px] md:mt-[2000px] sm:mt-[2000px] px-12 py-5 flex gap-2 lg:w-1/2  text-white font-Thai ">
             <ReviewWidget />
           </div>
-          <div className=" absolute top-96 lg:mt-[1510px] md:mt-[2110px] sm:mt-[2110px] sm:w-[500px] px-12 py-5 flex gap-2 md:w-[850px] text-white font-Thai ">
+          <div className=" absolute top-96 lg:mt-[1510px] md:mt-[2110px] sm:mt-[2110px] sm:w-[470px] px-12 py-5 flex gap-2 md:w-[850px] text-white font-Thai ">
             <ReviewCard />
           </div>
 
           <div
             className={
               showReview2
-                ? " absolute top-96 lg:mt-[1910px] md:mt-[2500px] sm:mt-[2410px] sm:w-[500px] px-12 py-5 flex gap-2 md:w-[850px] text-white font-Thai "
+                ? " absolute top-96 lg:mt-[1910px] md:mt-[2500px] sm:mt-[2410px] sm:w-[470px] px-12 py-5 flex gap-2 md:w-[850px] text-white font-Thai "
                 : "hidden"
             }
           >
@@ -473,7 +473,7 @@ export default function OrganizationPreview() {
           <div
             className={
               showReview3
-                ? " absolute top-96 lg:mt-[2310px] md:mt-[2900px] sm:mt-[2710px] sm:w-[500px] px-12 py-5 flex gap-2 md:w-[850px] text-white font-Thai "
+                ? " absolute top-96 lg:mt-[2310px] md:mt-[2900px] sm:mt-[2710px] sm:w-[470px] px-12 py-5 flex gap-2 md:w-[850px] text-white font-Thai "
                 : "hidden"
             }
           >
@@ -508,15 +508,15 @@ export default function OrganizationPreview() {
         }
         <div className="">
           <div className=" absolute top-96 inset-0 m-auto  lg:mt-[2895px] md:mt-[3730px] sm:mt-[3790px] flex justify-center">
-            <p className=" text-white  text-md break-words font-Thai  md:w-[480px] md:ml-[240px] md:h-[266px] sm:w-[250px] sm:ml-[140px] sm:h-[120px] bg-transparent align-top resize-none overflow-y-scroll whitespace-pre-line">
+            <p className=" text-white  text-md break-words font-Thai  md:w-[480px] md:ml-[240px] md:h-[266px] sm:w-[230px] sm:ml-[120px] sm:h-[130px] bg-transparent align-top resize-none whitespace-pre-line overflow-y-scroll">
               {review1}
             </p>
           </div>
 
-          <div className=" absolute top-96 inset-0 m-auto  lg:mt-[2900px] md:mt-[3730px] sm:mt-[3790px] md:mr-[485px] sm:mr-[180px]  flex justify-center">
+          <div className=" absolute top-96 inset-0 m-auto  lg:mt-[2900px] md:mt-[3730px] sm:mt-[3790px] md:mr-[485px] sm:mr-[160px]  flex justify-center">
             <div className=" block w-[200px] ">
               <svg
-                className="block md:w-[153px] w-[80px]"
+                className="block md:w-[153px] w-[60px]"
                 viewBox="0 0 153 153"
                 fill="none"
                 xmlns="http://www.w3.org/2000/svg"
@@ -524,7 +524,7 @@ export default function OrganizationPreview() {
                 <rect width="152.941" height="152.941" rx="30" fill="#D9D9D9" />
               </svg>
               <img
-                className="absolute top-0 ml-0 lg:ml-[0px] lg:mt-[0px] md:mt-[0px] z-10  flex object-cover md:h-[153px] md:w-[153px] sm:h-[80px] sm:w-[80px] rounded-3xl "
+                className="absolute top-0 ml-0 lg:ml-[0px] lg:mt-[0px] md:mt-[0px] z-10  flex object-cover md:h-[153px] md:w-[153px] sm:h-[60px] sm:w-[60px] md:rounded-3xl sm:rounded-xl "
                 src={`data:${review1ProfileType};base64,${review1Profile}`}
               />
               <div className=" block md:mt-1 ">
@@ -547,38 +547,38 @@ export default function OrganizationPreview() {
         }
         <div className={showReview2 ? " block" : "hidden"}>
           <div className=" absolute top-96 inset-0 m-auto  lg:mt-[3295px] lg:mr-0 md:mt-[4115px] sm:mt-[4090px] md:mr-[270px] flex justify-center">
-            <p className=" text-white text-md break-words font-Thai  md:w-[480px] md:mr-[240px] md:h-[266px] sm:w-[250px] sm:mr-[130px] sm:h-[120px] bg-transparent align-top resize-none overflow-y-scroll whitespace-pre-line">
+            <p className=" text-white text-md break-words font-Thai  md:w-[480px] md:mr-[240px] md:h-[266px] sm:w-[230px] sm:mr-[110px] sm:h-[130px] bg-transparent align-top resize-none whitespace-pre-line overflow-y-scroll">
               {review2}
             </p>
           </div>
 
-          <div className=" absolute top-96 inset-0 m-auto  lg:mt-[3300px] md:mt-[4120px] sm:mt-[4090px] md:ml-[550px] sm:ml-[280px] flex justify-center">
+          <div className=" absolute top-96 inset-0 m-auto  lg:mt-[3300px] md:mt-[4120px] sm:mt-[4090px] md:ml-[550px] sm:ml-[265px] flex justify-center">
             <div className=" block   ">
               <svg
-                className="block md:w-[153px] w-[80px] md:ml-0 sm:ml-[20px]"
+                className="block md:w-[153px] w-[60px] md:ml-0 sm:ml-[40px]"
                 viewBox="0 0 153 153"
                 fill="none"
                 xmlns="http://www.w3.org/2000/svg"
               >
                 <rect width="152.941" height="152.941" rx="30" fill="#D9D9D9" />
               </svg>
-              <div className=" absolute top-0 lg:mt-[0px] lg:ml-[0px] md:mt-[0px] z-20 flex items-center justify-center md:h-[153px] md:w-[153px] sm:h-[80px] sm:w-[80px] md:ml-0 sm:ml-[20px] ">
+              <div className=" absolute top-0 lg:mt-[0px] lg:ml-[0px] md:mt-[0px] z-20 flex items-center justify-center md:h-[153px] md:w-[153px] sm:h-[60px] sm:w-[60px] md:ml-0 sm:ml-[40px] ">
                 <img
-                  className="absolute top-0 ml-0 lg:ml-[0px] lg:mt-[0px] md:mt-[0px] z-10  flex object-cover md:h-[153px] md:w-[153px] sm:h-[80px] sm:w-[80px] md:rounded-3xl sm:rounded-2xl "
+                  className="absolute top-0 ml-0 lg:ml-[0px] lg:mt-[0px] md:mt-[0px] z-10  flex object-cover md:h-[153px] md:w-[153px] sm:h-[60px] sm:w-[60px] md:rounded-3xl sm:rounded-xl "
                   src={`data:${review2ProfileType};base64,${review2Profile}`}
                 />
               </div>
               <div className=" block md:mt-1">
-                <p className=" text-white md:text-2xl sm:text-md md:ml-0 sm:ml-[10px] sm:w-[90px] sm:h-6 md:h-8 md:w-[148px]  bg-transparent font-Thai text-end">
+                <p className=" text-white md:text-2xl sm:text-md md:ml-0  sm:ml-[10px] sm:w-[90px] sm:h-6 md:h-8 md:w-[148px]  bg-transparent font-Thai text-end">
                   {review2Name}
                 </p>
 
-                <p className=" block text-[#291A54] md:text-xl md:mt-0  sm:text-sm text-base  md:mr-1  font-Thai text-end ">
+                <p className=" block text-[#291A54] md:text-xl md:mt-0  sm:text-sm text-base  md:mr-1 sm:mr-2  font-Thai text-end ">
                   {" "}
                   เตรียมอุดม {review2Gen}
                 </p>
                 <div className=" flex">
-                  <p className=" sm:h-4 md:h-6 md:w-[148px] items-center  w-[100px] text-[#291A54] sm:text-sm md:text-base bg-transparent font-Thai text-end">
+                  <p className=" sm:h-4 md:h-6 md:w-[148px] items-center  md:mr-0 sm:mr-2  w-[100px] text-[#291A54] sm:text-sm md:text-base bg-transparent font-Thai text-end">
                     {review2Contact}
                   </p>
                 </div>
@@ -591,14 +591,14 @@ export default function OrganizationPreview() {
         }
         <div className={showReview3 ? " block" : "hidden"}>
           <div className=" absolute top-96 inset-0 m-auto  lg:mt-[3695px] md:mt-[4520px] sm:mt-[4390px] flex justify-center">
-            <p className=" text-white  text-md break-words font-Thai  md:w-[480px] md:ml-[240px] md:h-[266px] sm:w-[250px] sm:ml-[140px] sm:h-[120px] bg-transparent align-top resize-none overflow-y-scroll whitespace-pre-line">
+            <p className=" text-white  text-md break-words font-Thai  md:w-[480px] md:ml-[240px] md:h-[266px] sm:w-[230px] sm:ml-[120px] sm:h-[130px] bg-transparent align-top resize-none whitespace-pre-line overflow-y-scroll">
               {review3}
             </p>
           </div>
-          <div className=" absolute top-96 inset-0 m-auto  lg:mt-[3700px] md:mt-[4520px] sm:mt-[4390px] md:mr-[485px] sm:mr-[180px] flex justify-center">
+          <div className=" absolute top-96 inset-0 m-auto  lg:mt-[3700px] md:mt-[4520px] sm:mt-[4390px] md:mr-[485px] sm:mr-[160px] flex justify-center">
             <div className=" block w-[200px]">
               <svg
-                className="block md:w-[153px] w-[80px]"
+                className="block md:w-[153px] w-[60px]"
                 viewBox="0 0 153 153"
                 fill="none"
                 xmlns="http://www.w3.org/2000/svg"
@@ -606,7 +606,7 @@ export default function OrganizationPreview() {
                 <rect width="152.941" height="152.941" rx="30" fill="#D9D9D9" />
               </svg>
               <img
-                className="absolute top-0 ml-0 lg:ml-[0px] lg:mt-[0px] md:mt-[0px] z-10  flex object-cover md:h-[153px] md:w-[153px] sm:h-[80px] sm:w-[80px]  rounded-3xl "
+                className="absolute top-0 ml-0 lg:ml-[0px] lg:mt-[0px] md:mt-[0px] z-10  flex object-cover md:h-[153px] md:w-[153px] sm:h-[60px] sm:w-[60px]  md:rounded-3xl sm:rounded-xl "
                 src={`data:${review3ProfileType};base64,${review3Profile}`}
               />
               <div className=" block md:mt-1 ">

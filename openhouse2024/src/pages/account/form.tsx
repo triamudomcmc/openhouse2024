@@ -289,7 +289,7 @@ export default function Form() {
                     >
                         <MenuItem value='คณะกรรมการนักเรียน (กน.)'>คณะกรรมการนักเรียน</MenuItem>
                         <MenuItem value='นักเรียนผู้ช่วยงานประชาสัมพันธ์ (ปชส.)'>นักเรียนผู้ช่วยงานประชาสัมพันธ์</MenuItem>
-                        <MenuItem value='กลุ่มนักเรียนเอไอซี (กอ.)'>กลุ่มนักเรียนเอไอซี</MenuItem>
+                        <MenuItem value='กลุ่มนักเรียน AIC (กอ.)'>กลุ่มนักเรียนเอไอซี</MenuItem>
                     </Select>
             </FormControl>
             </div>
