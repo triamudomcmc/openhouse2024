@@ -163,8 +163,9 @@ export default function Form() {
 
     return(
     <>
-        <div className=" flex justify-center">
-        <div className=" flex mt-16 w-3/4 md:w-1/2 lg:w-1/3 border border-slate-500 rounded-lg justify-center align-middle flex-wrap">
+    <div className=' bg-[#FFF9E9] h-screen backdrop-blur-xl '>
+        <div className=" flex justify-center  ">
+        <div className=" flex mt-16 w-3/4 md:w-1/2 lg:w-1/3 border border-slate-500 rounded-lg justify-center align-middle flex-wrap bg-white bg-opacity-50">
             <div className=' w-full flex justify-center my-5'>
                 <p className=" flex align-middle ">กรอกข้อมูล</p>
             </div>
@@ -198,7 +199,7 @@ export default function Form() {
                 <TextField
                     disabled
                     id="outlined"
-                    label=""
+                    label="email"
                     value={session?.user?.email}
                     defaultValue="..."
                 />
@@ -286,9 +287,9 @@ export default function Form() {
                     label="องค์กรนักเรียน"
                     defaultValue=''
                     >
-                        <MenuItem value='คณะกรรมการนักเรียน(กน.)'>คณะกรรมการนักเรียน</MenuItem>
-                        <MenuItem value='นักเรียนผู้ช่วยงานประชาสัมพันธ์(ปชส.)'>นักเรียนผู้ช่วยงานประชาสัมพันธ์</MenuItem>
-                        <MenuItem value='กลุ่มนักเรียนเอไอซี(กอ.)'>กลุ่มนักเรียนเอไอซี</MenuItem>
+                        <MenuItem value='คณะกรรมการนักเรียน (กน.)'>คณะกรรมการนักเรียน</MenuItem>
+                        <MenuItem value='นักเรียนผู้ช่วยงานประชาสัมพันธ์ (ปชส.)'>นักเรียนผู้ช่วยงานประชาสัมพันธ์</MenuItem>
+                        <MenuItem value='กลุ่มนักเรียนเอไอซี (กอ.)'>กลุ่มนักเรียนเอไอซี</MenuItem>
                     </Select>
             </FormControl>
             </div>
@@ -328,6 +329,7 @@ export default function Form() {
                 <AlertTitle>error</AlertTitle>
                 โปรดตรวจสอบข้อมูลและบัญชีให้ถูกต้อง
             </Alert>
+            </div>
             </div>
             </div>
             </>

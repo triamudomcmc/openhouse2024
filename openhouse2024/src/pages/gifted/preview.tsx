@@ -1,38 +1,27 @@
 import ClubBg from "@/vectors/bg/club";
-import ClubTop from "@/vectors/club/ClubTop";
 import BackArrow from "@/vectors/backarrow";
 import { useRouter } from 'next/navigation';
-import { useSession, signIn, signOut } from "next-auth/react";
-import { useEffect, useState, useRef } from "react";
+import { useSession } from "next-auth/react";
+import { useEffect, useState } from "react";
 import ClubWidget from "@/vectors/club/clubwidget";
 import axios from "axios";
 import UserIcon from "@/vectors/club/user";
-import Box from '@mui/material/Box';
-import TextField from '@mui/material/TextField';
-import PencilIcon from "@/vectors/club/pencil";
-import ClubBottom from "@/vectors/club/clubBottom";
-import TextBox from "@/vectors/club/textbox";
 import ClubBgM from "@/vectors/bg/ClubM";
 import ClubStar from "@/vectors/club/star";
 import ReviewWidget from "@/vectors/club/reviewWidget";
 import ReviewCard from "@/vectors/club/reviewCard";
 import ReviewCardR from "@/vectors/club/reviewCardR";
-import Alert from '@mui/material/Alert';
-import AlertTitle from '@mui/material/AlertTitle';
-import FormData from "form-data";
-import Head from "next/head";
 import ReviewCard3 from "@/vectors/club/reviewCard3";
 
-export default function ClubPreview() {
-  const [clubs, setClubs] = useState('');
-  const [clubsE, setClubsE] = useState('');
+export default function ProgramPreview() {
+  const [program, setProgram] = useState('');
   const [member, setMember] = useState('');
   const [ig, setIg] = useState('');
   const [fb, setFb] = useState('');
   const [other, setOther] = useState('');
-  const [clubsactivity,setClubActivity] = useState('')
-  const [benefits,setBenefits] = useState('')
-  const [workings,setWorkings] = useState('')
+  const [admission,setAdmission] = useState('')
+  const [subjects,setSubjects] = useState('')
+  const [interests,setInterests] = useState('')
   const [review1,setReview1] = useState('')
   const [review1Name,setReview1Name] = useState('')
   const [review1Gen,setReview1Gen] = useState('')
@@ -59,7 +48,20 @@ export default function ClubPreview() {
   const [review3ProfileType, setReview3ProfileType] = useState('');
   const [showReview2, setShowReview2] = useState(false); 
   const [showReview3, setShowReview3] = useState(false); 
-  
+  const paragraphs1 = admission.replace(/\n/g, '<br />')
+  const Admission = { __html: paragraphs1 };
+  const paragraphs2 = subjects.replace(/\n/g, '<br />')
+  const Subjects = { __html: paragraphs2 };
+  const paragraphs3 = interests.replace(/\n/g, '<br />')
+  const Interests = { __html: paragraphs3 };
+  const reviews1 = review1.replace(/\n/g, '<br />')
+  const Review1 = { __html: reviews1 };
+  const reviews2 = review2.replace(/\n/g, '<br />')
+  const Review2 = { __html: reviews2 };
+  const reviews3 = review3.replace(/\n/g, '<br />')
+  const Review3 = { __html: reviews3 };
+
+
   const router = useRouter();
 
   const { data: session } = useSession({
@@ -70,14 +72,14 @@ export default function ClubPreview() {
   });
 
   let image1Data = JSON.stringify({
-    "email": "natchathornmoopimon@gmail.com",
+    "email": session?.user?.email,
     "imageType": "image1"
   });
   
   let image1Config = {
     method: 'post',
     maxBodyLength: Infinity,
-    url: 'https://openhouse2024-backend.vercel.app/api/clubs/get-image',
+    url: 'https://openhouse2024-backend.vercel.app/api/gifted/get-image',
     headers: { 
       'Content-Type': 'application/json'
     },
@@ -96,14 +98,14 @@ export default function ClubPreview() {
   }
 
   let image2Data = JSON.stringify({
-    "email": "natchathornmoopimon@gmail.com",
+    "email": session?.user?.email,
     "imageType": "image2"
   });
   
   let image2Config = {
     method: 'post',
     maxBodyLength: Infinity,
-    url: 'https://openhouse2024-backend.vercel.app/api/clubs/get-image',
+    url: 'https://openhouse2024-backend.vercel.app/api/gifted/get-image',
     headers: { 
       'Content-Type': 'application/json'
     },
@@ -122,14 +124,14 @@ export default function ClubPreview() {
   }
 
   let image3Data = JSON.stringify({
-    "email": "natchathornmoopimon@gmail.com",
+    "email": session?.user?.email,
     "imageType": "image3"
   });
   
   let image3Config = {
     method: 'post',
     maxBodyLength: Infinity,
-    url: 'https://openhouse2024-backend.vercel.app/api/clubs/get-image',
+    url: 'https://openhouse2024-backend.vercel.app/api/gifted/get-image',
     headers: { 
       'Content-Type': 'application/json'
     },
@@ -155,7 +157,7 @@ export default function ClubPreview() {
   let profile1Config = {
     method: 'post',
     maxBodyLength: Infinity,
-    url: 'https://openhouse2024-backend.vercel.app/api/clubs/get-profile',
+    url: 'https://openhouse2024-backend.vercel.app/api/gifted/get-profile',
     headers: { 
       'Content-Type': 'application/json'
     },
@@ -165,7 +167,6 @@ export default function ClubPreview() {
   async function profile1Request() {
     try {
       const response = await axios.request(profile1Config);
-      console.log(JSON.stringify(response.data));
       setReview1Profile(response.data.data)
       setReview1ProfileType(response.data.contenttype)
       
@@ -183,7 +184,7 @@ export default function ClubPreview() {
   let profile2Config = {
     method: 'post',
     maxBodyLength: Infinity,
-    url: 'https://openhouse2024-backend.vercel.app/api/clubs/get-profile',
+    url: 'https://openhouse2024-backend.vercel.app/api/gifted/get-profile',
     headers: { 
       'Content-Type': 'application/json'
     },
@@ -193,7 +194,6 @@ export default function ClubPreview() {
   async function profile2Request() {
     try {
       const response = await axios.request(profile2Config);
-      console.log(JSON.stringify(response.data));
       setReview2Profile(response.data.data)
       setReview2ProfileType(response.data.contenttype)
       setShowReview2(true)
@@ -211,7 +211,7 @@ export default function ClubPreview() {
   let profile3Config = {
     method: 'post',
     maxBodyLength: Infinity,
-    url: 'https://openhouse2024-backend.vercel.app/api/clubs/get-profile',
+    url: 'https://openhouse2024-backend.vercel.app/api/gifted/get-profile',
     headers: { 
       'Content-Type': 'application/json'
     },
@@ -221,7 +221,6 @@ export default function ClubPreview() {
   async function profile3Request() {
     try {
       const response = await axios.request(profile3Config);
-      console.log(JSON.stringify(response.data));
       setReview3Profile(response.data.data)
       setReview3ProfileType(response.data.contenttype)
       setShowReview3(true)
@@ -248,14 +247,14 @@ const data = JSON.stringify({
       function request(){
       axios.request(config)
       .then((response) =>{
-          setClubs(response.data.info.name);
+          setProgram(response.data.info.name);
           setMember(response.data.info.members);
           setIg(response.data.info.ig);
           setFb(response.data.info.facebook);
           setOther(response.data.info.others);
-          setClubActivity(response.data.info.clubsactivity);
-          setBenefits(response.data.info.benefits)
-          setWorkings(response.data.info.workings)
+          setAdmission(response.data.info.admission);
+          setSubjects(response.data.info.subjects)
+          setInterests(response.data.info.interests)
           setReview1Name(response.data.info.review_1.name)
           setReview1Gen(response.data.info.review_1.gen)
           setReview1Contact(response.data.info.review_1.contact)
@@ -271,7 +270,7 @@ const data = JSON.stringify({
           console.log("success");
         }) .catch((error) => {
           console.log(error);
-          router.push('/club')
+          router.push('/gifted')
         })}
 
   useEffect(() => {
@@ -287,8 +286,9 @@ const data = JSON.stringify({
   }, []);
 
   function back() {
-    router.push('/club');
+    router.push('/gifted');
   }
+  
 
 
 
@@ -315,8 +315,7 @@ const data = JSON.stringify({
 
     
             <div className=" absolute mt-32 top-96 flex justify-center">
-            <p className="  p-6   font-extrabold text-transparent md:text-5xl sm:text-4xl bg-clip-text break-words w-[80vw] bg-gradient-to-b from-[#81109D] to-[#D738A4] py-5 font-Thai text-center mx-10 z-10"> ชมรม{clubs}</p>
-            <p className="  text-center mt-12 font-Thai text-3xl py-5">{clubsE}</p>
+            <p className="  p-6   font-extrabold text-transparent md:text-5xl sm:text-4xl bg-clip-text break-words w-[80vw] bg-gradient-to-b from-[#81109D] to-[#D738A4] py-5 font-Thai text-center mx-10 z-10"> {program}</p>
 
             <div className=" flex text-white md:w-[450px] sm:w-[450px] sm:-ml-[15px] md:ml-[5px] left-1/2 absolute -translate-x-1/2  font-Thai mt-[200px] justify-between ">
               <div className=" md:ml-0 sm:ml-16">
@@ -363,16 +362,16 @@ const data = JSON.stringify({
         </div>
         {// first section
          }
-              <p className=" absolute top-96 lg:mr-[600px] lg:mt-[600px] hidden lg:flex px-6 w-60 py-5  gap-2 font-semibold text-transparent bg-clip-text bg-gradient-to-b from-[#D738A4] to-[#FFDD77] font-Thai text-6xl ">ชมรมนี้</p>
-              <p className=" absolute top-96 lg:mr-[660px] lg:mt-[660px] hidden lg:flex px-14 w-60 py-5 gap-2 font-semibold  text-transparent bg-clip-text bg-gradient-to-b from-[#D738A4] to-[#FFDD77] font-Thai text-4xl ">ทำอะไร</p>
-              <p className=" absolute top-96 w-[200px] mt-[547px] leading-loose md:mr-[550px] sm:mr-[0px] font-semibold text-transparent bg-clip-text bg-gradient-to-b from-[#D738A4] to-[#FFDD77] font-Thai  text-3xl  lg:hidden ">ชมรมนี้ทำอะไร ?</p>
+              <p className=" absolute top-96 lg:mr-[520px] lg:mt-[600px] hidden lg:flex px-6 w-80 py-5  gap-2 font-semibold text-transparent bg-clip-text bg-gradient-to-b from-[#D738A4] to-[#FFDD77] font-Thai text-5xl ">การรับสมัคร และ</p>
+              <p className=" absolute top-96 lg:mr-[580px] lg:mt-[690px] hidden lg:flex px-14 w-80 py-5 gap-2 font-semibold  text-transparent bg-clip-text bg-gradient-to-b from-[#D738A4] to-[#FFDD77] font-Thai text-3xl ">การสอบเข้า</p>
+              <p className=" absolute top-96 w-[350px] mt-[547px] leading-loose md:mr-[400px] font-semibold text-transparent bg-clip-text bg-gradient-to-b from-[#D738A4] to-[#FFDD77] font-Thai  text-3xl  lg:hidden ">การรับสมัครและการสอบเข้า</p>
               <svg className="absolute top-96 ml-0 lg:ml-[260px] lg:mt-[600px] md:mt-[630px] sm:mt-[630px] flex lg:w-[509px] lg:h-[309px] md:w-[772px] md:h-[468px] sm:h-[220px] " viewBox="0 0 509 307" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <rect width="509" height="307" rx="23" fill="#D9D9D9"/>
               </svg>
               
-              <p className=" absolute top-96 lg:ml-[270px] lg:mt-[910px] md:mt-[1100px] sm:mt-[860px] z-50 md:ml-0 flex  text-[#7533A8]  font-Thai text-lg opacity-75 ">ภาพบรรยากาศในชมรม</p>
+              <p className=" absolute top-96 lg:ml-[270px] lg:mt-[910px] md:mt-[1100px] sm:mt-[860px] z-50 md:ml-0 flex  text-[#7533A8]  font-Thai text-lg opacity-75 ">ภาพบรรยากาศในโครงการ</p>
               <img className="absolute top-96 ml-0 lg:ml-[260px] lg:mt-[600px] md:mt-[630px] sm:mt-[630px] z-10  flex object-cover lg:h-[307px] lg:w-[509px] md:w-[772px] md:h-[468px] sm:w-[363px] sm:h-[220px] md:rounded-3xl sm:rounded-2xl " src={`data:${image1Type};base64,${image1}`} />
-            <div className=" lg:flex absolute top-96 mr-[680px] mt-[730px] hidden  ">
+            <div className=" lg:flex absolute top-96 mr-[680px] mt-[750px] hidden  ">
           <ClubStar/>
           </div>
         </div>
@@ -382,10 +381,10 @@ const data = JSON.stringify({
           <svg className="absolute top-96 ml-0 lg:mr-[280px] lg:mt-[0px] md:mt-[70px] sm:mt-[100px] flex lg:w-[509px] lg:h-[309px] md:w-[772px] md:h-[468px] sm:h-[220px] " viewBox="0 0 509 307" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <rect width="509" height="307" rx="23" fill="#D9D9D9"/>
               </svg>
-          <p className=" absolute top-96 lg:mr-[270px] lg:mt-[310px] md:mt-[540px] sm:mt-[330px] md:ml-0 flex  text-[#7533A8] font-Thai text-lg opacity-75 ">ภาพบรรยากาศในชมรม</p>
-          <p className=" absolute top-96 lg:ml-[600px] lg:mt-[0px] hidden lg:flex px-6 w-60 py-5  gap-2 font-semibold text-transparent bg-clip-text bg-gradient-to-br from-[#D738A4] to-[#FFDD77] leading-[4.5rem] font-Thai text-6xl ">ประโยชน์ที่ได้รับ</p>
-          <p className=" absolute top-96 lg:ml-[620px] lg:mt-[130px] hidden lg:flex px-14 w-76 py-5 gap-2 font-semibold  text-transparent bg-clip-text bg-gradient-to-b from-[#D738A4] to-[#FFDD77] font-Thai text-3xl ">จากการเข้าชมรม</p>
-          <p className=" absolute top-96 md:mt-[0px] leading-loose md:mr-[350px] font-semibold text-transparent bg-clip-text bg-gradient-to-b from-[#D738A4] to-[#FFDD77] font-Thai  text-3xl  lg:hidden ">ประโยชน์ที่ได้รับจากการเข้าชมรม</p>
+          <p className=" absolute top-96 lg:mr-[270px] lg:mt-[310px] md:mt-[540px] sm:mt-[330px] md:ml-0 flex  text-[#7533A8] font-Thai text-lg opacity-75 ">ภาพบรรยากาศในโครงการ</p>
+          <p className=" absolute top-96 lg:ml-[600px] lg:mt-[0px] hidden lg:flex px-6 w-60 py-5  gap-2 font-semibold text-transparent bg-clip-text bg-gradient-to-br from-[#D738A4] to-[#FFDD77] leading-[4.5rem] font-Thai text-6xl ">วิชา /</p>
+          <p className=" absolute top-96 lg:ml-[620px] lg:mt-[70px] hidden lg:flex px-14 w-76 py-5 gap-2 font-semibold  text-transparent bg-clip-text bg-gradient-to-b from-[#D738A4] to-[#FFDD77] font-Thai text-3xl ">หลักสูตรเพิ่มเติม <br />ที่เรียน</p>
+          <p className=" absolute top-96 md:mt-[0px] leading-loose md:mr-[400px] font-semibold text-transparent bg-clip-text bg-gradient-to-b from-[#D738A4] to-[#FFDD77] font-Thai  text-3xl  lg:hidden ">วิชา/หลักสูตรเพิ่มเติมที่เรียน</p>
           <img className="absolute top-96 ml-0 lg:mr-[280px] lg:mt-[0px] md:mt-[70px] sm:mt-[100px] flex object-cover lg:h-[307px] lg:w-[509px] md:w-[772px] md:h-[468px] sm:w-[363px] sm:h-[220px] md:rounded-3xl sm:rounded-2xl  " src={`data:${image2Type};base64,${image2}`} />
               <div className=" lg:flex absolute top-96 ml-[675px] mt-[200px] hidden  ">
           
@@ -397,12 +396,12 @@ const data = JSON.stringify({
          <svg className="absolute top-96 ml-0 lg:ml-[280px] lg:mt-[750px] md:mt-[1070px] flex lg:w-[509px] lg:h-[309px] md:w-[772px] md:h-[468px] sm:mt-[1100px] sm:h-[220px] " viewBox="0 0 509 307" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <rect width="509" height="307" rx="23" fill="#D9D9D9"/>
               </svg>
-          <p className=" absolute top-96 lg:ml-[270px] lg:mt-[1060px] md:mt-[1540px] sm:mt-[1330px] md:ml-0 flex  text-[#7533A8] font-Thai text-lg opacity-75 ">ภาพบรรยากาศในชมรม</p>
-          <p className=" absolute top-96 lg:mr-[550px] lg:mt-[750px] hidden lg:flex px-6 w-72 py-5  gap-2 font-semibold text-transparent bg-clip-text bg-gradient-to-br from-[#D738A4] to-[#FFDD77] leading-[4.5rem] font-Thai text-7xl ">ผลงาน</p>
-          <p className=" absolute top-96 lg:mr-[650px] lg:mt-[820px] hidden lg:flex px-14 w-60 py-5 gap-2 font-semibold  text-transparent bg-clip-text bg-gradient-to-b from-[#D738A4] to-[#FFDD77] font-Thai text-3xl ">ของชมรม</p>
-          <p className=" absolute top-96 md:mt-[1010px] sm:mt-[1000px] leading-loose md:mr-[535px] sm:mr-[0px] font-semibold text-transparent bg-clip-text bg-gradient-to-b from-[#D738A4] to-[#FFDD77] font-Thai  text-3xl  lg:hidden ">ผลงานของชมรม</p>
+          <p className=" absolute top-96 lg:ml-[270px] lg:mt-[1060px] md:mt-[1540px] sm:mt-[1330px] md:ml-0 flex  text-[#7533A8] font-Thai text-lg opacity-75 ">ภาพบรรยากาศในโครงการ</p>
+          <p className=" absolute top-96 lg:mr-[550px] lg:mt-[750px] hidden lg:flex px-6 w-80 py-5  gap-2 font-semibold text-transparent bg-clip-text bg-gradient-to-br from-[#D738A4] to-[#FFDD77] font-Thai text-5xl ">ความน่าสนใจของ</p>
+          <p className=" absolute top-96 lg:mr-[550px] lg:mt-[850px] hidden lg:flex px-6 w-80 py-5 gap-2 font-semibold  text-transparent bg-clip-text bg-gradient-to-b from-[#D738A4] to-[#FFDD77] font-Thai text-3xl ">สายการเรียน</p>
+          <p className=" absolute top-96 md:mt-[1010px] sm:mt-[1000px] leading-loose md:mr-[370px] font-semibold text-transparent bg-clip-text bg-gradient-to-b from-[#D738A4] to-[#FFDD77] font-Thai  text-3xl  lg:hidden ">ความน่าสนใจของสายการเรียน</p>
           <img className="absolute top-96 ml-0 lg:ml-[280px] lg:mt-[750px] md:mt-[1070px] sm:mt-[1100px]  flex object-cover lg:h-[307px] lg:w-[509px] md:w-[772px] md:h-[468px] sm:w-[363px] sm:h-[220px] md:rounded-3xl sm:rounded-2xl " src={`data:${image3Type};base64,${image3}`} />
-               <div className=" lg:flex absolute top-96 mr-[665px] mt-[880px] hidden  ">
+               <div className=" lg:flex absolute top-96 mr-[665px] mt-[920px] hidden  ">
           
           <ClubStar/>
           </div>
@@ -428,23 +427,22 @@ const data = JSON.stringify({
           //text area------------------------------------------------------------------------------------------------------------
         }
 
-        <div className=" absolute top-96 inset-0 m-auto  lg:mt-[970px] md:mt-[1200px] sm:mt-[900px] flex justify-center">
-          <p className=" text-[#582A88]  text-lg break-words font-Thai h-60 sm:ml-10 md:w-[750px] sm:w-[600px] md:h-72 sm:h-[500px] bg-transparent align-top resize-none overflow-y-scroll whitespace-pre-line	 " >
-              {clubsactivity}
+        <div className=" absolute top-96 inset-0 m-auto  lg:mt-[970px] md:mt-[1200px] sm:mt-[900px] flex justify-center ">
+          <p className=" text-[#582A88]  text-lg break-words font-Thai h-60 sm:ml-10 md:w-[750px] sm:w-[600px] md:h-72 sm:h-[500px] bg-transparent align-top resize-none  overflow-y-scroll " dangerouslySetInnerHTML={Admission}>
             </p>
         </div>       
 
         <div className=" absolute top-96 inset-0 m-auto  lg:mt-[1710px] md:mt-[2200px] sm:mt-[1900px] flex justify-center">
-          <p className=" text-[#582A88] text-lg break-words font-Thai h-60 sm:ml-10 md:w-[750px] sm:w-[600px] md:h-72 sm:h-[500px] bg-transparent align-top resize-none overflow-y-scroll whitespace-pre-line">
-            {benefits}
+          <p className=" text-[#582A88] text-lg break-words font-Thai h-60 sm:ml-10 md:w-[750px] sm:w-[600px] md:h-72 sm:h-[500px] bg-transparent align-top resize-none overflow-y-scroll" dangerouslySetInnerHTML={Subjects}>
+
             </p>
           
                 
         </div> 
 
         <div className=" absolute top-96 inset-0 m-auto  lg:mt-[2430px] md:mt-[3200px] sm:mt-[2900px] flex justify-center">
-          <p className=" text-[#582A88] text-lg break-words  font-Thai h-60 sm:ml-10 md:w-[750px] sm:w-[600px] md:h-72 sm:h-[500px] bg-transparent align-top resize-none overflow-y-scroll whitespace-pre-line">
-            {workings}
+          <p className=" text-[#582A88] text-lg break-words  font-Thai h-60 sm:ml-10 md:w-[750px] sm:w-[600px] md:h-72 sm:h-[500px] bg-transparent align-top resize-none overflow-y-scroll" dangerouslySetInnerHTML={Interests}>
+
                 </p>
         </div> 
 
@@ -454,8 +452,7 @@ const data = JSON.stringify({
           <div className="">
         <div className=" absolute top-96 inset-0 m-auto  lg:mt-[2895px] md:mt-[3730px] sm:mt-[3790px] flex justify-center">
           
-            <p className=" text-white  text-md break-words font-Thai  md:w-[480px] md:ml-[240px] md:h-[266px] sm:w-[250px] sm:ml-[140px] sm:h-[120px] bg-transparent align-top resize-none whitespace-pre-line overflow-y-scroll">
-                {review1}
+            <p className=" text-white  text-md break-words font-Thai  md:w-[480px] md:ml-[240px] md:h-[266px] sm:w-[250px] sm:ml-[140px] sm:h-[120px] bg-transparent align-top resize-none overflow-y-scroll" dangerouslySetInnerHTML={Review1}>
             </p>
         </div>
 
@@ -479,8 +476,7 @@ const data = JSON.stringify({
               }
               <div className={showReview2 ? " block" : "hidden" }>
               <div className=" absolute top-96 inset-0 m-auto  lg:mt-[3295px] lg:mr-0 md:mt-[4115px] sm:mt-[4090px] md:mr-[270px] flex justify-center">
-                <p className=" text-white text-md break-words font-Thai  md:w-[480px] md:mr-[240px] md:h-[266px] sm:w-[250px] sm:mr-[130px] sm:h-[120px] bg-transparent align-top resize-none whitespace-pre-line overflow-y-scroll">
-                    {review2}
+                <p className=" text-white text-md break-words font-Thai  md:w-[480px] md:mr-[240px] md:h-[266px] sm:w-[250px] sm:mr-[130px] sm:h-[120px] bg-transparent align-top resize-none overflow-y-scroll" dangerouslySetInnerHTML={Review2}>
                 </p>
                 
               </div>
@@ -516,8 +512,7 @@ const data = JSON.stringify({
           <div className={showReview3 ? " block" : "hidden" }>
           <div className=" absolute top-96 inset-0 m-auto  lg:mt-[3695px] md:mt-[4520px] sm:mt-[4390px] flex justify-center">
           
-          <p className=" text-white  text-md break-words font-Thai  md:w-[480px] md:ml-[240px] md:h-[266px] sm:w-[250px] sm:ml-[140px] sm:h-[120px] bg-transparent align-top resize-none whitespace-pre-line overflow-y-scroll">
-            {review3}
+          <p className=" text-white  text-md break-words font-Thai  md:w-[480px] md:ml-[240px] md:h-[266px] sm:w-[250px] sm:ml-[140px] sm:h-[120px] bg-transparent align-top resize-none overflow-y-scroll" dangerouslySetInnerHTML={Review3}>
           </p>
         </div>
         <div className=" absolute top-96 inset-0 m-auto  lg:mt-[3700px] md:mt-[4520px] sm:mt-[4390px] md:mr-[485px] sm:mr-[180px] flex justify-center">

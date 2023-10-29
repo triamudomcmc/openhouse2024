@@ -99,8 +99,10 @@ export default function Club() {
             <p className=" font-extrabold text-transparent text-5xl bg-clip-text bg-gradient-to-b from-[#81109D] to-[#D738A4] font-Thai "> ชมรม{clubs}</p>
             <p className=" font-extrabold text-transparent text-2xl bg-clip-text bg-gradient-to-b from-[#81109D] to-[#D738A4] font-Thai opacity-60"> {clubsE}</p>
             <p className=" text-[#141547] font-Thai opacity-60">สมาชิก {members} คน</p>
-            <div className=" w-full flex justify-center">
+            <div className="  w-full flex justify-center">
+              <div className="w-4/5">
             <ClubWidget />
+            </div>
             </div>
             
             <button 

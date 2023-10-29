@@ -1,6 +1,6 @@
 export default function ClubWidget() {
   return(
-    <svg width="80%" height="79" viewBox="0 0 787 79" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <svg width="100%" height="79" viewBox="0 0 787 79" fill="none" xmlns="http://www.w3.org/2000/svg">
 <g filter="url(#filter0_d_250_1315)">
 <path d="M6 36.5L330 36.5" stroke="url(#paint0_linear_250_1315)" stroke-width="4" stroke-linecap="round"/>
 <path d="M456 36.5L781 36.5" stroke="url(#paint1_linear_250_1315)" stroke-width="4" stroke-linecap="round"/>

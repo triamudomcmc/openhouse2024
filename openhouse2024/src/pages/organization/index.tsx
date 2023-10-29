@@ -76,11 +76,11 @@ export default function Program() {
     }
 
     function HandleClick (){
-      router.push('/program/edit')
+      router.push('/organization/edit')
     }
 
     function HandlePreview (){
-      router.push('/program/preview')
+      router.push('/organization/preview')
     }
     
     useEffect(() => {

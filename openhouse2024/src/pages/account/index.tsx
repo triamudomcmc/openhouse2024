@@ -98,6 +98,9 @@ export default function AccountPage() {
   function handleForm() {
     router.push('/account/form')
   }
+  function handleAdmin() {
+    router.push('/admin')
+  }
 
   useEffect(() => {
     makeRequest()
@@ -122,6 +125,7 @@ export default function AccountPage() {
         <button type="button" onClick={handleOrganization} className={organization ? " absolute  left-1/2 -translate-x-1/2 w-1/3 border shadow-sm text-black bg-white hover:bg-slate-300  font-Thai rounded-full text-xl px-5 py-5 text-center mr-2 mb-2 " : " hidden" }>ข้อมูลองค์กรนักเรียน</button>
         <button type="button" onClick={handleForm} className={none ? " absolute left-1/2 -translate-x-1/2 w-1/3 border shadow-sm text-black bg-white hover:bg-slate-300  font-Thai rounded-full text-xl px-5 py-5 text-center mr-2 mb-2 " : "hidden"}>Form</button>
         <button type="button" className=" absolute -z-10 left-1/2 -translate-x-1/2 w-1/3 border shadow-sm text-black bg-white font-Thai rounded-full text-xl px-5 py-5 text-center mr-2 mb-2 ">Loading</button>
+        <button type="button" onClick={handleAdmin} className="absolute left-1/2 mt-96 -translate-x-1/2 w-1/3 border shadow-sm text-black bg-white hover:bg-slate-300  font-Thai rounded-full text-xl px-5 py-5 text-center mr-2 mb-2 " >Admin</button>
         <button type="button" onClick={handleSignout} className=" absolute left-1/2 mt-48  -translate-x-1/2 w-1/3 border shadow-sm text-black bg-white hover:bg-slate-300  font-Thai rounded-full text-xl px-5 py-5 text-center mr-2 mb-2 ">Sign out</button>
       </>
     );

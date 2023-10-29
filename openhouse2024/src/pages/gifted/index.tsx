@@ -6,9 +6,10 @@ import ClubWidget from "@/vectors/club/clubwidget";
 import WhitePencilIcon from "@/vectors/club/whitePencil";
 import axios from "axios";
 
-export default function Program() {
+export default function Gifted() {
   const router = useRouter();
-  const [program, setProgram] = useState('');  
+  const [gifted, setGifted] = useState('');  
+  const [clubsE, setClubsE] = useState('')
   const [members, setMembers] = useState('')
   const [aprrove, setAprove] = useState(false)
   const [deny, setDeny] = useState(false)
@@ -41,7 +42,7 @@ export default function Program() {
       try {
         const response = await axios.request(config);
         console.log(JSON.stringify(response.data.info.name));
-        setProgram(response.data.info.name)
+        setGifted(response.data.info.name)
         setMembers(response.data.info.members)
         console.log("succes")
         if( response.data.info.status === 'ยังไม่มีการแก้ไข'){
@@ -76,11 +77,11 @@ export default function Program() {
     }
 
     function HandleClick (){
-      router.push('/program/edit')
+      router.push('/gifted/edit')
     }
 
     function HandlePreview (){
-      router.push('/program/preview')
+      router.push('/gifted/preview')
     }
     
     useEffect(() => {
@@ -95,9 +96,8 @@ export default function Program() {
         <div className="flex justify-center relative " >
         <div className=" h-full align-middle mt-40 w-full md:w-1/2 lg:w-1/3 border border-slate-500 rounded-lg justify-center flex-wrap text-center">
             <p className=" text-[#141547] mb-12 font-Thai ">ข้อมูลหน่วยงาน</p>
-            <p className=" font-extrabold text-transparent text-4xl bg-clip-text bg-gradient-to-b from-[#81109D] to-[#D738A4] font-Thai break-words ">{program}</p>
-            
-            <p className=" text-[#141547] font-Thai opacity-60 mt-4">สมาชิก {members} คน</p>
+            <p className=" font-extrabold text-transparent text-5xl bg-clip-text bg-gradient-to-b from-[#81109D] to-[#D738A4] font-Thai "> {gifted}</p>
+            <p className=" text-[#141547] font-Thai opacity-60">สมาชิก {members} คน</p>
             <div className="  w-full flex justify-center">
               <div className="w-4/5">
             <ClubWidget />

@@ -19,15 +19,15 @@ import Alert from '@mui/material/Alert';
 import AlertTitle from '@mui/material/AlertTitle';
 import FormData from "form-data";
 
-export default function ClubEdit() {
-  const [clubs, setClubs] = useState('');
+export default function ProgramEdit() {
+  const [program, setProgram] = useState('');
   const [member, setMember] = useState('');
   const [ig, setIg] = useState('');
   const [fb, setFb] = useState('');
   const [other, setOther] = useState('');
-  const [clubsactivity,setClubActivity] = useState('')
-  const [benefits,setBenefits] = useState('')
-  const [workings,setWorkings] = useState('')
+  const [admission,setAdmission] = useState('')
+  const [subjects,setSubjects] = useState('')
+  const [interests,setInterests] = useState('')
   const [review1,setReview1] = useState('')
   const [review1Name,setReview1Name] = useState('')
   const [review1Gen,setReview1Gen] = useState('')
@@ -58,11 +58,9 @@ export default function ClubEdit() {
   const [igEditMode, setIgEditMode] = useState(false);
   const [fbEditMode, setFbEditMode] = useState(false);
   const [otherEditMode, setOtherEditMode] = useState(false);
-  const [clubActivityEditMode, setClubActivityEditMode] = useState(false);
-  const [benefitsEditMode, setBenefitsEditMode] = useState(false);
-  const [workingsEditMode, setWorkingsEditMode] = useState(false);
-  const [logo, setLogo] = useState('');
-  const [logoFile, setLogoFile] = useState([]);
+  const [admissionEditMode, setAdmissionEditMode] = useState(false);
+  const [subjectsEditMode, setSubjectsEditMode] = useState(false);
+  const [interestsEditMode, setInterestsEditMode] = useState(false);
   const [image1, setImage1] = useState('');
   const [image1File, setImage1File] = useState([]);
   const [image2, setImage2] = useState('');
@@ -94,9 +92,9 @@ export default function ClubEdit() {
     "ig": ig,
     "facebook": fb,
     "others": other,
-    "clubsactivity": clubsactivity,
-    "benefits": benefits,
-    "workings": workings,
+    "admission": admission,
+    "subjects": subjects,
+    "interests": interests,
     "review_1.name": review1Name,
     "review_1.gen": review1Gen,
     "review_1.contact": review1Contact,
@@ -114,7 +112,7 @@ export default function ClubEdit() {
   let configEdit = {
     method: 'post',
     maxBodyLength: Infinity,
-    url: 'https://openhouse2024-backend.vercel.app/api/clubs/edit',
+    url: 'https://openhouse2024-backend.vercel.app/api/gifted/edit',
     headers: { 
       'Content-Type': 'application/json'
     },
@@ -133,30 +131,6 @@ export default function ClubEdit() {
     }
   }
 
-  function logoRequest () {
-    let logoData = new FormData();
-    logoData.append('file', logoFile);
-    logoData.append('email', session?.user?.email);
-  
-    let logoConfig = {
-      method: 'post',
-      maxBodyLength: Infinity,
-      url: 'https://openhouse2024-backend.vercel.app/api/clubs/upload-logo',
-      headers: { 
-        'Content-Type': 'multipart/form-data'
-      },
-      data : logoData
-    };
-  
-    axios.request(logoConfig)
-    .then((response) => {
-    console.log(JSON.stringify(response.data));
-    })
-    .catch((error) => {
-    console.log(error);
-    });
-  }
-
   function image1Request () {
   let image1Data = new FormData();
   image1Data.append('file', image1File);
@@ -166,7 +140,7 @@ export default function ClubEdit() {
   let image1Config = {
     method: 'post',
     maxBodyLength: Infinity,
-    url: 'https://openhouse2024-backend.vercel.app/api/clubs/upload-image',
+    url: 'https://openhouse2024-backend.vercel.app/api/gifted/upload-image',
     headers: { 
       'Content-Type': 'multipart/form-data'
     },
@@ -191,7 +165,7 @@ function image2Request () {
   let image2Config = {
     method: 'post',
     maxBodyLength: Infinity,
-    url: 'https://openhouse2024-backend.vercel.app/api/clubs/upload-image',
+    url: 'https://openhouse2024-backend.vercel.app/api/gifted/upload-image',
     headers: { 
       'Content-Type': 'multipart/form-data'
     },
@@ -216,7 +190,7 @@ function image2Request () {
     let image3Config = {
       method: 'post',
       maxBodyLength: Infinity,
-      url: 'https://openhouse2024-backend.vercel.app/api/clubs/upload-image',
+      url: 'https://openhouse2024-backend.vercel.app/api/gifted/upload-image',
       headers: { 
         'Content-Type': 'multipart/form-data'
       },
@@ -241,7 +215,7 @@ function image2Request () {
     let ReviewProfile1Config = {
       method: 'post',
       maxBodyLength: Infinity,
-      url: 'https://openhouse2024-backend.vercel.app/api/clubs/upload-profile',
+      url: 'https://openhouse2024-backend.vercel.app/api/gifted/upload-profile',
       headers: { 
         'Content-Type': 'multipart/form-data'
       },
@@ -266,7 +240,7 @@ function image2Request () {
     let ReviewProfile2Config = {
       method: 'post',
       maxBodyLength: Infinity,
-      url: 'https://openhouse2024-backend.vercel.app/api/clubs/upload-profile',
+      url: 'https://openhouse2024-backend.vercel.app/api/gifted/upload-profile',
       headers: { 
         'Content-Type': 'multipart/form-data'
       },
@@ -291,7 +265,7 @@ function image2Request () {
     let ReviewProfile3Config = {
       method: 'post',
       maxBodyLength: Infinity,
-      url: 'https://openhouse2024-backend.vercel.app/api/clubs/upload-profile',
+      url: 'https://openhouse2024-backend.vercel.app/api/gifted/upload-profile',
       headers: { 
         'Content-Type': 'multipart/form-data'
       },
@@ -324,14 +298,14 @@ const data = JSON.stringify({
       function request(){
       axios.request(config)
       .then((response) =>{
-          setClubs(response.data.info.name);
+          setProgram(response.data.info.name);
           setMember(response.data.info.members);
           setIg(response.data.info.ig);
           setFb(response.data.info.facebook);
           setOther(response.data.info.others);
-          setClubActivity(response.data.info.clubsactivity);
-          setBenefits(response.data.info.benefits)
-          setWorkings(response.data.info.workings)
+          setAdmission(response.data.info.admission);
+          setSubjects(response.data.info.subjects)
+          setInterests(response.data.info.interests)
           setReview1Name(response.data.info.review_1.name)
           setReview1Gen(response.data.info.review_1.gen)
           setReview1Contact(response.data.info.review_1.contact)
@@ -347,16 +321,16 @@ const data = JSON.stringify({
           console.log("success");
         }) .catch((error) => {
           console.log(error);
-          router.push('/club')
+          router.push('/gifted')
         })}
 
   const memberRef = useRef<any>();
   const igRef = useRef<any>();
   const fbRef = useRef<any>();
   const otherRef = useRef<any>();
-  const clubActivityRef = useRef<any>();
-  const benefitsRef = useRef<any>();
-  const workingsRef = useRef<any>();
+  const admissionRef = useRef<any>();
+  const subjectsRef = useRef<any>();
+  const interestsRef = useRef<any>();
   const review1Ref = useRef<any>();
   const review1NameRef = useRef<any>();
   const review1GenRef = useRef<any>();
@@ -377,12 +351,11 @@ const data = JSON.stringify({
   }, []);
 
   function back() {
-    router.push('/club');
+    router.push('/gifted');
   }
 
   function summit() {
     EditRequest()
-    logoRequest()
     image1Request()
     image2Request()
     image3Request()
@@ -411,19 +384,19 @@ const data = JSON.stringify({
     otherRef.current!.focus();
   }
 
-  function turnOnClubActivityEditMode() {
-    setClubActivityEditMode(true);
-    clubActivityRef.current!.focus();
+  function turnOnAdmissionEditMode() {
+    setAdmissionEditMode(true);
+    admissionRef.current!.focus();
   }
 
-  function turnOnBenefitsEditMode() {
-    setBenefitsEditMode(true);
-    benefitsRef.current!.focus();
+  function turnOnSubjectsEditMode() {
+    setSubjectsEditMode(true);
+    subjectsRef.current!.focus();
   }
 
-  function turnOnWorkingsEditMode() {
-    setWorkingsEditMode(true);
-    workingsRef.current!.focus();
+  function turnOnInterestsEditMode() {
+    setInterestsEditMode(true);
+    interestsRef.current!.focus();
   }
 
   function turnOnReview1EditMode() {
@@ -518,16 +491,16 @@ const data = JSON.stringify({
   function handleFbChange(event: any) {
     setFb(event.target.value);
   }
-  function handleClubActivityChange(event:any) {
-    setClubActivity(event.target.value)
+  function handleAdmissionChange(event:any) {
+    setAdmission(event.target.value)
   }
 
-  function handleBenefitsChange(event:any) {
-    setBenefits(event.target.value)
+  function handleSubjectsChange(event:any) {
+    setSubjects(event.target.value)
   }
 
-  function handleWorkingsChange(event:any) {
-    setWorkings(event.target.value)
+  function handleInterestsChange(event:any) {
+    setInterests(event.target.value)
   }
 
   function handleReview1Change(event: any) {
@@ -580,16 +553,6 @@ const data = JSON.stringify({
 
   function handleOtherChange(event: any) {
     setOther(event.target.value);
-  }
-
-  function handleLogoChange(event:any) {
-    console.log(event.target.files);
-    setLogoFile(event.target.files[0]);
-    setLogo(URL.createObjectURL(event.target.files[0]));
-    const file = event.target.files[0];
-    const reader = new FileReader();
-
-    reader.readAsDataURL(file);
   }
 
   function handleImage1Change(event:any) {
@@ -693,27 +656,28 @@ const data = JSON.stringify({
               </Alert>
             </div>
             <div className=" absolute mt-32 top-96 flex justify-center">
-            <p className="  p-6   font-extrabold text-transparent md:text-5xl sm:text-4xl bg-clip-text break-words w-[80vw] bg-gradient-to-b from-[#81109D] to-[#D738A4] py-5 font-Thai text-center mx-10 z-10"> ชมรม{clubs}</p>
+            <p className="  p-6   font-extrabold text-transparent md:text-5xl sm:text-4xl bg-clip-text break-words w-[80vw] bg-gradient-to-b from-[#81109D] to-[#D738A4] py-5 font-Thai text-center mx-10 z-10">{program}</p>
 
-            <div className=" flex text-white md:w-[500px] sm:w-[400px] sm:ml-3 left-1/2 absolute -translate-x-1/2  font-Thai mt-[150px] justify-between ">
-              <div className=" align-middle flex lg:ml-[20px] lg:mr-[40px] md:ml-[40px] md:mr-[20px] sm:ml-[20px] sm:mr-[10px]">
-              <svg className=" w-[150px] " viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <rect width="100" height="100" rx="23" fill="#D9D9D9"/>
-              </svg>
-              </div>
-              <div className=" absolute w-[150px] h-[150px] mt-[8px] lg:ml-[20px] lg:mr-[40px] md:ml-[40px] md:mr-[20px] sm:ml-[20px] sm:mr-[10px] z-20  ">
-                <label id="dropzone-file" className="flex flex-col items-center justify-center w-full h-full border-2rounded-[30px] cursor-pointer">
-                  <div className="flex flex-col items-center justify-center pt-5 pb-6  ">
-                    <svg className="w-8 h-8 text-gray-500" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 20 16">
-                      <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 13h3a3 3 0 0 0 0-6h-.025A5.56 5.56 0 0 0 16 6.5 5.5 5.5 0 0 0 5.207 5.021C5.137 5.017 5.071 5 5 5a4 4 0 0 0 0 8h2.167M10 15V6m0 0L8 8m2-2 2 2"/>
-                    </svg>
-                  </div>
-                  <input id="dropzone-file" type="file" className="hidden" accept=".png,.jpg,jpeg" onChange={handleLogoChange} />
-                </label>
-              </div> 
-              <img className="absolute top-0  z-10 lg:ml-[20px] lg:mr-[40px] md:ml-[40px] md:mr-[20px] sm:ml-[20px] sm:mr-[10px] object-cover sm:w-[150px] sm:h-[150px] md:rounded-3xl sm:rounded-2xl " src={logo} />
-              <div className="  my-1 align-middle flex ">
-              <svg className=" w-[6px] " viewBox="0 0 4 86" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <div className=" flex text-white md:w-[500px] sm:w-[400px] sm:ml-3 left-1/2 absolute -translate-x-1/2  font-Thai mt-[200px] justify-between ">
+              <UserIcon />
+              <p className=" text-3xl block text-center text-transparent bg-clip-text bg-gradient-to-b from-[#632790] to-[#D738A4]">สมาชิก <br /> 
+                <input className=" block h-10 w-24 align-middle items-center bg-transparent text-center"
+                type="text"
+                ref={memberRef}
+                value={member}
+                readOnly ={!memberEditMode}
+                onClick={turnOnMemberEditMode}
+                defaultValue=""
+                onBlur={() => setMemberEditMode(false)}
+                onChange={handleMemberChange}
+                >
+
+
+                </input><button className=" block align-middle m-auto z-30 " onClick={turnOnMemberEditMode}><PencilIcon/></button>
+              </p>
+              
+              <div className=" w-1 my-1 ">
+              <svg width="4" height="86" viewBox="0 0 4 86" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path d="M2 2L2 84" stroke="url(#paint0_linear_250_1393)" stroke-width="4" stroke-linecap="round"/>
                 <defs>
                   <linearGradient id="paint0_linear_250_1393" x1="-1.00003" y1="-21.1529" x2="-1.00003" y2="84" gradientUnits="userSpaceOnUse">
@@ -724,23 +688,7 @@ const data = JSON.stringify({
               </svg>
 
               </div>
-              <div className=" mt-1 ">
-              <p className=" flex text-[#8133A7] text-xl font-Thai  "> สมาชิก:
-              
-              <input className=" h-7 w-[120px] text-xl bg-transparent font-Thai"
-                type="text"
-                ref={memberRef}
-                value={member}
-                readOnly ={!memberEditMode}
-                onClick={turnOnMemberEditMode}
-                defaultValue=""
-                onBlur={() => setMemberEditMode(false)}
-                onChange={handleMemberChange}
-                >
-                
-                </input>
-                <button onClick={turnOnIgEditMode}><PencilIcon/></button>
-                </p>
+              <div className=" mt-1">
               <p className=" flex text-[#8133A7] text-xl font-Thai "> IG:
               
               <input className=" h-7 w-[154px] sm:w-[150px] text-xl bg-transparent font-Thai"
@@ -799,9 +747,9 @@ const data = JSON.stringify({
         </div>
         {// first section
          }
-              <p className=" absolute top-96 lg:mr-[600px] lg:mt-[600px] hidden lg:flex px-6 w-60 py-5  gap-2 font-semibold text-transparent bg-clip-text bg-gradient-to-b from-[#D738A4] to-[#FFDD77] font-Thai text-6xl ">ชมรมนี้</p>
-              <p className=" absolute top-96 lg:mr-[660px] lg:mt-[660px] hidden lg:flex px-14 w-60 py-5 gap-2 font-semibold  text-transparent bg-clip-text bg-gradient-to-b from-[#D738A4] to-[#FFDD77] font-Thai text-4xl ">ทำอะไร</p>
-              <p className=" absolute top-96 w-[200px] mt-[547px] leading-loose md:mr-[550px] sm:mr-[0px] font-semibold text-transparent bg-clip-text bg-gradient-to-b from-[#D738A4] to-[#FFDD77] font-Thai  text-3xl  lg:hidden ">ชมรมนี้ทำอะไร ?</p>
+              <p className=" absolute top-96 lg:mr-[600px] lg:mt-[600px] hidden lg:flex px-6 w-80 py-5  gap-2 font-semibold text-transparent bg-clip-text bg-gradient-to-b from-[#D738A4] to-[#FFDD77] font-Thai text-5xl ">การรับสมัคร และ</p>
+              <p className=" absolute top-96 lg:mr-[660px] lg:mt-[690px] hidden lg:flex px-14 w-80 py-5 gap-2 font-semibold  text-transparent bg-clip-text bg-gradient-to-b from-[#D738A4] to-[#FFDD77] font-Thai text-3xl ">การสอบเข้า</p>
+              <p className=" absolute top-96 w-[350px] mt-[547px] leading-loose md:mr-[400px] font-semibold text-transparent bg-clip-text bg-gradient-to-b from-[#D738A4] to-[#FFDD77] font-Thai  text-3xl  lg:hidden ">การรับสมัครและการสอบเข้า</p>
               <svg className="absolute top-96 ml-0 lg:ml-[260px] lg:mt-[600px] md:mt-[630px] sm:mt-[630px] flex lg:w-[509px] lg:h-[309px] md:w-[772px] md:h-[468px] sm:h-[220px] " viewBox="0 0 509 307" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <rect width="509" height="307" rx="23" fill="#D9D9D9"/>
               </svg>
@@ -817,20 +765,20 @@ const data = JSON.stringify({
               </div> 
               <p className=" absolute top-96 lg:ml-[270px] lg:mt-[910px] md:mt-[1100px] sm:mt-[860px] z-50 md:ml-0 flex  text-[#7533A8]  font-Thai text-lg opacity-75 ">ภาพบรรยากาศในชมรม</p>
               <img className="absolute top-96 ml-0 lg:ml-[260px] lg:mt-[600px] md:mt-[630px] sm:mt-[630px] z-10  flex object-cover lg:h-[307px] lg:w-[509px] md:w-[772px] md:h-[468px] sm:w-[363px] sm:h-[220px] md:rounded-3xl sm:rounded-2xl " src={image1} />
-            <div className=" lg:flex absolute top-96 mr-[680px] mt-[730px] hidden  ">
+            <div className=" lg:flex absolute top-96 mr-[680px] mt-[750px] hidden  ">
           <ClubStar/>
           </div>
         </div>
         <div className=" absolute top-96 inset-0 m-auto  lg:mt-[920px] mt-[1150px] flex justify-center">
           {// seccond section
          }
-          <svg className="absolute top-96 ml-0 lg:mr-[280px] lg:mt-[0px] md:mt-[70px] sm:mt-[100px] flex lg:w-[509px]   lg:h-[309px] md:w-[772px] md:h-[468px] sm:h-[220px] " viewBox="0 0 509 307" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <svg className="absolute top-96 ml-0 lg:mr-[280px] lg:mt-[0px] md:mt-[70px] sm:mt-[100px] flex lg:w-[509px]   lg:h-[309px] md:w-[772px] md:h-[468px] sm:h-[220px] sm:w-[365px] " viewBox="0 0 509 307" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <rect width="509" height="307" rx="23" fill="#D9D9D9"/>
               </svg>
           <p className=" absolute top-96 lg:mr-[270px] lg:mt-[310px] md:mt-[540px] sm:mt-[330px] md:ml-0 flex  text-[#7533A8] font-Thai text-lg opacity-75 ">ภาพบรรยากาศในชมรม</p>
-          <p className=" absolute top-96 lg:ml-[600px] lg:mt-[0px] hidden lg:flex px-6 w-60 py-5  gap-2 font-semibold text-transparent bg-clip-text bg-gradient-to-br from-[#D738A4] to-[#FFDD77] leading-[4.5rem] font-Thai text-6xl ">ประโยชน์ที่ได้รับ</p>
-          <p className=" absolute top-96 lg:ml-[620px] lg:mt-[130px] hidden lg:flex px-14 w-76 py-5 gap-2 font-semibold  text-transparent bg-clip-text bg-gradient-to-b from-[#D738A4] to-[#FFDD77] font-Thai text-3xl ">จากการเข้าชมรม</p>
-          <p className=" absolute top-96 md:mt-[0px] leading-loose md:mr-[350px] font-semibold text-transparent bg-clip-text bg-gradient-to-b from-[#D738A4] to-[#FFDD77] font-Thai  text-3xl  lg:hidden ">ประโยชน์ที่ได้รับจากการเข้าชมรม</p>
+          <p className=" absolute top-96 lg:ml-[600px] lg:mt-[0px] hidden lg:flex px-6 w-60 py-5  gap-2 font-semibold text-transparent bg-clip-text bg-gradient-to-br from-[#D738A4] to-[#FFDD77] leading-[4.5rem] font-Thai text-6xl ">วิชา /</p>
+          <p className=" absolute top-96 lg:ml-[620px] lg:mt-[70px] hidden lg:flex px-14 w-76 py-5 gap-2 font-semibold  text-transparent bg-clip-text bg-gradient-to-b from-[#D738A4] to-[#FFDD77] font-Thai text-3xl ">หลักสูตรเพิ่มเติม <br />ที่เรียน</p>
+          <p className=" absolute top-96 md:mt-[0px] leading-loose md:mr-[400px] font-semibold text-transparent bg-clip-text bg-gradient-to-b from-[#D738A4] to-[#FFDD77] font-Thai  text-3xl  lg:hidden ">วิชา/หลักสูตรเพิ่มเติมที่เรียน</p>
           <img className="absolute top-96 ml-0 lg:mr-[280px] lg:mt-[0px] md:mt-[70px] sm:mt-[100px] flex object-cover lg:h-[307px] lg:w-[509px] md:w-[772px] md:h-[468px] sm:w-[363px] sm:h-[220px] md:rounded-3xl sm:rounded-2xl  " src={image2} />
           <div className=" absolute top-0 lg:mt-[385px]  lg:mr-[300px] md:mt-[450px] sm:mt-[485px] z-20 flex items-center justify-center lg:w-[509px] lg:h-[307px] md:w-[772px] md:h-[468px] sm:w-[363px] sm:h-[220px] ">
                 <label id="dropzone-file" className="flex flex-col items-center justify-center w-full h-full rounded-[30px] cursor-pointer">
@@ -853,9 +801,9 @@ const data = JSON.stringify({
                 <rect width="509" height="307" rx="23" fill="#D9D9D9"/>
               </svg>
           <p className=" absolute top-96 lg:ml-[270px] lg:mt-[1060px] md:mt-[1540px] sm:mt-[1330px] md:ml-0 flex  text-[#7533A8] font-Thai text-lg opacity-75 ">ภาพบรรยากาศในชมรม</p>
-          <p className=" absolute top-96 lg:mr-[550px] lg:mt-[750px] hidden lg:flex px-6 w-72 py-5  gap-2 font-semibold text-transparent bg-clip-text bg-gradient-to-br from-[#D738A4] to-[#FFDD77] leading-[4.5rem] font-Thai text-7xl ">ผลงาน</p>
-          <p className=" absolute top-96 lg:mr-[650px] lg:mt-[820px] hidden lg:flex px-14 w-60 py-5 gap-2 font-semibold  text-transparent bg-clip-text bg-gradient-to-b from-[#D738A4] to-[#FFDD77] font-Thai text-3xl ">ของชมรม</p>
-          <p className=" absolute top-96 md:mt-[1010px] sm:mt-[1000px] leading-loose md:mr-[535px] sm:mr-[0px] font-semibold text-transparent bg-clip-text bg-gradient-to-b from-[#D738A4] to-[#FFDD77] font-Thai  text-3xl  lg:hidden ">ผลงานของชมรม</p>
+          <p className=" absolute top-96 lg:mr-[550px] lg:mt-[750px] hidden lg:flex px-6 w-80 py-5  gap-2 font-semibold text-transparent bg-clip-text bg-gradient-to-br from-[#D738A4] to-[#FFDD77] font-Thai text-5xl ">ความน่าสนใจของ</p>
+          <p className=" absolute top-96 lg:mr-[550px] lg:mt-[850px] hidden lg:flex px-6 w-80 py-5 gap-2 font-semibold  text-transparent bg-clip-text bg-gradient-to-b from-[#D738A4] to-[#FFDD77] font-Thai text-3xl ">สายการเรียน</p>
+          <p className=" absolute top-96 md:mt-[1010px] sm:mt-[1000px] leading-loose md:mr-[370px] font-semibold text-transparent bg-clip-text bg-gradient-to-b from-[#D738A4] to-[#FFDD77] font-Thai  text-3xl  lg:hidden ">ความน่าสนใจของสายการเรียน</p>
           <img className="absolute top-96 ml-0 lg:ml-[280px] lg:mt-[750px] md:mt-[1070px] sm:mt-[1100px]  flex object-cover lg:h-[307px] lg:w-[509px] md:w-[772px] md:h-[468px] sm:w-[363px] sm:h-[220px] md:rounded-3xl sm:rounded-2xl " src={image3} />
           <div className=" absolute top-0 lg:mt-[1135px] lg:ml-[275px] md:mt-[1450px] sm:mt-[1485px] z-20 flex items-center justify-center lg:w-[509px] lg:h-[307px] md:w-[772px] md:h-[468px] sm:w-[363px] sm:h-[220px]">
                 <label id="dropzone-file" className="flex flex-col items-center justify-center w-full h-full rounded-[30px] cursor-pointer">
@@ -867,7 +815,7 @@ const data = JSON.stringify({
                   <input id="dropzone-file" type="file" className="hidden" accept=".png,.jpg,jpeg" onChange={handleImage3Change} />
                 </label>
               </div>
-               <div className=" lg:flex absolute top-96 mr-[665px] mt-[880px] hidden  ">
+               <div className=" lg:flex absolute top-96 mr-[665px] mt-[920px] hidden  ">
           
           <ClubStar/>
           </div>
@@ -895,49 +843,49 @@ const data = JSON.stringify({
     
         <div className=" absolute top-96 inset-0 m-auto   lg:mt-[970px] md:mt-[1200px] sm:mt-[900px] flex justify-center">
           <textarea className=" text-[#582A88]  text-lg break-words border-2 font-Thai h-60 md:ml-16 sm:ml-10 md:w-[750px]  sm:w-[600px] md:h-72 sm:h-[500px] bg-transparent align-top resize-none "
-                ref={clubActivityRef}
-                value={clubsactivity}
-                readOnly ={!clubActivityEditMode}
-                onClick={turnOnClubActivityEditMode}
+                ref={admissionRef}
+                value={admission}
+                readOnly ={!admissionEditMode}
+                onClick={turnOnAdmissionEditMode}
                 defaultValue=""
-                onBlur={() => setClubActivityEditMode(false)}
-                onChange={handleClubActivityChange}
+                onBlur={() => setAdmissionEditMode(false)}
+                onChange={handleAdmissionChange}
                 >
 
                 </textarea>
-                <button className="md:ml-10  " onClick={turnOnClubActivityEditMode}><PencilIcon/></button>
+                <button className="md:ml-10  " onClick={turnOnAdmissionEditMode}><PencilIcon/></button>
         </div>       
 
         <div className=" absolute top-96 inset-0 m-auto  lg:mt-[1710px] md:mt-[2200px] sm:mt-[1900px] flex justify-center">
           <textarea className=" text-[#582A88] text-lg break-words border-2 font-Thai h-60 md:ml-16 sm:ml-10 md:w-[750px] sm:w-[600px] md:h-72 sm:h-[500px] bg-transparent align-top resize-none"
-                ref={benefitsRef}
-                value={benefits}
-                readOnly ={!benefitsEditMode}
-                onClick={turnOnBenefitsEditMode}
+                ref={subjectsRef}
+                value={subjects}
+                readOnly ={!subjectsEditMode}
+                onClick={turnOnSubjectsEditMode}
                 defaultValue=""
-                onBlur={() => setBenefitsEditMode(false)}
-                onChange={handleBenefitsChange}
+                onBlur={() => setSubjectsEditMode(false)}
+                onChange={handleSubjectsChange}
                 >
 
                 </textarea>
-                <button className="md:ml-10" onClick={turnOnBenefitsEditMode}><PencilIcon/></button>
+                <button className="md:ml-10" onClick={turnOnSubjectsEditMode}><PencilIcon/></button>
           
                 
         </div> 
 
         <div className=" absolute top-96 inset-0 m-auto  lg:mt-[2430px] md:mt-[3200px] sm:mt-[2900px] flex justify-center">
           <textarea className=" text-[#582A88] text-lg break-words border-2 font-Thai h-60 md:ml-16 sm:ml-10 md:w-[750px] sm:w-[600px] md:h-72 sm:h-[500px] bg-transparent align-top resize-none"
-                ref={workingsRef}
-                value={workings}
-                readOnly ={!workingsEditMode}
-                onClick={turnOnWorkingsEditMode}
+                ref={interestsRef}
+                value={interests}
+                readOnly ={!interestsEditMode}
+                onClick={turnOnInterestsEditMode}
                 defaultValue=""
-                onBlur={() => setWorkingsEditMode(false)}
-                onChange={handleWorkingsChange}
+                onBlur={() => setInterestsEditMode(false)}
+                onChange={handleInterestsChange}
                 >
 
                 </textarea>
-                <button className="md:ml-10" onClick={turnOnWorkingsEditMode}><PencilIcon/></button>
+                <button className="md:ml-10" onClick={turnOnInterestsEditMode}><PencilIcon/></button>
         </div> 
 
          {
@@ -1028,7 +976,7 @@ const data = JSON.stringify({
                 </div>
               </div>
               <div className=" justify-center flex">
-                <button className={ review2On ? "hidden" : " absolute top-0 md:mt-[3600px] sm:mt-[4400px] text-3xl bg-gradient-to-r from-[#7533A8] to-[#D738A4] w-[200px] h-[50px] rounded-[200px] text-white " } onClick={() => setReview2On(true)}> + เพิ่มรีวิว</button>
+                <button className={ review2On ? "hidden" : " absolute top-0 lg:mt-[3600px] md:mt-[4500px] sm:mt-[4400px] text-3xl bg-gradient-to-r from-[#7533A8] to-[#D738A4] w-[200px] h-[50px] rounded-[200px] text-white " } onClick={() => setReview2On(true)}> + เพิ่มรีวิว</button>
               </div>
               </div>
               {
@@ -1037,7 +985,7 @@ const data = JSON.stringify({
               <div className={review2On ? 'flex' : 'hidden'}>
               <div className=" absolute top-96 inset-0 m-auto  lg:mt-[3295px] lg:mr-0 md:mt-[4115px] sm:mt-[4090px] md:mr-[270px] flex justify-center">
                 <button className=" md:mr-10 sm:mr-5" onClick={turnOnReview2EditMode}><PencilIcon/></button>
-                <textarea className=" text-white text-md break-words font-Thai   md:w-[480px] md:mr-[300px] md:h-[266px] sm:w-[250px] sm:mr-[170px] sm:h-[120px] bg-transparent align-top resize-none"
+                <textarea className=" text-white text-md break-words font-Thai  md:w-[480px] lg:mr-[300px] md:mr-[0px] md:h-[266px] sm:w-[250px] sm:mr-[170px] sm:h-[120px] bg-transparent align-top resize-none"
                 ref={review2Ref}
                 value={review2}
                 readOnly ={!review2EditMode}
@@ -1119,12 +1067,12 @@ const data = JSON.stringify({
               
               </div>
               <div className={ review2On ? " justify-center flex" : "hidden"}>
-                <button className={ review3On ? "hidden" : " absolute top-0 md:mt-[4000px] sm:mt-[4650px] w-[65px] h-[65px]" } onClick={handleReview2Delete}>
+                <button className={ review3On ? "hidden" : " absolute top-0 lg:mt-[4000px] md:mt-[4800px] sm:mt-[4650px] w-[65px] h-[65px]" } onClick={handleReview2Delete}>
                   <DeleteIcon />
                 </button>
               </div>
               <div className={ review2On ? " justify-center flex" : "hidden"}>
-                <button className={ review3On ? "hidden" : " absolute top-0 md:mt-[4100px] sm:mt-[4750px] text-3xl bg-gradient-to-r from-[#7533A8] to-[#D738A4] w-[200px] h-[50px] rounded-[200px] text-white " } onClick={() => setReview3On(true)}> + เพิ่มรีวิว</button>
+                <button className={ review3On ? "hidden" : " absolute top-0 lg:mt-[4100px] md:mt-[4900px] sm:mt-[4750px] text-3xl bg-gradient-to-r from-[#7533A8] to-[#D738A4] w-[200px] h-[50px] rounded-[200px] text-white " } onClick={() => setReview3On(true)}> + เพิ่มรีวิว</button>
               </div>
               {
                 //review 3---------------------------------------------------------------------------------------------------------------------
@@ -1213,7 +1161,7 @@ const data = JSON.stringify({
               </div>
               </div>
               <div className=" justify-center flex">
-                <button className={ review3On ? "absolute top-0 md:mt-[4400px] sm:mt-[5000px] w-[65px] h-[65px]" : "hidden " } onClick={handleReview3Delete}>
+                <button className={ review3On ? "absolute top-0 lg:mt-[4400px] md:mt-[5250px] sm:mt-[5000px] w-[65px] h-[65px]" : "hidden " } onClick={handleReview3Delete}>
                   <DeleteIcon />
                 </button>
               </div>

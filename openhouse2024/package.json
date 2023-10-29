@@ -12,6 +12,7 @@
     "@emotion/react": "^11.11.1",
     "@emotion/styled": "^11.11.0",
     "@mui/material": "^5.14.14",
+    "@types/uuid": "^9.0.6",
     "axios": "^1.5.1",
     "form-data": "^4.0.0",
     "fs": "^0.0.1-security",
@@ -21,7 +22,8 @@
     "react": "^18",
     "react-dom": "^18",
     "react-error-boundary": "^4.0.11",
-    "react-router-dom": "^6.17.0"
+    "react-router-dom": "^6.17.0",
+    "uuid": "^9.0.1"
   },
   "devDependencies": {
     "@slicemachine/adapter-next": "^0.3.21",

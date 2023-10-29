@@ -17,7 +17,7 @@ export default function Hamburger() {
         SetInSession(false);
         console.log(inSession);
       }
-    },[])
+    })
    
     return(
         <>
@@ -68,7 +68,7 @@ export default function Hamburger() {
                 Account
             </div>
           </Link>
-          <Link  className={inSession ? "hidden " : " text-center"} href="/login" >
+          <Link  className={inSession ? "hidden " : " text-center"} href="/Login" >
             <div className=" text-end border-b border-slate-500 py-2 pr-11 text-2xl">
                 Login
             </div>

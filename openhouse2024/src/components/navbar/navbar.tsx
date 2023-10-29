@@ -21,7 +21,7 @@ export default function Navbar() {
 
     return (
     <div className=" fixed top-0 w-full z-50">
-    <nav className=" max-md:hidden bg-white bg-opacity-70 flex align-middle  justify-end gap-10 border-2 text-center z-20 top-0 ">
+    <nav className=" max-md:hidden bg-white bg-opacity-70 flex align-middle  justify-end gap-10 border-y-2 text-center z-20 top-0 ">
     
     <div className="flex w-1/3 justify-evenly ">
       <div className=" text-center py-2 ">

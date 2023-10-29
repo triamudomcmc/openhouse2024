@@ -1,18 +1,12 @@
 import { useSession, signIn, signOut } from "next-auth/react";
 import { useRouter } from 'next/navigation'
 import { useEffect } from "react";
-import LoginBg from "@/vectors/bg/LoginBg";
-import LoginBgM from "@/vectors/bg/LoginBgM";
-import LoginRight from "@/vectors/login/LoginRight";
 import LoginLeft from "@/vectors/login/LoginLeft";
-import LoginCircle from "@/vectors/login/LoginCircle";
-import LoginCircle2 from "@/vectors/login/LoginCircle2";
-import LoginLight from "@/vectors/login/LoginLight";
 import GoogleLogin from "@/vectors/login/LoginGoogle";
-import Register from "@/vectors/login/register";
+import Tower from "@/vectors/login/tower";
 import Tucmc from "@/vectors/tucmc";
 
-export default function loginPage() {
+export default function LoginPage() {
   const { data: session } = useSession();
   const router = useRouter();
 
@@ -23,46 +17,49 @@ export default function loginPage() {
     }
     )
 
+    
+
     return (
-      <> 
-      <div className="overflow-hidden flex w-full">
-      <div className="overflow-hidden relative w-full hidden lg:block h-screen bg-gradient-to-r from-[#2E1A56] to-[#381B5B]  -z-10">
-        <LoginBg/>
-        </div>
-        <div className="overflow-hidden relative w-full h-screen block lg:hidden  from-[#2E1A56] to-[#381B5B]  -z-10">
-        <LoginBgM/>
-        </div>
-        <div className=" hidden lg:flex absolute bottom-0 left-0  ">
-        <LoginLeft/>
-        </div>
-        <div className=" flex absolute top-0 right-0  ">
-        <LoginRight/>
-        </div>
-        <div className="hidden lg:flex absolute bottom-10 right-52  ">
-        <LoginCircle/>
-        </div>
-        <div className=" absolute flex items-center align-middle justify-center max-lg:w-11/12 max-lg:h-screen z-10 max-lg:left-1/2 max-lg:-translate-x-1/2 lg:bottom-72  lg:right-60 lg:mr-10">
+    <> 
+      <div className="w-screen h-screen bg-gradient-to-b from-[#444DAF] from-0% via-[#8C7BD7] via-30% to-[#FAFAEE] to-100% shadow  " >
+        <div className=" absolute top-1/2 -translate-y-1/2   xl:mr-[100px]  lg:mr-[00px] lg:right-40 max-lg:left-1/2 sm:top-1/2 lg:translate-x-0  sm:-translate-x-1/2  z-30  ">
         <button onClick={() => signIn('google')} 
-        className="px-12 py-5 border flex gap-2 border-slate-200 bg-white opacity-80 backdrop-blur-sm rounded-full text-slate-700  hover:border-slate-400  hover:text-slate-900 hover:shadow transition duration-150">
+        className="px-12 py-5 border flex gap-2 border-slate-200 bg-white opacity-80 backdrop-blur-sm rounded-full text-slate-700  hover:border-slate-400 lg:w-[400px] sm:w-[400px] hover:text-slate-900 hover:shadow transition duration-150">
             <GoogleLogin />
             <span className=" ml-3 text-2xl">Sign up with Google</span>
         </button>
         </div>
-       <div className="hidden lg:block absolute top-0 left-10 h-screen overflow-hidden">
-        <LoginLight/>
-        </div>
-        <div className=" hidden lg:block absolute top-60 lg:left-32 left-11 text-right ">
-        <Register />
-        </div>
-        <div className="hidden lg:flex absolute bottom-0 right-0 text-right ">
-        <LoginCircle2 />
-        </div>
 
-        <div className="flex lg:hidden absolute bottom-0 left-1/2 -translate-x-1/2 text-right ">
-        <Tucmc />
+        <div className=" h-screen items-center flex">
+          <div className=" w-[400px] ml-[200px] ">
+          <div className=" flex justify-center w-full ">
+            <p className="w-[615px] text-center text-white text-9xl font-bold font-Thai z-10 lg:flex hidden">Register</p>
+          </div>
+          <div className=" flex justify-center lg:mt-8 md:mt-40 w-full ">
+            <p className="w-[371px] text-center bg-gradient-to-r from-[#D738A4] to-[#7533A8] bg-clip-text text-transparent text-7xl font-semibold font-Thai z-10 lg:flex hidden">ลงทะเบียน</p>
+          </div>
+          <div className=" justify-center w-full z-10 max-md:bottom-0 relative  lg:flex hidden">
+            <Tucmc />
+          </div>
         </div>
+        </div>
+        <div className=" lg:hidden flex justify-center absolute top-28 left-1/2 -translate-x-1/2 ">
+            <p className="text-center text-white   text-7xl font-bold font-Thai z-10">Register</p>
+          </div>
+          <div className=" lg:hidden flex justify-center absolute top-48 left-1/2 -translate-x-1/2 ">
+            <p className="text-center bg-gradient-to-r from-[#D738A4] to-[#7533A8] bg-clip-text text-transparent text-4xl font-semibold font-Thai z-10">ลงทะเบียน</p>
+          </div>
+          <div className="lg:hidden flex justify-center absolute bottom-28 w-1/2 left-1/2 -translate-x-1/2 ">
+            <Tucmc />
+          </div>
         
-    </div>
+      </div>
+      <div className=" absolute w-screen bottom-0 block   ">
+        <LoginLeft />
+      </div>
+      <div className=" absolute right-36  bottom-0 z-0 lg:block hidden ">
+        <Tower />
+      </div>
     </>
     );
   }
