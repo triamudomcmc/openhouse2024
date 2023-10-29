@@ -726,7 +726,6 @@ export default function OrganizationEdit() {
                     type="text"
                     ref={igRef}
                     value={ig}
-                    readOnly={!igEditMode}
                     defaultValue=""
                     onBlur={() => setIgEditMode(false)}
                     onChange={handleIgChange}
@@ -743,7 +742,6 @@ export default function OrganizationEdit() {
                     type="text"
                     ref={fbRef}
                     value={fb}
-                    readOnly={!fbEditMode}
                     defaultValue=""
                     onBlur={() => setIgEditMode(false)}
                     onChange={handleFbChange}
@@ -760,7 +758,6 @@ export default function OrganizationEdit() {
                     type="text"
                     ref={otherRef}
                     value={other}
-                    readOnly={!otherEditMode}
                     defaultValue=""
                     onBlur={() => setIgEditMode(false)}
                     onChange={handleOtherChange}

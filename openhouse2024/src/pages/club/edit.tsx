@@ -787,7 +787,6 @@ export default function NewEdit() {
                     type="text"
                     ref={memberRef}
                     value={member}
-                    readOnly={!memberEditMode}
                     onClick={turnOnMemberEditMode}
                     defaultValue=""
                     onBlur={() => setMemberEditMode(false)}
@@ -805,7 +804,6 @@ export default function NewEdit() {
                     type="text"
                     ref={igRef}
                     value={ig}
-                    readOnly={!igEditMode}
                     onClick={turnOnIgEditMode}
                     defaultValue=""
                     onBlur={() => setIgEditMode(false)}
@@ -823,7 +821,6 @@ export default function NewEdit() {
                     type="text"
                     ref={fbRef}
                     value={fb}
-                    readOnly={!fbEditMode}
                     onClick={turnOnFbEditMode}
                     defaultValue=""
                     onBlur={() => setIgEditMode(false)}
@@ -841,7 +838,6 @@ export default function NewEdit() {
                     type="text"
                     ref={otherRef}
                     value={other}
-                    readOnly={!otherEditMode}
                     onClick={turnOnOtherEditMode}
                     defaultValue=""
                     onBlur={() => setIgEditMode(false)}
@@ -1083,7 +1079,6 @@ export default function NewEdit() {
             className=" text-[#582A88]  text-lg break-words border-2 font-Thai h-60 md:ml-16 sm:ml-10 md:w-[750px]  sm:w-[600px] md:h-72 sm:h-[500px] bg-transparent align-top resize-none "
             ref={clubActivityRef}
             value={clubsactivity}
-            readOnly={!clubActivityEditMode}
             onClick={turnOnClubActivityEditMode}
             defaultValue=""
             onBlur={() => setClubActivityEditMode(false)}
@@ -1099,7 +1094,6 @@ export default function NewEdit() {
             className=" text-[#582A88] text-lg break-words border-2 font-Thai h-60 md:ml-16 sm:ml-10 md:w-[750px] sm:w-[600px] md:h-72 sm:h-[500px] bg-transparent align-top resize-none"
             ref={benefitsRef}
             value={benefits}
-            readOnly={!benefitsEditMode}
             onClick={turnOnBenefitsEditMode}
             defaultValue=""
             onBlur={() => setBenefitsEditMode(false)}
@@ -1115,7 +1109,6 @@ export default function NewEdit() {
             className=" text-[#582A88] text-lg break-words border-2 font-Thai h-60 md:ml-16 sm:ml-10 md:w-[750px] sm:w-[600px] md:h-72 sm:h-[500px] bg-transparent align-top resize-none"
             ref={workingsRef}
             value={workings}
-            readOnly={!workingsEditMode}
             onClick={turnOnWorkingsEditMode}
             defaultValue=""
             onBlur={() => setWorkingsEditMode(false)}
@@ -1135,7 +1128,6 @@ export default function NewEdit() {
               className=" text-white  text-md break-words font-Thai  md:w-[480px] md:ml-[300px] md:h-[266px] sm:w-[250px] sm:ml-[170px] sm:h-[120px] bg-transparent align-top resize-none"
               ref={review1Ref}
               value={review1}
-              readOnly={!review1EditMode}
               onClick={turnOnReview1EditMode}
               defaultValue=""
               onBlur={() => setReview1EditMode(false)}
@@ -1201,7 +1193,6 @@ export default function NewEdit() {
                   type="text"
                   ref={review1NameRef}
                   value={review1Name}
-                  readOnly={!review1NameEditMode}
                   placeholder="ชื่อ"
                   onClick={turnOnReview1NameEditMode}
                   onBlur={() => setReview1NameEditMode(false)}
@@ -1220,7 +1211,6 @@ export default function NewEdit() {
                     maxLength={2}
                     ref={review1GenRef}
                     value={review1Gen}
-                    readOnly={!review1GenEditMode}
                     onClick={turnOnReview1GenEditMode}
                     onBlur={() => setReview1GenEditMode(false)}
                     onChange={handleReview1GenChange}
@@ -1235,7 +1225,6 @@ export default function NewEdit() {
                     type="text"
                     ref={review1ContactRef}
                     value={review1Contact}
-                    readOnly={!review1ContactEditMode}
                     onClick={turnOnReview1ContactEditMode}
                     placeholder="ช่องทางการติดต่อ"
                     onBlur={() => setReview1ContactEditMode(false)}
@@ -1278,7 +1267,6 @@ export default function NewEdit() {
               className=" text-white text-md break-words font-Thai   md:w-[480px] md:mr-[300px] md:h-[266px] sm:w-[250px] sm:mr-[170px] sm:h-[120px] bg-transparent align-top resize-none"
               ref={review2Ref}
               value={review2}
-              readOnly={!review2EditMode}
               onClick={turnOnReview2EditMode}
               defaultValue=""
               onBlur={() => setReview2EditMode(false)}
@@ -1342,7 +1330,6 @@ export default function NewEdit() {
                   type="text"
                   ref={review2NameRef}
                   value={review2Name}
-                  readOnly={!review2NameEditMode}
                   placeholder="ชื่อ"
                   onClick={turnOnReview2NameEditMode}
                   onBlur={() => setReview2NameEditMode(false)}
@@ -1362,7 +1349,6 @@ export default function NewEdit() {
                     maxLength={2}
                     ref={review2GenRef}
                     value={review2Gen}
-                    readOnly={!review2GenEditMode}
                     onClick={turnOnReview2GenEditMode}
                     onBlur={() => setReview2GenEditMode(false)}
                     onChange={handleReview2GenChange}
@@ -1379,7 +1365,6 @@ export default function NewEdit() {
                     type="text"
                     ref={review2ContactRef}
                     value={review2Contact}
-                    readOnly={!review2ContactEditMode}
                     onClick={turnOnReview2ContactEditMode}
                     placeholder="ช่องทางการติดต่อ"
                     onBlur={() => setReview2ContactEditMode(false)}
@@ -1425,7 +1410,6 @@ export default function NewEdit() {
               className=" text-white text-md break-words font-Thai md:w-[480px] md:ml-[300px] sm:w-[250px] sm:ml-[170px] sm:h-[120px] md:h-[266px] bg-transparent align-top resize-none"
               ref={review3Ref}
               value={review3}
-              readOnly={!review3EditMode}
               onClick={turnOnReview3EditMode}
               defaultValue=""
               onBlur={() => setReview3EditMode(false)}
@@ -1489,7 +1473,6 @@ export default function NewEdit() {
                   type="text"
                   ref={review3NameRef}
                   value={review3Name}
-                  readOnly={!review3NameEditMode}
                   placeholder="ชื่อ"
                   onClick={turnOnReview3NameEditMode}
                   onBlur={() => setReview3NameEditMode(false)}
@@ -1508,7 +1491,6 @@ export default function NewEdit() {
                     maxLength={2}
                     ref={review3GenRef}
                     value={review3Gen}
-                    readOnly={!review3GenEditMode}
                     onClick={turnOnReview3GenEditMode}
                     onBlur={() => setReview3GenEditMode(false)}
                     onChange={handleReview3GenChange}
@@ -1523,7 +1505,6 @@ export default function NewEdit() {
                     type="text"
                     ref={review3ContactRef}
                     value={review3Contact}
-                    readOnly={!review3ContactEditMode}
                     onClick={turnOnReview3ContactEditMode}
                     placeholder="ช่องทางการติดต่อ"
                     onBlur={() => setReview3ContactEditMode(false)}
