@@ -488,20 +488,20 @@ export default function Adminpanel() {
                   <div className="relative z-0 md:w-[850px] sm:w-[500px]">
                     <div className="absolute z-10 top-5 left-5 ">
                       <img
-                        className=" top-0 z-20 flex object-cover md:h-[153px] md:w-[153px] sm:h-[80px] sm:w-[80px] rounded-3xl border "
+                        className=" top-0 z-20 flex object-cover md:h-[153px] md:w-[153px] sm:h-[60px] sm:w-[60px] md:rounded-3xl sm:rounded-2xl border "
                         src={`data:${item.imgprofile1?.contenttype};base64,${item.imgprofile1?.data}`}
                       />
-                      <p className="  md:mt-[20px] sm:mt-[5px] text-2xl w-40 text-left font-Thai">
+                      <p className="  md:mt-[20px] sm:mt-[0px] text-2xl w-40 text-left font-Thai ">
                         {item.review_1.name}
                       </p>
-                      <p className="  md:mt-[20px] sm:mt-[5px] text-xl w-40 text-left font-Thai">
+                      <p className="  md:mt-[20px] sm:mt-[0px] text-lg w-40 text-left font-Thai">
                         เตรียมอุดม {item.review_1.gen}
                       </p>
-                      <p className="  md:mt-[20px] sm:mt-[5px] text-xl w-40 text-left font-Thai">
+                      <p className="  md:mt-[20px] sm:mt-[0px] text-lg w-40 text-left font-Thai">
                         {item.review_1.contact}
                       </p>
                     </div>
-                    <p className=" absolute border  top-5 right-12 z-0 mt-[5px] text-black text-left  text-md break-words font-Thai  md:w-[480px] md:ml-[240px] md:h-[266px] sm:w-[250px] sm:ml-[140px] sm:h-[120px] bg-transparent align-top resize-none overflow-y-scroll whitespace-pre-line">
+                    <p className=" absolute border  top-5 right-4 z-0 mt-[5px] text-black text-left  text-md break-words font-Thai  md:w-[480px] md:ml-[240px] md:h-[266px] sm:w-[250px] sm:ml-[200px] sm:h-[120px] bg-transparent align-top resize-none overflow-y-scroll whitespace-pre-line">
                       {item.review_1.review}
                     </p>
 
@@ -510,23 +510,23 @@ export default function Adminpanel() {
                 </div>
                 <div className=" flex justify-center mt-10">
                   <div className="relative z-0 md:w-[850px] sm:w-[500px]">
-                    <p className=" absolute border  top-5 md:-left-44 sm:-left-24  z-10 mt-[5px] text-black text-left  text-md break-words font-Thai  md:w-[480px] md:ml-[240px] md:h-[266px] sm:w-[250px] sm:ml-[140px] sm:h-[120px] bg-transparent align-top resize-none overflow-y-scroll whitespace-pre-line">
+                    <p className=" absolute border  top-5 md:-left-44 sm:-left-28  z-10 mt-[5px] text-black text-left  text-md break-words font-Thai  md:w-[480px] md:ml-[240px] md:h-[266px] sm:w-[250px] sm:ml-[140px] sm:h-[120px] bg-transparent align-top resize-none overflow-y-scroll whitespace-pre-line">
                       {item.review_2.review}
                     </p>
-                    <div className="absolute z-10 top-5 right-5 w-60   ">
+                    <div className="absolute z-10 top-5 right-3 w-60   ">
                       <div className=" flex justify-end">
                         <img
-                          className=" top-0 z-20 flex object-cover md:h-[153px] md:w-[153px] sm:h-[80px] sm:w-[80px]  rounded-3xl border"
+                          className=" top-0 z-20 flex object-cover md:h-[153px] md:w-[153px] sm:h-[60px] sm:w-[60px]  md:rounded-3xl sm:rounded-2xl border"
                           src={`data:${item.imgprofile2?.contenttype};base64,${item.imgprofile2?.data}`}
                         />
                       </div>
-                      <p className="  md:mt-[20px] sm:mt-[5px] text-2xl w-60 text-right font-Thai">
+                      <p className="  md:mt-[20px] sm:mt-[0px] text-2xl w-60 text-right font-Thai">
                         {item.review_2.name}
                       </p>
-                      <p className="  md:mt-[20px] sm:mt-[5px] text-xl w-60 text-right font-Thai">
+                      <p className="  md:mt-[20px] sm:mt-[0px] text-lg w-60 text-right font-Thai">
                         เตรียมอุดม {item.review_2.gen}
                       </p>
-                      <p className="  md:mt-[20px] sm:mt-[5px] text-xl w-60 text-right font-Thai">
+                      <p className="  md:mt-[20px] sm:mt-[0px] text-lg w-60 text-right font-Thai">
                         {item.review_2.contact}
                       </p>
                     </div>
@@ -538,20 +538,20 @@ export default function Adminpanel() {
                   <div className="relative z-0 md:w-[850px] sm:w-[500px]">
                     <div className="absolute z-10 top-5 left-5 ">
                       <img
-                        className=" top-0 z-20 flex object-cover md:h-[153px] md:w-[153px] sm:h-[80px] sm:w-[80px] rounded-3xl border"
+                        className=" top-0 z-20 flex object-cover md:h-[153px] md:w-[153px] sm:h-[60px] sm:w-[60px] md:rounded-3xl sm:rounded-2xl border"
                         src={`data:${item.imgprofile3?.contenttype};base64,${item.imgprofile3?.data}`}
                       />
-                      <p className="  md:mt-[20px] sm:mt-[5px] text-2xl w-40 text-left font-Thai">
+                      <p className="  md:mt-[20px] sm:mt-[0px] text-2xl w-40 text-left font-Thai">
                         {item.review_3.name}
                       </p>
-                      <p className="  md:mt-[20px] sm:mt-[5px] text-xl w-40 text-left font-Thai">
+                      <p className="  md:mt-[20px] sm:mt-[0px] text-lg w-40 text-left font-Thai">
                         เตรียมอุดม {item.review_3.gen}
                       </p>
-                      <p className="  md:mt-[20px] sm:mt-[5px] text-xl w-40 text-left font-Thai">
+                      <p className="  md:mt-[20px] sm:mt-[0px] text-lg w-40 text-left font-Thai">
                         {item.review_3.contact}
                       </p>
                     </div>
-                    <p className=" absolute border  top-5 right-12 z-0 mt-[5px] text-black text-left  text-md break-words font-Thai  md:w-[480px] md:ml-[240px] md:h-[266px] sm:w-[250px] sm:ml-[140px] sm:h-[120px] bg-transparent align-top resize-none overflow-y-scroll whitespace-pre-line">
+                    <p className=" absolute border  top-5 right-4 z-0 mt-[5px] text-black text-left  text-md break-words font-Thai  md:w-[480px] md:ml-[240px] md:h-[266px] sm:w-[250px] sm:ml-[140px] sm:h-[120px] bg-transparent align-top resize-none overflow-y-scroll whitespace-pre-line">
                       {item.review_3.review}
                     </p>
 
