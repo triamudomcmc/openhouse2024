@@ -314,7 +314,7 @@ export default function ClubPreview() {
           </div>
           <div className=" absolute lg:top-[13%] md:top-[12%] sm:top-[13%] flex w-full justify-center">
             <div className=" absolute w-1/2 flex  justify-center gap-4 ">
-              <div className="  flex justify-end min-w-[200px] ">
+              <div className="  flex justify-end min-w-[150px] md:min-w-[200px] ">
                 <div className=" hidden md:flex">
                   <UserIcon />
                 </div>
@@ -352,16 +352,16 @@ export default function ClubPreview() {
                 </svg>
               </div>
 
-              <div className="w-[200px]">
-                <p className=" flex text-[#8133A7] w-[200px] text-xl font-Thai ">
+              <div className=" md:w-[200px] w-[150px]">
+                <p className=" flex text-[#8133A7] md:w-[200px] w-[150px] text-xl font-Thai ">
                   {" "}
                   IG:{ig}
                 </p>
-                <p className=" flex text-[#8133A7] w-[200px] text-xl font-Thai ">
+                <p className=" flex text-[#8133A7] md:w-[200px] w-[150px] text-xl font-Thai ">
                   {" "}
                   FB:{fb}
                 </p>
-                <p className=" flex text-[#8133A7] w-[200px] text-xl font-Thai ">
+                <p className=" flex text-[#8133A7] md:w-[200px] w-[150px] text-xl font-Thai ">
                   {" "}
                   อื่นๆ:{other}
                 </p>
