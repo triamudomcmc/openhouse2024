@@ -313,7 +313,7 @@ export default function ClubPreview() {
             </div>
           </div>
           <div className=" absolute lg:top-[13%] md:top-[12%] sm:top-[13%] flex w-full justify-center">
-            <div className=" absolute w-1/2 flex  justify-center gap-4 ">
+            <div className=" absolute w-1/2 flex  justify-center gap-4 items-center ">
               <div className="  flex justify-end min-w-[150px] md:min-w-[200px] ">
                 <div className=" hidden md:flex">
                   <UserIcon />
@@ -378,14 +378,14 @@ export default function ClubPreview() {
               {
                 //section1
               }
-              <p className="  font-semibold text-transparent bg-clip-text bg-gradient-to-b from-[#7533A8] to-[#D62C9F] font-Thai text-center  text-3xl py-5 block w-full  lg:hidden ">
+              <p className="  font-semibold text-transparent bg-clip-text bg-gradient-to-b from-[#7533A8] to-[#D62C9F] font-Thai text-center  text-3xl py-5 block w-full   lg:hidden ">
                 ชมรมนี้ทำอะไร
               </p>
               <div className=" flex justify-center gap-3">
-                <p className="  font-semibold text-transparent bg-clip-text bg-gradient-to-b from-[#7533A8] to-[#D62C9F] font-Thai text-left min-w-52 text-5xl py-5 hidden lg:flex ">
+                <p className="  font-semibold text-transparent bg-clip-text bg-gradient-to-b from-[#7533A8] to-[#D62C9F] font-Thai  min-w-52 text-5xl py-5 hidden text-right lg:block ">
                   ชมรมนี้
                   <br />
-                  ทำอะไร
+                  ทำอะไร<ClubStar />
                 </p>
 
                 <div className=" w-auto relative  ">
@@ -413,12 +413,12 @@ export default function ClubPreview() {
               <div className=" flex justify-center mt-10">
                 <div className=" w-full  justify-center hidden md:block">
                   <textarea
-                    className=" text-[#582A88]  text-lg break-words border-2 font-Thai  md:w-full sm:w-[300px]   h-72  bg-transparent align-top resize-none "
+                    className=" text-[#582A88]  text-lg break-words border-2 font-Thai  md:w-full sm:w-[300px]   h-72  bg-transparent align-top resize-none whitespace-pre-line "
                     value={clubsactivity}
                   ></textarea>
                 </div>
                 <div className=" w-full  justify-center flex md:hidden">
-                  <p className=" text-[#582A88]  text-lg break-words border-2 font-Thai  md:w-full sm:w-[300px]   h-72 bg-transparent align-top resize-none ">
+                  <p className=" text-[#582A88]  text-lg break-words border-2 font-Thai  md:w-full sm:w-[300px]   h-72 bg-transparent align-top resize-none whitespace-pre-line ">
                     {clubsactivity}
                   </p>
                 </div>
@@ -456,19 +456,19 @@ export default function ClubPreview() {
                   <br />
                   ที่ได้รับ
                   <p className="  font-semibold text-transparent bg-clip-text bg-gradient-to-b from-[#7533A8] to-[#D62C9F] font-Thai text-left min-w-52 text-3xl  hidden lg:block ">
-                    จาการเข้าชมรม
+                    จาการเข้าชมรม<ClubStar />
                   </p>
                 </p>
               </div>
               <div className=" flex justify-center mt-10">
                 <div className=" w-full  justify-center hidden md:block">
-                  <p className=" text-[#582A88]  text-lg break-words border-2 font-Thai  md:w-full sm:w-[300px]   h-72  bg-transparent align-top resize-none ">
+                  <p className=" text-[#582A88]  text-lg break-words border-2 font-Thai  md:w-full sm:w-[300px]   h-72  bg-transparent align-top resize-none whitespace-pre-line ">
                     {benefits}
                   </p>
                 </div>
                 <div className=" w-full  justify-center flex md:hidden">
                   <textarea
-                    className=" text-[#582A88]  text-lg break-words border-2 font-Thai  md:w-full sm:w-[300px]   h-72 bg-transparent align-top resize-none "
+                    className=" text-[#582A88]  text-lg break-words border-2 font-Thai  md:w-full sm:w-[300px]   h-72 bg-transparent align-top resize-none whitespace-pre-line "
                     value={benefits}
                   ></textarea>
                 </div>
@@ -480,10 +480,10 @@ export default function ClubPreview() {
                 ผลงานของชมรม
               </p>
               <div className=" flex justify-center gap-3 lg:mt-10">
-                <p className="  font-semibold text-transparent bg-clip-text bg-gradient-to-b from-[#7533A8] to-[#D62C9F] font-Thai text-left min-w-52 text-5xl py-5 hidden lg:flex ">
+                <p className="  font-semibold text-transparent bg-clip-text bg-gradient-to-b from-[#7533A8] to-[#D62C9F] font-Thai text-right min-w-52 text-5xl py-5 hidden lg:block ">
                   ผลงาน
                   <br />
-                  ของชมรม
+                  ของชมรม<ClubStar />
                 </p>
 
                 <div className=" w-auto relative  ">
@@ -510,13 +510,13 @@ export default function ClubPreview() {
               </div>
               <div className=" flex justify-center mt-10">
                 <div className=" w-full  justify-center hidden md:block">
-                  <p className=" text-[#582A88]  text-lg break-words border-2 font-Thai  md:w-full sm:w-[300px]   h-72  bg-transparent align-top resize-none ">
+                  <p className=" text-[#582A88]  text-lg break-words border-2 font-Thai  md:w-full sm:w-[300px]   h-72  bg-transparent align-top resize-none whitespace-pre-line ">
                     {workings}
                   </p>
                 </div>
                 <div className=" w-full  justify-center flex md:hidden">
                   <textarea
-                    className=" text-[#582A88]  text-lg break-words border-2 font-Thai  md:w-full sm:w-[300px]   h-72 bg-transparent align-top resize-none "
+                    className=" text-[#582A88]  text-lg break-words border-2 font-Thai  md:w-full sm:w-[300px]   h-72 bg-transparent align-top resize-none whitespace-pre-line "
                     value={benefits}
                   ></textarea>
                 </div>
@@ -567,7 +567,7 @@ export default function ClubPreview() {
                     </div>
                   </div>
                   <div className=" absolute w-full top-5 h-3/4 right-0 flex justify-end">
-                    <p className=" text-white  text-md break-words font-Thai mr-10   md:w-3/5  md:h-full  bg-transparent align-top resize-none">
+                    <p className=" text-white  text-md break-words font-Thai md:mr-10 sm:mr-5   w-3/5  h-full   bg-transparent align-top resize-none whitespace-pre-line">
                       {review1}
                     </p>
                   </div>
@@ -619,7 +619,7 @@ export default function ClubPreview() {
                   </div>
                   <div className=" absolute w-full top-5 h-3/4 left-0 flex justify-start">
                     <textarea
-                      className=" text-white  text-md break-words font-Thai ml-10   md:w-3/5  md:h-full  bg-transparent align-top resize-none"
+                      className=" text-white  text-md break-words font-Thai md:ml-10 sm:ml-5   w-3/5  h-full  bg-transparent align-top resize-none whitespace-pre-line"
                       value={review2}
                     ></textarea>
                   </div>
@@ -666,7 +666,7 @@ export default function ClubPreview() {
                     </div>
                   </div>
                   <div className=" absolute w-full top-5 h-3/4 right-0 flex justify-end">
-                    <p className=" text-white  text-md break-words font-Thai mr-10   md:w-3/5  md:h-full  bg-transparent align-top resize-none">
+                    <p className=" text-white  text-md break-words font-Thai md:mr-10 sm:mr-5   w-3/5  h-full  bg-transparent align-top resize-none whitespace-pre-line">
                       {review3}
                     </p>
                   </div>

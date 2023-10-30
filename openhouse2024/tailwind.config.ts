@@ -18,6 +18,7 @@ const config: Config = {
       },
       screens: {
         'sm': '300px',
+        'lg': '1280px'
       },
     },
   },

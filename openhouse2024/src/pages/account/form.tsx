@@ -315,7 +315,7 @@ export default function Form() {
         </div>
         
         </div>
-        <div className={succes ? ' mt-5 w-full justify-end flex ' : 'hidden'} >
+        <div className={succes ? ' fixed bottom-4 right-1 w-full justify-end flex ' : 'hidden'} >
             <div className='w-1/2 md:1/3 lg:w-1/4 flex justify-end'>
                 <Alert className=' w-full' severity="success">
                     <AlertTitle>Success</AlertTitle>
@@ -323,7 +323,7 @@ export default function Form() {
                  </Alert>
             </div>
         </div>
-        <div className={error ? 'mt-5 w-full justify-end flex ' : 'hidden'}>
+        <div className={error ? 'fixed bottom-4 right-1 w-full justify-end flex ' : 'hidden'}>
             <div className=' w-1/2 md:1/3 lg:w-1/4 flex justify-end'>
             <Alert className='w-full' severity="error">
                 <AlertTitle>error</AlertTitle>

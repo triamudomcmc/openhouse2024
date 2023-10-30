@@ -25,9 +25,9 @@ export default function Adminpanel() {
     clubsactivity: string;
     benefits: string;
     workings: string;
-    organizationdo : string;
-    position : string;
-    working : string;
+    organizationdo: string;
+    position: string;
+    working: string;
     review_1: {
       name: string;
       gen: string;
@@ -70,6 +70,10 @@ export default function Adminpanel() {
       data: string;
       contenttype: string;
     };
+    logo: {
+      data: string;
+      contenttype: string;
+    };
     isOpen: boolean;
   }
 
@@ -77,8 +81,8 @@ export default function Adminpanel() {
   const axios = require("axios");
   const [items, setItems] = useState<Item[]>([]);
   const [info, setInfo] = useState<Item[]>([]);
-  const [approve,setApprove] =useState(false);
-  const [deny,setDeny] =useState(false)
+  const [approve, setApprove] = useState(false);
+  const [deny, setDeny] = useState(false);
 
   useEffect(() => {
     const itemsWithOpenState = info.map((item) => ({
@@ -165,7 +169,7 @@ export default function Adminpanel() {
         return response.json();
       })
       .then((data) => {
-        setApprove(true)
+        setApprove(true);
         console.log("Data posted successfully:", data);
       })
       .catch((error) => {
@@ -208,7 +212,7 @@ export default function Adminpanel() {
         return response.json();
       })
       .then((data) => {
-        setDeny(true)
+        setDeny(true);
         console.log("Data posted successfully:", data);
       })
       .catch((error) => {
@@ -218,7 +222,7 @@ export default function Adminpanel() {
 
   useEffect(() => {
     pendingRequest();
-  }, [approve,deny]);
+  }, [approve, deny]);
 
   return (
     <>
@@ -244,7 +248,7 @@ export default function Adminpanel() {
           <div className=" justify-center flex w-full mt-5">
             <div className="  lg:w-3/5 md:w-5/6 sm:w-full border-black border rounded-xl">
               <div className=" flex justify-between bg-[#4A1B6E] rounded-xl ">
-                <p className=" py-5 mx-5 h-full text-white  text-1xl  font-Thai align-middle">
+                <p className=" py-5 mx-5 h-full text-white  text-1xl  font-Thai align-middle sm:w-20 md:w-auto">
                   {item.name}
                 </p>
                 <button
@@ -252,7 +256,7 @@ export default function Adminpanel() {
                   className={
                     item.isOpen
                       ? " hidden"
-                      : "bg-gradient-to-r from-[#7533A8] to-[#D738A4] text-white px-20 rounded-full mx-5 my-2 py-3 h-full font-Thai align-middle"
+                      : "bg-gradient-to-r from-[#7533A8] to-[#D738A4] text-white px-20 rounded-full md:mx-5 md:w-auto md:text-base sm:text-sm sm:w-60 my-2 py-3 h-full font-Thai align-middle"
                   }
                 >
                   ดูข้อมูลหน่วยงาน
@@ -392,6 +396,9 @@ export default function Adminpanel() {
                 //on off
               }
               <div className={item.isOpen ? "w-full text-center" : "hidden"}>
+                <div className=" flex justify-center">
+                <img className=" w-[200px] h-[200px]" src={`data:${item.logo?.contenttype};base64,${item.logo?.data}`} />
+                </div>
                 <p className=" text-[#0F114C] text-5xl font-Thai mt-5">
                   {item.name}
                 </p>
@@ -413,11 +420,11 @@ export default function Adminpanel() {
                     อื่นๆ {item.others}
                   </p>
                 </div>
-                <div className=" justify-center flex mt-10 text-2xl md:hidden">
+                <div className=" justify-center flex mt-10 text-2xl lg:hidden">
                   <p>ชมรมนี้ทำอะไร</p>
                 </div>
                 <div className=" flex justify-center mt-10 gap-3 ">
-                  <p className=" text-7xl  text-left font-Thai mt-4 hidden md:block ">
+                  <p className=" text-7xl  text-left font-Thai mt-4 hidden lg:block ">
                     ชมรมนี้
                     <br />
                     ทำอะไร
@@ -434,22 +441,21 @@ export default function Adminpanel() {
                     {item.organizationdo}
                   </p>
                 </div>
-                <div className=" justify-center flex mt-10 text-2xl md:hidden">
+                <div className=" justify-center flex mt-10 text-2xl lg:hidden">
                   <p>ประโยชน์ที่ได้รับจากการเข้าชมรม</p>
                 </div>
                 <div className=" flex justify-center mt-4 gap-3 ">
-                
                   <img
                     className="  lg:h-[307px] lg:w-[509px] md:w-[772px] md:h-[468px] sm:w-[363px] sm:h-[220px] md:rounded-3xl sm:rounded-2xl object-cover border  "
                     src={`data:${item.image2?.contenttype};base64,${item.image2?.data}`}
                   />
                   <div>
-                    <p className=" text-7xl hidden md:block  text-left font-Thai mt-4">
+                    <p className=" text-7xl hidden lg:block  text-left font-Thai mt-4">
                       ประโยชน์
                       <br />
                       ที่ได้รับ
                     </p>
-                    <p className=" text-4xl hidden md:block  text-left font-Thai ">
+                    <p className=" text-4xl hidden lg:block  text-left font-Thai ">
                       จากการเข้าชมรม
                     </p>
                   </div>
@@ -461,13 +467,17 @@ export default function Adminpanel() {
                     {item.position}
                   </p>
                 </div>
-                <div className=" justify-center flex mt-10 text-2xl md:hidden">
+                <div className=" justify-center flex mt-10 text-2xl lg:hidden">
                   <p>ผลงานของชมรม</p>
                 </div>
                 <div className=" flex justify-center mt-10 gap-3 ">
                   <div>
-                    <p className=" text-7xl  text-left font-Thai mt-4 hidden md:block">ผลงาน</p>
-                    <p className=" text-4xl  text-left font-Thai hidden md:block ">ของชมรม</p>
+                    <p className=" text-7xl  text-left font-Thai mt-4 hidden lg:block">
+                      ผลงาน
+                    </p>
+                    <p className=" text-4xl  text-left font-Thai hidden lg:block ">
+                      ของชมรม
+                    </p>
                   </div>
                   <img
                     className="  lg:h-[307px] lg:w-[509px] md:w-[772px] md:h-[468px] sm:w-[363px] sm:h-[220px] md:rounded-3xl sm:rounded-2xl object-cover border "
@@ -485,77 +495,115 @@ export default function Adminpanel() {
                   รีวิวจากรุ่นพี่
                 </p>
                 <div className=" flex justify-center mt-10">
-                  <div className="relative z-0 md:w-[850px] sm:w-[500px]">
-                    <div className="absolute z-10 top-5 left-5 ">
+                  <div className=" w-full relative">
+                    <ReviewCardLine />
+                    <div className=" absolute top-0 mt-5 md:left-5 sm:left-2 h-full ">
                       <img
-                        className=" top-0 z-20 flex object-cover md:h-[153px] md:w-[153px] sm:h-[60px] sm:w-[60px] md:rounded-3xl sm:rounded-2xl border "
+                        className=" left-0 z-10  flex object-cover lg:h-[153px] lg:w-[153px] md:h-[100px] md:w-[100px] sm:h-[60px] sm:w-[60px] rounded-3xl sm:rounded-xl "
                         src={`data:${item.imgprofile1?.contenttype};base64,${item.imgprofile1?.data}`}
                       />
-                      <p className="  md:mt-[20px] sm:mt-[0px] text-2xl w-40 text-left font-Thai ">
-                        {item.review_1.name}
-                      </p>
-                      <p className="  md:mt-[20px] sm:mt-[0px] text-lg w-40 text-left font-Thai">
-                        เตรียมอุดม {item.review_1.gen}
-                      </p>
-                      <p className="  md:mt-[20px] sm:mt-[0px] text-lg w-40 text-left font-Thai">
-                        {item.review_1.contact}
+                      <div className=" block md:mt-1 text-left  z-50 relative">
+                        <p className="  md:text-2xl sm:text-md sm:w-[90px] sm:h-6 md:h-8 md:w-[148px] text-[#291A54]  bg-transparent font-Thai">
+                          {item.review_1.name}
+                        </p>
+
+                        <p className=" block text-[#291A54] md:text-xl md:mt-0  sm:text-sm text-base  font-Thai ">
+                          {" "}
+                          เตรียมอุดม {item.review_1.gen}
+                        </p>
+                        <div className=" flex">
+                          <p className=" sm:h-4 md:h-6 md:w-[148px] items-center w-[100px] text-[#291A54] sm:text-sm md:text-base bg-transparent font-Thai">
+                            {item.review_1.contact}
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div className=" absolute w-full top-5 h-3/4 right-0 flex text-left justify-end">
+                      <p className=" text-black  text-md break-words font-Thai md:mr-10 sm:mr-5   w-3/5  h-full   bg-transparent align-top resize-none overflow-scroll whitespace-pre-line">
+                        {item.review_1.review}
                       </p>
                     </div>
-                    <p className=" absolute border  top-5 right-4 z-0 mt-[5px] text-black text-left  text-md break-words font-Thai  md:w-[480px] md:ml-[240px] md:h-[266px] sm:w-[250px] sm:ml-[200px] sm:h-[120px] bg-transparent align-top resize-none overflow-y-scroll whitespace-pre-line">
-                      {item.review_1.review}
-                    </p>
-
-                    <ReviewCardLine />
                   </div>
                 </div>
-                <div className=" flex justify-center mt-10">
-                  <div className="relative z-0 md:w-[850px] sm:w-[500px]">
-                    <p className=" absolute border  top-5 md:-left-44 sm:-left-28  z-10 mt-[5px] text-black text-left  text-md break-words font-Thai  md:w-[480px] md:ml-[240px] md:h-[266px] sm:w-[250px] sm:ml-[140px] sm:h-[120px] bg-transparent align-top resize-none overflow-y-scroll whitespace-pre-line">
-                      {item.review_2.review}
-                    </p>
-                    <div className="absolute z-10 top-5 right-3 w-60   ">
-                      <div className=" flex justify-end">
-                        <img
-                          className=" top-0 z-20 flex object-cover md:h-[153px] md:w-[153px] sm:h-[60px] sm:w-[60px]  md:rounded-3xl sm:rounded-2xl border"
-                          src={`data:${item.imgprofile2?.contenttype};base64,${item.imgprofile2?.data}`}
+                <div
+                  className= " w-full relative mt-10"
+                >
+                  <ReviewCardLineR />
+                  <div className=" absolute top-0 mt-5 md:right-5 sm:right-2 h-full justify-end ">
+                    <div className=" flex justify-end">
+                      <svg
+                        className="block lg:h-[153px] lg:w-[153px] md:h-[100px] md:w-[100px] sm:h-[60px] sm:w-[60px]"
+                        viewBox="0 0 153 153"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <rect
+                          width="152.941"
+                          height="152.941"
+                          rx="30"
+                          fill="#D9D9D9"
                         />
-                      </div>
-                      <p className="  md:mt-[20px] sm:mt-[0px] text-2xl w-60 text-right font-Thai">
+                      </svg>
+
+                      <img
+                        className="absolute top-0 right-0 z-10  flex object-cover lg:h-[153px] lg:w-[153px] md:h-[100px] md:w-[100px] sm:h-[60px] sm:w-[60px] rounded-3xl sm:rounded-xl "
+                        src={`data:${item.imgprofile2?.contenttype};base64,${item.imgprofile2?.data}`}
+                      />
+                    </div>
+                    <div className=" block md:mt-1  relative z-50">
+                      <p className=" text-black md:text-2xl sm:text-md sm:w-[100px] sm:h-6 md:h-8 md:w-[148px]  bg-transparent font-Thai text-right">
                         {item.review_2.name}
                       </p>
-                      <p className="  md:mt-[20px] sm:mt-[0px] text-lg w-60 text-right font-Thai">
+
+                      <p className=" block text-[#291A54] md:text-xl md:mt-0  sm:text-sm text-base  font-Thai text-right ">
+                        {" "}
                         เตรียมอุดม {item.review_2.gen}
                       </p>
-                      <p className="  md:mt-[20px] sm:mt-[0px] text-lg w-60 text-right font-Thai">
-                        {item.review_2.contact}
-                      </p>
+                      <div className=" flex">
+                        <p className=" sm:h-4 md:h-6 md:w-[148px] items-center w-[100px] text-[#291A54] sm:text-sm md:text-base bg-transparent font-Thai text-right">
+                          {item.review_2.contact}
+                        </p>
+                      </div>
                     </div>
-
-                    <ReviewCardLineR />
+                  </div>
+                  <div className=" absolute w-full top-5 h-3/4 left-0 flex justify-start">
+                    <textarea
+                      className=" text-black  text-md break-words font-Thai md:ml-10 sm:ml-5   w-3/5  h-full  bg-transparent align-top resize-none overflow-scroll whitespace-pre-line"
+                      value={item.review_2.review}
+                    ></textarea>
                   </div>
                 </div>
                 <div className=" flex justify-center mt-10">
-                  <div className="relative z-0 md:w-[850px] sm:w-[500px]">
-                    <div className="absolute z-10 top-5 left-5 ">
+                  <div className=" w-full relative">
+                    <ReviewCardLine />
+                    <div className=" absolute top-0 mt-5 md:left-5 sm:left-2 h-full ">
                       <img
-                        className=" top-0 z-20 flex object-cover md:h-[153px] md:w-[153px] sm:h-[60px] sm:w-[60px] md:rounded-3xl sm:rounded-2xl border"
+                        className=" left-0 z-10  flex object-cover lg:h-[153px] lg:w-[153px] md:h-[100px] md:w-[100px] sm:h-[60px] sm:w-[60px] rounded-3xl sm:rounded-xl "
                         src={`data:${item.imgprofile3?.contenttype};base64,${item.imgprofile3?.data}`}
                       />
-                      <p className="  md:mt-[20px] sm:mt-[0px] text-2xl w-40 text-left font-Thai">
-                        {item.review_3.name}
-                      </p>
-                      <p className="  md:mt-[20px] sm:mt-[0px] text-lg w-40 text-left font-Thai">
-                        เตรียมอุดม {item.review_3.gen}
-                      </p>
-                      <p className="  md:mt-[20px] sm:mt-[0px] text-lg w-40 text-left font-Thai">
-                        {item.review_3.contact}
+                      <div className=" block md:mt-1 text-left  z-50 relative">
+                        <p className="  md:text-2xl sm:text-md sm:w-[90px] sm:h-6 md:h-8 md:w-[148px] text-[#291A54]  bg-transparent font-Thai">
+                          {item.review_3.name}
+                        </p>
+
+                        <p className=" block text-[#291A54] md:text-xl md:mt-0  sm:text-sm text-base  font-Thai ">
+                          {" "}
+                          เตรียมอุดม {item.review_3.gen}
+                        </p>
+                        <div className=" flex">
+                          <p className=" sm:h-4 md:h-6 md:w-[148px] items-center w-[100px] text-[#291A54] sm:text-sm md:text-base bg-transparent font-Thai">
+                            {item.review_3.contact}
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div className=" absolute w-full top-5 h-3/4 right-0 flex text-left justify-end">
+                      <p className=" text-black  text-md break-words font-Thai md:mr-10 sm:mr-5   w-3/5  h-full   bg-transparent align-top resize-none overflow-scroll whitespace-pre-line">
+                        {item.review_3.review} 
                       </p>
                     </div>
-                    <p className=" absolute border  top-5 right-4 z-0 mt-[5px] text-black text-left  text-md break-words font-Thai  md:w-[480px] md:ml-[240px] md:h-[266px] sm:w-[250px] sm:ml-[140px] sm:h-[120px] bg-transparent align-top resize-none overflow-y-scroll whitespace-pre-line">
-                      {item.review_3.review}
-                    </p>
-
-                    <ReviewCardLine />
                   </div>
                 </div>
               </div>

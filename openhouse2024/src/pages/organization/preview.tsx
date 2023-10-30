@@ -276,43 +276,45 @@ export default function OrganizationPreview() {
 
   return (
     <>
-      <div className=" bg-[#5A2561] h-[4600px] w-full ">
-        <div className="hidden lg:block  lg:w-screen lg:-z-10">
-          <ClubBg />
-        </div>
-        <div className=" block w-screen lg:hidden -z-10">
-          <ClubBgM />
-        </div>
-        <div className=" flex justify-center z-0">
-          <div className=" w-1/2 absolute top-96">
-            <button
-              onClick={back}
-              className="px-12 py-2 flex gap-2 align-middle   text-[#55247B] font-Thai "
-            >
-              <BackArrow />
-              <span className=" ml-3 text-2xl align-middle">ย้อนกลับ</span>
-            </button>
+      <div className=" bg-[#5A2561] h-full sm:min-h-[3500px]">
+        <div className=" relative w-full top-0 left-0">
+          <div className=" lg:block hidden">
+            <ClubBg />
           </div>
-
-          <div className=" absolute mt-32 top-96 flex justify-center">
-            <p className="  p-6   font-extrabold text-transparent md:text-5xl sm:text-4xl bg-clip-text break-words w-[80vw] bg-gradient-to-b from-[#81109D] to-[#D738A4] py-5 font-Thai text-center mx-10 z-10">
-              {" "}
-              {organization}
-            </p>
-
-            <div className=" flex text-white md:w-[450px] sm:w-[450px] sm:-ml-[15px] md:ml-[5px] left-1/2 absolute -translate-x-1/2  font-Thai mt-[200px] justify-between ">
-              <div className=" md:ml-0 sm:ml-16">
-                <UserIcon />
-              </div>
-              <p className=" text-4xl block text-center text-transparent  bg-clip-text bg-gradient-to-b from-[#632790] to-[#D738A4]">
-                สมาชิก <br />
-                <p className=" text-3xl mt-2">{member}</p>
+          <div className=" lg:hidden block">
+            <ClubBgM />
+          </div>
+          <div className=" flex justify-center">
+            <div className=" absolute md:top-[8%] sm:top-[5%] flex w-5/6 justify-evenly items-center">
+              <button className=" flex" onClick={back}>
+                <BackArrow />
+                <span className=" pl-2  text-2xl align-middle text-[#55247B]">
+                  ย้อนกลับ
+                </span>
+              </button>
+            </div>
+          </div>
+          <div className=" absolute md:top-[10%] sm:top-[8%] flex w-full justify-center">
+            <div className=" absolute w-5/6  ">
+              <p className="  p-6   font-extrabold text-transparent md:text-5xl sm:text-3xl bg-clip-text break-words bg-gradient-to-b from-[#81109D] to-[#D62C9F]  from-40% to-100% py-5 font-Thai text-center z-10">
+                {organization}
               </p>
-
-              <div className=" w-1 my-1 ">
+            </div>
+          </div>
+          <div className=" absolute lg:top-[13%] md:top-[12%] sm:top-[13%] flex w-full justify-center">
+            <div className=" absolute w-1/2 flex  justify-center gap-4 align-middle items-center">
+              <div className="  flex justify-end min-w-[150px] md:min-w-[200px] align-bottom  ">
+                <div className=" hidden md:flex">
+                  <UserIcon />
+                </div>
+                <p className=" text-4xl block text-center text-transparent  bg-clip-text bg-gradient-to-b from-[#632790] to-[#D738A4] align-middle">
+                  สมาชิก <br />
+                  <p className=" text-3xl mt-2">{member}</p>
+                </p>
+              </div>
+              <div>
                 <svg
-                  width="4"
-                  height="86"
+                  className=" w-[6px] "
                   viewBox="0 0 4 86"
                   fill="none"
                   xmlns="http://www.w3.org/2000/svg"
@@ -338,288 +340,325 @@ export default function OrganizationPreview() {
                   </defs>
                 </svg>
               </div>
-              <div className=" mt-1 pl-5">
-                <p className=" flex text-[#8133A7] text-xl font-Thai ">
-                  {" "}
-                  IG:
-                  <p className=" h-7 w-[154px] text-xl bg-transparent font-Thai">
-                    {ig}
-                  </p>
-                </p>
 
-                <p className=" flex text-[#8133A7] text-xl font-Thai ">
+              <div className=" md:w-[200px] w-[150px] align-middle">
+                <p className=" flex text-[#8133A7] md:w-[200px] w-[150px] text-xl font-Thai ">
                   {" "}
-                  FB:
-                  <p className=" h-7 w-[154px] bg-transparent font-Thai">
-                    {fb}
-                  </p>
+                  IG:{ig}
                 </p>
-                <p className=" flex text-[#8133A7] w-[40px] text-xl font-Thai ">
+                <p className=" flex text-[#8133A7] md:w-[200px] w-[150px] text-xl font-Thai ">
                   {" "}
-                  อื่นๆ:
-                  <p className=" h-7 w-[154px] bg-transparent font-Thai">
-                    {other}
-                  </p>
+                  FB:{fb}
+                </p>
+                <p className=" flex text-[#8133A7] md:w-[200px] w-[150px] text-xl font-Thai ">
+                  {" "}
+                  อื่นๆ:{other}
                 </p>
               </div>
             </div>
           </div>
-          <div className=" absolute top-96 mt-[420px] md:w-[600px] sm:w-[400px] justify-center flex gap-2  text-white font-Thai ">
-            <ClubWidget />
-          </div>
-          {
-            // first section
-          }
-          <p className=" absolute top-96 lg:mr-[490px] lg:mt-[600px] hidden lg:flex px-6 w-80 py-5  gap-2 font-semibold text-transparent bg-clip-text bg-gradient-to-b from-[#D738A4] to-[#FFDD77] font-Thai text-5xl ">
-            องค์กรนี้ทำอะไร ?
-          </p>
-          <p className=" absolute text-center top-96 w-[350px] mt-[547px] leading-loose md:mr-[400px] font-semibold text-transparent bg-clip-text bg-gradient-to-b from-[#D738A4] to-[#FFDD77] font-Thai  text-3xl  lg:hidden ">
-            องค์กรนี้ทำอะไร ?
-          </p>
-          <svg
-            className="absolute top-96 ml-0 lg:ml-[260px] lg:mt-[600px] md:mt-[630px] sm:mt-[630px] flex lg:w-[509px] lg:h-[309px] md:w-[772px] md:h-[468px] sm:h-[220px] "
-            viewBox="0 0 509 307"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <rect width="509" height="307" rx="23" fill="#D9D9D9" />
-          </svg>
-
-          <p className=" absolute top-96 lg:ml-[270px] lg:mt-[910px] md:mt-[1100px] sm:mt-[860px] z-50 md:ml-0 flex  text-[#7533A8]  font-Thai text-lg opacity-75 ">
-            ภาพบรรยากาศในชมรม
-          </p>
-          <img
-            className="absolute top-96 ml-0 lg:ml-[260px] lg:mt-[600px] md:mt-[630px] sm:mt-[630px] z-10  flex object-cover lg:h-[307px] lg:w-[509px] md:w-[772px] md:h-[468px] sm:w-[363px] sm:h-[220px] md:rounded-3xl sm:rounded-2xl "
-            src={`data:${image1Type};base64,${image1}`}
-          />
-          <div className=" lg:flex absolute top-96 mr-[680px] mt-[750px] hidden  ">
-            <ClubStar />
-          </div>
-        </div>
-        <div className=" absolute top-96 inset-0 m-auto  lg:mt-[920px] mt-[1150px] flex justify-center">
-          {
-            // seccond section
-          }
-          <svg
-            className="absolute top-96 ml-0 lg:mr-[280px] lg:mt-[0px] md:mt-[70px] sm:mt-[100px] flex lg:w-[509px] lg:h-[309px] md:w-[772px] md:h-[468px] sm:h-[220px] "
-            viewBox="0 0 509 307"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <rect width="509" height="307" rx="23" fill="#D9D9D9" />
-          </svg>
-          <p className=" absolute top-96 lg:mr-[270px] lg:mt-[310px] md:mt-[540px] sm:mt-[330px] md:ml-0 flex  text-[#7533A8] font-Thai text-lg opacity-75 ">
-            ภาพบรรยากาศในชมรม
-          </p>
-          <p className=" absolute top-96 lg:ml-[600px] lg:mt-[0px] hidden lg:flex px-6 w-60 py-5  gap-2 font-semibold text-transparent bg-clip-text bg-gradient-to-br from-[#D738A4] to-[#FFDD77] leading-[4.5rem] font-Thai text-6xl ">
-            ตำแหน่ง / หน้าที่
-          </p>
-          <p className=" absolute top-96 md:mt-[0px] leading-loose md:mr-[400px] font-semibold text-transparent bg-clip-text bg-gradient-to-b from-[#D738A4] to-[#FFDD77] font-Thai  text-3xl  lg:hidden ">
-            ตำแหน่ง/หน้าที่
-          </p>
-          <img
-            className="absolute top-96 ml-0 lg:mr-[280px] lg:mt-[0px] md:mt-[70px] sm:mt-[100px] flex object-cover lg:h-[307px] lg:w-[509px] md:w-[772px] md:h-[468px] sm:w-[363px] sm:h-[220px] md:rounded-3xl sm:rounded-2xl  "
-            src={`data:${image2Type};base64,${image2}`}
-          />
-          <div className=" lg:flex absolute top-96 ml-[675px] mt-[200px] hidden  ">
-            <ClubStar />
-          </div>
-          {
-            // Third section
-          }
-
-          <svg
-            className="absolute top-96 ml-0 lg:ml-[280px] lg:mt-[750px] md:mt-[1070px] flex lg:w-[509px] lg:h-[309px] md:w-[772px] md:h-[468px] sm:mt-[1100px] sm:h-[220px] "
-            viewBox="0 0 509 307"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <rect width="509" height="307" rx="23" fill="#D9D9D9" />
-          </svg>
-          <p className=" absolute top-96 lg:ml-[270px] lg:mt-[1060px] md:mt-[1540px] sm:mt-[1330px] md:ml-0 flex  text-[#7533A8] font-Thai text-lg opacity-75 ">
-            ภาพบรรยากาศในชมรม
-          </p>
-          <p className=" absolute top-96 lg:mr-[550px] lg:mt-[750px] hidden lg:flex px-6 w-80 py-5  gap-2 font-semibold text-transparent bg-clip-text bg-gradient-to-br from-[#D738A4] to-[#FFDD77] font-Thai text-5xl ">
-            ผลงานขององค์กร
-          </p>
-          <p className=" absolute top-96 md:mt-[1010px] sm:mt-[1000px] leading-loose md:mr-[370px] font-semibold text-transparent bg-clip-text bg-gradient-to-b from-[#D738A4] to-[#FFDD77] font-Thai  text-3xl  lg:hidden ">
-            ผลงานขององค์กร
-          </p>
-          <img
-            className="absolute top-96 ml-0 lg:ml-[280px] lg:mt-[750px] md:mt-[1070px] sm:mt-[1100px]  flex object-cover lg:h-[307px] lg:w-[509px] md:w-[772px] md:h-[468px] sm:w-[363px] sm:h-[220px] md:rounded-3xl sm:rounded-2xl "
-            src={`data:${image3Type};base64,${image3}`}
-          />
-          <div className=" lg:flex absolute top-96 mr-[665px] mt-[920px] hidden  ">
-            <ClubStar />
-          </div>
-
-          <div className=" absolute top-96 lg:mt-[1400px] md:mt-[2000px] sm:mt-[2000px] px-12 py-5 flex gap-2 lg:w-1/2  text-white font-Thai ">
-            <ReviewWidget />
-          </div>
-          <div className=" absolute top-96 lg:mt-[1510px] md:mt-[2110px] sm:mt-[2110px] sm:w-[500px] px-12 py-5 flex gap-2 md:w-[850px] text-white font-Thai ">
-            <ReviewCard />
-          </div>
-
-          <div
-            className={
-              showReview2
-                ? " absolute top-96 lg:mt-[1910px] md:mt-[2500px] sm:mt-[2410px] sm:w-[500px] px-12 py-5 flex gap-2 md:w-[850px] text-white font-Thai "
-                : "hidden"
-            }
-          >
-            <ReviewCardR />
-          </div>
-
-          <div
-            className={
-              showReview3
-                ? " absolute top-96 lg:mt-[2310px] md:mt-[2900px] sm:mt-[2710px] sm:w-[500px] px-12 py-5 flex gap-2 md:w-[850px] text-white font-Thai "
-                : "hidden"
-            }
-          >
-            <ReviewCard3 />
-          </div>
-        </div>
-
-        {
-          //text area------------------------------------------------------------------------------------------------------------
-        }
-
-        <div className=" absolute top-96 inset-0 m-auto  lg:mt-[970px] md:mt-[1200px] sm:mt-[900px] flex justify-center">
-          <p className=" text-[#582A88]  text-lg break-words font-Thai h-60 sm:ml-10 md:w-[750px] sm:w-[600px] md:h-72 sm:h-[500px] bg-transparent align-top resize-none overflow-y-scroll whitespace-pre-line">
-            {organizationdo}
-          </p>
-        </div>
-
-        <div className=" absolute top-96 inset-0 m-auto  lg:mt-[1710px] md:mt-[2200px] sm:mt-[1900px] flex justify-center">
-          <p className=" text-[#582A88] text-lg break-words font-Thai h-60 sm:ml-10 md:w-[750px] sm:w-[600px] md:h-72 sm:h-[500px] bg-transparent align-top resize-none overflow-y-scroll whitespace-pre-line">
-            {position}
-          </p>
-        </div>
-
-        <div className=" absolute top-96 inset-0 m-auto  lg:mt-[2430px] md:mt-[3200px] sm:mt-[2900px] flex justify-center">
-          <p className=" text-[#582A88] text-lg break-words  font-Thai h-60 sm:ml-10 md:w-[750px] sm:w-[600px] md:h-72 sm:h-[500px] bg-transparent align-top resize-none overflow-y-scroll whitespace-pre-line">
-            {working}
-          </p>
-        </div>
-
-        {
-          //review 1----------------------------------------------------------------------------------------------------------------------------------
-        }
-        <div className="">
-          <div className=" absolute top-96 inset-0 m-auto  lg:mt-[2895px] md:mt-[3730px] sm:mt-[3790px] flex justify-center">
-            <p className=" text-white  text-md break-words font-Thai  md:w-[480px] md:ml-[240px] md:h-[266px] sm:w-[250px] sm:ml-[140px] sm:h-[120px] bg-transparent align-top resize-none overflow-y-scroll whitespace-pre-line">
-              {review1}
-            </p>
-          </div>
-
-          <div className=" absolute top-96 inset-0 m-auto  lg:mt-[2900px] md:mt-[3730px] sm:mt-[3790px] md:mr-[485px] sm:mr-[180px]  flex justify-center">
-            <div className=" block w-[200px] ">
-              <svg
-                className="block md:w-[153px] w-[80px]"
-                viewBox="0 0 153 153"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <rect width="152.941" height="152.941" rx="30" fill="#D9D9D9" />
-              </svg>
-              <img
-                className="absolute top-0 ml-0 lg:ml-[0px] lg:mt-[0px] md:mt-[0px] z-10  flex object-cover md:h-[153px] md:w-[153px] sm:h-[80px] sm:w-[80px] rounded-3xl "
-                src={`data:${review1ProfileType};base64,${review1Profile}`}
-              />
-              <div className=" block md:mt-1 ">
-                <p className=" text-white md:text-2xl sm:text-md sm:w-[90px] sm:h-6 md:h-8 md:w-[148px]  bg-transparent font-Thai">
-                  {review1Name}
-                </p>
-                <p className=" block text-[#291A54] md:text-xl md:mt-0 sm: sm:text-sm text-base  font-Thai ">
-                  {" "}
-                  เตรียมอุดม {review1Gen}
-                </p>
-                <p className=" sm:h-4 md:h-6 md:w-[148px] items-center w-[100px] text-[#291A54] sm:text-sm md:text-base bg-transparent font-Thai">
-                  {review1Contact}
-                </p>
-              </div>
+          <div className=" flex justify-center w-full absolute lg:top-[16%] md:top-[14%] sm:top-[17%]">
+            <div className=" md:w-1/2 sm:w-full ">
+              <ClubWidget />
             </div>
           </div>
-        </div>
-        {
-          //review 2----------------------------------------------------------------------------------------------------------
-        }
-        <div className={showReview2 ? " block" : "hidden"}>
-          <div className=" absolute top-96 inset-0 m-auto  lg:mt-[3295px] lg:mr-0 md:mt-[4115px] sm:mt-[4090px] md:mr-[270px] flex justify-center">
-            <p className=" text-white text-md break-words font-Thai  md:w-[480px] md:mr-[240px] md:h-[266px] sm:w-[250px] sm:mr-[130px] sm:h-[120px] bg-transparent align-top resize-none overflow-y-scroll whitespace-pre-line">
-              {review2}
-            </p>
-          </div>
+          <div className=" flex justify-center w-full absolute lg:top-[19%] md:top-[16%] sm:top-[23%]">
+            <div className=" lg:w-1/2 md:w-2/3">
+              {
+                //section1
+              }
+              <p className="  font-semibold text-transparent bg-clip-text bg-gradient-to-b from-[#7533A8] to-[#D62C9F] font-Thai text-center  text-2xl py-5 block w-full  lg:hidden ">
+                องค์กรนี้ทำอะไร ?
+              </p>
+              <div className=" flex justify-center gap-3">
+                <p className="  font-semibold text-transparent bg-clip-text bg-gradient-to-b from-[#7533A8] to-[#D62C9F] font-Thai text-right min-w-52 text-4xl py-5 hidden lg:block ">
+                  องค์กรนี้
+                  <p className="  font-semibold text-transparent bg-clip-text bg-gradient-to-b from-[#7533A8] to-[#D62C9F] font-Thai text-right min-w-52 text-2xl  hidden lg:block ">
+                    ทำอะไร?<ClubStar />
+                  </p>
+                </p>
 
-          <div className=" absolute top-96 inset-0 m-auto  lg:mt-[3300px] md:mt-[4120px] sm:mt-[4090px] md:ml-[550px] sm:ml-[280px] flex justify-center">
-            <div className=" block   ">
-              <svg
-                className="block md:w-[153px] w-[80px] md:ml-0 sm:ml-[20px]"
-                viewBox="0 0 153 153"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <rect width="152.941" height="152.941" rx="30" fill="#D9D9D9" />
-              </svg>
-              <div className=" absolute top-0 lg:mt-[0px] lg:ml-[0px] md:mt-[0px] z-20 flex items-center justify-center md:h-[153px] md:w-[153px] sm:h-[80px] sm:w-[80px] md:ml-0 sm:ml-[20px] ">
-                <img
-                  className="absolute top-0 ml-0 lg:ml-[0px] lg:mt-[0px] md:mt-[0px] z-10  flex object-cover md:h-[153px] md:w-[153px] sm:h-[80px] sm:w-[80px] md:rounded-3xl sm:rounded-2xl "
-                  src={`data:${review2ProfileType};base64,${review2Profile}`}
-                />
+                <div className=" w-auto relative  ">
+                  <svg
+                    className=" lg:w-[509px] lg:h-[307px] md:w-[772px] md:h-[468px] sm:h-[220px] "
+                    viewBox="0 0 509 307"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <rect width="509" height="307" rx="23" fill="#D9D9D9" />
+                  </svg>
+                  <div className=" absolute  w-full h-full">
+                    <p className="  text-center text-[#7533A8] ">
+                      ภาพบรรยากาศในองค์กร
+                    </p>
+                  </div>
+                  <div className=" absolute w-full top-0">
+                    <img
+                      className=" flex object-cover lg:h-[307px] lg:w-[509px] md:w-[772px] md:h-[468px] sm:w-[363px] sm:h-[220px] md:rounded-3xl sm:rounded-2xl z-10  "
+                      src={`data:${image1Type};base64,${image1}`}
+                    />
+                  </div>
+                </div>
               </div>
-              <div className=" block md:mt-1">
-                <p className=" text-white md:text-2xl sm:text-md md:ml-0 sm:ml-[10px] sm:w-[90px] sm:h-6 md:h-8 md:w-[148px]  bg-transparent font-Thai text-end">
-                  {review2Name}
-                </p>
-
-                <p className=" block text-[#291A54] md:text-xl md:mt-0  sm:text-sm text-base  md:mr-1  font-Thai text-end ">
-                  {" "}
-                  เตรียมอุดม {review2Gen}
-                </p>
-                <div className=" flex">
-                  <p className=" sm:h-4 md:h-6 md:w-[148px] items-center  w-[100px] text-[#291A54] sm:text-sm md:text-base bg-transparent font-Thai text-end">
-                    {review2Contact}
+              <div className=" flex justify-center mt-10">
+                <div className=" w-full  justify-center hidden md:block">
+                  <textarea
+                    className=" text-[#582A88]  text-lg break-words border-2 font-Thai  md:w-full md:p-0 sm:w-full sm:p-5   h-72  bg-transparent align-top resize-none whitespace-pre-line "
+                    value={organizationdo}
+                  ></textarea>
+                </div>
+                <div className=" w-full  justify-center flex md:hidden">
+                  <p className=" text-[#582A88]  text-lg break-words border-2 font-Thai  md:w-full md:p-0 sm:w-full sm:p-5   h-72 bg-transparent align-top resize-none whitespace-pre-line ">
+                    {organizationdo}
                   </p>
                 </div>
               </div>
-            </div>
-          </div>
-        </div>
-        {
-          //review 3---------------------------------------------------------------------------------------------------------------------
-        }
-        <div className={showReview3 ? " block" : "hidden"}>
-          <div className=" absolute top-96 inset-0 m-auto  lg:mt-[3695px] md:mt-[4520px] sm:mt-[4390px] flex justify-center">
-            <p className=" text-white  text-md break-words font-Thai  md:w-[480px] md:ml-[240px] md:h-[266px] sm:w-[250px] sm:ml-[140px] sm:h-[120px] bg-transparent align-top resize-none overflow-y-scroll whitespace-pre-line">
-              {review3}
-            </p>
-          </div>
-          <div className=" absolute top-96 inset-0 m-auto  lg:mt-[3700px] md:mt-[4520px] sm:mt-[4390px] md:mr-[485px] sm:mr-[180px] flex justify-center">
-            <div className=" block w-[200px]">
-              <svg
-                className="block md:w-[153px] w-[80px]"
-                viewBox="0 0 153 153"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <rect width="152.941" height="152.941" rx="30" fill="#D9D9D9" />
-              </svg>
-              <img
-                className="absolute top-0 ml-0 lg:ml-[0px] lg:mt-[0px] md:mt-[0px] z-10  flex object-cover md:h-[153px] md:w-[153px] sm:h-[80px] sm:w-[80px]  rounded-3xl "
-                src={`data:${review3ProfileType};base64,${review3Profile}`}
-              />
-              <div className=" block md:mt-1 ">
-                <p className=" text-white md:text-2xl sm:text-md sm:w-[90px] sm:h-6 md:h-8 md:w-[148px]  bg-transparent font-Thai">
-                  {review3Name}
-                </p>
-                <p className=" block text-[#291A54] md:text-xl md:mt-0 sm:text-sm text-base  font-Thai ">
-                  เตรียมอุดม {review3Gen}
-                </p>
-                <div className=" flex">
-                  <p className=" sm:h-4 md:h-6 md:w-[148px] items-center w-[100px] text-[#291A54] sm:text-sm md:text-base text-left bg-transparent font-Thai">
-                    {review3Contact}
+              {
+                //section2
+              }
+              <p className="  font-semibold text-transparent bg-clip-text bg-gradient-to-b from-[#7533A8] to-[#D62C9F] font-Thai text-center  text-2xl block w-full py-5  lg:hidden ">
+                ตำแหน่ง/หน้าที่
+              </p>
+              <div className=" flex justify-center gap-3 lg:mt-10">
+                <div className=" w-auto relative  ">
+                  <svg
+                    className=" lg:w-[509px] lg:h-[307px] md:w-[772px] md:h-[468px] sm:h-[220px] "
+                    viewBox="0 0 509 307"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <rect width="509" height="307" rx="23" fill="#D9D9D9" />
+                  </svg>
+                  <div className=" absolute left-0  w-full h-full z-20">
+                    <p className="  text-center text-[#7533A8] ">
+                      ภาพบรรยากาศในองค์กร
+                    </p>
+                  </div>
+                  <div className=" absolute w-full top-0 z-10">
+                    <img
+                      className=" flex object-cover lg:h-[307px] lg:w-[509px] md:w-[772px] md:h-[468px] sm:w-[363px] sm:h-[220px] md:rounded-3xl sm:rounded-2xl z-10  "
+                      src={`data:${image2Type};base64,${image2}`}
+                    />
+                  </div>
+                </div>
+                <p className="  font-semibold text-transparent bg-clip-text bg-gradient-to-b from-[#7533A8] to-[#D62C9F] font-Thai text-left min-w-52 text-4xl py-5 hidden lg:block ">
+                  ตำแหน่ง
+                  <p className="  font-semibold text-transparent bg-clip-text bg-gradient-to-b from-[#7533A8] to-[#D62C9F] font-Thai text-left min-w-52 text-3xl  hidden lg:block ">
+                    /หน้าที่<ClubStar />
                   </p>
+                </p>
+              </div>
+              <div className=" flex justify-center mt-10">
+                <div className=" w-full  justify-center hidden md:block">
+                  <p className=" text-[#582A88]  text-lg break-words border-2 font-Thai  md:w-full md:p-0 sm:w-full sm:p-5   h-72  bg-transparent align-top resize-none whitespace-pre-line ">
+                    {position}
+                  </p>
+                </div>
+                <div className=" w-full  justify-center flex md:hidden">
+                  <textarea
+                    className=" text-[#582A88]  text-lg break-words border-2 font-Thai  md:w-full md:p-0 sm:w-full sm:p-5   h-72 bg-transparent align-top resize-none whitespace-pre-line "
+                    value={position}
+                  ></textarea>
+                </div>
+              </div>
+              {
+                //section3
+              }
+              <p className="  font-semibold text-transparent bg-clip-text bg-gradient-to-b from-[#7533A8] to-[#D62C9F] font-Thai text-center  text-2xl block w-full py-5  lg:hidden ">
+                ผลงานขององค์กร
+              </p>
+              <div className=" flex justify-center gap-3 lg:mt-10">
+                <p className="  font-semibold text-transparent bg-clip-text bg-gradient-to-b from-[#7533A8] to-[#D62C9F] font-Thai text-right min-w-52 text-4xl py-5 hidden lg:block ">
+                  ผลงาน<br />
+                  ขององค์กร <ClubStar />
+                </p>
+
+                <div className=" w-auto relative  ">
+                  <svg
+                    className=" lg:w-[509px] lg:h-[307px] md:w-[772px] md:h-[468px] sm:h-[220px] "
+                    viewBox="0 0 509 307"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <rect width="509" height="307" rx="23" fill="#D9D9D9" />
+                  </svg>
+                  <div className=" absolute  w-full h-full">
+                    <p className="  text-center text-[#7533A8] ">
+                      ภาพบรรยากาศในองค์กร
+                    </p>
+                  </div>
+                  <div className=" absolute w-full top-0">
+                    <img
+                      className=" flex object-cover lg:h-[307px] lg:w-[509px] md:w-[772px] md:h-[468px] sm:w-[363px] sm:h-[220px] md:rounded-3xl sm:rounded-2xl z-10  "
+                      src={`data:${image3Type};base64,${image3}`}
+                    />
+                  </div>
+                </div>
+              </div>
+              <div className=" flex justify-center mt-10">
+                <div className=" w-full  justify-center hidden md:block">
+                  <p className=" text-[#582A88]  text-lg break-words border-2 font-Thai  md:w-full md:p-0 sm:w-full sm:p-5   h-72  bg-transparent align-top resize-none whitespace-pre-line ">
+                    {working}
+                  </p>
+                </div>
+                <div className=" w-full  justify-center flex md:hidden">
+                  <textarea
+                    className=" text-[#582A88]  text-lg break-words border-2 font-Thai  md:w-full md:p-0 sm:w-full sm:p-5   h-72 bg-transparent align-top resize-none whitespace-pre-line "
+                    value={working}
+                  ></textarea>
+                </div>
+              </div>
+
+              {
+                //review1
+              }
+              <div>
+                <div className=" mt-10">
+                  <ReviewWidget />
+                </div>
+                <div className=" w-full relative">
+                  <ReviewCard />
+                  <div className=" absolute top-0 mt-5 md:left-5 sm:left-2 h-full ">
+                    <svg
+                      className="block lg:h-[153px] lg:w-[153px] md:h-[100px] md:w-[100px] sm:h-[60px] sm:w-[60px]"
+                      viewBox="0 0 153 153"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <rect
+                        width="152.941"
+                        height="152.941"
+                        rx="30"
+                        fill="#D9D9D9"
+                      />
+                    </svg>
+
+                    <img
+                      className="absolute top-0 left-0 z-10  flex object-cover lg:h-[153px] lg:w-[153px] md:h-[100px] md:w-[100px] sm:h-[60px] sm:w-[60px] rounded-3xl sm:rounded-xl "
+                      src={`data:${review1ProfileType};base64,${review1Profile}`}
+                    />
+                    <div className=" block md:mt-1  z-50 relative">
+                      <p className=" text-white md:text-2xl sm:text-md sm:w-[90px] sm:h-6 md:h-8 md:w-[148px]  bg-transparent font-Thai">
+                        {review1Name}
+                      </p>
+
+                      <p className=" block text-[#291A54] md:text-xl md:mt-0  sm:text-sm text-base  font-Thai ">
+                        {" "}
+                        เตรียมอุดม {review1Gen}
+                      </p>
+                      <div className=" flex">
+                        <p className=" sm:h-4 md:h-6 md:w-[148px] items-center w-[100px] text-[#291A54] sm:text-sm md:text-base bg-transparent font-Thai">
+                          {review1Contact}
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                  <div className=" absolute w-full top-5 h-3/4 right-0 flex justify-end">
+                    <p className=" text-white  text-md break-words font-Thai md:mr-10 sm:mr-5   w-3/5  h-full   bg-transparent align-top resize-none whitespace-pre-line">
+                      {review1}
+                    </p>
+                  </div>
+                </div>
+
+                {
+                  //review2
+                }
+                <div
+                  className={showReview2 ? " w-full relative mt-10" : "hidden"}
+                >
+                  <ReviewCardR />
+                  <div className=" absolute top-0 mt-5 md:right-5 sm:right-2 h-full justify-end ">
+                    <div className=" flex justify-end">
+                      <svg
+                        className="block lg:h-[153px] lg:w-[153px] md:h-[100px] md:w-[100px] sm:h-[60px] sm:w-[60px]"
+                        viewBox="0 0 153 153"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <rect
+                          width="152.941"
+                          height="152.941"
+                          rx="30"
+                          fill="#D9D9D9"
+                        />
+                      </svg>
+
+                      <img
+                        className="absolute top-0 right-0 z-10  flex object-cover lg:h-[153px] lg:w-[153px] md:h-[100px] md:w-[100px] sm:h-[60px] sm:w-[60px] rounded-3xl sm:rounded-xl "
+                        src={`data:${review2ProfileType};base64,${review2Profile}`}
+                      />
+                    </div>
+                    <div className=" block md:mt-1  relative z-50">
+                      <p className=" text-white md:text-2xl sm:text-md sm:w-[100px] sm:h-6 md:h-8 md:w-[148px]  bg-transparent font-Thai text-right">
+                        {review2Name}
+                      </p>
+
+                      <p className=" block text-[#291A54] md:text-xl md:mt-0  sm:text-sm text-base  font-Thai text-right ">
+                        {" "}
+                        เตรียมอุดม {review2Gen}
+                      </p>
+                      <div className=" flex">
+                        <p className=" sm:h-4 md:h-6 md:w-[148px] items-center w-[100px] text-[#291A54] sm:text-sm md:text-base bg-transparent font-Thai text-right">
+                          {review2Contact}
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                  <div className=" absolute w-full top-5 h-3/4 left-0 flex justify-start">
+                    <textarea
+                      className=" text-white  text-md break-words font-Thai md:ml-10 sm:ml-5   w-3/5  h-full  bg-transparent align-top resize-none whitespace-pre-line"
+                      value={review2}
+                    ></textarea>
+                  </div>
+                </div>
+
+                {
+                  //review3
+                }
+                <div
+                  className={showReview3 ? " w-full relative mt-10" : "hidden"}
+                >
+                  <ReviewCard />
+                  <div className=" absolute top-0 mt-5 md:left-5 sm:left-2 h-full ">
+                    <svg
+                      className="block lg:h-[153px] lg:w-[153px] md:h-[100px] md:w-[100px] sm:h-[60px] sm:w-[60px]"
+                      viewBox="0 0 153 153"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <rect
+                        width="152.941"
+                        height="152.941"
+                        rx="30"
+                        fill="#D9D9D9"
+                      />
+                    </svg>
+
+                    <img
+                      className="absolute top-0 left-0 z-10  flex object-cover lg:h-[153px] lg:w-[153px] md:h-[100px] md:w-[100px] sm:h-[60px] sm:w-[60px] rounded-3xl sm:rounded-xl "
+                      src={`data:${review3ProfileType};base64,${review3Profile}`}
+                    />
+                    <div className=" block md:mt-1  z-50 relative">
+                      <p className=" text-white md:text-2xl sm:text-md sm:w-[90px] sm:h-6 md:h-8 md:w-[148px]  bg-transparent font-Thai">
+                        {review3Name}
+                      </p>
+
+                      <p className=" block text-[#291A54] md:text-xl md:mt-0  sm:text-sm text-base  font-Thai ">
+                        {" "}
+                        เตรียมอุดม {review3Gen}
+                      </p>
+                      <div className=" flex">
+                        <p className=" sm:h-4 md:h-6 md:w-[148px] items-center w-[100px] text-[#291A54] sm:text-sm md:text-base bg-transparent font-Thai">
+                          {review3Contact}
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                  <div className=" absolute w-full top-5 h-3/4 right-0 flex justify-end">
+                    <p className=" text-white  text-md break-words font-Thai md:mr-10 sm:mr-5   w-3/5  h-full  bg-transparent align-top resize-none whitespace-pre-line">
+                      {review3}
+                    </p>
+                  </div>
                 </div>
               </div>
             </div>

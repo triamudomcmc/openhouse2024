@@ -672,7 +672,7 @@ export default function ProgramEdit() {
               </span>
             </button>
 
-            <button className=" text-white px-6 py-3 bg-gradient-to-r from-[#7533A8] to-[#D738A4] rounded-full " onClick={summit}>
+            <button className=" text-white px-3 py-1 text-xl bg-gradient-to-r from-[#7533A8] to-[#D738A4] rounded-full " onClick={summit}>
               ส่งการแก้ไข
             </button>
           </div>
@@ -726,6 +726,7 @@ export default function ProgramEdit() {
                   />
                 </label>
               </div>
+              <img  src={logo} className=" absolute w-[100px] h-[100px] z-00 top-1/2 -translate-y-1/2 left-1/2 -translate-x-1/2 rounded-2xl" />
             </div>
             <div>
               <svg
@@ -760,7 +761,7 @@ export default function ProgramEdit() {
                 {" "}
                 สมาชิก:
                 <input
-                  className=" h-7 text-xl bg-transparent w-[100px] font-Thai"
+                  className=" h-7 text-xl bg-transparent w-[80px] font-Thai"
                   type="text"
                   ref={memberRef}
                   value={member}
@@ -841,10 +842,10 @@ export default function ProgramEdit() {
                 ชมรมนี้ทำอะไร
               </p>
             <div className=" flex justify-center gap-3">
-              <p className="  font-semibold text-transparent bg-clip-text bg-gradient-to-b from-[#7533A8] to-[#D62C9F] font-Thai text-left min-w-52 text-5xl py-5 hidden lg:flex ">
+              <p className="  font-semibold text-transparent bg-clip-text bg-gradient-to-b from-[#7533A8] to-[#D62C9F] font-Thai text-right min-w-52 text-5xl py-5 hidden lg:block ">
                 ชมรมนี้
                 <br />
-                ทำอะไร
+                ทำอะไร<ClubStar />
               </p>
               
               <div className=" w-auto relative  ">
@@ -993,7 +994,7 @@ export default function ProgramEdit() {
                 <br />
                 ที่ได้รับ
                 <p className="  font-semibold text-transparent bg-clip-text bg-gradient-to-b from-[#7533A8] to-[#D62C9F] font-Thai text-left min-w-52 text-3xl  hidden lg:block ">
-                  จาการเข้าชมรม
+                  จาการเข้าชมรม<ClubStar />
                 </p>
               </p>
 
@@ -1039,10 +1040,10 @@ export default function ProgramEdit() {
                 ผลงานของชมรม
               </p>
             <div className=" flex justify-center gap-3 lg:mt-10">
-              <p className="  font-semibold text-transparent bg-clip-text bg-gradient-to-b from-[#7533A8] to-[#D62C9F] font-Thai text-left min-w-52 text-5xl py-5 hidden lg:flex ">
+              <p className="  font-semibold text-transparent bg-clip-text bg-gradient-to-b from-[#7533A8] to-[#D62C9F] font-Thai text-right min-w-52 text-5xl py-5 hidden lg:block ">
                 ผลงาน
                 <br />
-                ของชมรม
+                ของชมรม<ClubStar />
               </p>
 
               
