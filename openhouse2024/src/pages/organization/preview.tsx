@@ -61,6 +61,7 @@ export default function OrganizationPreview() {
   let image1Data = JSON.stringify({
     email: session?.user?.email,
     imageType: "image1",
+    environmentKey : process.env.ENVIRONMENT_KEY,
   });
 
   let image1Config = {
@@ -86,6 +87,7 @@ export default function OrganizationPreview() {
   let image2Data = JSON.stringify({
     email: session?.user?.email,
     imageType: "image2",
+    environmentKey : process.env.ENVIRONMENT_KEY,
   });
 
   let image2Config = {
@@ -111,6 +113,7 @@ export default function OrganizationPreview() {
   let image3Data = JSON.stringify({
     email: session?.user?.email,
     imageType: "image3",
+    environmentKey : process.env.ENVIRONMENT_KEY,
   });
 
   let image3Config = {
@@ -136,6 +139,7 @@ export default function OrganizationPreview() {
   let profile1Data = JSON.stringify({
     email: session?.user?.email,
     imgprofileType: "imgprofile1",
+    environmentKey : process.env.ENVIRONMENT_KEY,
   });
 
   let profile1Config = {
@@ -162,6 +166,7 @@ export default function OrganizationPreview() {
   let profile2Data = JSON.stringify({
     email: session?.user?.email,
     imgprofileType: "imgprofile2",
+    environmentKey : process.env.ENVIRONMENT_KEY,
   });
 
   let profile2Config = {
@@ -189,6 +194,7 @@ export default function OrganizationPreview() {
   let profile3Data = JSON.stringify({
     email: session?.user?.email,
     imgprofileType: "imgprofile3",
+    environmentKey : process.env.ENVIRONMENT_KEY,
   });
 
   let profile3Config = {
@@ -215,6 +221,7 @@ export default function OrganizationPreview() {
 
   const data = JSON.stringify({
     email: session?.user?.email,
+    environmentKey : process.env.ENVIRONMENT_KEY,
   });
 
   const config = {
@@ -285,7 +292,7 @@ export default function OrganizationPreview() {
             <ClubBgM />
           </div>
           <div className=" flex justify-center">
-            <div className=" absolute md:top-[8%] sm:top-[5%] flex w-5/6 justify-evenly items-center">
+            <div className=" absolute lg:top-[8%] md:top-[4%] sm:top-[6%] flex w-5/6 justify-evenly items-center">
               <button className=" flex" onClick={back}>
                 <BackArrow />
                 <span className=" pl-2  text-2xl align-middle text-[#55247B]">
@@ -294,14 +301,14 @@ export default function OrganizationPreview() {
               </button>
             </div>
           </div>
-          <div className=" absolute md:top-[10%] sm:top-[8%] flex w-full justify-center">
+          <div className=" absolute lg:top-[10%] md:top-[5%] sm:top-[8%] flex w-full justify-center">
             <div className=" absolute w-5/6  ">
               <p className="  p-6   font-extrabold text-transparent md:text-5xl sm:text-3xl bg-clip-text break-words bg-gradient-to-b from-[#81109D] to-[#D62C9F]  from-40% to-100% py-5 font-Thai text-center z-10">
                 {organization}
               </p>
             </div>
           </div>
-          <div className=" absolute lg:top-[13%] md:top-[12%] sm:top-[13%] flex w-full justify-center">
+          <div className=" absolute lg:top-[13%] md:top-[7%] sm:top-[12%] flex w-full justify-center">
             <div className=" absolute w-1/2 flex  justify-center gap-4 align-middle items-center">
               <div className="  flex justify-end min-w-[150px] md:min-w-[200px] align-bottom  ">
                 <div className=" hidden md:flex">
@@ -357,12 +364,12 @@ export default function OrganizationPreview() {
               </div>
             </div>
           </div>
-          <div className=" flex justify-center w-full absolute lg:top-[16%] md:top-[14%] sm:top-[17%]">
+          <div className=" flex justify-center w-full absolute lg:top-[16%] md:top-[9%] sm:top-[16%]">
             <div className=" md:w-1/2 sm:w-full ">
               <ClubWidget />
             </div>
           </div>
-          <div className=" flex justify-center w-full absolute lg:top-[19%] md:top-[16%] sm:top-[23%]">
+          <div className=" flex justify-center w-full absolute lg:top-[19%] md:top-[11%] sm:top-[18%]">
             <div className=" lg:w-1/2 md:w-2/3">
               {
                 //section1

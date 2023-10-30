@@ -106,7 +106,8 @@ export default function Form() {
     let data = JSON.stringify({
         "email": session?.user?.email,
         "tag": type,
-        "name": name
+        "name": name,
+        "environmentKey" : process.env.ENVIRONMENT_KEY
       });
       
       let config = {

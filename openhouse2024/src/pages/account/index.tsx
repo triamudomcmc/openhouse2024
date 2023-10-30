@@ -24,7 +24,8 @@ export default function AccountPage() {
   });
 
   let data = JSON.stringify({
-    "email": session?.user?.email
+    "email": session?.user?.email,
+    "environmentKey" : process.env.ENVIRONMENT_KEY
   });
   
   let config = {

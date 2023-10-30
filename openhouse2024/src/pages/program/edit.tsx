@@ -106,6 +106,7 @@ export default function ProgramEdit() {
     "review_3.gen": review3Gen,
     "review_3.contact": review3Contact,
     "review_3.review": review3,
+    environmentKey : process.env.ENVIRONMENT_KEY,
   });
 
   let configEdit = {
@@ -134,6 +135,7 @@ export default function ProgramEdit() {
     image1Data.append("file", image1File);
     image1Data.append("email", session?.user?.email);
     image1Data.append("imageType", "image1");
+    image1Data.append("environmentKey" , process.env.ENVIRONMENT_KEY)
 
     let image1Config = {
       method: "post",
@@ -160,6 +162,7 @@ export default function ProgramEdit() {
     image2Data.append("file", image2File);
     image2Data.append("email", session?.user?.email);
     image2Data.append("imageType", "image2");
+    image2Data.append("environmentKey" , process.env.ENVIRONMENT_KEY)
 
     let image2Config = {
       method: "post",
@@ -186,6 +189,7 @@ export default function ProgramEdit() {
     image3Data.append("file", image3File);
     image3Data.append("email", session?.user?.email);
     image3Data.append("imageType", "image3");
+    image3Data.append("environmentKey" , process.env.ENVIRONMENT_KEY)
 
     let image3Config = {
       method: "post",
@@ -212,6 +216,7 @@ export default function ProgramEdit() {
     ReviewProfile1Data.append("file", review1ProfileFile);
     ReviewProfile1Data.append("email", session?.user?.email);
     ReviewProfile1Data.append("imgprofileType", "imgprofile1");
+    ReviewProfile1Data.append("environmentKey" , process.env.ENVIRONMENT_KEY)
 
     let ReviewProfile1Config = {
       method: "post",
@@ -238,6 +243,7 @@ export default function ProgramEdit() {
     ReviewProfile2Data.append("file", review2ProfileFile);
     ReviewProfile2Data.append("email", session?.user?.email);
     ReviewProfile2Data.append("imgprofileType", "imgprofile2");
+    ReviewProfile2Data.append("environmentKey" , process.env.ENVIRONMENT_KEY)
 
     let ReviewProfile2Config = {
       method: "post",
@@ -264,6 +270,7 @@ export default function ProgramEdit() {
     ReviewProfile3Data.append("file", review3ProfileFile);
     ReviewProfile3Data.append("email", session?.user?.email);
     ReviewProfile3Data.append("imgprofileType", "imgprofile3");
+    ReviewProfile3Data.append("environmentKey" , process.env.ENVIRONMENT_KEY)
 
     let ReviewProfile3Config = {
       method: "post",
@@ -287,6 +294,7 @@ export default function ProgramEdit() {
 
   const data = JSON.stringify({
     email: session?.user?.email,
+    environmentKey : process.env.ENVIRONMENT_KEY,
   });
 
   const config = {
@@ -627,7 +635,7 @@ export default function ProgramEdit() {
           <ClubBgM />
         </div>
         <div className=" flex justify-center">
-          <div className=" absolute md:top-[8%] sm:top-[5%] flex w-5/6 justify-evenly items-center">
+          <div className=" absolute lg:top-[8%] md:top-[4%] sm:top-[6%] flex w-5/6 justify-evenly items-center">
             <button className=" flex" onClick={back}>
               <BackArrow />
               <span className=" pl-2  text-2xl align-middle text-[#55247B]">
@@ -640,14 +648,14 @@ export default function ProgramEdit() {
             </button>
           </div>
         </div>
-        <div className=" absolute md:top-[10%] sm:top-[8%] flex w-full justify-center">
+        <div className=" absolute lg:top-[10%] md:top-[5%] sm:top-[8%] flex w-full justify-center">
           <div className=" absolute w-5/6  ">
             <p className="  p-6   font-extrabold text-transparent md:text-5xl sm:text-3xl bg-clip-text break-words bg-gradient-to-b from-[#81109D] to-[#D62C9F]  from-40% to-100% py-5 font-Thai text-center z-10">
               {program}
             </p>
           </div>
         </div>
-        <div className=" absolute lg:top-[13%] md:top-[12%] sm:top-[14%] flex w-full justify-center">
+        <div className=" absolute lg:top-[13%] md:top-[7%] sm:top-[13%] flex w-full justify-center">
           <div className=" absolute w-1/2 flex  justify-center gap-2 items-center ">
             <div className=" relative z-0 min-w-[200px] flex justify-end">
             <div className=" hidden md:flex">
@@ -757,12 +765,12 @@ export default function ProgramEdit() {
             </div>
           </div>
         </div>
-        <div className=" flex justify-center w-full absolute lg:top-[16%] md:top-[14%] sm:top-[20%]">
+        <div className=" flex justify-center w-full absolute lg:top-[16%] md:top-[9%] sm:top-[17%]">
           <div className=" md:w-1/2 sm:w-full ">
             <ClubWidget />
           </div>
         </div>
-        <div className=" flex justify-center w-full absolute lg:top-[19%] md:top-[16%] sm:top-[23%]">
+        <div className=" flex justify-center w-full absolute lg:top-[19%] md:top-[11%] sm:top-[19%]">
           <div className=" lg:w-1/2 md:w-2/3">
             {
               //section1
