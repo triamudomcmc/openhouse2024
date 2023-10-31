@@ -113,6 +113,7 @@ export default function Adminpanel() {
 
   let data = JSON.stringify({
     email: session?.user?.email,
+    "environmentKey" : process.env.ENVIRONMENT_KEY
   });
 
   let config = {
@@ -151,6 +152,7 @@ export default function Adminpanel() {
       email: session?.user?.email,
       type: itemToPost.tag,
       name: itemToPost.name,
+      "environmentKey" : process.env.ENVIRONMENT_KEY
       // Include other relevant properties here
     };
 
@@ -194,6 +196,7 @@ export default function Adminpanel() {
       email: session?.user?.email,
       type: itemToPost.tag,
       name: itemToPost.name,
+      "environmentKey" : process.env.ENVIRONMENT_KEY
       // Include other relevant properties here
     };
 
