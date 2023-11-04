@@ -416,7 +416,7 @@ export default function Adminpanel() {
                   />
                 </div>
                 <div className="flex justify-center mt-7 ">
-                  <p className=" text-[#582A88]  text-lg break-words font-Thai h-60 md:w-[750px] sm:w-[400px] md:h-72 sm:h-[500px] bg-transparent align-top text-left resize-none overflow-y-scroll whitespace-pre-line border">
+                  <p className=" text-[#582A88]  text-lg break-words font-Thai min-h-[200px] md:w-[750px] sm:w-[400px]  bg-transparent align-top text-left resize-none overflow-y-scroll whitespace-pre-line border">
                     {item.clubsactivity}
                     {item.admission}
                     {item.organizationdo}
@@ -442,7 +442,7 @@ export default function Adminpanel() {
                   </div>
                 </div>
                 <div className="flex justify-center mt-7">
-                  <p className=" text-[#582A88]  text-lg break-words font-Thai h-60 md:w-[750px] sm:w-[400px] md:h-72 sm:h-[500px] bg-transparent align-top text-left resize-none overflow-y-scroll whitespace-pre-line border">
+                  <p className=" text-[#582A88]  text-lg break-words font-Thai min-h-[200px] md:w-[750px] sm:w-[400px] bg-transparent align-top text-left resize-none overflow-y-scroll whitespace-pre-line border">
                     {item.benefits}
                     {item.subjects}
                     {item.position}
@@ -466,7 +466,7 @@ export default function Adminpanel() {
                   />
                 </div>
                 <div className="flex justify-center mt-7">
-                  <p className=" text-[#582A88]  text-lg break-words font-Thai h-60 md:w-[750px] sm:w-[400px] md:h-72 sm:h-[500px] bg-transparent align-top text-left resize-none overflow-y-scroll whitespace-pre-line border">
+                  <p className=" text-[#582A88]  text-lg break-words font-Thai min-h-[200px] md:w-[750px] sm:w-[400px] bg-transparent align-top text-left resize-none overflow-y-scroll whitespace-pre-line border">
                     {item.workings}
                     {item.interests}
                     {item.working}
