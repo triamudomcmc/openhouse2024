@@ -24,6 +24,9 @@ import ClubCrystal from "@/vectors/club/clubCrystal";
 import ClubLamp from "@/vectors/club/clubLamp";
 import ClubFlower from "@/vectors/club/clubFlower";
 import ClubCrystal2 from "@/vectors/club/clubCrystal2";
+import { toast, ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+
 
 export default function ProgramEdit() {
   const [clubs, setClubs] = useState("");
@@ -131,10 +134,17 @@ export default function ProgramEdit() {
     try {
       const response = await axios.request(configEdit);
       console.log(JSON.stringify(response.data));
-      seteditSuccess(true);
+      toast.success(<><p>success</p><p>ระบบได้บันทึกข้อมูลของท่านแล้ว</p></>, {
+        position: toast.POSITION.BOTTOM_RIGHT,
+        theme : "colored"
+      });
     } catch (error) {
       console.log(error);
-      seteditFail(true);
+      toast.error(<><p>ERORR!!</p><p>โปรดตรวจสอบข้อมูลและบัญชีให้ถูกต้อง</p></>, {
+        position: toast.POSITION.BOTTOM_RIGHT,
+        theme : "colored",
+
+      });
     }
   }
 
@@ -1578,18 +1588,7 @@ export default function ProgramEdit() {
         </div>
       </div>
 
-      <div className={editSuccess ? " fixed z-50 right-4 bottom-4" : "hidden"}>
-        <Alert severity="success">
-          <AlertTitle>Success</AlertTitle>
-          ระบบได้บันทึกข้อมูลของท่านแล้ว
-        </Alert>
-      </div>
-      <div className={editFail ? " fixed z-50 right-4 bottom-4" : "hidden"}>
-        <Alert severity="error">
-          <AlertTitle>error</AlertTitle>
-          โปรดตรวจสอบข้อมูลแล้วลองอีกครั้ง
-        </Alert>
-      </div>
+      <ToastContainer />
     </div>
   );
 }
