@@ -2,8 +2,6 @@ import axios from "axios";
 import { useSession } from "next-auth/react";
 import { useRouter } from "next/navigation";
 import { useState, useEffect } from "react";
-import ReviewCard from "@/vectors/club/reviewCard";
-import ReviewCardR from "@/vectors/club/reviewCardR";
 import ReviewCardLine from "@/vectors/club/reviewCardLine";
 import ReviewCardLineR from "@/vectors/club/reviewCardLineR";
 import { v4 as uuidv4 } from "uuid";
@@ -46,34 +44,13 @@ export default function Adminpanel() {
       contact: string;
       review: string;
     };
-    image1: {
-      data: string;
-      contenttype: string;
-    };
-    image2: {
-      data: string;
-      contenttype: string;
-    };
-    image3: {
-      data: string;
-      contenttype: string;
-    };
-    imgprofile1: {
-      data: string;
-      contenttype: string;
-    };
-    imgprofile2: {
-      data: string;
-      contenttype: string;
-    };
-    imgprofile3: {
-      data: string;
-      contenttype: string;
-    };
-    logo: {
-      data: string;
-      contenttype: string;
-    };
+    image1: string;
+    image2: string;
+    image3: string;
+    imgprofile1: string;
+    imgprofile2: string;
+    imgprofile3: string;
+    logo: string;
     isOpen: boolean;
   }
 
@@ -113,7 +90,7 @@ export default function Adminpanel() {
 
   let data = JSON.stringify({
     email: session?.user?.email,
-    "environmentKey" : process.env.ENVIRONMENT_KEY
+    "environmentKeys" : process.env.ENVIRONMENT_KEY
   });
 
   let config = {
@@ -130,6 +107,7 @@ export default function Adminpanel() {
     try {
       const response = await axios.request(config);
       setInfo(response.data);
+      console.log(response.data)
     } catch (error) {
       console.log(error);
     }
@@ -152,7 +130,7 @@ export default function Adminpanel() {
       email: session?.user?.email,
       type: itemToPost.tag,
       name: itemToPost.name,
-      "environmentKey" : process.env.ENVIRONMENT_KEY
+      "environmentKeys" : process.env.ENVIRONMENT_KEY
       // Include other relevant properties here
     };
 
@@ -196,7 +174,7 @@ export default function Adminpanel() {
       email: session?.user?.email,
       type: itemToPost.tag,
       name: itemToPost.name,
-      "environmentKey" : process.env.ENVIRONMENT_KEY
+      "environmentKeys" : process.env.ENVIRONMENT_KEY
       // Include other relevant properties here
     };
 
@@ -400,7 +378,7 @@ export default function Adminpanel() {
               }
               <div className={item.isOpen ? "w-full text-center" : "hidden"}>
                 <div className=" flex justify-center">
-                <img className=" w-[200px] h-[200px]" src={`data:${item.logo?.contenttype};base64,${item.logo?.data}`} />
+                <img className=" w-[200px] h-[200px]" src={item.logo} />
                 </div>
                 <p className=" text-[#0F114C] text-5xl font-Thai mt-5">
                   {item.name}
@@ -434,7 +412,7 @@ export default function Adminpanel() {
                   </p>
                   <img
                     className="  lg:h-[307px] lg:w-[509px] md:w-[772px] md:h-[468px] sm:w-[363px] sm:h-[220px] md:rounded-3xl sm:rounded-2xl object-cover border  "
-                    src={`data:${item.image1?.contenttype};base64,${item.image1?.data}`}
+                    src={item.image1}
                   />
                 </div>
                 <div className="flex justify-center mt-7 ">
@@ -450,7 +428,7 @@ export default function Adminpanel() {
                 <div className=" flex justify-center mt-4 gap-3 ">
                   <img
                     className="  lg:h-[307px] lg:w-[509px] md:w-[772px] md:h-[468px] sm:w-[363px] sm:h-[220px] md:rounded-3xl sm:rounded-2xl object-cover border  "
-                    src={`data:${item.image2?.contenttype};base64,${item.image2?.data}`}
+                    src={item.image2}
                   />
                   <div>
                     <p className=" text-7xl hidden lg:block  text-left font-Thai mt-4">
@@ -484,7 +462,7 @@ export default function Adminpanel() {
                   </div>
                   <img
                     className="  lg:h-[307px] lg:w-[509px] md:w-[772px] md:h-[468px] sm:w-[363px] sm:h-[220px] md:rounded-3xl sm:rounded-2xl object-cover border "
-                    src={`data:${item.image3?.contenttype};base64,${item.image3?.data}`}
+                    src={item.image3}
                   />
                 </div>
                 <div className="flex justify-center mt-7">
@@ -503,7 +481,7 @@ export default function Adminpanel() {
                     <div className=" absolute top-0 mt-5 md:left-5 sm:left-2 h-full ">
                       <img
                         className=" left-0 z-10  flex object-cover lg:h-[153px] lg:w-[153px] md:h-[100px] md:w-[100px] sm:h-[60px] sm:w-[60px] rounded-3xl sm:rounded-xl "
-                        src={`data:${item.imgprofile1?.contenttype};base64,${item.imgprofile1?.data}`}
+                        src={item.imgprofile1}
                       />
                       <div className=" block md:mt-1 text-left  z-50 relative">
                         <p className="  md:text-2xl sm:text-md sm:w-[90px] sm:h-6 md:h-8 md:w-[148px] text-[#291A54]  bg-transparent font-Thai">
@@ -551,7 +529,7 @@ export default function Adminpanel() {
 
                       <img
                         className="absolute top-0 right-0 z-10  flex object-cover lg:h-[153px] lg:w-[153px] md:h-[100px] md:w-[100px] sm:h-[60px] sm:w-[60px] rounded-3xl sm:rounded-xl "
-                        src={`data:${item.imgprofile2?.contenttype};base64,${item.imgprofile2?.data}`}
+                        src={item.imgprofile2}
                       />
                     </div>
                     <div className=" block md:mt-1  relative z-50">
@@ -583,7 +561,7 @@ export default function Adminpanel() {
                     <div className=" absolute top-0 mt-5 md:left-5 sm:left-2 h-full ">
                       <img
                         className=" left-0 z-10  flex object-cover lg:h-[153px] lg:w-[153px] md:h-[100px] md:w-[100px] sm:h-[60px] sm:w-[60px] rounded-3xl sm:rounded-xl "
-                        src={`data:${item.imgprofile3?.contenttype};base64,${item.imgprofile3?.data}`}
+                        src={item.imgprofile3}
                       />
                       <div className=" block md:mt-1 text-left  z-50 relative">
                         <p className="  md:text-2xl sm:text-md sm:w-[90px] sm:h-6 md:h-8 md:w-[148px] text-[#291A54]  bg-transparent font-Thai">

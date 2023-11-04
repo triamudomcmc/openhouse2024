@@ -45,7 +45,6 @@ export default function Form() {
       setInfo(event.target.value);
       typeCheck(event.target.value);
       setName("")
-      clubRequest()
     };
 
     function handleClubChange(event: SelectChangeEvent) {
@@ -107,7 +106,7 @@ export default function Form() {
         "email": session?.user?.email,
         "tag": type,
         "name": name,
-        "environmentKey" : process.env.ENVIRONMENT_KEY
+        "environmentKeys" : process.env.ENVIRONMENT_KEY
       });
       
       let config = {
@@ -154,8 +153,8 @@ export default function Form() {
       }
 
       useEffect(() => {
-
-      })
+        clubRequest()
+      },[])
 
       const clubselect = clubName.map((result) => 
                 <MenuItem key={result} value={result}>{result}</MenuItem>

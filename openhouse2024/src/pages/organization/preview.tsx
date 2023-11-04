@@ -6,12 +6,16 @@ import { useEffect, useState } from "react";
 import ClubWidget from "@/vectors/club/clubwidget";
 import axios from "axios";
 import UserIcon from "@/vectors/club/user";
-import ClubBgM from "@/vectors/bg/ClubM";
 import ClubStar from "@/vectors/club/star";
 import ReviewWidget from "@/vectors/club/reviewWidget";
 import ReviewCard from "@/vectors/club/reviewCard";
 import ReviewCardR from "@/vectors/club/reviewCardR";
-import ReviewCard3 from "@/vectors/club/reviewCard3";
+import ClubCrystal from "@/vectors/club/clubCrystal";
+import ClubLamp from "@/vectors/club/clubLamp";
+import ClubFlower from "@/vectors/club/clubFlower";
+import ClubCrystal2 from "@/vectors/club/clubCrystal2";
+import ClubTop from "@/vectors/club/ClubTop";
+import ClubBottom from "@/vectors/club/clubBottom";
 
 export default function OrganizationPreview() {
   const [organization, setOrganization] = useState("");
@@ -41,11 +45,8 @@ export default function OrganizationPreview() {
   const [image3, setImage3] = useState("");
   const [image3Type, setImage3Type] = useState("");
   const [review1Profile, setReview1Profile] = useState("");
-  const [review1ProfileType, setReview1ProfileType] = useState("");
   const [review2Profile, setReview2Profile] = useState("");
-  const [review2ProfileType, setReview2ProfileType] = useState("");
   const [review3Profile, setReview3Profile] = useState("");
-  const [review3ProfileType, setReview3ProfileType] = useState("");
   const [showReview2, setShowReview2] = useState(false);
   const [showReview3, setShowReview3] = useState(false);
 
@@ -61,7 +62,7 @@ export default function OrganizationPreview() {
   let image1Data = JSON.stringify({
     email: session?.user?.email,
     imageType: "image1",
-    environmentKey : process.env.ENVIRONMENT_KEY,
+    environmentKeys : process.env.ENVIRONMENT_KEY,
   });
 
   let image1Config = {
@@ -78,7 +79,6 @@ export default function OrganizationPreview() {
     try {
       const response = await axios.request(image1Config);
       setImage1(response.data.data);
-      setImage1Type(response.data.contenttype);
     } catch (error) {
       console.log(error);
     }
@@ -104,7 +104,7 @@ export default function OrganizationPreview() {
     try {
       const response = await axios.request(image2Config);
       setImage2(response.data.data);
-      setImage2Type(response.data.contenttype);
+      
     } catch (error) {
       console.log(error);
     }
@@ -130,7 +130,6 @@ export default function OrganizationPreview() {
     try {
       const response = await axios.request(image3Config);
       setImage3(response.data.data);
-      setImage3Type(response.data.contenttype);
     } catch (error) {
       console.log(error);
     }
@@ -155,9 +154,7 @@ export default function OrganizationPreview() {
   async function profile1Request() {
     try {
       const response = await axios.request(profile1Config);
-      console.log(JSON.stringify(response.data));
       setReview1Profile(response.data.data);
-      setReview1ProfileType(response.data.contenttype);
     } catch (error) {
       console.log(error);
     }
@@ -182,10 +179,9 @@ export default function OrganizationPreview() {
   async function profile2Request() {
     try {
       const response = await axios.request(profile2Config);
-      console.log(JSON.stringify(response.data));
       setReview2Profile(response.data.data);
-      setReview2ProfileType(response.data.contenttype);
-      setShowReview2(true);
+      if (response.data.data === '' ) {}
+      else{setShowReview2(true);}
     } catch (error) {
       console.log(error);
     }
@@ -210,10 +206,9 @@ export default function OrganizationPreview() {
   async function profile3Request() {
     try {
       const response = await axios.request(profile3Config);
-      console.log(JSON.stringify(response.data));
       setReview3Profile(response.data.data);
-      setReview3ProfileType(response.data.contenttype);
-      setShowReview3(true);
+      if (response.data.data === '' ) {}
+      else{setShowReview3(true);}
     } catch (error) {
       console.log(error);
     }
@@ -283,139 +278,120 @@ export default function OrganizationPreview() {
 
   return (
     <>
-      <div className=" bg-[#5A2561] h-full sm:min-h-[3500px]">
+      <div className="">
         <div className=" relative w-full top-0 left-0">
-          <div className=" lg:block hidden">
-            <ClubBg />
-          </div>
-          <div className=" lg:hidden block">
-            <ClubBgM />
-          </div>
-          <div className=" flex justify-center">
-            <div className=" absolute lg:top-[8%] md:top-[4%] sm:top-[6%] flex w-5/6 justify-evenly items-center">
-              <button className=" flex" onClick={back}>
-                <BackArrow />
-                <span className=" pl-2  text-2xl align-middle text-[#55247B]">
-                  ย้อนกลับ
-                </span>
-              </button>
-            </div>
-          </div>
-          <div className=" absolute lg:top-[10%] md:top-[5%] sm:top-[8%] flex w-full justify-center">
-            <div className=" absolute w-5/6  ">
-              <p className="  p-6   font-extrabold text-transparent md:text-5xl sm:text-3xl bg-clip-text break-words bg-gradient-to-b from-[#81109D] to-[#D62C9F]  from-40% to-100% py-5 font-Thai text-center z-10">
-                {organization}
-              </p>
-            </div>
-          </div>
-          <div className=" absolute lg:top-[13%] md:top-[7%] sm:top-[12%] flex w-full justify-center">
-            <div className=" absolute w-1/2 flex  justify-center gap-4 align-middle items-center">
-              <div className="  flex justify-end min-w-[150px] md:min-w-[200px] align-bottom  ">
-                <div className=" hidden md:flex">
-                  <UserIcon />
+          <div className=" flex justify-center w-full   bg-gradient-to-b from-[#FFF9E9] to-[#C0B0FF] from-70% to-100%">
+            <div className=" lg:w-1/2 md:w-2/3 z-30 lg:mt-[15%] md:mt-[20%] sm:mt-[25%] pb-20">
+              <div className=" flex justify-center">
+                <button className=" flex" onClick={back}>
+                  <BackArrow />
+                  <span className=" pl-2  text-2xl align-middle text-[#55247B]">
+                    ย้อนกลับ
+                  </span>
+                </button>
+              </div>
+              <div className=" w-full  ">
+                <p className="  p-6   font-extrabold text-transparent md:text-5xl sm:text-3xl bg-clip-text break-words bg-gradient-to-b from-[#81109D] to-[#D62C9F]  from-40% to-100% py-5 font-Thai text-center z-10">
+                  {organization}
+                </p>
+              </div>
+              <div className=" w-full flex  justify-center gap-4 items-center md:mt-5  ">
+                <div className="  flex justify-end min-w-[150px] md:min-w-[200px] ">
+                  <div className=" hidden md:flex">
+                    <UserIcon />
+                  </div>
+                  <p className=" text-4xl block text-center text-transparent  bg-clip-text bg-gradient-to-b from-[#632790] to-[#D738A4]">
+                    สมาชิก <br />
+                    <p className=" text-3xl mt-2">{member}</p>
+                  </p>
                 </div>
-                <p className=" text-4xl block text-center text-transparent  bg-clip-text bg-gradient-to-b from-[#632790] to-[#D738A4] align-middle">
-                  สมาชิก <br />
-                  <p className=" text-3xl mt-2">{member}</p>
-                </p>
-              </div>
-              <div>
-                <svg
-                  className=" w-[6px] "
-                  viewBox="0 0 4 86"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    d="M2 2L2 84"
-                    stroke="url(#paint0_linear_250_1393)"
-                    stroke-width="4"
-                    stroke-linecap="round"
-                  />
-                  <defs>
-                    <linearGradient
-                      id="paint0_linear_250_1393"
-                      x1="-1.00003"
-                      y1="-21.1529"
-                      x2="-1.00003"
-                      y2="84"
-                      gradientUnits="userSpaceOnUse"
-                    >
-                      <stop stop-color="#D738A4" />
-                      <stop offset="1" stop-color="#7533A8" />
-                    </linearGradient>
-                  </defs>
-                </svg>
-              </div>
+                <div>
+                  <svg
+                    className=" w-[6px] "
+                    viewBox="0 0 4 86"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M2 2L2 84"
+                      stroke="url(#paint0_linear_250_1393)"
+                      stroke-width="4"
+                      stroke-linecap="round"
+                    />
+                    <defs>
+                      <linearGradient
+                        id="paint0_linear_250_1393"
+                        x1="-1.00003"
+                        y1="-21.1529"
+                        x2="-1.00003"
+                        y2="84"
+                        gradientUnits="userSpaceOnUse"
+                      >
+                        <stop stop-color="#D738A4" />
+                        <stop offset="1" stop-color="#7533A8" />
+                      </linearGradient>
+                    </defs>
+                  </svg>
+                </div>
 
-              <div className=" md:w-[200px] w-[150px] align-middle">
-                <p className=" flex text-[#8133A7] md:w-[200px] w-[150px] text-xl font-Thai ">
-                  {" "}
-                  IG:{ig}
-                </p>
-                <p className=" flex text-[#8133A7] md:w-[200px] w-[150px] text-xl font-Thai ">
-                  {" "}
-                  FB:{fb}
-                </p>
-                <p className=" flex text-[#8133A7] md:w-[200px] w-[150px] text-xl font-Thai ">
-                  {" "}
-                  อื่นๆ:{other}
-                </p>
+                <div className=" md:w-[200px] w-[150px]">
+                  <p className=" flex text-[#8133A7] md:w-[200px] w-[150px] text-xl font-Thai ">
+                    {" "}
+                    IG:{ig}
+                  </p>
+                  <p className=" flex text-[#8133A7] md:w-[200px] w-[150px] text-xl font-Thai ">
+                    {" "}
+                    FB:{fb}
+                  </p>
+                  <p className=" flex text-[#8133A7] md:w-[200px] w-[150px] text-xl font-Thai ">
+                    {" "}
+                    อื่นๆ:{other}
+                  </p>
+                </div>
               </div>
-            </div>
-          </div>
-          <div className=" flex justify-center w-full absolute lg:top-[16%] md:top-[9%] sm:top-[16%]">
-            <div className=" md:w-1/2 sm:w-full ">
-              <ClubWidget />
-            </div>
-          </div>
-          <div className=" flex justify-center w-full absolute lg:top-[19%] md:top-[11%] sm:top-[18%]">
-            <div className=" lg:w-1/2 md:w-2/3">
+              <div className=" md:mt-3  ">
+                <ClubWidget />
+              </div>
               {
                 //section1
               }
               <p className="  font-semibold text-transparent bg-clip-text bg-gradient-to-b from-[#7533A8] to-[#D62C9F] font-Thai text-center  text-2xl py-5 block w-full  lg:hidden ">
-                องค์กรนี้ทำอะไร ?
+              องค์กรนี้ทำอะไร ?
               </p>
               <div className=" flex justify-center gap-3">
-                <p className="  font-semibold text-transparent bg-clip-text bg-gradient-to-b from-[#7533A8] to-[#D62C9F] font-Thai text-right min-w-52 text-4xl py-5 hidden lg:block ">
-                  องค์กรนี้
-                  <p className="  font-semibold text-transparent bg-clip-text bg-gradient-to-b from-[#7533A8] to-[#D62C9F] font-Thai text-right min-w-52 text-2xl  hidden lg:block ">
-                    ทำอะไร?<ClubStar />
+                <p className="  font-semibold text-transparent bg-clip-text bg-gradient-to-b from-[#7533A8] to-[#D62C9F] font-Thai text-left min-w-52 text-4xl py-5 hidden lg:block ">
+                องค์กรนี้
+                  <p className="  font-semibold text-transparent bg-clip-text bg-gradient-to-b from-[#7533A8] to-[#D62C9F] font-Thai text-left min-w-52 text-2xl  hidden lg:block ">
+                  ทำอะไร<ClubStar />
                   </p>
+                  
                 </p>
 
-                <div className=" w-auto relative  ">
+                <div className=" w-full relative  ">
                   <svg
-                    className=" lg:w-[509px] lg:h-[307px] md:w-[772px] md:h-[468px] sm:h-[220px] "
+                    className="aspect-[9/5] w-full "
                     viewBox="0 0 509 307"
                     fill="none"
                     xmlns="http://www.w3.org/2000/svg"
                   >
-                    <rect width="509" height="307" rx="23" fill="#D9D9D9" />
+                    <rect width="100%" height="100%" rx="23" fill="#D9D9D9" />
                   </svg>
                   <div className=" absolute  w-full h-full">
                     <p className="  text-center text-[#7533A8] ">
-                      ภาพบรรยากาศในองค์กร
+                    ภาพบรรยากาศในองค์กร
                     </p>
                   </div>
                   <div className=" absolute w-full top-0">
                     <img
-                      className=" flex object-cover lg:h-[307px] lg:w-[509px] md:w-[772px] md:h-[468px] sm:w-[363px] sm:h-[220px] md:rounded-3xl sm:rounded-2xl z-10  "
-                      src={`data:${image1Type};base64,${image1}`}
+                      className=" flex object-cover  aspect-[9/5] w-full md:rounded-3xl sm:rounded-2xl z-10  "
+                      src={image1}
                     />
                   </div>
                 </div>
               </div>
               <div className=" flex justify-center mt-10">
-                <div className=" w-full  justify-center hidden md:block">
-                  <textarea
-                    className=" text-[#582A88]  text-lg break-words border-2 font-Thai  md:w-full md:p-0 sm:w-full sm:p-5   h-72  bg-transparent align-top resize-none whitespace-pre-line "
-                    value={organizationdo}
-                  ></textarea>
-                </div>
-                <div className=" w-full  justify-center flex md:hidden">
-                  <p className=" text-[#582A88]  text-lg break-words border-2 font-Thai  md:w-full md:p-0 sm:w-full sm:p-5   h-72 bg-transparent align-top resize-none whitespace-pre-line ">
+                <div className=" w-full block">
+                  <p className=" text-[#582A88]  text-lg break-words  font-Thai  md:w-full md:p-0 sm:w-full sm:p-5 min-h-[200px]   bg-transparent align-top resize-none whitespace-pre-line ">
                     {organizationdo}
                   </p>
                 </div>
@@ -424,12 +400,12 @@ export default function OrganizationPreview() {
                 //section2
               }
               <p className="  font-semibold text-transparent bg-clip-text bg-gradient-to-b from-[#7533A8] to-[#D62C9F] font-Thai text-center  text-2xl block w-full py-5  lg:hidden ">
-                ตำแหน่ง/หน้าที่
+              ตำแหน่ง/หน้าที่
               </p>
               <div className=" flex justify-center gap-3 lg:mt-10">
-                <div className=" w-auto relative  ">
+                <div className=" w-full relative  ">
                   <svg
-                    className=" lg:w-[509px] lg:h-[307px] md:w-[772px] md:h-[468px] sm:h-[220px] "
+                    className=" aspect-[9/5] w-full "
                     viewBox="0 0 509 307"
                     fill="none"
                     xmlns="http://www.w3.org/2000/svg"
@@ -438,51 +414,46 @@ export default function OrganizationPreview() {
                   </svg>
                   <div className=" absolute left-0  w-full h-full z-20">
                     <p className="  text-center text-[#7533A8] ">
-                      ภาพบรรยากาศในองค์กร
+                    ภาพบรรยากาศในองค์กร
                     </p>
                   </div>
                   <div className=" absolute w-full top-0 z-10">
                     <img
-                      className=" flex object-cover lg:h-[307px] lg:w-[509px] md:w-[772px] md:h-[468px] sm:w-[363px] sm:h-[220px] md:rounded-3xl sm:rounded-2xl z-10  "
-                      src={`data:${image2Type};base64,${image2}`}
+                      className=" flex object-cover aspect-[9/5] w-full md:rounded-3xl sm:rounded-2xl z-10  "
+                      src={image2}
                     />
                   </div>
                 </div>
-                <p className="  font-semibold text-transparent bg-clip-text bg-gradient-to-b from-[#7533A8] to-[#D62C9F] font-Thai text-left min-w-52 text-4xl py-5 hidden lg:block ">
-                  ตำแหน่ง
+                <p className="  font-semibold text-transparent bg-clip-text bg-gradient-to-b from-[#7533A8] to-[#D62C9F] font-Thai text-left min-w-52 text-5xl py-5 hidden lg:block ">
+                ตำแหน่ง
+
                   <p className="  font-semibold text-transparent bg-clip-text bg-gradient-to-b from-[#7533A8] to-[#D62C9F] font-Thai text-left min-w-52 text-3xl  hidden lg:block ">
-                    /หน้าที่<ClubStar />
+                  /หน้าที่<ClubStar />
                   </p>
                 </p>
               </div>
               <div className=" flex justify-center mt-10">
-                <div className=" w-full  justify-center hidden md:block">
-                  <p className=" text-[#582A88]  text-lg break-words border-2 font-Thai  md:w-full md:p-0 sm:w-full sm:p-5   h-72  bg-transparent align-top resize-none whitespace-pre-line ">
+                <div className=" w-full  justify-center block">
+                  <p className=" text-[#582A88]  text-lg break-words font-Thai  md:w-full md:p-0 sm:w-full sm:p-5  min-h-[200px]  bg-transparent align-top resize-none whitespace-pre-line ">
                     {position}
                   </p>
-                </div>
-                <div className=" w-full  justify-center flex md:hidden">
-                  <textarea
-                    className=" text-[#582A88]  text-lg break-words border-2 font-Thai  md:w-full md:p-0 sm:w-full sm:p-5   h-72 bg-transparent align-top resize-none whitespace-pre-line "
-                    value={position}
-                  ></textarea>
                 </div>
               </div>
               {
                 //section3
               }
               <p className="  font-semibold text-transparent bg-clip-text bg-gradient-to-b from-[#7533A8] to-[#D62C9F] font-Thai text-center  text-2xl block w-full py-5  lg:hidden ">
-                ผลงานขององค์กร
+              ผลงานขององค์กร
               </p>
               <div className=" flex justify-center gap-3 lg:mt-10">
-                <p className="  font-semibold text-transparent bg-clip-text bg-gradient-to-b from-[#7533A8] to-[#D62C9F] font-Thai text-right min-w-52 text-4xl py-5 hidden lg:block ">
+              <p className="  font-semibold text-transparent bg-clip-text bg-gradient-to-b from-[#7533A8] to-[#D62C9F] font-Thai text-right min-w-52 text-4xl py-5 hidden lg:block ">
                   ผลงาน<br />
                   ขององค์กร <ClubStar />
                 </p>
 
-                <div className=" w-auto relative  ">
+                <div className=" w-full relative  ">
                   <svg
-                    className=" lg:w-[509px] lg:h-[307px] md:w-[772px] md:h-[468px] sm:h-[220px] "
+                    className=" aspect-[9/5] w-full "
                     viewBox="0 0 509 307"
                     fill="none"
                     xmlns="http://www.w3.org/2000/svg"
@@ -491,29 +462,24 @@ export default function OrganizationPreview() {
                   </svg>
                   <div className=" absolute  w-full h-full">
                     <p className="  text-center text-[#7533A8] ">
-                      ภาพบรรยากาศในองค์กร
+                    ภาพบรรยากาศในองค์กร
                     </p>
                   </div>
                   <div className=" absolute w-full top-0">
                     <img
-                      className=" flex object-cover lg:h-[307px] lg:w-[509px] md:w-[772px] md:h-[468px] sm:w-[363px] sm:h-[220px] md:rounded-3xl sm:rounded-2xl z-10  "
-                      src={`data:${image3Type};base64,${image3}`}
+                      className=" flex object-cover aspect-[9/5] w-full md:rounded-3xl sm:rounded-2xl z-10  "
+                      src={image3}
                     />
                   </div>
                 </div>
               </div>
               <div className=" flex justify-center mt-10">
-                <div className=" w-full  justify-center hidden md:block">
-                  <p className=" text-[#582A88]  text-lg break-words border-2 font-Thai  md:w-full md:p-0 sm:w-full sm:p-5   h-72  bg-transparent align-top resize-none whitespace-pre-line ">
+                <div className=" w-full  justify-centerblock">
+                  <p className=" text-[#582A88]  text-lg break-words font-Thai  md:w-full md:p-0 sm:w-full sm:p-5   min-h-[200px]  bg-transparent align-top resize-none whitespace-pre-line ">
                     {working}
                   </p>
                 </div>
-                <div className=" w-full  justify-center flex md:hidden">
-                  <textarea
-                    className=" text-[#582A88]  text-lg break-words border-2 font-Thai  md:w-full md:p-0 sm:w-full sm:p-5   h-72 bg-transparent align-top resize-none whitespace-pre-line "
-                    value={working}
-                  ></textarea>
-                </div>
+
               </div>
 
               {
@@ -542,7 +508,7 @@ export default function OrganizationPreview() {
 
                     <img
                       className="absolute top-0 left-0 z-10  flex object-cover lg:h-[153px] lg:w-[153px] md:h-[100px] md:w-[100px] sm:h-[60px] sm:w-[60px] rounded-3xl sm:rounded-xl "
-                      src={`data:${review1ProfileType};base64,${review1Profile}`}
+                      src={review1Profile}
                     />
                     <div className=" block md:mt-1  z-50 relative">
                       <p className=" text-white md:text-2xl sm:text-md sm:w-[90px] sm:h-6 md:h-8 md:w-[148px]  bg-transparent font-Thai">
@@ -592,7 +558,7 @@ export default function OrganizationPreview() {
 
                       <img
                         className="absolute top-0 right-0 z-10  flex object-cover lg:h-[153px] lg:w-[153px] md:h-[100px] md:w-[100px] sm:h-[60px] sm:w-[60px] rounded-3xl sm:rounded-xl "
-                        src={`data:${review2ProfileType};base64,${review2Profile}`}
+                        src={review2Profile}
                       />
                     </div>
                     <div className=" block md:mt-1  relative z-50">
@@ -643,7 +609,7 @@ export default function OrganizationPreview() {
 
                     <img
                       className="absolute top-0 left-0 z-10  flex object-cover lg:h-[153px] lg:w-[153px] md:h-[100px] md:w-[100px] sm:h-[60px] sm:w-[60px] rounded-3xl sm:rounded-xl "
-                      src={`data:${review3ProfileType};base64,${review3Profile}`}
+                      src={review3Profile}
                     />
                     <div className=" block md:mt-1  z-50 relative">
                       <p className=" text-white md:text-2xl sm:text-md sm:w-[90px] sm:h-6 md:h-8 md:w-[148px]  bg-transparent font-Thai">
@@ -668,6 +634,33 @@ export default function OrganizationPreview() {
                   </div>
                 </div>
               </div>
+            </div>
+          </div>
+          {
+            //every asset start here
+          }
+          <div className=" w-full absolute top-0 z-0  ">
+            <ClubTop />
+          </div>
+
+          <div className=" absolute bottom-0 w-full z-10">
+            <ClubBottom />
+          </div>
+          <div className=" hidden md:block ">
+            <div className=" absolute right-0 top-[200px]">
+              <ClubCrystal />
+            </div>
+
+            <div className=" absolute left-0 top-[500px]">
+              <ClubLamp />
+            </div>
+
+            <div className=" absolute right-0 top-[1500px]">
+              <ClubFlower />
+            </div>
+
+            <div className={showReview2 ?" absolute left-0 top-[2500px] block z-0" : " hidden"}>
+              <ClubCrystal2 />
             </div>
           </div>
         </div>

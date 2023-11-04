@@ -18,6 +18,12 @@ import DeleteIcon from "@/vectors/club/deleteIcon";
 import Alert from "@mui/material/Alert";
 import AlertTitle from "@mui/material/AlertTitle";
 import FormData from "form-data";
+import ClubBottom from "@/vectors/club/clubBottom";
+import ClubPageLight from "@/vectors/club/clubPageLight";
+import ClubCrystal from "@/vectors/club/clubCrystal";
+import ClubLamp from "@/vectors/club/clubLamp";
+import ClubFlower from "@/vectors/club/clubFlower";
+import ClubCrystal2 from "@/vectors/club/clubCrystal2";
 
 export default function ProgramEdit() {
   const [clubs, setClubs] = useState("");
@@ -108,7 +114,7 @@ export default function ProgramEdit() {
     "review_3.gen": review3Gen,
     "review_3.contact": review3Contact,
     "review_3.review": review3,
-    "environmentKey" : process.env.ENVIRONMENT_KEY
+    environmentKeys: process.env.ENVIRONMENT_KEY,
   });
 
   let configEdit = {
@@ -136,8 +142,7 @@ export default function ProgramEdit() {
     let logoData = new FormData();
     logoData.append("file", logoFile);
     logoData.append("email", session?.user?.email);
-    logoData.append("environmentKey" , process.env.ENVIRONMENT_KEY)
-    
+    logoData.append("environmentKeys", process.env.ENVIRONMENT_KEY);
 
     let logoConfig = {
       method: "post",
@@ -164,7 +169,7 @@ export default function ProgramEdit() {
     image1Data.append("file", image1File);
     image1Data.append("email", session?.user?.email);
     image1Data.append("imageType", "image1");
-    image1Data.append("environmentKey" , process.env.ENVIRONMENT_KEY)
+    image1Data.append("environmentKeys", process.env.ENVIRONMENT_KEY);
 
     let image1Config = {
       method: "post",
@@ -191,7 +196,7 @@ export default function ProgramEdit() {
     image2Data.append("file", image2File);
     image2Data.append("email", session?.user?.email);
     image2Data.append("imageType", "image2");
-    image2Data.append("environmentKey" , process.env.ENVIRONMENT_KEY)
+    image2Data.append("environmentKeys", process.env.ENVIRONMENT_KEY);
 
     let image2Config = {
       method: "post",
@@ -218,7 +223,7 @@ export default function ProgramEdit() {
     image3Data.append("file", image3File);
     image3Data.append("email", session?.user?.email);
     image3Data.append("imageType", "image3");
-    image3Data.append("environmentKey" , process.env.ENVIRONMENT_KEY)
+    image3Data.append("environmentKeys", process.env.ENVIRONMENT_KEY);
 
     let image3Config = {
       method: "post",
@@ -245,7 +250,7 @@ export default function ProgramEdit() {
     ReviewProfile1Data.append("file", review1ProfileFile);
     ReviewProfile1Data.append("email", session?.user?.email);
     ReviewProfile1Data.append("imgprofileType", "imgprofile1");
-    ReviewProfile1Data.append("environmentKey" , process.env.ENVIRONMENT_KEY)
+    ReviewProfile1Data.append("environmentKeys", process.env.ENVIRONMENT_KEY);
 
     let ReviewProfile1Config = {
       method: "post",
@@ -272,7 +277,7 @@ export default function ProgramEdit() {
     ReviewProfile2Data.append("file", review2ProfileFile);
     ReviewProfile2Data.append("email", session?.user?.email);
     ReviewProfile2Data.append("imgprofileType", "imgprofile2");
-    ReviewProfile2Data.append("environmentKey" , process.env.ENVIRONMENT_KEY)
+    ReviewProfile2Data.append("environmentKeys", process.env.ENVIRONMENT_KEY);
 
     let ReviewProfile2Config = {
       method: "post",
@@ -299,7 +304,7 @@ export default function ProgramEdit() {
     ReviewProfile3Data.append("file", review3ProfileFile);
     ReviewProfile3Data.append("email", session?.user?.email);
     ReviewProfile3Data.append("imgprofileType", "imgprofile3");
-    ReviewProfile3Data.append("environmentKey" , process.env.ENVIRONMENT_KEY)
+    ReviewProfile3Data.append("environmentKeys", process.env.ENVIRONMENT_KEY);
 
     let ReviewProfile3Config = {
       method: "post",
@@ -323,7 +328,7 @@ export default function ProgramEdit() {
 
   const data = JSON.stringify({
     email: session?.user?.email,
-    "environmentKey" : process.env.ENVIRONMENT_KEY
+    environmentKeys: process.env.ENVIRONMENT_KEY,
   });
 
   const config = {
@@ -665,199 +670,194 @@ export default function ProgramEdit() {
   }
 
   return (
-    <div className=" bg-[#5A2561] h-full sm:min-h-[3500px]">
-      <div className=" relative w-full top-0 left-0">
-        <div className=" lg:block hidden">
-        <ClubBg />
-        </div>
-        <div className=" lg:hidden block">
-          <ClubBgM />
-        </div>
-        <div className=" flex justify-center">
-          <div className=" absolute lg:top-[8%] md:top-[4%] sm:top-[6%] flex w-5/6 justify-evenly items-center">
-            <button className=" flex" onClick={back}>
-              <BackArrow />
-              <span className=" pl-2  text-2xl align-middle text-[#55247B]">
-                ย้อนกลับ
-              </span>
-            </button>
+    <div className="">
+      <div className=" relative w-full top-0 left-0 h-full">
+        <div className=" flex justify-center w-full   bg-gradient-to-b from-[#FFF9E9] to-[#C0B0FF] from-70% to-100%  ">
+          <div className=" lg:w-1/2 md:w-2/3 z-30 lg:mt-[15%] md:mt-[20%] sm:mt-[25%] pb-20">
+            <div className=" flex justify-evenly items-center">
+              <button className=" flex" onClick={back}>
+                <BackArrow />
+                <span className=" pl-2  text-2xl align-middle text-[#55247B]">
+                  ย้อนกลับ
+                </span>
+              </button>
 
-            <button className=" text-white px-3 py-1 text-xl bg-gradient-to-r from-[#7533A8] to-[#D738A4] rounded-full " onClick={summit}>
-              ส่งการแก้ไข
-            </button>
-          </div>
-        </div>
-        <div className=" absolute lg:top-[10%] md:top-[5%] sm:top-[8%] flex w-full justify-center">
-          <div className=" absolute w-5/6  ">
-            <p className="  p-6   font-extrabold text-transparent md:text-5xl sm:text-3xl bg-clip-text break-words bg-gradient-to-b from-[#81109D] to-[#D62C9F]  from-40% to-100% py-5 font-Thai text-center z-10">
-              ชมรม{clubs}
-            </p>
-          </div>
-        </div>
-        <div className=" absolute lg:top-[13%] md:top-[9%] sm:top-[14%] flex w-full justify-center">
-          <div className=" absolute w-1/2 flex  justify-center gap-2 ">
-            <div className=" relative z-0 min-w-[200px] flex justify-center">
-              <svg
-                className=" w-[100px] relative "
-                viewBox="0 0 100 100"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
+              <button
+                className=" text-white px-3 py-1 text-xl bg-gradient-to-r from-[#7533A8] to-[#D738A4] rounded-full "
+                onClick={summit}
               >
-                <rect width="100" height="100" rx="23" fill="#D9D9D9" />
-              </svg>
-              <div className=" absolute w-[100px] h-[100px] z-10 top-1/2 -translate-y-1/2 left-1/2 -translate-x-1/2">
-                <label
-                  id="dropzone-file"
-                  className="flex flex-col items-center justify-center w-full h-full border-2rounded-[30px] cursor-pointer"
+                ส่งการแก้ไข
+              </button>
+            </div>
+            <div className="  w-full  ">
+              <p className="  p-6   font-extrabold text-transparent md:text-5xl sm:text-3xl bg-clip-text break-words bg-gradient-to-b from-[#81109D] to-[#D62C9F]  from-40% to-100% py-5 font-Thai text-center z-10">
+                ชมรม{clubs}
+              </p>
+            </div>
+
+            <div className=" w-full flex  justify-center gap-2 mt-5 ">
+              <div className=" relative z-0 min-w-[200px] flex justify-center">
+                <svg
+                  className=" w-[100px] relative "
+                  viewBox="0 0 100 100"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
                 >
-                  <div className="flex    ">
-                    <svg
-                      className="w-8 h-8 text-gray-500 "
-                      aria-hidden="true"
-                      xmlns="http://www.w3.org/2000/svg"
-                      fill="none"
-                      viewBox="0 0 20 16"
-                    >
-                      <path
-                        stroke="currentColor"
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                        stroke-width="2"
-                        d="M13 13h3a3 3 0 0 0 0-6h-.025A5.56 5.56 0 0 0 16 6.5 5.5 5.5 0 0 0 5.207 5.021C5.137 5.017 5.071 5 5 5a4 4 0 0 0 0 8h2.167M10 15V6m0 0L8 8m2-2 2 2"
-                      />
-                    </svg>
-                  </div>
-                  <input
+                  <rect width="100" height="100" rx="23" fill="#D9D9D9" />
+                </svg>
+                <div className=" absolute w-[100px] h-[100px] z-10 top-1/2 -translate-y-1/2 left-1/2 -translate-x-1/2">
+                  <label
                     id="dropzone-file"
-                    type="file"
-                    className="hidden"
-                    accept=".png,.jpg,jpeg"
-                    onChange={handleLogoChange}
-                  />
-                </label>
-              </div>
-              <img  src={logo} className=" absolute w-[100px] h-[100px] z-00 top-1/2 -translate-y-1/2 left-1/2 -translate-x-1/2 rounded-2xl" />
-            </div>
-            <div>
-              <svg
-                className=" w-[6px] "
-                viewBox="0 0 4 86"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  d="M2 2L2 84"
-                  stroke="url(#paint0_linear_250_1393)"
-                  stroke-width="4"
-                  stroke-linecap="round"
-                />
-                <defs>
-                  <linearGradient
-                    id="paint0_linear_250_1393"
-                    x1="-1.00003"
-                    y1="-21.1529"
-                    x2="-1.00003"
-                    y2="84"
-                    gradientUnits="userSpaceOnUse"
+                    className="flex flex-col items-center justify-center w-full h-full border-2rounded-[30px] cursor-pointer"
                   >
-                    <stop stop-color="#D738A4" />
-                    <stop offset="1" stop-color="#7533A8" />
-                  </linearGradient>
-                </defs>
-              </svg>
+                    <div className="flex    ">
+                      <svg
+                        className="w-8 h-8 text-gray-500 "
+                        aria-hidden="true"
+                        xmlns="http://www.w3.org/2000/svg"
+                        fill="none"
+                        viewBox="0 0 20 16"
+                      >
+                        <path
+                          stroke="currentColor"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                          stroke-width="2"
+                          d="M13 13h3a3 3 0 0 0 0-6h-.025A5.56 5.56 0 0 0 16 6.5 5.5 5.5 0 0 0 5.207 5.021C5.137 5.017 5.071 5 5 5a4 4 0 0 0 0 8h2.167M10 15V6m0 0L8 8m2-2 2 2"
+                        />
+                      </svg>
+                    </div>
+                    <input
+                      id="dropzone-file"
+                      type="file"
+                      className="hidden"
+                      accept=".png,.jpg,jpeg"
+                      onChange={handleLogoChange}
+                    />
+                  </label>
+                </div>
+                <img
+                  src={logo}
+                  className=" absolute w-[100px] h-[100px] z-00 top-1/2 -translate-y-1/2 left-1/2 -translate-x-1/2 rounded-2xl"
+                />
+              </div>
+              <div>
+                <svg
+                  className=" w-[6px] "
+                  viewBox="0 0 4 86"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M2 2L2 84"
+                    stroke="url(#paint0_linear_250_1393)"
+                    stroke-width="4"
+                    stroke-linecap="round"
+                  />
+                  <defs>
+                    <linearGradient
+                      id="paint0_linear_250_1393"
+                      x1="-1.00003"
+                      y1="-21.1529"
+                      x2="-1.00003"
+                      y2="84"
+                      gradientUnits="userSpaceOnUse"
+                    >
+                      <stop stop-color="#D738A4" />
+                      <stop offset="1" stop-color="#7533A8" />
+                    </linearGradient>
+                  </defs>
+                </svg>
+              </div>
+              <div className="w-[200px]">
+                <p className=" flex  text-[#8133A7] text-xl  font-Thai  ">
+                  {" "}
+                  สมาชิก:
+                  <input
+                    className=" h-7 text-xl bg-transparent w-[80px] font-Thai"
+                    type="text"
+                    ref={memberRef}
+                    value={member}
+                    onClick={turnOnMemberEditMode}
+                    defaultValue=""
+                    onBlur={() => setMemberEditMode(false)}
+                    onChange={handleMemberChange}
+                  ></input>
+                  <button onClick={turnOnMemberEditMode}>
+                    <PencilIcon />
+                  </button>
+                </p>
+                <p className=" flex text-[#8133A7] w-[200px] text-xl font-Thai ">
+                  {" "}
+                  IG:
+                  <input
+                    className=" h-7 w-[154px] sm:w-[100px] text-xl bg-transparent font-Thai"
+                    type="text"
+                    ref={igRef}
+                    value={ig}
+                    onClick={turnOnIgEditMode}
+                    defaultValue=""
+                    onBlur={() => setIgEditMode(false)}
+                    onChange={handleIgChange}
+                  ></input>
+                  <button onClick={turnOnIgEditMode}>
+                    <PencilIcon />
+                  </button>
+                </p>
+                <p className=" flex text-[#8133A7] w-[200px] text-xl font-Thai ">
+                  {" "}
+                  FB:
+                  <input
+                    className=" h-7 w-[154px] sm:w-[100px] bg-transparent font-Thai"
+                    type="text"
+                    ref={fbRef}
+                    value={fb}
+                    onClick={turnOnFbEditMode}
+                    defaultValue=""
+                    onBlur={() => setIgEditMode(false)}
+                    onChange={handleFbChange}
+                  ></input>
+                  <button onClick={turnOnFbEditMode}>
+                    <PencilIcon />
+                  </button>
+                </p>
+                <p className=" flex text-[#8133A7] w-[200px] text-xl font-Thai ">
+                  {" "}
+                  อื่นๆ:
+                  <input
+                    className=" h-7 w-[154px] sm:w-[100px] bg-transparent font-Thai"
+                    type="text"
+                    ref={otherRef}
+                    value={other}
+                    onClick={turnOnOtherEditMode}
+                    defaultValue=""
+                    onBlur={() => setIgEditMode(false)}
+                    onChange={handleOtherChange}
+                  ></input>
+                  <button onClick={turnOnOtherEditMode}>
+                    <PencilIcon />
+                  </button>
+                </p>
+              </div>
             </div>
-            <div className="w-[200px]">
-              <p className=" flex  text-[#8133A7] text-xl  font-Thai  ">
-                {" "}
-                สมาชิก:
-                <input
-                  className=" h-7 text-xl bg-transparent w-[80px] font-Thai"
-                  type="text"
-                  ref={memberRef}
-                  value={member}
-                  onClick={turnOnMemberEditMode}
-                  defaultValue=""
-                  onBlur={() => setMemberEditMode(false)}
-                  onChange={handleMemberChange}
-                ></input>
-                <button onClick={turnOnMemberEditMode}>
-                  <PencilIcon />
-                </button>
-              </p>
-              <p className=" flex text-[#8133A7] w-[200px] text-xl font-Thai ">
-                {" "}
-                IG:
-                <input
-                  className=" h-7 w-[154px] sm:w-[100px] text-xl bg-transparent font-Thai"
-                  type="text"
-                  ref={igRef}
-                  value={ig}
-                  onClick={turnOnIgEditMode}
-                  defaultValue=""
-                  onBlur={() => setIgEditMode(false)}
-                  onChange={handleIgChange}
-                ></input>
-                <button onClick={turnOnIgEditMode}>
-                  <PencilIcon />
-                </button>
-              </p>
-              <p className=" flex text-[#8133A7] w-[200px] text-xl font-Thai ">
-                {" "}
-                FB:
-                <input
-                  className=" h-7 w-[154px] sm:w-[100px] bg-transparent font-Thai"
-                  type="text"
-                  ref={fbRef}
-                  value={fb}
-                  onClick={turnOnFbEditMode}
-                  defaultValue=""
-                  onBlur={() => setIgEditMode(false)}
-                  onChange={handleFbChange}
-                ></input>
-                <button onClick={turnOnFbEditMode}>
-                  <PencilIcon />
-                </button>
-              </p>
-              <p className=" flex text-[#8133A7] w-[200px] text-xl font-Thai ">
-                {" "}
-                อื่นๆ:
-                <input
-                  className=" h-7 w-[154px] sm:w-[100px] bg-transparent font-Thai"
-                  type="text"
-                  ref={otherRef}
-                  value={other}
-                  onClick={turnOnOtherEditMode}
-                  defaultValue=""
-                  onBlur={() => setIgEditMode(false)}
-                  onChange={handleOtherChange}
-                ></input>
-                <button onClick={turnOnOtherEditMode}>
-                  <PencilIcon />
-                </button>
-              </p>
+
+            <div className=" mt-3  ">
+              <ClubWidget />
             </div>
-          </div>
-        </div>
-        <div className=" flex justify-center w-full absolute lg:top-[16%] md:top-[11%] sm:top-[18%]">
-          <div className=" md:w-1/2 sm:w-full ">
-            <ClubWidget />
-          </div>
-        </div>
-        <div className=" flex justify-center w-full absolute lg:top-[19%] md:top-[12%] sm:top-[20%]">
-          <div className=" lg:w-1/2 md:w-2/3">
             {
               //section1
             }
             <p className="  font-semibold text-transparent bg-clip-text bg-gradient-to-b from-[#7533A8] to-[#D62C9F] font-Thai text-center  text-3xl py-5 block w-full  lg:hidden ">
-                ชมรมนี้ทำอะไร
-              </p>
+              ชมรมนี้ทำอะไร
+            </p>
             <div className=" flex justify-center gap-3">
               <p className="  font-semibold text-transparent bg-clip-text bg-gradient-to-b from-[#7533A8] to-[#D62C9F] font-Thai text-right min-w-52 text-5xl py-5 hidden lg:block ">
                 ชมรมนี้
                 <br />
-                ทำอะไร<ClubStar />
+                ทำอะไร
+                <ClubStar />
               </p>
-              
+
               <div className=" w-auto relative  ">
                 <svg
                   className=" lg:w-[509px] lg:h-[307px] md:w-[772px] md:h-[468px] sm:h-[220px] "
@@ -945,9 +945,10 @@ export default function ProgramEdit() {
             </div>
             {
               //section2
-            }<p className="  font-semibold text-transparent bg-clip-text bg-gradient-to-b from-[#7533A8] to-[#D62C9F] font-Thai text-center  text-2xl block w-full py-5  lg:hidden ">
+            }
+            <p className="  font-semibold text-transparent bg-clip-text bg-gradient-to-b from-[#7533A8] to-[#D62C9F] font-Thai text-center  text-2xl block w-full py-5  lg:hidden ">
               ประโยชน์ที่ได้รับจากการเข้าชมรม
-              </p>
+            </p>
             <div className=" flex justify-center gap-3 lg:mt-10">
               <div className=" w-auto relative  ">
                 <svg
@@ -1004,14 +1005,13 @@ export default function ProgramEdit() {
                 <br />
                 ที่ได้รับ
                 <p className="  font-semibold text-transparent bg-clip-text bg-gradient-to-b from-[#7533A8] to-[#D62C9F] font-Thai text-left min-w-52 text-3xl  hidden lg:block ">
-                  จาการเข้าชมรม<ClubStar />
+                  จาการเข้าชมรม
+                  <ClubStar />
                 </p>
               </p>
-
-              
             </div>
             <div className=" flex justify-center mt-10">
-            <div className=" w-full  justify-center hidden md:block">
+              <div className=" w-full  justify-center hidden md:block">
                 <textarea
                   className=" text-[#582A88]  text-lg break-words border-2 font-Thai  md:w-full sm:w-[300px]   h-72  bg-transparent align-top resize-none "
                   ref={benefitsRef}
@@ -1046,17 +1046,18 @@ export default function ProgramEdit() {
             </div>
             {
               //section3
-            }<p className="  font-semibold text-transparent bg-clip-text bg-gradient-to-b from-[#7533A8] to-[#D62C9F] font-Thai text-center  text-3xl block w-full py-5  lg:hidden ">
-                ผลงานของชมรม
-              </p>
+            }
+            <p className="  font-semibold text-transparent bg-clip-text bg-gradient-to-b from-[#7533A8] to-[#D62C9F] font-Thai text-center  text-3xl block w-full py-5  lg:hidden ">
+              ผลงานของชมรม
+            </p>
             <div className=" flex justify-center gap-3 lg:mt-10">
               <p className="  font-semibold text-transparent bg-clip-text bg-gradient-to-b from-[#7533A8] to-[#D62C9F] font-Thai text-right min-w-52 text-5xl py-5 hidden lg:block ">
                 ผลงาน
                 <br />
-                ของชมรม<ClubStar />
+                ของชมรม
+                <ClubStar />
               </p>
 
-              
               <div className=" w-auto relative  ">
                 <svg
                   className=" lg:w-[509px] lg:h-[307px] md:w-[772px] md:h-[468px] sm:h-[220px] "
@@ -1109,7 +1110,7 @@ export default function ProgramEdit() {
               </div>
             </div>
             <div className=" flex justify-center mt-10">
-            <div className=" w-full  justify-center hidden md:block">
+              <div className=" w-full  justify-center hidden md:block">
                 <textarea
                   className=" text-[#582A88]  text-lg break-words border-2 font-Thai  md:w-full sm:w-[300px]   h-72  bg-transparent align-top resize-none "
                   ref={workingsRef}
@@ -1128,12 +1129,12 @@ export default function ProgramEdit() {
               <div className=" w-full  justify-center flex md:hidden">
                 <textarea
                   className=" text-[#582A88]  text-lg break-words border-2 font-Thai  md:w-full sm:w-[300px]   h-72 bg-transparent align-top resize-none "
-                  ref={benefitsRef}
-                  value={benefits}
-                  onClick={turnOnBenefitsEditMode}
+                  ref={workingsRef}
+                  value={workings}
+                  onClick={turnOnWorkingsEditMode}
                   defaultValue=""
-                  onBlur={() => setBenefitsEditMode(false)}
-                  onChange={handleBenefitsChange}
+                  onBlur={() => setWorkingsEditMode(false)}
+                  onChange={handleWorkingsChange}
                 ></textarea>
                 <div className=" flex justify-center">
                   <button className="  " onClick={turnOnWorkingsEditMode}>
@@ -1284,54 +1285,54 @@ export default function ProgramEdit() {
                 <ReviewCardR />
                 <div className=" absolute top-0 mt-5 md:right-5 sm:right-2 h-full justify-end ">
                   <div className=" flex justify-end">
-                  <svg
-                    className="block lg:h-[153px] lg:w-[153px] md:h-[100px] md:w-[100px] sm:h-[60px] sm:w-[60px]"
-                    viewBox="0 0 153 153"
-                    fill="none"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <rect
-                      width="152.941"
-                      height="152.941"
-                      rx="30"
-                      fill="#D9D9D9"
-                    />
-                  </svg>
-                  <div className=" absolute top-0  z-20 flex items-center justify-center lg:h-[153px] lg:w-[153px] md:h-[100px] md:w-[100px] sm:h-[60px] sm:w-[60px] ">
-                    <label
-                      id="dropzone-file"
-                      className="flex flex-col items-center justify-center w-full h-full rounded-[30px] cursor-pointer"
+                    <svg
+                      className="block lg:h-[153px] lg:w-[153px] md:h-[100px] md:w-[100px] sm:h-[60px] sm:w-[60px]"
+                      viewBox="0 0 153 153"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
                     >
-                      <div className="flex flex-col items-center justify-center pt-5 pb-6  ">
-                        <svg
-                          className="w-8 h-8"
-                          aria-hidden="true"
-                          xmlns="http://www.w3.org/2000/svg"
-                          fill="none"
-                          viewBox="0 0 20 16"
-                        >
-                          <path
-                            stroke="currentColor"
-                            stroke-linecap="round"
-                            stroke-linejoin="round"
-                            stroke-width="2"
-                            d="M13 13h3a3 3 0 0 0 0-6h-.025A5.56 5.56 0 0 0 16 6.5 5.5 5.5 0 0 0 5.207 5.021C5.137 5.017 5.071 5 5 5a4 4 0 0 0 0 8h2.167M10 15V6m0 0L8 8m2-2 2 2"
-                          />
-                        </svg>
-                      </div>
-                      <input
-                        id="dropzone-file"
-                        type="file"
-                        className="hidden"
-                        accept=".png,.jpg,jpeg"
-                        onChange={handleReview2ProfileChange}
+                      <rect
+                        width="152.941"
+                        height="152.941"
+                        rx="30"
+                        fill="#D9D9D9"
                       />
-                    </label>
-                  </div>
-                  <img
-                    className="absolute top-0 right-0 z-10  flex object-cover lg:h-[153px] lg:w-[153px] md:h-[100px] md:w-[100px] sm:h-[60px] sm:w-[60px] rounded-3xl sm:rounded-xl "
-                    src={review2Profile}
-                  />
+                    </svg>
+                    <div className=" absolute top-0  z-20 flex items-center justify-center lg:h-[153px] lg:w-[153px] md:h-[100px] md:w-[100px] sm:h-[60px] sm:w-[60px] ">
+                      <label
+                        id="dropzone-file"
+                        className="flex flex-col items-center justify-center w-full h-full rounded-[30px] cursor-pointer"
+                      >
+                        <div className="flex flex-col items-center justify-center pt-5 pb-6  ">
+                          <svg
+                            className="w-8 h-8"
+                            aria-hidden="true"
+                            xmlns="http://www.w3.org/2000/svg"
+                            fill="none"
+                            viewBox="0 0 20 16"
+                          >
+                            <path
+                              stroke="currentColor"
+                              stroke-linecap="round"
+                              stroke-linejoin="round"
+                              stroke-width="2"
+                              d="M13 13h3a3 3 0 0 0 0-6h-.025A5.56 5.56 0 0 0 16 6.5 5.5 5.5 0 0 0 5.207 5.021C5.137 5.017 5.071 5 5 5a4 4 0 0 0 0 8h2.167M10 15V6m0 0L8 8m2-2 2 2"
+                            />
+                          </svg>
+                        </div>
+                        <input
+                          id="dropzone-file"
+                          type="file"
+                          className="hidden"
+                          accept=".png,.jpg,jpeg"
+                          onChange={handleReview2ProfileChange}
+                        />
+                      </label>
+                    </div>
+                    <img
+                      className="absolute top-0 right-0 z-10  flex object-cover lg:h-[153px] lg:w-[153px] md:h-[100px] md:w-[100px] sm:h-[60px] sm:w-[60px] rounded-3xl sm:rounded-xl "
+                      src={review2Profile}
+                    />
                   </div>
                   <div className=" block md:mt-1 -mt-1 relative z-50">
                     <button onClick={turnOnReview2NameEditMode}>
@@ -1347,13 +1348,11 @@ export default function ProgramEdit() {
                       onBlur={() => setReview1NameEditMode(false)}
                       onChange={handleReview2NameChange}
                     ></input>
-                    
 
                     <p className=" block text-[#291A54] md:text-xl md:mt-0 sm:-mt-3 sm:text-sm text-base  font-Thai text-right ">
                       <button onClick={turnOnReview2GenEditMode}>
                         <PencilIcon />
-                      </button>
-                      {" "}
+                      </button>{" "}
                       เตรียมอุดม
                       <input
                         className=" sm:h-4 md:h-6 ml-1  md:w-[30px] sm:w-[30px] text-[#291A54] bg-transparent font-Thai text-right "
@@ -1365,7 +1364,6 @@ export default function ProgramEdit() {
                         onBlur={() => setReview1GenEditMode(false)}
                         onChange={handleReview2GenChange}
                       ></input>
-                      
                     </p>
                     <div className=" flex">
                       <button onClick={turnOnReview2ContactEditMode}>
@@ -1381,8 +1379,6 @@ export default function ProgramEdit() {
                         onBlur={() => setReview1ContactEditMode(false)}
                         onChange={handleReview2ContactChange}
                       ></input>
-
-                      
                     </div>
                   </div>
                 </div>
@@ -1542,9 +1538,7 @@ export default function ProgramEdit() {
               </div>
               <div className=" justify-center flex">
                 <button
-                  className={
-                    review3On ? " mt-5  w-[65px] h-[65px]" : "hidden "
-                  }
+                  className={review3On ? " mt-5  w-[65px] h-[65px]" : "hidden "}
                   onClick={handleReview3Delete}
                 >
                   <DeleteIcon />
@@ -1553,22 +1547,49 @@ export default function ProgramEdit() {
             </div>
           </div>
         </div>
+        {
+          //every asset start here
+        }
+        <div className=" w-full absolute top-0 z-0  ">
+            <ClubTop />
+          </div>
+
+          <div className=" absolute bottom-0 w-full z-10">
+            <ClubBottom />
+          </div>
+        <div className=" hidden md:block">
+          
+
+          <div className=" absolute right-0 top-[200px]">
+            <ClubCrystal />
+          </div>
+
+          <div className=" absolute left-0 top-[500px]">
+            <ClubLamp />
+          </div>
+
+          <div className=" absolute right-0 top-[1500px]">
+            <ClubFlower />
+          </div>
+
+          <div className=" absolute left-0 top-[2500px]">
+            <ClubCrystal2 />
+          </div>
+        </div>
       </div>
-      <div
-            className={editSuccess ? " fixed z-50 right-4 bottom-4" : "hidden"}
-          >
-            <Alert severity="success">
-              <AlertTitle>Success</AlertTitle>
-              ระบบได้บันทึกข้อมูลของท่านแล้ว
-            </Alert>
-          </div>
-          <div className={editFail ? " fixed z-50 right-4 bottom-4" : "hidden"}>
-            <Alert severity="error">
-              <AlertTitle>error</AlertTitle>
-              โปรดตรวจสอบข้อมูลแล้วลองอีกครั้ง
-            </Alert>
-          </div>
+
+      <div className={editSuccess ? " fixed z-50 right-4 bottom-4" : "hidden"}>
+        <Alert severity="success">
+          <AlertTitle>Success</AlertTitle>
+          ระบบได้บันทึกข้อมูลของท่านแล้ว
+        </Alert>
+      </div>
+      <div className={editFail ? " fixed z-50 right-4 bottom-4" : "hidden"}>
+        <Alert severity="error">
+          <AlertTitle>error</AlertTitle>
+          โปรดตรวจสอบข้อมูลแล้วลองอีกครั้ง
+        </Alert>
+      </div>
     </div>
-    
   );
 }
