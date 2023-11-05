@@ -48,7 +48,7 @@ export default function ProgramPreview() {
 
   const router = useRouter();
 
-  const { data: session } = useSession({
+  const { data: session,status } = useSession({
     required: true,
     onUnauthenticated() {
       router.push("/Login"); // The user is not authenticated, handle it here.
@@ -251,7 +251,6 @@ export default function ProgramPreview() {
       })
       .catch((error) => {
         console.log(error);
-        router.push("/gifted");
       });
   }
 
@@ -264,7 +263,7 @@ export default function ProgramPreview() {
     profile1Request();
     profile2Request();
     profile3Request();
-  }, []);
+  }, [status]);
 
   function back() {
     router.push("/gifted");

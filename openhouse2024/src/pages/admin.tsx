@@ -81,7 +81,7 @@ export default function Adminpanel() {
     });
   };
 
-  const { data: session } = useSession({
+  const { data: session,status } = useSession({
     required: true,
     onUnauthenticated() {
       router.push("/Login");
@@ -203,7 +203,7 @@ export default function Adminpanel() {
 
   useEffect(() => {
     pendingRequest();
-  }, [approve, deny]);
+  }, [approve, deny ,status]);
 
   return (
     <>

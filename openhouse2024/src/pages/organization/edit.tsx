@@ -85,7 +85,7 @@ export default function OrganizationEdit() {
 
   const router = useRouter();
 
-  const { data: session } = useSession({
+  const { data: session,status } = useSession({
     required: true,
     onUnauthenticated() {
       router.push("/Login"); // The user is not authenticated, handle it here.
@@ -348,7 +348,6 @@ export default function OrganizationEdit() {
       })
       .catch((error) => {
         console.log(error);
-        router.push("/organization");
       });
   }
 
@@ -375,7 +374,7 @@ export default function OrganizationEdit() {
   useEffect(() => {
     // User email is available, make the API request
     request();
-  }, []);
+  }, [status]);
 
   function back() {
     router.push("/organization");

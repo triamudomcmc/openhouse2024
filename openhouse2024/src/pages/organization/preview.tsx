@@ -52,7 +52,7 @@ export default function OrganizationPreview() {
 
   const router = useRouter();
 
-  const { data: session } = useSession({
+  const { data: session,status } = useSession({
     required: true,
     onUnauthenticated() {
       router.push("/login"); // The user is not authenticated, handle it here.
@@ -257,7 +257,6 @@ export default function OrganizationPreview() {
       })
       .catch((error) => {
         console.log(error);
-        router.push("/organization");
       });
   }
 
@@ -270,7 +269,7 @@ export default function OrganizationPreview() {
     profile1Request();
     profile2Request();
     profile3Request();
-  }, []);
+  }, [status]);
 
   function back() {
     router.push("/organization");
