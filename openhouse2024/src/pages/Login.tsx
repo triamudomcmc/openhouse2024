@@ -19,7 +19,7 @@ export default function LoginPage() {
   return (
     <>
       <div className="  relative w-full h-full  ">
-        <div className="bg-gradient-to-b from-[#444DAF] from-0% via-[#8C7BD7] via-30% to-[#FAFAEE] to-100% shadow w-screen h-screen"></div>
+        <div className="bg-gradient-to-b from-[#444DAF] from-0% via-[#8C7BD7] via-30% to-[#FAFAEE] to-100% shadow w-screen h-[calc(100dvh)]"></div>
 
         <div className=" absolute bottom-0 w-full">
           <LoginLeft />
@@ -45,7 +45,7 @@ export default function LoginPage() {
         <div className=" absolute top-1/2 -translate-y-1/2 left-[60%] hidden lg:block ">
           <button
             onClick={() => signIn("google")}
-            className="px-8 py-5 border h-20  gap-2 border-slate-200 bg-white opacity-80 backdrop-blur-sm rounded-full text-slate-700  hover:border-slate-400  w-full hover:text-slate-900 hover:shadow transition duration-150 flex justify-center"
+            className="px-10 py-5 border h-20  gap-2 border-slate-200 bg-white opacity-80 backdrop-blur-sm rounded-full text-slate-700  hover:border-slate-400  w-full hover:text-slate-900 hover:shadow transition duration-150 flex justify-center"
           >
             <GoogleLogin />
             <p className=" ml-3 h-full align-middle flex text-2xl items-center">

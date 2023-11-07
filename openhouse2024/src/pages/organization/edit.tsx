@@ -1499,9 +1499,6 @@ export default function OrganizationEdit() {
             <ClubFlower />
           </div>
 
-          <div className=" absolute left-0 top-[2500px]">
-            <ClubCrystal2 />
-          </div>
         </div>
       </div>
 

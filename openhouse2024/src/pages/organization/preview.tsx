@@ -490,7 +490,7 @@ export default function OrganizationPreview() {
                 </div>
                 <div className=" w-full relative">
                   <ReviewCard />
-                  <div className=" absolute top-0 mt-5 md:left-5 sm:left-2 h-full ">
+                  <div className=" absolute top-0 md:mt-5 sm:mt-2 md:left-5 sm:left-2 h-full ">
                     <svg
                       className="block lg:h-[153px] lg:w-[153px] md:h-[100px] md:w-[100px] sm:h-[60px] sm:w-[60px]"
                       viewBox="0 0 153 153"
@@ -539,7 +539,7 @@ export default function OrganizationPreview() {
                   className={showReview2 ? " w-full relative mt-10" : "hidden"}
                 >
                   <ReviewCardR />
-                  <div className=" absolute top-0 mt-5 md:right-5 sm:right-2 h-full justify-end ">
+                  <div className=" absolute top-0 md:mt-5 sm:mt-2 md:right-5 sm:right-2 h-full justify-end ">
                     <div className=" flex justify-end">
                       <svg
                         className="block lg:h-[153px] lg:w-[153px] md:h-[100px] md:w-[100px] sm:h-[60px] sm:w-[60px]"
@@ -591,7 +591,7 @@ export default function OrganizationPreview() {
                   className={showReview3 ? " w-full relative mt-10" : "hidden"}
                 >
                   <ReviewCard />
-                  <div className=" absolute top-0 mt-5 md:left-5 sm:left-2 h-full ">
+                  <div className=" absolute top-0 md:mt-5 sm:mt-2 md:left-5 sm:left-2 h-full ">
                     <svg
                       className="block lg:h-[153px] lg:w-[153px] md:h-[100px] md:w-[100px] sm:h-[60px] sm:w-[60px]"
                       viewBox="0 0 153 153"
