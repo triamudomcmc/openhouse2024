@@ -280,12 +280,12 @@ export default function ClubPreview() {
         <div className=" relative w-full top-0 left-0">
           <div className=" flex justify-center w-full   bg-gradient-to-b from-[#FFF9E9] to-[#C0B0FF] from-70% to-100%">
             <div className=" lg:w-1/2 md:w-2/3 z-30 lg:mt-[15%] md:mt-[20%] sm:mt-[25%] pb-20">
-              <div className=" flex justify-center">
+              <div className=" flex justify-center align-middle">
                 <button className=" flex" onClick={back}>
                   <BackArrow />
-                  <span className=" pl-2  text-2xl align-middle text-[#55247B]">
+                  <p className=" pl-2  text-2xl align-middle text-[#55247B] font-Thai my-auto">
                     ย้อนกลับ
-                  </span>
+                  </p>
                 </button>
               </div>
               <div className=" w-full  ">
@@ -298,9 +298,9 @@ export default function ClubPreview() {
                   <div className=" hidden md:flex">
                     <UserIcon />
                   </div>
-                  <p className=" text-4xl block text-center text-transparent  bg-clip-text bg-gradient-to-b from-[#632790] to-[#D738A4]">
+                  <p className=" text-4xl block text-center text-transparent  bg-clip-text bg-gradient-to-b from-[#632790] to-[#D738A4] font-Thai font-semibold ">
                     สมาชิก <br />
-                    <p className=" text-3xl mt-2">{member}</p>
+                    <p className=" text-3xl mt-2 font-semibold text-center">{member}</p>
                   </p>
                 </div>
                 <div>
@@ -426,7 +426,7 @@ export default function ClubPreview() {
                   <br />
                   ที่ได้รับ
                   <p className="  font-semibold text-transparent bg-clip-text bg-gradient-to-b from-[#7533A8] to-[#D62C9F] font-Thai text-left min-w-52 text-3xl  hidden lg:block ">
-                    จาการเข้าชมรม
+                    จากการเข้าชมรม
                     <ClubStar />
                   </p>
                 </p>

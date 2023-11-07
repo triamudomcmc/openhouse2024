@@ -283,7 +283,7 @@ export default function ProgramPreview() {
               <div className=" flex justify-center">
                 <button className=" flex" onClick={back}>
                   <BackArrow />
-                  <span className=" pl-2  text-2xl align-middle text-[#55247B]">
+                  <span className=" pl-2  text-2xl align-middle text-[#55247B] my-auto">
                     ย้อนกลับ
                   </span>
                 </button>
@@ -298,9 +298,9 @@ export default function ProgramPreview() {
                   <div className=" hidden md:flex">
                     <UserIcon />
                   </div>
-                  <p className=" text-4xl block text-center text-transparent  bg-clip-text bg-gradient-to-b from-[#632790] to-[#D738A4]">
+                  <p className=" text-4xl block text-center text-transparent  bg-clip-text bg-gradient-to-b from-[#632790] to-[#D738A4] font-semibold ">
                     สมาชิก <br />
-                    <p className=" text-3xl mt-2">{member}</p>
+                    <p className=" text-3xl mt-2 text-center">{member}</p>
                   </p>
                 </div>
                 <div>

@@ -93,8 +93,8 @@ export default function Program() {
 
     return(
         <>
-        <div className="flex justify-center relative " >
-        <div className=" h-full align-middle mt-40 w-full md:w-1/2 lg:w-1/3 border border-slate-500 rounded-lg justify-center flex-wrap text-center">
+        <div className="flex justify-center h-[calc(100dvh)] " >
+        <div className=" align-middle my-auto w-full md:w-1/2 lg:w-1/3 border border-slate-500 rounded-lg justify-center flex-wrap text-center">
             <p className=" text-[#141547] mb-12 font-Thai ">ข้อมูลหน่วยงาน</p>
             <p className=" font-extrabold text-transparent text-4xl bg-clip-text bg-gradient-to-b from-[#81109D] to-[#D738A4] font-Thai break-words ">{program}</p>
             
