@@ -1160,7 +1160,7 @@ export default function ProgramEdit() {
               <div className=" mt-10">
                 <ReviewWidget />
               </div>
-              <div className=" md:w-full w-[calc(100dvw)] relative left-1/2  -translate-x-1/2">
+              <div className=" md:w-full w-[calc(100dvw)] left-1/2  -translate-x-1/2 relative ">
                 <ReviewCard />
                 <div className=" absolute top-0 mt-5 md:left-5 sm:left-2 h-full ">
                   <svg

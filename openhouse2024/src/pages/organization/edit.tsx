@@ -1080,7 +1080,7 @@ export default function OrganizationEdit() {
               <div className=" mt-10">
                 <ReviewWidget />
               </div>
-              <div className=" w-full relative">
+              <div className=" md:w-full w-[calc(100dvw)] left-1/2  -translate-x-1/2 relative">
                 <ReviewCard />
                 <div className=" absolute top-0 mt-5 md:left-5 sm:left-2 h-full ">
                   <svg
@@ -1210,7 +1210,7 @@ export default function OrganizationEdit() {
               {
                 //review2
               }
-              <div className={review2On ? " w-full relative mt-10" : "hidden"}>
+              <div className={review2On ? " md:w-full w-[calc(100dvw)] left-1/2  -translate-x-1/2 relative mt-10" : "hidden"}>
                 <ReviewCardR />
                 <div className=" absolute top-0 mt-5 md:right-5 sm:right-2 h-full justify-end ">
                   <div className=" flex justify-end">
@@ -1352,7 +1352,7 @@ export default function OrganizationEdit() {
               {
                 //review3
               }
-              <div className={review3On ? " w-full relative" : "hidden"}>
+              <div className={review3On ? " md:w-full w-[calc(100dvw)] left-1/2  -translate-x-1/2 relative" : "hidden"}>
                 <ReviewCard />
                 <div className=" absolute top-0 mt-5 md:left-5 sm:left-2 h-full ">
                   <svg
