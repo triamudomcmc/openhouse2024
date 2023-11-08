@@ -280,7 +280,7 @@ export default function OrganizationPreview() {
       <div className="">
         <div className=" relative w-full top-0 left-0">
           <div className=" flex justify-center w-full   bg-gradient-to-b from-[#FFF9E9] to-[#C0B0FF] from-70% to-100%">
-            <div className=" lg:w-1/2 md:w-2/3 z-30 lg:mt-[15%] md:mt-[20%] sm:mt-[25%] pb-20">
+            <div className=" lg:w-1/2 md:w-2/3 z-30 lg:mt-[15%] md:mt-[20%] sm:mt-[25%] pb-[700px]">
               <div className=" flex justify-center align-middle">
                 <button className=" flex" onClick={back}>
                   <BackArrow />
@@ -357,7 +357,7 @@ export default function OrganizationPreview() {
               <p className="  font-semibold text-transparent bg-clip-text bg-gradient-to-b from-[#7533A8] to-[#D62C9F] font-Thai text-center  text-2xl py-5 block w-full  lg:hidden ">
               องค์กรนี้ทำอะไร ?
               </p>
-              <div className=" flex justify-center gap-3">
+              <div className=" flex justify-center gap-3 lg:mt-10">
                 <p className="  font-semibold text-transparent bg-clip-text bg-gradient-to-b from-[#7533A8] to-[#D62C9F] font-Thai text-left min-w-52 text-4xl py-5 hidden lg:block ">
                 องค์กรนี้
                   <p className="  font-semibold text-transparent bg-clip-text bg-gradient-to-b from-[#7533A8] to-[#D62C9F] font-Thai text-left min-w-52 text-2xl  hidden lg:block ">
@@ -431,7 +431,7 @@ export default function OrganizationPreview() {
                   </p>
                 </p>
               </div>
-              <div className=" flex justify-center mt-10">
+              <div className=" flex justify-center lg:mt-10">
                 <div className=" w-full  justify-center block">
                   <p className=" text-[#582A88]  text-lg break-words font-Thai  md:w-full md:p-0 sm:w-full sm:p-5  min-h-[200px]  bg-transparent align-top resize-none whitespace-pre-line ">
                     {position}
@@ -488,7 +488,7 @@ export default function OrganizationPreview() {
                 <div className=" mt-10">
                   <ReviewWidget />
                 </div>
-                <div className=" w-full relative">
+                <div className=" w-full relative mt-10">
                   <ReviewCard />
                   <div className=" absolute top-0 md:mt-5 sm:mt-2 md:left-5 sm:left-2 h-full ">
                     <svg
