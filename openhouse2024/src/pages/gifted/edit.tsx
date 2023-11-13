@@ -25,6 +25,8 @@ import ClubCrystal2 from "@/vectors/club/clubCrystal2";
 import ClubBottom from "@/vectors/club/clubBottom";
 import { toast, ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import ReviewCardLine from "@/vectors/club/reviewCardLine";
+import ReviewCardLineR from "@/vectors/club/reviewCardLineR";
 
 export default function ProgramEdit() {
   const [program, setProgram] = useState("");
@@ -640,7 +642,7 @@ export default function ProgramEdit() {
   return (
     <div className="">
       <div className=" relative w-full top-0 left-0 h-full">
-        <div className=" flex justify-center w-full   bg-gradient-to-b from-[#FFF9E9] to-[#C0B0FF] from-70% to-100%  ">
+        <div className=" flex justify-center w-full     ">
           <div className=" lg:w-1/2 md:w-2/3 z-30 lg:mt-[15%] md:mt-[20%] sm:mt-[25%] pb-20">
             <div className=" flex justify-evenly items-center">
               <button className=" flex" onClick={back}>
@@ -671,7 +673,7 @@ export default function ProgramEdit() {
                 <p className=" text-4xl block text-center text-transparent  bg-clip-text bg-gradient-to-b from-[#632790] to-[#D738A4] align-middle">
                   สมาชิก
                   <input
-                    className=" block h-10 w-24 align-middle items-center bg-transparent text-center"
+                    className=" block h-10 w-24 align-middle items-center bg-transparent text-center text-3xl"
                     type="text"
                     ref={memberRef}
                     value={member}
@@ -785,7 +787,6 @@ export default function ProgramEdit() {
                 การรับสมัคร
                   <p className="  font-semibold text-transparent bg-clip-text bg-gradient-to-b from-[#7533A8] to-[#D62C9F] font-Thai text-right min-w-52 text-2xl  hidden lg:block ">
                   และการสอบเข้า
-                    <ClubStar />
                   </p>
                 </p>
 
@@ -936,7 +937,6 @@ export default function ProgramEdit() {
                   <p className="  font-semibold text-transparent bg-clip-text bg-gradient-to-b from-[#7533A8] to-[#D62C9F] font-Thai text-left min-w-52 text-3xl  hidden lg:block ">
                   หลักสูตร<br />
                   เพิ่มเติมที่เรียน
-                    <ClubStar />
                   </p>
                 </p>
             </div>
@@ -984,7 +984,7 @@ export default function ProgramEdit() {
             <p className="  font-semibold text-transparent bg-clip-text bg-gradient-to-b from-[#7533A8] to-[#D62C9F] font-Thai text-right min-w-52 text-4xl py-5 hidden lg:block ">
                 ความน่าสนใจ
                   <p className="  font-semibold text-transparent bg-clip-text bg-gradient-to-b from-[#7533A8] to-[#D62C9F] font-Thai text-right min-w-52 text-2xl  hidden lg:block ">
-                    ของโครงการ<ClubStar /></p>
+                    ของโครงการ</p>
                 </p>
 
               <div className=" w-auto relative  ">
@@ -1081,7 +1081,7 @@ export default function ProgramEdit() {
                 <ReviewWidget />
               </div>
               <div className=" md:w-full w-[calc(100dvw)] left-1/2  -translate-x-1/2 relative">
-                <ReviewCard />
+                <ReviewCardLine />
                 <div className=" absolute top-0 mt-5 md:left-5 sm:left-2 h-full ">
                   <svg
                     className="block lg:h-[153px] lg:w-[153px] md:h-[100px] md:w-[100px] sm:h-[60px] sm:w-[60px]"
@@ -1133,7 +1133,7 @@ export default function ProgramEdit() {
                   />
                   <div className=" block md:mt-1 -mt-1 z-50 relative">
                     <input
-                      className=" text-white md:text-2xl sm:text-md sm:w-[90px] sm:h-6 md:h-8 md:w-[148px]  bg-transparent font-Thai"
+                      className=" text-[#0F114C] md:text-2xl sm:text-md sm:w-[90px] sm:h-6 md:h-8 md:w-[148px]  bg-transparent font-Thai"
                       type="text"
                       ref={review1NameRef}
                       value={review1Name}
@@ -1183,7 +1183,7 @@ export default function ProgramEdit() {
                 </div>
                 <div className=" absolute w-full top-5 h-3/4 right-0 flex justify-end">
                   <textarea
-                    className=" text-white  text-md break-words font-Thai mr-10   md:w-3/5  md:h-full  bg-transparent align-top resize-none"
+                    className=" text-[#0F114C]  text-md break-words font-Thai mr-10   md:w-3/5  md:h-full  bg-transparent align-top resize-none"
                     ref={review1Ref}
                     value={review1}
                     onClick={turnOnReview1EditMode}
@@ -1211,7 +1211,7 @@ export default function ProgramEdit() {
                 //review2
               }
               <div className={review2On ? " md:w-full w-[calc(100dvw)] left-1/2  -translate-x-1/2 relative mt-10" : "hidden"}>
-                <ReviewCardR />
+                <ReviewCardLineR />
                 <div className=" absolute top-0 mt-5 md:right-5 sm:right-2 h-full justify-end ">
                   <div className=" flex justify-end">
                     <svg
@@ -1268,7 +1268,7 @@ export default function ProgramEdit() {
                       <PencilIcon />
                     </button>
                     <input
-                      className=" text-white md:text-2xl sm:text-md sm:w-[100px] sm:h-6 md:h-8 md:w-[148px]  bg-transparent font-Thai text-right"
+                      className=" text-[#0F114C] md:text-2xl sm:text-md sm:w-[100px] sm:h-6 md:h-8 md:w-[148px]  bg-transparent font-Thai text-right"
                       type="text"
                       ref={review2NameRef}
                       value={review2Name}
@@ -1313,7 +1313,7 @@ export default function ProgramEdit() {
                 </div>
                 <div className=" absolute w-full top-5 h-3/4 left-0 flex justify-start">
                   <textarea
-                    className=" text-white  text-md break-words font-Thai ml-10   md:w-3/5  md:h-full  bg-transparent align-top resize-none"
+                    className=" text-[#0F114C]  text-md break-words font-Thai ml-10   md:w-3/5  md:h-full  bg-transparent align-top resize-none"
                     ref={review2Ref}
                     value={review2}
                     onClick={turnOnReview2EditMode}
@@ -1353,7 +1353,7 @@ export default function ProgramEdit() {
                 //review3
               }
               <div className={review3On ? " md:w-full w-[calc(100dvw)] left-1/2  -translate-x-1/2 relative" : "hidden"}>
-                <ReviewCard />
+                <ReviewCardLine />
                 <div className=" absolute top-0 mt-5 md:left-5 sm:left-2 h-full ">
                   <svg
                     className="block lg:h-[153px] lg:w-[153px] md:h-[100px] md:w-[100px] sm:h-[60px] sm:w-[60px]"
@@ -1405,7 +1405,7 @@ export default function ProgramEdit() {
                   />
                   <div className=" block md:mt-1 -mt-1 z-50 relative">
                     <input
-                      className=" text-white md:text-2xl sm:text-md sm:w-[90px] sm:h-6 md:h-8 md:w-[148px]  bg-transparent font-Thai"
+                      className=" text-[#0F114C] md:text-2xl sm:text-md sm:w-[90px] sm:h-6 md:h-8 md:w-[148px]  bg-transparent font-Thai"
                       type="text"
                       ref={review3NameRef}
                       value={review3Name}
@@ -1455,7 +1455,7 @@ export default function ProgramEdit() {
                 </div>
                 <div className=" absolute w-full top-5 h-3/4 right-0 flex justify-end">
                   <textarea
-                    className=" text-white  text-md break-words font-Thai mr-10   md:w-3/5  md:h-full  bg-transparent align-top resize-none"
+                    className=" text-[#0F114C]  text-md break-words font-Thai mr-10   md:w-3/5  md:h-full  bg-transparent align-top resize-none"
                     ref={review3Ref}
                     value={review3}
                     onClick={turnOnReview3EditMode}
@@ -1479,27 +1479,7 @@ export default function ProgramEdit() {
         {
           //every asset start here
         }
-        <div className=" w-full absolute top-0 z-0  ">
-          <ClubTop />
-        </div>
-
-        <div className=" absolute bottom-0 w-full z-10">
-          <ClubBottom />
-        </div>
-        <div className=" hidden md:block">
-          <div className=" absolute right-0 top-[200px]">
-            <ClubCrystal />
-          </div>
-
-          <div className=" absolute left-0 top-[500px]">
-            <ClubLamp />
-          </div>
-
-          <div className=" absolute right-0 top-[1500px]">
-            <ClubFlower />
-          </div>
-
-        </div>
+        
       </div>
 
       <ToastContainer />
