@@ -20,7 +20,7 @@ export default function App({ Component, pageProps }: AppProps) {
       {/* Open Graph / Facebook  */}
       <meta property="og:type" content="website" />
         <meta property="og:url" content="https://openhouse.triamudom.ac.th/" />
-        <meta property="og:title" content="Triam Udom Open House 2023" />
+        <meta property="og:title" content="Triam Udom Open House 2024" />
         <meta
           property="og:description"
           content="งานนิทรรศการประจำปีของโรงเรียนเตรียมอุดมศึกษา พบกับกิจกรรมที่น่าสนใจจากนักเรียนโรงเรียนเตรียมอุดมศึกษา อาทิ แนะแนวการศึกษาต่อ แนะนำสายการเรียน และกิจกรรมจากชมรมต่าง ๆ"
@@ -30,7 +30,7 @@ export default function App({ Component, pageProps }: AppProps) {
         {/* Twitter  */}
         <meta property="twitter:card" content="summary_large_image" />
         <meta property="twitter:url" content="https://openhouse.triamudom.ac.th/" />
-        <meta property="twitter:title" content="Triam Udom Open House 2023" />
+        <meta property="twitter:title" content="Triam Udom Open House 2024" />
         <meta
           property="twitter:description"
           content="งานนิทรรศการประจำปีของโรงเรียนเตรียมอุดมศึกษา พบกับกิจกรรมที่น่าสนใจจากนักเรียนโรงเรียนเตรียมอุดมศึกษา อาทิ แนะแนวการศึกษาต่อ แนะนำสายการเรียน และกิจกรรมจากชมรมต่าง ๆ"

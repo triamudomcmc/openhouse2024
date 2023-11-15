@@ -85,10 +85,10 @@ export default function Program() {
 
   return (
     <>
-      <div className="flex justify-center h-[calc(100dvh)] ">
-        <div className=" align-middle my-auto w-full md:w-1/2 lg:w-1/3 border border-slate-500 rounded-lg justify-center flex-wrap text-center">
-          <p className=" text-[#141547] mb-12 font-Thai ">ข้อมูลหน่วยงาน</p>
-          <p className=" font-extrabold text-transparent text-4xl bg-clip-text bg-gradient-to-b from-[#81109D] to-[#D738A4] font-Thai break-words ">
+      <div className="flex justify-center h-[calc(100dvh)] md:bg-gray-50 ">
+        <div className=" align-middle my-auto  w-full md:w-1/2 lg:w-1/3 md:shadow-lg md:border-t-8   border-[#81109D] rounded-2xl justify-center flex-wrap text-center py-5 bg-white">
+          <p className=" text-[#141547] md:mb-6 font-Thaiai ">ข้อมูลหน่วยงาน</p>
+          <p className=" font-extrabold text-transparent md:text-5xl sm:text-4xl  bg-clip-text bg-gradient-to-b from-[#81109D] to-[#D738A4] font-Thai ">
             {program}
           </p>
 
@@ -103,7 +103,7 @@ export default function Program() {
 
           <button
             onClick={HandleClick}
-            className=" flex m-auto w-80 rounded-2xl  bg-gradient-to-b from-[#7533A8] to-[#D62C9F] items-center justify-center text-center drop-shadow "
+            className=" flex m-auto w-1/2 rounded-full  bg-gradient-to-r from-[#7533A8] to-[#D62C9F] items-center justify-center text-center drop-shadow "
           >
             <span className=" text-white ml-3 text-2xl mr-2 font-Thai text-center">
               แก้ไข
@@ -113,7 +113,7 @@ export default function Program() {
           <div>
             <button
               onClick={HandlePreview}
-              className=" mt-5 flex m-auto w-80 rounded-2xl border-[#7533A8] border-2 items-center justify-center text-center drop-shadow "
+              className=" mt-5 flex m-auto w-1/2 rounded-full border-[#7533A8] border-2 items-center justify-center text-center drop-shadow "
             >
               <span className=" text-[#7533A8] ml-3 text-2xl mr-2  font-Thai">
                 พรีวิว
@@ -200,7 +200,7 @@ export default function Program() {
             </p>
             <p className=" text-[#19C57C] font-Thai"> ผ่านการตรวจสอบ </p>
           </div>
-          <p className=" text-[#141547] mt-10 font-Thai ">
+          <p className=" text-[#141547] mt-6 font-Thai ">
             {" "}
             แก้ไขข้อมูลหน่วยงาน{" "}
           </p>
