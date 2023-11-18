@@ -103,9 +103,8 @@ export default function AccountPage() {
         <AccountBrick />
       </div>
       <div className=" relative h-full  ">
-        <div 
-      className=" absolute h-[90%] bottom-0 left-1/2 -translate-x-1/2 z-50 ">
-        <AccountMain />
+        <div className=" absolute h-[90%] bottom-0 left-1/2 -translate-x-1/2 z-50 ">
+          <AccountMain />
         </div>
         <div className=" absolute left-1/2 -translate-x-1/2 w-[250px] z-[51] top-1/2 -translate-y-1/2 text-[#AFB3F8] ">
           <div className=" relative z-[52]">
@@ -132,56 +131,56 @@ export default function AccountPage() {
             >
               ข้อมูลองค์กรนักเรียน
             </Link>
-              <Link
-                href="/club"
-                className={
-                  club
-                    ? " absolute  w-full shadow-xl bg-gradient-to-br from-[#27217E] to-[#533B9E] rounded-full text-xl px-5 py-3 text-center "
-                    : " hidden"
-                }
-              >
-                ข้อมูลชมรม
-              </Link>
-              <Link
-                href="/program"
-                className={
-                  program
-                    ? " absolute  w-full shadow-xl bg-gradient-to-br from-[#27217E] to-[#533B9E] rounded-full text-xl px-5 py-3 text-center "
-                    : " hidden"
-                }
-              >
-                ข้อมูลสายการเรียน
-              </Link>
-              <Link
-                href="/gifted"
-                className={
-                  gifted
-                    ? " absolute  w-full shadow-xl bg-gradient-to-br from-[#27217E] to-[#533B9E] rounded-full text-xl px-5 py-3 text-center "
-                    : " hidden"
-                }
-              >
-                ข้อมูลโครงการพัฒนาความสามารถ
-              </Link>
-              <Link
-                href="/account/form"
-                className={
-                  none
-                    ? " absolute  w-full shadow-xl bg-gradient-to-br from-[#27217E] to-[#533B9E] rounded-full text-xl px-5 py-3 text-center "
-                    : "hidden"
-                }
-              >
-                Form
-              </Link>
-              <Link
-                href="/admin"
-                className={
-                  admin
-                    ? " absolute  w-full shadow-xl bg-gradient-to-br from-[#27217E] to-[#533B9E] rounded-full text-xl px-5 py-3 text-center "
-                    : " hidden"
-                }
-              >
-                Admin
-              </Link>
+            <Link
+              href="/club"
+              className={
+                club
+                  ? " absolute  w-full shadow-xl bg-gradient-to-br from-[#27217E] to-[#533B9E] rounded-full text-xl px-5 py-3 text-center "
+                  : " hidden"
+              }
+            >
+              ข้อมูลชมรม
+            </Link>
+            <Link
+              href="/program"
+              className={
+                program
+                  ? " absolute  w-full shadow-xl bg-gradient-to-br from-[#27217E] to-[#533B9E] rounded-full text-xl px-5 py-3 text-center "
+                  : " hidden"
+              }
+            >
+              ข้อมูลสายการเรียน
+            </Link>
+            <Link
+              href="/gifted"
+              className={
+                gifted
+                  ? " absolute  w-full shadow-xl bg-gradient-to-br from-[#27217E] to-[#533B9E] rounded-full text-xl px-5 py-3 text-center "
+                  : " hidden"
+              }
+            >
+              ข้อมูลโครงการพัฒนาความสามารถ
+            </Link>
+            <Link
+              href="/account/form"
+              className={
+                none
+                  ? " absolute  w-full shadow-xl bg-gradient-to-br from-[#27217E] to-[#533B9E] rounded-full text-xl px-5 py-3 text-center "
+                  : "hidden"
+              }
+            >
+              Form
+            </Link>
+            <Link
+              href="/admin"
+              className={
+                admin
+                  ? " absolute  w-full shadow-xl bg-gradient-to-br from-[#27217E] to-[#533B9E] rounded-full text-xl px-5 py-3 text-center "
+                  : " hidden"
+              }
+            >
+              Admin
+            </Link>
           </div>
           <button
             type="button"
