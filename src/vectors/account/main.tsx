@@ -5,7 +5,6 @@ export default function AccountMain() {
       viewBox="0 0 473 836"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
-      className=" absolute h-[90%] bottom-0 left-1/2 -translate-x-1/2 z-50 "
     >
       <path
         d="M33.4598 231.937C33.4598 115.601 127.769 21.2926 244.105 21.2926V21.2926C360.44 21.2926 454.749 115.601 454.749 231.937V824.328H33.4598V231.937Z"

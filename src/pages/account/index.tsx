@@ -98,12 +98,15 @@ export default function AccountPage() {
   }, [status]);
 
   return (
-    <div className=" w-screen h-[calc(100dvh)] overflow-hidden bg-gradient-to-b from-[#BF9EFF] to-[#434FA7]">
+    <div className=" relative w-full h-[calc(100dvh)] overflow-hidden bg-gradient-to-b from-[#BF9EFF] to-[#434FA7]">
       <div className=" h-[calc(100dvh)] overflow-hidden absolute top-0 z-0 flex justify-center  ">
         <AccountBrick />
       </div>
-      <div className=" relative h-full ">
+      <div className=" relative h-full  ">
+        <div 
+      className=" absolute h-[90%] bottom-0 left-1/2 -translate-x-1/2 z-50 ">
         <AccountMain />
+        </div>
         <div className=" absolute left-1/2 -translate-x-1/2 w-[250px] z-[51] top-1/2 -translate-y-1/2 text-[#AFB3F8] ">
           <div className=" relative z-[52]">
             <AccountProfile />
