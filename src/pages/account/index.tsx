@@ -127,6 +127,8 @@ export default function AccountPage() {
                   : " hidden"
               }
             >
+              ข้อมูลองค์กรนักเรียน
+            </Link>
               <Link
                 href="/club"
                 className={
@@ -158,7 +160,7 @@ export default function AccountPage() {
                 ข้อมูลโครงการพัฒนาความสามารถ
               </Link>
               <Link
-                href="/form"
+                href="/account/form"
                 className={
                   none
                     ? " absolute  w-full shadow-xl bg-gradient-to-br from-[#27217E] to-[#533B9E] rounded-full text-xl px-5 py-3 text-center "
@@ -177,8 +179,6 @@ export default function AccountPage() {
               >
                 Admin
               </Link>
-              ข้อมูลองค์กรนักเรียน
-            </Link>
           </div>
           <button
             type="button"

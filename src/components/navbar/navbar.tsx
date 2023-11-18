@@ -21,7 +21,7 @@ export default function Navbar() {
   });
 
   return (
-    <div className=" fixed top-0 w-full z-50">
+    <div className=" fixed top-0 w-full z-[999]">
       <nav className=" max-md:hidden bg-white bg-opacity-70 flex align-middle  justify-between gap-10 text-center z-20 top-0 ">
         <div className="relative top-0 z-50">
           <svg
