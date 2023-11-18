@@ -42,7 +42,7 @@ export default function Hamburger() {
         />
     </button>
 
-    <div className= {isOpen ? " overflow-x-hidden absolute left-0  z-10 w-full bg-white opacity-80 top-11 duration-500 ease-out transition-all " : "absolute z-60 w-full h-64 bg-white opacity-80 top-11 translate-x-[770px] duration-500 ease-out transition-all"}>
+    <div className= {isOpen ? " overflow-x-hidden absolute left-0  z-10 w-full bg-white opacity-80 top-11 duration-500 ease-out transition-all " : "absolute z-60 w-full bg-white opacity-80 top-11 translate-x-[101%] duration-300 ease-out transition-all"}>
           <Link className=" w-full" href="/" >
             <div className=" text-end border-b border-slate-500 py-2 pr-11 text-2xl">
                 Home
