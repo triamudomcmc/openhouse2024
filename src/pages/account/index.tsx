@@ -107,7 +107,7 @@ export default function AccountPage() {
         <div className=" md:block hidden absolute h-[90%] bottom-0 left-1/2 -translate-x-1/2 z-50 ">
           <AccountMain />
         </div>
-        <div className=" md:hidden block absolute h-[90vh] bottom-0 left-1/2 -translate-x-1/2 z-50 ">
+        <div className=" md:hidden block absolute bottom-0 left-1/2 -translate-x-1/2 z-50 ">
           <AccountMainM />
         </div>
         <div className=" absolute left-1/2 -translate-x-1/2 w-[250px] z-[51] top-1/2 -translate-y-1/2 text-[#AFB3F8] ">
