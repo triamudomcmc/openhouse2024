@@ -1,7 +1,7 @@
 export default function AccountMainM() {
   return (
     <svg
-      height="90vh"
+      height="100%"
       viewBox="0 0 473 836"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
