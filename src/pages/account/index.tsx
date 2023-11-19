@@ -121,7 +121,7 @@ export default function AccountPage() {
             )}
           </div>
 
-          <p className="  w-full text-[#0F114C] text-center font-bold text-xl mt-10">
+          <p className="  w-full text-[#0F114C] text-center font-bold text-xl mt-5">
             {session?.user?.name}
           </p>
           <div className=" mt-10">

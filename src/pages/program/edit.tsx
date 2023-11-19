@@ -642,13 +642,13 @@ export default function ProgramEdit() {
 
   return (
     <div className="">
-      <div className=" relative w-full top-0 left-0 h-full">
+      <div className=" relative w-full top-0 left-0 h-full overflow-hidden">
         <div className=" flex justify-center w-full   ">
           <div className=" lg:w-1/2 md:w-2/3 z-30 lg:mt-[15%] md:mt-[20%] sm:mt-[25%] pb-20">
             <div className=" flex justify-evenly items-center">
               <button className=" flex" onClick={back}>
                 <BackArrow />
-                <span className=" pl-2  text-2xl align-middle text-[#55247B]">
+                <span className=" pl-2  text-2xl align-middle m-auto text-[#55247B]">
                   ย้อนกลับ
                 </span>
               </button>
