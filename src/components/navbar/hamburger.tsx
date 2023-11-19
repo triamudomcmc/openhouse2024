@@ -42,34 +42,24 @@ export default function Hamburger() {
         />
     </button>
 
-    <div className= {isOpen ? " overflow-x-hidden absolute left-0  z-10 w-full bg-white opacity-80 top-11 duration-500 ease-out transition-all " : "absolute z-60 w-full bg-white opacity-80 top-11 translate-x-[101%] duration-300 ease-out transition-all"}>
+    <div className= {isOpen ? " overflow-x-hidden absolute left-0  z-10 w-full bg-white opacity-80 top-12 duration-500 ease-out transition-all " : "absolute z-60 w-full bg-white opacity-80 top-11 translate-x-[101%] duration-300 ease-out transition-all"}>
           <Link className=" w-full" href="/" >
-            <div className=" text-end border-b border-slate-500 py-2 pr-11 text-2xl">
+            <div className=" text-center border-b border-slate-500 py-2 text-2xl">
                 Home
             </div>
           </Link>
           <Link className=" w-full " href="/account/form" >
-            <div className=" text-end border-b border-slate-500 py-2 pr-11 text-2xl">
+            <div className=" text-center border-b border-slate-500 py-2 text-2xl">
                 Form
             </div>
           </Link>
-          <Link className=" w-full " href="/account/form" >
-            <div className=" text-end border-b border-slate-500 py-2 pr-11 text-2xl">
-                Link3
-            </div>
-          </Link>
-          <Link className=" w-full " href="/account/form" >
-            <div className=" text-end border-b border-slate-500 py-2 pr-11 text-2xl">
-                Link4
-            </div>
-          </Link>
           <Link  className={inSession ? " text-center" : "hidden"} href="/account" >
-            <div className=" text-end border-b border-slate-500 py-2 pr-11 text-2xl">
+            <div className=" text-center border-b border-slate-500 py-2 text-2xl">
                 Account
             </div>
           </Link>
           <Link  className={inSession ? "hidden " : " text-center"} href="/Login" >
-            <div className=" text-end border-b border-slate-500 py-2 pr-11 text-2xl">
+            <div className=" text-center border-b border-slate-500 py-2 text-2xl">
                 Login
             </div>
           </Link>
