@@ -124,7 +124,8 @@ export default function Form() {
       toast.success(<><p>success</p><p>ระบบได้บันทึกข้อมูลของท่านแล้ว</p></>, {
         position: toast.POSITION.BOTTOM_RIGHT,
         theme : "colored"
-      });
+      })
+      setTimeout( () => {router.push('/account')} ,5000);
     } catch (error) {
       console.log(error);
       toast.error(<><p>ERORR!!</p><p>โปรดตรวจสอบข้อมูลและบัญชีให้ถูกต้อง</p></>, {
