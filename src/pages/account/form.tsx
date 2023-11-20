@@ -401,7 +401,7 @@ export default function Form() {
             </div>
             <div className=" block my-5">
               <Button variant="outlined" onClick={handleSummit}>
-                sumit
+                submit
               </Button>
             </div>
           </div>
