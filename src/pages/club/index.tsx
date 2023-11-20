@@ -121,7 +121,7 @@ export default function Club() {
               className=" mt-5 flex m-auto w-1/2 rounded-full border-[#7533A8] border-2 items-center justify-center text-center drop-shadow "
             >
               <span className=" text-[#7533A8] ml-3 text-2xl mr-2  font-Thai">
-                พรีวิว
+                Preview
               </span>
             </button>
           </div>
