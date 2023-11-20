@@ -56,7 +56,7 @@ export default function LoginPage() {
         {
           //mobile version
         }
-        <div className=" absolute top-[25%] -translate-y-1/2 w-full lg:hidden block ">
+        <div className=" absolute top-[27%] -translate-y-1/2 w-full lg:hidden block ">
           <p className="text-center text-white   text-7xl font-bold font-Thai z-10">
             Register
           </p>
@@ -65,7 +65,7 @@ export default function LoginPage() {
           </p>
         </div>
 
-        <div className=" absolute bottom-[15%] -translate-y-1/2 w-full justify-center lg:hidden flex ">
+        <div className=" absolute bottom-[17%] -translate-y-1/2 w-full justify-center lg:hidden flex ">
           <Tucmc />
         </div>
 
