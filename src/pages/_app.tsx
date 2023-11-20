@@ -37,6 +37,7 @@ export default function App({ Component, pageProps }: AppProps) {
         />
         <meta property="twitter:image" content="/meta/preview.png" />
       </Head>
+      <Navbar />
       <Component {...pageProps} />
     </SessionProvider>
   )
