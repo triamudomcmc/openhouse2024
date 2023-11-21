@@ -400,7 +400,7 @@ export default function ProgramEdit() {
   let image1Config = {
     method: "post",
     maxBodyLength: Infinity,
-    url: "https://openhouse2024-backend.vercel.app/api/organization/get-image",
+    url: "https://openhouse2024-backend.vercel.app/api/lessons/get-image",
     headers: {
       "Content-Type": "application/json",
     },
@@ -425,7 +425,7 @@ export default function ProgramEdit() {
   let image2Config = {
     method: "post",
     maxBodyLength: Infinity,
-    url: "https://openhouse2024-backend.vercel.app/api/organization/get-image",
+    url: "https://openhouse2024-backend.vercel.app/api/lessons/get-image",
     headers: {
       "Content-Type": "application/json",
     },
@@ -451,7 +451,7 @@ export default function ProgramEdit() {
   let image3Config = {
     method: "post",
     maxBodyLength: Infinity,
-    url: "https://openhouse2024-backend.vercel.app/api/organization/get-image",
+    url: "https://openhouse2024-backend.vercel.app/api/lessons/get-image",
     headers: {
       "Content-Type": "application/json",
     },
@@ -476,7 +476,7 @@ export default function ProgramEdit() {
   let profile1Config = {
     method: "post",
     maxBodyLength: Infinity,
-    url: "https://openhouse2024-backend.vercel.app/api/organization/get-profile",
+    url: "https://openhouse2024-backend.vercel.app/api/lessons/get-profile",
     headers: {
       "Content-Type": "application/json",
     },
@@ -501,7 +501,7 @@ export default function ProgramEdit() {
   let profile2Config = {
     method: "post",
     maxBodyLength: Infinity,
-    url: "https://openhouse2024-backend.vercel.app/api/organization/get-profile",
+    url: "https://openhouse2024-backend.vercel.app/api/lessons/get-profile",
     headers: {
       "Content-Type": "application/json",
     },
@@ -528,7 +528,7 @@ export default function ProgramEdit() {
   let profile3Config = {
     method: "post",
     maxBodyLength: Infinity,
-    url: "https://openhouse2024-backend.vercel.app/api/organization/get-profile",
+    url: "https://openhouse2024-backend.vercel.app/api/lessons/get-profile",
     headers: {
       "Content-Type": "application/json",
     },
