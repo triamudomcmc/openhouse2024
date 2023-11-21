@@ -526,7 +526,7 @@ export default function OrganizationPreview() {
                     </div>
                   </div>
                   <div className=" absolute w-full top-5 h-3/4 right-0 flex justify-end">
-                    <p className=" text-white  text-md break-words font-Thai md:mr-10 sm:mr-5   w-3/5  h-full   bg-transparent align-top resize-none whitespace-pre-line">
+                    <p className=" text-white  text-md break-words font-Thai md:mr-10 sm:mr-5   w-3/5  h-full   bg-transparent align-top resize-none whitespace-pre-line overflow-scroll">
                       {review1}
                     </p>
                   </div>
@@ -578,7 +578,7 @@ export default function OrganizationPreview() {
                   </div>
                   <div className=" absolute w-full top-5 h-3/4 left-0 flex justify-start">
                     <textarea
-                      className=" text-white  text-md break-words font-Thai md:ml-10 sm:ml-5   w-3/5  h-full  bg-transparent align-top resize-none whitespace-pre-line"
+                      className=" text-white  text-md break-words font-Thai md:ml-10 sm:ml-5   w-3/5  h-full  bg-transparent align-top resize-none whitespace-pre-line overflow-scroll"
                       value={review2}
                     ></textarea>
                   </div>
@@ -627,7 +627,7 @@ export default function OrganizationPreview() {
                     </div>
                   </div>
                   <div className=" absolute w-full top-5 h-3/4 right-0 flex justify-end">
-                    <p className=" text-white  text-md break-words font-Thai md:mr-10 sm:mr-5   w-3/5  h-full  bg-transparent align-top resize-none whitespace-pre-line">
+                    <p className=" text-white  text-md break-words font-Thai md:mr-10 sm:mr-5   w-3/5  h-full  bg-transparent align-top resize-none whitespace-pre-line overflow-scroll">
                       {review3}
                     </p>
                   </div>
