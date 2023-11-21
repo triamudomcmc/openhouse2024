@@ -333,7 +333,7 @@ export default function OrganizationPreview() {
                   </svg>
                 </div>
 
-                <div className=" md:w-[200px] w-[150px]">
+                <div className=" md:w-[200px] w-[150px] overflow-x-auto overflow-y-hidden">
                   <p className=" flex text-[#8133A7] md:w-[200px] w-[150px] text-xl font-Thai ">
                     {" "}
                     IG:{ig}

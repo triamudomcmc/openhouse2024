@@ -294,7 +294,7 @@ export default function ClubPreview() {
                 </p>
               </div>
               <div className=" w-full flex  justify-center gap-4 items-center md:mt-5  ">
-                <div className="  flex justify-end min-w-[150px] md:min-w-[200px] ">
+                <div className="  flex justify-end min-w-[150px] md:min-w-[200px]  ">
                   <div className=" hidden md:flex">
                     <UserIcon />
                   </div>
@@ -332,7 +332,7 @@ export default function ClubPreview() {
                   </svg>
                 </div>
 
-                <div className=" md:w-[200px] w-[150px]">
+                <div className=" md:w-[200px] w-[150px] overflow-x-auto overflow-y-hidden">
                   <p className=" flex text-[#8133A7] md:w-[200px] w-[150px] text-xl font-Thai ">
                     {" "}
                     IG:{ig}
