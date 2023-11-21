@@ -407,6 +407,7 @@ export default function ProgramEdit() {
   useEffect(() => {
     // User email is available, make the API request
     request();
+    logoPostRequest()
     image1PostRequest()
     image2PostRequest()
     image3PostRequest()
@@ -418,6 +419,30 @@ export default function ProgramEdit() {
 
   function back() {
     router.push("/club");
+  }
+  let logoData = JSON.stringify({
+    email: session?.user?.email,
+    imageType: "logo",
+    environmentKeys : process.env.ENVIRONMENT_KEY,
+  });
+
+  let logoConfig = {
+    method: "post",
+    maxBodyLength: Infinity,
+    url: "https://openhouse2024-backend.vercel.app/api/clubs/get-image",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    data: logoData,
+  };
+
+  async function logoPostRequest() {
+    try {
+      const response = await axios.request(logoConfig);
+      setLogo(response.data.data);
+    } catch (error) {
+      console.log(error);
+    }
   }
 
   let image1Data = JSON.stringify({
