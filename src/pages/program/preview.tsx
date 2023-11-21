@@ -520,7 +520,7 @@ export default function ProgramPreview() {
                         เตรียมอุดม {review1Gen}
                       </p>
                       <div className=" flex">
-                        <p className=" sm:h-4 md:h-6 md:w-[148px] items-center w-[100px] text-[#291A54] sm:text-sm md:text-base bg-transparent font-Thai">
+                        <p className=" sm:h-4 md:h-6 md:w-[148px] items-center w-[100px] text-[#291A54] sm:text-sm md:text-base bg-transparent font-Thai overflow-y-hidden overflow-x-scroll">
                           {review1Contact}
                         </p>
                       </div>
@@ -571,7 +571,7 @@ export default function ProgramPreview() {
                         เตรียมอุดม {review2Gen}
                       </p>
                       <div className=" flex">
-                        <p className=" sm:h-4 md:h-6 md:w-[148px] items-center w-[100px] text-[#291A54] sm:text-sm md:text-base bg-transparent font-Thai text-right">
+                        <p className=" sm:h-4 md:h-6 md:w-[148px] items-center w-[100px] text-[#291A54] sm:text-sm md:text-base bg-transparent font-Thai text-right overflow-y-hidden overflow-x-scroll">
                           {review2Contact}
                         </p>
                       </div>
@@ -621,7 +621,7 @@ export default function ProgramPreview() {
                         เตรียมอุดม {review3Gen}
                       </p>
                       <div className=" flex">
-                        <p className=" sm:h-4 md:h-6 md:w-[148px] items-center w-[100px] text-[#291A54] sm:text-sm md:text-base bg-transparent font-Thai">
+                        <p className=" sm:h-4 md:h-6 md:w-[148px] items-center w-[100px] text-[#291A54] sm:text-sm md:text-base bg-transparent font-Thai overflow-y-hidden overflow-x-scroll">
                           {review3Contact}
                         </p>
                       </div>
