@@ -33,7 +33,7 @@ export default function AccountPage() {
   let config = {
     method: "post",
     maxBodyLength: Infinity,
-    url: "https://openhouse2024-backend.vercel.app/api/roles/info",
+    url: `${process.env.BASE_URL}/api/roles/info`,
     headers: {
       "Content-Type": "application/json",
     },

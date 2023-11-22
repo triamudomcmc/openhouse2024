@@ -121,7 +121,7 @@ export default function ProgramEdit() {
   let configEdit = {
     method: "post",
     maxBodyLength: Infinity,
-    url: "https://openhouse2024-backend.vercel.app/api/gifted/edit",
+    url: `${process.env.BASE_URL}/api/gifted/edit`,
     headers: {
       "Content-Type": "application/json",
     },
@@ -138,7 +138,7 @@ export default function ProgramEdit() {
       });
     } catch (error) {
       console.log(error);
-      toast.error(<><p>ERORR!!</p><p>โปรดตรวจสอบข้อมูลและบัญชีให้ถูกต้อง</p></>, {
+      toast.error(<><p>ERROR!!</p><p>โปรดตรวจสอบข้อมูลและบัญชีให้ถูกต้อง</p></>, {
         position: toast.POSITION.BOTTOM_RIGHT,
         theme : "colored",
 
@@ -156,7 +156,7 @@ export default function ProgramEdit() {
     let image1Config = {
       method: "post",
       maxBodyLength: Infinity,
-      url: "https://openhouse2024-backend.vercel.app/api/gifted/upload-image",
+      url: `${process.env.BASE_URL}/api/gifted/upload-image`,
       headers: {
         "Content-Type": "multipart/form-data",
       },
@@ -183,7 +183,7 @@ export default function ProgramEdit() {
     let image2Config = {
       method: "post",
       maxBodyLength: Infinity,
-      url: "https://openhouse2024-backend.vercel.app/api/gifted/upload-image",
+      url: `${process.env.BASE_URL}/api/gifted/upload-image`,
       headers: {
         "Content-Type": "multipart/form-data",
       },
@@ -210,7 +210,7 @@ export default function ProgramEdit() {
     let image3Config = {
       method: "post",
       maxBodyLength: Infinity,
-      url: "https://openhouse2024-backend.vercel.app/api/gifted/upload-image",
+      url: `${process.env.BASE_URL}/api/gifted/upload-image`,
       headers: {
         "Content-Type": "multipart/form-data",
       },
@@ -237,7 +237,7 @@ export default function ProgramEdit() {
     let ReviewProfile1Config = {
       method: "post",
       maxBodyLength: Infinity,
-      url: "https://openhouse2024-backend.vercel.app/api/gifted/upload-profile",
+      url: `${process.env.BASE_URL}/api/gifted/upload-profile`,
       headers: {
         "Content-Type": "multipart/form-data",
       },
@@ -264,7 +264,7 @@ export default function ProgramEdit() {
     let ReviewProfile2Config = {
       method: "post",
       maxBodyLength: Infinity,
-      url: "https://openhouse2024-backend.vercel.app/api/gifted/upload-profile",
+      url: `${process.env.BASE_URL}/api/gifted/upload-profile`,
       headers: {
         "Content-Type": "multipart/form-data",
       },
@@ -291,7 +291,7 @@ export default function ProgramEdit() {
     let ReviewProfile3Config = {
       method: "post",
       maxBodyLength: Infinity,
-      url: "https://openhouse2024-backend.vercel.app/api/gifted/upload-profile",
+      url: `${process.env.BASE_URL}/api/gifted/upload-profile`,
       headers: {
         "Content-Type": "multipart/form-data",
       },
@@ -316,7 +316,7 @@ export default function ProgramEdit() {
   const config = {
     method: "post",
     maxBodyLength: Infinity,
-    url: "https://openhouse2024-backend.vercel.app/api/roles/info",
+    url: `${process.env.BASE_URL}/api/roles/info`,
     headers: {
       "Content-Type": "application/json",
     },

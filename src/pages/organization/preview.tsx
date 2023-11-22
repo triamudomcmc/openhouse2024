@@ -68,7 +68,7 @@ export default function OrganizationPreview() {
   let image1Config = {
     method: "post",
     maxBodyLength: Infinity,
-    url: "https://openhouse2024-backend.vercel.app/api/organization/get-image",
+    url: `${process.env.BASE_URL}/api/organization/get-image`,
     headers: {
       "Content-Type": "application/json",
     },
@@ -93,7 +93,7 @@ export default function OrganizationPreview() {
   let image2Config = {
     method: "post",
     maxBodyLength: Infinity,
-    url: "https://openhouse2024-backend.vercel.app/api/organization/get-image",
+    url: `${process.env.BASE_URL}/api/organization/get-image`,
     headers: {
       "Content-Type": "application/json",
     },
@@ -119,7 +119,7 @@ export default function OrganizationPreview() {
   let image3Config = {
     method: "post",
     maxBodyLength: Infinity,
-    url: "https://openhouse2024-backend.vercel.app/api/organization/get-image",
+    url: `${process.env.BASE_URL}/api/organization/get-image`,
     headers: {
       "Content-Type": "application/json",
     },
@@ -144,7 +144,7 @@ export default function OrganizationPreview() {
   let profile1Config = {
     method: "post",
     maxBodyLength: Infinity,
-    url: "https://openhouse2024-backend.vercel.app/api/organization/get-profile",
+    url: `${process.env.BASE_URL}/api/organization/get-profile`,
     headers: {
       "Content-Type": "application/json",
     },
@@ -169,7 +169,7 @@ export default function OrganizationPreview() {
   let profile2Config = {
     method: "post",
     maxBodyLength: Infinity,
-    url: "https://openhouse2024-backend.vercel.app/api/organization/get-profile",
+    url: `${process.env.BASE_URL}/api/organization/get-profile`,
     headers: {
       "Content-Type": "application/json",
     },
@@ -196,7 +196,7 @@ export default function OrganizationPreview() {
   let profile3Config = {
     method: "post",
     maxBodyLength: Infinity,
-    url: "https://openhouse2024-backend.vercel.app/api/organization/get-profile",
+    url: `${process.env.BASE_URL}/api/organization/get-profile`,
     headers: {
       "Content-Type": "application/json",
     },
@@ -222,7 +222,7 @@ export default function OrganizationPreview() {
   const config = {
     method: "post",
     maxBodyLength: Infinity,
-    url: "https://openhouse2024-backend.vercel.app/api/roles/info",
+    url: `${process.env.BASE_URL}/api/roles/info`,
     headers: {
       "Content-Type": "application/json",
     },
