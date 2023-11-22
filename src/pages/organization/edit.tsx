@@ -387,11 +387,174 @@ export default function OrganizationEdit() {
   useEffect(() => {
     // User email is available, make the API request
     request();
+    image1PostRequest()
+    image2PostRequest()
+    image3PostRequest()
+    profile1PostRequest()
+    profile2PostRequest()
+    profile3PostRequest()
+
   }, [status]);
 
   function back() {
     router.push("/organization");
   }
+
+  let image1Data = JSON.stringify({
+    email: session?.user?.email,
+    imageType: "image1",
+    environmentKeys : process.env.ENVIRONMENT_KEY,
+  });
+
+  let image1Config = {
+    method: "post",
+    maxBodyLength: Infinity,
+    url: "https://openhouse2024-backend.vercel.app/api/organization/get-image",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    data: image1Data,
+  };
+
+  async function image1PostRequest() {
+    try {
+      const response = await axios.request(image1Config);
+      setImage1(response.data.data);
+    } catch (error) {
+      console.log(error);
+    }
+  }
+
+  let image2Data = JSON.stringify({
+    email: session?.user?.email,
+    imageType: "image2",
+    environmentKey : process.env.ENVIRONMENT_KEY,
+  });
+
+  let image2Config = {
+    method: "post",
+    maxBodyLength: Infinity,
+    url: "https://openhouse2024-backend.vercel.app/api/organization/get-image",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    data: image2Data,
+  };
+
+  async function image2PostRequest() {
+    try {
+      const response = await axios.request(image2Config);
+      setImage2(response.data.data);
+      
+    } catch (error) {
+      console.log(error);
+    }
+  }
+
+  let image3Data = JSON.stringify({
+    email: session?.user?.email,
+    imageType: "image3",
+    environmentKey : process.env.ENVIRONMENT_KEY,
+  });
+
+  let image3Config = {
+    method: "post",
+    maxBodyLength: Infinity,
+    url: "https://openhouse2024-backend.vercel.app/api/organization/get-image",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    data: image3Data,
+  };
+
+  async function image3PostRequest() {
+    try {
+      const response = await axios.request(image3Config);
+      setImage3(response.data.data);
+    } catch (error) {
+      console.log(error);
+    }
+  }
+
+  let profile1Data = JSON.stringify({
+    email: session?.user?.email,
+    imgprofileType: "imgprofile1",
+    environmentKey : process.env.ENVIRONMENT_KEY,
+  });
+
+  let profile1Config = {
+    method: "post",
+    maxBodyLength: Infinity,
+    url: "https://openhouse2024-backend.vercel.app/api/organization/get-profile",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    data: profile1Data,
+  };
+
+  async function profile1PostRequest() {
+    try {
+      const response = await axios.request(profile1Config);
+      setReview1Profile(response.data.data);
+    } catch (error) {
+      console.log(error);
+    }
+  }
+
+  let profile2Data = JSON.stringify({
+    email: session?.user?.email,
+    imgprofileType: "imgprofile2",
+    environmentKey : process.env.ENVIRONMENT_KEY,
+  });
+
+  let profile2Config = {
+    method: "post",
+    maxBodyLength: Infinity,
+    url: "https://openhouse2024-backend.vercel.app/api/organization/get-profile",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    data: profile2Data,
+  };
+
+  async function profile2PostRequest() {
+    try {
+      const response = await axios.request(profile2Config);
+      setReview2Profile(response.data.data);
+      if (response.data.data === '' ) {}
+      else{setReview2On(true);}
+    } catch (error) {
+      console.log(error);
+    }
+  }
+
+  let profile3Data = JSON.stringify({
+    email: session?.user?.email,
+    imgprofileType: "imgprofile3",
+    environmentKey : process.env.ENVIRONMENT_KEY,
+  });
+
+  let profile3Config = {
+    method: "post",
+    maxBodyLength: Infinity,
+    url: "https://openhouse2024-backend.vercel.app/api/organization/get-profile",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    data: profile3Data,
+  };
+
+  async function profile3PostRequest() {
+    try {
+      const response = await axios.request(profile3Config);
+      setReview3Profile(response.data.data);
+      if (response.data.data === '' ) {}
+      else{setReview3On(true);}
+    } catch (error) {
+      console.log(error);
+    }
+  }
+
 
   function summit() {
     EditRequest();
