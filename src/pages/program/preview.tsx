@@ -64,7 +64,7 @@ export default function ProgramPreview() {
   let image1Config = {
     method: "post",
     maxBodyLength: Infinity,
-    url: "https://openhouse2024-backend.vercel.app/api/lessons/get-image",
+    url: `${process.env.BASE_URL}/api/lessons/get-image`,
     headers: {
       "Content-Type": "application/json",
     },
@@ -89,7 +89,7 @@ export default function ProgramPreview() {
   let image2Config = {
     method: "post",
     maxBodyLength: Infinity,
-    url: "https://openhouse2024-backend.vercel.app/api/lessons/get-image",
+    url: `${process.env.BASE_URL}/api/lessons/get-image`,
     headers: {
       "Content-Type": "application/json",
     },
@@ -114,7 +114,7 @@ export default function ProgramPreview() {
   let image3Config = {
     method: "post",
     maxBodyLength: Infinity,
-    url: "https://openhouse2024-backend.vercel.app/api/lessons/get-image",
+    url: `${process.env.BASE_URL}/api/lessons/get-image`,
     headers: {
       "Content-Type": "application/json",
     },
@@ -139,7 +139,7 @@ export default function ProgramPreview() {
   let profile1Config = {
     method: "post",
     maxBodyLength: Infinity,
-    url: "https://openhouse2024-backend.vercel.app/api/lessons/get-profile",
+    url: `${process.env.BASE_URL}/api/lessons/get-profile`,
     headers: {
       "Content-Type": "application/json",
     },
@@ -165,7 +165,7 @@ export default function ProgramPreview() {
   let profile2Config = {
     method: "post",
     maxBodyLength: Infinity,
-    url: "https://openhouse2024-backend.vercel.app/api/lessons/get-profile",
+    url: `${process.env.BASE_URL}/api/lessons/get-profile`,
     headers: {
       "Content-Type": "application/json",
     },
@@ -177,8 +177,10 @@ export default function ProgramPreview() {
       const response = await axios.request(profile2Config);
       console.log(JSON.stringify(response.data));
       setReview2Profile(response.data.data);
-      if (response.data.data === '' ) {}
-      else{setShowReview2(true);}
+      if (response.data.data === "") {
+      } else {
+        setShowReview2(true);
+      }
     } catch (error) {
       console.log(error);
     }
@@ -193,7 +195,7 @@ export default function ProgramPreview() {
   let profile3Config = {
     method: "post",
     maxBodyLength: Infinity,
-    url: "https://openhouse2024-backend.vercel.app/api/lessons/get-profile",
+    url: `${process.env.BASE_URL}/api/lessons/get-profile`,
     headers: {
       "Content-Type": "application/json",
     },
@@ -205,8 +207,10 @@ export default function ProgramPreview() {
       const response = await axios.request(profile3Config);
       console.log(JSON.stringify(response.data));
       setReview3Profile(response.data.data);
-      if (response.data.data === '' ) {}
-      else{setShowReview3(true);}
+      if (response.data.data === "") {
+      } else {
+        setShowReview3(true);
+      }
     } catch (error) {
       console.log(error);
     }
@@ -220,7 +224,7 @@ export default function ProgramPreview() {
   const config = {
     method: "post",
     maxBodyLength: Infinity,
-    url: "https://openhouse2024-backend.vercel.app/api/roles/info",
+    url: `${process.env.BASE_URL}/api/roles/info`,
     headers: {
       "Content-Type": "application/json",
     },
@@ -354,15 +358,15 @@ export default function ProgramPreview() {
                 //section1
               }
               <p className="  font-semibold text-transparent bg-clip-text bg-gradient-to-b from-[#7533A8] to-[#D62C9F] font-Thai text-center  text-2xl py-5 block w-full  lg:hidden ">
-              การรับสมัครและการสอบเข้า
+                การรับสมัครและการสอบเข้า
               </p>
               <div className=" flex justify-center gap-3 lg:mt-10">
                 <p className="  font-semibold text-transparent bg-clip-text bg-gradient-to-b from-[#7533A8] to-[#D62C9F] font-Thai text-left min-w-52 text-4xl py-5 hidden lg:block ">
-                การรับสมัคร
+                  การรับสมัคร
                   <p className="  font-semibold text-transparent bg-clip-text bg-gradient-to-b from-[#7533A8] to-[#D62C9F] font-Thai text-left min-w-52 text-2xl  hidden lg:block ">
-                  และการสอบเข้า<ClubStar />
+                    และการสอบเข้า
+                    <ClubStar />
                   </p>
-                  
                 </p>
 
                 <div className=" w-full relative  ">
@@ -376,7 +380,7 @@ export default function ProgramPreview() {
                   </svg>
                   <div className=" absolute  w-full h-full">
                     <p className="  text-center text-[#7533A8] ">
-                    ภาพบรรยากาศในสายการเรียน
+                      ภาพบรรยากาศในสายการเรียน
                     </p>
                   </div>
                   <div className=" absolute w-full top-0">
@@ -398,7 +402,7 @@ export default function ProgramPreview() {
                 //section2
               }
               <p className="  font-semibold text-transparent bg-clip-text bg-gradient-to-b from-[#7533A8] to-[#D62C9F] font-Thai text-center  text-2xl block w-full py-5  lg:hidden ">
-              วิชา/หลักสูตรเพิ่มเติมที่เรียน
+                วิชา/หลักสูตรเพิ่มเติมที่เรียน
               </p>
               <div className=" flex justify-center gap-3 lg:mt-10">
                 <div className=" w-full relative  ">
@@ -412,7 +416,7 @@ export default function ProgramPreview() {
                   </svg>
                   <div className=" absolute left-0  w-full h-full z-20">
                     <p className="  text-center text-[#7533A8] ">
-                    ภาพบรรยากาศในสายการเรียน
+                      ภาพบรรยากาศในสายการเรียน
                     </p>
                   </div>
                   <div className=" absolute w-full top-0 z-10">
@@ -423,11 +427,12 @@ export default function ProgramPreview() {
                   </div>
                 </div>
                 <p className="  font-semibold text-transparent bg-clip-text bg-gradient-to-b from-[#7533A8] to-[#D62C9F] font-Thai text-left min-w-52 text-5xl py-5 hidden lg:block ">
-                วิชา /
-
+                  วิชา /
                   <p className="  font-semibold text-transparent bg-clip-text bg-gradient-to-b from-[#7533A8] to-[#D62C9F] font-Thai text-left min-w-52 text-3xl  hidden lg:block ">
-                  หลักสูตร<br />
-                  เพิ่มเติมที่เรียน<ClubStar />
+                    หลักสูตร
+                    <br />
+                    เพิ่มเติมที่เรียน
+                    <ClubStar />
                   </p>
                 </p>
               </div>
@@ -442,13 +447,15 @@ export default function ProgramPreview() {
                 //section3
               }
               <p className="  font-semibold text-transparent bg-clip-text bg-gradient-to-b from-[#7533A8] to-[#D62C9F] font-Thai text-center  text-2xl block w-full py-5  lg:hidden ">
-              ความน่าสนใจของสายการเรียน
+                ความน่าสนใจของสายการเรียน
               </p>
               <div className=" flex justify-center gap-3 lg:mt-10">
-              <p className="  font-semibold text-transparent bg-clip-text bg-gradient-to-b from-[#7533A8] to-[#D62C9F] font-Thai text-left min-w-52 text-4xl py-5 hidden lg:block ">
-                ความน่าสนใจ
+                <p className="  font-semibold text-transparent bg-clip-text bg-gradient-to-b from-[#7533A8] to-[#D62C9F] font-Thai text-left min-w-52 text-4xl py-5 hidden lg:block ">
+                  ความน่าสนใจ
                   <p className="  font-semibold text-transparent bg-clip-text bg-gradient-to-b from-[#7533A8] to-[#D62C9F] font-Thai text-left min-w-52 text-2xl  hidden lg:block ">
-                    ของสายการเรียน<ClubStar /></p>
+                    ของสายการเรียน
+                    <ClubStar />
+                  </p>
                 </p>
 
                 <div className=" w-full relative  ">
@@ -479,7 +486,6 @@ export default function ProgramPreview() {
                     {interests}
                   </p>
                 </div>
-
               </div>
 
               {
@@ -659,7 +665,13 @@ export default function ProgramPreview() {
               <ClubFlower />
             </div>
 
-            <div className={showReview2 ?" absolute left-0 top-[2500px] block z-0" : " hidden"}>
+            <div
+              className={
+                showReview2
+                  ? " absolute left-0 top-[2500px] block z-0"
+                  : " hidden"
+              }
+            >
               <ClubCrystal2 />
             </div>
           </div>

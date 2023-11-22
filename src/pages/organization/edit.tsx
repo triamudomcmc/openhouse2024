@@ -87,7 +87,7 @@ export default function OrganizationEdit() {
 
   const router = useRouter();
 
-  const { data: session,status } = useSession({
+  const { data: session, status } = useSession({
     required: true,
     onUnauthenticated() {
       router.push("/Login"); // The user is not authenticated, handle it here.
@@ -115,13 +115,13 @@ export default function OrganizationEdit() {
     "review_3.gen": review3Gen,
     "review_3.contact": review3Contact,
     "review_3.review": review3,
-    environmentKeys : process.env.ENVIRONMENT_KEY,
+    environmentKeys: process.env.ENVIRONMENT_KEY,
   });
 
   let configEdit = {
     method: "post",
     maxBodyLength: Infinity,
-    url: "https://openhouse2024-backend.vercel.app/api/organization/edit",
+    url: `${process.env.BASE_URL}/api/organization/edit`,
     headers: {
       "Content-Type": "application/json",
     },
@@ -132,17 +132,28 @@ export default function OrganizationEdit() {
     try {
       const response = await axios.request(configEdit);
       console.log(JSON.stringify(response.data));
-      toast.success(<><p>success</p><p>ระบบได้บันทึกข้อมูลของท่านแล้ว</p></>, {
-        position: toast.POSITION.BOTTOM_RIGHT,
-        theme : "colored"
-      });
+      toast.success(
+        <>
+          <p>success</p>
+          <p>ระบบได้บันทึกข้อมูลของท่านแล้ว</p>
+        </>,
+        {
+          position: toast.POSITION.BOTTOM_RIGHT,
+          theme: "colored",
+        }
+      );
     } catch (error) {
       console.log(error);
-      toast.error(<><p>ERORR!!</p><p>โปรดตรวจสอบข้อมูลและบัญชีให้ถูกต้อง</p></>, {
-        position: toast.POSITION.BOTTOM_RIGHT,
-        theme : "colored",
-
-      });
+      toast.error(
+        <>
+          <p>ERORR!!</p>
+          <p>โปรดตรวจสอบข้อมูลและบัญชีให้ถูกต้อง</p>
+        </>,
+        {
+          position: toast.POSITION.BOTTOM_RIGHT,
+          theme: "colored",
+        }
+      );
     }
   }
 
@@ -151,12 +162,12 @@ export default function OrganizationEdit() {
     image1Data.append("file", image1File);
     image1Data.append("email", session?.user?.email);
     image1Data.append("imageType", "image1");
-    image1Data.append("environmentKeys" , process.env.ENVIRONMENT_KEY)
+    image1Data.append("environmentKeys", process.env.ENVIRONMENT_KEY);
 
     let image1Config = {
       method: "post",
       maxBodyLength: Infinity,
-      url: "https://openhouse2024-backend.vercel.app/api/organization/upload-image",
+      url: `${process.env.BASE_URL}/api/organization/upload-image`,
       headers: {
         "Content-Type": "multipart/form-data",
       },
@@ -178,12 +189,12 @@ export default function OrganizationEdit() {
     image2Data.append("file", image2File);
     image2Data.append("email", session?.user?.email);
     image2Data.append("imageType", "image2");
-    image2Data.append("environmentKeys" , process.env.ENVIRONMENT_KEY)
+    image2Data.append("environmentKeys", process.env.ENVIRONMENT_KEY);
 
     let image2Config = {
       method: "post",
       maxBodyLength: Infinity,
-      url: "https://openhouse2024-backend.vercel.app/api/organization/upload-image",
+      url: `${process.env.BASE_URL}/api/organization/upload-image`,
       headers: {
         "Content-Type": "multipart/form-data",
       },
@@ -205,12 +216,12 @@ export default function OrganizationEdit() {
     image3Data.append("file", image3File);
     image3Data.append("email", session?.user?.email);
     image3Data.append("imageType", "image3");
-    image3Data.append("environmentKeys" , process.env.ENVIRONMENT_KEY)
+    image3Data.append("environmentKeys", process.env.ENVIRONMENT_KEY);
 
     let image3Config = {
       method: "post",
       maxBodyLength: Infinity,
-      url: "https://openhouse2024-backend.vercel.app/api/organization/upload-image",
+      url: `${process.env.BASE_URL}/api/organization/upload-image`,
       headers: {
         "Content-Type": "multipart/form-data",
       },
@@ -232,12 +243,12 @@ export default function OrganizationEdit() {
     ReviewProfile1Data.append("file", review1ProfileFile);
     ReviewProfile1Data.append("email", session?.user?.email);
     ReviewProfile1Data.append("imgprofileType", "imgprofile1");
-    ReviewProfile1Data.append("environmentKeys" , process.env.ENVIRONMENT_KEY)
+    ReviewProfile1Data.append("environmentKeys", process.env.ENVIRONMENT_KEY);
 
     let ReviewProfile1Config = {
       method: "post",
       maxBodyLength: Infinity,
-      url: "https://openhouse2024-backend.vercel.app/api/organization/upload-profile",
+      url: `${process.env.BASE_URL}/api/organization/upload-profile`,
       headers: {
         "Content-Type": "multipart/form-data",
       },
@@ -259,12 +270,12 @@ export default function OrganizationEdit() {
     ReviewProfile2Data.append("file", review2ProfileFile);
     ReviewProfile2Data.append("email", session?.user?.email);
     ReviewProfile2Data.append("imgprofileType", "imgprofile2");
-    ReviewProfile2Data.append("environmentKeys" , process.env.ENVIRONMENT_KEY)
+    ReviewProfile2Data.append("environmentKeys", process.env.ENVIRONMENT_KEY);
 
     let ReviewProfile2Config = {
       method: "post",
       maxBodyLength: Infinity,
-      url: "https://openhouse2024-backend.vercel.app/api/organization/upload-profile",
+      url: `${process.env.BASE_URL}/api/organization/upload-profile`,
       headers: {
         "Content-Type": "multipart/form-data",
       },
@@ -286,12 +297,12 @@ export default function OrganizationEdit() {
     ReviewProfile3Data.append("file", review3ProfileFile);
     ReviewProfile3Data.append("email", session?.user?.email);
     ReviewProfile3Data.append("imgprofileType", "imgprofile3");
-    ReviewProfile3Data.append("environmentKeys" , process.env.ENVIRONMENT_KEY)
+    ReviewProfile3Data.append("environmentKeys", process.env.ENVIRONMENT_KEY);
 
     let ReviewProfile3Config = {
       method: "post",
       maxBodyLength: Infinity,
-      url: "https://openhouse2024-backend.vercel.app/api/organization/upload-profile",
+      url: `${process.env.BASE_URL}/api/organization/upload-profile`,
       headers: {
         "Content-Type": "multipart/form-data",
       },
@@ -315,7 +326,7 @@ export default function OrganizationEdit() {
   const config = {
     method: "post",
     maxBodyLength: Infinity,
-    url: "https://openhouse2024-backend.vercel.app/api/roles/info",
+    url: `${process.env.BASE_URL}/api/roles/info`,
     headers: {
       "Content-Type": "application/json",
     },
@@ -667,7 +678,7 @@ export default function OrganizationEdit() {
             </div>
 
             <div className=" w-full flex  justify-center gap-2 mt-5 ">
-            <div className=" relative z-0 min-w-[200px] flex justify-end">
+              <div className=" relative z-0 min-w-[200px] flex justify-end">
                 <div className=" hidden md:flex">
                   <UserIcon />
                 </div>
@@ -781,15 +792,15 @@ export default function OrganizationEdit() {
               //section1
             }
             <p className="  font-semibold text-transparent bg-clip-text bg-gradient-to-b from-[#7533A8] to-[#D62C9F] font-Thai text-center  text-2xl py-5 block w-full  lg:hidden ">
-            องค์กรนี้ทำอะไร ?
-              </p>
-              <div className=" flex justify-center gap-3">
-                <p className="  font-semibold text-transparent bg-clip-text bg-gradient-to-b from-[#7533A8] to-[#D62C9F] font-Thai text-right min-w-52 text-4xl py-5 hidden lg:block ">
+              องค์กรนี้ทำอะไร ?
+            </p>
+            <div className=" flex justify-center gap-3">
+              <p className="  font-semibold text-transparent bg-clip-text bg-gradient-to-b from-[#7533A8] to-[#D62C9F] font-Thai text-right min-w-52 text-4xl py-5 hidden lg:block ">
                 องค์กรนี้
-                  <p className="  font-semibold text-transparent bg-clip-text bg-gradient-to-b from-[#7533A8] to-[#D62C9F] font-Thai text-right min-w-52 text-2xl  hidden lg:block ">
+                <p className="  font-semibold text-transparent bg-clip-text bg-gradient-to-b from-[#7533A8] to-[#D62C9F] font-Thai text-right min-w-52 text-2xl  hidden lg:block ">
                   ทำอะไร
-                  </p>
                 </p>
+              </p>
 
               <div className=" w-auto relative  ">
                 <svg
@@ -831,7 +842,7 @@ export default function OrganizationEdit() {
                     />
                   </label>
                   <p className="  text-center text-[#7533A8] ">
-                  ภาพบรรยากาศในองค์กร
+                    ภาพบรรยากาศในองค์กร
                   </p>
                 </div>
                 <div className=" absolute w-full top-0">
@@ -843,44 +854,44 @@ export default function OrganizationEdit() {
               </div>
             </div>
             <div className=" flex justify-center mt-10">
-                <div className=" w-full  justify-center hidden md:block">
-                  <textarea
-                    className=" text-[#582A88]  text-lg break-words border-2 font-Thai  md:w-full sm:w-[300px]   h-72  bg-transparent align-top resize-none "
-                    ref={organizationdoRef}
-                    value={organizationdo}
-                    onClick={turnOnOrganizationdoEditMode}
-                    defaultValue=""
-                    onBlur={() => setOrganizationdoEditMode(false)}
-                    onChange={handleOrganizationdoChange}
-                  ></textarea>
-                  <div className=" flex justify-center">
-                    <button className="  " onClick={turnOnOrganizationdoEditMode}>
-                      <PencilIcon />
-                    </button>
-                  </div>
-                </div>
-                <div className=" w-full  justify-center flex md:hidden">
-                  <textarea
-                    className=" text-[#582A88]  text-lg break-words border-2 font-Thai  md:w-full sm:w-[300px]   h-72 bg-transparent align-top resize-none "
-                    ref={organizationdoRef}
-                    value={organizationdo}
-                    onClick={turnOnOrganizationdoEditMode}
-                    defaultValue=""
-                    onBlur={() => setOrganizationdoEditMode(false)}
-                    onChange={handleOrganizationdoChange}
-                  ></textarea>
-                  <div className=" flex justify-center">
-                    <button className="  " onClick={turnOnOrganizationdoEditMode}>
-                      <PencilIcon />
-                    </button>
-                  </div>
+              <div className=" w-full  justify-center hidden md:block">
+                <textarea
+                  className=" text-[#582A88]  text-lg break-words border-2 font-Thai  md:w-full sm:w-[300px]   h-72  bg-transparent align-top resize-none "
+                  ref={organizationdoRef}
+                  value={organizationdo}
+                  onClick={turnOnOrganizationdoEditMode}
+                  defaultValue=""
+                  onBlur={() => setOrganizationdoEditMode(false)}
+                  onChange={handleOrganizationdoChange}
+                ></textarea>
+                <div className=" flex justify-center">
+                  <button className="  " onClick={turnOnOrganizationdoEditMode}>
+                    <PencilIcon />
+                  </button>
                 </div>
               </div>
+              <div className=" w-full  justify-center flex md:hidden">
+                <textarea
+                  className=" text-[#582A88]  text-lg break-words border-2 font-Thai  md:w-full sm:w-[300px]   h-72 bg-transparent align-top resize-none "
+                  ref={organizationdoRef}
+                  value={organizationdo}
+                  onClick={turnOnOrganizationdoEditMode}
+                  defaultValue=""
+                  onBlur={() => setOrganizationdoEditMode(false)}
+                  onChange={handleOrganizationdoChange}
+                ></textarea>
+                <div className=" flex justify-center">
+                  <button className="  " onClick={turnOnOrganizationdoEditMode}>
+                    <PencilIcon />
+                  </button>
+                </div>
+              </div>
+            </div>
             {
               //section2
             }
             <p className="  font-semibold text-transparent bg-clip-text bg-gradient-to-b from-[#7533A8] to-[#D62C9F] font-Thai text-center  text-2xl block w-full py-5  lg:hidden ">
-            ตำแหน่ง/หน้าที่
+              ตำแหน่ง/หน้าที่
             </p>
             <div className=" flex justify-center gap-3 lg:mt-10">
               <div className=" w-auto relative  ">
@@ -923,7 +934,7 @@ export default function OrganizationEdit() {
                     />
                   </label>
                   <p className="  text-center text-[#7533A8] ">
-                  ภาพบรรยากาศในองค์กร
+                    ภาพบรรยากาศในองค์กร
                   </p>
                 </div>
                 <div className=" absolute w-full top-0 z-10">
@@ -934,58 +945,58 @@ export default function OrganizationEdit() {
                 </div>
               </div>
               <p className="  font-semibold text-transparent bg-clip-text bg-gradient-to-b from-[#7533A8] to-[#D62C9F] font-Thai text-left min-w-52 text-5xl py-5 hidden lg:block ">
-              ตำแหน่ง
-                  <p className="  font-semibold text-transparent bg-clip-text bg-gradient-to-b from-[#7533A8] to-[#D62C9F] font-Thai text-left min-w-52 text-3xl  hidden lg:block ">
+                ตำแหน่ง
+                <p className="  font-semibold text-transparent bg-clip-text bg-gradient-to-b from-[#7533A8] to-[#D62C9F] font-Thai text-left min-w-52 text-3xl  hidden lg:block ">
                   /หน้าที่
-                  </p>
                 </p>
+              </p>
             </div>
             <div className=" flex justify-center mt-10">
-            <div className=" w-full  justify-center hidden md:block">
-                  <textarea
-                    className=" text-[#582A88]  text-lg break-words border-2 font-Thai  md:w-full sm:w-[300px]   h-72  bg-transparent align-top resize-none "
-                    ref={positionRef}
+              <div className=" w-full  justify-center hidden md:block">
+                <textarea
+                  className=" text-[#582A88]  text-lg break-words border-2 font-Thai  md:w-full sm:w-[300px]   h-72  bg-transparent align-top resize-none "
+                  ref={positionRef}
                   value={position}
                   onClick={turnOnPositionEditMode}
                   defaultValue=""
                   onBlur={() => setPositionEditMode(false)}
                   onChange={handlePositionChange}
-                  ></textarea>
-                  <div className=" flex justify-center">
-                    <button className="  " onClick={turnOnPositionEditMode}>
-                      <PencilIcon />
-                    </button>
-                  </div>
+                ></textarea>
+                <div className=" flex justify-center">
+                  <button className="  " onClick={turnOnPositionEditMode}>
+                    <PencilIcon />
+                  </button>
                 </div>
-                <div className=" w-full  justify-center flex md:hidden">
-                  <textarea
-                    className=" text-[#582A88]  text-lg break-words border-2 font-Thai  md:w-full sm:w-[300px]   h-72 bg-transparent align-top resize-none "
-                    ref={positionRef}
-                    value={position}
-                    onClick={turnOnPositionEditMode}
-                    defaultValue=""
-                    onBlur={() => setPositionEditMode(false)}
-                    onChange={handlePositionChange}
-                  ></textarea>
-                  <div className=" flex justify-center">
-                    <button className="  " onClick={turnOnPositionEditMode}>
-                      <PencilIcon />
-                    </button>
-                  </div>
+              </div>
+              <div className=" w-full  justify-center flex md:hidden">
+                <textarea
+                  className=" text-[#582A88]  text-lg break-words border-2 font-Thai  md:w-full sm:w-[300px]   h-72 bg-transparent align-top resize-none "
+                  ref={positionRef}
+                  value={position}
+                  onClick={turnOnPositionEditMode}
+                  defaultValue=""
+                  onBlur={() => setPositionEditMode(false)}
+                  onChange={handlePositionChange}
+                ></textarea>
+                <div className=" flex justify-center">
+                  <button className="  " onClick={turnOnPositionEditMode}>
+                    <PencilIcon />
+                  </button>
                 </div>
+              </div>
             </div>
             {
               //section3
             }
             <p className="  font-semibold text-transparent bg-clip-text bg-gradient-to-b from-[#7533A8] to-[#D62C9F] font-Thai text-center  text-3xl block w-full py-5  lg:hidden ">
-            ผลงานขององค์กร
+              ผลงานขององค์กร
             </p>
             <div className=" flex justify-center gap-3 lg:mt-10">
-            <p className="  font-semibold text-transparent bg-clip-text bg-gradient-to-b from-[#7533A8] to-[#D62C9F] font-Thai text-right min-w-52 text-4xl py-5 hidden lg:block ">
-            ผลงาน<br />
-            ขององค์กร 
-                
-                </p>
+              <p className="  font-semibold text-transparent bg-clip-text bg-gradient-to-b from-[#7533A8] to-[#D62C9F] font-Thai text-right min-w-52 text-4xl py-5 hidden lg:block ">
+                ผลงาน
+                <br />
+                ขององค์กร
+              </p>
 
               <div className=" w-auto relative  ">
                 <svg
@@ -1027,7 +1038,7 @@ export default function OrganizationEdit() {
                     />
                   </label>
                   <p className="  text-center text-[#7533A8] ">
-                  ภาพบรรยากาศในองค์กร
+                    ภาพบรรยากาศในองค์กร
                   </p>
                 </div>
                 <div className=" absolute w-full top-0">
@@ -1039,38 +1050,38 @@ export default function OrganizationEdit() {
               </div>
             </div>
             <div className=" flex justify-center mt-10">
-            <div className=" w-full  justify-center hidden md:block">
-                  <textarea
-                    className=" text-[#582A88]  text-lg break-words border-2 font-Thai  md:w-full sm:w-[300px]   h-72  bg-transparent align-top resize-none "
-                    ref={workingRef}
-                    value={working}
-                    onClick={turnOnWorkingEditMode}
-                    defaultValue=""
-                    onBlur={() => setWorkingEditMode(false)}
-                    onChange={handleWorkingChange}
-                  ></textarea>
-                  <div className=" flex justify-center">
-                    <button className="  " onClick={turnOnWorkingEditMode}>
-                      <PencilIcon />
-                    </button>
-                  </div>
+              <div className=" w-full  justify-center hidden md:block">
+                <textarea
+                  className=" text-[#582A88]  text-lg break-words border-2 font-Thai  md:w-full sm:w-[300px]   h-72  bg-transparent align-top resize-none "
+                  ref={workingRef}
+                  value={working}
+                  onClick={turnOnWorkingEditMode}
+                  defaultValue=""
+                  onBlur={() => setWorkingEditMode(false)}
+                  onChange={handleWorkingChange}
+                ></textarea>
+                <div className=" flex justify-center">
+                  <button className="  " onClick={turnOnWorkingEditMode}>
+                    <PencilIcon />
+                  </button>
                 </div>
-                <div className=" w-full  justify-center flex md:hidden">
-                  <textarea
-                    className=" text-[#582A88]  text-lg break-words border-2 font-Thai  md:w-full sm:w-[300px]   h-72 bg-transparent align-top resize-none "
-                    ref={workingRef}
-                    value={working}
-                    onClick={turnOnWorkingEditMode}
-                    defaultValue=""
-                    onBlur={() => setWorkingEditMode(false)}
-                    onChange={handleWorkingChange}
-                  ></textarea>
-                  <div className=" flex justify-center">
-                    <button className="  " onClick={turnOnWorkingEditMode}>
-                      <PencilIcon />
-                    </button>
-                  </div>
+              </div>
+              <div className=" w-full  justify-center flex md:hidden">
+                <textarea
+                  className=" text-[#582A88]  text-lg break-words border-2 font-Thai  md:w-full sm:w-[300px]   h-72 bg-transparent align-top resize-none "
+                  ref={workingRef}
+                  value={working}
+                  onClick={turnOnWorkingEditMode}
+                  defaultValue=""
+                  onBlur={() => setWorkingEditMode(false)}
+                  onChange={handleWorkingChange}
+                ></textarea>
+                <div className=" flex justify-center">
+                  <button className="  " onClick={turnOnWorkingEditMode}>
+                    <PencilIcon />
+                  </button>
                 </div>
+              </div>
             </div>
 
             {
@@ -1210,7 +1221,13 @@ export default function OrganizationEdit() {
               {
                 //review2
               }
-              <div className={review2On ? " md:w-full w-[calc(100dvw)] left-1/2  -translate-x-1/2 relative mt-10" : "hidden"}>
+              <div
+                className={
+                  review2On
+                    ? " md:w-full w-[calc(100dvw)] left-1/2  -translate-x-1/2 relative mt-10"
+                    : "hidden"
+                }
+              >
                 <ReviewCardLineR />
                 <div className=" absolute top-0 mt-5 md:right-5 sm:right-2 h-full justify-end ">
                   <div className=" flex justify-end">
@@ -1352,7 +1369,13 @@ export default function OrganizationEdit() {
               {
                 //review3
               }
-              <div className={review3On ? " md:w-full w-[calc(100dvw)] left-1/2  -translate-x-1/2 relative" : "hidden"}>
+              <div
+                className={
+                  review3On
+                    ? " md:w-full w-[calc(100dvw)] left-1/2  -translate-x-1/2 relative"
+                    : "hidden"
+                }
+              >
                 <ReviewCardLine />
                 <div className=" absolute top-0 mt-5 md:left-5 sm:left-2 h-full ">
                   <svg

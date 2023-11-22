@@ -65,7 +65,7 @@ export default function ClubPreview() {
   let image1Config = {
     method: "post",
     maxBodyLength: Infinity,
-    url: "https://openhouse2024-backend.vercel.app/api/clubs/get-image",
+    url: `${process.env.BASE_URL}/api/clubs/get-image`,
     headers: {
       "Content-Type": "application/json",
     },
@@ -90,7 +90,7 @@ export default function ClubPreview() {
   let image2Config = {
     method: "post",
     maxBodyLength: Infinity,
-    url: "https://openhouse2024-backend.vercel.app/api/clubs/get-image",
+    url: `${process.env.BASE_URL}/api/clubs/get-image`,
     headers: {
       "Content-Type": "application/json",
     },
@@ -115,7 +115,7 @@ export default function ClubPreview() {
   let image3Config = {
     method: "post",
     maxBodyLength: Infinity,
-    url: "https://openhouse2024-backend.vercel.app/api/clubs/get-image",
+    url: `${process.env.BASE_URL}/api/clubs/get-image`,
     headers: {
       "Content-Type": "application/json",
     },
@@ -140,7 +140,7 @@ export default function ClubPreview() {
   let profile1Config = {
     method: "post",
     maxBodyLength: Infinity,
-    url: "https://openhouse2024-backend.vercel.app/api/clubs/get-profile",
+    url: `${process.env.BASE_URL}/api/clubs/get-profile`,
     headers: {
       "Content-Type": "application/json",
     },
@@ -166,7 +166,7 @@ export default function ClubPreview() {
   let profile2Config = {
     method: "post",
     maxBodyLength: Infinity,
-    url: "https://openhouse2024-backend.vercel.app/api/clubs/get-profile",
+    url: `${process.env.BASE_URL}/api/clubs/get-profile`,
     headers: {
       "Content-Type": "application/json",
     },
@@ -194,7 +194,7 @@ export default function ClubPreview() {
   let profile3Config = {
     method: "post",
     maxBodyLength: Infinity,
-    url: "https://openhouse2024-backend.vercel.app/api/clubs/get-profile",
+    url: `${process.env.BASE_URL}/api/clubs/get-profile`,
     headers: {
       "Content-Type": "application/json",
     },
@@ -221,7 +221,7 @@ export default function ClubPreview() {
   const config = {
     method: "post",
     maxBodyLength: Infinity,
-    url: "https://openhouse2024-backend.vercel.app/api/roles/info",
+    url: `${process.env.BASE_URL}/api/roles/info`,
     headers: {
       "Content-Type": "application/json",
     },
