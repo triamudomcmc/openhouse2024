@@ -336,7 +336,7 @@ export default function ProgramPreview() {
                   </svg>
                 </div>
 
-                <div className=" md:w-[200px] w-[150px]">
+                <div className=" md:w-[200px] w-[150px] overflow-x-auto overflow-y-hidden">
                   <p className=" flex text-[#8133A7] md:w-[200px] w-[150px] text-xl font-Thai ">
                     {" "}
                     IG:{ig}
@@ -526,14 +526,14 @@ export default function ProgramPreview() {
                         เตรียมอุดม {review1Gen}
                       </p>
                       <div className=" flex">
-                        <p className=" sm:h-4 md:h-6 md:w-[148px] items-center w-[100px] text-[#291A54] sm:text-sm md:text-base bg-transparent font-Thai">
+                        <p className=" sm:h-4 md:h-6 md:w-[148px] items-center w-[100px] text-[#291A54] sm:text-sm md:text-base bg-transparent font-Thai overflow-y-hidden overflow-x-scroll">
                           {review1Contact}
                         </p>
                       </div>
                     </div>
                   </div>
                   <div className=" absolute w-full top-5 h-3/4 right-0 flex justify-end">
-                    <p className=" text-white  text-md break-words font-Thai md:mr-10 sm:mr-5   w-3/5  h-full   bg-transparent align-top resize-none whitespace-pre-line">
+                    <p className=" text-white  text-md break-words font-Thai md:mr-10 sm:mr-5   w-3/5  h-full   bg-transparent align-top resize-none whitespace-pre-line overflow-scroll">
                       {review1}
                     </p>
                   </div>
@@ -577,7 +577,7 @@ export default function ProgramPreview() {
                         เตรียมอุดม {review2Gen}
                       </p>
                       <div className=" flex">
-                        <p className=" sm:h-4 md:h-6 md:w-[148px] items-center w-[100px] text-[#291A54] sm:text-sm md:text-base bg-transparent font-Thai text-right">
+                        <p className=" sm:h-4 md:h-6 md:w-[148px] items-center w-[100px] text-[#291A54] sm:text-sm md:text-base bg-transparent font-Thai text-right overflow-y-hidden overflow-x-scroll">
                           {review2Contact}
                         </p>
                       </div>
@@ -585,7 +585,7 @@ export default function ProgramPreview() {
                   </div>
                   <div className=" absolute w-full top-5 h-3/4 left-0 flex justify-start">
                     <textarea
-                      className=" text-white  text-md break-words font-Thai md:ml-10 sm:ml-5   w-3/5  h-full  bg-transparent align-top resize-none whitespace-pre-line"
+                      className=" text-white  text-md break-words font-Thai md:ml-10 sm:ml-5   w-3/5  h-full  bg-transparent align-top resize-none whitespace-pre-line overflow-scroll"
                       value={review2}
                     ></textarea>
                   </div>
@@ -627,14 +627,14 @@ export default function ProgramPreview() {
                         เตรียมอุดม {review3Gen}
                       </p>
                       <div className=" flex">
-                        <p className=" sm:h-4 md:h-6 md:w-[148px] items-center w-[100px] text-[#291A54] sm:text-sm md:text-base bg-transparent font-Thai">
+                        <p className=" sm:h-4 md:h-6 md:w-[148px] items-center w-[100px] text-[#291A54] sm:text-sm md:text-base bg-transparent font-Thai overflow-y-hidden overflow-x-scroll">
                           {review3Contact}
                         </p>
                       </div>
                     </div>
                   </div>
                   <div className=" absolute w-full top-5 h-3/4 right-0 flex justify-end">
-                    <p className=" text-white  text-md break-words font-Thai md:mr-10 sm:mr-5   w-3/5  h-full  bg-transparent align-top resize-none whitespace-pre-line">
+                    <p className=" text-white  text-md break-words font-Thai md:mr-10 sm:mr-5   w-3/5  h-full  bg-transparent align-top resize-none whitespace-pre-line overflow-scroll">
                       {review3}
                     </p>
                   </div>
