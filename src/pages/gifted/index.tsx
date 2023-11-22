@@ -31,7 +31,7 @@ export default function Gifted() {
   let config = {
     method: "post",
     maxBodyLength: Infinity,
-    url: `${process.env.BASE_URL}/api/roles/info`,
+    url: `https://openhouse2024-backend.vercel.app/api/roles/info`,
     headers: {
       "Content-Type": "application/json",
     },
