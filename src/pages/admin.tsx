@@ -96,7 +96,7 @@ export default function Adminpanel() {
   let config = {
     method: "post",
     maxBodyLength: Infinity,
-    url: `${process.env.BASE_URL}/api/admin/pendings`,
+    url: `https://openhouse2024-backend.vercel.app/api/admin/pendings`,
     headers: {
       "Content-Type": "application/json",
     },
@@ -123,7 +123,7 @@ export default function Adminpanel() {
 
     // Define the API endpoint where you want to send the data
     const apiEndpoint =
-      `${process.env.BASE_URL}/api/admin/approve`;
+      `https://openhouse2024-backend.vercel.app/api/admin/approve`;
 
     // Define the data you want to send (assuming JSON data)
     const postData = {

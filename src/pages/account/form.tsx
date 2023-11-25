@@ -110,7 +110,7 @@ export default function Form() {
   let config = {
     method: "post",
     maxBodyLength: Infinity,
-    url: `${process.env.BASE_URL}/api/roles/record`,
+    url: `https://openhouse2024-backend.vercel.app/api/roles/record`,
     headers: {
       "Content-Type": "application/json",
     },
@@ -139,7 +139,7 @@ export default function Form() {
   let clubconfig = {
     method: "get",
     maxBodyLength: Infinity,
-    url: `${process.env.BASE_URL}/api/clubs/lists`,
+    url: `https://openhouse2024-backend.vercel.app/api/clubs/lists`,
     headers: {},
   };
 
