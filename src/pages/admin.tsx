@@ -167,7 +167,7 @@ export default function Adminpanel() {
 
     // Define the API endpoint where you want to send the data
     const apiEndpoint =
-      `${process.env.BASE_URL}/api/admin/decline"`
+      `https://openhouse2024-backend.vercel.app/api/admin/decline"`
 
     // Define the data you want to send (assuming JSON data)
     const postData = {
