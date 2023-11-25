@@ -602,7 +602,6 @@ export default function ProgramEdit() {
 
 
   function summit() {
-    EditRequest();
     logoRequest();
     image1Request();
     image2Request();
@@ -610,6 +609,7 @@ export default function ProgramEdit() {
     ReviewProfile1Request();
     ReviewProfile2Request();
     ReviewProfile3Request();
+    setTimeout(() => {EditRequest()}, 10000)
   }
 
   function turnOnMemberEditMode() {

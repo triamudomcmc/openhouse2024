@@ -557,13 +557,13 @@ export default function OrganizationEdit() {
 
 
   function summit() {
-    EditRequest();
     image1Request();
     image2Request();
     image3Request();
     ReviewProfile1Request();
     ReviewProfile2Request();
     ReviewProfile3Request();
+    setTimeout(() => {EditRequest()}, 10000)
   }
 
   function turnOnMemberEditMode() {
