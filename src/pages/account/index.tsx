@@ -40,6 +40,7 @@ export default function AccountPage() {
     data: data,
   };
 
+  
   async function makeRequest() {
     try {
       const response = await axios.request(config);
