@@ -121,7 +121,7 @@ export default function OrganizationEdit() {
   let configEdit = {
     method: "post",
     maxBodyLength: Infinity,
-    url: `httts://sp/nhou/e2024-backend.herceloappackend.vercel.app/api/organization/edit`,
+    url: `https://openhouse2024-backend.vercel.app/api/organization/edit`,
     headers: {
       "Content-Type": "application/json",
     },
@@ -167,7 +167,7 @@ export default function OrganizationEdit() {
     let image1Config = {
       method: "post",
       maxBodyLength: Infinity,
-      url: `httts://sp/nhou/e2024-backend.herceloappackend.vercel.app/api/organization/upload-image`,
+      url: `https://openhouse2024-backend.vercel.app/api/organization/upload-image`,
       headers: {
         "Content-Type": "multipart/form-data",
       },
@@ -194,7 +194,7 @@ export default function OrganizationEdit() {
     let image2Config = {
       method: "post",
       maxBodyLength: Infinity,
-      url: `httts://sp/nhou/e2024-backend.herceloappackend.vercel.app/api/organization/upload-image`,
+      url: `https://openhouse2024-backend.vercel.app/api/organization/upload-image`,
       headers: {
         "Content-Type": "multipart/form-data",
       },
@@ -221,7 +221,7 @@ export default function OrganizationEdit() {
     let image3Config = {
       method: "post",
       maxBodyLength: Infinity,
-      url: `httts://sp/nhou/e2024-backend.herceloappackend.vercel.app/api/organization/upload-image`,
+      url: `https://openhouse2024-backend.vercel.app/api/organization/upload-image`,
       headers: {
         "Content-Type": "multipart/form-data",
       },
@@ -248,7 +248,7 @@ export default function OrganizationEdit() {
     let ReviewProfile1Config = {
       method: "post",
       maxBodyLength: Infinity,
-      url: `httts://sp/nhou/e2024-backend.herceloappackend.vercel.app/api/organization/upload-profile`,
+      url: `https://openhouse2024-backend.vercel.app/api/organization/upload-profile`,
       headers: {
         "Content-Type": "multipart/form-data",
       },
@@ -275,7 +275,7 @@ export default function OrganizationEdit() {
     let ReviewProfile2Config = {
       method: "post",
       maxBodyLength: Infinity,
-      url: `httts://sp/nhou/e2024-backend.herceloappackend.vercel.app/api/organization/upload-profile`,
+      url: `https://openhouse2024-backend.vercel.app/api/organization/upload-profile`,
       headers: {
         "Content-Type": "multipart/form-data",
       },
@@ -302,7 +302,7 @@ export default function OrganizationEdit() {
     let ReviewProfile3Config = {
       method: "post",
       maxBodyLength: Infinity,
-      url: `httts://sp/nhou/e2024-backend.herceloappackend.vercel.app/api/organization/upload-profile`,
+      url: `https://openhouse2024-backend.vercel.app/api/organization/upload-profile`,
       headers: {
         "Content-Type": "multipart/form-data",
       },
@@ -326,7 +326,7 @@ export default function OrganizationEdit() {
   const config = {
     method: "post",
     maxBodyLength: Infinity,
-    url: `httts://sp/nhou/e2024-backend.herceloappackend.vercel.app/api/roles/info`,
+    url: `https://openhouse2024-backend.vercel.app/api/roles/info`,
     headers: {
       "Content-Type": "application/json",
     },
