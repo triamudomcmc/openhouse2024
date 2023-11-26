@@ -494,7 +494,7 @@ export default function ProgramPreview() {
               {
                 //review1
               }
-              <div className=" md:w-full sm:w-[90%]  mt-10 bg-gradient-to-b from-[#112881]/[.90] to-[#8E297A]/[.50] mx-auto  flex p-4 rounded-3xl min-h-30 gap-4">
+              <div className=" md:w-full sm:w-[90%]  mt-10 bg-gradient-to-b from-[#112881]/[.90] to-[#8E297A]/[.50] mx-auto  flex p-4 rounded-3xl min-h-30 gap-5">
                 <div className=" relative z-10  min-w-[30%] w-[30%] md:min-w-[25%] md:w-[25%] lg:min-w-[20%] lg:w-[20%] ">
                   <svg
                     className="block w-full"
@@ -530,6 +530,22 @@ export default function ProgramPreview() {
                     </div>
                   </div>
                 </div>
+                <div className="w-[10px] min-w-[5px]">
+                  <svg
+                    width="100%"
+                    viewBox="0 0 10 318"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M5 5L4.99999 313"
+                      stroke="white"
+                      stroke-width="10"
+                      stroke-linecap="round"
+                      stroke-dasharray="20 20"
+                    />
+                  </svg>
+                </div>
                 <div className=" flex  justify-center ">
                   <p className=" text-white  text-md break-all font-Thai  w-full   bg-transparent align-top resize-none whitespace-pre-line  ">
                     {review1}
@@ -543,7 +559,7 @@ export default function ProgramPreview() {
               <div
                 className={
                   showReview2
-                    ? " md:w-full sm:w-[90%]  mt-10 bg-gradient-to-b from-[#112881]/[.90] to-[#8E297A]/[.50] mx-auto  flex p-4 rounded-3xl min-h-30 gap-4 justify-center "
+                    ? " md:w-full sm:w-[90%]  mt-10 bg-gradient-to-b from-[#112881]/[.90] to-[#8E297A]/[.50] mx-auto  flex p-4 rounded-3xl min-h-30 gap-5 justify-center "
                     : " hidden"
                 }
               >
@@ -551,6 +567,23 @@ export default function ProgramPreview() {
                   <p className=" text-white  text-md break-all font-Thai     bg-transparent align-top resize-none whitespace-pre-line  ">
                     {review2}
                   </p>
+                </div>
+                
+                <div className="w-[10px] min-w-[5px]">
+                  <svg
+                    width="100%"
+                    viewBox="0 0 10 318"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M5 5L4.99999 313"
+                      stroke="white"
+                      stroke-width="10"
+                      stroke-linecap="round"
+                      stroke-dasharray="20 20"
+                    />
+                  </svg>
                 </div>
                 <div className=" relative z-10  min-w-[30%] w-[30%] md:min-w-[25%] md:w-[25%] lg:min-w-[20%] lg:w-[20%]">
                   <div className=" flex justify-end ">
@@ -595,7 +628,7 @@ export default function ProgramPreview() {
               <div
                 className={
                   showReview3
-                    ? " md:w-full sm:w-[90%]  mt-10 bg-gradient-to-b from-[#112881]/[.90] to-[#8E297A]/[.50] mx-auto  flex p-4 rounded-3xl min-h-30 gap-4"
+                    ? " md:w-full sm:w-[90%]  mt-10 bg-gradient-to-b from-[#112881]/[.90] to-[#8E297A]/[.50] mx-auto  flex p-4 rounded-3xl min-h-30 gap-5"
                     : "hidden"
                 }
               >
@@ -633,6 +666,22 @@ export default function ProgramPreview() {
                       </p>
                     </div>
                   </div>
+                </div>
+                <div className="w-[10px] min-w-[5px]">
+                  <svg
+                    width="100%"
+                    viewBox="0 0 10 318"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M5 5L4.99999 313"
+                      stroke="white"
+                      stroke-width="10"
+                      stroke-linecap="round"
+                      stroke-dasharray="20 20"
+                    />
+                  </svg>
                 </div>
                 <div className=" flex  justify-center ">
                   <p className=" text-white  text-md break-all font-Thai  w-full   bg-transparent align-top resize-none whitespace-pre-line  ">
