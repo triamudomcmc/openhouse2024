@@ -1,8 +1,7 @@
-
 import ClubTop from "@/vectors/club/ClubTop";
 import BackArrow from "@/vectors/backarrow";
 import { useRouter } from "next/navigation";
-import { useSession, } from "next-auth/react";
+import { useSession } from "next-auth/react";
 import { useEffect, useState } from "react";
 import ClubWidget from "@/vectors/club/clubwidget";
 import axios from "axios";
@@ -49,7 +48,7 @@ export default function ClubPreview() {
 
   const router = useRouter();
 
-  const { data: session,status } = useSession({
+  const { data: session, status } = useSession({
     required: true,
     onUnauthenticated() {
       router.push("/login"); // The user is not authenticated, handle it here.
@@ -178,8 +177,10 @@ export default function ClubPreview() {
       const response = await axios.request(profile2Config);
       console.log(JSON.stringify(response.data));
       setReview2Profile(response.data.data);
-      if (response.data.data === '' ) {}
-      else{setShowReview2(true);}
+      if (response.data.data === "") {
+      } else {
+        setShowReview2(true);
+      }
     } catch (error) {
       console.log(error);
     }
@@ -206,8 +207,10 @@ export default function ClubPreview() {
       const response = await axios.request(profile3Config);
       console.log(JSON.stringify(response.data));
       setReview3Profile(response.data.data);
-      if (response.data.data === '' ) {}
-      else{setShowReview3(true);}
+      if (response.data.data === "") {
+      } else {
+        setShowReview3(true);
+      }
     } catch (error) {
       console.log(error);
     }
@@ -300,7 +303,9 @@ export default function ClubPreview() {
                   </div>
                   <p className=" text-4xl block text-center text-transparent  bg-clip-text bg-gradient-to-b from-[#632790] to-[#D738A4] font-Thai font-semibold ">
                     สมาชิก <br />
-                    <p className=" text-3xl mt-2 font-semibold text-center">{member}</p>
+                    <p className=" text-3xl mt-2 font-semibold text-center">
+                      {member}
+                    </p>
                   </p>
                 </div>
                 <div>
@@ -480,21 +485,19 @@ export default function ClubPreview() {
                     {workings}
                   </p>
                 </div>
-
               </div>
-
-              {
-                //review1
-              }
               <div>
                 <div className=" mt-10">
                   <ReviewWidget />
                 </div>
-                <div className=" w-full relative mt-10">
-                  <ReviewCard />
-                  <div className=" absolute top-0 md:mt-5 sm:mt-2 md:left-5 sm:left-2 h-full ">
+
+                {
+                  //review1
+                }
+                <div className=" md:w-full sm:w-[90%]  mt-10 bg-gradient-to-b from-[#112881]/[.90] to-[#8E297A]/[.50] mx-auto   flex p-4 rounded-3xl min-h-30 gap-4">
+                  <div className=" relative z-10  min-w-[30%] w-[30%] md:min-w-[25%] md:w-[25%] lg:min-w-[20%] lg:w-[20%] ">
                     <svg
-                      className="block lg:h-[153px] lg:w-[153px] md:h-[100px] md:w-[100px] sm:h-[60px] sm:w-[60px]"
+                      className="block w-full "
                       viewBox="0 0 153 153"
                       fill="none"
                       xmlns="http://www.w3.org/2000/svg"
@@ -508,11 +511,11 @@ export default function ClubPreview() {
                     </svg>
 
                     <img
-                      className="absolute top-0 left-0 z-10  flex object-cover lg:h-[153px] lg:w-[153px] md:h-[100px] md:w-[100px] sm:h-[60px] sm:w-[60px] rounded-3xl sm:rounded-xl "
+                      className=" absolute top-0 left-0 z-40 aspect-square  flex object-cover w-full  rounded-3xl sm:rounded-xl "
                       src={review1Profile}
                     />
                     <div className=" block md:mt-1  z-50 relative">
-                      <p className=" text-white md:text-2xl sm:text-md sm:w-[90px] sm:h-6 md:h-8 md:w-[148px]  bg-transparent font-Thai">
+                      <p className=" text-white md:text-2xl sm:text-md min-h-[28px]  break-all  bg-transparent font-Thai">
                         {review1Name}
                       </p>
 
@@ -521,14 +524,14 @@ export default function ClubPreview() {
                         เตรียมอุดม {review1Gen}
                       </p>
                       <div className=" flex">
-                        <p className=" sm:h-4 md:h-6 md:w-[148px] items-center w-[100px] text-[#291A54] sm:text-sm md:text-base bg-transparent font-Thai overflow-y-hidden overflow-x-scroll ">
+                        <p className=" break-all items-center  text-[#291A54] min-h-[28px] sm:text-sm md:text-base bg-transparent font-Thai ">
                           {review1Contact}
                         </p>
                       </div>
                     </div>
                   </div>
-                  <div className=" absolute w-full top-5 h-3/4 right-0 flex justify-end">
-                    <p className=" text-white  text-md break-words font-Thai md:mr-10 sm:mr-5   w-3/5  h-full   bg-transparent align-top resize-none whitespace-pre-line overflow-scroll">
+                  <div className=" flex  justify-center ">
+                    <p className=" text-white  text-md break-all font-Thai  w-full   bg-transparent align-top resize-none whitespace-pre-line  ">
                       {review1}
                     </p>
                   </div>
@@ -538,13 +541,21 @@ export default function ClubPreview() {
                   //review2
                 }
                 <div
-                  className={showReview2 ? " w-full relative mt-10" : "hidden"}
+                  className={
+                    showReview2
+                      ? " md:w-full sm:w-[90%]  mt-10 bg-gradient-to-b from-[#112881]/[.90] to-[#8E297A]/[.50] mx-auto  flex p-4 rounded-3xl min-h-30 gap-4 justify-center "
+                      : " md:w-full sm:w-[90%]  mt-10 bg-gradient-to-b from-[#112881]/[.90] to-[#8E297A]/[.50] mx-auto  flex p-4 rounded-3xl min-h-30 gap-4 justify-center"
+                  }
                 >
-                  <ReviewCardR />
-                  <div className=" absolute top-0 md:mt-5 sm:mt-2 md:right-5 sm:right-2 h-full justify-end ">
-                    <div className=" flex justify-end">
+                  <div className="  flex justify-start w-full">
+                    <p className=" text-white  text-md break-all font-Thai     bg-transparent align-top resize-none whitespace-pre-line  ">
+                      {review2}
+                    </p>
+                  </div>
+                  <div className=" relative z-10  min-w-[30%] w-[30%] md:min-w-[25%] md:w-[25%] lg:min-w-[20%] lg:w-[20%]">
+                    <div className=" flex justify-end ">
                       <svg
-                        className="block lg:h-[153px] lg:w-[153px] md:h-[100px] md:w-[100px] sm:h-[60px] sm:w-[60px]"
+                        className="block w-full"
                         viewBox="0 0 153 153"
                         fill="none"
                         xmlns="http://www.w3.org/2000/svg"
@@ -558,31 +569,23 @@ export default function ClubPreview() {
                       </svg>
 
                       <img
-                        className="absolute top-0 right-0 z-10  flex object-cover lg:h-[153px] lg:w-[153px] md:h-[100px] md:w-[100px] sm:h-[60px] sm:w-[60px] rounded-3xl sm:rounded-xl "
+                        className="absolute top-0 right-0 z-10  flex object-cover w-full aspect-square rounded-3xl sm:rounded-xl "
                         src={review2Profile}
                       />
                     </div>
                     <div className=" block md:mt-1  relative z-50">
-                      <p className=" text-white md:text-2xl sm:text-md sm:w-[100px] sm:h-6 md:h-8 md:w-[148px]  bg-transparent font-Thai text-right">
+                      <p className=" text-white md:text-2xl sm:text-md  bg-transparent font-Thai min-h-[28px] text-right break-all">
                         {review2Name}
                       </p>
 
-                      <p className=" block text-[#291A54] md:text-xl md:mt-0  sm:text-sm text-base  font-Thai text-right ">
+                      <p className="  text-[#291A54] md:text-xl md:mt-0  sm:text-sm text-base  font-Thai text-right ">
                         {" "}
                         เตรียมอุดม {review2Gen}
                       </p>
-                      <div className=" flex">
-                        <p className=" sm:h-4 md:h-6 md:w-[148px] items-center w-[100px] text-[#291A54] sm:text-sm md:text-base bg-transparent font-Thai text-right overflow-y-hidden overflow-x-scroll">
-                          {review2Contact}
-                        </p>
-                      </div>
+                      <p className="   text-[#291A54] md:text-xl md:mt-0  sm:text-sm text-base min-h-[28px] font-Thai text-right break-all">
+                        {review2Contact}
+                      </p>
                     </div>
-                  </div>
-                  <div className=" absolute w-full top-5 h-3/4 left-0 flex justify-start">
-                    <textarea
-                      className=" text-white  text-md break-words font-Thai md:ml-10 sm:ml-5   w-3/5  h-full  bg-transparent align-top resize-none whitespace-pre-line overflow-scroll"
-                      value={review2}
-                    ></textarea>
                   </div>
                 </div>
 
@@ -590,12 +593,15 @@ export default function ClubPreview() {
                   //review3
                 }
                 <div
-                  className={showReview3 ? " w-full relative mt-10" : "hidden"}
+                  className={
+                    showReview3
+                      ? " md:w-full sm:w-[90%]  mt-10 bg-gradient-to-b from-[#112881]/[.90] to-[#8E297A]/[.50] mx-auto  flex p-4 rounded-3xl min-h-30 gap-4"
+                      : "md:w-full sm:w-[90%]  mt-10 bg-gradient-to-b from-[#112881]/[.90] to-[#8E297A]/[.50] mx-auto  flex p-4 rounded-3xl min-h-30 gap-4"
+                  }
                 >
-                  <ReviewCard />
-                  <div className=" absolute top-0 md:mt-5 sm:mt-2 md:left-5 sm:left-2 h-full ">
+                  <div className=" relative z-10  min-w-[30%] w-[30%] md:min-w-[25%] md:w-[25%] lg:min-w-[20%] lg:w-[20%] ">
                     <svg
-                      className="block lg:h-[153px] lg:w-[153px] md:h-[100px] md:w-[100px] sm:h-[60px] sm:w-[60px]"
+                      className="block w-full"
                       viewBox="0 0 153 153"
                       fill="none"
                       xmlns="http://www.w3.org/2000/svg"
@@ -609,11 +615,11 @@ export default function ClubPreview() {
                     </svg>
 
                     <img
-                      className="absolute top-0 left-0 z-10  flex object-cover lg:h-[153px] lg:w-[153px] md:h-[100px] md:w-[100px] sm:h-[60px] sm:w-[60px] rounded-3xl sm:rounded-xl "
+                      className=" absolute top-0 left-0 z-40 aspect-square  flex object-cover w-full rounded-3xl sm:rounded-xl "
                       src={review3Profile}
                     />
                     <div className=" block md:mt-1  z-50 relative">
-                      <p className=" text-white md:text-2xl sm:text-md sm:w-[90px] sm:h-6 md:h-8 md:w-[148px]  bg-transparent font-Thai">
+                      <p className=" text-white md:text-2xl sm:text-md min-h-[28px]  break-all  bg-transparent font-Thai">
                         {review3Name}
                       </p>
 
@@ -622,14 +628,14 @@ export default function ClubPreview() {
                         เตรียมอุดม {review3Gen}
                       </p>
                       <div className=" flex">
-                        <p className=" sm:h-4 md:h-6 md:w-[148px] items-center w-[100px] text-[#291A54] sm:text-sm md:text-base bg-transparent font-Thai overflow-y-hidden overflow-x-scroll">
+                        <p className=" break-all items-center  text-[#291A54] min-h-[28px] sm:text-sm md:text-base bg-transparent font-Thai ">
                           {review3Contact}
                         </p>
                       </div>
                     </div>
                   </div>
-                  <div className=" absolute w-full top-5 h-3/4 right-0 flex justify-end">
-                    <p className=" text-white  text-md break-words font-Thai md:mr-10 sm:mr-5   w-3/5  h-full  bg-transparent align-top resize-none whitespace-pre-line overflow-scroll">
+                  <div className=" flex  justify-center ">
+                    <p className=" text-white  text-md break-all font-Thai  w-full   bg-transparent align-top resize-none whitespace-pre-line  ">
                       {review3}
                     </p>
                   </div>
@@ -660,7 +666,13 @@ export default function ClubPreview() {
               <ClubFlower />
             </div>
 
-            <div className={showReview2 ?" absolute left-0 top-[2500px] block z-0" : " hidden"}>
+            <div
+              className={
+                showReview2
+                  ? " absolute left-0 top-[2500px] block z-0"
+                  : " hidden"
+              }
+            >
               <ClubCrystal2 />
             </div>
           </div>

@@ -52,7 +52,7 @@ export default function OrganizationPreview() {
 
   const router = useRouter();
 
-  const { data: session,status } = useSession({
+  const { data: session, status } = useSession({
     required: true,
     onUnauthenticated() {
       router.push("/login"); // The user is not authenticated, handle it here.
@@ -62,7 +62,7 @@ export default function OrganizationPreview() {
   let image1Data = JSON.stringify({
     email: session?.user?.email,
     imageType: "image1",
-    environmentKeys : process.env.ENVIRONMENT_KEY,
+    environmentKeys: process.env.ENVIRONMENT_KEY,
   });
 
   let image1Config = {
@@ -87,7 +87,7 @@ export default function OrganizationPreview() {
   let image2Data = JSON.stringify({
     email: session?.user?.email,
     imageType: "image2",
-    environmentKey : process.env.ENVIRONMENT_KEY,
+    environmentKey: process.env.ENVIRONMENT_KEY,
   });
 
   let image2Config = {
@@ -104,7 +104,6 @@ export default function OrganizationPreview() {
     try {
       const response = await axios.request(image2Config);
       setImage2(response.data.data);
-      
     } catch (error) {
       console.log(error);
     }
@@ -113,7 +112,7 @@ export default function OrganizationPreview() {
   let image3Data = JSON.stringify({
     email: session?.user?.email,
     imageType: "image3",
-    environmentKey : process.env.ENVIRONMENT_KEY,
+    environmentKey: process.env.ENVIRONMENT_KEY,
   });
 
   let image3Config = {
@@ -138,7 +137,7 @@ export default function OrganizationPreview() {
   let profile1Data = JSON.stringify({
     email: session?.user?.email,
     imgprofileType: "imgprofile1",
-    environmentKey : process.env.ENVIRONMENT_KEY,
+    environmentKey: process.env.ENVIRONMENT_KEY,
   });
 
   let profile1Config = {
@@ -163,7 +162,7 @@ export default function OrganizationPreview() {
   let profile2Data = JSON.stringify({
     email: session?.user?.email,
     imgprofileType: "imgprofile2",
-    environmentKey : process.env.ENVIRONMENT_KEY,
+    environmentKey: process.env.ENVIRONMENT_KEY,
   });
 
   let profile2Config = {
@@ -180,8 +179,10 @@ export default function OrganizationPreview() {
     try {
       const response = await axios.request(profile2Config);
       setReview2Profile(response.data.data);
-      if (response.data.data === '' ) {}
-      else{setShowReview2(true);}
+      if (response.data.data === "") {
+      } else {
+        setShowReview2(true);
+      }
     } catch (error) {
       console.log(error);
     }
@@ -190,7 +191,7 @@ export default function OrganizationPreview() {
   let profile3Data = JSON.stringify({
     email: session?.user?.email,
     imgprofileType: "imgprofile3",
-    environmentKey : process.env.ENVIRONMENT_KEY,
+    environmentKey: process.env.ENVIRONMENT_KEY,
   });
 
   let profile3Config = {
@@ -207,8 +208,10 @@ export default function OrganizationPreview() {
     try {
       const response = await axios.request(profile3Config);
       setReview3Profile(response.data.data);
-      if (response.data.data === '' ) {}
-      else{setShowReview3(true);}
+      if (response.data.data === "") {
+      } else {
+        setShowReview3(true);
+      }
     } catch (error) {
       console.log(error);
     }
@@ -216,7 +219,7 @@ export default function OrganizationPreview() {
 
   const data = JSON.stringify({
     email: session?.user?.email,
-    environmentKey : process.env.ENVIRONMENT_KEY,
+    environmentKey: process.env.ENVIRONMENT_KEY,
   });
 
   const config = {
@@ -355,15 +358,15 @@ export default function OrganizationPreview() {
                 //section1
               }
               <p className="  font-semibold text-transparent bg-clip-text bg-gradient-to-b from-[#7533A8] to-[#D62C9F] font-Thai text-center  text-2xl py-5 block w-full  lg:hidden ">
-              องค์กรนี้ทำอะไร ?
+                องค์กรนี้ทำอะไร ?
               </p>
               <div className=" flex justify-center gap-3 lg:mt-10">
                 <p className="  font-semibold text-transparent bg-clip-text bg-gradient-to-b from-[#7533A8] to-[#D62C9F] font-Thai text-left min-w-52 text-4xl py-5 hidden lg:block ">
-                องค์กรนี้
+                  องค์กรนี้
                   <p className="  font-semibold text-transparent bg-clip-text bg-gradient-to-b from-[#7533A8] to-[#D62C9F] font-Thai text-left min-w-52 text-2xl  hidden lg:block ">
-                  ทำอะไร<ClubStar />
+                    ทำอะไร
+                    <ClubStar />
                   </p>
-                  
                 </p>
 
                 <div className=" w-full relative  ">
@@ -377,7 +380,7 @@ export default function OrganizationPreview() {
                   </svg>
                   <div className=" absolute  w-full h-full">
                     <p className="  text-center text-[#7533A8] ">
-                    ภาพบรรยากาศในองค์กร
+                      ภาพบรรยากาศในองค์กร
                     </p>
                   </div>
                   <div className=" absolute w-full top-0">
@@ -399,7 +402,7 @@ export default function OrganizationPreview() {
                 //section2
               }
               <p className="  font-semibold text-transparent bg-clip-text bg-gradient-to-b from-[#7533A8] to-[#D62C9F] font-Thai text-center  text-2xl block w-full py-5  lg:hidden ">
-              ตำแหน่ง/หน้าที่
+                ตำแหน่ง/หน้าที่
               </p>
               <div className=" flex justify-center gap-3 lg:mt-10">
                 <div className=" w-full relative  ">
@@ -413,7 +416,7 @@ export default function OrganizationPreview() {
                   </svg>
                   <div className=" absolute left-0  w-full h-full z-20">
                     <p className="  text-center text-[#7533A8] ">
-                    ภาพบรรยากาศในองค์กร
+                      ภาพบรรยากาศในองค์กร
                     </p>
                   </div>
                   <div className=" absolute w-full top-0 z-10">
@@ -424,10 +427,10 @@ export default function OrganizationPreview() {
                   </div>
                 </div>
                 <p className="  font-semibold text-transparent bg-clip-text bg-gradient-to-b from-[#7533A8] to-[#D62C9F] font-Thai text-left min-w-52 text-5xl py-5 hidden lg:block ">
-                ตำแหน่ง
-
+                  ตำแหน่ง
                   <p className="  font-semibold text-transparent bg-clip-text bg-gradient-to-b from-[#7533A8] to-[#D62C9F] font-Thai text-left min-w-52 text-3xl  hidden lg:block ">
-                  /หน้าที่<ClubStar />
+                    /หน้าที่
+                    <ClubStar />
                   </p>
                 </p>
               </div>
@@ -442,11 +445,12 @@ export default function OrganizationPreview() {
                 //section3
               }
               <p className="  font-semibold text-transparent bg-clip-text bg-gradient-to-b from-[#7533A8] to-[#D62C9F] font-Thai text-center  text-2xl block w-full py-5  lg:hidden ">
-              ผลงานขององค์กร
+                ผลงานขององค์กร
               </p>
               <div className=" flex justify-center gap-3 lg:mt-10">
-              <p className="  font-semibold text-transparent bg-clip-text bg-gradient-to-b from-[#7533A8] to-[#D62C9F] font-Thai text-right min-w-52 text-4xl py-5 hidden lg:block ">
-                  ผลงาน<br />
+                <p className="  font-semibold text-transparent bg-clip-text bg-gradient-to-b from-[#7533A8] to-[#D62C9F] font-Thai text-right min-w-52 text-4xl py-5 hidden lg:block ">
+                  ผลงาน
+                  <br />
                   ขององค์กร <ClubStar />
                 </p>
 
@@ -461,7 +465,7 @@ export default function OrganizationPreview() {
                   </svg>
                   <div className=" absolute  w-full h-full">
                     <p className="  text-center text-[#7533A8] ">
-                    ภาพบรรยากาศในองค์กร
+                      ภาพบรรยากาศในองค์กร
                     </p>
                   </div>
                   <div className=" absolute w-full top-0">
@@ -478,21 +482,75 @@ export default function OrganizationPreview() {
                     {working}
                   </p>
                 </div>
-
               </div>
-
+              <div className=" mt-10">
+                <ReviewWidget />
+              </div>
               {
                 //review1
               }
-              <div>
-                <div className=" mt-10">
-                  <ReviewWidget />
+              <div className=" md:w-full sm:w-[90%]  mt-10 bg-gradient-to-b from-[#112881]/[.90] to-[#8E297A]/[.50] mx-auto  flex p-4 rounded-3xl min-h-30 gap-4">
+                <div className=" relative z-10  min-w-[30%] w-[30%] md:min-w-[25%] md:w-[25%] lg:min-w-[20%] lg:w-[20%] ">
+                  <svg
+                    className="block w-full"
+                    viewBox="0 0 153 153"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <rect
+                      width="152.941"
+                      height="152.941"
+                      rx="30"
+                      fill="#D9D9D9"
+                    />
+                  </svg>
+
+                  <img
+                    className=" absolute top-0 left-0 z-40 aspect-square  flex object-cover w-full rounded-3xl sm:rounded-xl "
+                    src={review1Profile}
+                  />
+                  <div className=" block md:mt-1  z-50 relative">
+                    <p className=" text-white md:text-2xl sm:text-md min-h-[28px]  break-all  bg-transparent font-Thai">
+                      {review1Name}
+                    </p>
+
+                    <p className=" block text-[#291A54] md:text-xl md:mt-0  sm:text-sm text-base  font-Thai ">
+                      {" "}
+                      เตรียมอุดม {review1Gen}
+                    </p>
+                    <div className=" flex">
+                      <p className=" break-all items-center  text-[#291A54] min-h-[28px] sm:text-sm md:text-base bg-transparent font-Thai ">
+                        {review1Contact}
+                      </p>
+                    </div>
+                  </div>
                 </div>
-                <div className=" w-full relative mt-10">
-                  <ReviewCard />
-                  <div className=" absolute top-0 md:mt-5 sm:mt-2 md:left-5 sm:left-2 h-full ">
+                <div className=" flex  justify-center ">
+                  <p className=" text-white  text-md break-all font-Thai  w-full   bg-transparent align-top resize-none whitespace-pre-line  ">
+                    {review1}
+                  </p>
+                </div>
+              </div>
+
+              {
+                //review2
+              }
+              <div
+                className={
+                  showReview2
+                    ? " md:w-full sm:w-[90%]  mt-10 bg-gradient-to-b from-[#112881]/[.90] to-[#8E297A]/[.50] mx-auto  flex p-4 rounded-3xl min-h-30 gap-4 justify-center "
+                    : " hidden"
+                }
+              >
+                <div className="  flex justify-start w-full">
+                  <p className=" text-white  text-md break-all font-Thai     bg-transparent align-top resize-none whitespace-pre-line  ">
+                    {review2}
+                  </p>
+                </div>
+                <div className=" relative z-10  min-w-[30%] w-[30%] md:min-w-[25%] md:w-[25%] lg:min-w-[20%] lg:w-[20%]">
+                  <div className=" flex justify-end ">
                     <svg
-                      className="block lg:h-[153px] lg:w-[153px] md:h-[100px] md:w-[100px] sm:h-[60px] sm:w-[60px]"
+                      className="block w-full"
                       viewBox="0 0 153 153"
                       fill="none"
                       xmlns="http://www.w3.org/2000/svg"
@@ -506,131 +564,75 @@ export default function OrganizationPreview() {
                     </svg>
 
                     <img
-                      className="absolute top-0 left-0 z-10  flex object-cover lg:h-[153px] lg:w-[153px] md:h-[100px] md:w-[100px] sm:h-[60px] sm:w-[60px] rounded-3xl sm:rounded-xl "
-                      src={review1Profile}
+                      className="absolute top-0 right-0 z-10  flex object-cover w-full aspect-square rounded-3xl sm:rounded-xl "
+                      src={review2Profile}
                     />
-                    <div className=" block md:mt-1  z-50 relative">
-                      <p className=" text-white md:text-2xl sm:text-md sm:w-[90px] sm:h-6 md:h-8 md:w-[148px]  bg-transparent font-Thai">
-                        {review1Name}
-                      </p>
-
-                      <p className=" block text-[#291A54] md:text-xl md:mt-0  sm:text-sm text-base  font-Thai ">
-                        {" "}
-                        เตรียมอุดม {review1Gen}
-                      </p>
-                      <div className=" flex">
-                        <p className=" sm:h-4 md:h-6 md:w-[148px] items-center w-[100px] text-[#291A54] sm:text-sm md:text-base bg-transparent font-Thai overflow-y-hidden overflow-x-scroll">
-                          {review1Contact}
-                        </p>
-                      </div>
-                    </div>
                   </div>
-                  <div className=" absolute w-full top-5 h-3/4 right-0 flex justify-end">
-                    <p className=" text-white  text-md break-words font-Thai md:mr-10 sm:mr-5   w-3/5  h-full   bg-transparent align-top resize-none whitespace-pre-line overflow-scroll">
-                      {review1}
+                  <div className=" block md:mt-1  relative z-50">
+                    <p className=" text-white md:text-2xl sm:text-md  bg-transparent font-Thai min-h-[28px] text-right break-all">
+                      {review2Name}
+                    </p>
+
+                    <p className="  text-[#291A54] md:text-xl md:mt-0  sm:text-sm text-base  font-Thai text-right ">
+                      {" "}
+                      เตรียมอุดม {review2Gen}
+                    </p>
+                    <p className="   text-[#291A54] md:text-xl md:mt-0  sm:text-sm text-base min-h-[28px] font-Thai text-right break-all">
+                      {review2Contact}
                     </p>
                   </div>
                 </div>
+              </div>
 
-                {
-                  //review2
+              {
+                //review3
+              }
+              <div
+                className={
+                  showReview3
+                    ? " md:w-full sm:w-[90%]  mt-10 bg-gradient-to-b from-[#112881]/[.90] to-[#8E297A]/[.50] mx-auto  flex p-4 rounded-3xl min-h-30 gap-4"
+                    : "hidden"
                 }
-                <div
-                  className={showReview2 ? " w-full relative mt-10" : "hidden"}
-                >
-                  <ReviewCardR />
-                  <div className=" absolute top-0 md:mt-5 sm:mt-2 md:right-5 sm:right-2 h-full justify-end ">
-                    <div className=" flex justify-end">
-                      <svg
-                        className="block lg:h-[153px] lg:w-[153px] md:h-[100px] md:w-[100px] sm:h-[60px] sm:w-[60px]"
-                        viewBox="0 0 153 153"
-                        fill="none"
-                        xmlns="http://www.w3.org/2000/svg"
-                      >
-                        <rect
-                          width="152.941"
-                          height="152.941"
-                          rx="30"
-                          fill="#D9D9D9"
-                        />
-                      </svg>
+              >
+                <div className=" relative z-10  min-w-[30%] w-[30%] md:min-w-[25%] md:w-[25%] lg:min-w-[20%] lg:w-[20%] ">
+                  <svg
+                    className="block w-full"
+                    viewBox="0 0 153 153"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <rect
+                      width="152.941"
+                      height="152.941"
+                      rx="30"
+                      fill="#D9D9D9"
+                    />
+                  </svg>
 
-                      <img
-                        className="absolute top-0 right-0 z-10  flex object-cover lg:h-[153px] lg:w-[153px] md:h-[100px] md:w-[100px] sm:h-[60px] sm:w-[60px] rounded-3xl sm:rounded-xl "
-                        src={review2Profile}
-                      />
-                    </div>
-                    <div className=" block md:mt-1  relative z-50">
-                      <p className=" text-white md:text-2xl sm:text-md sm:w-[100px] sm:h-6 md:h-8 md:w-[148px]  bg-transparent font-Thai text-right">
-                        {review2Name}
-                      </p>
+                  <img
+                    className=" absolute top-0 left-0 z-40 aspect-square  flex object-cover w-full rounded-3xl sm:rounded-xl "
+                    src={review3Profile}
+                  />
+                  <div className=" block md:mt-1  z-50 relative">
+                    <p className=" text-white md:text-2xl sm:text-md min-h-[28px]  break-all  bg-transparent font-Thai">
+                      {review3Name}
+                    </p>
 
-                      <p className=" block text-[#291A54] md:text-xl md:mt-0  sm:text-sm text-base  font-Thai text-right ">
-                        {" "}
-                        เตรียมอุดม {review2Gen}
+                    <p className=" block text-[#291A54] md:text-xl md:mt-0  sm:text-sm text-base  font-Thai ">
+                      {" "}
+                      เตรียมอุดม {review3Gen}
+                    </p>
+                    <div className=" flex">
+                      <p className=" break-all items-center  text-[#291A54] min-h-[28px] sm:text-sm md:text-base bg-transparent font-Thai ">
+                        {review3Contact}
                       </p>
-                      <div className=" flex">
-                        <p className=" sm:h-4 md:h-6 md:w-[148px] items-center w-[100px] text-[#291A54] sm:text-sm md:text-base bg-transparent font-Thai text-right overflow-y-hidden overflow-x-scroll">
-                          {review2Contact}
-                        </p>
-                      </div>
                     </div>
-                  </div>
-                  <div className=" absolute w-full top-5 h-3/4 left-0 flex justify-start">
-                    <textarea
-                      className=" text-white  text-md break-words font-Thai md:ml-10 sm:ml-5   w-3/5  h-full  bg-transparent align-top resize-none whitespace-pre-line overflow-scroll"
-                      value={review2}
-                    ></textarea>
                   </div>
                 </div>
-
-                {
-                  //review3
-                }
-                <div
-                  className={showReview3 ? " w-full relative mt-10" : "hidden"}
-                >
-                  <ReviewCard />
-                  <div className=" absolute top-0 md:mt-5 sm:mt-2 md:left-5 sm:left-2 h-full ">
-                    <svg
-                      className="block lg:h-[153px] lg:w-[153px] md:h-[100px] md:w-[100px] sm:h-[60px] sm:w-[60px]"
-                      viewBox="0 0 153 153"
-                      fill="none"
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
-                      <rect
-                        width="152.941"
-                        height="152.941"
-                        rx="30"
-                        fill="#D9D9D9"
-                      />
-                    </svg>
-
-                    <img
-                      className="absolute top-0 left-0 z-10  flex object-cover lg:h-[153px] lg:w-[153px] md:h-[100px] md:w-[100px] sm:h-[60px] sm:w-[60px] rounded-3xl sm:rounded-xl "
-                      src={review3Profile}
-                    />
-                    <div className=" block md:mt-1  z-50 relative">
-                      <p className=" text-white md:text-2xl sm:text-md sm:w-[90px] sm:h-6 md:h-8 md:w-[148px]  bg-transparent font-Thai">
-                        {review3Name}
-                      </p>
-
-                      <p className=" block text-[#291A54] md:text-xl md:mt-0  sm:text-sm text-base  font-Thai ">
-                        {" "}
-                        เตรียมอุดม {review3Gen}
-                      </p>
-                      <div className=" flex">
-                        <p className=" sm:h-4 md:h-6 md:w-[148px] items-center w-[100px] text-[#291A54] sm:text-sm md:text-base bg-transparent font-Thai overflow-y-hidden overflow-x-scroll">
-                          {review3Contact}
-                        </p>
-                      </div>
-                    </div>
-                  </div>
-                  <div className=" absolute w-full top-5 h-3/4 right-0 flex justify-end">
-                    <p className=" text-white  text-md break-words font-Thai md:mr-10 sm:mr-5   w-3/5  h-full  bg-transparent align-top resize-none whitespace-pre-line overflow-scroll">
-                      {review3}
-                    </p>
-                  </div>
+                <div className=" flex  justify-center ">
+                  <p className=" text-white  text-md break-all font-Thai  w-full   bg-transparent align-top resize-none whitespace-pre-line  ">
+                    {review3}
+                  </p>
                 </div>
               </div>
             </div>
@@ -658,7 +660,13 @@ export default function OrganizationPreview() {
               <ClubFlower />
             </div>
 
-            <div className={showReview2 ?" absolute left-0 top-[2500px] block z-0" : " hidden"}>
+            <div
+              className={
+                showReview2
+                  ? " absolute left-0 top-[2500px] block z-0"
+                  : " hidden"
+              }
+            >
               <ClubCrystal2 />
             </div>
           </div>

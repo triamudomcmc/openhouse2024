@@ -87,7 +87,7 @@ export default function ProgramEdit() {
 
   const router = useRouter();
 
-  const { data: session,status } = useSession({
+  const { data: session, status } = useSession({
     required: true,
     onUnauthenticated() {
       router.push("/Login"); // The user is not authenticated, handle it here.
@@ -115,7 +115,7 @@ export default function ProgramEdit() {
     "review_3.gen": review3Gen,
     "review_3.contact": review3Contact,
     "review_3.review": review3,
-    environmentKeys : process.env.ENVIRONMENT_KEY,
+    environmentKeys: process.env.ENVIRONMENT_KEY,
   });
 
   let configEdit = {
@@ -132,17 +132,28 @@ export default function ProgramEdit() {
     try {
       const response = await axios.request(configEdit);
       console.log(JSON.stringify(response.data));
-      toast.success(<><p>success</p><p>ระบบได้บันทึกข้อมูลของท่านแล้ว</p></>, {
-        position: toast.POSITION.BOTTOM_RIGHT,
-        theme : "colored"
-      });
+      toast.success(
+        <>
+          <p>success</p>
+          <p>ระบบได้บันทึกข้อมูลของท่านแล้ว</p>
+        </>,
+        {
+          position: toast.POSITION.BOTTOM_RIGHT,
+          theme: "colored",
+        }
+      );
     } catch (error) {
       console.log(error);
-      toast.error(<><p>ERROR!!</p><p>โปรดตรวจสอบข้อมูลและบัญชีให้ถูกต้อง</p></>, {
-        position: toast.POSITION.BOTTOM_RIGHT,
-        theme : "colored",
-
-      });
+      toast.error(
+        <>
+          <p>ERROR!!</p>
+          <p>โปรดตรวจสอบข้อมูลและบัญชีให้ถูกต้อง</p>
+        </>,
+        {
+          position: toast.POSITION.BOTTOM_RIGHT,
+          theme: "colored",
+        }
+      );
     }
   }
 
@@ -151,7 +162,7 @@ export default function ProgramEdit() {
     image1Data.append("file", image1File);
     image1Data.append("email", session?.user?.email);
     image1Data.append("imageType", "image1");
-    image1Data.append("environmentKeys" , process.env.ENVIRONMENT_KEY)
+    image1Data.append("environmentKeys", process.env.ENVIRONMENT_KEY);
 
     let image1Config = {
       method: "post",
@@ -178,7 +189,7 @@ export default function ProgramEdit() {
     image2Data.append("file", image2File);
     image2Data.append("email", session?.user?.email);
     image2Data.append("imageType", "image2");
-    image2Data.append("environmentKeys" , process.env.ENVIRONMENT_KEY)
+    image2Data.append("environmentKeys", process.env.ENVIRONMENT_KEY);
 
     let image2Config = {
       method: "post",
@@ -205,7 +216,7 @@ export default function ProgramEdit() {
     image3Data.append("file", image3File);
     image3Data.append("email", session?.user?.email);
     image3Data.append("imageType", "image3");
-    image3Data.append("environmentKeys" , process.env.ENVIRONMENT_KEY)
+    image3Data.append("environmentKeys", process.env.ENVIRONMENT_KEY);
 
     let image3Config = {
       method: "post",
@@ -232,7 +243,7 @@ export default function ProgramEdit() {
     ReviewProfile1Data.append("file", review1ProfileFile);
     ReviewProfile1Data.append("email", session?.user?.email);
     ReviewProfile1Data.append("imgprofileType", "imgprofile1");
-    ReviewProfile1Data.append("environmentKeys" , process.env.ENVIRONMENT_KEY)
+    ReviewProfile1Data.append("environmentKeys", process.env.ENVIRONMENT_KEY);
 
     let ReviewProfile1Config = {
       method: "post",
@@ -259,7 +270,7 @@ export default function ProgramEdit() {
     ReviewProfile2Data.append("file", review2ProfileFile);
     ReviewProfile2Data.append("email", session?.user?.email);
     ReviewProfile2Data.append("imgprofileType", "imgprofile2");
-    ReviewProfile2Data.append("environmentKeys" , process.env.ENVIRONMENT_KEY)
+    ReviewProfile2Data.append("environmentKeys", process.env.ENVIRONMENT_KEY);
 
     let ReviewProfile2Config = {
       method: "post",
@@ -286,7 +297,7 @@ export default function ProgramEdit() {
     ReviewProfile3Data.append("file", review3ProfileFile);
     ReviewProfile3Data.append("email", session?.user?.email);
     ReviewProfile3Data.append("imgprofileType", "imgprofile3");
-    ReviewProfile3Data.append("environmentKeys" , process.env.ENVIRONMENT_KEY)
+    ReviewProfile3Data.append("environmentKeys", process.env.ENVIRONMENT_KEY);
 
     let ReviewProfile3Config = {
       method: "post",
@@ -310,7 +321,7 @@ export default function ProgramEdit() {
 
   const data = JSON.stringify({
     email: session?.user?.email,
-    environmentKeys : process.env.ENVIRONMENT_KEY,
+    environmentKeys: process.env.ENVIRONMENT_KEY,
   });
 
   const config = {
@@ -377,13 +388,12 @@ export default function ProgramEdit() {
   useEffect(() => {
     // User email is available, make the API request
     request();
-    image1PostRequest()
-    image2PostRequest()
-    image3PostRequest()
-    profile1PostRequest()
-    profile2PostRequest()
-    profile3PostRequest()
-
+    image1PostRequest();
+    image2PostRequest();
+    image3PostRequest();
+    profile1PostRequest();
+    profile2PostRequest();
+    profile3PostRequest();
   }, [status]);
 
   function back() {
@@ -393,7 +403,7 @@ export default function ProgramEdit() {
   let image1Data = JSON.stringify({
     email: session?.user?.email,
     imageType: "image1",
-    environmentKeys : process.env.ENVIRONMENT_KEY,
+    environmentKeys: process.env.ENVIRONMENT_KEY,
   });
 
   let image1Config = {
@@ -418,7 +428,7 @@ export default function ProgramEdit() {
   let image2Data = JSON.stringify({
     email: session?.user?.email,
     imageType: "image2",
-    environmentKey : process.env.ENVIRONMENT_KEY,
+    environmentKey: process.env.ENVIRONMENT_KEY,
   });
 
   let image2Config = {
@@ -435,7 +445,6 @@ export default function ProgramEdit() {
     try {
       const response = await axios.request(image2Config);
       setImage2(response.data.data);
-      
     } catch (error) {
       console.log(error);
     }
@@ -444,7 +453,7 @@ export default function ProgramEdit() {
   let image3Data = JSON.stringify({
     email: session?.user?.email,
     imageType: "image3",
-    environmentKey : process.env.ENVIRONMENT_KEY,
+    environmentKey: process.env.ENVIRONMENT_KEY,
   });
 
   let image3Config = {
@@ -469,7 +478,7 @@ export default function ProgramEdit() {
   let profile1Data = JSON.stringify({
     email: session?.user?.email,
     imgprofileType: "imgprofile1",
-    environmentKey : process.env.ENVIRONMENT_KEY,
+    environmentKey: process.env.ENVIRONMENT_KEY,
   });
 
   let profile1Config = {
@@ -494,7 +503,7 @@ export default function ProgramEdit() {
   let profile2Data = JSON.stringify({
     email: session?.user?.email,
     imgprofileType: "imgprofile2",
-    environmentKey : process.env.ENVIRONMENT_KEY,
+    environmentKey: process.env.ENVIRONMENT_KEY,
   });
 
   let profile2Config = {
@@ -511,8 +520,10 @@ export default function ProgramEdit() {
     try {
       const response = await axios.request(profile2Config);
       setReview2Profile(response.data.data);
-      if (response.data.data === '' ) {}
-      else{setReview2On(true);}
+      if (response.data.data === "") {
+      } else {
+        setReview2On(true);
+      }
     } catch (error) {
       console.log(error);
     }
@@ -521,7 +532,7 @@ export default function ProgramEdit() {
   let profile3Data = JSON.stringify({
     email: session?.user?.email,
     imgprofileType: "imgprofile3",
-    environmentKey : process.env.ENVIRONMENT_KEY,
+    environmentKey: process.env.ENVIRONMENT_KEY,
   });
 
   let profile3Config = {
@@ -538,13 +549,14 @@ export default function ProgramEdit() {
     try {
       const response = await axios.request(profile3Config);
       setReview3Profile(response.data.data);
-      if (response.data.data === '' ) {}
-      else{setReview3On(true);}
+      if (response.data.data === "") {
+      } else {
+        setReview3On(true);
+      }
     } catch (error) {
       console.log(error);
     }
   }
-
 
   function summit() {
     image1Request();
@@ -553,7 +565,9 @@ export default function ProgramEdit() {
     ReviewProfile1Request();
     ReviewProfile2Request();
     ReviewProfile3Request();
-    setTimeout(() => {EditRequest()}, 10000)
+    setTimeout(() => {
+      EditRequest();
+    }, 10000);
   }
 
   function turnOnMemberEditMode() {
@@ -829,7 +843,7 @@ export default function ProgramEdit() {
             </div>
 
             <div className=" w-full flex  justify-center gap-2 mt-5 ">
-            <div className=" relative z-0 min-w-[200px] flex justify-end">
+              <div className=" relative z-0 min-w-[200px] flex justify-end">
                 <div className=" hidden md:flex">
                   <UserIcon />
                 </div>
@@ -943,15 +957,15 @@ export default function ProgramEdit() {
               //section1
             }
             <p className="  font-semibold text-transparent bg-clip-text bg-gradient-to-b from-[#7533A8] to-[#D62C9F] font-Thai text-center  text-2xl py-5 block w-full  lg:hidden ">
-            การรับสมัครและการสอบเข้า
-              </p>
-              <div className=" flex justify-center gap-3">
-                <p className="  font-semibold text-transparent bg-clip-text bg-gradient-to-b from-[#7533A8] to-[#D62C9F] font-Thai text-right min-w-52 text-4xl py-5 hidden lg:block ">
+              การรับสมัครและการสอบเข้า
+            </p>
+            <div className=" flex justify-center gap-3">
+              <p className="  font-semibold text-transparent bg-clip-text bg-gradient-to-b from-[#7533A8] to-[#D62C9F] font-Thai text-right min-w-52 text-4xl py-5 hidden lg:block ">
                 การรับสมัคร
-                  <p className="  font-semibold text-transparent bg-clip-text bg-gradient-to-b from-[#7533A8] to-[#D62C9F] font-Thai text-right min-w-52 text-2xl  hidden lg:block ">
+                <p className="  font-semibold text-transparent bg-clip-text bg-gradient-to-b from-[#7533A8] to-[#D62C9F] font-Thai text-right min-w-52 text-2xl  hidden lg:block ">
                   และการสอบเข้า
-                  </p>
                 </p>
+              </p>
 
               <div className=" w-auto relative  ">
                 <svg
@@ -993,7 +1007,7 @@ export default function ProgramEdit() {
                     />
                   </label>
                   <p className="  text-center text-[#7533A8] ">
-                  ภาพบรรยากาศในโครงการ
+                    ภาพบรรยากาศในโครงการ
                   </p>
                 </div>
                 <div className=" absolute w-full top-0">
@@ -1005,10 +1019,10 @@ export default function ProgramEdit() {
               </div>
             </div>
             <div className=" flex justify-center mt-10">
-                <div className=" w-full  justify-center hidden md:block">
-                  <textarea
-                    className=" text-[#582A88]  text-lg break-words border-2 font-Thai  md:w-full sm:w-[300px]   h-72  bg-transparent align-top resize-none "
-                    ref={admissionRef}
+              <div className=" w-full  justify-center hidden md:block">
+                <textarea
+                  className=" text-[#582A88]  text-lg break-words border-2 font-Thai  md:w-full sm:w-[300px]   h-72  bg-transparent align-top resize-none "
+                  ref={admissionRef}
                   value={admission}
                   onClick={turnOnAdmissionEditMode}
                   defaultValue=""
@@ -1017,32 +1031,32 @@ export default function ProgramEdit() {
                 ></textarea>
                 <div className=" flex justify-center">
                   <button className="  " onClick={turnOnAdmissionEditMode}>
-                      <PencilIcon />
-                    </button>
-                  </div>
-                </div>
-                <div className=" w-full  justify-center flex md:hidden">
-                  <textarea
-                    className=" text-[#582A88]  text-lg break-words border-2 font-Thai  md:w-full sm:w-[300px]   h-72 bg-transparent align-top resize-none "
-                    ref={admissionRef}
-                  value={admission}
-                  onClick={turnOnAdmissionEditMode}
-                  defaultValue=""
-                  onBlur={() => setAdmissionEditMode(false)}
-                  onChange={handleAdmissionChange}
-                ></textarea>
-                <div className=" flex justify-center">
-                  <button className="  " onClick={turnOnAdmissionEditMode}>
-                      <PencilIcon />
-                    </button>
-                  </div>
+                    <PencilIcon />
+                  </button>
                 </div>
               </div>
+              <div className=" w-full  justify-center flex md:hidden">
+                <textarea
+                  className=" text-[#582A88]  text-lg break-words border-2 font-Thai  md:w-full sm:w-[300px]   h-72 bg-transparent align-top resize-none "
+                  ref={admissionRef}
+                  value={admission}
+                  onClick={turnOnAdmissionEditMode}
+                  defaultValue=""
+                  onBlur={() => setAdmissionEditMode(false)}
+                  onChange={handleAdmissionChange}
+                ></textarea>
+                <div className=" flex justify-center">
+                  <button className="  " onClick={turnOnAdmissionEditMode}>
+                    <PencilIcon />
+                  </button>
+                </div>
+              </div>
+            </div>
             {
               //section2
             }
             <p className="  font-semibold text-transparent bg-clip-text bg-gradient-to-b from-[#7533A8] to-[#D62C9F] font-Thai text-center  text-2xl block w-full py-5  lg:hidden ">
-            วิชา/หลักสูตรเพิ่มเติมที่เรียน
+              วิชา/หลักสูตรเพิ่มเติมที่เรียน
             </p>
             <div className=" flex justify-center gap-3 lg:mt-10">
               <div className=" w-auto relative  ">
@@ -1085,7 +1099,7 @@ export default function ProgramEdit() {
                     />
                   </label>
                   <p className="  text-center text-[#7533A8] ">
-                  ภาพบรรยากาศในโครงการ
+                    ภาพบรรยากาศในโครงการ
                   </p>
                 </div>
                 <div className=" absolute w-full top-0 z-10">
@@ -1096,18 +1110,19 @@ export default function ProgramEdit() {
                 </div>
               </div>
               <p className="  font-semibold text-transparent bg-clip-text bg-gradient-to-b from-[#7533A8] to-[#D62C9F] font-Thai text-left min-w-52 text-5xl py-5 hidden lg:block ">
-              วิชา /
-                  <p className="  font-semibold text-transparent bg-clip-text bg-gradient-to-b from-[#7533A8] to-[#D62C9F] font-Thai text-left min-w-52 text-3xl  hidden lg:block ">
-                  หลักสูตร<br />
+                วิชา /
+                <p className="  font-semibold text-transparent bg-clip-text bg-gradient-to-b from-[#7533A8] to-[#D62C9F] font-Thai text-left min-w-52 text-3xl  hidden lg:block ">
+                  หลักสูตร
+                  <br />
                   เพิ่มเติมที่เรียน
-                  </p>
                 </p>
+              </p>
             </div>
             <div className=" flex justify-center mt-10">
-            <div className=" w-full  justify-center hidden md:block">
-                  <textarea
-                    className=" text-[#582A88]  text-lg break-words border-2 font-Thai  md:w-full sm:w-[300px]   h-72  bg-transparent align-top resize-none "
-                    ref={subjectsRef}
+              <div className=" w-full  justify-center hidden md:block">
+                <textarea
+                  className=" text-[#582A88]  text-lg break-words border-2 font-Thai  md:w-full sm:w-[300px]   h-72  bg-transparent align-top resize-none "
+                  ref={subjectsRef}
                   value={subjects}
                   onClick={turnOnSubjectsEditMode}
                   defaultValue=""
@@ -1116,14 +1131,14 @@ export default function ProgramEdit() {
                 ></textarea>
                 <div className=" flex justify-center">
                   <button className="  " onClick={turnOnSubjectsEditMode}>
-                      <PencilIcon />
-                    </button>
-                  </div>
+                    <PencilIcon />
+                  </button>
                 </div>
-                <div className=" w-full  justify-center flex md:hidden">
-                  <textarea
-                    className=" text-[#582A88]  text-lg break-words border-2 font-Thai  md:w-full sm:w-[300px]   h-72 bg-transparent align-top resize-none "
-                    ref={subjectsRef}
+              </div>
+              <div className=" w-full  justify-center flex md:hidden">
+                <textarea
+                  className=" text-[#582A88]  text-lg break-words border-2 font-Thai  md:w-full sm:w-[300px]   h-72 bg-transparent align-top resize-none "
+                  ref={subjectsRef}
                   value={subjects}
                   onClick={turnOnSubjectsEditMode}
                   defaultValue=""
@@ -1132,23 +1147,24 @@ export default function ProgramEdit() {
                 ></textarea>
                 <div className=" flex justify-center">
                   <button className="  " onClick={turnOnSubjectsEditMode}>
-                      <PencilIcon />
-                    </button>
-                  </div>
+                    <PencilIcon />
+                  </button>
                 </div>
+              </div>
             </div>
             {
               //section3
             }
             <p className="  font-semibold text-transparent bg-clip-text bg-gradient-to-b from-[#7533A8] to-[#D62C9F] font-Thai text-center  text-3xl block w-full py-5  lg:hidden ">
-            ความน่าสนใจของโครงการ
+              ความน่าสนใจของโครงการ
             </p>
             <div className=" flex justify-center gap-3 lg:mt-10">
-            <p className="  font-semibold text-transparent bg-clip-text bg-gradient-to-b from-[#7533A8] to-[#D62C9F] font-Thai text-right min-w-52 text-4xl py-5 hidden lg:block ">
+              <p className="  font-semibold text-transparent bg-clip-text bg-gradient-to-b from-[#7533A8] to-[#D62C9F] font-Thai text-right min-w-52 text-4xl py-5 hidden lg:block ">
                 ความน่าสนใจ
-                  <p className="  font-semibold text-transparent bg-clip-text bg-gradient-to-b from-[#7533A8] to-[#D62C9F] font-Thai text-right min-w-52 text-2xl  hidden lg:block ">
-                    ของโครงการ</p>
+                <p className="  font-semibold text-transparent bg-clip-text bg-gradient-to-b from-[#7533A8] to-[#D62C9F] font-Thai text-right min-w-52 text-2xl  hidden lg:block ">
+                  ของโครงการ
                 </p>
+              </p>
 
               <div className=" w-auto relative  ">
                 <svg
@@ -1190,7 +1206,7 @@ export default function ProgramEdit() {
                     />
                   </label>
                   <p className="  text-center text-[#7533A8] ">
-                  ภาพบรรยากาศในโครงการ
+                    ภาพบรรยากาศในโครงการ
                   </p>
                 </div>
                 <div className=" absolute w-full top-0">
@@ -1202,10 +1218,10 @@ export default function ProgramEdit() {
               </div>
             </div>
             <div className=" flex justify-center mt-10">
-            <div className=" w-full  justify-center hidden md:block">
-                  <textarea
-                    className=" text-[#582A88]  text-lg break-words border-2 font-Thai  md:w-full sm:w-[300px]   h-72  bg-transparent align-top resize-none "
-                    ref={interestsRef}
+              <div className=" w-full  justify-center hidden md:block">
+                <textarea
+                  className=" text-[#582A88]  text-lg break-words border-2 font-Thai  md:w-full sm:w-[300px]   h-72  bg-transparent align-top resize-none "
+                  ref={interestsRef}
                   value={interests}
                   onClick={turnOnInterestsEditMode}
                   defaultValue=""
@@ -1214,14 +1230,14 @@ export default function ProgramEdit() {
                 ></textarea>
                 <div className=" flex justify-center">
                   <button className="  " onClick={turnOnInterestsEditMode}>
-                      <PencilIcon />
-                    </button>
-                  </div>
+                    <PencilIcon />
+                  </button>
                 </div>
-                <div className=" w-full  justify-center flex md:hidden">
-                  <textarea
-                    className=" text-[#582A88]  text-lg break-words border-2 font-Thai  md:w-full sm:w-[300px]   h-72 bg-transparent align-top resize-none "
-                    ref={interestsRef}
+              </div>
+              <div className=" w-full  justify-center flex md:hidden">
+                <textarea
+                  className=" text-[#582A88]  text-lg break-words border-2 font-Thai  md:w-full sm:w-[300px]   h-72 bg-transparent align-top resize-none "
+                  ref={interestsRef}
                   value={interests}
                   onClick={turnOnInterestsEditMode}
                   defaultValue=""
@@ -1230,10 +1246,10 @@ export default function ProgramEdit() {
                 ></textarea>
                 <div className=" flex justify-center">
                   <button className="  " onClick={turnOnInterestsEditMode}>
-                      <PencilIcon />
-                    </button>
-                  </div>
+                    <PencilIcon />
+                  </button>
                 </div>
+              </div>
             </div>
 
             {
@@ -1373,7 +1389,13 @@ export default function ProgramEdit() {
               {
                 //review2
               }
-              <div className={review2On ? " md:w-full w-[calc(100dvw)] left-1/2  -translate-x-1/2 relative mt-10" : "hidden"}>
+              <div
+                className={
+                  review2On
+                    ? " md:w-full w-[calc(100dvw)] left-1/2  -translate-x-1/2 relative mt-10"
+                    : "hidden"
+                }
+              >
                 <ReviewCardLineR />
                 <div className=" absolute top-0 mt-5 md:right-5 sm:right-2 h-full justify-end ">
                   <div className=" flex justify-end">
@@ -1515,7 +1537,13 @@ export default function ProgramEdit() {
               {
                 //review3
               }
-              <div className={review3On ? " md:w-full w-[calc(100dvw)] left-1/2  -translate-x-1/2 relative" : "hidden"}>
+              <div
+                className={
+                  review3On
+                    ? " md:w-full w-[calc(100dvw)] left-1/2  -translate-x-1/2 relative"
+                    : "hidden"
+                }
+              >
                 <ReviewCardLine />
                 <div className=" absolute top-0 mt-5 md:left-5 sm:left-2 h-full ">
                   <svg
@@ -1642,7 +1670,6 @@ export default function ProgramEdit() {
         {
           //every asset start here
         }
-        
       </div>
 
       <ToastContainer />
