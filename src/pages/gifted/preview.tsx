@@ -346,8 +346,10 @@ export default function ProgramPreview() {
                   </p>
                 </div>
               </div>
-              <div className=" md:mt-3  ">
-                <ClubWidget />
+              <div className=" w-full flex justify-center">
+                <div className=" md:mt-3 md:w-full w-[90%]  ">
+                  <ClubWidget />
+                </div>
               </div>
               {
                 //section1
@@ -488,8 +490,10 @@ export default function ProgramPreview() {
                   </p>
                 </div>
               </div>
-              <div className=" mt-10">
-                <ReviewWidget />
+              <div className=" w-full flex justify-center">
+                <div className=" mt-10 md:w-full w-[90%]  ">
+                  <ReviewWidget />
+                </div>
               </div>
 
               {

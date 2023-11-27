@@ -352,8 +352,10 @@ export default function ClubPreview() {
                   </p>
                 </div>
               </div>
-              <div className=" md:mt-3  ">
-                <ClubWidget />
+              <div className=" w-full flex justify-center">
+                <div className=" md:mt-3 md:w-full w-[90%]  ">
+                  <ClubWidget />
+                </div>
               </div>
               {
                 //section1
@@ -493,9 +495,11 @@ export default function ClubPreview() {
                 </div>
               </div>
               <div>
-                <div className=" mt-10">
+              <div className=" w-full flex justify-center">
+                <div className=" mt-10 md:w-full w-[90%]  ">
                   <ReviewWidget />
                 </div>
+              </div>
 
                 {
                   //review1
@@ -707,7 +711,7 @@ export default function ClubPreview() {
           <div className=" absolute bottom-0 w-full z-10">
             <ClubBottom />
           </div>
-          <div className=" hidden xl:block ">
+          <div className=" hidden md:block ">
             <div className=" absolute right-0 top-[200px]">
               <ClubCrystal />
             </div>
