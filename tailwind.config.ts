@@ -19,7 +19,8 @@ const config: Config = {
       },
       screens: {
         'sm': '300px',
-        'lg': '1280px'
+        'lg': '1280px',
+        'xl' : '1440px'
       },
     },
   },

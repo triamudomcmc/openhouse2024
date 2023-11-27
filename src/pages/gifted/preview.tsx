@@ -365,22 +365,24 @@ export default function ProgramPreview() {
                 </p>
 
                 <div className=" w-full relative  ">
-                  <svg
-                    className="aspect-[9/5] w-full "
-                    viewBox="0 0 509 307"
-                    fill="none"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <rect width="100%" height="100%" rx="23" fill="#D9D9D9" />
-                  </svg>
+                  <div className=" flex justify-center">
+                    <svg
+                      className=" aspect-[9/5] w-[90%] md:w-full "
+                      viewBox="0 0 509 307"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <rect width="509" height="307" rx="23" fill="#D9D9D9" />
+                    </svg>
+                  </div>
                   <div className=" absolute  w-full h-full">
                     <p className="  text-center text-[#7533A8] ">
                       ภาพบรรยากาศในสายการเรียน
                     </p>
                   </div>
-                  <div className=" absolute w-full top-0">
+                  <div className=" absolute w-full top-0 flex justify-center z-10">
                     <img
-                      className=" flex object-cover  aspect-[9/5] w-full md:rounded-3xl sm:rounded-2xl z-10  "
+                      className=" flex object-cover aspect-[9/5] w-[90%] md:w-full md:rounded-3xl sm:rounded-2xl z-10  "
                       src={image1}
                     />
                   </div>
@@ -401,22 +403,24 @@ export default function ProgramPreview() {
               </p>
               <div className=" flex justify-center gap-3 lg:mt-10">
                 <div className=" w-full relative  ">
-                  <svg
-                    className=" aspect-[9/5] w-full "
-                    viewBox="0 0 509 307"
-                    fill="none"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <rect width="509" height="307" rx="23" fill="#D9D9D9" />
-                  </svg>
+                  <div className=" flex justify-center">
+                    <svg
+                      className=" aspect-[9/5] w-[90%] md:w-full "
+                      viewBox="0 0 509 307"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <rect width="509" height="307" rx="23" fill="#D9D9D9" />
+                    </svg>
+                  </div>
                   <div className=" absolute left-0  w-full h-full z-20">
                     <p className="  text-center text-[#7533A8] ">
                       ภาพบรรยากาศในสายการเรียน
                     </p>
                   </div>
-                  <div className=" absolute w-full top-0 z-10">
+                  <div className=" absolute w-full top-0 flex justify-center z-10">
                     <img
-                      className=" flex object-cover aspect-[9/5] w-full md:rounded-3xl sm:rounded-2xl z-10  "
+                      className=" flex object-cover aspect-[9/5] w-[90%] md:w-full md:rounded-3xl sm:rounded-2xl z-10  "
                       src={image2}
                     />
                   </div>
@@ -454,22 +458,24 @@ export default function ProgramPreview() {
                 </p>
 
                 <div className=" w-full relative  ">
-                  <svg
-                    className=" aspect-[9/5] w-full "
-                    viewBox="0 0 509 307"
-                    fill="none"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <rect width="509" height="307" rx="23" fill="#D9D9D9" />
-                  </svg>
+                  <div className=" flex justify-center">
+                    <svg
+                      className=" aspect-[9/5] w-[90%] md:w-full "
+                      viewBox="0 0 509 307"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <rect width="509" height="307" rx="23" fill="#D9D9D9" />
+                    </svg>
+                  </div>
                   <div className=" absolute  w-full h-full">
                     <p className="  text-center text-[#7533A8] ">
                       ภาพบรรยากาศในชมรม
                     </p>
                   </div>
-                  <div className=" absolute w-full top-0">
+                  <div className=" absolute w-full top-0 flex justify-center z-10">
                     <img
-                      className=" flex object-cover aspect-[9/5] w-full md:rounded-3xl sm:rounded-2xl z-10  "
+                      className=" flex object-cover aspect-[9/5] w-[90%] md:w-full md:rounded-3xl sm:rounded-2xl z-10  "
                       src={image3}
                     />
                   </div>

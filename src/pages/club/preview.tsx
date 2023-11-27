@@ -370,22 +370,24 @@ export default function ClubPreview() {
                 </p>
 
                 <div className=" w-full relative  ">
-                  <svg
-                    className="aspect-[9/5] w-full "
-                    viewBox="0 0 509 307"
-                    fill="none"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <rect width="509" height="307" rx="23" fill="#D9D9D9" />
-                  </svg>
+                  <div className=" flex justify-center">
+                    <svg
+                      className=" aspect-[9/5] w-[90%] md:w-full "
+                      viewBox="0 0 509 307"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <rect width="509" height="307" rx="23" fill="#D9D9D9" />
+                    </svg>
+                  </div>
                   <div className=" absolute  w-full h-full">
                     <p className="  text-center text-[#7533A8] ">
                       ภาพบรรยากาศในชมรม
                     </p>
                   </div>
-                  <div className=" absolute w-full top-0">
+                  <div className=" absolute w-full top-0 flex justify-center">
                     <img
-                      className=" flex object-cover  aspect-[9/5] w-full md:rounded-3xl sm:rounded-2xl z-10  "
+                      className=" flex object-cover  aspect-[9/5] w-[90%] md:w-full md:rounded-3xl sm:rounded-2xl z-10  "
                       src={image1}
                     />
                   </div>
@@ -405,23 +407,25 @@ export default function ClubPreview() {
                 ประโยชน์ที่ได้รับจากการเข้าชมรม
               </p>
               <div className=" flex justify-center gap-3 lg:mt-10">
-                <div className=" w-full relative  ">
-                  <svg
-                    className=" aspect-[9/5] w-full "
-                    viewBox="0 0 509 307"
-                    fill="none"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <rect width="509" height="307" rx="23" fill="#D9D9D9" />
-                  </svg>
+                <div className=" w-full relative   ">
+                  <div className=" flex justify-center">
+                    <svg
+                      className=" aspect-[9/5] w-[90%] md:w-full "
+                      viewBox="0 0 509 307"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <rect width="509" height="307" rx="23" fill="#D9D9D9" />
+                    </svg>
+                  </div>
                   <div className=" absolute left-0  w-full h-full z-20">
                     <p className="  text-center text-[#7533A8] ">
                       ภาพบรรยากาศในชมรม
                     </p>
                   </div>
-                  <div className=" absolute w-full top-0 z-10">
+                  <div className=" absolute w-full top-0 flex justify-center z-10">
                     <img
-                      className=" flex object-cover aspect-[9/5] w-full md:rounded-3xl sm:rounded-2xl z-10  "
+                      className=" flex object-cover aspect-[9/5] w-[90%] md:w-full md:rounded-3xl sm:rounded-2xl z-10  "
                       src={image2}
                     />
                   </div>
@@ -458,22 +462,24 @@ export default function ClubPreview() {
                 </p>
 
                 <div className=" w-full relative  ">
-                  <svg
-                    className=" aspect-[9/5] w-full "
-                    viewBox="0 0 509 307"
-                    fill="none"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <rect width="509" height="307" rx="23" fill="#D9D9D9" />
-                  </svg>
+                  <div className=" flex justify-center">
+                    <svg
+                      className=" aspect-[9/5] w-[90%] md:w-full "
+                      viewBox="0 0 509 307"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <rect width="509" height="307" rx="23" fill="#D9D9D9" />
+                    </svg>
+                  </div>
                   <div className=" absolute  w-full h-full">
                     <p className="  text-center text-[#7533A8] ">
                       ภาพบรรยากาศในชมรม
                     </p>
                   </div>
-                  <div className=" absolute w-full top-0">
+                  <div className=" absolute w-full top-0 flex justify-center z-10">
                     <img
-                      className=" flex object-cover aspect-[9/5] w-full md:rounded-3xl sm:rounded-2xl z-10  "
+                      className=" flex object-cover aspect-[9/5] w-[90%] md:w-full md:rounded-3xl sm:rounded-2xl z-10  "
                       src={image3}
                     />
                   </div>
@@ -531,21 +537,21 @@ export default function ClubPreview() {
                     </div>
                   </div>
                   <div className="w-[10px] min-w-[5px]">
-                  <svg
-                    width="100%"
-                    viewBox="0 0 10 318"
-                    fill="none"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path
-                      d="M5 5L4.99999 313"
-                      stroke="white"
-                      stroke-width="10"
-                      stroke-linecap="round"
-                      stroke-dasharray="20 20"
-                    />
-                  </svg>
-                </div>
+                    <svg
+                      width="100%"
+                      viewBox="0 0 10 318"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M5 5L4.99999 313"
+                        stroke="white"
+                        stroke-width="10"
+                        stroke-linecap="round"
+                        stroke-dasharray="20 20"
+                      />
+                    </svg>
+                  </div>
                   <div className=" flex  justify-center ">
                     <p className=" text-white  text-md break-all font-Thai  w-full   bg-transparent align-top resize-none whitespace-pre-line  ">
                       {review1}
@@ -564,26 +570,26 @@ export default function ClubPreview() {
                   }
                 >
                   <div className="  flex justify-start w-full">
-                    <p className=" text-white  text-md break-all font-Thai     bg-transparent align-top resize-none whitespace-pre-line  ">
+                    <p className=" text-white  text-md break-all font-Thai   w-full  bg-transparent align-top resize-none whitespace-pre-line  ">
                       {review2}
                     </p>
                   </div>
                   <div className="w-[10px] min-w-[5px]">
-                  <svg
-                    width="100%"
-                    viewBox="0 0 10 318"
-                    fill="none"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path
-                      d="M5 5L4.99999 313"
-                      stroke="white"
-                      stroke-width="10"
-                      stroke-linecap="round"
-                      stroke-dasharray="20 20"
-                    />
-                  </svg>
-                </div>
+                    <svg
+                      width="100%"
+                      viewBox="0 0 10 318"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M5 5L4.99999 313"
+                        stroke="white"
+                        stroke-width="10"
+                        stroke-linecap="round"
+                        stroke-dasharray="20 20"
+                      />
+                    </svg>
+                  </div>
                   <div className=" relative z-10  min-w-[30%] w-[30%] md:min-w-[25%] md:w-[25%] lg:min-w-[20%] lg:w-[20%]">
                     <div className=" flex justify-end ">
                       <svg
@@ -667,21 +673,21 @@ export default function ClubPreview() {
                     </div>
                   </div>
                   <div className="w-[10px] min-w-[5px]">
-                  <svg
-                    width="100%"
-                    viewBox="0 0 10 318"
-                    fill="none"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path
-                      d="M5 5L4.99999 313"
-                      stroke="white"
-                      stroke-width="10"
-                      stroke-linecap="round"
-                      stroke-dasharray="20 20"
-                    />
-                  </svg>
-                </div>
+                    <svg
+                      width="100%"
+                      viewBox="0 0 10 318"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M5 5L4.99999 313"
+                        stroke="white"
+                        stroke-width="10"
+                        stroke-linecap="round"
+                        stroke-dasharray="20 20"
+                      />
+                    </svg>
+                  </div>
                   <div className=" flex  justify-center ">
                     <p className=" text-white  text-md break-all font-Thai  w-full   bg-transparent align-top resize-none whitespace-pre-line  ">
                       {review3}
@@ -701,7 +707,7 @@ export default function ClubPreview() {
           <div className=" absolute bottom-0 w-full z-10">
             <ClubBottom />
           </div>
-          <div className=" hidden md:block ">
+          <div className=" hidden xl:block ">
             <div className=" absolute right-0 top-[200px]">
               <ClubCrystal />
             </div>
