@@ -9,19 +9,50 @@ import { Tiktok } from "@/vectors/icons/Tiktok";
 import KorChor from "@/vectors/icons/korchor";
 import { useSession, signIn, signOut } from "next-auth/react";
 
+const getButton = (session: any, signout: any) => {
+  if (!session) {
+    return (
+      <Link passHref href="/auth">
+        <motion.button
+          whileHover={{ scale: 1.1 }}
+          className="inline-flex px-8 py-2 text-white rounded-full bg-gradient-to-r from-[#FFD995] via-[#FF7ADA] to-[#4B69E9] mt-5 font-regular font-display footer-button"
+        >
+          ลงทะเบียน
+        </motion.button>
+      </Link>
+    );
+  } else {
+    return (
+      <motion.button
+        whileHover={{ scale: 1.1 }}
+        onClick={signout}
+        className="inline-flex px-8 py-2 text-white rounded-full bg-gradient-to-r from-[#FFD995] via-[#FF7ADA] to-[#4B69E9] mt-5 font-regular font-display footer-button"
+      >
+        ออกจากระบบ
+      </motion.button>
+    );
+  }
+};
 
-export default function Footer() {
-
-const { data: session, status } = useSession();
+const Footer: FC<{ theme?: string }> = ({ theme }) => {
+  const { data: session, status } = useSession();
 
   return (
-    <footer className="w-full px-8 pt-10 antialiased bg-blue-500">
-      <div className="flex flex-col items-center justify-between w-full max-w-6xl px-0 mx-auto sm:flex-row sm:items-start sm:px-20">
+    <footer
+      className={`w-full px-8 pt-10 antialiased bg-[#2C1865] ${
+        theme == "light" ? "bg-white" : "bg-blue-text"
+      }`}
+    >
+      <div className="flex flex-col items-center justify-between w-full max-w-6xl px-0 mx-auto md:flex-row md:items-start md:px-20">
         <div className="flex justify-center">
-          <div className="space-y-5 text-center sm:text-left">
-            <div className={`text-white font-semibold font-sans`}>
+          <div className="space-y-5 text-center md:text-left">
+            <div
+              className={`${
+                theme == "light" ? "text-[#37498B]" : "text-white"
+              } font-semibold font-sans`}
+            >
               <p>TRIAM UDOM</p>
-              <p className="-mt-1">OPEN HOUSE 2023</p>
+              <p className="-mt-1">OPEN HOUSE 2024</p>
             </div>
             <div className="flex space-x-3">
               <motion.a
@@ -63,27 +94,13 @@ const { data: session, status } = useSession();
                 <Tiktok />
               </motion.a>
             </div>
-            <motion.button
-              whileHover={{ scale: 1.1 }}
-              onClick={() => signOut()}
-              className={ status === "authenticated" ? "inline-flex px-8 py-2 text-white rounded-full font-regular font-display footer-button" : "hidden"}
-            >
-              ออกจากระบบ
-            </motion.button>
-            <Link passHref href="/login">
-        <motion.button
-          whileHover={{ scale: 1.1 }}
-          className={ status === "unauthenticated" ? "inline-flex px-8 py-2 text-white rounded-full font-regular font-display footer-button" :"hidden"}
-        >
-          ลงทะเบียน
-        </motion.button>
-      </Link>
-
+            {getButton(session, signOut)}
           </div>
         </div>
         <div
-          className={`text-white
-           flex flex-col sm:flex-row justify-between w-full max-w-md ml-0 mt-6 sm:mt-0 sm:ml-28`}
+          className={`${
+            theme == "light" ? "text-deep-turquoise" : "text-white"
+          } flex flex-col sm:flex-row justify-between w-full max-w-md ml-0 mt-6 sm:mt-0 md:ml-28`}
         >
           <div className="flex flex-col space-y-2 text-center sm:text-right font-display">
             <Link passHref href="/">
@@ -98,7 +115,7 @@ const { data: session, status } = useSession();
             <Link passHref href="/clubs">
               <div className="hover:underline">ชมรม</div>
             </Link>
-            {status === "authenticated" && (
+            {session && (
               <Link passHref href="account/ticket">
                 <div className="hover:underline">บัตรของคุณ</div>
               </Link>
@@ -126,8 +143,13 @@ const { data: session, status } = useSession();
         </div>
       </div>
       <div className="flex justify-center py-5 mt-10 border-t border-[#CBD5E0] border-opacity-30">
-        <KorChor classname="h-4 lg:h-8" fill="#FDF1DB" />
+        <KorChor
+          classname="h-4 lg:h-8"
+          fill={`${theme == "light" ? "" : "#FDF1DB"}`}
+        />
       </div>
     </footer>
   );
-}
+};
+
+export default Footer;

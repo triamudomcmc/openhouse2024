@@ -1,6 +1,6 @@
 import { FC } from "react"
 
-export const Tiktok: FC<{ fill?: string; className?: string }> = ({ fill = "#EEA171", className }) => {
+export const Tiktok: FC<{ fill?: string; className?: string }> = ({ fill = "#E9B5ED", className }) => {
   return (
     // <svg
     //   xmlns="http://www.w3.org/2000/svg"

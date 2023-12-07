@@ -18,7 +18,7 @@ export default function Program() {
   const { data: session } = useSession({
     required: true,
     onUnauthenticated() {
-      router.push("/Login"); // The user is not authenticated, handle it here.
+      router.push("/login"); // The user is not authenticated, handle it here.
     },
   });
 

@@ -336,7 +336,7 @@ export default function Directions() {
               </div>
             </div>
           </div>
-          <div className="relative z-50 mt-8 mx-auto md:mt-64 md:ml-[-200px]">
+          <div className="relative z-50 mt-8 mx-auto lg:mt-64 lg:ml-[-200px]">
             <div className="space-x-4 hidden md:flex">
               {/* bus */}
               <div>

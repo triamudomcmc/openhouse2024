@@ -15,7 +15,10 @@ const config: Config = {
       },
       fontFamily: {
         sans: ['"Noto Sans Thai"'],
-        Thai:['Noto Sans Thai']
+        Thai:['Noto Sans Thai'],
+        Pinyon_Script:['Pinyon Script'],
+        Cinzel_Decorative:['Cinzel Decorative'],
+
       },
       screens: {
         'sm': '300px',

@@ -5,8 +5,10 @@ import { Provider } from 'next-auth/providers/index';
 import Navbar from '@/components/navbar/navbar';
 import Head from 'next/head'
 import Footer from '@/components/footer';
+import { useRouter } from 'next/router';
 
 export default function App({ Component, pageProps }: AppProps) {
+  const router = useRouter();
   return (
     <SessionProvider session={pageProps.session}>
       <Head>
@@ -39,6 +41,7 @@ export default function App({ Component, pageProps }: AppProps) {
       </Head>
       <Navbar />
       <Component {...pageProps} />
+      {!(router.pathname === "/login") && <Footer />}
     </SessionProvider>
   )
 }

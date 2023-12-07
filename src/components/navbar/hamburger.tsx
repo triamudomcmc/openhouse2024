@@ -58,7 +58,7 @@ export default function Hamburger() {
                 Account
             </div>
           </Link>
-          <Link  className={inSession ? "hidden " : " text-center"} href="/Login" >
+          <Link  className={inSession ? "hidden " : " text-center"} href="/login" >
             <div className=" text-center border-b border-slate-500 py-2 text-2xl">
                 Login
             </div>

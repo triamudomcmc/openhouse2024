@@ -21,7 +21,7 @@ export default function AccountPage() {
   const { data: session, status } = useSession({
     required: true,
     onUnauthenticated() {
-      router.push("/Login"); // The user is not authenticated, handle it here.
+      router.push("/login"); // The user is not authenticated, handle it here.
     },
   });
 
@@ -33,7 +33,7 @@ export default function AccountPage() {
   let config = {
     method: "post",
     maxBodyLength: Infinity,
-    url: `https://openhouse2024-backend.vercel.app/api/roles/info`,
+    url: `https://openhouse2024-backend.vercel.app/api/user/get`,
     headers: {
       "Content-Type": "application/json",
     },
@@ -42,51 +42,16 @@ export default function AccountPage() {
 
   
   async function makeRequest() {
+    if (status === "authenticated" ) {
     try {
       const response = await axios.request(config);
-      console.log(response.data.tag);
-      console.log("succes");
-      if (response.data.tag === "ชมรม") {
-        setClub(true);
-        setNone(false);
-        setProgram(false);
-        setGifted(false);
-        setOrganization(false);
-        setAdmin(false);
-        console.log("club");
-      } else if (response.data.tag === "สายการเรียน") {
-        setProgram(true);
-        setNone(false);
-        setClub(false);
-        setGifted(false);
-        setOrganization(false);
-        setAdmin(false);
-      } else if (response.data.tag === "โครงการพัฒนาความสามารถ") {
-        setGifted(true);
-        setNone(false);
-        setProgram(false);
-        setClub(false);
-        setOrganization(false);
-        setAdmin(false);
-      } else if (response.data.tag === "องค์กรนักเรียน") {
-        setOrganization(true);
-        setNone(false);
-        setProgram(false);
-        setGifted(false);
-        setClub(false);
-        setAdmin(false);
-      } else if (response.data.tag === "admin") {
-        setOrganization(false);
-        setNone(false);
-        setProgram(false);
-        setGifted(false);
-        setClub(false);
-        setAdmin(true);
+      if (response.data === false) {
+        router.push("/account/form");
+      } else{
       }
     } catch (error) {
       console.log(error);
-      setNone(true);
-    }
+    }}
   }
 
   const router = useRouter();

@@ -1,6 +1,6 @@
 import { FC } from "react"
 
-export const Instagram: FC<{ fill?: string; className?: string }> = ({ fill = "#EEA171", className }) => {
+export const Instagram: FC<{ fill?: string; className?: string }> = ({ fill = "#E9B5ED", className }) => {
   return (
     <svg
       width="40"
