@@ -87,9 +87,14 @@ export default function Navbar() {
           </div>
         </div>
       </nav>
-      <nav className=" md:hidden bg-white bg-opacity-70 flex align-middle  justify-between px-5 gap-20 h-12  text-center z-20 top-0 ">
+      <nav className=" md:hidden bg-[#935AE3] bg-opacity-80 flex align-middle  justify-between px-5 gap-20 h-16  text-center z-20 top-0 ">
         <Link href="/" className=" items-center flex justify-center">
-          <OPHLogoM />
+        <p className="font-[700] text-[20px] leading-[24px] text-white">
+            TRIAM UDOM
+            <span className="font-[400] block text-[15px] leading-[18px]">
+              OPEN HOUSE 2024
+            </span>
+          </p>
         </Link>
         <div className=" my-auto">
           <Hamburger />

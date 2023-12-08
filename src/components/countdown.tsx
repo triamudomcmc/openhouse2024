@@ -31,40 +31,40 @@ const Countdown: React.FC<CountdownProps> = ({ targetDate }) => {
   return (
     <div className=" ">
       <div className=" flex justify-center   ">
-        <div className="text-[32px] font-semibold bg-fuchsia-500 bg-opacity-70 rounded-[100px] text-white px-10 py-1">
+        <div className="text-[32px] font-semibold bg-fuchsia-500 bg-opacity-70 rounded-[100px] text-white max-md:hidden px-10 py-1">
           12-13 JANUARY 2024
         </div>
       </div>
-      <div className=" grid md:grid-cols-4 grid-cols-2 gap-5 text-[54px] font-semibold mt-5">
+      <div className=" grid grid-cols-4 max-md:min-w-[252px]   gap-5 md:text-[54px] sm:text-[26px] font-semibold mt-5">
         <div className=" block text-center ">
-          <div className=" w-24 h-24 bg-white rounded-[20px] shadow-md flex items-center ">
+          <div className=" md:w-24 md:h-24 sm:w-12 sm:h-12 bg-white md:rounded-[20px] sm:rounded-[10px] shadow-md flex justify-center items-center  ">
             <p className=" m-auto text-purple-700  ">{daysRemaining}</p>
           </div>
-          <div className=" mt-3 opacity-60 text-center text-white text-2xl">
+          <div className=" mt-3 opacity-60 text-center text-white md:text-2xl sm:text-lg">
             day
           </div>
         </div>
         <div className=" block text-center">
-          <div className=" w-24 h-24 bg-white rounded-[20px] shadow-md flex items-center ">
+          <div className=" md:w-24 md:h-24 sm:w-12 sm:h-12 bg-white md:rounded-[20px] sm:rounded-[10px] shadow-md flex items-center ">
             <p className=" m-auto text-purple-700">{hoursRemaining}</p>
           </div>
-          <div className=" mt-3 opacity-60 text-center text-white text-2xl">
+          <div className=" mt-3 opacity-60 text-center text-white md:text-2xl sm:text-lg">
             hour
           </div>
         </div>
         <div className=" block text-center">
-          <div className=" w-24 h-24 bg-white rounded-[20px] shadow-md flex items-center ">
+          <div className=" md:w-24 md:h-24 sm:w-12 sm:h-12 bg-white md:rounded-[20px] sm:rounded-[10px] shadow-md flex items-center ">
             <p className=" m-auto text-purple-700">{minsRemaining}</p>
           </div>
-          <div className=" mt-3 opacity-60 text-center text-white text-2xl">
+          <div className=" mt-3 opacity-60 text-center text-white md:text-2xl sm:text-lg">
             min
           </div>
         </div>
         <div className=" block text-center">
-          <div className=" w-24 h-24 bg-white rounded-[20px] shadow-md flex items-center ">
+          <div className=" md:w-24 md:h-24 sm:w-12 sm:h-12 bg-white md:rounded-[20px] sm:rounded-[10px] shadow-md flex items-center ">
             <p className=" m-auto text-purple-700">{secsRemaining}</p>
           </div>
-          <div className=" mt-3 opacity-60 text-center text-white text-2xl">
+          <div className=" mt-3 opacity-60 text-center text-white md:text-2xl sm:text-lg">
             sec
           </div>
         </div>

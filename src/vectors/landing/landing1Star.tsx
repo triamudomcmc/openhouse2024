@@ -1,9 +1,14 @@
-export default function Landing1Star() {
+import React, { FC } from "react";
+
+const Landing1Star: FC<{
+  className?: string;
+}> = ({ className }) => {
   return (
     <svg
       width="87"
       height="87"
       viewBox="0 0 87 87"
+      className={`${className}`}
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
     >
@@ -16,3 +21,5 @@ export default function Landing1Star() {
     </svg>
   );
 }
+
+export default Landing1Star;

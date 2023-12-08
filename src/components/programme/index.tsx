@@ -29,7 +29,7 @@ export const Programme = ({
           />
         </div>
         <div className={`max-w-[250px] mx-auto `}>
-          <h3 className="font-light text-2xl text-white">{thainame}</h3>
+          <h3 className="font-light lg:text-2xl md:text-lg text-white">{thainame}</h3>
         </div>
       </motion.div>
     </Link>
