@@ -4,7 +4,7 @@ import { useSession } from "next-auth/react";
 
 export default function Hamburger() {
   const [isOpen, setIsOpen] = useState(false);
-  const genericHamburgerLine = `h-1 w-6 my-1 rounded-full bg-white transition ease transform duration-300`;
+  const genericHamburgerLine = `h-1 w-6 my-[3px] rounded-full bg-white transition ease transform duration-300`;
   const { data: session } = useSession();
   const [inSession, SetInSession] = useState(false);
 
@@ -27,7 +27,7 @@ export default function Hamburger() {
         <div
           className={`${genericHamburgerLine} ${
             isOpen
-              ? "rotate-45 translate-y-3 opacity-80 group-hover:opacity-100"
+              ? "rotate-45 translate-y-[10px] opacity-80 group-hover:opacity-100"
               : "opacity-50 group-hover:opacity-100"
           }`}
         />
@@ -39,7 +39,7 @@ export default function Hamburger() {
         <div
           className={`${genericHamburgerLine} ${
             isOpen
-              ? "-rotate-45 -translate-y-3 opacity-80 group-hover:opacity-100"
+              ? "-rotate-45 -translate-y-[10px] opacity-80 group-hover:opacity-100"
               : "opacity-50 group-hover:opacity-100"
           }`}
         />
@@ -77,10 +77,10 @@ export default function Hamburger() {
         </Link>
         <Link
           className={inSession ? "hidden " : " text-right pr-10 text-white"}
-          href="/login"
+          href="/auth"
         >
           <div className=" text-right pr-10 text-white border-b border-gray-100 py-2 text-2xl">
-            Login
+          เข้าสู่ระบบ
           </div>
         </Link>
       </div>

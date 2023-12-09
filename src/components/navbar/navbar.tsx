@@ -55,6 +55,16 @@ export default function Navbar() {
 
           <div
             className={
+              router.pathname === "/shows"
+                ? " text-center py-1 my-2 font-semibold underline "
+                : "text-center py-1 my-2"
+            }
+          >
+            <Link href="/shows">การแสดง</Link>
+          </div>
+
+          <div
+            className={
               router.pathname === "/directions"
                 ? " text-center py-1 my-2 font-semibold underline "
                 : "text-center py-1 my-2"
@@ -77,19 +87,19 @@ export default function Navbar() {
           <div className={inSession ? " hidden " : " block "}>
             <div
               className={
-                router.pathname === "/login"
+                router.pathname === "/auth"
                   ? " text-center py-1 my-2 font-semibold underline "
                   : "text-center py-1 my-2 "
               }
             >
-              <Link href="/login"> Login </Link>
+              <Link href="/auth"> เข้าสู่ระบบ </Link>
             </div>
           </div>
         </div>
       </nav>
       <nav className=" md:hidden bg-[#935AE3] bg-opacity-80 flex align-middle  justify-between px-5 gap-20 h-16  text-center z-20 top-0 ">
         <Link href="/" className=" items-center flex justify-center">
-        <p className="font-[700] text-[20px] leading-[24px] text-white">
+          <p className="font-[700] text-[20px] leading-[24px] text-white">
             TRIAM UDOM
             <span className="font-[400] block text-[15px] leading-[18px]">
               OPEN HOUSE 2024

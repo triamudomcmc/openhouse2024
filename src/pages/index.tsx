@@ -38,7 +38,7 @@ export default function Home() {
   const targetDate = new Date(Date.UTC(2024, 0, 12, 9, 0, 0));
   useEffect(() => {
     // User email is available, make the API request
-    //router.push("/Login")
+    //router.push("/auth")
   }, []);
 
   return (

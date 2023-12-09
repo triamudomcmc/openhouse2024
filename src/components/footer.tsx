@@ -15,9 +15,9 @@ const getButton = (session: any, signout: any) => {
       <Link passHref href="/auth">
         <motion.button
           whileHover={{ scale: 1.1 }}
-          className="inline-flex px-8 py-2 text-white rounded-full bg-gradient-to-r from-[#FFD995] via-[#FF7ADA] to-[#4B69E9] mt-5 font-regular font-display footer-button"
+          className="inline-flex px-8 py-2 text-white font-bold rounded-full bg-gradient-to-r from-[#FFD995] via-[#FF7ADA] to-[#4B69E9] mt-5 font-regular font-display footer-button"
         >
-          ลงทะเบียน
+          เข้าสู่ระบบ
         </motion.button>
       </Link>
     );
@@ -26,7 +26,7 @@ const getButton = (session: any, signout: any) => {
       <motion.button
         whileHover={{ scale: 1.1 }}
         onClick={signout}
-        className="inline-flex px-8 py-2 text-white rounded-full bg-gradient-to-r from-[#FFD995] via-[#FF7ADA] to-[#4B69E9] mt-5 font-regular font-display footer-button"
+        className="inline-flex px-8 py-2 text-white font-bold rounded-full bg-gradient-to-r from-[#FFD995] via-[#FF7ADA] to-[#4B69E9] mt-5 font-regular font-display footer-button"
       >
         ออกจากระบบ
       </motion.button>
@@ -102,7 +102,7 @@ const Footer: FC<{ theme?: string }> = ({ theme }) => {
             theme == "light" ? "text-deep-turquoise" : "text-white"
           } flex flex-col sm:flex-row justify-between w-full max-w-md ml-0 mt-6 sm:mt-0 md:ml-28`}
         >
-          <div className="flex flex-col space-y-2 text-center sm:text-right font-display">
+          <div className="flex flex-col space-y-2 text-center md:text-right max-md:mt-5  font-display">
             <Link passHref href="/">
               <div className="hover:underline">หน้าแรก</div>
             </Link>
@@ -121,7 +121,7 @@ const Footer: FC<{ theme?: string }> = ({ theme }) => {
               </Link>
             )}
           </div>
-          <div className="flex flex-col mt-2 space-y-2 text-center sm:text-right sm:mt-0 font-display">
+          <div className="flex flex-col space-y-2 text-center md:text-right max-md:mt-5 font-display">
             {/* <Link passHref href="/map">
               <a className="hover:underline">แผนผัง</a>
             </Link> */}
@@ -137,7 +137,7 @@ const Footer: FC<{ theme?: string }> = ({ theme }) => {
               <div className="hover:underline">การเดินทาง</div>
             </Link>
             <Link passHref href="/contact">
-              <div className="hover:underline">ติดต่อ</div>
+              <div className="hover:underline ">ติดต่อ</div>
             </Link>
           </div>
         </div>

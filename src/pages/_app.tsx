@@ -17,10 +17,13 @@ export default function App({ Component, pageProps }: AppProps) {
           name="description"
           content="งานนิทรรศการประจำปีของโรงเรียนเตรียมอุดมศึกษา พบกับกิจกรรมที่น่าสนใจจากนักเรียนโรงเรียนเตรียมอุดมศึกษา อาทิ แนะแนวการศึกษาต่อ แนะนำสายการเรียน และกิจกรรมจากชมรมต่าง ๆ"
         />
-      <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0" />
+        <meta
+          name="viewport"
+          content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0"
+        />
 
-      {/* Open Graph / Facebook  */}
-      <meta property="og:type" content="website" />
+        {/* Open Graph / Facebook  */}
+        <meta property="og:type" content="website" />
         <meta property="og:url" content="https://openhouse.triamudom.ac.th/" />
         <meta property="og:title" content="Triam Udom Open House 2024" />
         <meta
@@ -31,7 +34,10 @@ export default function App({ Component, pageProps }: AppProps) {
 
         {/* Twitter  */}
         <meta property="twitter:card" content="summary_large_image" />
-        <meta property="twitter:url" content="https://openhouse.triamudom.ac.th/" />
+        <meta
+          property="twitter:url"
+          content="https://openhouse.triamudom.ac.th/"
+        />
         <meta property="twitter:title" content="Triam Udom Open House 2024" />
         <meta
           property="twitter:description"
@@ -41,7 +47,7 @@ export default function App({ Component, pageProps }: AppProps) {
       </Head>
       <Navbar />
       <Component {...pageProps} />
-      {!(router.pathname === "/login") && <Footer />}
+      {!(router.pathname === "/auth") && <Footer />}
     </SessionProvider>
-  )
+  );
 }
