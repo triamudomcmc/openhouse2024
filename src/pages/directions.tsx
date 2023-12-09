@@ -160,7 +160,7 @@ export default function Directions() {
   }, [currentTab])
 
   return (
-    <main className="min-h-screen text-white bg-normal-gradient bg-amber-100">
+    <main className="min-h-screen text-white bg-normal-gradient bg-[#BF9EFF]">
       <div className="pt-32 pb-24 max-w-[2200px] mx-auto">
         <h1 className="text-2xl font-black text-center">การเดินทาง</h1>
 
