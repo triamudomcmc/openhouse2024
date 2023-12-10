@@ -1,9 +1,9 @@
 import { useEffect, useState } from "react"
 
 const COLORS = {
-  bts: "#CA4141",
-  bus: "#E96F26",
-  mrt: "#37498B",
+  bts: "#FF0586",
+  bus: "#000CFF",
+  mrt: "#6311D6",
 }
 
 export default function Directions() {
@@ -160,9 +160,9 @@ export default function Directions() {
   }, [currentTab])
 
   return (
-    <main className="min-h-screen text-white bg-normal-gradient bg-[#BF9EFF]">
+    <main className="min-h-screen text-white bg-normal-gradient bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-[#FFF5C8] via-[#FC7ADB] to-[#7B66FF]">
       <div className="pt-32 pb-24 max-w-[2200px] mx-auto">
-        <h1 className="text-2xl font-black text-center">การเดินทาง</h1>
+        <h1 className="font-extrabold text-transparent md:text-7xl text-4xl bg-clip-text bg-gradient-to-b from-[#5B00DB] to-[#FF329C] text-center text-stroke-white ">การเดินทาง</h1>
 
         {/* การเดินทาง */}
 

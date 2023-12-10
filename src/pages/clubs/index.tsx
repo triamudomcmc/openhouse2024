@@ -16,9 +16,7 @@ const Club = ({ data }: { data: any }) => {
 
   return (
     <Link passHref href={data.path}>
-      <div
-        className="bg-[#FFF6E8] text-[#2F24AE] text-center w-[300px] sm:w-[212px] cursor-pointer rounded-lg sm:mr-6 mt-6 backdrop-blur-lg backdrop-filter pb-[10px] border border-white border-opacity-20"
-      >
+      <div className="bg-[#2C006A] text-white text-center w-[300px] sm:w-[212px] cursor-pointer rounded-lg sm:mr-6 mt-6 backdrop-blur-lg backdrop-filter pb-[10px] border border-white border-opacity-20">
         <div>
           <div className="relative">
             {/*<span className="absolute bottom-[12px] right-[6px] text-[10px] z-[2] text-gray-700 bg-white px-2 py-[0.6px] font-medium rounded-sm text-sm">12.10</span>*/}
@@ -32,9 +30,10 @@ const Club = ({ data }: { data: any }) => {
               className="w-full rounded-t-lg"
             />
           </div>
+          <div className=" w-full h-1 bg-gradient-to-r from-[#1827AA] via-[#FA58C4] to-[#D7D7D7]"></div>
           <div className="px-2">
             <div className="flex items-start justify-center py-2 space-x-1">
-              <h1 className="text-[15px] text-center font-light h-[45px]">
+              <h1 className="text-[15px] text-center h-[45px] font-medium">
                 {data.title}
               </h1>
             </div>
@@ -110,7 +109,7 @@ const Page = ({ contents }: { contents: any }) => {
   }, [searchContext, contents]);
 
   return (
-    <main className="text-white px-8 pt-[6.5rem] pb-[2rem] min-h-screen bg-normal-gradient bg-[#BF9EFF]">
+    <main className="text-white px-8 pt-[6.5rem] pb-[2rem] min-h-screen bg-normal-gradient bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-[#FFF5C8] via-[#FC7ADB] to-[#7B66FF]">
       <div className="max-w-6xl mx-auto">
         <div
           onClick={() => {
@@ -123,19 +122,19 @@ const Page = ({ contents }: { contents: any }) => {
         </div>
         <div className="max-w-5xl mx-auto mt-16 mb-24">
           <div className="flex flex-col items-center">
-            <h1 className="text-5xl">ชมรม</h1>
+            <h1 className="text-5xl text-transparent bg-clip-text bg-gradient-to-b from-[#6C1FD8] to-[#FF54AC] font-bold">ชมรม</h1>
             <div className="px-5 sm:px-10 w-full max-w-[500px]">
-              <div className="relative mt-4">
-                <div className="absolute top-0 left-0 flex items-center h-full ml-6">
-                  <MagnifyingGlassIcon className="w-6 h-6" />
-                </div>
+              <div className="relative mt-4 ">
                 <input
                   onChange={(e) => {
                     setTimeout(() => setSearchContext(e.target.value));
                   }}
-                  className="w-full py-2 pr-4 bg-white border rounded-full bg-opacity-20 placeholder:text-white pl-14 border-opacity-40"
+                  className="w-full py-2 pr-4 bg-white border rounded-full bg-opacity-100 placeholder:text-[#2C1865] text-[#2C1865] pl-5 border-opacity-40"
                   placeholder="ค้นหาชมรม..."
                 />
+                <div className="absolute top-0 right-0 flex items-center h-full  px-6 bg-gradient-to-br from-[#FF6DD6] to-[#40379E] rounded-r-full ">
+                  <MagnifyingGlassIcon className="w-6 h-6" />
+                </div>
               </div>
             </div>
           </div>
