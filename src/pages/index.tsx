@@ -35,7 +35,7 @@ import Landing6M from "@/vectors/landing/landing6M";
 
 export default function Home() {
   const router = useRouter();
-  const targetDate = new Date(Date.UTC(2024, 0, 12, 9, 0, 0));
+  const targetDate = new Date(Date.UTC(2024, 0, 12, 2, 0, 0));
   useEffect(() => {
     // User email is available, make the API request
     //router.push("/auth")

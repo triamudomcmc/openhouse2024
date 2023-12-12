@@ -33,7 +33,7 @@ export default function Navbar() {
             </span>
           </p>
         </div>
-        <div className="flex w-full justify-end gap-[60px] mr-[60px] h-full items-center  ">
+        <div className="flex w-full justify-end gap-[60px] mr-[60px] h-full items-center lg:text-base md:text-sm ">
           <div
             className={
               router.pathname === "/"
