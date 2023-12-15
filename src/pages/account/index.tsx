@@ -10,6 +10,7 @@ import AccountLeft from "@/vectors/account/accountLeft";
 import AccountBottom from "@/vectors/account/accountBottom";
 import AccountLeftM from "@/vectors/account/accountLeftM";
 import AccountBox from "@/vectors/account/accountBox";
+import { motion } from "framer-motion";
 
 export default function AccountPage() {
   const [username, setUsername] = useState("");
@@ -129,12 +130,27 @@ export default function AccountPage() {
           {roles}
         </div>
         <div className=" md:mt-10 mt-7 flex justify-between md:gap-5 gap-3 lg:text-2xl md:text-xl sm:text-sm font-semibold max-md:w-[270px]">
-          <button className=" w-fit break-keep md:px-10 sm:px-8 py-2 bg-gradient-to-r from-[#FFFBE7] to-[#BCA1FF] rounded-full text-[#380086]  ">
-            E-Ticket
-          </button>
-          <button className=" w-fit break-keep md:px-10 sm:px-8 py-2 bg-gradient-to-r from-[#FFFBE7] to-[#BCA1FF] rounded-full text-[#380086]  ">
-          สะสมแสตมป์
-          </button>
+          <Link href="/account/e-ticket" className="   ">
+            <motion.div
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+              className={`text-center cursor-pointer w-fit break-keep md:px-10 sm:px-8 py-2 bg-gradient-to-r from-[#FFFBE7] to-[#BCA1FF] rounded-full text-[#380086]`}
+            >
+              E-Ticket
+            </motion.div>
+          </Link>
+          <Link
+            href="/account/e-stamp"
+            className="  "
+          >
+            <motion.div
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+              className={`text-center cursor-pointer w-fit break-keep md:px-10 sm:px-8 py-2 bg-gradient-to-r from-[#FFFBE7] to-[#BCA1FF] rounded-full text-[#380086]`}
+            >
+              สะสมแสตมป์
+            </motion.div>
+          </Link>
         </div>
       </div>
       <div className=" absolute bottom-0 lg:right-[28%] lg:translate-x-[28%] md:right-[10%] md:translate-x-[10%] sm:right-1/2 sm:translate-x-1/2 max-md:-mr-5  ">

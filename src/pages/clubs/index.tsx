@@ -115,7 +115,7 @@ const Page = ({ contents }: { contents: any }) => {
           onClick={() => {
             router.push("/");
           }}
-          className="absolute flex items-center ml-3 -mt-16 space-x-2 cursor-pointer sm:mt-0"
+          className="absolute flex items-center ml-3 -mt-16 space-x-2 cursor-pointer md:mt-0"
         >
           <ArrowLeftCircleIcon className="w-7 h-7" />
           <span className="text-lg">ย้อนกลับ</span>

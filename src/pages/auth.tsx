@@ -26,7 +26,7 @@ export default function LoginPage() {
           <LoginRightM className=" absolute right-0 -bottom-20" />
           <div className=" absolute md:left-[20%] md:-translate-x-[20%] left-1/2 -translate-x-1/2 top-1/2 -translate-y-1/2 ">
             <div className=" text-center text-white">
-              <div className=" text-8xl ">register</div>
+              <div className=" lg:text-8xl md:text-7xl sm:text-6xl  font-Montserrat mt-40 ">REGISTER</div>
               <div className=" font-light md:text-4xl text-xl md:mb-16 mb-7 mt-2">ลงทะเบียน</div>
               <div className=" flex justify-center w-full">
                 <button
@@ -62,10 +62,8 @@ export default function LoginPage() {
                   ข้อตกลงการใช้งาน
                 </Link>
               </div>
+              <div className=" justify-center flex mt-40"><Tucmc /></div>
             </div>
-          </div>
-          <div className=" absolute md:bottom-20 bottom-10 md:left-[20%] md:-transalte-x-[20%] left-1/2 -translate-x-1/2 ">
-            <Tucmc />
           </div>
         </div>
       </div>

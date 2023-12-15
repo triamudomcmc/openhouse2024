@@ -14,6 +14,7 @@ const config: Config = {
         Pinyon_Script:['Pinyon Script'],
         Cinzel_Decorative:['Cinzel Decorative'],
         Figerona:['Figerona'],
+        Montserrat:['Montserrat'],
 
       },
       screens: {
