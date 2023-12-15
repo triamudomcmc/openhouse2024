@@ -7,6 +7,7 @@ const AccountBottom: FC<{
     <svg
       width="643"
       height="643"
+      className={`${className}`}
       viewBox="0 0 643 643"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"

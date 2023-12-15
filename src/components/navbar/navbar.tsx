@@ -26,12 +26,14 @@ export default function Navbar() {
     <div className=" fixed top-0 w-full z-[999]">
       <nav className=" max-md:hidden bg-[#935AE3] bg-opacity-90 flex align-middle  justify-between gap-10 text-center z-20 top-0 h-16 text-white ">
         <div className="flex w-2/5 justify-center h-full items-center">
-          <p className="font-[700] text-[20px] leading-[24px]">
-            TRIAM UDOM
-            <span className="font-[400] block text-[15px] leading-[18px]">
-              OPEN HOUSE 2024
-            </span>
-          </p>
+          <Link className=" w-fit " href="/">
+            <p className="font-[700] text-[20px] leading-[24px]">
+              TRIAM UDOM
+              <span className="font-[400] block text-[15px] leading-[18px]">
+                OPEN HOUSE 2024
+              </span>
+            </p>
+          </Link>
         </div>
         <div className="flex w-full justify-end gap-[60px] mr-[60px] h-full items-center lg:text-base md:text-sm ">
           <div

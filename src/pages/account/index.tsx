@@ -8,6 +8,8 @@ import Link from "next/link";
 import AccountRight from "@/vectors/account/accountRight";
 import AccountLeft from "@/vectors/account/accountLeft";
 import AccountBottom from "@/vectors/account/accountBottom";
+import AccountLeftM from "@/vectors/account/accountLeftM";
+import AccountBox from "@/vectors/account/accountBox";
 
 export default function AccountPage() {
   const [username, setUsername] = useState("");
@@ -88,22 +90,26 @@ export default function AccountPage() {
 
   return (
     <div className=" w-screen h-screen relative overflow-hidden bg-gradient-to-br from-[#2D258C] via-[#581CD8] to-[#2C2488] ">
-      <div className=" absolute right-0 top-0">
+      <div className=" absolute right-0 top-0 max-md:hidden">
         <AccountRight className=" " />
       </div>
-      <div className=" absolute left-[20%] -translate-x-[20%] top-1/2 -translate-y-1/2 ">
-        <AccountLeft />
+      <div className=" absolute left-[20%] -translate-x-[20%] top-1/2 -translate-y-1/2 max-md:hidden  ">
+        <AccountLeft className="lg:w-auto lg:h-auto md:w-[633px] md:h-[858px]" />
       </div>
-      <div className=" absolute top-1/2 -translate-y-1/2 right-1/3 translate-x-1/3 z-50">
+      <div className=" absolute left-1/2 -translate-x-1/2 md:hidden">
+        <AccountLeftM />
+      </div>
+      <div className=" absolute top-1/2 -translate-y-1/2 lg:right-1/3 lg:translate-x-1/3 md:right-1/4 md:translate-x-1/4 sm:right-1/2 sm:translate-x-1/2 z-50">
+        <AccountBox className=" md:hidden" />
         <div>
-          <div className="text-transparent bg-clip-text bg-gradient-to-r from-[#FF53C5] from-0% to-[#FFFBE7] to-100% text-7xl font-Figerona font-bold w-fit drop-shadow-glow ">
+          <div className="text-transparent bg-clip-text bg-gradient-to-r from-[#FF53C5] from-0% to-[#FFFBE7] to-100% lg:text-7xl md:text-6xl sm:text-5xl font-Figerona font-bold w-fit drop-shadow-glow ">
             {username}
           </div>
         </div>
-        <div className=" text-[#F7F0EA] font-semibold text-4xl mt-2">
+        <div className=" text-[#F7F0EA] font-semibold lg:text-4xl md:text-3xl sm:text-2xl mt-2">
           {firstName} {lastName}
         </div>
-        <div className=" flex text-[#F7F0EA] items-center text-xl">
+        <div className=" flex text-[#F7F0EA] items-center lg:text-xl md:text-lg ">
           <svg
             width="24"
             height="24"
@@ -122,17 +128,17 @@ export default function AccountPage() {
           </svg>
           {roles}
         </div>
-        <div className=" mt-10 flex justify-between gap-5 text-2xl font-semibold">
-          <button className=" w-fit px-10 py-2 bg-gradient-to-r from-[#FFFBE7] to-[#BCA1FF] rounded-full text-[#380086]  ">
+        <div className=" md:mt-10 mt-7 flex justify-between md:gap-5 gap-3 lg:text-2xl md:text-xl sm:text-sm font-semibold max-md:w-[270px]">
+          <button className=" w-fit break-keep md:px-10 sm:px-8 py-2 bg-gradient-to-r from-[#FFFBE7] to-[#BCA1FF] rounded-full text-[#380086]  ">
             E-Ticket
           </button>
-          <button className=" w-fit px-10 py-2 bg-gradient-to-r from-[#FFFBE7] to-[#BCA1FF] rounded-full text-[#380086]  ">
+          <button className=" w-fit break-keep md:px-10 sm:px-8 py-2 bg-gradient-to-r from-[#FFFBE7] to-[#BCA1FF] rounded-full text-[#380086]  ">
           สะสมแสตมป์
           </button>
         </div>
       </div>
-      <div className=" absolute bottom-0 right-1/4 translate-x-1/4">
-        <AccountBottom />
+      <div className=" absolute bottom-0 lg:right-[28%] lg:translate-x-[28%] md:right-[10%] md:translate-x-[10%] sm:right-1/2 sm:translate-x-1/2 max-md:-mr-5  ">
+        <AccountBottom className=" lg:w-auto lg:h-auto md:w-[545px] md:h-[601px] sm:w-[425px] sm:h-[530px] " />
       </div>
     </div>
   );
