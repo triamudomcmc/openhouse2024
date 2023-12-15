@@ -1,10 +1,11 @@
 import { useSession, signIn, signOut } from "next-auth/react";
 import { useRouter } from "next/navigation";
 import { useEffect } from "react";
-import LoginLeft from "@/vectors/login/LoginLeft";
 import GoogleLogin from "@/vectors/login/LoginGoogle";
-import Tower from "@/vectors/login/tower";
 import Tucmc from "@/vectors/tucmc";
+import LoginRight from "@/vectors/login/LoginRight";
+import Link from "next/link";
+import LoginRightM from "@/vectors/login/LoginRightM";
 
 export default function LoginPage() {
   const { data: session } = useSession();
@@ -18,67 +19,54 @@ export default function LoginPage() {
 
   return (
     <>
-      <div className="  relative w-full h-full  ">
-        <div className="bg-gradient-to-b from-[#444DAF] from-0% via-[#8C7BD7] via-30% to-[#FAFAEE] to-100% shadow w-screen h-[calc(100dvh)]"></div>
-
-        <div className=" absolute bottom-0 w-full">
-          <LoginLeft />
-        </div>
-        {
-          //desktop version
-        }
-        <div className=" absolute left-[75%]  bottom-0 z-0 lg:block hidden ">
-          <Tower />
-        </div>
-        <div className=" absolute top-1/2 -translate-y-1/2 left-[10%] lg:block hidden ">
-          <p className="text-center text-white   text-9xl font-bold font-Thai z-10">
-            Register
-          </p>
-          <p className="text-center bg-gradient-to-r from-[#D738A4] to-[#7533A8] bg-clip-text text-transparent text-7xl font-semibold font-Thai z-10">
-            ลงทะเบียน
-          </p>
-          <div className=" flex w-full justify-center">
+      <div className="  relative w-screen h-[calc(100dvh)] overflow-hidden  ">
+        <div className=" bg-[#010557] shadow w-full h-full">
+          <div className=" absolute left-0 top-0 md:h-[75vh] h-[50vh] w-20 bg-gradient-to-b from-[#AC0B98] via-[#AC0B98]/ to-[#7623E6]/[.0] "></div>
+          <LoginRight className=" absolute right-0 top-0 max-md:hidden" />
+          <LoginRightM className=" absolute right-0 -bottom-20" />
+          <div className=" absolute md:left-[20%] md:-translate-x-[20%] left-1/2 -translate-x-1/2 top-1/2 -translate-y-1/2 ">
+            <div className=" text-center text-white">
+              <div className=" text-8xl ">register</div>
+              <div className=" font-light md:text-4xl text-xl md:mb-16 mb-7 mt-2">ลงทะเบียน</div>
+              <div className=" flex justify-center w-full">
+                <button
+                  className=" flex gap-6"
+                  onClick={() => {
+                    signIn("google");
+                  }}
+                >
+                  <div className=" bg-white flex items-center justify-center gap-6 py-4 px-14  rounded-full text-[#000340] lg:text-2xl md:text-xl text-sm ">
+                    <GoogleLogin />
+                    Sign up with Google
+                  </div>
+                </button>
+              </div>
+              <div className=" mt-6 text-white md:text-sm text-xs font-medium">
+                การลงทะเบียนถือว่ายอมรับ
+                <Link
+                  href="/privacy-policy"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-[#FF9DE9] underline"
+                >
+                  นโยบายความเป็นส่วนตัว
+                </Link>
+                <br />
+                และ
+                <Link
+                  href="/tos"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className=" text-[#FF9DE9]  underline"
+                >
+                  ข้อตกลงการใช้งาน
+                </Link>
+              </div>
+            </div>
+          </div>
+          <div className=" absolute md:bottom-20 bottom-10 md:left-[20%] md:-transalte-x-[20%] left-1/2 -translate-x-1/2 ">
             <Tucmc />
           </div>
-        </div>
-
-        <div className=" absolute top-1/2 -translate-y-1/2 left-[60%] hidden lg:block ">
-          <button
-            onClick={() => signIn("google")}
-            className="px-10 py-5 border h-20  gap-2 border-slate-200 bg-white opacity-80 backdrop-blur-sm rounded-full text-slate-700  hover:border-slate-400  w-full hover:text-slate-900 hover:shadow transition duration-150 flex justify-center"
-          >
-            <GoogleLogin />
-            <p className=" ml-3 h-full align-middle flex text-2xl items-center">
-              Sign up with Google
-            </p>
-          </button>
-        </div>
-        {
-          //mobile version
-        }
-        <div className=" absolute top-[27%] -translate-y-1/2 w-full lg:hidden block ">
-          <p className="text-center text-white   text-7xl font-bold font-Thai z-10">
-            Register
-          </p>
-          <p className="text-center bg-gradient-to-r from-[#D738A4] to-[#7533A8] bg-clip-text text-transparent text-4xl font-semibold font-Thai z-10">
-            ลงทะเบียน
-          </p>
-        </div>
-
-        <div className=" absolute bottom-[17%] -translate-y-1/2 w-full justify-center lg:hidden flex ">
-          <Tucmc />
-        </div>
-
-        <div className=" absolute top-1/2 -translate-y-1/2 lg:hidden flex w-full justify-center ">
-          <button
-            onClick={() => signIn("google")}
-            className="px-8 py-5 border h-20 w-auto  gap-2 border-slate-200 bg-white opacity-80 backdrop-blur-sm rounded-full text-slate-700  hover:border-slate-400  hover:text-slate-900 hover:shadow transition duration-150 flex justify-center"
-          >
-            <GoogleLogin />
-            <p className=" ml-3 h-full align-middle flex text-2xl items-center">
-              Sign up with Google
-            </p>
-          </button>
         </div>
       </div>
     </>

@@ -8,16 +8,12 @@ const config: Config = {
   ],
   theme: {
     extend: {
-      backgroundImage: {
-        'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
-        'gradient-conic':
-          'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',
-      },
       fontFamily: {
         sans: ['"Noto Sans Thai"'],
         Thai:['Noto Sans Thai'],
         Pinyon_Script:['Pinyon Script'],
         Cinzel_Decorative:['Cinzel Decorative'],
+        Figerona:['Figerona'],
 
       },
       screens: {
@@ -25,6 +21,12 @@ const config: Config = {
         'lg': '1280px',
         'xl' : '1440px'
       },
+      dropShadow: {
+        glow: [
+          "0 0px 20px rgba(255,255, 255, 0.95)",
+          "0 0px 65px rgba(255, 255,255, 0.4)"
+        ]
+      }
     },
   },
   plugins: [

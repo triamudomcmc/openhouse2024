@@ -109,7 +109,7 @@ const Page = ({ contents }: { contents: any }) => {
   }, [searchContext, contents]);
 
   return (
-    <main className="text-white px-8 pt-[6.5rem] pb-[2rem] min-h-screen bg-normal-gradient bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-[#FFF5C8] via-[#FC7ADB] to-[#7B66FF]">
+    <main className="text-white px-8 pt-[6.5rem] pb-[2rem] min-h-screen bg-gradient-to-br from-[#FFDE74] from-0% via-[#FC7ADB] via-50% to-[#4924D1] to-100%">
       <div className="max-w-6xl mx-auto">
         <div
           onClick={() => {
@@ -125,16 +125,16 @@ const Page = ({ contents }: { contents: any }) => {
             <h1 className="text-5xl text-transparent bg-clip-text bg-gradient-to-b from-[#6C1FD8] to-[#FF54AC] font-bold">ชมรม</h1>
             <div className="px-5 sm:px-10 w-full max-w-[500px]">
               <div className="relative mt-4 ">
-                <input
-                  onChange={(e) => {
-                    setTimeout(() => setSearchContext(e.target.value));
-                  }}
-                  className="w-full py-2 pr-4 bg-white border rounded-full bg-opacity-100 placeholder:text-[#2C1865] text-[#2C1865] pl-5 border-opacity-40"
-                  placeholder="ค้นหาชมรม..."
-                />
-                <div className="absolute top-0 right-0 flex items-center h-full  px-6 bg-gradient-to-br from-[#FF6DD6] to-[#40379E] rounded-r-full ">
+              <div className="absolute top-0 left-0 flex items-center h-full ml-6">
                   <MagnifyingGlassIcon className="w-6 h-6" />
                 </div>
+                <input
+                  onChange={(e) => {
+                    setTimeout(() => setSearchContext(e.target.value))
+                  }}
+                  className="w-full py-2 pr-4 bg-white border rounded-full bg-opacity-20 placeholder:text-white pl-14 border-opacity-40"
+                  placeholder="ค้นหาชมรม..."
+                />
               </div>
             </div>
           </div>

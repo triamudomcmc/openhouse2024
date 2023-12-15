@@ -52,7 +52,7 @@ const GiftedSci: FC<{
         stroke-width="4"
         stroke-linecap="round"
       />
-      <g style={{mixBlendMode: "multiply"}}>
+      <g style={{mixBlendMode:"multiply"}}>
         <rect x="232" y="115" width="152" height="141" fill="#D9D9D9" />
       </g>
       <path
@@ -60,38 +60,39 @@ const GiftedSci: FC<{
         fill="#333497"
       />
       <path d="M43.5 87.5H383.5" stroke="#333497" stroke-width="3" />
-      <g style={{mixBlendMode: "screen"}}>
+      <g style={{mixBlendMode:"screen"}}>
         <path
           fill-rule="evenodd"
           clip-rule="evenodd"
-          d="M319 143H299V175.505C297.844 176.538 296.818 177.783 295.977 179.241L274.032 217.25C268.258 227.25 275.475 239.75 287.022 239.75H330.912C342.459 239.75 349.676 227.25 343.902 217.25L321.957 179.241C321.132 177.811 320.129 176.586 319 175.565V143Z"
+          d="M341.971 134.293L319.586 128.295L310.181 163.392C309.509 163.874 308.863 164.42 308.249 165.034L266.457 206.826C258.292 214.991 262.028 228.933 273.181 231.922L330.27 247.219C341.424 250.207 351.63 240.001 348.641 228.847L333.344 171.758C333.131 170.961 332.861 170.202 332.542 169.482L341.971 134.293Z"
           fill="url(#paint1_linear_512_2779)"
         />
         <mask
           id="mask0_512_2779"
-          style={{maskType: "alpha"}}
+          style={{maskType:"alpha"}}
           maskUnits="userSpaceOnUse"
-          x="272"
-          y="171"
-          width="74"
-          height="69"
+          x="262"
+          y="160"
+          width="88"
+          height="88"
         >
           <path
-            d="M295.977 179.241C301.75 169.241 316.184 169.241 321.957 179.241L343.902 217.251C349.676 227.251 342.459 239.751 330.912 239.751H287.022C275.475 239.751 268.258 227.251 274.032 217.251L295.977 179.241Z"
+            d="M308.249 165.034C316.414 156.869 330.356 160.605 333.345 171.758L348.642 228.847C351.63 240.001 341.424 250.207 330.271 247.219L273.181 231.922C262.028 228.933 258.292 214.991 266.457 206.826L308.249 165.034Z"
             fill="url(#paint2_linear_512_2779)"
           />
         </mask>
         <g mask="url(#mask0_512_2779)">
           <path
-            d="M263.967 196.251C318.467 235.751 321.967 186.751 352.967 196.251V245.251H263.967V196.251Z"
+            d="M264.406 177.388C313.559 237.943 332.171 184.15 364.018 204.079L349.323 258.922L249.711 232.231L264.406 177.388Z"
             fill="url(#paint3_linear_512_2779)"
           />
         </g>
         <rect
-          x="296"
-          y="140"
-          width="26"
-          height="9"
+          x="317.128"
+          y="124.037"
+          width="30.1267"
+          height="10.4285"
+          transform="rotate(15 317.128 124.037)"
           fill="url(#paint4_linear_512_2779)"
         />
       </g>
@@ -144,10 +145,10 @@ const GiftedSci: FC<{
         </linearGradient>
         <linearGradient
           id="paint1_linear_512_2779"
-          x1="308.967"
-          y1="143.272"
-          x2="308.967"
-          y2="239.75"
+          x1="330.659"
+          y1="131.588"
+          x2="301.726"
+          y2="239.57"
           gradientUnits="userSpaceOnUse"
         >
           <stop stop-color="#9DB0FF" />
@@ -155,10 +156,10 @@ const GiftedSci: FC<{
         </linearGradient>
         <linearGradient
           id="paint2_linear_512_2779"
-          x1="308.967"
-          y1="171.932"
-          x2="308.967"
-          y2="239.751"
+          x1="322.679"
+          y1="161.372"
+          x2="301.726"
+          y2="239.57"
           gradientUnits="userSpaceOnUse"
         >
           <stop stop-color="#FFDD77" />
@@ -166,22 +167,22 @@ const GiftedSci: FC<{
         </linearGradient>
         <linearGradient
           id="paint3_linear_512_2779"
-          x1="308.467"
-          y1="195"
-          x2="308.467"
-          y2="245.251"
+          x1="314.587"
+          y1="189.334"
+          x2="299.517"
+          y2="245.577"
           gradientUnits="userSpaceOnUse"
         >
-          <stop stop-color="#4B69E9" />
+          <stop stop-color="#0032FF" />
           <stop offset="0.9999" stop-color="#8F00FF" />
           <stop offset="1" stop-color="#B485FE" />
         </linearGradient>
         <linearGradient
           id="paint4_linear_512_2779"
-          x1="309"
-          y1="140"
-          x2="309.033"
-          y2="163"
+          x1="332.191"
+          y1="124.037"
+          x2="332.229"
+          y2="150.687"
           gradientUnits="userSpaceOnUse"
         >
           <stop stop-color="#4B69E9" />

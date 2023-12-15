@@ -9,7 +9,7 @@ export default function RegisterOPHNFC() {
   const { data: session, status } = useSession({
     required: true,
     onUnauthenticated() {
-      router.push("/login"); // The user is not authenticated, handle it here.
+      router.push("/auth"); // The user is not authenticated, handle it here.
     },
   });
 

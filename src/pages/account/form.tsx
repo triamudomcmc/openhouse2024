@@ -8,6 +8,7 @@ import FormLeft from "@/vectors/form/formLeft";
 import { Radio } from "@material-tailwind/react";
 import FormRight from "@/vectors/form/formRight";
 import Link from "next/link";
+import FormRightM from "@/vectors/form/formRightM";
 
 export default function Form() {
   const [username, setUsername] = useState("");
@@ -223,15 +224,13 @@ export default function Form() {
     <>
       <div className=" w-screen min-h-[100vh] bg-[#000340] relative overflow-hidden">
         <div className=" text-white text-center pt-20 pb-5  flex justify-center items-center  ">
-          <div className=" block">
+          <div className=" block lg:w-[375px] md:w-[320px] sm:w-[300px]">
             <div className="  text-white text-5xl font-medium "> ลงทะเบียน</div>
             <div className=" flex justify-center items-center gap-4 text-xl font-light mt-3  ">
-              <div className="w-20 h-[0px] border border-white"></div>
-              กรอกข้อมูลผู้ใช้งาน
-              <div className="w-20 h-[0px] border border-white"></div>
+              <div className=" w-full border border-dashed"></div>
             </div>
             {page1 && (
-              <div>
+              <div className=" relative z-50 ">
                 <div className=" block mt-8">
                   <div className=" justify-start flex w-auto">
                     <div className=" text-white text-sm font-normal leading-tight ">
@@ -356,7 +355,7 @@ export default function Form() {
                       <label className="block mt-4">
                         <input
                           type="radio"
-                          value="ครู / บุคลากรโรงเรียน"
+                          value="ครู/บุคลากรโรงเรียน"
                           name="roles"
                           onClick={teacherChange}
                         />{" "}
@@ -365,7 +364,7 @@ export default function Form() {
                       <label className="block mt-4">
                         <input
                           type="radio"
-                          value="อื่น ๆ"
+                          value="อื่นๆ"
                           name="roles"
                           onClick={otherChange}
                         />{" "}
@@ -438,7 +437,7 @@ export default function Form() {
             )}
 
             {page2 && (
-              <div className="">
+              <div className=" mt-8 relative z-50">
                 <div className=" block text-left align-middle  ">
                   <div className="text-white text-base font-medium leading-normal ">
                     ได้รับข่าวสารของ Triam Udom Open House 2024
@@ -493,15 +492,6 @@ export default function Form() {
                       checked={platform.includes("studygram")}
                     />{" "}
                     เพจ studygram
-                  </label>
-                  <label className="block mt-4">
-                    <input
-                      type="checkbox"
-                      value="website"
-                      onChange={() => platformChange("website")}
-                      checked={platform.includes("website")}
-                    />
-                    เว็บและเพจข่าวสารการศึกษา
                   </label>
                   <label className="block mt-4">
                     <input
@@ -564,25 +554,16 @@ export default function Form() {
                       onChange={() => purposeChange("find info")}
                       checked={purpose.includes("find info")}
                     />
-                    หาข้อมูลการสอบเข้าโรงเรียนเตรียมฯ
+                    หาข้อมูลการสอบเข้าโรงเรียนเตรียมอุดมศึกษา
                   </label>
                   <label className="block mt-4">
                     <input
                       type="checkbox"
-                      value="watch activity"
-                      onChange={() => purposeChange("watch activity")}
-                      checked={purpose.includes("watch activity")}
+                      value="watch booth and activity"
+                      onChange={() => purposeChange("watch booth and activity")}
+                      checked={purpose.includes("watch booth and activity")}
                     />
-                    เข้าชมกิจกรรมการแสดง
-                  </label>
-                  <label className="block mt-4">
-                    <input
-                      type="checkbox"
-                      value="watch booth"
-                      onChange={() => purposeChange("watch booth")}
-                      checked={purpose.includes("watch booth")}
-                    />
-                    เข้าชมซุ้มกิจกรรม
+                    เข้าชมซุ้มกิจกรรม และ กิจกรรมการแสดง
                   </label>
                   <label className="block mt-4">
                     <input
@@ -595,7 +576,7 @@ export default function Form() {
                         "find info (considers joining)"
                       )}
                     />
-                    หาข้อมูลเกี่ยวกับโรงเรียนเตรียมอุดมศึกษา
+                    หาข้อมูลเกี่ยวกับโรงเรียนเตรียมฯ
                     <br /> เพื่อประกอบการตัดสินใจ
                   </label>
                   <label className="block mt-4">
@@ -606,17 +587,6 @@ export default function Form() {
                       checked={purpose.includes("inspiration")}
                     />{" "}
                     หาแรงบันดาลใจในการสอบเข้า
-                    <br />
-                    โรงเรียนเตรียมอุดมศึกษา
-                  </label>
-                  <label className="block mt-4">
-                    <input
-                      type="checkbox"
-                      value="consultation"
-                      onChange={() => purposeChange("consultation")}
-                      checked={purpose.includes("consultation")}
-                    />
-                    ขอคำปรึกษาเกี่ยวกับการสอบเข้า
                     <br />
                     โรงเรียนเตรียมอุดมศึกษา
                   </label>
@@ -696,13 +666,20 @@ export default function Form() {
                   การลงทะเบียนถือว่ายอมรับ
                   <Link
                     href="/privacy-policy"
-                    className=" text-[#3E47F7] underline"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-[#FF9DE9] underline"
                   >
                     นโยบายความเป็นส่วนตัว
                   </Link>
                   <br />
                   และ
-                  <Link href="/tos" className=" text-[#3E47F7] underline">
+                  <Link
+                    href="/tos"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className=" text-[#FF9DE9]  underline"
+                  >
                     ข้อตกลงการใช้งาน
                   </Link>
                 </div>
@@ -710,11 +687,14 @@ export default function Form() {
             )}
           </div>
         </div>
-        <div className=" absolute left-0 top-0">
+        <div className=" absolute left-0 top-0 z-0">
           <FormLeft className=" xl:w-auto xl:h-auto lg:w-[402px] lg:h-[724px] md:w-[258px] md:h-[475px] max-md:hidden " />
         </div>
-        <div className=" absolute bottom-0 right-0">
-          <FormRight className="xl:w-auto xl:h-auto lg:w-[540px] lg:h-[674px] md:w-[345px] md:h-[431px] max-md:hidden" />
+        <div className=" absolute bottom-0 right-0 z-0 max-md:hidden">
+          <FormRight className="xl:w-auto xl:h-auto lg:w-[540px] lg:h-[674px] md:w-[345px] md:h-[431px]  sm:w-[312px] sm:h-[415px] " />
+        </div>
+        <div className=" absolute top-2/3 -translate-y-2/3 -right-10 z-0 md:hidden">
+          <FormRightM className="sm:w-[312px] sm:h-[415px] " />
         </div>
       </div>
     </>

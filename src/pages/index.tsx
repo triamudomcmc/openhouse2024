@@ -364,7 +364,7 @@ export default function Home() {
           <div className="relative  w-full -z-10 md:hidden  ">
             <Landing5M className="object-cover h-full min-h-screen overflow-x-hidden" />
           </div>
-          <div className=" absolute top-10 left-1/2 -translate-x-1/2 text-white font-bold md:text-[90px] text-4xl drop-shadow-lg w-full text-center ">
+          <div className=" absolute md:top-20 top-10 left-1/2 -translate-x-1/2 text-white font-bold md:text-[90px] text-4xl drop-shadow-lg w-full text-center ">
             หน่วยงานนักเรียน
           </div>
           <div className=" max-md:hidden">
@@ -486,7 +486,7 @@ export default function Home() {
           <div className="relative  w-full -z-10 md:hidden  ">
             <Landing6M className="object-cover h-full min-h-screen overflow-x-hidden" />
           </div>
-          <div className=" absolute md:left-10 left-1/2 max-md:-translate-x-1/2 top-1 md:text-[90px] sm:text-[40px] max-md:text-center font-bold text-[#562C73] stroke-white stroke-[9px] block ">
+          <div className=" absolute md:left-10 left-1/2 max-md:-translate-x-1/2 top-1 md:text-[90px] sm:text-[40px] max-md:text-center font-bold text-[#2C1865] stroke-white stroke-[9px] block ">
             ข้อมูลเพิ่มเติม
             <div className=" flex max-md:justify-center max-md:mt-7  ">
               <Link href={"/admission"}>

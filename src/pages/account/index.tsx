@@ -4,19 +4,16 @@ import { UserCard } from "../../components/UserCard";
 import { useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
 import axios from "axios";
-import AccountBrick from "@/vectors/account/brick";
 import Link from "next/link";
-import AccountMain from "@/vectors/account/main";
-import AccountProfile from "@/vectors/account/profile";
-import AccountMainM from "@/vectors/account/mainM";
+import AccountRight from "@/vectors/account/accountRight";
+import AccountLeft from "@/vectors/account/accountLeft";
+import AccountBottom from "@/vectors/account/accountBottom";
 
 export default function AccountPage() {
-  const [club, setClub] = useState(false);
-  const [program, setProgram] = useState(false);
-  const [gifted, setGifted] = useState(false);
-  const [organization, setOrganization] = useState(false);
-  const [admin, setAdmin] = useState(false);
-  const [none, setNone] = useState(false);
+  const [username, setUsername] = useState("");
+  const [firstName, setFirstName] = useState("");
+  const [lastName, setLastName] = useState("");
+  const [roles, setRoles] = useState("");
 
   const { data: session, status } = useSession({
     required: true,
@@ -25,138 +22,117 @@ export default function AccountPage() {
     },
   });
 
-  let data = JSON.stringify({
+  let userData = JSON.stringify({
     email: session?.user?.email,
     environmentKeys: process.env.ENVIRONMENT_KEY,
   });
 
-  let config = {
+  let hasAccountConfig = {
     method: "post",
     maxBodyLength: Infinity,
-    url: `https://openhouse2024-backend.vercel.app/api/user/get`,
+    url: `https://openhouse2024-backend.vercel.app/api/user/has-account`,
     headers: {
       "Content-Type": "application/json",
     },
-    data: data,
+    data: userData,
   };
 
-  
-  async function makeRequest() {
-    if (status === "authenticated" ) {
+  async function hasAccountRequest() {
+    if (status === "authenticated") {
+      try {
+        const response = await axios.request(hasAccountConfig);
+        if (response.data === false) {
+          router.push("/account/form");
+        } else {
+          userRequest();
+        }
+      } catch (error) {
+        console.log(error);
+      }
+    }
+  }
+
+  let config = {
+    method: "post",
+    maxBodyLength: Infinity,
+    url: "https://openhouse2024-backend.vercel.app/api/user/get",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    data: userData,
+  };
+
+  async function userRequest() {
     try {
       const response = await axios.request(config);
-      if (response.data === false) {
-        router.push("/account/form");
-      } else{
-      }
+      setUsername(response.data.username);
+      setFirstName(response.data.name);
+      setLastName(response.data.surname);
+      setRoles(response.data.role);
+      console.log(JSON.stringify(response.data));
     } catch (error) {
       console.log(error);
-    }}
+    }
   }
 
   const router = useRouter();
+
   function handleSignout() {
     signOut();
   }
 
   useEffect(() => {
-    makeRequest();
+    hasAccountRequest();
     console.log(session?.user?.email);
   }, [status]);
 
   return (
-    <div className=" relative w-full h-[calc(100dvh)] overflow-hidden bg-gradient-to-b from-[#BF9EFF] to-[#434FA7]">
-      <div className=" h-[calc(100dvh)] overflow-hidden absolute top-0 z-0 flex justify-center  ">
-        <AccountBrick />
+    <div className=" w-screen h-screen relative overflow-hidden bg-gradient-to-br from-[#2D258C] via-[#581CD8] to-[#2C2488] ">
+      <div className=" absolute right-0 top-0">
+        <AccountRight className=" " />
       </div>
-      <div className=" relative h-full  ">
-        <div className=" block absolute h-[90%] bottom-0 left-1/2 -translate-x-1/2 z-50 ">
-          <AccountMainM />
+      <div className=" absolute left-[20%] -translate-x-[20%] top-1/2 -translate-y-1/2 ">
+        <AccountLeft />
+      </div>
+      <div className=" absolute top-1/2 -translate-y-1/2 right-1/3 translate-x-1/3 z-50">
+        <div>
+          <div className="text-transparent bg-clip-text bg-gradient-to-r from-[#FF53C5] from-0% to-[#FFFBE7] to-100% text-7xl font-Figerona font-bold w-fit drop-shadow-glow ">
+            {username}
+          </div>
         </div>
-        <div className=" absolute left-1/2 -translate-x-1/2 w-[250px] z-[51] top-1/2 -translate-y-1/2 text-[#AFB3F8] ">
-          <div className=" relative z-[52]">
-            <AccountProfile />
-            {session?.user?.image && (
-              <img
-                src={session.user.image}
-                className="absolute z-50 top-2 left-1/2 -translate-x-1/2 w-40 rounded-full"
-              />
-            )}
-          </div>
-
-          <p className="  w-full text-[#0F114C] text-center font-bold text-xl mt-5">
-            {session?.user?.name}
-          </p>
-          <div className=" mt-10">
-            <Link
-              href="/organization"
-              className={
-                organization
-                  ? " absolute  w-full shadow-xl bg-gradient-to-br from-[#27217E] to-[#533B9E] rounded-full text-xl px-5 py-3 text-center  "
-                  : " hidden"
-              }
-            >
-              ข้อมูลองค์กรนักเรียน
-            </Link>
-            <Link
-              href="/club"
-              className={
-                club
-                  ? " absolute  w-full shadow-xl bg-gradient-to-br from-[#27217E] to-[#533B9E] rounded-full text-xl px-5 py-3 text-center "
-                  : " hidden"
-              }
-            >
-              ข้อมูลชมรม
-            </Link>
-            <Link
-              href="/program"
-              className={
-                program
-                  ? " absolute  w-full shadow-xl bg-gradient-to-br from-[#27217E] to-[#533B9E] rounded-full text-xl px-5 py-3 text-center "
-                  : " hidden"
-              }
-            >
-              ข้อมูลสายการเรียน
-            </Link>
-            <Link
-              href="/gifted"
-              className={
-                gifted
-                  ? " absolute  w-full shadow-xl bg-gradient-to-br from-[#27217E] to-[#533B9E] rounded-full text-xl px-5 py-3 text-center "
-                  : " hidden"
-              }
-            >
-              ข้อมูลโครงการพัฒนาความสามารถ
-            </Link>
-            <Link
-              href="/account/form"
-              className={
-                none
-                  ? " absolute  w-full shadow-xl bg-gradient-to-br from-[#27217E] to-[#533B9E] rounded-full text-xl px-5 py-3 text-center "
-                  : "hidden"
-              }
-            >
-              Form
-            </Link>
-            <Link
-              href="/admin"
-              className={
-                admin
-                  ? " absolute  w-full shadow-xl bg-gradient-to-br from-[#27217E] to-[#533B9E] rounded-full text-xl px-5 py-3 text-center "
-                  : " hidden"
-              }
-            >
-              Admin
-            </Link>
-          </div>
-          <button
-            type="button"
-            onClick={handleSignout}
-            className=" mt-24  w-full shadow-xl bg-gradient-to-br from-[#27217E] to-[#533B9E] rounded-full text-xl px-5 py-3 text-center "
+        <div className=" text-[#F7F0EA] font-semibold text-4xl mt-2">
+          {firstName} {lastName}
+        </div>
+        <div className=" flex text-[#F7F0EA] items-center text-xl">
+          <svg
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
           >
-            Sign out
+            <path
+              d="M12.1772 10.6394C14.054 10.6394 15.5754 9.11801 15.5754 7.24123C15.5754 5.36445 14.054 3.84302 12.1772 3.84302C10.3004 3.84302 8.77899 5.36445 8.77899 7.24123C8.77899 9.11801 10.3004 10.6394 12.1772 10.6394Z"
+              fill="#F7F0EA"
+            />
+            <path
+              d="M4.24805 20.8341C4.24805 16.4549 7.79805 12.9049 12.1772 12.9049C16.5564 12.9049 20.1064 16.4549 20.1064 20.8341H4.24805Z"
+              fill="#F7F0EA"
+            />
+          </svg>
+          {roles}
+        </div>
+        <div className=" mt-10 flex justify-between gap-5 text-2xl font-semibold">
+          <button className=" w-fit px-10 py-2 bg-gradient-to-r from-[#FFFBE7] to-[#BCA1FF] rounded-full text-[#380086]  ">
+            E-Ticket
+          </button>
+          <button className=" w-fit px-10 py-2 bg-gradient-to-r from-[#FFFBE7] to-[#BCA1FF] rounded-full text-[#380086]  ">
+          สะสมแสตมป์
           </button>
         </div>
+      </div>
+      <div className=" absolute bottom-0 right-1/4 translate-x-1/4">
+        <AccountBottom />
       </div>
     </div>
   );

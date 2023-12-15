@@ -6,6 +6,8 @@ import Navbar from '@/components/navbar/navbar';
 import Head from 'next/head'
 import Footer from '@/components/footer';
 import { useRouter } from 'next/router';
+import { SpeedInsights } from "@vercel/speed-insights/next"
+import { Analytics } from '@vercel/analytics/react';
 
 export default function App({ Component, pageProps }: AppProps) {
   const router = useRouter();
@@ -47,6 +49,8 @@ export default function App({ Component, pageProps }: AppProps) {
       </Head>
       <Navbar />
       <Component {...pageProps} />
+      <SpeedInsights />
+      <Analytics />
       {!(router.pathname === "/auth") && <Footer />}
     </SessionProvider>
   );
