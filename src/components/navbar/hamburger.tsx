@@ -53,17 +53,17 @@ export default function Hamburger() {
         }
       >
         <Link className=" w-full" href="/">
-          <div className=" text-right pr-10 text-white border-b border-gray-100 py-2 text-2xl">
-            Home
+          <div className=" text-right pr-4 text-white border-b border-gray-100 py-2 text-2xl">
+            หน้าแรก
           </div>
         </Link>
         <Link className=" w-full " href="/clubs">
-          <div className=" text-right pr-10 text-white border-b border-gray-100 py-2 text-2xl">
+          <div className=" text-right pr-4 text-white border-b border-gray-100 py-2 text-2xl">
             ชมรม
           </div>
         </Link>
         <Link className=" w-full " href="/directions">
-          <div className=" text-right pr-10 text-white border-b border-gray-100 py-2 text-2xl">
+          <div className=" text-right pr-4 text-white border-b border-gray-100 py-2 text-2xl">
             การเดินทางมาโรงเรียนเตรียมฯ
           </div>
         </Link>
@@ -71,15 +71,15 @@ export default function Hamburger() {
           className={inSession ? " text-right h-16  text-white" : "hidden"}
           href="/account"
         >
-          <div className=" text-right pr-10 text-white border-b border-gray-100 py-2 text-2xl">
+          <div className=" text-right pr-4 text-white border-b border-gray-100 py-2 text-2xl">
             Account
           </div>
         </Link>
         <Link
-          className={inSession ? "hidden " : " text-right pr-10 text-white"}
+          className={inSession ? "hidden " : " text-right pr-4 text-white"}
           href="/auth"
         >
-          <div className=" text-right pr-10 text-white border-b border-gray-100 py-2 text-2xl">
+          <div className=" text-right pr-4 text-white border-b border-gray-100 py-2 text-2xl">
           เข้าสู่ระบบ
           </div>
         </Link>

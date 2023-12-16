@@ -26,7 +26,8 @@ export default function Navbar() {
     <div className=" fixed top-0 w-full z-[999]">
       <nav className=" max-md:hidden bg-[#935AE3] bg-opacity-90 flex align-middle  justify-between gap-10 text-center z-20 top-0 h-16 text-white ">
         <div className="flex w-2/5 justify-center h-full items-center">
-          <Link className=" w-fit " href="/">
+          <Link className=" w-fit flex items-center " href="/">
+            <OPHLogo className=" h-12" />
             <p className="font-[700] text-[20px] leading-[24px]">
               TRIAM UDOM
               <span className="font-[400] block text-[15px] leading-[18px]">
@@ -55,7 +56,7 @@ export default function Navbar() {
             <Link href="/clubs">ชมรม</Link>
           </div>
 
-          <div
+          {/* <div
             className={
               router.pathname === "/shows"
                 ? " text-center py-1 my-2 font-semibold underline "
@@ -63,7 +64,7 @@ export default function Navbar() {
             }
           >
             <Link href="/shows">การแสดง</Link>
-          </div>
+          </div> */}
 
           <div
             className={
@@ -99,8 +100,9 @@ export default function Navbar() {
           </div>
         </div>
       </nav>
-      <nav className=" md:hidden bg-[#935AE3] bg-opacity-80 flex align-middle  justify-between px-5 gap-20 h-16  text-center z-20 top-0 ">
-        <Link href="/" className=" items-center flex justify-center">
+      <nav className=" md:hidden bg-[#935AE3] bg-opacity-80 flex align-middle justify-between px-2 gap-10 h-16  text-center z-20 top-0 ">
+        <Link href="/" className=" items-center flex justify-center  ">
+          <OPHLogo className=" h-10 w-auto" />
           <p className="font-[700] text-[20px] leading-[24px] text-white">
             TRIAM UDOM
             <span className="font-[400] block text-[15px] leading-[18px]">
