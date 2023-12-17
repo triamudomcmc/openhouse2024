@@ -115,11 +115,11 @@ const Footer: FC<{ theme?: string }> = ({ theme }) => {
             <Link passHref href="/clubs">
               <div className="hover:underline">ชมรม</div>
             </Link>
-            {session && (
+            {/* {session && (
               <Link passHref href="account/ticket">
                 <div className="hover:underline">บัตรของคุณ</div>
               </Link>
-            )}
+            )} */}
           </div>
           <div className="flex flex-col space-y-2 text-center md:text-right max-md:mt-5 font-display">
             {/* <Link passHref href="/map">

@@ -3,25 +3,72 @@ import { CheckCircleIcon } from "@heroicons/react/24/outline";
 
 export default function Admission() {
   return (
-    <div className=" min-h-screen bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-[#FFF5C8] via-[#FFC8F1] to-[#C7BEFF]  ">
-      <div className=" flex items-center justify-center mt-14 ">
-        <div className=" grid lg:grid-cols-2 grid-cols-1 m-5 gap-10 ">
-          <div className=" text-6xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-[#6C1FD8] to-[#E74FB5] row-span-3">
-            กำหนดการสอบเข้า
+    <div className=" min-h-screen bg-gradient-to-br from-[#FFF5C8] via-[#FFC8F1] to-[#C7BEFF]  ">
+      <div className=" w-full text-center md:pt-40 pt-20 lg:text-7xl md:text-5xl text-4xl font-bold flex justify-center text-[#22197C]   ">
+        <div className=" from-[#FF67B6] via-[#4600A8] to-[#FF67B6] w-full">
+          การสอบเข้า
+          <div className=" bg-[#7423D6] px-1 py-1 rounded-full my-2 w-fit mx-auto ">
+            <div className=" lg:text-5xl md:text-3xl text-2xl font-semibold text-[#22197C] w-fit bg-white md:px-5 py-2 px-3 rounded-full ">
+              โรงเรียนเตรียมอุดมศึกษา
+            </div>
           </div>
-          <div className=" bg-gradient-to-br from-[#3E47F7] to-[#FF7BBF] relative -pt-15 pb-5  pr-32 rounded-2xl row-span-4 ">
-            
-              <AdmissionChart className=" pl-5 lg:w-full lg:h-full md:w-[512px]  md:h-[491px] relative" />
-              
-            
-
-            
+        </div>
+      </div>
+      <div className=" flex items-center justify-center md:mt-14 mt-4 ">
+        <div className=" grid md:grid-cols-2 grid-cols-1 m-5 gap-10 ">
+          <div className=" lg:text-6xl md:text-5xl text-3xl max-md:text-center  font-bold text-transparent bg-clip-text bg-gradient-to-r from-[#6C1FD8] to-[#E74FB5] row-span-3">
+            กำหนดการสอบเข้า
+            <div className=" grid grid-cols-1 h-fit">
+              <div className=" px-1 py-1 rounded-full bg-gradient-to-r from-[#FB54C4] to-[#935AE3] lg:w-2/3 w-full mt-4 ">
+                <div className=" w-full rounded-full md:text-base text-sm flex bg-white text-black  ">
+                  <div className=" bg-gradient-to-r from-[#FC53C3] to-[#FC53C3] rounded-full text-center py-2 md:w-1/3 w-[40%]  ">
+                    14-18 ก.พ. 67
+                  </div>
+                  <div className=" px-5 py-2 ">เปิดรับสมัคร</div>
+                </div>
+              </div>
+              <div className=" px-1 py-1 rounded-full bg-gradient-to-r from-[#FB54C4] to-[#935AE3] lg:w-2/3 w-full mt-4 ">
+                <div className=" w-full rounded-full md:text-base text-sm flex bg-white text-black  ">
+                  <div className=" bg-gradient-to-r from-[#FC53C3] to-[#FC53C3] rounded-full text-center py-2 md:w-1/3 w-[40%]  ">
+                    4 มี.ค. 67
+                  </div>
+                  <div className=" px-5 py-2 ">วันสอบ</div>
+                </div>
+              </div>
+              <div className=" px-1 py-1 rounded-full bg-gradient-to-r from-[#FB54C4] to-[#935AE3] lg:w-2/3 w-full mt-4 ">
+                <div className=" w-full rounded-full md:text-base text-sm flex bg-white text-black  ">
+                  <div className=" bg-gradient-to-r from-[#FC53C3] to-[#FC53C3] rounded-full text-center py-2 md:w-1/3 w-[40%]  ">
+                    ภายใน 10 มี.ค. 67
+                  </div>
+                  <div className=" px-5 py-2 ">วันประกาศผล</div>
+                </div>
+              </div>
+              <div className=" px-1 py-1 rounded-full bg-gradient-to-r from-[#FB54C4] to-[#935AE3] lg:w-2/3 w-full mt-4 ">
+                <div className=" w-full rounded-full md:text-base text-sm flex bg-white text-black  ">
+                  <div className=" bg-gradient-to-r from-[#FC53C3] to-[#FC53C3] rounded-full text-center py-2 md:w-1/3 w-[40%]  ">
+                    ภายใน 13 มี.ค. 67
+                  </div>
+                  <div className=" px-5 py-2 ">รายงานตัว</div>
+                </div>
+              </div>
+              <div className=" px-1 py-1 rounded-full bg-gradient-to-r from-[#FB54C4] to-[#935AE3] lg:w-2/3 w-full mt-4 ">
+                <div className=" w-full rounded-full md:text-base text-sm flex bg-white text-black  ">
+                  <div className=" bg-gradient-to-r from-[#FC53C3] to-[#FC53C3] rounded-full text-center py-2 md:w-1/3 w-[40%]  ">
+                    ภายใน 22 มี.ค. 67
+                  </div>
+                  <div className=" px-5 py-2 ">วันมอบตัว</div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div className=" bg-gradient-to-br from-[#3E47F7] to-[#FF7BBF] relative  rounded-2xl row-span-4 p-2 ">
+            <AdmissionChart className=" pl-5 w-full h-full relative" />
           </div>
           <div className=" row-span-2 bg-gradient-to-r from-[#888DFF]/[.50] to-[#B966FF]/[.50] rounded-2xl bg-opacity-50 relative ">
             <div className=" flex items-center justify-center h-full">
               <div>
                 <div className=" flex justify-center text-[#0C027B]">
-                  <div className="  font-bold text-center align-middle flex m-auto text-xl  ">
+                  <div className="  font-bold text-center align-middle flex m-auto md:text-xl text-base mt-10  ">
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
                       fill="none"
@@ -44,8 +91,8 @@ export default function Admission() {
                     สถานที่สอบ - อิมแพ็ค เมืองทองธานี จ.นนทบุรี
                   </div>
                 </div>
-                <div className=" text-lg font-bold text-[#0C027B] pl-4 ">
-                  <div className="flex">
+                <div className=" md:text-lg text-sm font-bold text-[#0C027B] pl-4  ">
+                  <div className="flex items-center">
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
                       fill="none"
@@ -63,7 +110,7 @@ export default function Admission() {
                     สิ่งที่สามารถนำเข้าห้องสอบได้
                   </div>
                   <div className="ml-8 ">
-                    <div className="  grid grid-cols-3 text-sm font-normal gap-y-2">
+                    <div className="  grid grid-cols-3 md:text-sm text-xs items-center font-normal gap-y-2">
                       <div className=" flex align-middle">
                         <CheckCircleIcon width={20} className=" text-white" />
                         บัตรประจำตัวผู้สอบ
@@ -113,15 +160,15 @@ export default function Admission() {
                 </div>
               </div>
             </div>
-            <div className=" absolute -top-8 left-1/2 -translate-x-1/2 font-bold text-4xl bg-gradient-to-r from-[#888DFF]/[.50] to-[#B966FF]/[.50] px-6 py-4 w-[408px] text-center rounded-full z-10">
-              สิ่งที่ควรรู้ในวันสอบ
-            </div>
-            <div className=" absolute -top-7 left-1/2 -translate-x-1/2 font-bold text-4xl text-[#0C027B] bg-white px-6 py-3 w-[400px] text-center rounded-full border-3 border-[] z-20">
-              สิ่งที่ควรรู้ในวันสอบ
+
+            <div className="absolute md:-top-7 -top-5 left-1/2 -translate-x-1/2 p-1 bg-gradient-to-r from-[#C6C4FF] to-[#DCB3FF] rounded-full ">
+              <div className="  font-bold lg:text-4xl md:text-3xl text-lg text-[#0C027B] bg-white lg:px-6 lg:py-3 md:px-4 md:py-2 px-2 py-1 md:w-[400px] text-center rounded-full border-3 border-[] z-20">
+                สิ่งที่ควรรู้ในวันสอบ
+              </div>
             </div>
           </div>
           <div className=" row-span-1">
-            <div className="pl-7 text-[#100083]   bg-gradient-to-r from-[#888DFF]/[.50] to-[#B966FF]/[.50] rounded-2xl py-7 ">
+            <div className="px-7 text-[#100083]   bg-gradient-to-r from-[#888DFF]/[.50] to-[#B966FF]/[.50] rounded-2xl py-7 max-md:text-sm ">
               วิทย์-คณิต สอบ 5 วิชา :{" "}
               <span className=" text-[#0021A9]">
                 คณิตศาสตร์ วิทยาศาสตร์ ภาษาไทย สังคมศึกษา
