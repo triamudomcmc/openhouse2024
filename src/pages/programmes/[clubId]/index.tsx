@@ -239,9 +239,6 @@ const LandingEdit = ({
                 {
                   //section1
                 }
-                <p className="  font-semibold text-transparent bg-clip-text bg-gradient-to-b from-[#7533A8] to-[#D62C9F] font-Thai text-center  text-3xl py-5 block w-full   lg:hidden ">
-                  ชมรมนี้ทำอะไร
-                </p>
                 <p className="  font-semibold text-transparent bg-clip-text bg-gradient-to-b from-[#7533A8] to-[#D62C9F] font-Thai text-center  text-2xl py-5 block w-full  lg:hidden ">
                   การรับสมัครและการสอบเข้า
                 </p>
