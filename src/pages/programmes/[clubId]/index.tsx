@@ -341,14 +341,13 @@ const LandingEdit = ({
                         ภาพบรรยากาศในสายการเรียน
                       </p>
                     </div>
-                    <div className=" absolute w-full top-0 flex justify-center">
-                      <div className="flex aspect-[9/5] w-[90%] h-auto md:w-full z-10 overflow-hidden relative ">
+                    <div className=" absolute w-full top-0 flex justify-center z-10">
+                      <div className="flex aspect-[9/5] w-[90%] md:w-full z-10 relative">
                         <Image
-                          className=" md:rounded-3xl sm:rounded-2xl "
+                          className=" object-cover md:rounded-3xl sm:rounded-2xl "
+                          layout="fill"
                           alt=""
                           src={imagesLink["first"]}
-                          fill
-                          objectFit="cover"
                         />
                       </div>
                     </div>

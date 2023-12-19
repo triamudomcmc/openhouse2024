@@ -328,14 +328,13 @@ const LandingEdit = ({
                         ภาพบรรยากาศในชมรม
                       </p>
                     </div>
-                    <div className=" absolute w-full top-0 flex justify-center">
-                      <div className="flex aspect-[9/5] w-[90%] h-auto md:w-full z-10 overflow-hidden relative ">
+                    <div className=" absolute w-full top-0 flex justify-center z-10">
+                      <div className="flex aspect-[9/5] w-[90%] md:w-full z-10 relative">
                         <Image
-                          className=" md:rounded-3xl sm:rounded-2xl "
+                          className=" object-cover md:rounded-3xl sm:rounded-2xl "
+                          layout="fill"
                           alt=""
                           src={imagesLink["first"]}
-                          fill
-                          objectFit="cover"
                         />
                       </div>
                     </div>
@@ -532,7 +531,7 @@ const LandingEdit = ({
                           </svg>
                         </div>
                         <div className=" flex  justify-center ">
-                          <p className=" text-white  text-md break-all font-Thai  w-full   bg-transparent align-top resize-none whitespace-pre-line  ">
+                          <p className=" text-white  text-md break-words font-Thai  w-full   bg-transparent align-top resize-none whitespace-pre-line  ">
                             {review1.review}
                           </p>
                         </div>
@@ -546,7 +545,7 @@ const LandingEdit = ({
                   {review2.review != "" && (
                     <div className=" md:w-full sm:w-[90%]  mt-10 bg-gradient-to-b from-[#112881]/[.90] to-[#8E297A]/[.50] mx-auto  flex p-4 rounded-3xl min-h-30 gap-5 justify-center ">
                       <div className="  flex justify-start w-full">
-                        <p className=" text-white  text-md break-all font-Thai   w-full  bg-transparent align-top resize-none whitespace-pre-line  ">
+                        <p className=" text-white  text-md break-words font-Thai   w-full  bg-transparent align-top resize-none whitespace-pre-line  ">
                           {review2.review}
                         </p>
                       </div>
@@ -668,7 +667,7 @@ const LandingEdit = ({
                         </svg>
                       </div>
                       <div className=" flex  justify-center ">
-                        <p className=" text-white  text-md break-all font-Thai  w-full   bg-transparent align-top resize-none whitespace-pre-line  ">
+                        <p className=" text-white  text-md break-words font-Thai  w-full   bg-transparent align-top resize-none whitespace-pre-line  ">
                           {review3.review}
                         </p>
                       </div>
