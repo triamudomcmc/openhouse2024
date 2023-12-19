@@ -19,7 +19,9 @@ import Image from "next/image";
 
 export const getStaticPaths: GetStaticPaths = async ({}) => {
   const raw = JSON.parse(
-    fs.readFileSync(`./src/_data/_maps/allMap.json`, { encoding: "utf-8" })
+    fs.readFileSync(`./src/_data/_maps/clubs.json`, {
+      encoding: "utf-8",
+    })
   );
   let tmp = [];
   for (let key of Object.keys(raw)) {
@@ -35,18 +37,20 @@ export const getStaticPaths: GetStaticPaths = async ({}) => {
 export const getStaticProps: GetStaticProps = async ({ params }) => {
   const clubId = params?.clubId as string;
   const raw = JSON.parse(
-    fs.readFileSync(`./src/_data/_maps/allMap.json`, { encoding: "utf-8" })
+    fs.readFileSync(`./src/_data/_maps/clubs.json`, {
+      encoding: "utf-8",
+    })
   );
   let finalData: {
     Info?: {
       nameTH: string;
       nameEN: string;
-      member: string;
+      members: string;
     };
     Contacts?: {
       ig: string;
       facebook: string;
-      other: string;
+      others: string;
     };
     ClubArticle?: string;
     Advantage?: string;
@@ -54,44 +58,82 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
     ClubArticleDes?: string;
     AdvantageDes?: string;
     WorkDes?: string;
-    Reviews?: any[];
-    reviewImageUrl?: any;
+    Review1?: {
+      name: string;
+      gen: string;
+      contact: string;
+      review: string;
+    };
+    Review2?: {
+      name: string;
+      gen: string;
+      contact: string;
+      review: string;
+    };
+    Review3?: {
+      name: string;
+      gen: string;
+      contact: string;
+      review: string;
+    };
+    reviewImageUrl?: {
+      first: string;
+      second: string;
+      third: string;
+    };
     imageUrl?: {
       first: string;
       second: string;
       third: string;
-      thumbnail: string;
     };
   } = {};
 
   finalData["Info"] =
     {
-      nameTH: raw[clubId].thaiName,
-      nameEN: raw[clubId].englishName,
-      member: raw[clubId].count,
+      nameTH: raw[clubId].name,
+      nameEN: raw[clubId].engname,
+      members: raw[clubId].members,
     } ?? {};
-  finalData["Contacts"] = raw[clubId].contacts ?? {};
-  finalData["ClubArticle"] = raw[clubId].activity ?? "";
-  finalData["Advantage"] = raw[clubId].benefit ?? "";
-  finalData["Work"] = raw[clubId].portfolio ?? "";
-  finalData["ClubArticleDes"] = raw[clubId].imageURL[0]?.description ?? "";
-  finalData["AdvantageDes"] = raw[clubId].imageURL[1]?.description ?? "";
-  finalData["WorkDes"] = raw[clubId].imageURL[2]?.description ?? "";
-  finalData["Reviews"] = raw[clubId].reviews ?? [];
-  finalData["reviewImageUrl"] = raw[clubId].reviewURL ?? {};
+  finalData["Contacts"] =
+    {
+      ig: raw[clubId].ig,
+      facebook: raw[clubId].facebook,
+      others: raw[clubId].others,
+    } ?? {};
+  finalData["ClubArticle"] = raw[clubId].clubsactivity ?? "";
+  finalData["Advantage"] = raw[clubId].benefits ?? "";
+  finalData["Work"] = raw[clubId].workings ?? "";
+  finalData["Review1"] =
+    {
+      name: raw[clubId].review_1.name,
+      gen: raw[clubId].review_1.gen,
+      contact: raw[clubId].review_1.contact,
+      review: raw[clubId].review_1.review,
+    } ?? {};
+  finalData["Review2"] =
+    {
+      name: raw[clubId].review_2.name,
+      gen: raw[clubId].review_2.gen,
+      contact: raw[clubId].review_2.contact,
+      review: raw[clubId].review_2.review,
+    } ?? {};
+  finalData["Review3"] =
+    {
+      name: raw[clubId].review_3.name,
+      gen: raw[clubId].review_3.gen,
+      contact: raw[clubId].review_3.contact,
+      review: raw[clubId].review_3.review,
+    } ?? {};
+  finalData["reviewImageUrl"] = {
+    first: `/assets/images/clubs/${clubId}-review-first-default.jpg`,
+    second: `/assets/images/clubs/${clubId}-review-second-default.jpg`,
+    third: `/assets/images/clubs/${clubId}-review-third-default.jpg`,
+  };
+
   finalData["imageUrl"] = {
-    first:
-      raw[clubId].imageURL[0]?.url ??
-      `/assets/images/all/${clubId}-first-default.jpg`,
-    second:
-      raw[clubId].imageURL[1]?.url ??
-      `/assets/images/all/${clubId}-second-default.jpg`,
-    third:
-      raw[clubId].imageURL[2]?.url ??
-      `/assets/images/all/${clubId}-third-default.jpg`,
-    thumbnail:
-      raw[clubId].imageURL[3]?.url ??
-      `/assets/images/all/${clubId}-thumbnail-default.jpg`,
+    first: `/assets/images/clubs/${clubId}-first-default.jpg`,
+    second: `/assets/images/clubs/${clubId}-second-default.jpg`,
+    third: `/assets/images/clubs/${clubId}-third-default.jpg`,
   };
 
   if (Object.keys(finalData).length != 0) return { props: { finalData } };
@@ -110,30 +152,45 @@ const LandingEdit = ({
   const [info, setInfo] = useState({
     nameTH: "",
     nameEN: "",
-    member: "",
+    members: "",
   });
   const [contacts, setContacts] = useState({
     ig: "",
-    fb: "",
-    other: "",
+    facebook: "",
+    others: "",
   });
   const [clubArticle, setClubArticle] = useState("");
-  const [clubArticleDes, setClubArticleDes] = useState("");
   const [advantage, setAdvantage] = useState("");
-  const [advantageDes, setAdvantageDes] = useState("");
   const [work, setWork] = useState("");
-  const [workDes, setWorkDes] = useState("");
-  const [reviews, setReviews] = useState<Review[]>([]);
+  const [review1, setReview1] = useState({
+    name: "",
+    gen: "",
+    contact: "",
+    review: "",
+  });
+  const [review2, setReview2] = useState({
+    name: "",
+    gen: "",
+    contact: "",
+    review: "",
+  });
+  const [review3, setReview3] = useState({
+    name: "",
+    gen: "",
+    contact: "",
+    review: "",
+  });
 
   const [imagesLink, setImagesLink] = useState({
     first: "",
     second: "",
     third: "",
-    thumbnail: "",
   });
-  const [reviewImagesLink, setReviewImagesLink] = useState<{
-    [key: string]: string;
-  }>({});
+  const [reviewImagesLink, setReviewImagesLink] = useState({
+    first: "",
+    second: "",
+    third: "",
+  });
 
   useEffect(() => {
     setReviewImagesLink(finalData?.reviewImageUrl ?? {});
@@ -141,12 +198,12 @@ const LandingEdit = ({
     setInfo(finalData.Info != null ? finalData.Info : "");
     setContacts(finalData?.Contacts != null ? finalData.Contacts : {});
     setClubArticle(finalData?.ClubArticle);
-    setClubArticleDes(finalData?.ClubArticleDes);
     setAdvantage(finalData?.Advantage);
-    setAdvantageDes(finalData?.AdvantageDes);
     setWork(finalData?.Work);
-    setWorkDes(finalData?.WorkDes);
-    setReviews(finalData?.Reviews != null ? finalData.Reviews : []);
+    setReview1(finalData?.Review1);
+    setReview2(finalData?.Review2);
+    setReview3(finalData?.Review3);
+    console.log(finalData.Info);
   }, []);
 
   interface Review {
@@ -185,7 +242,7 @@ const LandingEdit = ({
                     <div className="text-4xl block text-center text-transparent bg-clip-text bg-gradient-to-b from-[#632790] to-[#D738A4] font-Thai font-semibold">
                       สมาชิก <br />
                       <p className="text-3xl mt-2 font-semibold text-center">
-                        {info.member}
+                        {info.members}
                       </p>
                     </div>
                   </div>
@@ -219,16 +276,21 @@ const LandingEdit = ({
                   </div>
 
                   <div className=" md:w-[200px] w-[150px]">
-                    <p className=" flex text-[#8133A7] md:w-[200px] w-[150px] text-xl font-Thai break-all ">
+                    <p className=" flex text-[#8133A7] md:w-[200px] w-[150px] text-xl font-Thai ">
                       {" "}
                       {contacts.ig != "" && <div>IG:{contacts.ig}</div>}
                     </p>
-                    <p className=" flex text-[#8133A7] md:w-[200px] w-[150px] text-xl font-Thai break-all ">
-                      {contacts.fb != "" && <div>FB:{contacts.fb}</div>}
+                    <p className=" flex text-[#8133A7] md:w-[200px] w-[150px] text-xl font-Thai ">
+                      {contacts.facebook != "" && (
+                        <div>FB:{contacts.facebook}</div>
+                      )}
                     </p>
-                    <p className=" flex text-[#8133A7] md:w-[200px] w-[150px] text-xl font-Thai break-all ">
-                      {contacts.other != "" && <div>{contacts.other}</div>}
-                    </p>
+
+                    {contacts.others && contacts.others.trim() != "" && (
+                      <p className=" flex text-[#8133A7] md:w-[200px] w-[150px] text-xl font-Thai break-all md:break-normal ">
+                        อื่นๆ: {contacts.others}
+                      </p>
+                    )}
                   </div>
                 </div>
                 <div className=" w-full flex justify-center">
@@ -297,7 +359,7 @@ const LandingEdit = ({
                   ประโยชน์ที่ได้รับจากการเข้าชมรม
                 </p>
                 <div className=" flex justify-center gap-3 lg:mt-10">
-                  <div className=" w-full relative   ">
+                  <div className=" w-full relative  ">
                     <div className=" flex justify-center">
                       <svg
                         className=" aspect-[9/5] w-[90%] md:w-full "
@@ -407,7 +469,7 @@ const LandingEdit = ({
                   {
                     //review1
                   }
-                  {reviews[0]?.Review != "" && (
+                  {review1.review != "" && (
                     <div>
                       <div className=" w-full flex justify-center">
                         <div className=" mt-10 md:w-full w-[90%]  ">
@@ -439,21 +501,21 @@ const LandingEdit = ({
                           </div>
                           <div className=" block md:mt-1  z-50 relative">
                             <p className=" text-white md:text-2xl sm:text-md min-h-[28px]  break-all  bg-transparent font-Thai">
-                              {reviews[0]?.Name}
+                              {review1.name}
                             </p>
 
                             <p className=" block text-[#291A54] md:text-xl md:mt-0  sm:text-sm text-base  font-Thai ">
                               {" "}
-                              เตรียมอุดม {reviews[0]?.Year}
+                              เตรียมอุดม {review1.gen}
                             </p>
                             <div className=" flex">
                               <p className=" break-all items-center  text-[#291A54] min-h-[28px] sm:text-sm md:text-base bg-transparent font-Thai ">
-                                {reviews[0]?.Social}
+                                {review1.contact}
                               </p>
                             </div>
                           </div>
                         </div>
-                        <div className="w-[10px] min-w-[5px]">
+                        <div className="w-[8px] min-w-[8px]">
                           <svg
                             width="100%"
                             viewBox="0 0 10 318"
@@ -471,7 +533,7 @@ const LandingEdit = ({
                         </div>
                         <div className=" flex  justify-center ">
                           <p className=" text-white  text-md break-all font-Thai  w-full   bg-transparent align-top resize-none whitespace-pre-line  ">
-                            {reviews[0]?.Review}
+                            {review1.review}
                           </p>
                         </div>
                       </div>
@@ -481,14 +543,14 @@ const LandingEdit = ({
                   {
                     //review2
                   }
-                  {reviews[1]?.Review != "" && (
+                  {review2.review != "" && (
                     <div className=" md:w-full sm:w-[90%]  mt-10 bg-gradient-to-b from-[#112881]/[.90] to-[#8E297A]/[.50] mx-auto  flex p-4 rounded-3xl min-h-30 gap-5 justify-center ">
                       <div className="  flex justify-start w-full">
                         <p className=" text-white  text-md break-all font-Thai   w-full  bg-transparent align-top resize-none whitespace-pre-line  ">
-                          {reviews[1]?.Review}
+                          {review2.review}
                         </p>
                       </div>
-                      <div className="w-[10px] min-w-[5px]">
+                      <div className="w-[8px] min-w-[8px]">
                         <svg
                           width="100%"
                           viewBox="0 0 10 318"
@@ -530,15 +592,15 @@ const LandingEdit = ({
                         </div>
                         <div className=" block md:mt-1  relative z-50">
                           <p className=" text-white md:text-2xl sm:text-md  bg-transparent font-Thai min-h-[28px] text-right break-all">
-                            {reviews[1]?.Name}
+                            {review2.name}
                           </p>
 
                           <p className="  text-[#291A54] md:text-xl md:mt-0  sm:text-sm text-base  font-Thai text-right ">
                             {" "}
-                            เตรียมอุดม {reviews[1]?.Year}
+                            เตรียมอุดม {review2.gen}
                           </p>
-                          <p className="   text-[#291A54] md:text-xl md:mt-0  sm:text-sm text-base min-h-[28px] font-Thai text-right break-all">
-                            {reviews[1]?.Social}
+                          <p className="   text-[#291A54] md:text-base md:mt-0  sm:text-sm text-base min-h-[28px] font-Thai text-right break-all">
+                            {review2.contact}
                           </p>
                         </div>
                       </div>
@@ -548,7 +610,7 @@ const LandingEdit = ({
                   {
                     //review3
                   }
-                  {reviews[2]?.Review != "" && (
+                  {review3.review != "" && (
                     <div className=" md:w-full sm:w-[90%]  mt-10 bg-gradient-to-b from-[#112881]/[.90] to-[#8E297A]/[.50] mx-auto  flex p-4 rounded-3xl min-h-30 gap-5">
                       <div className=" relative z-10  min-w-[30%] w-[30%] md:min-w-[25%] md:w-[25%] lg:min-w-[20%] lg:w-[20%] ">
                         <svg
@@ -575,21 +637,21 @@ const LandingEdit = ({
                         </div>
                         <div className=" block md:mt-1  z-50 relative">
                           <p className=" text-white md:text-2xl sm:text-md min-h-[28px]  break-all  bg-transparent font-Thai">
-                            {reviews[2]?.Name}
+                            {review3.name}
                           </p>
 
                           <p className=" block text-[#291A54] md:text-xl md:mt-0  sm:text-sm text-base  font-Thai ">
                             {" "}
-                            เตรียมอุดม {reviews[2]?.Year}
+                            เตรียมอุดม {review3.gen}
                           </p>
                           <div className=" flex">
                             <p className=" break-all items-center  text-[#291A54] min-h-[28px] sm:text-sm md:text-base bg-transparent font-Thai ">
-                              {reviews[2]?.Social}
+                              {review3.contact}
                             </p>
                           </div>
                         </div>
                       </div>
-                      <div className="w-[10px] min-w-[5px]">
+                      <div className="w-[8px] min-w-[8px]">
                         <svg
                           width="100%"
                           viewBox="0 0 10 318"
@@ -607,7 +669,7 @@ const LandingEdit = ({
                       </div>
                       <div className=" flex  justify-center ">
                         <p className=" text-white  text-md break-all font-Thai  w-full   bg-transparent align-top resize-none whitespace-pre-line  ">
-                          {reviews[2]?.Review}
+                          {review3.review}
                         </p>
                       </div>
                     </div>
@@ -637,16 +699,11 @@ const LandingEdit = ({
               <div className=" absolute right-0 top-[1500px]">
                 <ClubFlower />
               </div>
-
-              {/* <div
-                className={
-                  showReview2
-                    ? " absolute left-0 top-[2500px] block z-0"
-                    : " hidden"
-                }
-              >
-                <ClubCrystal2 />
-              </div> */}
+              {review2.review != "" && (
+                <div className=" absolute left-0 top-[2500px] block z-0">
+                  <ClubCrystal2 />
+                </div>
+              )}
             </div>
           </div>
         </div>

@@ -27,7 +27,7 @@ const Club = ({ data }: { data: any }) => {
               width={width > SM ? 212 : 350}
               height={width > SM ? 112 : 250}
               priority={true}
-              className="w-full rounded-t-lg"
+              className=" rounded-t-lg object-cover w-[212px] h-[112px] md:w-[212px] md:h-[112px]"
             />
           </div>
           <div className=" w-full h-1 bg-gradient-to-r from-[#1827AA] via-[#FA58C4] to-[#D7D7D7]"></div>
@@ -45,7 +45,7 @@ const Club = ({ data }: { data: any }) => {
 };
 
 export const getStaticProps: GetStaticProps = async () => {
-  const data = fs.readFileSync("./src/_data/_maps/clubsMap.json", {
+  const data = fs.readFileSync("./src/_data/_maps/clubs.json", {
     encoding: "utf8",
     flag: "r",
   });
@@ -54,20 +54,17 @@ export const getStaticProps: GetStaticProps = async () => {
     {
       englishName: string;
       imageURL: Array<{ url: string; description: string }>;
-      thaiName: string;
+      logo: string;
+      name: string;
       id: string;
-    }
+    },
   ];
 
   const objContents = items.map((item) => {
     return {
       path: `clubs/${item.id}`,
-      thumbnail:
-        item.id !== ""
-          ? item.imageURL[3]?.url ??
-            `/assets/images/all/${item.id}-thumbnail-default.jpg`
-          : item.imageURL[3]?.url,
-      title: item.thaiName,
+      thumbnail: `/assets/images/clubs/${item.id}-thumbnail-default.jpg`,
+      title: item.name,
     };
   });
 
@@ -122,15 +119,17 @@ const Page = ({ contents }: { contents: any }) => {
         </div>
         <div className="max-w-5xl mx-auto mt-16 mb-24">
           <div className="flex flex-col items-center">
-            <h1 className="text-5xl text-transparent bg-clip-text bg-gradient-to-b from-[#6C1FD8] to-[#FF54AC] font-bold">ชมรม</h1>
+            <h1 className="text-5xl text-transparent bg-clip-text bg-gradient-to-b from-[#6C1FD8] to-[#FF54AC] font-bold">
+              ชมรม
+            </h1>
             <div className="px-5 sm:px-10 w-full max-w-[500px]">
               <div className="relative mt-4 ">
-              <div className="absolute top-0 left-0 flex items-center h-full ml-6">
+                <div className="absolute top-0 left-0 flex items-center h-full ml-6">
                   <MagnifyingGlassIcon className="w-6 h-6" />
                 </div>
                 <input
                   onChange={(e) => {
-                    setTimeout(() => setSearchContext(e.target.value))
+                    setTimeout(() => setSearchContext(e.target.value));
                   }}
                   className="w-full py-2 pr-4 bg-white border rounded-full bg-opacity-20 placeholder:text-white pl-14 border-opacity-40"
                   placeholder="ค้นหาชมรม..."
