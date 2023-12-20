@@ -162,7 +162,7 @@ export default function Directions() {
   return (
     <main className="min-h-screen text-white bg-gradient-to-br from-[#FFDE74] from-0% via-[#FC7ADB] via-50% to-[#4924D1] to-100%">
       <div className="pt-32 pb-24 max-w-[2200px] mx-auto">
-        <h1 className="font-extrabold text-transparent md:text-7xl text-4xl bg-clip-text bg-gradient-to-b from-[#5B00DB] to-[#FF329C] text-center  " >การเดินทาง</h1>
+        <h1 className="font-extrabold  md:text-7xl text-4xl text-[#A918BD] text-center  " >การเดินทาง</h1>
 
         {/* การเดินทาง */}
 

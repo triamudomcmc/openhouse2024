@@ -125,15 +125,15 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
       review: raw[clubId].review_3.review,
     } ?? {};
   finalData["reviewImageUrl"] = {
-    first: `/assets/images/clubs/${clubId}-review-first-default.jpg`,
-    second: `/assets/images/clubs/${clubId}-review-second-default.jpg`,
-    third: `/assets/images/clubs/${clubId}-review-third-default.jpg`,
+    first: raw[clubId].imgprofile1 !== "" ? raw[clubId].imgprofile1 : `/assets/images/clubs/${clubId}-review-first-default.jpg`,
+    second: raw[clubId].imgprofile2 !== "" ? raw[clubId].imgprofile2 : `/assets/images/clubs/${clubId}-review-second-default.jpg`,
+    third: raw[clubId].imgprofile3 !== "" ? raw[clubId].imgprofile3 : `/assets/images/clubs/${clubId}-review-third-default.jpg`,
   };
 
   finalData["imageUrl"] = {
-    first: `/assets/images/clubs/${clubId}-first-default.jpg`,
-    second: `/assets/images/clubs/${clubId}-second-default.jpg`,
-    third: `/assets/images/clubs/${clubId}-third-default.jpg`,
+  first: raw[clubId].image1 !== "" ? raw[clubId].image1 : `/assets/images/clubs/${clubId}-first-default.jpg`,
+    second: raw[clubId].image2 !== "" ? raw[clubId].image2 : `/assets/images/clubs/${clubId}-second-default.jpg`,
+    third: raw[clubId].image3 !== "" ? raw[clubId].image3 : `/assets/images/clubs/${clubId}-third-default.jpg`,
   };
 
   if (Object.keys(finalData).length != 0) return { props: { finalData } };
@@ -499,7 +499,7 @@ const LandingEdit = ({
                             />
                           </div>
                           <div className=" block md:mt-1  z-50 relative">
-                            <p className=" text-white md:text-2xl sm:text-md min-h-[28px]  break-all  bg-transparent font-Thai">
+                            <p className=" text-white md:text-2xl sm:text-md min-h-[28px]  break-words  bg-transparent font-Thai">
                               {review1.name}
                             </p>
 
@@ -590,7 +590,7 @@ const LandingEdit = ({
                           </div>
                         </div>
                         <div className=" block md:mt-1  relative z-50">
-                          <p className=" text-white md:text-2xl sm:text-md  bg-transparent font-Thai min-h-[28px] text-right break-all">
+                          <p className=" text-white md:text-2xl sm:text-md  bg-transparent font-Thai min-h-[28px] text-right break-words">
                             {review2.name}
                           </p>
 
@@ -635,7 +635,7 @@ const LandingEdit = ({
                           />
                         </div>
                         <div className=" block md:mt-1  z-50 relative">
-                          <p className=" text-white md:text-2xl sm:text-md min-h-[28px]  break-all  bg-transparent font-Thai">
+                          <p className=" text-white md:text-2xl sm:text-md min-h-[28px]  break-words  bg-transparent font-Thai">
                             {review3.name}
                           </p>
 

@@ -299,7 +299,7 @@ const LandingEdit = ({
                     </p>
 
                     {contacts.others && contacts.others.trim() != "" && (
-                      <p className=" flex text-[#8133A7] md:w-[200px] w-[150px] text-xl font-Thai break-all md:break-normal ">
+                      <p className=" flex text-[#8133A7] md:w-[200px] w-[150px] text-xl font-Thai break-words md:break-normal ">
                         อื่นๆ: {contacts.others}
                       </p>
                     )}
@@ -513,7 +513,7 @@ const LandingEdit = ({
                             />
                           </div>
                           <div className=" block md:mt-1  z-50 relative">
-                            <p className=" text-white md:text-2xl sm:text-md min-h-[28px]  break-all  bg-transparent font-Thai">
+                            <p className=" text-white md:text-2xl sm:text-md min-h-[28px]  break-words  bg-transparent font-Thai">
                               {review1.name}
                             </p>
 
@@ -522,7 +522,7 @@ const LandingEdit = ({
                               เตรียมอุดม {review1.gen}
                             </p>
                             <div className=" flex">
-                              <p className=" break-all items-center  text-[#291A54] min-h-[28px] sm:text-sm md:text-base bg-transparent font-Thai ">
+                              <p className=" break-words items-center  text-[#291A54] min-h-[28px] sm:text-sm md:text-base bg-transparent font-Thai ">
                                 {review1.contact}
                               </p>
                             </div>
@@ -545,7 +545,7 @@ const LandingEdit = ({
                           </svg>
                         </div>
                         <div className=" flex  justify-center ">
-                          <p className=" text-white  text-md break-all font-Thai  w-full   bg-transparent align-top resize-none whitespace-pre-line  ">
+                          <p className=" text-white  text-md break-words font-Thai  w-full   bg-transparent align-top resize-none whitespace-pre-line  ">
                             {review1.review}
                           </p>
                         </div>
@@ -559,7 +559,7 @@ const LandingEdit = ({
                   {review2.review != "" && (
                     <div className=" md:w-full sm:w-[90%]  mt-10 bg-gradient-to-b from-[#112881]/[.90] to-[#8E297A]/[.50] mx-auto  flex p-4 rounded-3xl min-h-30 gap-5 justify-center ">
                       <div className="  flex justify-start w-full">
-                        <p className=" text-white  text-md break-all font-Thai   w-full  bg-transparent align-top resize-none whitespace-pre-line  ">
+                        <p className=" text-white  text-md break-words font-Thai   w-full  bg-transparent align-top resize-none whitespace-pre-line  ">
                           {review2.review}
                         </p>
                       </div>
@@ -604,7 +604,7 @@ const LandingEdit = ({
                           </div>
                         </div>
                         <div className=" block md:mt-1  relative z-50">
-                          <p className=" text-white md:text-2xl sm:text-md  bg-transparent font-Thai min-h-[28px] text-right break-all">
+                          <p className=" text-white md:text-2xl sm:text-md  bg-transparent font-Thai min-h-[28px] text-right break-words">
                             {review2.name}
                           </p>
 
@@ -612,7 +612,7 @@ const LandingEdit = ({
                             {" "}
                             เตรียมอุดม {review2.gen}
                           </p>
-                          <p className="   text-[#291A54] md:text-base md:mt-0  sm:text-sm text-base min-h-[28px] font-Thai text-right break-all">
+                          <p className="   text-[#291A54] md:text-base md:mt-0  sm:text-sm text-base min-h-[28px] font-Thai text-right break-words">
                             {review2.contact}
                           </p>
                         </div>
@@ -649,7 +649,7 @@ const LandingEdit = ({
                           />
                         </div>
                         <div className=" block md:mt-1  z-50 relative">
-                          <p className=" text-white md:text-2xl sm:text-md min-h-[28px]  break-all  bg-transparent font-Thai">
+                          <p className=" text-white md:text-2xl sm:text-md min-h-[28px]  break-words  bg-transparent font-Thai">
                             {review3.name}
                           </p>
 
@@ -658,7 +658,7 @@ const LandingEdit = ({
                             เตรียมอุดม {review3.gen}
                           </p>
                           <div className=" flex">
-                            <p className=" break-all items-center  text-[#291A54] min-h-[28px] sm:text-sm md:text-base bg-transparent font-Thai ">
+                            <p className=" break-words items-center  text-[#291A54] min-h-[28px] sm:text-sm md:text-base bg-transparent font-Thai ">
                               {review3.contact}
                             </p>
                           </div>
@@ -681,7 +681,7 @@ const LandingEdit = ({
                         </svg>
                       </div>
                       <div className=" flex  justify-center ">
-                        <p className=" text-white  text-md break-all font-Thai  w-full   bg-transparent align-top resize-none whitespace-pre-line  ">
+                        <p className=" text-white  text-md break-words font-Thai  w-full   bg-transparent align-top resize-none whitespace-pre-line  ">
                           {review3.review}
                         </p>
                       </div>

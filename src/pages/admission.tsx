@@ -22,7 +22,7 @@ export default function Admission() {
               <div className=" px-1 py-1 rounded-full bg-gradient-to-r from-[#FB54C4] to-[#935AE3] lg:w-2/3 w-full mt-4 ">
                 <div className=" w-full rounded-full md:text-base text-sm flex bg-white text-black  ">
                   <div className=" bg-gradient-to-r from-[#FC53C3] to-[#FC53C3] rounded-full text-center py-2 md:w-1/3 w-[40%]  ">
-                    14-18 ก.พ. 67
+                    28-3 มี.ค. 67
                   </div>
                   <div className=" px-5 py-2 ">เปิดรับสมัคร</div>
                 </div>
@@ -30,7 +30,7 @@ export default function Admission() {
               <div className=" px-1 py-1 rounded-full bg-gradient-to-r from-[#FB54C4] to-[#935AE3] lg:w-2/3 w-full mt-4 ">
                 <div className=" w-full rounded-full md:text-base text-sm flex bg-white text-black  ">
                   <div className=" bg-gradient-to-r from-[#FC53C3] to-[#FC53C3] rounded-full text-center py-2 md:w-1/3 w-[40%]  ">
-                    4 มี.ค. 67
+                    9 มี.ค. 67
                   </div>
                   <div className=" px-5 py-2 ">วันสอบ</div>
                 </div>
@@ -38,7 +38,7 @@ export default function Admission() {
               <div className=" px-1 py-1 rounded-full bg-gradient-to-r from-[#FB54C4] to-[#935AE3] lg:w-2/3 w-full mt-4 ">
                 <div className=" w-full rounded-full md:text-base text-sm flex bg-white text-black  ">
                   <div className=" bg-gradient-to-r from-[#FC53C3] to-[#FC53C3] rounded-full text-center py-2 md:w-1/3 w-[40%]  ">
-                    ภายใน 10 มี.ค. 67
+                    ภายใน 20 มี.ค. 67
                   </div>
                   <div className=" px-5 py-2 ">วันประกาศผล</div>
                 </div>
@@ -46,7 +46,7 @@ export default function Admission() {
               <div className=" px-1 py-1 rounded-full bg-gradient-to-r from-[#FB54C4] to-[#935AE3] lg:w-2/3 w-full mt-4 ">
                 <div className=" w-full rounded-full md:text-base text-sm flex bg-white text-black  ">
                   <div className=" bg-gradient-to-r from-[#FC53C3] to-[#FC53C3] rounded-full text-center py-2 md:w-1/3 w-[40%]  ">
-                    ภายใน 13 มี.ค. 67
+                    ภายใน 20 มี.ค. 67
                   </div>
                   <div className=" px-5 py-2 ">รายงานตัว</div>
                 </div>
@@ -54,7 +54,7 @@ export default function Admission() {
               <div className=" px-1 py-1 rounded-full bg-gradient-to-r from-[#FB54C4] to-[#935AE3] lg:w-2/3 w-full mt-4 ">
                 <div className=" w-full rounded-full md:text-base text-sm flex bg-white text-black  ">
                   <div className=" bg-gradient-to-r from-[#FC53C3] to-[#FC53C3] rounded-full text-center py-2 md:w-1/3 w-[40%]  ">
-                    ภายใน 22 มี.ค. 67
+                    ภายใน 20 มี.ค. 67
                   </div>
                   <div className=" px-5 py-2 ">วันมอบตัว</div>
                 </div>
