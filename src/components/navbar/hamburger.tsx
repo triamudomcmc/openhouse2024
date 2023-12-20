@@ -11,10 +11,8 @@ export default function Hamburger() {
   useEffect(() => {
     if (session) {
       SetInSession(true);
-      console.log(inSession);
     } else {
       SetInSession(false);
-      console.log(inSession);
     }
   });
 
@@ -48,12 +46,12 @@ export default function Hamburger() {
       <div
         className={
           isOpen
-            ? " overflow-x-hidden absolute left-0 translate-x-0  z-10 w-full bg-[#935AE3] h-48 overflow-hidden  bg-opacity-80 top-16 duration-500 ease-out transition-all "
-            : "absolute z-60 w-full bg-[#935AE3] h-48 overflow-hidden bg-opacity-80 top-16 translate-x-full duration-500 ease-out transition-all"
+            ? " overflow-x-hidden absolute left-0 translate-x-0  z-10 w-full bg-[#935AE3] overflow-hidden  bg-opacity-80 top-16 duration-500 ease-out transition-all "
+            : "absolute z-60 w-full bg-[#935AE3] overflow-hidden bg-opacity-80 top-16 translate-x-full duration-500 ease-out transition-all"
         }
       >
         <Link className=" w-full" href="/">
-          <div className=" text-right pr-4 text-white border-b border-gray-100 py-2 text-2xl">
+          <div className=" text-right pr-4 text-white border-y border-gray-100 py-2 text-2xl">
             หน้าแรก
           </div>
         </Link>
@@ -67,7 +65,7 @@ export default function Hamburger() {
             การเดินทางมาโรงเรียนเตรียมฯ
           </div>
         </Link>
-        <Link
+        {/* <Link
           className={inSession ? " text-right h-16  text-white" : "hidden"}
           href="/account"
         >
@@ -82,7 +80,7 @@ export default function Hamburger() {
           <div className=" text-right pr-4 text-white border-b border-gray-100 py-2 text-2xl">
           เข้าสู่ระบบ
           </div>
-        </Link>
+        </Link> */}
       </div>
     </>
   );

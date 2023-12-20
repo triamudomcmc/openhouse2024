@@ -94,7 +94,7 @@ const Footer: FC<{ theme?: string }> = ({ theme }) => {
                 <Tiktok />
               </motion.a>
             </div>
-            {getButton(session, signOut)}
+            {/* {getButton(session, signOut)} */}
           </div>
         </div>
         <div

@@ -203,7 +203,6 @@ const LandingEdit = ({
     setReview1(finalData?.Review1);
     setReview2(finalData?.Review2);
     setReview3(finalData?.Review3);
-    console.log(finalData.Info);
   }, []);
 
   interface Review {

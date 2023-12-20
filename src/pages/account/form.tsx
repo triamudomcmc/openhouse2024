@@ -68,7 +68,6 @@ export default function Form() {
         } else {
         }
       } catch (error) {
-        console.log(error);
       }
     }
   }
@@ -134,9 +133,7 @@ export default function Form() {
   async function postRequest() {
     try {
       const response = await axios.request(postConfig);
-      console.log(JSON.stringify(response.data));
     } catch (error) {
-      console.log(error);
     }
   }
 
@@ -215,10 +212,6 @@ export default function Form() {
   useEffect(() => {
     accountCheck();
   }, [session]);
-
-  useEffect(() => {
-    console.log(purpose);
-  }, [purpose]);
 
   return (
     <>

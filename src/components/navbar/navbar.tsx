@@ -15,10 +15,8 @@ export default function Navbar() {
   useEffect(() => {
     if (session) {
       SetInSession(true);
-      console.log(inSession);
     } else {
       SetInSession(false);
-      console.log(inSession);
     }
   });
 
@@ -76,7 +74,7 @@ export default function Navbar() {
             <Link href="/directions">การเดินทางมาโรงเรียนเตรียมฯ</Link>
           </div>
 
-          <div className={inSession ? " block " : "hidden"}>
+          {/* <div className={inSession ? " block " : "hidden"}>
             <div
               className={
                 router.pathname === "/account"
@@ -97,7 +95,7 @@ export default function Navbar() {
             >
               <Link href="/auth"> เข้าสู่ระบบ </Link>
             </div>
-          </div>
+          </div> */}
         </div>
       </nav>
       <nav className=" md:hidden bg-[#935AE3] bg-opacity-80 flex align-middle justify-between px-2 gap-10 h-16  text-center z-20 top-0 ">

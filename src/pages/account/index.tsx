@@ -50,7 +50,6 @@ export default function AccountPage() {
           userRequest();
         }
       } catch (error) {
-        console.log(error);
       }
     }
   }
@@ -72,9 +71,7 @@ export default function AccountPage() {
       setFirstName(response.data.name);
       setLastName(response.data.surname);
       setRoles(response.data.role);
-      console.log(JSON.stringify(response.data));
     } catch (error) {
-      console.log(error);
     }
   }
 
@@ -86,7 +83,6 @@ export default function AccountPage() {
 
   useEffect(() => {
     hasAccountRequest();
-    console.log(session?.user?.email);
   }, [status]);
 
   return (

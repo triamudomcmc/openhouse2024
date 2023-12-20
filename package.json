@@ -24,6 +24,7 @@
     "formik": "^2.4.5",
     "framer-motion": "^10.16.4",
     "fs": "^0.0.1-security",
+    "lottie-react": "^2.4.0",
     "module-name": "^0.0.1-security",
     "next": "13.5.4",
     "next-auth": "^4.24.3",
