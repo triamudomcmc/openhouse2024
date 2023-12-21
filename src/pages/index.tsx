@@ -70,10 +70,7 @@ export default function Home() {
               2024
             </div>
             <div className=" md:hidden text-center text-white text-base font-semibold  flex justify-center">
-              <div className="px-4 py-1 bg-white bg-opacity-25 rounded-[100px]">
-                {" "}
-                12-13 JANUARY 2024
-              </div>
+              <div className="px-4 py-1 bg-white bg-opacity-25 rounded-[100px]"> 12-13 JANUARY 2024</div>
             </div>
           </div>
         </main>
@@ -138,15 +135,7 @@ export default function Home() {
               />
             </div>
           </div>
-          <motion.div
-            initial={{ opacity: 0, x: 40 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            transition={{
-              duration: 0.6,
-              delay: 0.5,
-            }}
-            className=" absolute lg:top-20 top-5 md:right-16 max-md:left-5 md:text-right text-left "
-          >
+          <div className=" absolute lg:top-20 top-5 md:right-16 max-md:left-5 md:text-right text-left ">
             <div className=" md:text-[80px] text-[40px] font-bold text-white ">
               สายการเรียน
             </div>
@@ -155,7 +144,7 @@ export default function Home() {
               <br />
               สายการเรียนที่สนใจ
             </div>
-          </motion.div>
+          </div>
           <div className="md:hidden">
             <div className=" absolute top-20  left-[85%] -translate-x-[85%]  z-50 mt-14   ">
               <Programme
