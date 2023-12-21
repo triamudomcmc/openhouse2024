@@ -126,7 +126,7 @@ export default function AccountPage() {
           {roles}
         </div>
         <div className=" md:mt-10 mt-7 flex justify-between md:gap-5 gap-3 lg:text-2xl md:text-xl sm:text-sm font-semibold max-md:w-[270px]">
-          <Link href="/account/e-ticket" className="   ">
+          <Link href="/account/ticket" className="   ">
             <motion.div
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
@@ -136,7 +136,7 @@ export default function AccountPage() {
             </motion.div>
           </Link>
           <Link
-            href="/account/e-stamp"
+            href="/account/stamp"
             className="  "
           >
             <motion.div

@@ -52,7 +52,7 @@ export default function Form() {
   let config = {
     method: "post",
     maxBodyLength: Infinity,
-    url: `https://openhouse2024-backend.vercel.app/api/user/get`,
+    url: `https://openhouse2024-backend.vercel.app/api/user/has-account`,
     headers: {
       "Content-Type": "application/json",
     },
@@ -233,8 +233,8 @@ export default function Form() {
                   <input
                     type="text"
                     className=" w-full p-2 text-sm font-light rounded-md shadow mt-1 text-[#000340]   "
-                    maxLength={16}
-                    placeholder="ความยาวไม่เกิน 16 ตัวอักษร"
+                    maxLength={12}
+                    placeholder="ความยาวไม่เกิน 12 ตัวอักษร"
                     value={username}
                     onChange={(event) => {
                       setUsername(event.target.value);

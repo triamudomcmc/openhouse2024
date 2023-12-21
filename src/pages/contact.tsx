@@ -26,9 +26,9 @@ function OPHContact() {
           OPEN HOUSE"
         />
         <LinkELement
-          src="/assets/logo/twitter.png"
-          alt="Twitter"
-          href="https://twitter.com/triamudomoph"
+          src="/assets/logo/x.png"
+          alt="x"
+          href="https://x.com/triamudomoph"
           text="triamudom.oph"
         />
         <LinkELement

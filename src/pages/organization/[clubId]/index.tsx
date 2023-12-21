@@ -336,7 +336,7 @@ const LandingEdit = ({
                     </div>
                     <div className=" absolute  w-full h-full">
                       <p className="  text-center text-[#7533A8] ">
-                        ภาพบรรยากาศในองค์กร
+                        
                       </p>
                     </div>
                     <div className=" absolute w-full top-0 flex justify-center z-10">
@@ -382,7 +382,7 @@ const LandingEdit = ({
                     </div>
                     <div className=" absolute left-0  w-full h-full z-20">
                       <p className="  text-center text-[#7533A8] ">
-                        ภาพบรรยากาศในองค์กร
+                        
                       </p>
                     </div>
                     <div className=" absolute w-full top-0 flex justify-center z-10">
@@ -446,7 +446,7 @@ const LandingEdit = ({
                         </div>
                         <div className=" absolute  w-full h-full">
                           <p className="  text-center text-[#7533A8] ">
-                            ภาพบรรยากาศในองค์กร
+                            
                           </p>
                         </div>
                         <div className=" absolute w-full top-0 flex justify-center z-10">

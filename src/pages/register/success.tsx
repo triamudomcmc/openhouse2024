@@ -13,7 +13,8 @@ export default function RegisterSucess() {
   return (
     <div className="flex justify-center items-center w-full h-screen bg-[#FCF7E1]">
       <div className="flex flex-col items-center">
-      <Lottie className=" md:w-2/5 w-3/5 " animationData={checkmark} loop={false} />
+        <Lottie className=" md:w-2/5 w-3/5 " animationData={checkmark} loop={false} />
+        {/* <CheckCircleIcon className="w-3/5 text-[#7625B9]" /> */}
         <p className="text-center  md:text-3xl text-xl font-bold text-[#7625B9]">
           ลงทะเบียนสำเร็จ
         </p>

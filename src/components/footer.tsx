@@ -1,6 +1,6 @@
 import { FC } from "react";
 import { Facebook } from "@/vectors/icons/Facebook";
-import { Twitter } from "@/vectors/icons/Twitter";
+import { X } from "@/vectors/icons/X";
 import { Youtube } from "@/vectors/icons/Youtube";
 import { Instagram } from "@/vectors/icons/Instagram";
 import Link from "next/link";
@@ -72,12 +72,12 @@ const Footer: FC<{ theme?: string }> = ({ theme }) => {
                 <Instagram />
               </motion.a>
               <motion.a
-                href="https://twitter.com/triamudomoph"
+                href="https://x.com/triamudomoph"
                 target="_blank"
                 rel="noreferrer"
                 whileHover={{ scale: 1.05 }}
               >
-                <Twitter />
+                <X />
               </motion.a>
               <motion.a
                 href="https://www.youtube.com/c/TriamUdomOpenHouse"
@@ -125,9 +125,9 @@ const Footer: FC<{ theme?: string }> = ({ theme }) => {
             {/* <Link passHref href="/map">
               <a className="hover:underline">แผนผัง</a>
             </Link> */}
-            <Link passHref href="/admission">
+            {/* <Link passHref href="/admission">
               <div className="hover:underline">การสอบเข้า</div>
-            </Link>
+            </Link> */}
             {/* {user?.uid && (
               <Link passHref href="account/ticket">
                 <a className="hover:underline">บัตรของคุณ</a>
