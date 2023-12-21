@@ -32,7 +32,7 @@ export default function App({ Component, pageProps }: AppProps) {
           property="og:description"
           content="งานนิทรรศการประจำปีของโรงเรียนเตรียมอุดมศึกษา พบกับกิจกรรมที่น่าสนใจจากนักเรียนโรงเรียนเตรียมอุดมศึกษา อาทิ แนะแนวการศึกษาต่อ แนะนำสายการเรียน และกิจกรรมจากชมรมต่าง ๆ"
         />
-        <meta property="og:image" content="/meta/preview.png" />
+        <meta property="og:image" content="/assets/preview.png" />
 
         {/* Twitter  */}
         <meta property="twitter:card" content="summary_large_image" />
@@ -45,7 +45,7 @@ export default function App({ Component, pageProps }: AppProps) {
           property="twitter:description"
           content="งานนิทรรศการประจำปีของโรงเรียนเตรียมอุดมศึกษา พบกับกิจกรรมที่น่าสนใจจากนักเรียนโรงเรียนเตรียมอุดมศึกษา อาทิ แนะแนวการศึกษาต่อ แนะนำสายการเรียน และกิจกรรมจากชมรมต่าง ๆ"
         />
-        <meta property="twitter:image" content="/meta/preview.png" />
+        <meta property="twitter:image" content="/assets/preview.png" />
       </Head>
       <Navbar />
       <Component {...pageProps} />

@@ -219,7 +219,7 @@ const LandingEdit = ({
         <div className="">
           <div className=" relative w-full top-0 left-0">
             <div className=" flex justify-center w-full   bg-gradient-to-b from-[#FFF9E9] to-[#C0B0FF] from-70% to-100%">
-              <div className=" lg:w-1/2 md:w-2/3 z-30 lg:mt-[15%] md:mt-[20%] sm:mt-[25%] pb-[700px]">
+              <div className=" lg:w-1/2 md:w-2/3 z-30 lg:mt-[15%] md:mt-[20%] sm:mt-[25%] pb-[200px] md:pb-[700px] ">
                 <div className=" flex justify-center align-middle">
                   <Link className="flex" href="/clubs">
                     <BackArrow />

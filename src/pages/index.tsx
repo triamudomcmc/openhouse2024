@@ -70,7 +70,10 @@ export default function Home() {
               2024
             </div>
             <div className=" md:hidden text-center text-white text-base font-semibold  flex justify-center">
-              <div className="px-4 py-1 bg-white bg-opacity-25 rounded-[100px]"> 12-13 JANUARY 2024</div>
+              <div className="px-4 py-1 bg-white bg-opacity-25 rounded-[100px]">
+                {" "}
+                12-13 JANUARY 2024
+              </div>
             </div>
           </div>
         </main>
@@ -135,7 +138,15 @@ export default function Home() {
               />
             </div>
           </div>
-          <div className=" absolute lg:top-20 top-5 md:right-16 max-md:left-5 md:text-right text-left ">
+          <motion.div
+            initial={{ opacity: 0, x: 40 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            transition={{
+              duration: 0.6,
+              delay: 0.5,
+            }}
+            className=" absolute lg:top-20 top-5 md:right-16 max-md:left-5 md:text-right text-left "
+          >
             <div className=" md:text-[80px] text-[40px] font-bold text-white ">
               สายการเรียน
             </div>
@@ -144,7 +155,7 @@ export default function Home() {
               <br />
               สายการเรียนที่สนใจ
             </div>
-          </div>
+          </motion.div>
           <div className="md:hidden">
             <div className=" absolute top-20  left-[85%] -translate-x-[85%]  z-50 mt-14   ">
               <Programme
@@ -211,7 +222,7 @@ export default function Home() {
           <div className="relative  w-full -z-10 md:hidden -mt-1  ">
             <Landing3M className="object-cover h-full min-h-screen overflow-x-hidden" />
           </div>
-          <div className=" absolute left-1/2 -translate-x-1/2 top-10 bg-gradient-to-r from-[#FC53C3]/[.0] via-[#B868D7] to-[#FC53C3]/[.0] from- text-center text-white md:text-[80px] sm:text-4xl font-bold px-20 md:w-[1000px] md:h-24 h-11 flex align-middle items-center justify-center w-[450px]">
+          <div className=" absolute left-1/2 -translate-x-1/2 top-10 bg-gradient-to-r from-[#FC53C3]/[.0] via-[#B868D7] to-[#FC53C3]/[.0] from- text-center text-white md:text-[80px] sm:text-4xl font-bold px-20 md:w-[1000px] md:h-24 h-14 flex align-middle items-center justify-center w-[450px]">
             Gifted Program
           </div>
           <div className=" max-md:hidden">
