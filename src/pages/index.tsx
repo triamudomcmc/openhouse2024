@@ -60,13 +60,13 @@ export default function Home() {
             <div className=" font-Pinyon_Script text-white md:text-8xl text-6xl ">
               Triam Udom
             </div>
-            <div className=" font-Cinzel_Decorative text-white lg:text-[90px] md:text-[70px] sm:text-[34px] flex justify-center items-center">
+            <div className=" font-Cinzel_Decorative text-white lg:text-[90px] md:text-[70px] sm:text-[32px] flex justify-center items-center">
               OPEN
               <div className="flex justify-center items-center">
-                <Landing1Star className=" md:w-auto sm:w-[34px]" />
+                <Landing1Star className=" md:w-auto sm:w-[30px]" />
               </div>
               HOUSE
-              <Landing1Star className=" md:w-auto sm:w-[34px]" />
+              <Landing1Star className=" md:w-auto sm:w-[30px]" />
               2024
             </div>
             <div className=" md:hidden text-center text-white text-base font-semibold  flex justify-center">

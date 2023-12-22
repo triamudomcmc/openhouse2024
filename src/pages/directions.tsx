@@ -1,20 +1,20 @@
-import { useEffect, useState } from "react"
+import { useEffect, useState } from "react";
 
 const COLORS = {
   bts: "#FF0586",
   bus: "#000CFF",
   mrt: "#6311D6",
-}
+};
 
 export default function Directions() {
-  const [currentTab, setCurrentTab] = useState<"bus" | "bts" | "mrt">("bts")
+  const [currentTab, setCurrentTab] = useState<"bus" | "bts" | "mrt">("bts");
   const [map, setMap] = useState(
     <object
       key={"b"}
       data="/assets/images/directions/bts.svg"
       className="w-[100%] h-[404px] lg:w-[700px] lg:h-[884px]"
     />
-  )
+  );
 
   const des = {
     bts: (
@@ -40,7 +40,9 @@ export default function Directions() {
           </p>
           <div>
             <h2 className="text-xl font-semibold">เดินจากสถานี BTS สยาม</h2>
-            <p className="text-lg font-light">ฝั่งถนนอังรีดูนังต์ ประมาณ 700 เมตร</p>
+            <p className="text-lg font-light">
+              ฝั่งถนนอังรีดูนังต์ ประมาณ 700 เมตร
+            </p>
           </div>
         </div>
         <div className="flex space-x-4">
@@ -51,7 +53,9 @@ export default function Directions() {
             3
           </p>
           <div>
-            <h2 className="text-xl font-semibold">เดินจากสถานี BTS สนามกีฬาฯ</h2>
+            <h2 className="text-xl font-semibold">
+              เดินจากสถานี BTS สนามกีฬาฯ
+            </h2>
             <p className="text-lg font-light">ฝั่งถนนพญาไท ประมาณ 800 เมตร</p>
           </div>
         </div>
@@ -69,13 +73,15 @@ export default function Directions() {
           <div>
             <h2 className="text-xl font-semibold">รถประจำทาง</h2>
             <p className="text-lg font-light">
-              ลงป้ายรถประจำทางหน้าโรงเรียน
+              ลงป้ายรถประจำทางหน้าโรงเรียนเตรียมอุดมฯ
+              <br />
+              หรือหอพักนิสิตจุฬา
               <br />
               ฝั่งถนนพญาไท
               <br />
-              สาย 21, 25, 29, 34, 36, 40, 47, 50
+              สาย 4-68, 21, 25, 29, 34, 34E, 36, 40, 47
               <br />
-              93, 113, 141, 187, 542
+              50, 93, 108, 113, 141, 163, 187, 529
             </p>
           </div>
         </div>
@@ -89,10 +95,11 @@ export default function Directions() {
           <div>
             <h2 className="text-xl font-semibold">รถประจำทาง</h2>
             <p className="text-lg font-light">
-              ลงป้ายรถประจำทางหน้าโรงเรียน <br />
+              ลงป้ายรถประจำทางหน้าโรงเรียนสาธิตปทุมวัน
+              <br />หรือคณะสัตวแพทย์ <br />
               ฝั่งถนนอังรีดูนังต์
               <br />
-              สาย 16, 21
+              สาย 16, 21, 21E, 141
             </p>
           </div>
         </div>
@@ -121,12 +128,14 @@ export default function Directions() {
           </p>
           <div>
             <h2 className="text-xl font-semibold">เดินจากสถานี MRT สามย่าน</h2>
-            <p className="text-lg font-light">ฝั่งถนนอังรีดูนังต์ ประมาณ 1,200 เมตร</p>
+            <p className="text-lg font-light">
+              ฝั่งถนนอังรีดูนังต์ ประมาณ 1,200 เมตร
+            </p>
           </div>
         </div>
       </div>
     ),
-  }
+  };
 
   useEffect(() => {
     switch (currentTab) {
@@ -137,8 +146,8 @@ export default function Directions() {
             data="/assets/images/directions/bts.svg"
             className="w-[100%] h-[404px] lg:w-[700px] lg:h-[884px]"
           />
-        )
-        break
+        );
+        break;
       case "bus":
         setMap(
           <object
@@ -146,8 +155,8 @@ export default function Directions() {
             data="/assets/images/directions/bus.svg"
             className="w-[100%] h-[404px] lg:w-[700px] lg:h-[884px]"
           />
-        )
-        break
+        );
+        break;
       case "mrt":
         setMap(
           <object
@@ -155,14 +164,16 @@ export default function Directions() {
             data="/assets/images/directions/mrt.svg"
             className="w-[100%] h-[404px] lg:w-[700px] lg:h-[876px]"
           />
-        )
+        );
     }
-  }, [currentTab])
+  }, [currentTab]);
 
   return (
     <main className="min-h-screen text-white bg-gradient-to-br from-[#FFDE74] from-0% via-[#FC7ADB] via-50% to-[#4924D1] to-100%">
       <div className="pt-32 pb-24 max-w-[2200px] mx-auto">
-        <h1 className="font-extrabold  md:text-7xl text-4xl text-[#A918BD] text-center  " >การเดินทาง</h1>
+        <h1 className="font-extrabold  md:text-7xl text-4xl text-[#A918BD] text-center  ">
+          การเดินทาง
+        </h1>
 
         {/* การเดินทาง */}
 
@@ -174,20 +185,23 @@ export default function Directions() {
               <div>
                 <div
                   onClick={() => {
-                    setCurrentTab("bus")
+                    setCurrentTab("bus");
                   }}
                   style={{
-                    backgroundColor: currentTab === "bus" ? COLORS[currentTab] : "white",
+                    backgroundColor:
+                      currentTab === "bus" ? COLORS[currentTab] : "white",
                   }}
-                  className=
-                    "cursor-pointer flex justify-center items-center w-[60px] h-[60px] rounded-full shadow-md"
-                  
+                  className="cursor-pointer flex justify-center items-center w-[60px] h-[60px] rounded-full shadow-md"
                 >
                   <svg
                     viewBox="0 0 53 62"
                     fill="none"
                     xmlns="http://www.w3.org/2000/svg"
-                    className={currentTab !== "bus" ? "text-[#C4C4C4] w-[28px]" : "text-white w-[28px]"}
+                    className={
+                      currentTab !== "bus"
+                        ? "text-[#C4C4C4] w-[28px]"
+                        : "text-white w-[28px]"
+                    }
                   >
                     <path
                       d="M26.6727 0.03125C40.8754 0.03125 52.3789 1.63794 52.3789 12.8843V45.017C52.3789 47.8607 51.1257 50.3832 49.1657 52.1504V57.8701C49.1657 59.6374 47.7197 61.0834 45.9525 61.0834H42.7391C40.9557 61.0834 39.5259 59.6374 39.5259 57.8701V54.6569H13.8196V57.8701C13.8196 59.6374 12.3898 61.0834 10.6064 61.0834H7.3932C5.62595 61.0834 4.17998 59.6374 4.17998 57.8701V52.1506C2.21994 50.3833 0.966759 47.8608 0.966759 45.0171V12.8843C0.966606 1.63794 12.4701 0.03125 26.6727 0.03125ZM41.1324 48.2303C43.7995 48.2303 45.9523 46.0775 45.9523 43.4104C45.9523 40.7434 43.7995 38.5905 41.1324 38.5905C38.4653 38.5905 36.3125 40.7434 36.3125 43.4104C36.3125 46.0775 38.4655 48.2303 41.1324 48.2303ZM12.213 48.2303C14.88 48.2303 17.0329 46.0775 17.0329 43.4104C17.0329 40.7434 14.88 38.5905 12.213 38.5905C9.54589 38.5905 7.39305 40.7434 7.39305 43.4104C7.39305 46.0775 9.54604 48.2303 12.213 48.2303ZM7.39305 28.9507H45.9523V12.8843H7.39305V28.9507Z"
@@ -202,20 +216,23 @@ export default function Directions() {
               <div>
                 <div
                   onClick={() => {
-                    setCurrentTab("bts")
+                    setCurrentTab("bts");
                   }}
                   style={{
-                    backgroundColor: currentTab === "bts" ? COLORS[currentTab] : "white",
+                    backgroundColor:
+                      currentTab === "bts" ? COLORS[currentTab] : "white",
                   }}
-                  className=
-                    "cursor-pointer flex justify-center items-center w-[60px] h-[60px] rounded-full shadow-md"
-              
+                  className="cursor-pointer flex justify-center items-center w-[60px] h-[60px] rounded-full shadow-md"
                 >
                   <svg
                     viewBox="0 0 52 61"
                     fill="none"
                     xmlns="http://www.w3.org/2000/svg"
-                    className={currentTab !== "bts" ? "text-[#575757] w-[28px]" : "text-white w-[28px]"}
+                    className={
+                      currentTab !== "bts"
+                        ? "text-[#575757] w-[28px]"
+                        : "text-white w-[28px]"
+                    }
                   >
                     <path
                       fillRule="evenodd"
@@ -269,17 +286,23 @@ export default function Directions() {
               <div>
                 <div
                   onClick={() => {
-                    setCurrentTab("mrt")
+                    setCurrentTab("mrt");
                   }}
                   style={{
-                    backgroundColor: currentTab === "mrt" ? COLORS[currentTab] : "white",
+                    backgroundColor:
+                      currentTab === "mrt" ? COLORS[currentTab] : "white",
                   }}
                   className={
                     "cursor-pointer flex justify-center items-center w-[60px] h-[60px] rounded-full shadow-md"
                   }
                 >
                   {currentTab !== "mrt" ? (
-                    <svg className="w-[38px]" viewBox="0 0 72 63" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <svg
+                      className="w-[38px]"
+                      viewBox="0 0 72 63"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
                       <g clipPath="url(#clip0_1221_4808)">
                         <path
                           d="M36.0691 0.539062C16.4341 0.539062 0.515625 16.2372 0.515625 35.6091C0.515625 46.322 5.38457 55.9135 13.0572 62.3474H59.0728C66.7471 55.9135 71.6226 46.3234 71.6226 35.6091C71.6226 16.2372 55.7041 0.539062 36.0691 0.539062Z"
@@ -302,7 +325,12 @@ export default function Directions() {
                       </defs>
                     </svg>
                   ) : (
-                    <svg className="w-[38px]" viewBox="0 0 72 63" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <svg
+                      className="w-[38px]"
+                      viewBox="0 0 72 63"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
                       <g clipPath="url(#clip0_1221_5087)">
                         <path
                           d="M36.0691 0.539062C16.4341 0.539062 0.515625 16.2372 0.515625 35.6091C0.515625 46.322 5.38457 55.9135 13.0572 62.3474H59.0728C66.7471 55.9135 71.6226 46.3234 71.6226 35.6091C71.6226 16.2372 55.7041 0.539062 36.0691 0.539062Z"
@@ -342,10 +370,11 @@ export default function Directions() {
               <div>
                 <div
                   onClick={() => {
-                    setCurrentTab("bus")
+                    setCurrentTab("bus");
                   }}
                   style={{
-                    backgroundColor: currentTab === "bus" ? COLORS[currentTab] : "white",
+                    backgroundColor:
+                      currentTab === "bus" ? COLORS[currentTab] : "white",
                   }}
                   className={
                     "cursor-pointer flex justify-center items-center w-[107px] h-[107px] rounded-full shadow-md"
@@ -357,7 +386,9 @@ export default function Directions() {
                     viewBox="0 0 53 62"
                     fill="none"
                     xmlns="http://www.w3.org/2000/svg"
-                    className={(currentTab !== "bus" ? "text-[#C4C4C4]" : "text-white")}
+                    className={
+                      currentTab !== "bus" ? "text-[#C4C4C4]" : "text-white"
+                    }
                   >
                     <path
                       d="M26.6727 0.03125C40.8754 0.03125 52.3789 1.63794 52.3789 12.8843V45.017C52.3789 47.8607 51.1257 50.3832 49.1657 52.1504V57.8701C49.1657 59.6374 47.7197 61.0834 45.9525 61.0834H42.7391C40.9557 61.0834 39.5259 59.6374 39.5259 57.8701V54.6569H13.8196V57.8701C13.8196 59.6374 12.3898 61.0834 10.6064 61.0834H7.3932C5.62595 61.0834 4.17998 59.6374 4.17998 57.8701V52.1506C2.21994 50.3833 0.966759 47.8608 0.966759 45.0171V12.8843C0.966606 1.63794 12.4701 0.03125 26.6727 0.03125ZM41.1324 48.2303C43.7995 48.2303 45.9523 46.0775 45.9523 43.4104C45.9523 40.7434 43.7995 38.5905 41.1324 38.5905C38.4653 38.5905 36.3125 40.7434 36.3125 43.4104C36.3125 46.0775 38.4655 48.2303 41.1324 48.2303ZM12.213 48.2303C14.88 48.2303 17.0329 46.0775 17.0329 43.4104C17.0329 40.7434 14.88 38.5905 12.213 38.5905C9.54589 38.5905 7.39305 40.7434 7.39305 43.4104C7.39305 46.0775 9.54604 48.2303 12.213 48.2303ZM7.39305 28.9507H45.9523V12.8843H7.39305V28.9507Z"
@@ -371,10 +402,11 @@ export default function Directions() {
               <div>
                 <div
                   onClick={() => {
-                    setCurrentTab("bts")
+                    setCurrentTab("bts");
                   }}
                   style={{
-                    backgroundColor: currentTab === "bts" ? COLORS[currentTab] : "white",
+                    backgroundColor:
+                      currentTab === "bts" ? COLORS[currentTab] : "white",
                   }}
                   className={
                     "cursor-pointer flex justify-center items-center w-[107px] h-[107px] rounded-full shadow-md"
@@ -386,7 +418,9 @@ export default function Directions() {
                     viewBox="0 0 52 61"
                     fill="none"
                     xmlns="http://www.w3.org/2000/svg"
-                    className={(currentTab !== "bts" ? "text-[#575757]" : "text-white")}
+                    className={
+                      currentTab !== "bts" ? "text-[#575757]" : "text-white"
+                    }
                   >
                     <path
                       fillRule="evenodd"
@@ -439,17 +473,24 @@ export default function Directions() {
               <div>
                 <div
                   onClick={() => {
-                    setCurrentTab("mrt")
+                    setCurrentTab("mrt");
                   }}
                   style={{
-                    backgroundColor: currentTab === "mrt" ? COLORS[currentTab] : "white",
+                    backgroundColor:
+                      currentTab === "mrt" ? COLORS[currentTab] : "white",
                   }}
-                  className={(
+                  className={
                     "cursor-pointer flex justify-center items-center w-[107px] h-[107px] rounded-full shadow-md"
-                  )}
+                  }
                 >
                   {currentTab !== "mrt" ? (
-                    <svg width="72" height="63" viewBox="0 0 72 63" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <svg
+                      width="72"
+                      height="63"
+                      viewBox="0 0 72 63"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
                       <g clipPath="url(#clip0_1221_4808)">
                         <path
                           d="M36.0691 0.539062C16.4341 0.539062 0.515625 16.2372 0.515625 35.6091C0.515625 46.322 5.38457 55.9135 13.0572 62.3474H59.0728C66.7471 55.9135 71.6226 46.3234 71.6226 35.6091C71.6226 16.2372 55.7041 0.539062 36.0691 0.539062Z"
@@ -472,7 +513,13 @@ export default function Directions() {
                       </defs>
                     </svg>
                   ) : (
-                    <svg width="72" height="63" viewBox="0 0 72 63" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <svg
+                      width="72"
+                      height="63"
+                      viewBox="0 0 72 63"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
                       <g clipPath="url(#clip0_1221_5087)">
                         <path
                           d="M36.0691 0.539062C16.4341 0.539062 0.515625 16.2372 0.515625 35.6091C0.515625 46.322 5.38457 55.9135 13.0572 62.3474H59.0728C66.7471 55.9135 71.6226 46.3234 71.6226 35.6091C71.6226 16.2372 55.7041 0.539062 36.0691 0.539062Z"
@@ -512,7 +559,9 @@ export default function Directions() {
         {/* Google Maps */}
 
         <div className="py-4 px-6 max-w-[1380px] mx-auto mt-14">
-          <h2 className="text-2xl mt-8 mb-8 font-semibold text-center">Google Maps</h2>
+          <h2 className="text-2xl mt-8 mb-8 font-semibold text-center">
+            Google Maps
+          </h2>
           <iframe
             src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3875.637467491092!2d100.52848511460412!3d13.740385290354828!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x30e29ed3828ba8e5%3A0xf0db3be87e158217!2sTriam%20Udom%20Suksa%20School!5e0!3m2!1sen!2sth!4v1642656766845!5m2!1sen!2sth"
             width="600"
@@ -525,5 +574,5 @@ export default function Directions() {
         </div>
       </div>
     </main>
-  )
+  );
 }

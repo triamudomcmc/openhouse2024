@@ -23,7 +23,7 @@ export default function Navbar() {
   return (
     <div className=" fixed top-0 w-full z-[999]">
       <nav className=" max-md:hidden bg-[#935AE3] bg-opacity-90 flex align-middle  justify-between gap-10 text-center z-20 top-0 h-16 text-white ">
-        <div className="flex w-2/5 justify-center h-full items-center">
+        <div className="flex w-1/2 justify-center h-full items-center">
           <Link className=" w-fit flex items-center " href="/">
             <OPHLogo className=" h-12" />
             <p className="font-[700] text-[20px] leading-[24px]">
