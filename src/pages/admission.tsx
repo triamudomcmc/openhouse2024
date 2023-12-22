@@ -5,7 +5,7 @@ import { useRouter } from "next/router";
 
 export default function Admission() {
   const router = useRouter();
-  // useEffect(() => {router.back()}, []);
+  useEffect(() => {router.back()}, []);
 
   return (
     <div className=" min-h-screen bg-gradient-to-br from-[#FFF5C8] via-[#FFC8F1] to-[#C7BEFF]  ">
