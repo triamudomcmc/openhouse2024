@@ -380,11 +380,6 @@ const LandingEdit = ({
                         <rect width="509" height="307" rx="23" fill="#D9D9D9" />
                       </svg>
                     </div>
-                    <div className=" absolute left-0  w-full h-full z-20">
-                      <p className="  text-center text-[#7533A8] ">
-                        
-                      </p>
-                    </div>
                     <div className=" absolute w-full top-0 flex justify-center z-10">
                       <div className="flex aspect-[9/5] w-[90%] md:w-full z-10 relative">
                         <Image
