@@ -82,7 +82,7 @@ export default function Contact() {
         <h1 className="text-3xl text-center font-bold">
           ช่องทางการติดต่อ
           <br />
-          <span className="text-2xl text-center font-medium text-white bg-[#400591] px-6 py-1 rounded-full ">Triam Udom Open House 2024</span>
+          <div className="text-2xl text-center font-medium text-white bg-[#400591] px-6 py-1 rounded-full ">Triam Udom Open House 2024</div>
         </h1>
 
         <OPHContact />
