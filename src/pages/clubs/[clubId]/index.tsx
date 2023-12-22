@@ -530,7 +530,7 @@ const LandingEdit = ({
                           </svg>
                         </div>
                         <div className=" flex  justify-center ">
-                          <p className=" text-white  text-md break-words font-Thai  w-full   bg-transparent align-top resize-none whitespace-pre-line  ">
+                          <p className=" text-white  md:text-md text-sm break-words font-Thai  w-full   bg-transparent align-top resize-none whitespace-pre-line  ">
                             {review1.review}
                           </p>
                         </div>
@@ -544,7 +544,7 @@ const LandingEdit = ({
                   {review2.review != "" && (
                     <div className=" md:w-full sm:w-[90%]  mt-10 bg-gradient-to-b from-[#112881]/[.90] to-[#8E297A]/[.50] mx-auto  flex p-4 rounded-3xl min-h-30 gap-5 justify-center ">
                       <div className="  flex justify-start w-full">
-                        <p className=" text-white  text-md break-words font-Thai   w-full  bg-transparent align-top resize-none whitespace-pre-line  ">
+                        <p className=" text-white  md:text-md text-sm break-words font-Thai   w-full  bg-transparent align-top resize-none whitespace-pre-line  ">
                           {review2.review}
                         </p>
                       </div>
@@ -666,7 +666,7 @@ const LandingEdit = ({
                         </svg>
                       </div>
                       <div className=" flex  justify-center ">
-                        <p className=" text-white  text-md break-words font-Thai  w-full   bg-transparent align-top resize-none whitespace-pre-line  ">
+                        <p className=" text-white  md:text-md text-sm break-words font-Thai  w-full   bg-transparent align-top resize-none whitespace-pre-line  ">
                           {review3.review}
                         </p>
                       </div>
