@@ -49,8 +49,7 @@ export default function AccountPage() {
         } else {
           userRequest();
         }
-      } catch (error) {
-      }
+      } catch (error) {}
     }
   }
 
@@ -71,8 +70,7 @@ export default function AccountPage() {
       setFirstName(response.data.name);
       setLastName(response.data.surname);
       setRoles(response.data.role);
-    } catch (error) {
-    }
+    } catch (error) {}
   }
 
   const router = useRouter();
@@ -135,16 +133,24 @@ export default function AccountPage() {
               E-Ticket
             </motion.div>
           </Link>
-          <Link
-            href="/account/stamp"
-            className="  "
-          >
+          <Link href="/account/stamp" className="  ">
             <motion.div
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
               className={`text-center cursor-pointer w-fit break-keep md:px-10 sm:px-8 py-2 bg-gradient-to-r from-[#FFFBE7] to-[#BCA1FF] rounded-full text-[#380086]`}
             >
               สะสมแสตมป์
+            </motion.div>
+          </Link>
+        </div>
+        <div>
+          <Link href="/account/quiz" className="  ">
+            <motion.div
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+              className={`text-center cursor-pointer w-full break-keep md:mt-4 mt-3 lg:text-2xl md:text-xl sm:text-sm font-semibold md:px-10 sm:px-8 py-2 bg-gradient-to-r from-[#FFFBE7] to-[#BCA1FF] rounded-full text-[#380086]`}
+            >
+              แบบทดสอบอัญมณี
             </motion.div>
           </Link>
         </div>

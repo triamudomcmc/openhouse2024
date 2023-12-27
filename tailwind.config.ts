@@ -15,6 +15,7 @@ const config: Config = {
         Cinzel_Decorative:['Cinzel Decorative'],
         Figerona:['Figerona'],
         Montserrat:['Montserrat'],
+        Bodwars:['Bodwars'],
 
       },
       screens: {

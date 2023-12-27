@@ -74,8 +74,9 @@ export default function Form() {
 
   let postData = JSON.stringify({
     email: session?.user?.email,
-    roles: roles,
+    role: roles,
     username: username,
+    prefix:prefix,
     name: firstName,
     surname: lastName,
     platform: platform,
@@ -133,12 +134,13 @@ export default function Form() {
   async function postRequest() {
     try {
       const response = await axios.request(postConfig);
+      console.log(response.data);
     } catch (error) {
     }
   }
 
   function handleSumit() {
-    const isPurposeError = !otherPurpose && otherPurposeInfo.trim() === "";
+    const isPurposeError = purpose.every((p) => p.trim() === "") && otherPurposeInfo.trim() === "";
     const isPlatformError = platform.every((p) => p.trim() === "");
     const isPurposeInfoError = otherPurpose && otherPurposeInfo.trim() === "";
 
@@ -206,6 +208,7 @@ export default function Form() {
     } else {
       // If not selected, add to the array
       setPurpose((prevSelected) => [...prevSelected, value]);
+      console.log(purpose);
     }
   };
 
