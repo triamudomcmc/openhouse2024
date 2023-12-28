@@ -79,3 +79,7 @@ color: #33007B;
 .bg-radial-2{
   background: radial-gradient(273.47% 120.08% at 50% -14.23%, #FFEA7E 4.25%, #C458B2 28.43%, #3B009A 80.26%, #1B0146 99.91%);
 }
+
+.shows-bg{
+  background: radial-gradient(299.85% 100% at 50% 0%, #848ED7 8.06%, #5560AD 14.8%, #1B2679 32.03%, #131550 68.17%, #07092F 88.55%);
+}

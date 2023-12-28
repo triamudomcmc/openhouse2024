@@ -17,6 +17,7 @@ export default function AccountPage() {
   const [firstName, setFirstName] = useState("");
   const [lastName, setLastName] = useState("");
   const [roles, setRoles] = useState("");
+  const [haveGems, setHaveGems] = useState(false);
 
   const { data: session, status } = useSession({
     required: true,
@@ -66,6 +67,9 @@ export default function AccountPage() {
   async function userRequest() {
     try {
       const response = await axios.request(config);
+      if (response.data.gems != "") {
+        setHaveGems(true);
+      }
       setUsername(response.data.username);
       setFirstName(response.data.name);
       setLastName(response.data.surname);
@@ -144,15 +148,27 @@ export default function AccountPage() {
           </Link>
         </div>
         <div>
-          <Link href="/account/quiz" className="  ">
-            <motion.div
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-              className={`text-center cursor-pointer w-full break-keep md:mt-4 mt-3 lg:text-2xl md:text-xl sm:text-sm font-semibold md:px-10 sm:px-8 py-2 bg-gradient-to-r from-[#FFFBE7] to-[#BCA1FF] rounded-full text-[#380086]`}
-            >
-              แบบทดสอบอัญมณี
-            </motion.div>
-          </Link>
+          {haveGems ? (
+            <Link href="/account/gems" className="  ">
+              <motion.div
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+                className={`text-center cursor-pointer w-full break-keep md:mt-4 mt-3 lg:text-2xl md:text-xl sm:text-sm font-semibold md:px-10 sm:px-8 py-2 bg-gradient-to-r from-[#FFFBE7] to-[#BCA1FF] rounded-full text-[#380086]`}
+              >
+                อัญมณีประจำตัว
+              </motion.div>
+            </Link>
+          ) : (
+            <Link href="/account/quiz" className="  ">
+              <motion.div
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+                className={`text-center cursor-pointer w-full break-keep md:mt-4 mt-3 lg:text-2xl md:text-xl sm:text-sm font-semibold md:px-10 sm:px-8 py-2 bg-gradient-to-r from-[#FFFBE7] to-[#BCA1FF] rounded-full text-[#380086]`}
+              >
+                แบบทดสอบอัญมณี
+              </motion.div>
+            </Link>
+          )}
         </div>
       </div>
       <div className=" absolute bottom-0 lg:right-[28%] lg:translate-x-[28%] md:right-[10%] md:translate-x-[10%] sm:right-1/2 sm:translate-x-1/2 max-md:-mr-5  ">

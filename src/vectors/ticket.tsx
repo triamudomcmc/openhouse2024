@@ -763,9 +763,9 @@ const Ticket: FC<{
                 y2="153.444"
                 gradientUnits="userSpaceOnUse"
             >
-                <stop offset="0.210733" stop-color="#4B69E9" />
-                <stop offset="0.481266" stop-color="#935AE3" />
-                <stop offset="0.664327" stop-color="#935AE3" stop-opacity="0" />
+                <stop offset="0.210733" stop-color="#A1D1FD" />
+                <stop offset="0.401266" stop-color="#E5C3FD" />
+                <stop offset="0.664327" stop-color="#FFBFFB" stop-opacity="0" />
             </linearGradient>
             <radialGradient
                 id="paint2_radial_1160_8486"

@@ -9,7 +9,7 @@ import { ArrowDownTrayIcon } from "@heroicons/react/24/solid";
 import GemsStamp from "@/vectors/gemStamp";
 
 export default function Stamp() {
-  const [gems, setGems] = useState(11);
+  const [gems, setGems] = useState(0);
   const [username, setUsername] = useState("");
   const router = useRouter();
   const { data: session, status } = useSession({

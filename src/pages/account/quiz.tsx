@@ -1,6 +1,7 @@
 import React, { useState, useEffect, FC } from "react";
 import { useSession } from "next-auth/react";
 import { useRouter } from "next/navigation";
+import { motion } from "framer-motion";
 import axios from "axios";
 import QuizMainGems from "@/vectors/quiz/Main";
 import RightCircle from "@/vectors/quiz/right";
@@ -185,6 +186,9 @@ export default function Quiz() {
   async function userRequest() {
     try {
       const response = await axios.request(config);
+      if (response.data.gems !== "") {
+        router.push("/account/gems");
+      }
       setId(response.data.id);
     } catch (error) {}
   }
@@ -260,10 +264,10 @@ export default function Quiz() {
     setHideQuestion(false);
   }
   return (
-    <div className="  min-h-screen w-screen bg-radial relative ">
+    <div className="  min-h-screen w-screen bg-radial relative flex justify-center items-center">
       {/* firstpage */}
       {firstPage && (
-        <div className=" text-white flex justify-center text-center pt-20 relative z-50">
+        <div className=" text-white flex justify-center text-center md:pt-20 h-full  relative z-50">
           <div>
             <span className=" bg-[#261C8A] rounded-full  md:text-3xl text-xl font-medium px-3">
               แบบทดสอบ
@@ -271,15 +275,17 @@ export default function Quiz() {
             <div className="mt-5 lg:text-7xl md:text-5xl text-3xl ">
               อัญมณีไหนที่ใช่คุณ !
             </div>
-            <button
+            <motion.button
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
               className=" font-Bodwars bg-[#E76FB9] px-8 py-2 rounded-full md:mt-[500px] mt-[400px] "
               onClick={handleStart}
             >
               start
-            </button>
+            </motion.button>
           </div>
           <div className=" absolute left-1/2 -translate-x-1/2 top-1/2 -translate-y-1/2 z-0 ">
-            <QuizMainGems className=" lg:w-[616px] lg:h-[525px] sm:w-[394px] sm:h-[336px] " />
+            <QuizMainGems className=" lg:w-[616px] lg:h-[525px] md:w-[493px] md:h-[420px] sm:w-[394px] sm:h-[336px] " />
           </div>
         </div>
       )}
@@ -288,7 +294,13 @@ export default function Quiz() {
 
       {/* first dialog */}
       {isFirstDialog && (
-        <div
+        <motion.div
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          transition={{
+            duration: 0.5,
+            delay: 0.1,
+          }}
           className=" w-screen h-screen relative z-50"
           onClick={handleFirstDialog}
         >
@@ -305,12 +317,18 @@ export default function Quiz() {
           <div className=" absolute left-1/2 -translate-x-1/2 bottom-8 text-[#B1B1B1] ">
             แตะเพื่อไปต่อ
           </div>
-        </div>
+        </motion.div>
       )}
 
       {/* second above dialog */}
       {isDialogOpen && (
-        <div
+        <motion.div
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          transition={{
+            duration: 0.5,
+            delay: 0.1,
+          }}
           className=" w-screen h-screen relative z-50"
           onClick={handleDialog}
         >
@@ -327,13 +345,21 @@ export default function Quiz() {
               </div>
             </div>
           </div>
-        </div>
+        </motion.div>
       )}
 
       {!hideQuestion && (
         <div className="w-screen h-screen relative z-[99]">
           <div className=" flex justify-center items-center h-full text-center text-white">
-            <div className=" block">
+            <motion.div
+              initial={{ opacity: 0 }}
+              whileInView={{ opacity: 1 }}
+              transition={{
+                duration: 0.5,
+                delay: 0.1,
+              }}
+              className=" block"
+            >
               <div className=" flex justify-center">
                 <div className=" relative w-fit z-[99]">
                   <div className=" w-fit  ">
@@ -349,7 +375,9 @@ export default function Quiz() {
               </div>
               <div className="  flex justify-center md:text-base text-sm ">
                 <div className=" block font-semibold md:w-1/2 w-3/4">
-                  <button
+                  <motion.button
+                    whileHover={{ scale: 1.05 }}
+                    whileTap={{ scale: 0.95 }}
                     className=" w-full h-12 bg-gradient-to-r from-[#D966B6] to-[#5300C8] shadow-lg rounded-full mt-5  "
                     onClick={() => {
                       handleAnswerOptionClick(
@@ -358,8 +386,10 @@ export default function Quiz() {
                     }}
                   >
                     {questions[currentQuestion]?.answerOptions[0].answerText}
-                  </button>
-                  <button
+                  </motion.button>
+                  <motion.button
+                    whileHover={{ scale: 1.05 }}
+                    whileTap={{ scale: 0.95 }}
                     className=" w-full h-12 bg-gradient-to-r from-[#D966B6] to-[#5300C8] shadow-lg rounded-full mt-5"
                     onClick={() => {
                       handleAnswerOptionClick(
@@ -368,8 +398,10 @@ export default function Quiz() {
                     }}
                   >
                     {questions[currentQuestion]?.answerOptions[1].answerText}
-                  </button>
-                  <button
+                  </motion.button>
+                  <motion.button
+                    whileHover={{ scale: 1.05 }}
+                    whileTap={{ scale: 0.95 }}
                     className=" w-full h-12 bg-gradient-to-r from-[#D966B6] to-[#5300C8] shadow-lg rounded-full mt-5 "
                     onClick={() => {
                       handleAnswerOptionClick(
@@ -378,8 +410,10 @@ export default function Quiz() {
                     }}
                   >
                     {questions[currentQuestion]?.answerOptions[2].answerText}
-                  </button>
-                  <button
+                  </motion.button>
+                  <motion.button
+                    whileHover={{ scale: 1.05 }}
+                    whileTap={{ scale: 0.95 }}
                     className=" w-full h-12 bg-gradient-to-r from-[#D966B6] to-[#5300C8] shadow-lg rounded-full mt-5 "
                     onClick={() => {
                       handleAnswerOptionClick(
@@ -388,10 +422,10 @@ export default function Quiz() {
                     }}
                   >
                     {questions[currentQuestion]?.answerOptions[3].answerText}
-                  </button>
+                  </motion.button>
                 </div>
               </div>
-            </div>
+            </motion.div>
           </div>
         </div>
       )}

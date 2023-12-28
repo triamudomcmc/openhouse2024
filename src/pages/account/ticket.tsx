@@ -122,7 +122,7 @@ export default function E_Ticket() {
           </div>
         </div>
       </div>
-      <div className=" flex justify-center mt-5 text-[#622D9F]">
+      <div className=" flex justify-center mt-5 pb-5 text-[#622D9F]">
         <button className=" flex items-center px-3 py-1 rounded-full bg-white ">
           <ArrowDownTrayIcon className="w-5" /> Download
         </button>

@@ -82,13 +82,13 @@ const Dialog2: FC<{
         />
       </mask>
       <g mask="url(#mask0_1236_12909)">
-        <g style={{mixBlendMode:"plus-lighter"}}>
+        <g style={{mixBlendMode:"color-dodge"}}>
           <path
             d="M166.996 372.561L293.883 332.065L305.582 345.563L184.809 389.495L166.996 372.561Z"
             fill="url(#paint2_linear_1236_12909)"
           />
         </g>
-        <g style={{mixBlendMode:"plus-lighter"}}>
+        <g style={{mixBlendMode:"color-dodge"}}>
           <path
             d="M155.297 365.673L269.898 331.112L270.98 336.367L158.937 371.901L155.297 365.673Z"
             fill="url(#paint3_linear_1236_12909)"
@@ -255,7 +255,7 @@ const Dialog2: FC<{
           y2="315.867"
           gradientUnits="userSpaceOnUse"
         >
-          <stop />
+          <stop stop-color="white" stop-opacity="0.5" />
           <stop offset="1" stop-color="#FFDD77" stop-opacity="0" />
         </linearGradient>
         <linearGradient
@@ -266,7 +266,7 @@ const Dialog2: FC<{
           y2="331.574"
           gradientUnits="userSpaceOnUse"
         >
-          <stop />
+          <stop stop-color="white" stop-opacity="0.5" />
           <stop offset="1" stop-color="#FFDD77" stop-opacity="0" />
         </linearGradient>
       </defs>

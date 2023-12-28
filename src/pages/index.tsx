@@ -120,7 +120,7 @@ export default function Home() {
                 thainame={"ภาษา-ภาษาสเปน"}
               />
             </div>
-            <div className=" absolute top-[60%] -translate-y-2/3 left-[5%] -translate-x-[5%]  z-50 mt-14  ">
+            <div className=" absolute top-[60%] -translate-y-2/3 left-[7%] -translate-x-[7%]  z-50 mt-14  ">
               <Programme
                 className="  xl:w-auto lg:w-[227px] md:w-[181px] "
                 name={"arts-french"}

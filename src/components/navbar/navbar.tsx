@@ -8,7 +8,7 @@ import OPHLogo from "@/vectors/OPHLogo";
 import OPHLogoM from "@/vectors/OPHLogoM";
 
 export default function Navbar() {
-  const { data: session } = useSession();
+  const { data: session,status } = useSession();
   const [inSession, SetInSession] = useState(false);
   const router = useRouter();
 
@@ -18,7 +18,7 @@ export default function Navbar() {
     } else {
       SetInSession(false);
     }
-  });
+  },[status]);
 
   return (
     <div className=" fixed top-0 w-full z-[999]">

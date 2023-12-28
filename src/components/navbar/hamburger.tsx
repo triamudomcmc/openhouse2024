@@ -5,7 +5,7 @@ import { useSession } from "next-auth/react";
 export default function Hamburger() {
   const [isOpen, setIsOpen] = useState(false);
   const genericHamburgerLine = `h-1 w-6 my-[3px] rounded-full bg-white transition ease transform duration-300`;
-  const { data: session } = useSession();
+  const { data: session,status } = useSession();
   const [inSession, SetInSession] = useState(false);
 
   useEffect(() => {
@@ -14,7 +14,7 @@ export default function Hamburger() {
     } else {
       SetInSession(false);
     }
-  });
+  }, [status]);
 
   return (
     <>
@@ -66,7 +66,7 @@ export default function Hamburger() {
           </div>
         </Link>
         {/* <Link
-          className={inSession ? " text-right h-16  text-white" : "hidden"}
+          className={inSession ? " text-right  text-white" : "hidden"}
           href="/account"
         >
           <div className=" text-right pr-4 text-white border-b border-gray-100 py-2 text-2xl">
@@ -74,11 +74,11 @@ export default function Hamburger() {
           </div>
         </Link>
         <Link
-          className={inSession ? "hidden " : " text-right pr-4 text-white"}
+          className={inSession ? "hidden " : " text-right  text-white"}
           href="/auth"
         >
           <div className=" text-right pr-4 text-white border-b border-gray-100 py-2 text-2xl">
-          เข้าสู่ระบบ
+            เข้าสู่ระบบ
           </div>
         </Link> */}
       </div>
