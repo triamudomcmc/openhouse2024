@@ -488,7 +488,7 @@ export default function Home() {
           </div>
           <div className=" absolute md:left-10 left-1/2 max-md:-translate-x-1/2 top-1 md:text-[90px] sm:text-[40px] max-md:text-center font-bold text-[#2C1865] stroke-white stroke-[9px] block ">
             ข้อมูลเพิ่มเติม
-            {/* <div className=" flex max-md:justify-center max-md:mt-7  ">
+            <div className=" flex max-md:justify-center max-md:mt-7  ">
               <Link href={"/admission"}>
                 <motion.div
                   whileHover={{ scale: 1.05 }}
@@ -498,7 +498,7 @@ export default function Home() {
                   การสอบเข้า ม.4
                 </motion.div>
               </Link>
-            </div> */}
+            </div>
             <div className="  mt-7 flex max-md:justify-center ">
               <Link href={"/directions"}>
                 <motion.div

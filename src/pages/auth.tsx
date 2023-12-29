@@ -23,8 +23,8 @@ export default function LoginPage() {
       <div className="  relative w-screen h-[calc(100dvh)] overflow-hidden  ">
         <div className=" bg-[#010557] shadow w-full h-full">
           <div className=" absolute left-0 top-0 md:h-[75vh] h-[50vh] w-20 bg-gradient-to-b from-[#AC0B98] via-[#AC0B98]/ to-[#7623E6]/[.0] "></div>
-          <LoginRight className=" absolute right-0 top-0 max-md:hidden" />
-          <LoginRightM className=" absolute right-0 -bottom-20" />
+          <LoginRight className=" absolute right-0 top-0 max-md:hidden h-screen" />
+          <LoginRightM className=" absolute right-0 -bottom-20 md:hidden" />
           <div className=" absolute md:left-[20%] md:-translate-x-[20%] left-1/2 -translate-x-1/2 top-1/2 -translate-y-1/2 ">
             <div className=" text-center text-white">
               <div className=" lg:text-8xl md:text-7xl sm:text-6xl  font-Montserrat mt-40 ">REGISTER</div>

@@ -683,13 +683,13 @@ export default function Form() {
             )}
           </div>
         </div>
-        <div className=" absolute left-0 top-0 z-0">
-          <FormLeft className=" xl:w-auto xl:h-auto lg:w-[402px] lg:h-[724px] md:w-[258px] md:h-[475px] max-md:hidden " />
+        <div className=" absolute left-0 top-1/2 -translate-y-1/2 z-0">
+          <FormLeft className=" xl:w-auto xl:h-auto lg:w-[80%] lg:h-[80%] md:w-[60%] md:h-[60%] max-md:hidden " />
         </div>
-        <div className=" absolute bottom-0 right-0 z-0 max-md:hidden">
-          <FormRight className="xl:w-auto xl:h-auto lg:w-[540px] lg:h-[674px] md:w-[345px] md:h-[431px]  sm:w-[312px] sm:h-[415px] " />
+        <div className=" absolute bottom-0 lg:right-0 md:-right-40 z-0 max-md:hidden">
+          <FormRight className="  " />
         </div>
-        <div className=" absolute top-2/3 -translate-y-2/3 -right-10 z-0 md:hidden">
+        <div className=" absolute bottom-0 -right-10 z-0 md:hidden">
           <FormRightM className="sm:w-[312px] sm:h-[415px] " />
         </div>
       </div>

@@ -1,12 +1,17 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, use } from "react";
 import Link from "next/link";
 import { useSession } from "next-auth/react";
+import { ChevronDownIcon } from "@heroicons/react/24/outline";
+import { motion } from "framer-motion";
 
 export default function Hamburger() {
   const [isOpen, setIsOpen] = useState(false);
   const genericHamburgerLine = `h-1 w-6 my-[3px] rounded-full bg-white transition ease transform duration-300`;
-  const { data: session,status } = useSession();
+  const arrow = `w-2 h-[2px] bg-white transition ease transform duration-300`;
+  const { data: session, status } = useSession();
   const [inSession, SetInSession] = useState(false);
+  const [showShows, setShowShows] = useState(false);
+  const [showOther, setShowOther] = useState(false);
 
   useEffect(() => {
     if (session) {
@@ -15,6 +20,11 @@ export default function Hamburger() {
       SetInSession(false);
     }
   }, [status]);
+
+  useEffect(() => {
+    setShowOther(false);
+    setShowShows(false);
+  }, [isOpen]);
 
   return (
     <>
@@ -46,41 +56,174 @@ export default function Hamburger() {
       <div
         className={
           isOpen
-            ? " overflow-x-hidden absolute left-0 translate-x-0  z-10 w-full bg-[#935AE3] overflow-hidden  bg-opacity-80 top-16 duration-500 ease-out transition-all "
-            : "absolute z-60 w-full bg-[#935AE3] overflow-hidden bg-opacity-80 top-16 translate-x-full duration-500 ease-out transition-all"
+            ? " overflow-x-hidden absolute left-0 translate-x-0  z-10 w-full bg-[#7839D1] overflow-hidden  bg-opacity-100 top-16 duration-500 ease-out transition-all  "
+            : "absolute z-60 w-full bg-[#7839D1] overflow-hidden bg-opacity-100 top-16 translate-x-full duration-500 ease-out transition-all"
         }
       >
-        <Link className=" w-full" href="/">
-          <div className=" text-right pr-4 text-white border-y border-gray-100 py-2 text-2xl">
-            หน้าแรก
-          </div>
+        <Link
+          className=" w-full"
+          href="/"
+          onClick={() => {
+            setShowShows(false);
+            setShowOther(false);
+          }}
+        >
+          <div className=" text-left pl-4 text-white py-2 text-lg">หน้าแรก</div>
         </Link>
-        <Link className=" w-full " href="/clubs">
-          <div className=" text-right pr-4 text-white border-b border-gray-100 py-2 text-2xl">
-            ชมรม
+        <button
+          className={
+            showShows
+              ? " text-left px-4 text-white py-2 text-lg w-full flex justify-between items-center bg-[#462A86] transition-all  "
+              : "text-left px-4 text-white py-2 text-lg w-full flex justify-between items-center bg-[#7839D1] transition-all"
+          }
+          onClick={() => {
+            setShowShows(!showShows);
+          }}
+        >
+          ตารางการแสดง
+          <div className=" flex relative">
+            <div
+              className={`${arrow} ${
+                showShows
+                  ? " rounded-l-full absolute -left-[5px] top-0    "
+                  : "rotate-45  absolute -left-[5px] top-0 rounded-l-full "
+              }`}
+            ></div>
+            <div
+              className={`${arrow} ${
+                showShows ? " rounded-r-full   " : "-rotate-45  rounded-r-full "
+              }`}
+            ></div>
           </div>
+        </button>
+        {showShows && (
+          <motion.div
+            initial={{ opacity: 0, y: -10 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{
+              duration: 0.3,
+              delay: 0,
+            }}
+          >
+            <Link
+              className=" w-full "
+              href="/theatre"
+              onClick={() => {
+                setShowShows(false);
+                setShowOther(false);
+              }}
+            >
+              <div className=" text-left pl-8 text-white bg-[#462A86] py-2 text-sm">
+                หอประชุม
+              </div>
+            </Link>
+            <Link
+              className=" w-full "
+              href="/larn70"
+              onClick={() => {
+                setShowShows(false);
+                setShowOther(false);
+              }}
+            >
+              <div className=" text-left pl-8 text-white bg-[#462A86] py-2 text-sm">
+                ลาน 70 ปี
+              </div>
+            </Link>
+          </motion.div>
+        )}
+        <Link
+          className=" w-full "
+          href="/clubs"
+          onClick={() => {
+            setShowShows(false);
+            setShowOther(false);
+          }}
+        >
+          <div className=" text-left pl-4 text-white py-2 text-lg">ชมรม</div>
         </Link>
-        <Link className=" w-full " href="/directions">
-          <div className=" text-right pr-4 text-white border-b border-gray-100 py-2 text-2xl">
-            การเดินทางมาโรงเรียนเตรียมฯ
+        <button
+          className={
+            showOther
+              ? " text-left px-4 text-white py-2 text-lg w-full flex justify-between items-center bg-[#462A86] transition-all  "
+              : "text-left px-4 text-white py-2 text-lg w-full flex justify-between items-center bg-[#7839D1] transition-all"
+          }
+          onClick={() => {
+            setShowOther(!showOther);
+          }}
+        >
+          ข้อมูลเพิ่มเติม
+          <div className=" flex relative">
+            <div
+              className={`${arrow} ${
+                showOther
+                  ? " rounded-l-full absolute -left-[5px] top-0    "
+                  : "rotate-45  absolute -left-[5px] top-0 rounded-l-full "
+              }`}
+            ></div>
+            <div
+              className={`${arrow} ${
+                showOther ? " rounded-r-full   " : "-rotate-45  rounded-r-full "
+              }`}
+            ></div>
           </div>
-        </Link>
-        {/* <Link
-          className={inSession ? " text-right  text-white" : "hidden"}
+        </button>
+        {showOther && (
+          <motion.div
+            initial={{ opacity: 0, y: -10 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{
+              duration: 0.3,
+              delay: 0,
+            }}
+          >
+            <Link
+              className=" w-full "
+              href="/admission"
+              onClick={() => {
+                setShowShows(false);
+                setShowOther(false);
+              }}
+            >
+              <div className=" text-left pl-8 text-white bg-[#462A86] py-2 text-sm">
+                การสอบเข้า ม.4
+              </div>
+            </Link>
+            <Link
+              className=" w-full "
+              href="/directions"
+              onClick={() => {
+                setShowShows(false);
+                setShowOther(false);
+              }}
+            >
+              <div className=" text-left pl-8 text-white bg-[#462A86] py-2 text-sm">
+                การเดินทางมาโรงเรียน
+              </div>
+            </Link>
+          </motion.div>
+        )}
+        <Link
+          className={inSession ? " text-left  lext-white" : "hidden"}
+          onClick={() => {
+            setShowShows(false);
+            setShowOther(false);
+          }}
           href="/account"
         >
-          <div className=" text-right pr-4 text-white border-b border-gray-100 py-2 text-2xl">
-            Account
-          </div>
+          <div className=" text-left pl-4 text-white py-2 text-lg">Account</div>
         </Link>
         <Link
-          className={inSession ? "hidden " : " text-right  text-white"}
+          className={inSession ? "hidden " : " text-left  lext-white"}
+          onClick={() => {
+            setShowShows(false);
+            setShowOther(false);
+          }}
           href="/auth"
         >
-          <div className=" text-right pr-4 text-white border-b border-gray-100 py-2 text-2xl">
+          <div className=" text-left pl-4 text-white py-2 text-lg">
             เข้าสู่ระบบ
           </div>
-        </Link> */}
+        </Link>
       </div>
     </>
   );

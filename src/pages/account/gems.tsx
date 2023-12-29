@@ -20,6 +20,7 @@ import CardLeft from "@/vectors/gems/cardLeft";
 import CardRight from "@/vectors/gems/cardRight";
 import { AxiosResponse } from "axios";
 import { toPng } from "html-to-image";
+import { saveAs } from "file-saver";
 
 export default function GemsPage() {
   interface ComponentMap {
@@ -151,6 +152,10 @@ export default function GemsPage() {
       });
   };
 
+  const downloadImage = () => {
+    saveAs(`/assets/gems/${gems}.png`, "gems.png"); // Put your image URL here.
+  };
+
   useEffect(() => {
     const Component = componentMap[gems] || componentMap.default;
     setSvgComponent(
@@ -173,7 +178,7 @@ export default function GemsPage() {
           <div className="  flex justify-center h-full ">
             <div className=" lg:w-[351px] md:w-[304px] w-[250px]  border broder-white my-4 py-4 flex flex-col">
               <div className=" flex justify-center py-2 my-auto ">
-                <div className=" px-1 py-1 bg-[#E9B5ED] rounded-full w-fit relative z-[99] ">
+                <div className=" px-1 py-1 bg-[#E9B5ED] rounded-full w-fit relative z-[99] mt-5 ">
                   <div className="text-center text-white lg:text-4xl md:text-3xl text-2xl font-semibold px-8 py-2 rounded-full bg-[#350E67] w-fit relative z-[99]">
                     {gems}
                   </div>
@@ -218,7 +223,7 @@ export default function GemsPage() {
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
             className=" flex items-center md:px-6 px-4 py-2 rounded-full bg-[#DF77D6] text-white "
-            onClick={htmlToImageConvert}
+            onClick={downloadImage}
           >
             <ArrowDownTrayIcon className="w-5" /> Download
           </motion.button>

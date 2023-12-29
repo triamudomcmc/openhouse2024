@@ -7,16 +7,16 @@ const ShowBg: FC<{
 }> = ({ className }) => {
   return (
     <svg
-      // width="1512"
-      // height="4778"
+      // width="2390"
+      // height="4019"
       className={`${className}`}
-      viewBox="0 0 1512 4778"
+      viewBox="0 0 2390 4019"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
     >
       <g clip-path="url(#clip0_1289_8880)">
-        <rect width="1512" height="4778" fill="white" />
-        <rect width="1512" height="4778" fill="url(#paint0_linear_1289_8880)" />
+        <rect width="2390" height="4019" fill="white" />
+        <rect width="1512" height="4019" fill="url(#paint0_linear_1289_8880)" />
         <g style={{mixBlendMode:"multiply"}}>
           <g style={{mixBlendMode:"lighten"}} opacity="0.75">
             <rect x="314" y="1393" width="111" height="53" fill="#9F7ADB" />
@@ -160,7 +160,7 @@ const ShowBg: FC<{
           </g>
         </g>
         <path
-          d="M321 399C321 176.982 500.982 -3 723 -3H2042V4778H722C500.534 4778 321 4598.47 321 4377V399Z"
+          d="M321 399C321 176.981 500.982 -3 723 -3H2390V4019H722C500.534 4019 321 3839.47 321 3618V399Z"
           fill="url(#paint1_radial_1289_8880)"
         />
         <circle
@@ -168,15 +168,15 @@ const ShowBg: FC<{
           cx="225.058"
           cy="225.058"
           r="225.058"
-          transform="matrix(0.490828 -0.871256 -0.871256 -0.490828 718.168 1619.03)"
+          transform="matrix(0.490828 -0.871256 -0.871256 -0.490828 718.167 1619.03)"
           fill="url(#paint2_radial_1289_8880)"
         />
         <circle
           opacity="0.2"
-          cx="567.737"
+          cx="567.736"
           cy="1032.07"
           r="123.701"
-          transform="rotate(57.0759 567.737 1032.07)"
+          transform="rotate(57.0759 567.736 1032.07)"
           fill="url(#paint3_radial_1289_8880)"
         />
         <circle
@@ -192,15 +192,15 @@ const ShowBg: FC<{
           cx="225.058"
           cy="225.058"
           r="225.058"
-          transform="matrix(0.490828 -0.871256 -0.871256 -0.490828 718.168 3422.03)"
+          transform="matrix(0.490828 -0.871256 -0.871256 -0.490828 718.167 3422.03)"
           fill="url(#paint5_radial_1289_8880)"
         />
         <circle
           opacity="0.2"
-          cx="567.737"
+          cx="567.736"
           cy="2835.07"
           r="123.701"
-          transform="rotate(57.0759 567.737 2835.07)"
+          transform="rotate(57.0759 567.736 2835.07)"
           fill="url(#paint6_radial_1289_8880)"
         />
         <circle
@@ -470,11 +470,11 @@ const ShowBg: FC<{
           fill="url(#paint51_linear_1289_8880)"
         />
         <path
-          d="M400.212 1095.46L427.951 1096.67L422.09 1045.67L395.339 1073.67L400.212 1095.46Z"
+          d="M400.211 1095.46L427.95 1096.67L422.089 1045.67L395.338 1073.67L400.211 1095.46Z"
           fill="url(#paint52_linear_1289_8880)"
         />
         <path
-          d="M400.211 1095.46L427.951 1096.67L401.615 1139.52L374.073 1140.15L370.152 1115.33L400.211 1095.46Z"
+          d="M400.21 1095.46L427.95 1096.67L401.614 1139.52L374.072 1140.15L370.151 1115.33L400.21 1095.46Z"
           fill="url(#paint53_linear_1289_8880)"
         />
         <path
@@ -547,7 +547,7 @@ const ShowBg: FC<{
           x1="756"
           y1="0"
           x2="756"
-          y2="4778"
+          y2="4019"
           gradientUnits="userSpaceOnUse"
         >
           <stop stop-color="#2E3089" />
@@ -559,7 +559,7 @@ const ShowBg: FC<{
           cy="0"
           r="1"
           gradientUnits="userSpaceOnUse"
-          gradientTransform="translate(595.516 -2.99988) rotate(83.0124) scale(4816.78 2177.71)"
+          gradientTransform="translate(651.025 -2.9999) rotate(80.0651) scale(4083.23 2598.1)"
         >
           <stop stop-color="#858FD7" />
           <stop offset="0.258478" stop-color="#333D8E" />
@@ -582,7 +582,7 @@ const ShowBg: FC<{
           cy="0"
           r="1"
           gradientUnits="userSpaceOnUse"
-          gradientTransform="translate(604.041 915.538) rotate(103.619) scale(178.929)"
+          gradientTransform="translate(604.04 915.538) rotate(103.619) scale(178.929)"
         >
           <stop stop-color="#4E56F6" stop-opacity="0" />
           <stop offset="1" stop-color="#CB9996" />
@@ -615,7 +615,7 @@ const ShowBg: FC<{
           cy="0"
           r="1"
           gradientUnits="userSpaceOnUse"
-          gradientTransform="translate(604.041 2718.54) rotate(103.619) scale(178.929)"
+          gradientTransform="translate(604.04 2718.54) rotate(103.619) scale(178.929)"
         >
           <stop stop-color="#4E56F6" stop-opacity="0" />
           <stop offset="1" stop-color="#CB9996" />
@@ -1141,9 +1141,9 @@ const ShowBg: FC<{
         </linearGradient>
         <linearGradient
           id="paint52_linear_1289_8880"
-          x1="421.865"
+          x1="421.864"
           y1="1062.2"
-          x2="398.22"
+          x2="398.219"
           y2="1096.16"
           gradientUnits="userSpaceOnUse"
         >
@@ -1152,9 +1152,9 @@ const ShowBg: FC<{
         </linearGradient>
         <linearGradient
           id="paint53_linear_1289_8880"
-          x1="421.586"
+          x1="421.585"
           y1="1090.51"
-          x2="373.819"
+          x2="373.818"
           y2="1139.9"
           gradientUnits="userSpaceOnUse"
         >
@@ -1239,7 +1239,7 @@ const ShowBg: FC<{
           <stop offset="1" stop-color="#FB7ACF" />
         </radialGradient>
         <clipPath id="clip0_1289_8880">
-          <rect width="1512" height="4778" fill="white" />
+          <rect width="2390" height="4019" fill="white" />
         </clipPath>
       </defs>
     </svg>
