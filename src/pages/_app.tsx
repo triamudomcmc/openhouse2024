@@ -51,7 +51,7 @@ export default function App({ Component, pageProps }: AppProps) {
       <Component {...pageProps} />
       <SpeedInsights />
       <Analytics />
-      {!(router.pathname === "/auth") && <Footer />}
+      {!(router.pathname === "/auth") && !(router.pathname === "/ticket") && <Footer />}
     </SessionProvider>
   );
 }

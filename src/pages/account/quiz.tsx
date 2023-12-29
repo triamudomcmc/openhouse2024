@@ -264,7 +264,7 @@ export default function Quiz() {
     setHideQuestion(false);
   }
   return (
-    <div className="  min-h-screen w-screen bg-radial relative flex justify-center items-center">
+    <div className="  min-h-screen w-screen overflow-x-hidden bg-radial relative flex justify-center items-center">
       {/* firstpage */}
       {firstPage && (
         <div className=" text-white flex justify-center text-center md:pt-20 h-full  relative z-50">
@@ -363,10 +363,10 @@ export default function Quiz() {
               <div className=" flex justify-center">
                 <div className=" relative w-fit z-[99]">
                   <div className=" w-fit  ">
-                    <QuestionSvg className=" md:w-auto md:h-auto w-[339px] h-" />
+                    <QuestionSvg className=" md:w-auto md:h-auto w-[339px]" />
                   </div>
                   <div className=" absolute md:-top-10 md:-left-10 -top-0 -left-6 ">
-                    <Star className=" max-md:w-4/5 max-md:h-4/5" />
+                    {!hideQuestion && (<Star className=" max-md:w-4/5 max-md:h-4/5" />)}
                   </div>
                   <div className=" md:text-3xl text-xl font-bold text-center absolute left-1/2 -translate-x-1/2 top-1/2 -translate-y-1/2 whitespace-pre-line w-full">
                     {questions[currentQuestion]?.questionText}

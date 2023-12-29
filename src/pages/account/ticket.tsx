@@ -189,16 +189,16 @@ export default function E_Ticket(req: any, res: any) {
           </div>
         </div>
       </div>
-      <div className=" flex justify-center mt-5 pb-5 text-[#622D9F]">
+      <div className=" flex justify-center mt-5 pb-5 text-white">
         <button
-          className=" flex items-center px-3 py-1 rounded-full gap-2 bg-white "
+          className=" flex items-center px-3 py-1 rounded-full gap-2 bg-[#DF77D6]  "
           onClick={handleDownload}
         >
           {isLoading ? (
             <div>
               <svg
                 aria-hidden="true"
-                className="inline w-5 h- text-gray-200 animate-spin dark:text-white fill-purple-600"
+                className="inline w-5 h- text-white animate-spin dark:text-white fill-white"
                 viewBox="0 0 100 101"
                 fill="none"
                 xmlns="http://www.w3.org/2000/svg"
