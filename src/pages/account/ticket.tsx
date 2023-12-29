@@ -17,6 +17,7 @@ export default function E_Ticket(req:any, res:any) {
   const [roles, setRoles] = useState("");
   const [id, setId] = useState("");
   const [imageLoaded, setImageLoaded] = useState(false);
+  const [baseURL, setBaseURL] = useState("");
   const elementRef = useRef(null);
 
   const router = useRouter();
@@ -77,7 +78,7 @@ export default function E_Ticket(req:any, res:any) {
   };
 
   let screenshotData = JSON.stringify({
-    url: `https://openhouse2024-alpha.vercel.app/ticket?id=${id}&username=${username}&firstName=${firstName}&lastName=${lastName}&roles=${roles}`,
+    url: `${baseURL}/ticket?id=${id}&username=${username}&firstName=${firstName}&lastName=${lastName}&roles=${roles}`,
   });
 
   let screenshotConfig = {
@@ -103,6 +104,11 @@ export default function E_Ticket(req:any, res:any) {
   useEffect(() => {
     hasAccountRequest();
   }, [status]);
+
+  useEffect(() => {
+    const baseUrl = window.location.origin;
+    setBaseURL(baseUrl);
+  },[])
 
   return (
     <div className=" w-screen min-h-screen overflow-hidden bg-gradient-to-b from-[#622279] to-[#623AD4] relative ">
