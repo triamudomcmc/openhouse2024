@@ -366,7 +366,7 @@ export default function Quiz() {
                     <QuestionSvg className=" md:w-auto md:h-auto w-[339px]" />
                   </div>
                   <div className=" absolute md:-top-10 md:-left-10 -top-0 -left-6 ">
-                    {!hideQuestion && (<Star className=" max-md:w-4/5 max-md:h-4/5" />)}
+                    <Star className=" max-md:w-[98px] max-md:h-[98px] " />
                   </div>
                   <div className=" md:text-3xl text-xl font-bold text-center absolute left-1/2 -translate-x-1/2 top-1/2 -translate-y-1/2 whitespace-pre-line w-full">
                     {questions[currentQuestion]?.questionText}

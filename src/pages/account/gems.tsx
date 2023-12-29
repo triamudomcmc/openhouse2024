@@ -153,7 +153,7 @@ export default function GemsPage() {
   };
 
   const downloadImage = () => {
-    saveAs(`/assets/gems/${gems}.png`, "gems.png"); // Put your image URL here.
+    saveAs(`/assets/gems/${gems}.png`, `${gems}.png`); // Put your image URL here.
   };
 
   useEffect(() => {
@@ -184,7 +184,7 @@ export default function GemsPage() {
                   </div>
                 </div>
               </div>
-              <div className=" text-white md:text-sm text-xs font-normal text-center md:px-6 px-3 my-auto whitespace-pre-line relative z-[99]">
+              <div className=" text-white md:text-[13.5px] leading-snug text-[9.5px]  font-normal text-center  my-auto whitespace-pre-line relative z-[99]">
                 {gem_description}
               </div>
               <div className="flex-1 items-end flex justify-center">
