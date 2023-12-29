@@ -145,7 +145,7 @@ export default function E_Ticket() {
         </div>
       </div>
       <div className=" flex items-center justify-center h-full pt-8 z-10 absolute -top-[1230px] left-[0px] w-full">
-        <div className=" relative " ref={elementRef}>
+        <div className=" relative ">
           <Image
             alt="ticket"
             src="/assets/ticket.png"
