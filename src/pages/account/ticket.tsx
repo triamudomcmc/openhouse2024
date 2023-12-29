@@ -7,6 +7,7 @@ import axios from "axios";
 import Ticket from "@/vectors/ticket";
 import { ArrowDownTrayIcon } from "@heroicons/react/24/solid";
 import { toPng } from "html-to-image";
+import Image from "next/image";
 
 export default function E_Ticket() {
   const [username, setUsername] = useState("");
@@ -101,8 +102,11 @@ export default function E_Ticket() {
       </div>
       <div className=" flex items-center justify-center h-full pt-8 z-10">
         <div className=" relative ">
-          <img
+          <Image
+            alt="ticket"
             src="/assets/ticket.png"
+            width={280}
+            height={552}
             className="sm:w-[280px] sm:h-[552px] "
           />
           <div className=" flex justify-center items-center gap-2 absolute top-2 z-50 left-1/2 -translate-x-1/2 w-full text-[#1B0C76] ">
@@ -142,8 +146,12 @@ export default function E_Ticket() {
       </div>
       <div className=" flex items-center justify-center h-full pt-8 z-10 absolute -top-[4000px] left-[0px] w-full">
         <div className=" relative " ref={elementRef}>
-          <img
+          <Image
+            alt="ticket"
             src="/assets/ticket.png"
+            width={840}
+            height={1656}
+            priority
             className="w-[840px] h-[1656px] "
           />
           <div className=" flex justify-center items-center gap-2 absolute top-6 z-50 left-1/2 -translate-x-1/2 w-full text-[#1B0C76] text-5xl ">
