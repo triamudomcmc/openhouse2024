@@ -8,8 +8,9 @@ import Ticket from "@/vectors/ticket";
 import { ArrowDownTrayIcon } from "@heroicons/react/24/solid";
 import { toPng } from "html-to-image";
 import Image from "next/image";
+import { NextApiRequest } from "next";
 
-export default function E_Ticket() {
+export default function E_Ticket(req:any, res:any) {
   const [username, setUsername] = useState("");
   const [firstName, setFirstName] = useState("");
   const [lastName, setLastName] = useState("");
@@ -25,10 +26,6 @@ export default function E_Ticket() {
       router.push("/auth"); // The user is not authenticated, handle it here.
     },
   });
-
-  const handleImageLoad = () => {
-    setImageLoaded(true);
-  };
 
   let userData = JSON.stringify({
     email: session?.user?.email,
@@ -79,17 +76,28 @@ export default function E_Ticket() {
     data: userData,
   };
 
-  async function htmlToImageConvert() {
-    toPng(elementRef.current!, { cacheBust: false, skipAutoScale: true })
-      .then((dataUrl) => {
-        const link = document.createElement("a");
-        link.download = "e-ticket.png";
-        link.href = dataUrl;
-        link.click();
-      })
-      .catch((err) => {
-        console.log(err);
-      });
+  let screenshotData = JSON.stringify({
+    url: `https://openhouse2024-alpha.vercel.app/ticket?id=${id}&username=${username}&firstName=${firstName}&lastName=${lastName}&roles=${roles}`,
+  });
+
+  let screenshotConfig = {
+    method: "post",
+    maxBodyLength: Infinity,
+    url: "https://openhouse2024-backend.vercel.app/api/user/screenshot",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    data: screenshotData,
+  };
+
+  async function screenshotRequest() {
+    try {
+      const response = await axios.request(screenshotConfig);
+      console.log(JSON.stringify(response.data));
+    }
+    catch (error) {
+      console.log(error);
+    }
   }
 
   useEffect(() => {
@@ -107,15 +115,7 @@ export default function E_Ticket() {
       </div>
       <div className=" flex items-center justify-center h-full pt-8 z-10">
         <div className=" relative  " ref={elementRef}>
-          <div>
-            <Image
-              alt="ticket"
-              src="/assets/ticket.png"
-              width={280}
-              height={552}
-              className="sm:w-[280px] sm:h-[552px] "
-            />
-          </div>
+          <Ticket className="sm:w-[280px] sm:h-[552px] rounded-2xl " />
           <div className=" flex justify-center items-center gap-2 absolute top-2 z-50 left-1/2 -translate-x-1/2 w-full text-[#1B0C76] ">
             <hr className=" w-10 border border-[#1B0C76] " />
             ID: {id}
@@ -154,7 +154,7 @@ export default function E_Ticket() {
       <div className=" flex justify-center mt-5 pb-5 text-[#622D9F]">
         <button
           className=" flex items-center px-3 py-1 rounded-full bg-white "
-          onClick={htmlToImageConvert}
+          onClick={screenshotRequest}
         >
           <ArrowDownTrayIcon className="w-5" /> Download
         </button>

@@ -47,7 +47,7 @@ export default function App({ Component, pageProps }: AppProps) {
         />
         <meta property="twitter:image" content="/assets/preview.png" />
       </Head>
-      <Navbar />
+      {!(router.pathname === "/tickets") && <Navbar />}
       <Component {...pageProps} />
       <SpeedInsights />
       <Analytics />
