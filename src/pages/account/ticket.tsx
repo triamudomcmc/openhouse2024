@@ -91,7 +91,7 @@ export default function E_Ticket() {
   }, [status]);
 
   return (
-    <div className=" w-screen min-h-screen bg-gradient-to-b from-[#622279] to-[#623AD4] relative ">
+    <div className=" w-screen min-h-screen overflow-hidden bg-gradient-to-b from-[#622279] to-[#623AD4] relative ">
       <div className=" flex items-center md:pl-28 md:pt-28 pl-8 pt-24 gap-2 md:text-xl text-base w-fit ">
         <Link href="/account" className=" flex items-center gap-1">
           <ArrowLeftCircleIcon className=" md:w-8 w-6 text-white" />
@@ -140,7 +140,7 @@ export default function E_Ticket() {
           </div>
         </div>
       </div>
-      <div className=" flex items-center justify-center h-full pt-8 z-10 absolute -top-[99999999999999px] left-[999999999999999999999999px] w-full">
+      <div className=" flex items-center justify-center h-full pt-8 z-10 absolute -top-[4000px] left-[0px] w-full">
         <div className=" relative " ref={elementRef}>
           <img
             src="/assets/ticket.png"
