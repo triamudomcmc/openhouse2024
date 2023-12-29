@@ -1,4 +1,4 @@
-import { useState, useEffect, FC } from "react";
+import { useState, useEffect,useRef, FC } from "react";
 import { useRouter } from "next/router";
 import { useSession } from "next-auth/react";
 import axios from "axios";
@@ -19,6 +19,7 @@ import { ArrowDownTrayIcon } from "@heroicons/react/24/outline";
 import CardLeft from "@/vectors/gems/cardLeft";
 import CardRight from "@/vectors/gems/cardRight";
 import { AxiosResponse } from "axios";
+import { toPng } from 'html-to-image';
 
 export default function GemsPage() {
   interface ComponentMap {
@@ -44,6 +45,7 @@ export default function GemsPage() {
   const [svgComponent, setSvgComponent] = useState<React.ReactNode | null>(
     null
   );
+  const elementRef = useRef(null);
   const { data: session, status } = useSession({
     required: true,
     onUnauthenticated() {
@@ -135,6 +137,19 @@ export default function GemsPage() {
     } catch (error) {}
   }
 
+  const htmlToImageConvert = () => {
+    toPng(elementRef.current!, { cacheBust: true })
+      .then((dataUrl) => {
+        const link = document.createElement("a");
+        link.download = "e-ticket.png";
+        link.href = dataUrl;
+        link.click();
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  };
+
   useEffect(() => {
     const Component = componentMap[gems] || componentMap.default;
     setSvgComponent(
@@ -150,7 +165,7 @@ export default function GemsPage() {
   return (
     <div className=" w-screen min-h-screen bg-radial-2 relative flex justify-center md:pt-20 md:pb-5 max-md:items-center pt-16 ">
       <div className=" block">
-        <div className=" block lg:w-[390px] lg:h-[690px] md:w-[336px] md:h-[650px] w-[277px] h-[530px] relative z-[90] bg-gradient-to-b from-[#5018AD] to-[#2D0C62] rounded-xl">
+        <div className=" block lg:w-[390px] lg:h-[690px] md:w-[336px] md:h-[650px] w-[277px] h-[530px] relative z-[90] bg-gradient-to-b from-[#5018AD] to-[#2D0C62] rounded-xl" ref={elementRef}>
           <div className="  flex justify-center h-full ">
             <div className=" lg:w-[351px] md:w-[304px] w-[250px]  border broder-white my-4 py-4 flex flex-col">
               <div className=" flex justify-center py-2 my-auto ">
@@ -199,7 +214,7 @@ export default function GemsPage() {
                   whileTap={{ scale: 0.95 }}
                 
             className=" flex items-center md:px-6 px-4 py-2 rounded-full bg-[#DF77D6] text-white "
-            onClick={handleDownload}
+            onClick={htmlToImageConvert}
           >
             <ArrowDownTrayIcon className="w-5" /> Download
           </motion.button>
