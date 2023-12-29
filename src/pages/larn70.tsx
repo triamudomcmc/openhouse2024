@@ -58,7 +58,7 @@ export default function Larn70() {
           </div>
           <div className="">
             <div className=" lg:text-4xl md:text-2xl font-bold text-white font-Inter lg:px-4 px-8 lg:py-2 py-1 bg-[#FF7FD3] w-fit rounded-full shadow-md">
-              12 JAN 2024
+              13 JAN 2024
             </div>
             <div className=" space-y-6 block mt-5 ">
               {shows("9.00-9.05", "พิธีกรพูดเปิดงานวันที่ 2")}
@@ -75,7 +75,6 @@ export default function Larn70() {
               <div className=" max-md:hidden">{shows("12.20-12.50", "การแสดง folk song และ random dance")}</div>
               {shows("12.55-13.10", "การแสดงเต้น")}
               {shows("13.20-13.45", "หนีไฟนอลมาเป็นไอดอล")}
-              {shows("13.40-14.10", "IDOL DESU")}
               {shows("14.15-16.05", "คอนเสิร์ต")}
               {shows("16.05-16.35", "พิธีปิด")}
             </div>
