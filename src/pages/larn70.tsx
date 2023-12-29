@@ -19,7 +19,7 @@ export default function Larn70() {
     <div className=" w-screen overflow-x-hidden min-h-screen relative shows-bg  ">
       <Larn70Head className=" w-screen lg:hidden md:-mt-40 " />
       <Larn70bg className=" absolute max-lg:hidden z-0 h-full left-0 top-0" />
-      <div className=" flex lg:justify-end md:justify-center lg:mr-[10vw]">
+      <div className=" flex lg:justify-end md:justify-center lg:mr-[10vw]  lg:pb-20">
         <div className="  lg:pt-20 mb-10 relative z-[99] max-md:px-3  ">
           <div className="">
             <div className=" lg:text-4xl md:text-2xl font-bold text-white font-Inter lg:px-4 px-8 lg:py-2 py-1 bg-[#FF7FD3] w-fit rounded-full shadow-md">
