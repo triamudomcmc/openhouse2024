@@ -84,10 +84,3 @@ color: #33007B;
 .shows-bg{
   background: radial-gradient(299.85% 100% at 50% 0%, #848ED7 8.06%, #5560AD 14.8%, #1B2679 32.03%, #131550 68.17%, #07092F 88.55%);
 }
-
-.ticket{
-  background-image:url("/assets/ticket.png");
-  background-size: cover;
-  height: 552px;
-  width: 280px;
-}
