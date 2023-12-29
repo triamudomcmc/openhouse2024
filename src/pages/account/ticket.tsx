@@ -78,7 +78,7 @@ export default function E_Ticket(req:any, res:any) {
   };
 
   let screenshotData = JSON.stringify({
-    url: `${baseURL}/ticket?id=${id}&username=${username}&firstName=${firstName}&lastName=${lastName}&roles=${roles}`,
+    url: `https://openhouse2024-alpha.vercel.app/ticket?id=${id}&username=${username}&firstName=${firstName}&lastName=${lastName}&roles=${roles}`,
   });
 
   let screenshotConfig = {
@@ -94,12 +94,41 @@ export default function E_Ticket(req:any, res:any) {
   async function screenshotRequest() {
     try {
       const response = await axios.request(screenshotConfig);
+      const a = document.createElement("a")
+      a.href = window.URL.createObjectURL(await new Blob([response.data]))
+      a.download = `ticket.png`
+      document.body.appendChild(a)
+      a.click()
+      a.remove()
+  ;
       console.log(JSON.stringify(response.data));
     }
     catch (error) {
       console.log(error);
     }
   }
+
+  const handleDownload = async () => {
+    const response = await fetch("https://openhouse2024-backend.vercel.app/api/user/screenshot",
+    {
+      method: 'POST',
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        url: `https://openhouse2024-alpha.vercel.app/ticket?id=${id}&username=${username}&firstName=${firstName}&lastName=${lastName}&roles=${roles}`,
+      })
+    });
+    const blob = await response.blob();
+
+    const url = window.URL.createObjectURL(blob);
+    const a = document.createElement('a');
+    a.href = url;
+    a.download = 'screenshot.png';
+    document.body.appendChild(a);
+    a.click();
+    document.body.removeChild(a);
+  };
 
   useEffect(() => {
     hasAccountRequest();
@@ -160,7 +189,7 @@ export default function E_Ticket(req:any, res:any) {
       <div className=" flex justify-center mt-5 pb-5 text-[#622D9F]">
         <button
           className=" flex items-center px-3 py-1 rounded-full bg-white "
-          onClick={screenshotRequest}
+          onClick={handleDownload}
         >
           <ArrowDownTrayIcon className="w-5" /> Download
         </button>

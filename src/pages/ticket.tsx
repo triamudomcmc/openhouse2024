@@ -6,8 +6,8 @@ const TicketGen = () => {
 
   const props = router?.query;
   return (
-    <div className=" relative w-[840px] h-[1656px] ">
-          <Ticket className="w-[840px] h-[1656px] "
+    <div className=" relative w-[840px] h-[1656px]  ">
+          <Ticket className="w-[840px] h-[1656px] rounded-2xl"
           />
           <div className=" w-[840px] flex justify-center items-center gap-2 absolute top-6 z-50 left-1/2 -translate-x-1/2 text-[#1B0C76] text-5xl ">
             <hr className=" w-[120px] border-[3px] border-[#1B0C76] bg-[#1B0C76] " />
