@@ -365,9 +365,17 @@ export default function Quiz() {
                   <div className=" w-fit  ">
                     <QuestionSvg className=" md:w-auto md:h-auto w-[339px]" />
                   </div>
-                  <div className=" absolute md:-top-10 md:-left-10 -top-0 -left-6 ">
+                  <motion.div
+                    initial={{ opacity: 0 }}
+                    whileInView={{ opacity: 1 }}
+                    transition={{
+                      duration: 0.5,
+                      delay: 0.1,
+                    }}
+                    className=" absolute md:-top-10 md:-left-10 -top-0 -left-6 "
+                  >
                     <Star className=" max-md:w-[98px] max-md:h-[98px] " />
-                  </div>
+                  </motion.div>
                   <div className=" md:text-3xl text-xl font-bold text-center absolute left-1/2 -translate-x-1/2 top-1/2 -translate-y-1/2 whitespace-pre-line w-full">
                     {questions[currentQuestion]?.questionText}
                   </div>
