@@ -30,7 +30,6 @@ export default function E_Ticket() {
     setImageLoaded(true);
   };
 
-
   let userData = JSON.stringify({
     email: session?.user?.email,
     environmentKeys: process.env.ENVIRONMENT_KEY,
@@ -80,24 +79,18 @@ export default function E_Ticket() {
     data: userData,
   };
 
-  const htmlToImageConvert = () => {
-    if (!imageLoaded) {
-      // Image is not loaded yet, you can handle this case accordingly
-      console.log('Image is not loaded yet.');
-      return;
-    }
-
-    toPng(elementRef.current!, { cacheBust: false})
+  async function htmlToImageConvert() {
+    toPng(elementRef.current!, { cacheBust: false, skipAutoScale: true })
       .then((dataUrl) => {
-        const link = document.createElement('a');
-        link.download = 'e-ticket.png';
+        const link = document.createElement("a");
+        link.download = "e-ticket.png";
         link.href = dataUrl;
         link.click();
       })
       .catch((err) => {
-        console.error(err);
+        console.log(err);
       });
-  };
+  }
 
   useEffect(() => {
     hasAccountRequest();
@@ -114,14 +107,8 @@ export default function E_Ticket() {
       </div>
       <div className=" flex items-center justify-center h-full pt-8 z-10">
         <div className=" relative  " ref={elementRef}>
-          <Image
-            alt="ticket"
-            src="/assets/ticket.png"
-            width={280}
-            height={552}
-            onLoad={handleImageLoad}
-            className="sm:w-[280px] sm:h-[552px] "
-          />
+          <div className="w-[280px] h-[552px] ticket">
+          </div>
           <div className=" flex justify-center items-center gap-2 absolute top-2 z-50 left-1/2 -translate-x-1/2 w-full text-[#1B0C76] ">
             <hr className=" w-10 border border-[#1B0C76] " />
             ID: {id}
