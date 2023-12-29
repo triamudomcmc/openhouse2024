@@ -15,6 +15,7 @@ export default function E_Ticket() {
   const [lastName, setLastName] = useState("");
   const [roles, setRoles] = useState("");
   const [id, setId] = useState("");
+  const [imageLoaded, setImageLoaded] = useState(false);
   const elementRef = useRef(null);
 
   const router = useRouter();
@@ -24,6 +25,11 @@ export default function E_Ticket() {
       router.push("/auth"); // The user is not authenticated, handle it here.
     },
   });
+
+  const handleImageLoad = () => {
+    setImageLoaded(true);
+  };
+
 
   let userData = JSON.stringify({
     email: session?.user?.email,
@@ -75,15 +81,21 @@ export default function E_Ticket() {
   };
 
   const htmlToImageConvert = () => {
-    toPng(elementRef.current!, { cacheBust: false, skipAutoScale: true })
+    if (!imageLoaded) {
+      // Image is not loaded yet, you can handle this case accordingly
+      console.log('Image is not loaded yet.');
+      return;
+    }
+
+    toPng(elementRef.current!, { cacheBust: false})
       .then((dataUrl) => {
-        const link = document.createElement("a");
-        link.download = "e-ticket.png";
+        const link = document.createElement('a');
+        link.download = 'e-ticket.png';
         link.href = dataUrl;
         link.click();
       })
       .catch((err) => {
-        console.log(err);
+        console.error(err);
       });
   };
 
@@ -107,6 +119,7 @@ export default function E_Ticket() {
             src="/assets/ticket.png"
             width={280}
             height={552}
+            onLoad={handleImageLoad}
             className="sm:w-[280px] sm:h-[552px] "
           />
           <div className=" flex justify-center items-center gap-2 absolute top-2 z-50 left-1/2 -translate-x-1/2 w-full text-[#1B0C76] ">
