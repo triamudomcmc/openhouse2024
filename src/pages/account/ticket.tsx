@@ -198,7 +198,7 @@ export default function E_Ticket(req: any, res: any) {
             <div>
               <svg
                 aria-hidden="true"
-                className="inline w-5 h- text-white animate-spin dark:text-white fill-white"
+                className="inline w-5 h- text-white animate-spin dark:text-white fill-[#DF77D6]"
                 viewBox="0 0 100 101"
                 fill="none"
                 xmlns="http://www.w3.org/2000/svg"
