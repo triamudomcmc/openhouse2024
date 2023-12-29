@@ -116,7 +116,7 @@ export default function E_Ticket(req:any, res:any) {
         "Content-Type": "application/json",
       },
       body: JSON.stringify({
-        url: `https://openhouse2024-alpha.vercel.app/ticket?id=${id}&username=${username}&firstName=${firstName}&lastName=${lastName}&roles=${roles}`,
+        url: `${baseURL}/ticket?id=${id}&username=${username}&firstName=${firstName}&lastName=${lastName}&roles=${roles}`,
       })
     });
     const blob = await response.blob();
