@@ -16,6 +16,7 @@ const config: Config = {
         Figerona:['Figerona'],
         Montserrat:['Montserrat'],
         Bodwars:['Bodwars'],
+        Inter:['Inter'],
 
       },
       screens: {

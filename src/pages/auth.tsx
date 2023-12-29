@@ -12,7 +12,7 @@ export default function LoginPage() {
   const router = useRouter();
 
   useEffect(() => {
-    router.push("/");
+    // router.push("/");
     if (session) {
       router.push("/account");
     }
