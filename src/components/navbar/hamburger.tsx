@@ -115,7 +115,7 @@ export default function Hamburger() {
                 setIsOpen(false)
               }}
             >
-              <div className=" text-left pl-8 text-white bg-[#462A86] py-2 text-sm">
+              <div className=" text-left pl-8 text-white bg-[#462A86] bg-opacity-80 py-2 text-sm">
                 หอประชุม
               </div>
             </Link>
@@ -128,7 +128,7 @@ export default function Hamburger() {
                 setIsOpen(false)
               }}
             >
-              <div className=" text-left pl-8 text-white bg-[#462A86] py-2 text-sm">
+              <div className=" text-left pl-8 text-white bg-[#462A86] bg-opacity-80 py-2 text-sm">
                 ลาน 70 ปี
               </div>
             </Link>
@@ -148,7 +148,7 @@ export default function Hamburger() {
         <button
           className={
             showOther
-              ? " text-left px-4 text-white py-2 text-lg w-full flex justify-between items-center bg-[#462A86] transition-all  "
+              ? " text-left px-4 text-white py-2 text-lg w-full flex justify-between items-center bg-[#462A86] bg-opacity-80 transition-all  "
               : "text-left px-4 text-white py-2 text-lg w-full flex justify-between items-center transition-all"
           }
           onClick={() => {
@@ -189,7 +189,7 @@ export default function Hamburger() {
                 setIsOpen(false)
               }}
             >
-              <div className=" text-left pl-8 text-white bg-[#462A86] py-2 text-sm">
+              <div className=" text-left pl-8 text-white bg-[#462A86] bg-opacity-80 py-2 text-sm">
                 การสอบเข้า ม.4
               </div>
             </Link>
@@ -202,7 +202,7 @@ export default function Hamburger() {
                 setIsOpen(false)
               }}
             >
-              <div className=" text-left pl-8 text-white bg-[#462A86] py-2 text-sm">
+              <div className=" text-left pl-8 text-white bg-[#462A86] bg-opacity-80 py-2 text-sm">
                 การเดินทางมาโรงเรียน
               </div>
             </Link>
