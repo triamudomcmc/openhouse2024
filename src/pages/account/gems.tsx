@@ -186,9 +186,17 @@ export default function GemsPage() {
                 <div className=" block">
                   <div className=" relative flex justify-center">
                     {svgComponent}
-                    <div className=" absolute right-0 top-1/2 -translate-y-1/2 md:translate-x-1/3 translate-x-1/4 z-0 ">
+                    <motion.div
+                      initial={{ opacity: 0 }}
+                      whileInView={{ opacity: 1 }}
+                      transition={{
+                        duration: 0.2,
+                        delay: 0.1,
+                      }}
+                      className=" absolute right-0 top-1/2 -translate-y-1/2 md:translate-x-1/3 translate-x-1/4 z-0 "
+                    >
                       <GemStar className=" md:w-[80%] md:h-[80%] w-[60%] h-[60%]" />
-                    </div>
+                    </motion.div>
                   </div>
                   <div className=" text-center text-white text-xs my-2 align-middle  ">
                     @TriamUdomOpenHouse2024

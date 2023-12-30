@@ -110,7 +110,7 @@ export default function AccountPage() {
             whileInView={{ opacity: 1 }}
             transition={{
               duration: 0.1,
-              delay: 0,
+              delay: 0.1,
             }}
             className="text-transparent bg-clip-text bg-gradient-to-r from-[#FF53C5] from-0% to-[#FFFBE7] to-100% lg:text-7xl md:text-6xl sm:text-5xl font-Figerona font-bold w-fit drop-shadow-glow "
           >
