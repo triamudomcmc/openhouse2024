@@ -5,7 +5,7 @@ import { useSession, signIn, signOut } from "next-auth/react";
 import { useEffect, useState } from "react";
 import axios from "axios";
 
-export default function staff() {
+export default function Staff() {
   const [isProcessing, setIsProcessing] = useState(false);
   const [staffTag, setStaffTag] = useState("");
   const [orgName, setOrgName] = useState("");
