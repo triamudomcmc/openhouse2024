@@ -80,7 +80,7 @@ export default function Navbar() {
             </button>
             {showShows && (
               <motion.div
-                className=" absolute block top-9 -left-[25px]  shadow-xl py-2  w-40  bg-[#774CB4]  rounded-xl text-center"
+                className=" absolute block top-9 -left-[25px]  shadow-xl py-2  w-40  bg-[#774CB4] bg-opacity-90  rounded-xl text-center"
                 initial={{ opacity: 0, y: -10 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{
@@ -154,7 +154,7 @@ export default function Navbar() {
             </button>
             {showOther && (
               <motion.div
-                className=" absolute block top-9 -left-[25px]  shadow-xl py-2  w-40  bg-[#774CB4]  rounded-xl text-center"
+                className=" absolute block top-9 -left-[25px]  shadow-xl py-2  w-40  bg-[#774CB4] bg-opacity-90  rounded-xl text-center"
                 initial={{ opacity: 0, y: -10 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{
@@ -228,8 +228,8 @@ export default function Navbar() {
       </nav>
       <nav className=" md:hidden bg-[#935AE3] bg-opacity-80 flex align-middle justify-between px-2 gap-10 h-16  text-center z-20 top-0 ">
         <Link href="/" className=" items-center flex justify-center  ">
-          <OPHLogo className=" h-10 w-auto" />
-          <p className="font-[700] text-[20px] leading-[24px] text-white">
+          <OPHLogo className=" h-8 w-auto" />
+          <p className="font-[600] text-[20px] leading-[24px] text-white">
             TRIAM UDOM
             <span className="font-[400] block text-[15px] leading-[18px]">
               OPEN HOUSE 2024

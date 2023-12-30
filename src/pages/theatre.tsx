@@ -22,7 +22,7 @@ export default function Theater() {
                   className=" md:w-[172px] md:h-[244px] w-[72px] h-[101px]  rounded-xl "
                 />
                 <img
-                  src="/assets/shows/Florette_The_Musical.png"
+                  src="/assets/shows/ม่วน.png"
                   className=" md:w-[172px] md:h-[244px] w-[72px] h-[101px] rounded-xl "
                 />
                 <img
@@ -96,7 +96,8 @@ export default function Theater() {
                 </div>
                 <div className=" lg:mt-[191px] md:mt-[195px] mt-[56px]">
                   <div className=" text-white md:text-3xl text-base font-bold">
-                    The truth untold the musical
+                    <div className=" max-md:hidden">The truth untold the musical</div>
+                    <div className=" md:hidden">The truth untold the musical</div>
                   </div>
                   <div className=" text-[#FFC8EC] md:text-base text-xs ">
                     ชมรมนิเทศศิลป ฝ่ายละครเวที
@@ -134,7 +135,7 @@ export default function Theater() {
                 className=" md:w-[172px] md:h-[244px] w-[72px] h-[101px] rounded-xl "
               />
               <img
-                src="/assets/shows/Florette_The_Musical.png"
+                src="/assets/shows/ม่วน.png"
                 className=" md:w-[172px] md:h-[244px] w-[72px] h-[101px] rounded-xl "
               />
               <img
@@ -146,7 +147,7 @@ export default function Theater() {
                 className=" md:w-[172px] md:h-[244px] w-[72px] h-[101px] rounded-xl "
               />
               <img
-                src="/assets/shows/The_Truth_Untold.png"
+                src="/assets/shows/esctasy.png"
                 className=" md:w-[172px] md:h-[244px] w-[72px] h-[101px] rounded-xl "
               />
               <img

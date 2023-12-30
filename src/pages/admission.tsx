@@ -9,12 +9,14 @@ export default function Admission() {
 
   return (
     <div className=" min-h-screen bg-gradient-to-br from-[#FFF5C8] via-[#FFC8F1] to-[#C7BEFF]  ">
-      <div className=" w-full text-center md:pt-40 pt-20 lg:text-7xl md:text-5xl text-4xl font-bold flex justify-center text-[#22197C]   ">
-        <div className=" from-[#FF67B6] via-[#4600A8] to-[#FF67B6] w-full">
-          การสอบเข้า
-          <div className=" bg-[#7423D6] px-1 py-1 rounded-full my-2 w-fit mx-auto ">
-            <div className=" lg:text-5xl md:text-3xl text-2xl font-semibold text-[#22197C] w-fit bg-white md:px-5 py-2 px-3 rounded-full ">
-              โรงเรียนเตรียมอุดมศึกษา
+      <div className=" w-full text-center md:pt-40 pt-20 lg:text-7xl md:text-5xl text-4xl font-bold flex justify-center text-white    ">
+        <div className="bg-gradient-to-r from-[#FF67B6] via-[#4600A8] to-[#FF67B6] w-full py-8">
+          <div className=" from-[#FF67B6] via-[#4600A8] to-[#FF67B6] w-full">
+            การสอบเข้า
+            <div className=" bg-[#7423D6] px-1 py-1 rounded-full my-2 w-fit mx-auto ">
+              <div className=" lg:text-5xl md:text-3xl text-2xl font-semibold text-[#22197C] w-fit bg-white md:px-5 py-2 px-3 rounded-full ">
+                โรงเรียนเตรียมอุดมศึกษา
+              </div>
             </div>
           </div>
         </div>
@@ -24,44 +26,44 @@ export default function Admission() {
           <div className=" lg:text-6xl md:text-5xl text-3xl max-md:text-center  font-bold text-transparent bg-clip-text bg-gradient-to-r from-[#6C1FD8] to-[#E74FB5] row-span-3">
             กำหนดการสอบเข้า
             <div className=" grid grid-cols-1 h-fit">
-              <div className=" px-1 py-1 rounded-full bg-gradient-to-r from-[#FB54C4] to-[#935AE3] lg:w-[80%] w-full mt-4 ">
+              <div className=" px-1 py-1 rounded-full bg-gradient-to-r from-[#FB54C4] to-[#935AE3] lg:w-[80%] w-full md:mt-8 mt-4 ">
                 <div className=" w-full rounded-full md:text-base text-sm flex bg-white text-black  ">
-                  <div className=" bg-gradient-to-r from-[#FC53C3] to-[#FC53C3] rounded-full text-center py-2 md:w-1/3 w-[40%]  ">
-                    28-3 มี.ค. 67
+                  <div className=" bg-gradient-to-r from-[#FC53C3] to-[#FC53C3] rounded-full text-center lg:py-4 md:py-3 py-2 md:w-1/3 w-[40%] text-white  ">
+                  28 ก.พ. - 3 มี.ค. 67
                   </div>
-                  <div className=" px-5 py-2 ">เปิดรับสมัคร</div>
+                  <div className=" px-5 lg:py-4 md:py-3 py-2 ">เปิดรับสมัคร</div>
                 </div>
               </div>
-              <div className=" px-1 py-1 rounded-full bg-gradient-to-r from-[#FB54C4] to-[#935AE3] lg:w-[80%] w-full mt-4 ">
+              <div className=" px-1 py-1 rounded-full bg-gradient-to-r from-[#FB54C4] to-[#935AE3] lg:w-[80%] w-full md:mt-8 mt-4 ">
                 <div className=" w-full rounded-full md:text-base text-sm flex bg-white text-black  ">
-                  <div className=" bg-gradient-to-r from-[#FC53C3] to-[#FC53C3] rounded-full text-center py-2 md:w-1/3 w-[40%]  ">
+                  <div className=" bg-gradient-to-r from-[#FC53C3] to-[#FC53C3] rounded-full text-center lg:py-4 md:py-3 py-2 md:w-1/3 w-[40%] text-white ">
                     9 มี.ค. 67
                   </div>
-                  <div className=" px-5 py-2 ">วันสอบ</div>
+                  <div className=" px-5 lg:py-4 md:py-3 py-2 ">วันสอบ</div>
                 </div>
               </div>
-              <div className=" px-1 py-1 rounded-full bg-gradient-to-r from-[#FB54C4] to-[#935AE3] lg:w-[80%] w-full mt-4 ">
+              <div className=" px-1 py-1 rounded-full bg-gradient-to-r from-[#FB54C4] to-[#935AE3] lg:w-[80%] w-full md:mt-8 mt-4 ">
                 <div className=" w-full rounded-full md:text-base text-sm flex bg-white text-black  ">
-                  <div className=" bg-gradient-to-r from-[#FC53C3] to-[#FC53C3] rounded-full text-center py-2 md:w-1/3 w-[40%]  ">
+                  <div className=" bg-gradient-to-r from-[#FC53C3] to-[#FC53C3] rounded-full text-center lg:py-4 md:py-3 py-2 md:w-1/3 w-[40%] text-white ">
                     ภายใน 20 มี.ค. 67
                   </div>
-                  <div className=" px-5 py-2 ">วันประกาศผล</div>
+                  <div className=" px-5 lg:py-4 md:py-3 py-2 ">วันประกาศผล</div>
                 </div>
               </div>
-              <div className=" px-1 py-1 rounded-full bg-gradient-to-r from-[#FB54C4] to-[#935AE3] lg:w-[80%] w-full mt-4 ">
+              <div className=" px-1 py-1 rounded-full bg-gradient-to-r from-[#FB54C4] to-[#935AE3] lg:w-[80%] w-full md:mt-8 mt-4 ">
                 <div className=" w-full rounded-full md:text-base text-sm flex bg-white text-black  ">
-                  <div className=" bg-gradient-to-r from-[#FC53C3] to-[#FC53C3] rounded-full text-center py-2 md:w-1/3 w-[40%]  ">
+                  <div className=" bg-gradient-to-r from-[#FC53C3] to-[#FC53C3] rounded-full text-center lg:py-4 md:py-3 py-2 md:w-1/3 w-[40%] text-white ">
                     ภายใน 20 มี.ค. 67
                   </div>
-                  <div className=" px-5 py-2 ">รายงานตัว</div>
+                  <div className=" px-5 lg:py-4 md:py-3 py-2 ">รายงานตัว</div>
                 </div>
               </div>
-              <div className=" px-1 py-1 rounded-full bg-gradient-to-r from-[#FB54C4] to-[#935AE3] lg:w-[80%] w-full mt-4 ">
+              <div className=" px-1 py-1 rounded-full bg-gradient-to-r from-[#FB54C4] to-[#935AE3] lg:w-[80%] w-full md:mt-8 mt-4 ">
                 <div className=" w-full rounded-full md:text-base text-sm flex bg-white text-black  ">
-                  <div className=" bg-gradient-to-r from-[#FC53C3] to-[#FC53C3] rounded-full text-center py-2 md:w-1/3 w-[40%]  ">
+                  <div className=" bg-gradient-to-r from-[#FC53C3] to-[#FC53C3] rounded-full text-center lg:py-4 md:py-3 py-2 md:w-1/3 w-[40%] text-white ">
                     ภายใน 20 มี.ค. 67
                   </div>
-                  <div className=" px-5 py-2 ">วันมอบตัว</div>
+                  <div className=" px-5 lg:py-4 md:py-3 py-2 ">วันมอบตัว</div>
                 </div>
               </div>
             </div>
