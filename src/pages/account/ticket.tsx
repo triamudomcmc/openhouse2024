@@ -125,7 +125,6 @@ export default function E_Ticket(req: any, res: any) {
     const blob = await response.blob();
 
     const url = window.URL.createObjectURL(blob);
-    const a = document.createElement("a");
     saveAs(url, `ticket.png`)
     setIsLoading(false)
   };
