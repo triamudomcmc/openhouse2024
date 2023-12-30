@@ -139,19 +139,6 @@ export default function GemsPage() {
     } catch (error) {}
   }
 
-  const htmlToImageConvert = () => {
-    toPng(elementRef.current!, { cacheBust: true })
-      .then((dataUrl) => {
-        const link = document.createElement("a");
-        link.download = "gem.png";
-        link.href = dataUrl;
-        link.click();
-      })
-      .catch((err) => {
-        console.log(err);
-      });
-  };
-
   const downloadImage = () => {
     saveAs(`/assets/gems/${gems}.png`, `${gems}.png`); // Put your image URL here.
   };

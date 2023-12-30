@@ -9,6 +9,7 @@ import { ArrowDownTrayIcon } from "@heroicons/react/24/solid";
 import { toPng } from "html-to-image";
 import Image from "next/image";
 import { NextApiRequest } from "next";
+import { saveAs } from "file-saver";
 
 export default function E_Ticket(req: any, res: any) {
   const [username, setUsername] = useState("");
@@ -125,11 +126,7 @@ export default function E_Ticket(req: any, res: any) {
 
     const url = window.URL.createObjectURL(blob);
     const a = document.createElement("a");
-    a.href = url;
-    a.download = "screenshot.png";
-    document.body.appendChild(a);
-    a.click();
-    document.body.removeChild(a);
+    saveAs(url, `ticket.png`)
     setIsLoading(false)
   };
 
