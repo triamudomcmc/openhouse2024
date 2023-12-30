@@ -70,7 +70,7 @@ export default function Navbar() {
               }}
               className=" flex items-center"
             >
-              ตารางการแสดง
+              ตารางการแสดงฯ
               <ChevronDownIcon
                 className={
                   showShows
@@ -202,7 +202,7 @@ export default function Navbar() {
                   setShowOther(false);
                 }}
               >
-                Account
+                บัญชี
               </Link>
             </div>
           </div>

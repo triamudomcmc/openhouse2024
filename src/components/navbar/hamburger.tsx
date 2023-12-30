@@ -81,7 +81,7 @@ export default function Hamburger() {
             setShowShows(!showShows);
           }}
         >
-          ตารางการแสดง
+          ตารางการแสดงฯ
           <div className=" flex relative">
             <div
               className={`${arrow} ${
@@ -217,7 +217,7 @@ export default function Hamburger() {
           }}
           href="/account"
         >
-          <div className=" text-left pl-4 text-white py-2 text-lg">Account</div>
+          <div className=" text-left pl-4 text-white py-2 text-lg">บัญชี</div>
         </Link>
         <Link
           className={inSession ? "hidden " : " text-left  lext-white"}
