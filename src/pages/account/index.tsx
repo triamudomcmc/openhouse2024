@@ -18,6 +18,7 @@ export default function AccountPage() {
   const [lastName, setLastName] = useState("");
   const [roles, setRoles] = useState("");
   const [haveGems, setHaveGems] = useState(false);
+  const [isStaff, setIsStaff] = useState(false);
 
   const { data: session, status } = useSession({
     required: true,
@@ -74,6 +75,9 @@ export default function AccountPage() {
       setFirstName(response.data.name);
       setLastName(response.data.surname);
       setRoles(response.data.role);
+      if (response.data.isstaff === true) {
+        setIsStaff(true);
+      }
     } catch (error) {}
   }
 
@@ -137,15 +141,27 @@ export default function AccountPage() {
               E-Ticket
             </motion.div>
           </Link>
-          <Link href="/account/stamp" className="  ">
-            <motion.div
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-              className={`text-center cursor-pointer w-fit break-keep md:px-10 sm:px-8 py-2 bg-gradient-to-r from-[#FFFBE7] to-[#BCA1FF] rounded-full text-[#380086]`}
-            >
-              สะสมแสตมป์
-            </motion.div>
-          </Link>
+          {isStaff ? (
+            <Link href="/account/staff" className="  ">
+              <motion.div
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+                className={`text-center cursor-pointer w-fit break-keep px-12 py-2 bg-gradient-to-r from-[#FFFBE7] to-[#BCA1FF] rounded-full text-[#380086]`}
+              >
+                staff
+              </motion.div>
+            </Link>
+          ) : (
+            <Link href="/account/stamp" className="  ">
+              <motion.div
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+                className={`text-center cursor-pointer w-fit break-keep md:px-10 sm:px-8 py-2 bg-gradient-to-r from-[#FFFBE7] to-[#BCA1FF] rounded-full text-[#380086]`}
+              >
+                สะสมแสตมป์
+              </motion.div>
+            </Link>
+          )}
         </div>
         <div>
           {haveGems ? (

@@ -4,8 +4,6 @@ import { useRouter } from "next/router";
 import { useSession, signIn, signOut } from "next-auth/react";
 import { useEffect, useState } from "react";
 import axios from "axios";
-import Ticket from "@/vectors/ticket";
-import { ArrowDownTrayIcon } from "@heroicons/react/24/solid";
 import GemsStamp from "@/vectors/gemStamp";
 
 export default function Stamp() {
@@ -50,7 +48,8 @@ export default function Stamp() {
   async function userRequest() {
     try {
       const response = await axios.request(config);
-      setUsername(response.data.username);
+      setUsername(response.data.username);+
+      setGems(response.data.estamp)
     } catch (error) {}
   }
 

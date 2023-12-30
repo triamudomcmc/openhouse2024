@@ -4,7 +4,7 @@ import { useSession } from "next-auth/react";
 import axios from "axios";
 import "react-toastify/dist/ReactToastify.css";
 
-export default function RegisterOPHNFC1() {
+export default function RegisterOPHNFC2() {
   const { data: session, status } = useSession({
     required: true,
     onUnauthenticated() {
@@ -19,7 +19,7 @@ export default function RegisterOPHNFC1() {
 
   let registerData = JSON.stringify({
     email: session?.user?.email,
-    gate: "พญาไท",
+    gate: "อังรีดูนังต์",
     environmentKeys: process.env.ENVIRONMENT_KEY,
   });
 

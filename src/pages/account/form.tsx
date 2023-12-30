@@ -80,6 +80,8 @@ export default function Form() {
     name: firstName,
     surname: lastName,
     platform: platform,
+    school:school,
+    classlvl:grade,
     purpose: otherPurpose ? [...purpose, otherPurposeInfo] : purpose,
     environmentKeys: process.env.ENVIRONMENT_KEY,
   });

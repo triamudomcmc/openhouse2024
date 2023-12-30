@@ -71,11 +71,11 @@ export default function Admission() {
           <div className=" bg-gradient-to-br from-[#3E47F7] to-[#FF7BBF] relative  rounded-2xl row-span-4 p-2 ">
             <AdmissionChart className=" pl-5 w-full h-full relative" />
           </div>
-          <div className=" row-span-2 bg-gradient-to-r from-[#888DFF]/[.50] to-[#B966FF]/[.50] rounded-2xl bg-opacity-50 relative ">
+          <div className=" row-span-2 bg-gradient-to-r from-[#888DFF]/[.50] to-[#B966FF]/[.50] rounded-2xl py-2 bg-opacity-50 relative ">
             <div className=" flex items-center justify-center h-full">
               <div>
                 <div className=" flex justify-center text-[#0C027B]">
-                  <div className="  font-bold text-center align-middle flex m-auto md:text-xl text-base mt-10  ">
+                  <div className="  font-bold text-center align-middle flex m-auto md:text-xl text-base md:mt-14 mt-6  ">
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
                       fill="none"
