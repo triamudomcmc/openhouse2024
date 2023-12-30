@@ -8,6 +8,7 @@ import OPHLogo from "@/vectors/OPHLogo";
 import { motion } from "framer-motion";
 import OPHLogoM from "@/vectors/OPHLogoM";
 import { ChevronDownIcon } from "@heroicons/react/24/outline";
+import OPHText from "@/vectors/OPHText";
 
 export default function Navbar() {
   const { data: session, status } = useSession();
@@ -229,12 +230,7 @@ export default function Navbar() {
       <nav className=" md:hidden bg-[#935AE3] bg-opacity-80 flex align-middle justify-between px-2 gap-10 h-16  text-center z-20 top-0 ">
         <Link href="/" className=" items-center flex justify-center  ">
           <OPHLogo className=" h-8 w-auto" />
-          <p className="font-[600] text-[20px] leading-[24px] text-white">
-            TRIAM UDOM
-            <span className="font-[400] block text-[15px] leading-[18px]">
-              OPEN HOUSE 2024
-            </span>
-          </p>
+          <OPHText className=" h-10" />
         </Link>
         <div className=" my-auto">
           <Hamburger />
