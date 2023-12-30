@@ -5,8 +5,8 @@ const GemStar: FC<{
 }> = ({ className }) => {
   return (
     <svg
-      width="83"
-      height="96"
+      width="40"
+      height="50"
       className={`${className}`}
       viewBox="0 0 83 96"
       fill="none"

@@ -193,9 +193,9 @@ export default function GemsPage() {
                         duration: 0.2,
                         delay: 0.1,
                       }}
-                      className=" absolute right-0 top-1/2 -translate-y-1/2 md:translate-x-1/3 translate-x-1/4 z-0 "
+                      className=" absolute right-0 top-1/2 -translate-y-1/2 md:translate-x-1/3 z-0 "
                     >
-                      <GemStar className=" md:w-[80%] md:h-[80%] w-[60%] h-[60%]" />
+                      <GemStar className=" md:w-[120%] md:h-[120%]" />
                     </motion.div>
                   </div>
                   <div className=" text-center text-white text-xs my-2 align-middle  ">
