@@ -17,7 +17,7 @@ export default function Larn70() {
 
   return (
     <div className=" w-screen overflow-x-hidden min-h-screen relative shows-bg  ">
-      <Larn70Head className=" w-screen lg:hidden md:-mt-40 " />
+      <Larn70Head className=" w-screen lg:hidden md:-mt-20 " />
       <Larn70bg className=" absolute max-lg:hidden z-0 h-full left-0 top-0" />
       <div className=" flex lg:justify-end md:justify-center lg:mr-[10vw]  lg:pb-20">
         <div className="  lg:pt-20 mb-10 relative z-[99] max-md:px-3  ">

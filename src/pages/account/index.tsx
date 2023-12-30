@@ -105,9 +105,17 @@ export default function AccountPage() {
       <div className=" absolute top-1/2 -translate-y-1/2 lg:right-1/3 lg:translate-x-1/3 md:right-1/4 md:translate-x-1/4 sm:right-1/2 sm:translate-x-1/2 z-50">
         <AccountBox className=" md:hidden" />
         <div>
-          <div className="text-transparent bg-clip-text bg-gradient-to-r from-[#FF53C5] from-0% to-[#FFFBE7] to-100% lg:text-7xl md:text-6xl sm:text-5xl font-Figerona font-bold w-fit drop-shadow-glow ">
+          <motion.div
+            initial={{ opacity: 0.9 }}
+            whileInView={{ opacity: 1 }}
+            transition={{
+              duration: 0.1,
+              delay: 0,
+            }}
+            className="text-transparent bg-clip-text bg-gradient-to-r from-[#FF53C5] from-0% to-[#FFFBE7] to-100% lg:text-7xl md:text-6xl sm:text-5xl font-Figerona font-bold w-fit drop-shadow-glow "
+          >
             {username}
-          </div>
+          </motion.div>
         </div>
         <div className=" text-[#F7F0EA] font-semibold lg:text-4xl md:text-3xl sm:text-2xl mt-2">
           {firstName} {lastName}

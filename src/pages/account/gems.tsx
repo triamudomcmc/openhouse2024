@@ -162,7 +162,15 @@ export default function GemsPage() {
           className=" block lg:w-[390px] lg:h-[690px] md:w-[336px] md:h-[650px] w-[277px] h-[530px] relative z-[90] bg-gradient-to-b from-[#5018AD] to-[#2D0C62] rounded-xl"
           ref={elementRef}
         >
-          <div className="  flex justify-center h-full ">
+          <motion.div
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            transition={{
+              duration: 0.5,
+              delay: 0.1,
+            }}
+            className="  flex justify-center h-full "
+          >
             <div className=" lg:w-[351px] md:w-[304px] w-[250px]  border broder-white my-4 py-4 flex flex-col">
               <div className=" flex justify-center py-2 my-auto ">
                 <div className=" px-1 py-1 bg-[#E9B5ED] rounded-full w-fit relative z-[99] mt-5 ">
@@ -176,33 +184,19 @@ export default function GemsPage() {
               </div>
               <div className="flex-1 items-end flex justify-center">
                 <div className=" block">
-                  <motion.div
-                      initial={{ opacity: 0 }}
-                      whileInView={{ opacity: 1 }}
-                      transition={{
-                        duration: 0.5,
-                        delay: 0.1,
-                      }} className=" relative flex justify-center">
+                  <div className=" relative flex justify-center">
                     {svgComponent}
-                    <motion.div
-                      initial={{ opacity: 0 }}
-                      whileInView={{ opacity: 1 }}
-                      transition={{
-                        duration: 0.5,
-                        delay: 0.1,
-                      }}
-                      className=" absolute right-0 top-1/2 -translate-y-1/2 md:translate-x-1/3 translate-x-1/4 z-0 "
-                    >
+                    <div className=" absolute right-0 top-1/2 -translate-y-1/2 md:translate-x-1/3 translate-x-1/4 z-0 ">
                       <GemStar className=" md:w-[80%] md:h-[80%] w-[60%] h-[60%]" />
-                    </motion.div>
-                  </motion.div>
+                    </div>
+                  </div>
                   <div className=" text-center text-white text-xs my-2 align-middle  ">
                     @TriamUdomOpenHouse2024
                   </div>
                 </div>
               </div>
             </div>
-          </div>
+          </motion.div>
           <div className=" absolute left-0 top-2/3 -translate-y-2/3">
             <CardLeft className=" lg:w-auto md:w-[80%] md:h-[80%] sm:w-[60%] sm:h-[60%] " />
           </div>

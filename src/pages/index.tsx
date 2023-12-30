@@ -201,10 +201,10 @@ export default function Home() {
               <Landing3 className="object-cover h-full min-h-screen overflow-x-hidden -z-10" />
             </div>
 
-            <div className=" absolute bottom-0 left-[10%] -translate-x-[10%] h-3/4">
+            <div className=" absolute bottom-[1px] left-[10%] -translate-x-[10%] h-3/4">
               <Landing3Lamp />
             </div>
-            <div className=" absolute bottom-0 right-[10%] translate-x-[10%] h-3/4">
+            <div className=" absolute bottom-[1px] right-[10%] translate-x-[10%] h-3/4">
               <Landing3Lamp />
             </div>
           </div>
@@ -301,10 +301,10 @@ export default function Home() {
             </div>
           </div>
         </section>
-        <section className=" relative overflow-hidden ">
-          <div className=" relative w-full -z-10 max-md:hidden">
-            <div className=" w-full -z-10">
-              <Landing4 className="object-cover h-full min-h-screen overflow-x-hidden -z-10" />
+        <section className=" relative overflow-hidden -mt-[1px] ">
+          <div className=" relative w-full -z-[9] max-md:hidden">
+            <div className=" w-full -z-10 -mt-2">
+              <Landing4 className="object-cover h-full min-h-screen overflow-x-hidden -z-10 " />
             </div>
             <div className=" absolute left-1/2 -translate-x-1/2 bottom-0 z-10">
               <Landing4Mountain className=" max-xl:w-[1162px] max-xl:-mb-[100px]" />
