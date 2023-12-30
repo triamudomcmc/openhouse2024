@@ -507,16 +507,16 @@ const LandingEdit = ({
                             />
                           </div>
                           <div className=" block md:mt-1  z-50 relative">
-                            <p className=" text-white md:text-2xl sm:text-md min-h-[28px]  break-words  bg-transparent font-Thai">
+                            <p className=" text-white md:text-2xl sm:text-md min-h-[28px] font-semibold  break-words  bg-transparent font-Thai">
                               {review1.name}
                             </p>
 
-                            <p className=" block text-[#291A54] md:text-xl md:mt-0  sm:text-sm text-base  font-Thai ">
+                            <p className=" block text-white md:text-xl md:mt-0  sm:text-sm text-base  font-Thai ">
                               {" "}
                               เตรียมอุดม {review1.gen}
                             </p>
                             <div className=" flex">
-                              <p className=" break-words items-center  text-[#291A54] min-h-[28px] sm:text-sm md:text-base bg-transparent font-Thai ">
+                              <p className=" break-words items-center  text-white min-h-[28px] sm:text-sm md:text-base bg-transparent font-Thai ">
                                 {review1.contact}
                               </p>
                             </div>
@@ -598,15 +598,15 @@ const LandingEdit = ({
                           </div>
                         </div>
                         <div className=" block md:mt-1  relative z-50">
-                          <p className=" text-white md:text-2xl sm:text-md  bg-transparent font-Thai min-h-[28px] text-right break-words">
+                          <p className=" text-white md:text-2xl sm:text-md  bg-transparent font-Thai min-h-[28px] font-semibold text-right break-words">
                             {review2.name}
                           </p>
 
-                          <p className="  text-[#291A54] md:text-xl md:mt-0  sm:text-sm text-base  font-Thai text-right ">
+                          <p className="  text-white md:text-xl md:mt-0  sm:text-sm text-base  font-Thai text-right ">
                             {" "}
                             เตรียมอุดม {review2.gen}
                           </p>
-                          <p className="   text-[#291A54] md:text-base md:mt-0  sm:text-sm text-base min-h-[28px] font-Thai text-right break-words">
+                          <p className="   text-white md:text-base md:mt-0  sm:text-sm text-base min-h-[28px] font-Thai text-right break-words">
                             {review2.contact}
                           </p>
                         </div>
@@ -643,16 +643,16 @@ const LandingEdit = ({
                           />
                         </div>
                         <div className=" block md:mt-1  z-50 relative">
-                          <p className=" text-white md:text-2xl sm:text-md min-h-[28px]  break-words  bg-transparent font-Thai">
+                          <p className=" text-white md:text-2xl sm:text-md min-h-[28px] font-semibold  break-words  bg-transparent font-Thai">
                             {review3.name}
                           </p>
 
-                          <p className=" block text-[#291A54] md:text-xl md:mt-0  sm:text-sm text-base  font-Thai ">
+                          <p className=" block text-white md:text-xl md:mt-0  sm:text-sm text-base  font-Thai ">
                             {" "}
                             เตรียมอุดม {review3.gen}
                           </p>
                           <div className=" flex">
-                            <p className=" break-words items-center  text-[#291A54] min-h-[28px] sm:text-sm md:text-base bg-transparent font-Thai ">
+                            <p className=" break-words items-center  text-white min-h-[28px] sm:text-sm md:text-base bg-transparent font-Thai ">
                               {review3.contact}
                             </p>
                           </div>
