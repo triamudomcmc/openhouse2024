@@ -186,9 +186,6 @@ export default function Quiz() {
   async function userRequest() {
     try {
       const response = await axios.request(config);
-      if (response.data.gems !== "") {
-        router.push("/account/gems");
-      }
       setId(response.data.id);
     } catch (error) {}
   }
