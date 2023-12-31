@@ -62,13 +62,13 @@ function TUCMCContact() {
       <LinkELement
         src="/assets/logo/facebook.png"
         alt="Facebook"
-        href="https://www.facebook.com/TriamUdomOPH/"
+        href="https://www.facebook.com/triamudomclubs"
         text="TUCMC"
       />
       <LinkELement
         src="/assets/logo/instagram.png"
         alt="Instagram"
-        href="https://www.facebook.com/TriamUdomOPH/"
+        href="https://www.instagram.com/tucmc_official/"
         text="tucmc_official"
       />
     </div>
