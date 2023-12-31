@@ -28,42 +28,52 @@ export default function Admission() {
             <div className=" grid grid-cols-1 h-fit">
               <div className=" p-[2px] rounded-full bg-gradient-to-r from-[#FB54C4] to-[#935AE3] lg:w-[80%] w-full md:mt-8 mt-4 ">
                 <div className=" w-full rounded-full md:text-base text-sm flex bg-white text-black  ">
-                  <div className=" bg-gradient-to-r from-[#FC53C3] to-[#FC53C3] rounded-full text-center lg:py-4 md:py-3 py-2 md:w-1/3 w-[40%] text-white  ">
-                  28 ก.พ. - 3 มี.ค. 67
+                  <div className=" bg-gradient-to-r from-[#FC53C3] to-[#935AE3] rounded-full text-center lg:py-4 md:py-3 py-2 md:w-1/3 w-[40%] text-white  ">
+                    28 ก.พ. - 3 มี.ค. 67
                   </div>
-                  <div className=" px-5 lg:py-4 md:py-3 py-2 ">เปิดรับสมัคร</div>
+                  <div className="px-5 lg:py-4 md:py-3 py-2 text-medium text-[#6C1FD8]">
+                    เปิดรับสมัคร
+                  </div>
                 </div>
               </div>
               <div className=" p-[2px] rounded-full bg-gradient-to-r from-[#FB54C4] to-[#935AE3] lg:w-[80%] w-full md:mt-8 mt-4 ">
                 <div className=" w-full rounded-full md:text-base text-sm flex bg-white text-black  ">
-                  <div className=" bg-gradient-to-r from-[#FC53C3] to-[#FC53C3] rounded-full text-center lg:py-4 md:py-3 py-2 md:w-1/3 w-[40%] text-white ">
+                  <div className=" bg-gradient-to-r from-[#FC53C3] to-[#935AE3] rounded-full text-center lg:py-4 md:py-3 py-2 md:w-1/3 w-[40%] text-white ">
                     9 มี.ค. 67
                   </div>
-                  <div className=" px-5 lg:py-4 md:py-3 py-2 ">วันสอบ</div>
+                  <div className=" px-5 lg:py-4 md:py-3 py-2 text-medium text-[#6C1FD8]">
+                    วันสอบ
+                  </div>
                 </div>
               </div>
               <div className=" p-[2px] rounded-full bg-gradient-to-r from-[#FB54C4] to-[#935AE3] lg:w-[80%] w-full md:mt-8 mt-4 ">
                 <div className=" w-full rounded-full md:text-base text-sm flex bg-white text-black  ">
-                  <div className=" bg-gradient-to-r from-[#FC53C3] to-[#FC53C3] rounded-full text-center lg:py-4 md:py-3 py-2 md:w-1/3 w-[40%] text-white ">
+                  <div className=" bg-gradient-to-r from-[#FC53C3] to-[#935AE3] rounded-full text-center lg:py-4 md:py-3 py-2 md:w-1/3 w-[40%] text-white ">
                     ภายใน 20 มี.ค. 67
                   </div>
-                  <div className=" px-5 lg:py-4 md:py-3 py-2 ">วันประกาศผล</div>
+                  <div className=" px-5 lg:py-4 md:py-3 py-2 text-medium text-[#6C1FD8]">
+                    วันประกาศผล
+                  </div>
                 </div>
               </div>
               <div className=" p-[2px] rounded-full bg-gradient-to-r from-[#FB54C4] to-[#935AE3] lg:w-[80%] w-full md:mt-8 mt-4 ">
                 <div className=" w-full rounded-full md:text-base text-sm flex bg-white text-black  ">
-                  <div className=" bg-gradient-to-r from-[#FC53C3] to-[#FC53C3] rounded-full text-center lg:py-4 md:py-3 py-2 md:w-1/3 w-[40%] text-white ">
+                  <div className=" bg-gradient-to-r from-[#FC53C3] to-[#935AE3] rounded-full text-center lg:py-4 md:py-3 py-2 md:w-1/3 w-[40%] text-white ">
                     ภายใน 20 มี.ค. 67
                   </div>
-                  <div className=" px-5 lg:py-4 md:py-3 py-2 ">รายงานตัว</div>
+                  <div className=" px-5 lg:py-4 md:py-3 py-2 text-medium text-[#6C1FD8]">
+                    รายงานตัว
+                  </div>
                 </div>
               </div>
               <div className=" p-[2px] rounded-full bg-gradient-to-r from-[#FB54C4] to-[#935AE3] lg:w-[80%] w-full md:mt-8 mt-4 ">
                 <div className=" w-full rounded-full md:text-base text-sm flex bg-white text-black  ">
-                  <div className=" bg-gradient-to-r from-[#FC53C3] to-[#FC53C3] rounded-full text-center lg:py-4 md:py-3 py-2 md:w-1/3 w-[40%] text-white ">
+                  <div className=" bg-gradient-to-r from-[#FC53C3] to-[#935AE3] rounded-full text-center lg:py-4 md:py-3 py-2 md:w-1/3 w-[40%] text-white ">
                     ภายใน 20 มี.ค. 67
                   </div>
-                  <div className=" px-5 lg:py-4 md:py-3 py-2 ">วันมอบตัว</div>
+                  <div className=" px-5 lg:py-4 md:py-3 py-2 text-medium text-[#6C1FD8]">
+                    วันมอบตัว
+                  </div>
                 </div>
               </div>
             </div>
@@ -178,16 +188,19 @@ export default function Admission() {
             <div className="px-7 text-[#100083]   bg-gradient-to-r from-[#888DFF]/[.50] to-[#B966FF]/[.50] rounded-2xl py-7 max-md:text-sm ">
               วิทย์-คณิต สอบ 5 วิชา :
               <span className=" text-[#0021A9]">
+                {" "}
                 คณิตศาสตร์ วิทยาศาสตร์ ภาษาไทย สังคมศึกษา ภาษาอังกฤษ
               </span>
               <br />
-               ศิลป์คำนวณ สอบ 4 วิชา :
+              ศิลป์คำนวณ สอบ 4 วิชา :
               <span className=" text-[#0021A9]">
+                {" "}
                 คณิตศาสตร์ ภาษาไทย สังคมศึกษา ภาษาอังกฤษ
               </span>
               <br />
-               ศิลป์ภาษา สอบ 3 วิชา :
+              ศิลป์ภาษา สอบ 3 วิชา :
               <span className=" text-[#0021A9]">
+                {" "}
                 ภาษาไทย สังคมศึกษา ภาษาอังกฤษ
               </span>
             </div>
