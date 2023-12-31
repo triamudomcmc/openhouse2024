@@ -154,11 +154,6 @@ export default function GemsPage() {
     );
   }, [gems]);
 
-  useEffect(() => {
-    setTimeout(() => {
-      setKeys(keys+1)
-    }, 200);
-  },[svgComponent])
 
   useEffect(() => {
     hasAccountRequest();
