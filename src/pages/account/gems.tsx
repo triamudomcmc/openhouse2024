@@ -148,7 +148,7 @@ export default function GemsPage() {
     const Component = componentMap[gems] || componentMap.default;
     setSvgComponent(
       Component ? (
-        <Component className=" lg:w-auto lg:h-auto md:w-[80%] md:h-[80%] sm:w-[60%] sm:h-[60%] "
+        <Component 
          />
       ) : null
     );
@@ -157,7 +157,7 @@ export default function GemsPage() {
   useEffect(() => {
     setTimeout(() => {
       setKeys(keys+1)
-    }, 1000);
+    }, 200);
   },[svgComponent])
 
   useEffect(() => {
