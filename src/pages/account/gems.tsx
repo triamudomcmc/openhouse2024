@@ -184,7 +184,13 @@ export default function GemsPage() {
               </div>
               <div className="flex-1 items-end flex justify-center">
                 <div className=" block">
-                  <div className=" relative flex justify-center">
+                <motion.div
+                      initial={{ opacity: 0 }}
+                      whileInView={{ opacity: 1 }}
+                      transition={{
+                        duration: 0.2,
+                        delay: 0.1,
+                      }} className=" relative flex justify-center">
                     {svgComponent}
                     <motion.div
                       initial={{ opacity: 0 }}
@@ -197,7 +203,7 @@ export default function GemsPage() {
                     >
                       <GemStar className=" md:w-[120%] md:h-[120%]" />
                     </motion.div>
-                  </div>
+                  </motion.div>
                   <div className=" text-center text-white text-xs my-2 align-middle  ">
                     @TriamUdomOpenHouse2024
                   </div>

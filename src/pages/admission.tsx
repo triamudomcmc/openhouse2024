@@ -27,7 +27,7 @@ export default function Admission() {
             กำหนดการสอบเข้า
             <div className=" grid grid-cols-1 h-fit">
               <div className=" p-[2px] rounded-full bg-gradient-to-r from-[#FB54C4] to-[#935AE3] lg:w-[80%] w-full md:mt-8 mt-4 ">
-                <div className=" w-full rounded-full md:text-base text-sm flex bg-white text-black  ">
+                <div className=" w-full rounded-full md:text-base text-sm flex bg-white text-[#6C1FD8]  ">
                   <div className=" bg-gradient-to-r from-[#FC53C3] to-[#FC53C3] rounded-full text-center lg:py-4 md:py-3 py-2 md:w-1/3 w-[40%] text-white  ">
                   28 ก.พ. - 3 มี.ค. 67
                   </div>
@@ -35,7 +35,7 @@ export default function Admission() {
                 </div>
               </div>
               <div className=" p-[2px] rounded-full bg-gradient-to-r from-[#FB54C4] to-[#935AE3] lg:w-[80%] w-full md:mt-8 mt-4 ">
-                <div className=" w-full rounded-full md:text-base text-sm flex bg-white text-black  ">
+                <div className=" w-full rounded-full md:text-base text-sm flex bg-white text-[#6C1FD8]  ">
                   <div className=" bg-gradient-to-r from-[#FC53C3] to-[#FC53C3] rounded-full text-center lg:py-4 md:py-3 py-2 md:w-1/3 w-[40%] text-white ">
                     9 มี.ค. 67
                   </div>
@@ -43,7 +43,7 @@ export default function Admission() {
                 </div>
               </div>
               <div className=" p-[2px] rounded-full bg-gradient-to-r from-[#FB54C4] to-[#935AE3] lg:w-[80%] w-full md:mt-8 mt-4 ">
-                <div className=" w-full rounded-full md:text-base text-sm flex bg-white text-black  ">
+                <div className=" w-full rounded-full md:text-base text-sm flex bg-white text-[#6C1FD8]  ">
                   <div className=" bg-gradient-to-r from-[#FC53C3] to-[#FC53C3] rounded-full text-center lg:py-4 md:py-3 py-2 md:w-1/3 w-[40%] text-white ">
                     ภายใน 20 มี.ค. 67
                   </div>
@@ -51,7 +51,7 @@ export default function Admission() {
                 </div>
               </div>
               <div className=" p-[2px] rounded-full bg-gradient-to-r from-[#FB54C4] to-[#935AE3] lg:w-[80%] w-full md:mt-8 mt-4 ">
-                <div className=" w-full rounded-full md:text-base text-sm flex bg-white text-black  ">
+                <div className=" w-full rounded-full md:text-base text-sm flex bg-white text-[#6C1FD8]  ">
                   <div className=" bg-gradient-to-r from-[#FC53C3] to-[#FC53C3] rounded-full text-center lg:py-4 md:py-3 py-2 md:w-1/3 w-[40%] text-white ">
                     ภายใน 20 มี.ค. 67
                   </div>
@@ -59,7 +59,7 @@ export default function Admission() {
                 </div>
               </div>
               <div className=" p-[2px] rounded-full bg-gradient-to-r from-[#FB54C4] to-[#935AE3] lg:w-[80%] w-full md:mt-8 mt-4 ">
-                <div className=" w-full rounded-full md:text-base text-sm flex bg-white text-black  ">
+                <div className=" w-full rounded-full md:text-base text-sm flex bg-white text-[#6C1FD8]  ">
                   <div className=" bg-gradient-to-r from-[#FC53C3] to-[#FC53C3] rounded-full text-center lg:py-4 md:py-3 py-2 md:w-1/3 w-[40%] text-white ">
                     ภายใน 20 มี.ค. 67
                   </div>
