@@ -117,7 +117,7 @@ const Footer: FC<{ theme?: string }> = ({ theme }) => {
             </Link>
             {session && (
               <Link passHref href="account/ticket">
-                <div className="hover:underline">บัตรของคุณ</div>
+                <div className="hover:underline">E-ticket</div>
               </Link>
             )}
           </div>

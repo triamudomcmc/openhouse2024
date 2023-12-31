@@ -298,7 +298,7 @@ const LandingEdit = ({
                     </p>
                     
                       {contacts.others && contacts.others.trim() != "" && (
-                        <p className=" flex text-[#8133A7] md:w-[200px] w-[150px] text-xl font-Thai break-words md:break-normal ">อื่นๆ: {contacts.others}</p>
+                        <p className=" flex text-[#8133A7] md:w-[200px] w-[150px] text-xl font-Thai break-words md:break-normal "> {contacts.others}</p>
                       )}
                     
                   </div>

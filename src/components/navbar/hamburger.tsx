@@ -81,7 +81,7 @@ export default function Hamburger() {
             setShowShows(!showShows);
           }}
         >
-          ตารางการแสดงฯ
+          ตารางการแสดง
           <div className=" flex relative">
             <div
               className={`${arrow} ${
