@@ -1,10 +1,12 @@
-import { useState, useEffect, use } from "react";
+import { useState, useEffect, useRef } from "react";
 import Link from "next/link";
 import { useSession } from "next-auth/react";
 import { ChevronDownIcon } from "@heroicons/react/24/outline";
 import { motion } from "framer-motion";
 
 export default function Hamburger() {
+  const navbarRef = useRef<HTMLDivElement>(null);
+  const buttonRef = useRef<HTMLButtonElement>(null);
   const [isOpen, setIsOpen] = useState(false);
   const genericHamburgerLine = `h-1 w-6 my-[3px] rounded-full bg-white transition ease transform duration-300`;
   const arrow = `w-2 h-[2px] bg-white transition ease transform duration-300`;
@@ -19,16 +21,35 @@ export default function Hamburger() {
     } else {
       SetInSession(false);
     }
-  }, [status]);
+  }, [status, session]);
 
   useEffect(() => {
     setShowOther(false);
     setShowShows(false);
+
+    const detectOutside = (event: MouseEvent) => {
+      const target = event.target as HTMLElement;
+      const isNavbarClicked =
+        isOpen && navbarRef.current && !navbarRef.current.contains(target);
+      const isButtonClicked =
+        buttonRef.current && buttonRef.current.contains(target);
+
+      if (isNavbarClicked && !isButtonClicked) {
+        setIsOpen(false);
+      }
+    };
+
+    document.body.addEventListener("mousedown", detectOutside);
+
+    return () => {
+      document.body.removeEventListener("mousedown", detectOutside);
+    };
   }, [isOpen]);
 
   return (
     <>
       <button
+        ref={buttonRef}
         className="flex flex-col h-10  w-10  rounded justify-center items-center group"
         onClick={() => setIsOpen(!isOpen)}
       >
@@ -54,9 +75,10 @@ export default function Hamburger() {
       </button>
 
       <div
+        ref={navbarRef}
         className={
           isOpen
-            ? " overflow-x-hidden absolute left-0 translate-x-0  z-10 w-full bg-[#7f52bd] overflow-hidden  bg-opacity-80 top-16 duration-500 ease-out transition-all  "
+            ? "overflow-x-hidden absolute left-0 translate-x-0  z-10 w-full bg-[#7f52bd] overflow-hidden  bg-opacity-80 top-16 duration-500 ease-out transition-all  "
             : "absolute z-60 w-full bg-[#7f52bd] overflow-hidden bg-opacity-80 top-16 translate-x-full duration-500 ease-out transition-all"
         }
       >
@@ -66,7 +88,7 @@ export default function Hamburger() {
           onClick={() => {
             setShowShows(false);
             setShowOther(false);
-            setIsOpen(false)
+            setIsOpen(false);
           }}
         >
           <div className=" text-left pl-4 text-white py-2 text-lg">หน้าแรก</div>
@@ -112,7 +134,7 @@ export default function Hamburger() {
               onClick={() => {
                 setShowShows(false);
                 setShowOther(false);
-                setIsOpen(false)
+                setIsOpen(false);
               }}
             >
               <div className=" text-left pl-8 text-white bg-[#462A86] bg-opacity-80 py-2 text-sm">
@@ -125,7 +147,7 @@ export default function Hamburger() {
               onClick={() => {
                 setShowShows(false);
                 setShowOther(false);
-                setIsOpen(false)
+                setIsOpen(false);
               }}
             >
               <div className=" text-left pl-8 text-white bg-[#462A86] bg-opacity-80 py-2 text-sm">
@@ -140,7 +162,7 @@ export default function Hamburger() {
           onClick={() => {
             setShowShows(false);
             setShowOther(false);
-            setIsOpen(false)
+            setIsOpen(false);
           }}
         >
           <div className=" text-left pl-4 text-white py-2 text-lg">ชมรม</div>
@@ -186,7 +208,7 @@ export default function Hamburger() {
               onClick={() => {
                 setShowShows(false);
                 setShowOther(false);
-                setIsOpen(false)
+                setIsOpen(false);
               }}
             >
               <div className=" text-left pl-8 text-white bg-[#462A86] bg-opacity-80 py-2 text-sm">
@@ -199,7 +221,7 @@ export default function Hamburger() {
               onClick={() => {
                 setShowShows(false);
                 setShowOther(false);
-                setIsOpen(false)
+                setIsOpen(false);
               }}
             >
               <div className=" text-left pl-8 text-white bg-[#462A86] bg-opacity-80 py-2 text-sm">
@@ -213,7 +235,7 @@ export default function Hamburger() {
           onClick={() => {
             setShowShows(false);
             setShowOther(false);
-            setIsOpen(false)
+            setIsOpen(false);
           }}
           href="/account"
         >
@@ -224,7 +246,7 @@ export default function Hamburger() {
           onClick={() => {
             setShowShows(false);
             setShowOther(false);
-            setIsOpen(false)
+            setIsOpen(false);
           }}
           href="/auth"
         >
