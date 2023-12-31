@@ -32,9 +32,11 @@ import Landing4M from "@/vectors/landing/landing4M";
 import Landing4MountainM from "@/vectors/landing/landing4MountainM";
 import Landing5M from "@/vectors/landing/landing5M";
 import Landing6M from "@/vectors/landing/landing6M";
+import { useSession } from "next-auth/react";
 
 export default function Home() {
   const router = useRouter();
+  const { data: session, status } = useSession();
   const targetDate = new Date(Date.UTC(2024, 0, 12, 2, 0, 0));
   useEffect(() => {
     // User email is available, make the API request
@@ -54,6 +56,17 @@ export default function Home() {
             </div>
           </div>
           <div className=" absolute md:top-1/2 top-2/3  left-1/2 -translate-x-1/2">
+            {!session && (
+              <Link href="/auth" className=" flex justify-center md:hidden">
+                <motion.button
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
+                  className="bg-gradient-to-br from-[#FD84D4] to-[#7A34C0]  font-semibold text-white text-xl rounded-full px-5 py-1 "
+                >
+                  ลงทะเบียน
+                </motion.button>
+              </Link>
+            )}
             <Countdown targetDate={targetDate} />
           </div>
           <div className=" absolute top-[15%] -translate-y-[15%] left-1/2 -translate-x-1/2 text-center">
@@ -70,7 +83,11 @@ export default function Home() {
               2024
             </div>
             <div className=" md:hidden text-center text-white text-base font-semibold  flex justify-center">
-              <div className="px-4 py-1 bg-white bg-opacity-25 rounded-[100px]"> 12-13 JANUARY 2024</div>
+              <div>
+                <div className="px-4 py-1 bg-white bg-opacity-25 rounded-[100px]">
+                  12-13 JANUARY 2024
+                </div>
+              </div>
             </div>
           </div>
         </main>
