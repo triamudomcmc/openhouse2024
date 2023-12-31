@@ -33,7 +33,7 @@ const config: Config = {
       textShadow: {
         'default': '0 2px 0 #000',
         'md': '0 2px 2px #000',
-        'glow':'0 0 40px rgba(255, 83, 197, 0.4), 0 0 65px rgba(255, 255,255, 0.4)'
+        'glow':'0 0 10px rgba(255, 83, 197, 0.4), 0 0 25px rgba(255, 255,255, 0.4)'
      }
     },
   },
