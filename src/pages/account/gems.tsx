@@ -155,7 +155,9 @@ export default function GemsPage() {
   }, [gems]);
 
   useEffect(() => {
-    setKeys(keys+1)
+    setTimeout(() => {
+      setKeys(keys+1)
+    }, 1000);
   },[svgComponent])
 
   useEffect(() => {
