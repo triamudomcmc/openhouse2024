@@ -2,8 +2,12 @@ import ShowBg from "@/vectors/shows/shows-bg";
 import Timeline from "@/vectors/shows/timeline";
 import Theatre from "@/vectors/shows/theatre";
 import TheatreM from "@/vectors/shows/theatreM";
+import Image from "next/image";
+import { useWindowDimensions } from "@/utilities/useWindowDimensions";
+import { MD } from "@/utilities/breakpoints";
 
 export default function Theater() {
+  const { width } = useWindowDimensions();
   return (
     <div className=" w-screen overflow-x-hidden min-h-screen relative shows-bg  ">
       <Theatre className=" lg:hidden max-md:hidden  w-screen" />
@@ -17,27 +21,51 @@ export default function Theater() {
             </div>
             <div className=" flex justify-center w-fit h-fit mt-5 gap-5 ">
               <div className=" lg:space-y-12 md:space-y-10 space-y-5 ">
-                <img
+                <Image
+                  alt=""
+                  width={width > MD ? 172 : 72}
+                  height={width > MD ? 244 : 101}
+                  loading="lazy"
                   src="/assets/shows/Florette_The_Musical.png"
                   className=" md:w-[172px] md:h-[244px] w-[72px] h-[101px]  rounded-xl "
                 />
-                <img
+                <Image
+                  alt=""
+                  width={width > MD ? 172 : 72}
+                  height={width > MD ? 244 : 101}
+                  loading="lazy"
                   src="/assets/shows/ม่วน.png"
                   className=" md:w-[172px] md:h-[244px] w-[72px] h-[101px] rounded-xl "
                 />
-                <img
+                <Image
+                  alt=""
+                  width={width > MD ? 172 : 72}
+                  height={width > MD ? 244 : 101}
+                  loading="lazy"
                   src="/assets/shows/Desire_to_Love.png"
                   className=" md:w-[172px] md:h-[244px] w-[72px] h-[101px] rounded-xl "
                 />
-                <img
+                <Image
+                  alt=""
+                  width={width > MD ? 172 : 72}
+                  height={width > MD ? 244 : 101}
+                  loading="lazy"
                   src="/assets/shows/TUSB.png"
                   className=" md:w-[172px] md:h-[244px] w-[72px] h-[101px] rounded-xl "
                 />
-                <img
+                <Image
+                  alt=""
+                  width={width > MD ? 172 : 72}
+                  height={width > MD ? 244 : 101}
+                  loading="lazy"
                   src="/assets/shows/The_Truth_Untold.png"
                   className=" md:w-[172px] md:h-[244px] w-[72px] h-[101px] rounded-xl "
                 />
-                <img
+                <Image
+                  alt=""
+                  width={width > MD ? 172 : 72}
+                  height={width > MD ? 244 : 101}
+                  loading="lazy"
                   src="/assets/shows/TUSF_Film.png"
                   className=" md:w-[172px] md:h-[244px] w-[72px] h-[101px] rounded-xl "
                 />
@@ -130,27 +158,51 @@ export default function Theater() {
           </div>
           <div className=" flex justify-center w-fit h-fit mt-5 gap-5 ">
             <div className=" lg:space-y-12 md:space-y-10 space-y-5 ">
-              <img
+              <Image
+                  alt=""
+                  width={width > MD ? 172 : 72}
+                  height={width > MD ? 244 : 101}
+                  loading="lazy"
                 src="/assets/shows/TUSF_Film.png"
                 className=" md:w-[172px] md:h-[244px] w-[72px] h-[101px] rounded-xl "
               />
-              <img
+              <Image
+                  alt=""
+                  width={width > MD ? 172 : 72}
+                  height={width > MD ? 244 : 101}
+                  loading="lazy"
                 src="/assets/shows/ม่วน.png"
                 className=" md:w-[172px] md:h-[244px] w-[72px] h-[101px] rounded-xl "
               />
-              <img
+              <Image
+                  alt=""
+                  width={width > MD ? 172 : 72}
+                  height={width > MD ? 244 : 101}
+                  loading="lazy"
                 src="/assets/shows/The_Truth_Untold.png"
                 className=" md:w-[172px] md:h-[244px] w-[72px] h-[101px] rounded-xl "
               />
-              <img
+              <Image
+                  alt=""
+                  width={width > MD ? 172 : 72}
+                  height={width > MD ? 244 : 101}
+                  loading="lazy"
                 src="/assets/shows/Florette_The_Musical.png"
                 className=" md:w-[172px] md:h-[244px] w-[72px] h-[101px] rounded-xl "
               />
-              <img
+              <Image
+                  alt=""
+                  width={width > MD ? 172 : 72}
+                  height={width > MD ? 244 : 101}
+                  loading="lazy"
                 src="/assets/shows/esctasy.png"
                 className=" md:w-[172px] md:h-[244px] w-[72px] h-[101px] rounded-xl "
               />
-              <img
+              <Image
+                  alt=""
+                  width={width > MD ? 172 : 72}
+                  height={width > MD ? 244 : 101}
+                  loading="lazy"
                 src="/assets/shows/Desire_to_Love.png"
                 className=" md:w-[172px] md:h-[244px] w-[72px] h-[101px] rounded-xl "
               />

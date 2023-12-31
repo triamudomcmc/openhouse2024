@@ -8,6 +8,7 @@ const Sapphire: FC<{
       width="166"
       height="300"
       className={`${className}`}
+      preserveAspectRatio="xMidYMid meet"
       viewBox="0 0 166 300"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"

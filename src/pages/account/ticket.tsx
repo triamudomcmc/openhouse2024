@@ -143,7 +143,6 @@ export default function E_Ticket(req: any, res: any) {
       <div className=" flex items-center md:pl-28 md:pt-28 pl-8 pt-24 gap-2 md:text-xl text-base w-fit ">
         <Link href="/account" className=" flex items-center gap-1">
           <ArrowLeftCircleIcon className=" md:w-8 w-6 text-white" />
-
           <span className=" text-white">ย้อนกลับ</span>
         </Link>
       </div>

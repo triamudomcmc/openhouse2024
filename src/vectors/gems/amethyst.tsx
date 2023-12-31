@@ -7,6 +7,7 @@ const Amethyst: FC<{
     <svg
       width="167"
       height="300"
+      preserveAspectRatio="xMidYMid meet"
       className={`${className}`}
       viewBox="0 0 167 300"
       fill="none"

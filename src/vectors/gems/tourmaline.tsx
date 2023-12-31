@@ -8,6 +8,7 @@ const Tourmaline: FC<{
       width="167"
       height="300"
       className={`${className}`}
+      preserveAspectRatio="xMidYMid meet"
       viewBox="0 0 167 300"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
