@@ -11,7 +11,7 @@ const TicketGen = () => {
         <img src="/assets/ticket.png" className="w-[1080px] h-[1920px]" />
         <div className=" w-[1080px] flex justify-center items-center gap-2 absolute top-60 z-50 left-1/2 -translate-x-1/2 text-[#1B0C76] text-5xl ">
           <hr className=" w-[120px] border-[3px] border-[#1B0C76] bg-[#1B0C76] " />
-          ID: {props.id}
+          ID: {props.id?.toString().padStart(5, "0")}
           <hr className=" w-[120px] border-[3px] border-[#1B0C76] bg-[#1B0C76]" />
         </div>
         <div className=" absolute left-40 top-[300px] text-transparent bg-clip-text bg-gradient-to-r from-[#3E47F7] to-[#FF25A1] text-[100px] font-bold font-Figerona w-fit  ">

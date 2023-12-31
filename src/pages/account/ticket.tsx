@@ -152,7 +152,7 @@ export default function E_Ticket(req: any, res: any) {
           <Ticket className="sm:w-[280px] sm:h-[552px] rounded-2xl " />
           <div className=" flex justify-center items-center gap-2 absolute top-2 z-50 left-1/2 -translate-x-1/2 w-full text-[#1B0C76] ">
             <hr className=" w-10 border border-[#1B0C76] " />
-            ID: {id}
+            ID: {id.toString().padStart(5, "0")}
             <hr className=" w-10 border border-[#1B0C76]" />
           </div>
           <div className=" absolute left-4 top-10 text-transparent bg-clip-text bg-gradient-to-r from-[#3E47F7] to-[#FF25A1] text-4xl font-bold font-Figerona w-fit  ">
