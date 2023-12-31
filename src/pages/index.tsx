@@ -61,7 +61,7 @@ export default function Home() {
                 <motion.button
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
-                  className="bg-gradient-to-br from-[#FD84D4] to-[#7A34C0]  font-semibold text-white text-xl rounded-full px-5 py-1 "
+                  className="bg-gradient-to-br from-[#581AB0] to-[#11185E]  font-semibold text-white text-xl rounded-full px-5 py-1 "
                 >
                   ลงทะเบียน
                 </motion.button>

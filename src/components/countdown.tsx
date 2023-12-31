@@ -40,7 +40,7 @@ const Countdown: React.FC<CountdownProps> = ({ targetDate }) => {
             <motion.button
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
-              className="bg-gradient-to-br from-[#FD84D4] to-[#7A34C0]  font-bold text-white text-5xl rounded-full px-11 py-2 -mt- "
+              className="bg-gradient-to-br from-[#581AB0] to-[#11185E]  font-bold text-white text-5xl rounded-full px-11 py-2 -mt- "
             >
               ลงทะเบียน
             </motion.button>
