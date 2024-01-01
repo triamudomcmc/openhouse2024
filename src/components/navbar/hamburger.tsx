@@ -138,7 +138,7 @@ export default function Hamburger() {
               }}
             >
               <div className=" text-left pl-8 text-white bg-[#462A86] bg-opacity-80 py-2 text-sm">
-                หอประชุม
+                หอประชุมฯ
               </div>
             </Link>
             <Link
@@ -151,7 +151,7 @@ export default function Hamburger() {
               }}
             >
               <div className=" text-left pl-8 text-white bg-[#462A86] bg-opacity-80 py-2 text-sm">
-                ลาน 70 ปี
+                ลาน 70 ปีฯ
               </div>
             </Link>
           </motion.div>
