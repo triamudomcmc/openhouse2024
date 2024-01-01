@@ -111,21 +111,21 @@ export default function E_Ticket(req: any, res: any) {
   const handleDownload = async () => {
     setIsLoading(true)
     const response = await fetch(
-      "https://openhouse2024-backend.vercel.app/api/user/screenshot",
+      `https://openhouse.triamudom.ac.th/api/screenshot`,
       {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
         },
         body: JSON.stringify({
-          url: `${baseURL}/ticket?id=${id}&username=${username}&firstName=${firstName}&lastName=${lastName}&roles=${roles}`,
+          url: `https://openhouse.triamudom.ac.th/ticket?id=${id}&username=${username}&firstName=${firstName}&lastName=${lastName}&roles=${roles}`,
         }),
       }
     );
     const blob = await response.blob();
 
     const url = window.URL.createObjectURL(blob);
-    saveAs(url, `ticket.png`)
+    saveAs(url, `ticket.jpg`)
     setIsLoading(false)
   };
 
