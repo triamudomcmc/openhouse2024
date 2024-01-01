@@ -97,7 +97,7 @@ export default function Navbar() {
                     setShowOther(false);
                   }}
                 >
-                  หอประชุม
+                  หอประชุมฯ
                 </Link>
                 <Link
                   href="/larn70"
@@ -107,7 +107,7 @@ export default function Navbar() {
                     setShowOther(false);
                   }}
                 >
-                  ลาน 70 ปี
+                  ลาน 70 ปีฯ
                 </Link>
               </motion.div>
             )}
