@@ -137,6 +137,7 @@ export default function Form() {
     try {
       const response = await axios.request(postConfig);
       console.log(response.data);
+      router.push("/account")
     } catch (error) {
     }
   }
@@ -161,9 +162,6 @@ export default function Form() {
 
       postRequest();
 
-      setTimeout(() => {
-        router.push("/account");
-      }, 1000);
     }
   }
 
