@@ -193,12 +193,19 @@ export default function Staff() {
 
   return (
     <div className=" w-screen min-h-screen bg-[#FCF7E1]">
+      <div className=" flex items-center md:pl-28 md:pt-28 pl-8 pt-24 gap-2 md:text-xl text-base w-fit ">
+        <Link href="/account" className=" flex items-center gap-1">
+          <ArrowLeftCircleIcon className=" md:w-8 w-6 text-white" />
+          <span className=" text-white">ย้อนกลับ</span>
+        </Link>
+      </div>
       <div className=" flex justify-center">
-        <div className=" mt-40 text-center">
+        <div className=" mt-2 text-center">
           <div>
             <input
               type="number"
               className=" text-center"
+              placeholder="12345"
               onChange={handleIdChange}
             ></input>
           </div>

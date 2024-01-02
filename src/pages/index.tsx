@@ -43,6 +43,7 @@ export default function Home() {
     //router.push("/auth")
   }, []);
 
+  // first full launch yay
   return (
     <>
       <div className="w-screen overflow-hidden">

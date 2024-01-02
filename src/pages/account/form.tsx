@@ -259,7 +259,7 @@ export default function Form() {
                   <select
                     id="prefix"
                     name="prefix"
-                    className=" w-full p-2 text-sm font-light rounded-md shadow mt-1 text-[#000340] "
+                    className=" w-full p-2 text-sm font-light rounded-md shadow mt-1 h-9 text-[#000340] "
                     placeholder="เลือกคำนำหน้าชื่อ"
                     value={prefix}
                     onChange={(event) => {
