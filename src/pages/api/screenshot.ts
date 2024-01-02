@@ -1,5 +1,5 @@
 import puppeteer from "puppeteer-core";
-import chromium from "@sparticuz/chromium";
+import chromium from "chrome-aws-lambda";
 import type { NextApiRequest, NextApiResponse } from 'next'
 
 const capture = async (url:string, width = 1080, height = 1920) => {
@@ -11,7 +11,7 @@ const capture = async (url:string, width = 1080, height = 1920) => {
             "--disable-dev-shm-usage",
             "--single-process",
           ],
-          executablePath: await chromium.executablePath(),
+          executablePath: await chromium.executablePath,
           headless: chromium.headless,
           ignoreDefaultArgs: ["--disable-extensions"],
         }
