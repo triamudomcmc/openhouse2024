@@ -111,7 +111,7 @@ export default function E_Ticket(req: any, res: any) {
   const handleDownload = async () => {
     setIsLoading(true)
     const response = await fetch(
-      `http://localhost:3000/api/screenshot`,
+      `https://screenshot-api.tucmc.dev/screenshot`,
       {
         method: "POST",
         headers: {
