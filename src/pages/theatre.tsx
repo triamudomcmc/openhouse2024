@@ -264,7 +264,7 @@ export default function Theater() {
                 Ecstasy
                 </div>
                 <div className=" text-[#FFC8EC] md:text-base text-xs ">
-                ชมรมภาพยนตร์สั้นและสื่อโทรทัศน์
+                ชมรมสันทนากร
                 </div>
                 <div className=" p-[2px] bg-[#FC53C3] rounded-full w-fit mt-1 ">
                   <div className=" md:px-4 px-3 py-[2px] max-md:text-xs bg-white text-[#FC53C3] rounded-full w-fit ">
