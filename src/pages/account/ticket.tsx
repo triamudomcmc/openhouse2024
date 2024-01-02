@@ -111,7 +111,7 @@ export default function E_Ticket(req: any, res: any) {
   const handleDownload = async () => {
     setIsLoading(true)
     const response = await fetch(
-      `https://openhouse.triamudom.ac.th/api/screenshot`,
+      `http://localhost:3000/api/screenshot`,
       {
         method: "POST",
         headers: {
