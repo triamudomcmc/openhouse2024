@@ -27,7 +27,10 @@ export default function Directions() {
             1
           </p>
           <div>
-            <h2 className="text-xl font-semibold">เดินจากสถานี BTS สยาม</h2>
+            <h2 className="text-xl font-semibold">
+              เดินจากสถานี BTS สยาม
+              <br /> หรือ สนามกีฬาฯ
+            </h2>
             <p className="text-lg font-light">ฝั่งถนนพญาไท ประมาณ 900 เมตร</p>
           </div>
         </div>
@@ -43,20 +46,6 @@ export default function Directions() {
             <p className="text-lg font-light">
               ฝั่งถนนอังรีดูนังต์ ประมาณ 700 เมตร
             </p>
-          </div>
-        </div>
-        <div className="flex space-x-4">
-          <p
-            style={{ backgroundColor: COLORS[currentTab] }}
-            className="w-10 h-10 rounded-full font-black text-2xl flex justify-center items-center"
-          >
-            3
-          </p>
-          <div>
-            <h2 className="text-xl font-semibold">
-              เดินจากสถานี BTS สนามกีฬาฯ
-            </h2>
-            <p className="text-lg font-light">ฝั่งถนนพญาไท ประมาณ 800 เมตร</p>
           </div>
         </div>
       </div>
@@ -96,7 +85,8 @@ export default function Directions() {
             <h2 className="text-xl font-semibold">รถประจำทาง</h2>
             <p className="text-lg font-light">
               ลงป้ายรถประจำทางหน้าโรงเรียนสาธิตปทุมวัน
-              <br />หรือคณะสัตวแพทย์ <br />
+              <br />
+              หรือคณะสัตวแพทย์ <br />
               ฝั่งถนนอังรีดูนังต์
               <br />
               สาย 16, 21, 21E, 141
