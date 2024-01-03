@@ -4,6 +4,8 @@ import { useRouter } from "next/router";
 import { useSession, signIn, signOut } from "next-auth/react";
 import { useEffect, useState } from "react";
 import axios from "axios";
+import Lottie from "lottie-react";
+import checkmark from "@/vectors/checkmark.json";
 
 export default function Staff() {
   const [isProcessing, setIsProcessing] = useState(false);
@@ -18,7 +20,7 @@ export default function Staff() {
   const [stampSuccess, setStampSuccess] = useState(false);
   const [registerSuccess, setRegisterSuccess] = useState(false);
   const [showConfirm, setShowConfirm] = useState(false);
-  const [text,setText] =useState("")
+  const [text, setText] = useState("");
   const router = useRouter();
   const { data: session, status } = useSession({
     required: true,
@@ -80,16 +82,15 @@ export default function Staff() {
     hasAccountRequest();
   }, [status]);
 
-  useEffect(() =>{
-    staffCheck()
-  },[staffTag])
+  useEffect(() => {
+    staffCheck();
+  }, [staffTag]);
 
   function staffCheck() {
-    if (staffTag==="register"){
-      setText("ลงทะเบียน")
-    }
-    else{
-      setText("แจกแสตมป์")
+    if (staffTag === "register") {
+      setText("ลงทะเบียน");
+    } else {
+      setText("แจกแสตมป์");
     }
   }
 
@@ -129,12 +130,15 @@ export default function Staff() {
       console.log(JSON.stringify(response.data));
       setIsProcessing(false);
       setRegisterSuccess(true);
-      setShowConfirm(false)
+      setShowConfirm(false);
+      setTimeout(() => {
+        setRegisterSuccess(false)
+      }, 2500);
     } catch (error) {
       console.log(error);
       setIsProcessing(false);
       setRegisterSuccess(false);
-      setShowConfirm(false)
+      setShowConfirm(false);
     }
   }
 
@@ -189,13 +193,16 @@ export default function Staff() {
       setIsProcessing(false);
       setStampSuccess(true);
       setStampError(false);
-      setShowConfirm(false)
+      setShowConfirm(false);
+      setTimeout(() => {
+        setStampSuccess(false)
+      }, 2500);
     } catch (error) {
       console.log(error);
       setStampError(true);
       setStampSuccess(false);
       setIsProcessing(false);
-      setShowConfirm(false)
+      setShowConfirm(false);
     }
   }
 
@@ -228,13 +235,11 @@ export default function Staff() {
           <div className="text-[#FFA9E2] lg:text-6xl md:text-4xl text-3xl font-Montserrat font-semibold">
             CODE
           </div>
-          <div className="text-white">
-            กรอก code ของผู้ร่วมงานเพื่อ{text}
-          </div>
+          <div className="text-white">กรอก code ของผู้ร่วมงานเพื่อ{text}</div>
           <div className="mt-5">
             <input
               type="number"
-              className=" text-center placeholder:font-bold font-bold h-[50px] w-[270px] rounded-2xl  "
+              className=" text-center placeholder:font-bold placeholder:text-xl font-bold h-[50px] w-[270px] rounded-2xl  "
               placeholder="12345"
               min="0"
               max="99999"
@@ -286,9 +291,17 @@ export default function Staff() {
               >
                 Stamp
               </button>
-              {registerSuccess && <div className="mt-4 text-green-500">ลงทะเบียนสำเร็จ</div>}
-              {stampSuccess && <div className="mt-4 text-green-500">บันทึกstampสำเร็จ</div>}
-              {stampError && <div className="mt-4 text-red-500">บัญชีนี้มีstampนี้แล้ว</div>}
+              {/*
+              {registerSuccess && (
+                <div className="mt-4 text-green-500">ลงทะเบียนสำเร็จ</div>
+              )}
+              {stampSuccess && (
+                <div className="mt-4 text-green-500">บันทึกstampสำเร็จ</div>
+              )}
+              */}
+              {stampError && (
+                <div className="mt-4 text-red-500">บัญชีนี้มีstampนี้แล้ว</div>
+              )}
             </div>
           )}
         </div>
@@ -305,9 +318,54 @@ export default function Staff() {
                   ยืนยันการ{text}ให้กับผู้ใช้งานนี้
                 </div>
                 <div className=" flex w-full justify-around mt-4">
-                  <button className=" text-[#929292] w-[100px] py-2 bg-[#D9D9D9] rounded-full" onClick={() => {setShowConfirm(false)}}>ยกเลิก</button>
-                  <button className=" text-white w-[100px] py-2 bg-[#FC53C3] rounded-full" onClick={summit}>ยืนยัน</button>
+                  <button
+                    className=" text-[#929292] w-[100px] py-2 bg-[#D9D9D9] rounded-full"
+                    onClick={() => {
+                      setShowConfirm(false);
+                    }}
+                  >
+                    ยกเลิก
+                  </button>
+                  <button
+                    className=" text-white w-[100px] py-2 bg-[#FC53C3] rounded-full"
+                    onClick={summit}
+                  >
+                    ยืนยัน
+                  </button>
                 </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      )}
+
+      {registerSuccess && (
+        <div className=" fixed top-0 left-0 h-screen w-screen bg-black  bg-opacity-30">
+          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
+            <div className=" flex justify-center text-center bg-white text-[#FC53C3] text-2xl font-semibold px-8 py-11 w-[300px] rounded-2xl">
+              <div>
+                <Lottie
+                  className=" flex justify-center w-full "
+                  animationData={checkmark}
+                  loop={false}
+                />
+                ลงทะเบียนสำเร็จ
+              </div>
+            </div>
+          </div>
+        </div>
+      )}
+      {stampSuccess && (
+        <div className=" fixed top-0 left-0 h-screen w-screen bg-black  bg-opacity-30">
+          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
+            <div className=" flex justify-center text-center bg-white text-[#FC53C3] text-2xl font-semibold px-8 py-11 w-[300px] rounded-2xl">
+              <div>
+                <Lottie
+                  className=" flex justify-center w-full "
+                  animationData={checkmark}
+                  loop={false}
+                />
+                บันทึกstampสำเร็จ
               </div>
             </div>
           </div>

@@ -15,6 +15,8 @@ export default function AddStaff() {
   const [organizationName, setOrganizationName] = useState("");
   const [isStamp, setIsStamp] = useState(false);
   const [isRegister, setIsRegister] = useState(false);
+  const [success,setSuccess] = useState(false)
+  const [failed,setFailed] = useState(false)
 
   let data = JSON.stringify({
     id: id,
@@ -34,10 +36,15 @@ export default function AddStaff() {
 
   async function makeRequest() {
     try {
+      
       const response = await axios.request(config);
       console.log(JSON.stringify(response.data));
+      setSuccess(true)
+      setFailed(false)
     } catch (error) {
       console.log(error);
+      setSuccess(false)
+      setFailed(true)
     }
   }
 
@@ -131,6 +138,8 @@ export default function AddStaff() {
             >
               Add
             </button>
+            {success && <div className="mt-4 text-green-500">บันทึกสำเร็จ</div>}
+              {failed && <div className="mt-4 text-red-500">บันทึกไม่สำเร็จ</div>}
           </div>
         </div>
       </div>
