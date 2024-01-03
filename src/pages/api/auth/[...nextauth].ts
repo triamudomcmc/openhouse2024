@@ -14,7 +14,7 @@ export default NextAuth({
           })
     ],
     pages: {
-        newUser: '/account/form'
+        newUser: process.env.NEXTAUTH_SECRET
     },
 
     secret: "e29442e61ad354e5cb0831e2e8359e8fb50cf024ad5a8f407c8f9de63bdf7371"
