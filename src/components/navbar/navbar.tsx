@@ -179,7 +179,7 @@ export default function Navbar() {
               </button>
               {showOther && (
                 <motion.div
-                  className=" absolute block top-9 -left-[25px]  shadow-xl py-2  w-40  bg-[#774CB4] bg-opacity-90  rounded-xl text-center"
+                  className=" absolute block top-9 -left-[25px]  shadow-xl   w-40  bg-[#774CB4] bg-opacity-90  rounded-xl text-center"
                   initial={{ opacity: 0, y: -10 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   transition={{
@@ -189,7 +189,7 @@ export default function Navbar() {
                 >
                   <Link
                     href="/admission"
-                    className="showOther block w-full  font-normal px-2 pb-2 border-b"
+                    className="showOther block w-full  font-normal px-2 py-2 border-b"
                     onClick={() => {
                       setShowOther(false);
                       setShowShows(false);
@@ -199,7 +199,8 @@ export default function Navbar() {
                   </Link>
                   <Link
                     href="/directions"
-                    className="showOther block w-full  font-normal mt-2 px-2"
+                    // className="showOther block w-full  font-normal py-2 px-2 border-b"
+                    className="showOther block w-full  font-normal py-2 px-2 "
                     onClick={() => {
                       setShowOther(false);
                       setShowShows(false);
@@ -207,6 +208,16 @@ export default function Navbar() {
                   >
                     การเดินทางมาโรงเรียน
                   </Link>
+                  {/* <Link
+                    href="/map"
+                    className="showOther block w-full  font-normal py-2 px-2"
+                    onClick={() => {
+                      setShowOther(false);
+                      setShowShows(false);
+                    }}
+                  >
+                    ผังงาน
+                  </Link> */}
                 </motion.div>
               )}
             </div>

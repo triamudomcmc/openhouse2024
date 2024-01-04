@@ -528,6 +528,17 @@ export default function Home() {
                 </motion.div>
               </Link>
             </div>
+            {/* <div className="  mt-7 flex max-md:justify-center ">
+              <Link href={"/map"}>
+                <motion.div
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
+                  className={` md:text-left text-center cursor-pointer text-white md:text-[40px] sm:text-[20px]  font-medium px-7 py-1 bg-[#7D5496] md:rounded-[30.50px] rounded-2xl`}
+                >
+                  แผนผังงาน
+                </motion.div>
+              </Link>
+            </div> */}
           </div>
         </section>
       </div>

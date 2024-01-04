@@ -139,6 +139,9 @@ const Footer: FC<{ theme?: string }> = ({ theme }) => {
             <Link passHref href="/contact">
               <div className="hover:underline ">ติดต่อ</div>
             </Link>
+            {/* <Link passHref href="/map">
+              <div className="hover:underline ">แผนผังงาน</div>
+            </Link> */}
           </div>
         </div>
       </div>

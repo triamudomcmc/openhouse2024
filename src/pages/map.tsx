@@ -1,5 +1,5 @@
 export default function map() {
     return(
-        <div></div>
+        <div className=" min-h-screen w-screen overflow-x-hidden"></div>
     )
 }

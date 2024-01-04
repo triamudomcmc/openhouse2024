@@ -87,9 +87,9 @@ export default function Quiz() {
       questionText:
         "คุณจะเริ่มจากทำอะไรในงาน\nTriam Udom Open House 2024\nก่อนดีนะ",
       answerOptions: [
-        { answerText: "ไปสำรวจ ณ ย่านอัญมณีทั้ง 8 ", score: 6 },
+        { answerText: "สำรวจ ณ ย่านอัญมณีทั้ง 8 ", score: 6 },
         {
-          answerText: "ส่งจดหมายที่ที่ทำการไปรษณีย์",
+          answerText: "เก็บ E-stamp ให้ครบทุกดวง",
           score: 5,
         },
         { answerText: "ดูการแสดงที่โรงละครแห่งนครอัญมณี", score: 3 },
