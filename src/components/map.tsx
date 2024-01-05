@@ -8,6 +8,7 @@ const MapSvg: FC<{
     <svg
       width="902"
       height="1638"
+      className={`${className}`}
       viewBox="0 0 902 1638"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"

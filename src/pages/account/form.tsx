@@ -13,6 +13,7 @@ import FormRightM from "@/vectors/form/formRightM";
 export default function Form() {
   const [username, setUsername] = useState("");
   const [usernameError, setUsernameError] = useState(false);
+  const [usernameDuplicate, setUsernameDuplicate] = useState(false);
   const [prefix, setPrefix] = useState("");
   const [prefixError, setPrefixError] = useState(false);
   const [firstName, setFirstName] = useState("");
@@ -67,8 +68,7 @@ export default function Form() {
           router.push("/account");
         } else {
         }
-      } catch (error) {
-      }
+      } catch (error) {}
     }
   }
 
@@ -76,12 +76,12 @@ export default function Form() {
     email: session?.user?.email,
     role: roles,
     username: username,
-    prefix:prefix,
+    prefix: prefix,
     name: firstName,
     surname: lastName,
     platform: platform,
-    school:school,
-    classlvl:grade,
+    school: school,
+    classlvl: grade,
     purpose: otherPurpose ? [...purpose, otherPurposeInfo] : purpose,
     environmentKeys: process.env.ENVIRONMENT_KEY,
   });
@@ -120,7 +120,8 @@ export default function Form() {
       isLastNameError ||
       isRolesError ||
       isSchoolError ||
-      isGradeError;
+      isGradeError ||
+      usernameDuplicate
 
     if (!hasErrors) {
       setPage1(false);
@@ -137,13 +138,41 @@ export default function Form() {
     try {
       const response = await axios.request(postConfig);
       console.log(response.data);
-      router.push("/account")
+      router.push("/account");
+    } catch (error) {}
+  }
+
+  let checkUsernameconfig = {
+    method: "get",
+    maxBodyLength: Infinity,
+    url: `https://openhouse2024-backend.vercel.app/api/user/check-username/${username}`,
+    headers: {},
+  };
+
+  async function usernameCheck() {
+    try {
+      const response = await axios.request(checkUsernameconfig);
+      console.log(JSON.stringify(response.data));
+      if (response.data === "Username is available") {
+        setUsernameDuplicate(false);
+      }
+      if (response.data === "User is already existed") {
+        setUsernameDuplicate(true);
+      }
+      console.log(usernameDuplicate);
     } catch (error) {
+      if (username !== "") {
+        setUsernameDuplicate(true);
+      }
+      else {setUsernameDuplicate(false)}
+
+      console.log(error);
     }
   }
 
   function handleSumit() {
-    const isPurposeError = purpose.every((p) => p.trim() === "") && otherPurposeInfo.trim() === "";
+    const isPurposeError =
+      purpose.every((p) => p.trim() === "") && otherPurposeInfo.trim() === "";
     const isPlatformError = platform.every((p) => p.trim() === "");
     const isPurposeInfoError = otherPurpose && otherPurposeInfo.trim() === "";
 
@@ -161,7 +190,6 @@ export default function Form() {
       // Using Promise.resolve() to ensure synchronous completion before moving to the next line
 
       postRequest();
-
     }
   }
 
@@ -216,6 +244,10 @@ export default function Form() {
     accountCheck();
   }, [session]);
 
+  useEffect(() => {
+    usernameCheck();
+  }, [username]);
+
   return (
     <>
       <div className=" w-screen min-h-[100vh] bg-[#000340] relative overflow-hidden">
@@ -247,6 +279,12 @@ export default function Form() {
                     <div className=" text-red-500 text-sm text-left mt-1">
                       {" "}
                       *จำเป็นต้องใส่
+                    </div>
+                  )}
+                  {usernameDuplicate && (
+                    <div className=" text-red-500 text-sm text-left mt-1">
+                      {" "}
+                      *usernameนี้ถูกใช้ไปแล้ว
                     </div>
                   )}
                 </div>
