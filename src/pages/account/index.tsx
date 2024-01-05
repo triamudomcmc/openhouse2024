@@ -88,6 +88,7 @@ export default function AccountPage() {
   }
 
   useEffect(() => {
+    router.push("/maintenance")
     hasAccountRequest();
   }, [status]);
 

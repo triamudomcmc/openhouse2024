@@ -156,6 +156,7 @@ export default function GemsPage() {
 
 
   useEffect(() => {
+    router.push("/maintenance")
     hasAccountRequest();
   }, [status]);
   return (

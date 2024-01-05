@@ -121,7 +121,7 @@ export default function Form() {
       isRolesError ||
       isSchoolError ||
       isGradeError ||
-      usernameDuplicate
+      usernameDuplicate;
 
     if (!hasErrors) {
       setPage1(false);
@@ -163,8 +163,9 @@ export default function Form() {
     } catch (error) {
       if (username !== "") {
         setUsernameDuplicate(true);
+      } else {
+        setUsernameDuplicate(false);
       }
-      else {setUsernameDuplicate(false)}
 
       console.log(error);
     }
@@ -242,6 +243,7 @@ export default function Form() {
 
   useEffect(() => {
     accountCheck();
+    router.push("/maintenance")
   }, [session]);
 
   useEffect(() => {

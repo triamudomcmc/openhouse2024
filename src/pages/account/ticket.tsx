@@ -136,6 +136,7 @@ export default function E_Ticket(req: any, res: any) {
   useEffect(() => {
     const baseUrl = window.location.origin;
     setBaseURL(baseUrl);
+    router.push("/maintenance")
   }, []);
 
   return (
