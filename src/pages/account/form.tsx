@@ -13,7 +13,6 @@ import FormRightM from "@/vectors/form/formRightM";
 export default function Form() {
   const [username, setUsername] = useState("");
   const [usernameError, setUsernameError] = useState(false);
-  const [usernameDuplicate, setUsernameDuplicate] = useState(false);
   const [prefix, setPrefix] = useState("");
   const [prefixError, setPrefixError] = useState(false);
   const [firstName, setFirstName] = useState("");
@@ -120,8 +119,7 @@ export default function Form() {
       isLastNameError ||
       isRolesError ||
       isSchoolError ||
-      isGradeError ||
-      usernameDuplicate;
+      isGradeError;
 
     if (!hasErrors) {
       setPage1(false);
@@ -140,35 +138,6 @@ export default function Form() {
       console.log(response.data);
       router.push("/account");
     } catch (error) {}
-  }
-
-  let checkUsernameconfig = {
-    method: "get",
-    maxBodyLength: Infinity,
-    url: `https://openhouse2024-backend.vercel.app/api/user/check-username/${username}`,
-    headers: {},
-  };
-
-  async function usernameCheck() {
-    try {
-      const response = await axios.request(checkUsernameconfig);
-      console.log(JSON.stringify(response.data));
-      if (response.data === "Username is available") {
-        setUsernameDuplicate(false);
-      }
-      if (response.data === "User is already existed") {
-        setUsernameDuplicate(true);
-      }
-      console.log(usernameDuplicate);
-    } catch (error) {
-      if (username !== "") {
-        setUsernameDuplicate(true);
-      } else {
-        setUsernameDuplicate(false);
-      }
-
-      console.log(error);
-    }
   }
 
   function handleSumit() {
@@ -243,12 +212,7 @@ export default function Form() {
 
   useEffect(() => {
     accountCheck();
-    router.push("/maintenance")
   }, [session]);
-
-  useEffect(() => {
-    usernameCheck();
-  }, [username]);
 
   return (
     <>
@@ -281,12 +245,6 @@ export default function Form() {
                     <div className=" text-red-500 text-sm text-left mt-1">
                       {" "}
                       *จำเป็นต้องใส่
-                    </div>
-                  )}
-                  {usernameDuplicate && (
-                    <div className=" text-red-500 text-sm text-left mt-1">
-                      {" "}
-                      *usernameนี้ถูกใช้ไปแล้ว
                     </div>
                   )}
                 </div>
@@ -424,7 +382,7 @@ export default function Form() {
                   >
                     <div className=" justify-start flex w-auto">
                       <div className="text-white text-sm font-normal leading-tight ">
-                        โรงเรียน
+                        โรงเรียน (ใส่โรงเรียนนำหน้า)
                       </div>
                     </div>
                     <input

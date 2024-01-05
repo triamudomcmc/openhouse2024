@@ -65,7 +65,6 @@ export default function Stamp() {
 
   useEffect(() => {
     hasAccountRequest();
-    router.push("/maintenance")
   }, [status]);
 
 //   function addGems(gems: number) {

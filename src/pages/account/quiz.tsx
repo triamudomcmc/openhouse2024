@@ -217,7 +217,6 @@ export default function Quiz() {
 
   useEffect(() => {
     hasAccountRequest();
-    router.push("/maintenance")
   }, [status]);
 
   useEffect(() => {
