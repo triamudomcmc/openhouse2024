@@ -3,7 +3,7 @@ import { ArrowLeftCircleIcon } from "@heroicons/react/24/outline";
 import axios from "axios";
 import { useState, useEffect } from "react";
 
-export default function stats() {
+export default function Stats() {
   const [stats, setStats] = useState<StatsData | null>(null);
   interface StatsData {
     registrant: number;
