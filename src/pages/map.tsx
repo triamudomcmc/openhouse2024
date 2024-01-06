@@ -247,7 +247,7 @@ export default function Map() {
         </div>
       </div>
       <div className="flex justify-center my-4">
-        <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-x-2 text-sm w-fit">
+        <div className="grid grid-flow-col grid-rows-70 md:grid-rows-30 lg:grid-rows-16 gap-x-2 text-sm w-fit">
           {mapId.map((id) => (
             <div key={id} className="m-1 w-fit">
               <div className="flex items-center">
