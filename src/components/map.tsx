@@ -254,7 +254,7 @@ const MapSvg: FC<{
         width="17.74"
         height="17.74"
         rx="1.17"
-        fill={id && id.includes(4) ? '#743CBA' : '#7A7A7A'}
+        fill={id && id.includes(4) ? '#D459FF' : '#7A7A7A'}
         stroke="black"
         stroke-width="0.26"
       />
@@ -264,7 +264,7 @@ const MapSvg: FC<{
         width="17.74"
         height="17.74"
         rx="1.17"
-        fill={id && id.includes(5) ? '#743CBA' : '#7A7A7A'}
+        fill={id && id.includes(5) ? '#D459FF' : '#7A7A7A'}
         stroke="black"
         stroke-width="0.26"
       />
@@ -274,7 +274,7 @@ const MapSvg: FC<{
         width="17.74"
         height="17.74"
         rx="1.17"
-        fill={id && id.includes(6) ? '#743CBA' : '#7A7A7A'}
+        fill={id && id.includes(6) ? '#D459FF' : '#7A7A7A'}
         stroke="black"
         stroke-width="0.26"
       />
@@ -284,7 +284,7 @@ const MapSvg: FC<{
         width="17.74"
         height="17.74"
         rx="1.17"
-        fill={id && id.includes(7) ? '#743CBA' : '#7A7A7A'}
+        fill={id && id.includes(7) ? '#D459FF' : '#7A7A7A'}
         stroke="black"
         stroke-width="0.26"
       />
@@ -294,7 +294,7 @@ const MapSvg: FC<{
         width="17.74"
         height="17.74"
         rx="1.17"
-        fill={id && id.includes(8) ? '#743CBA' : '#7A7A7A'}
+        fill={id && id.includes(8) ? '#D459FF' : '#7A7A7A'}
         stroke="black"
         stroke-width="0.26"
       />
@@ -304,7 +304,7 @@ const MapSvg: FC<{
         width="17.74"
         height="17.74"
         rx="1.17"
-        fill={id && id.includes(9) ? '#743CBA' : '#7A7A7A'}
+        fill={id && id.includes(9) ? '#D459FF' : '#7A7A7A'}
         stroke="black"
         stroke-width="0.26"
       />
