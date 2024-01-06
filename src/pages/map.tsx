@@ -16,9 +16,9 @@ export default function Map() {
     { id: 9, name: "ศิลป์เยอรมัน" },
     { id: 10, name: "วิทย์-คณิต" },
     { id: 11, name: "ศิลป์คำนวณ" },
-    { id: 12, name: "กิฟต์วิทย์" },
-    { id: 13, name: "กิฟต์คณิต" },
-    { id: 14, name: "กิฟต์อังกฤษ" },
+    { id: 12, name: "โครงการพัฒนาศักยภาพนักเรียน \nความสามารถพิเศษด้านวิทยาศาสตร์" },
+    { id: 13, name: "โครงการพัฒนาศักยภาพนักเรียน \nความสามารถพิเศษด้านคณิตศาสตร์" },
+    { id: 14, name: "โครงการพัฒนาศักยภาพนักเรียน \nความสามารถพิเศษด้านภาษาอังกฤษ" },
     { id: 15, name: "ชมรมเพื่อนที่ปรึกษาและงานแนะแนว" },
     { id: 16, name: "ชมรมดนตรีสากล" },
     { id: 17, name: "ชมรมนิเทศศิลป" },
@@ -74,7 +74,7 @@ export default function Map() {
     { id: 67, name: "ชมรมถ่ายภาพ" },
     { id: 68, name: "TUPRO" },
     { id: 69, name: "ชมรมภาษาไทยและ กสร. ภาษาไทย" },
-    { id: 70, name: "กิฟต์ไทย" },
+    { id: 70, name: "โครงการพัฒนาศักยภาพนักเรียน \nความสามารถพิเศษด้านภาษาไทย" },
   ];
 
   const [mapId, setMapId] = useState<number[]>([]);
@@ -218,7 +218,7 @@ export default function Map() {
               <input
                 onChange={handleSearch}
                 value={searchQuery}
-                className="w-full py-2 max-md:h-8 pr-4 bg-white border rounded-full bg-opacity-20 placeholder:text-white pl-14 border-opacity-40"
+                className="w-full py-2 max-md:h-8 pr-4 bg-white border rounded-full bg-opacity-20 text-[#400591] placeholder:text-white pl-14 border-opacity-40"
                 placeholder="ค้นหา..."
               />
             </div>
@@ -246,15 +246,15 @@ export default function Map() {
                   />
         </div>
       </div>
-      <div className="flex justify-center my-4">
+      <div className="flex justify-center my-12">
         <div className="grid grid-flow-col grid-rows-70 md:grid-rows-30 lg:grid-rows-16 gap-x-2 text-sm w-fit">
           {mapId.map((id) => (
             <div key={id} className="m-1 w-fit">
               <div className="flex items-center">
-                <div className="bg-white rounded-full h-6 w-6 flex justify-center items-center leading-relaxed">
+                <div className="bg-white rounded-full h-6 w-6 flex justify-center items-center leading-relaxed ">
                   {id < 10 ? `0${id}` : id}
                 </div>
-                <div className="ml-2 text-white">
+                <div className="ml-2 text-white whitespace-pre-line">
                   {mapData.find((item) => item.id === id)?.name}
                 </div>
               </div>
