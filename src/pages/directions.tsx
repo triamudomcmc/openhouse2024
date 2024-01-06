@@ -4,10 +4,13 @@ const COLORS = {
   bts: "#FF0586",
   bus: "#000CFF",
   mrt: "#6311D6",
+  parking: "#001870",
 };
 
 export default function Directions() {
-  const [currentTab, setCurrentTab] = useState<"bus" | "bts" | "mrt">("bts");
+  const [currentTab, setCurrentTab] = useState<
+    "bus" | "bts" | "mrt" | "parking"
+  >("bts");
   const [map, setMap] = useState(
     <object
       key={"b"}
@@ -125,6 +128,78 @@ export default function Directions() {
         </div>
       </div>
     ),
+    parking: (
+      <div className="space-y-10 mt-10">
+        <div className="flex space-x-4">
+          <p
+            style={{ backgroundColor: COLORS[currentTab] }}
+            className="w-10 h-10 rounded-full font-black text-2xl flex justify-center items-center"
+          >
+            1
+          </p>
+          <div>
+            <h2 className="text-xl font-semibold">อาคารจอดรถ MBK Center</h2>
+            <p className="text-lg font-light">
+              ค่าบริการ : จอดฟรี 15 นาทีแรก ชั่วโมงต่อไป 20 บาท/ชม.
+              <br />
+              เวลา : 06.00-21.00 น.
+            </p>
+          </div>
+        </div>
+        <div className="flex space-x-4">
+          <p
+            style={{ backgroundColor: COLORS[currentTab] }}
+            className="w-10 h-10 rounded-full font-black text-2xl flex justify-center items-center"
+          >
+            2
+          </p>
+          <div>
+            <h2 className="text-xl font-semibold">อาคารจอดรถ Siam Scape</h2>
+            <p className="text-lg font-light">
+              ค่าบริการ : จอดฟรี 15 นาทีแรก ชั่วโมงต่อไป 20-40 บาท/ชม.
+              <br />
+              เวลา : 08.00-19.00 น.
+            </p>
+          </div>
+        </div>
+        <div className="flex space-x-4">
+          <p
+            style={{ backgroundColor: COLORS[currentTab] }}
+            className="w-10 h-10 rounded-full font-black text-2xl flex justify-center items-center"
+          >
+            3
+          </p>
+          <div>
+            <h2 className="text-xl font-semibold">
+              อาคารจอดรถ 2 โรงอาหาร คณะอักษรศาสตร์
+            </h2>
+            <p className="text-lg font-light">
+              ค่าบริการ : 15 บาท/ชม.
+              <br />
+              เวลา : 06.00-18.00 น.
+            </p>
+          </div>
+        </div>
+        <div className="flex space-x-4">
+          <p
+            style={{ backgroundColor: COLORS[currentTab] }}
+            className="w-10 h-10 rounded-full font-black text-2xl flex justify-center items-center"
+          >
+            4
+          </p>
+          <div>
+            <h2 className="text-xl font-semibold">
+              อาคารจอดรถสามย่านมิตรทาวน์
+            </h2>
+            <p className="text-lg font-light">
+              ค่าบริการ : จอดฟรี 2 ชม.แรก ชั่วโมงต่อไป 20-50 บาท/ชม.
+              <br />
+              เวลา : 06.00-22.00 น.
+            </p>
+          </div>
+        </div>
+      </div>
+    ),
   };
 
   useEffect(() => {
@@ -152,6 +227,15 @@ export default function Directions() {
           <object
             key={"d"}
             data="/assets/images/directions/mrt.svg"
+            className="w-[100%] h-[404px] lg:w-[700px] lg:h-[876px]"
+          />
+        );
+        break;
+      case "parking":
+        setMap(
+          <object
+            key={"d"}
+            data="/assets/images/directions/parking.svg"
             className="w-[100%] h-[404px] lg:w-[700px] lg:h-[876px]"
           />
         );
@@ -352,6 +436,38 @@ export default function Directions() {
 
                 <h2 className="text-center text-xs mt-1">MRT</h2>
               </div>
+
+              {/*parking*/}
+
+              <div>
+                <div
+                  onClick={() => {
+                    setCurrentTab("parking");
+                  }}
+                  style={{
+                    backgroundColor:
+                      currentTab === "parking" ? COLORS[currentTab] : "white",
+                  }}
+                  className="cursor-pointer flex justify-center items-center w-[60px] h-[60px] rounded-full shadow-md"
+                >
+                  <svg
+                    viewBox="0 0 53 62"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                    className={
+                      currentTab !== "parking"
+                        ? "text-[#C4C4C4] w-[28px]"
+                        : "text-white w-[28px]"
+                    }
+                  >
+                    <path
+                      d="M26.6727 0.03125C40.8754 0.03125 52.3789 1.63794 52.3789 12.8843V45.017C52.3789 47.8607 51.1257 50.3832 49.1657 52.1504V57.8701C49.1657 59.6374 47.7197 61.0834 45.9525 61.0834H42.7391C40.9557 61.0834 39.5259 59.6374 39.5259 57.8701V54.6569H13.8196V57.8701C13.8196 59.6374 12.3898 61.0834 10.6064 61.0834H7.3932C5.62595 61.0834 4.17998 59.6374 4.17998 57.8701V52.1506C2.21994 50.3833 0.966759 47.8608 0.966759 45.0171V12.8843C0.966606 1.63794 12.4701 0.03125 26.6727 0.03125ZM41.1324 48.2303C43.7995 48.2303 45.9523 46.0775 45.9523 43.4104C45.9523 40.7434 43.7995 38.5905 41.1324 38.5905C38.4653 38.5905 36.3125 40.7434 36.3125 43.4104C36.3125 46.0775 38.4655 48.2303 41.1324 48.2303ZM12.213 48.2303C14.88 48.2303 17.0329 46.0775 17.0329 43.4104C17.0329 40.7434 14.88 38.5905 12.213 38.5905C9.54589 38.5905 7.39305 40.7434 7.39305 43.4104C7.39305 46.0775 9.54604 48.2303 12.213 48.2303ZM7.39305 28.9507H45.9523V12.8843H7.39305V28.9507Z"
+                      fill="currentColor"
+                    />
+                  </svg>
+                </div>
+                <h2 className="text-center text-xs mt-1">จุดจอดรถ</h2>
+              </div>
             </div>
           </div>
           <div className="relative z-50 mt-8 mx-auto lg:mt-64 lg:ml-[-200px]">
@@ -540,6 +656,38 @@ export default function Directions() {
                 </div>
 
                 <h2 className="text-center mt-1">MRT</h2>
+              </div>
+              {/* parking */}
+              <div>
+                <div
+                  onClick={() => {
+                    setCurrentTab("parking");
+                  }}
+                  style={{
+                    backgroundColor:
+                      currentTab === "parking" ? COLORS[currentTab] : "white",
+                  }}
+                  className={
+                    "cursor-pointer flex justify-center items-center w-[107px] h-[107px] rounded-full shadow-md"
+                  }
+                >
+                  <svg
+                    width="67"
+                    height="72"
+                    viewBox="0 0 67 72"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                    className={
+                      currentTab !== "parking" ? "text-[#C4C4C4]" : "text-white"
+                    }
+                  >
+                    <path
+                      d="M47.625 5.125C47.625 3.86522 48.1254 2.65704 49.0162 1.76624C49.907 0.875445 51.1152 0.375 52.375 0.375H61.875C63.1348 0.375 64.343 0.875445 65.2338 1.76624C66.1246 2.65704 66.625 3.86522 66.625 5.125V19.375C66.625 20.6348 66.1246 21.843 65.2338 22.7338C64.343 23.6246 63.1348 24.125 61.875 24.125H59.5V69.25C59.5 69.8799 59.2498 70.484 58.8044 70.9294C58.359 71.3748 57.7549 71.625 57.125 71.625C56.4951 71.625 55.891 71.3748 55.4456 70.9294C55.0002 70.484 54.75 69.8799 54.75 69.25V24.125H52.375C51.1152 24.125 49.907 23.6246 49.0162 22.7338C48.1254 21.843 47.625 20.6348 47.625 19.375V5.125ZM44.0625 5.125H17.7166C15.5551 5.12483 13.4582 5.86177 11.772 7.21416C10.0859 8.56654 8.9113 10.4535 8.44225 12.5635L6.927 19.375H4.875C4.24511 19.375 3.64102 19.6252 3.19562 20.0706C2.75022 20.516 2.5 21.1201 2.5 21.75C2.5 22.3799 2.75022 22.984 3.19562 23.4294C3.64102 23.8748 4.24511 24.125 4.875 24.125H5.8725L5.08875 27.6519C3.58686 28.4681 2.33302 29.6744 1.45941 31.1437C0.585802 32.6129 0.124798 34.2906 0.125 36V59.75C0.125 61.6397 0.875668 63.4519 2.21186 64.7881C3.54806 66.1243 5.36033 66.875 7.25 66.875H9.625C11.5147 66.875 13.3269 66.1243 14.6631 64.7881C15.9993 63.4519 16.75 61.6397 16.75 59.75V57.375H45.25V59.75C45.2495 61.4342 45.8455 63.0641 46.9325 64.3506C48.0194 65.6371 49.5269 66.4969 51.1875 66.7776V61.8067C50.8265 61.5983 50.5267 61.2985 50.3182 60.9375C50.1098 60.5764 50 60.1669 50 59.75V57.375H51.1875V27.6044C50.0916 27.4474 49.0384 27.0718 48.0905 26.5H10.2092L13.0783 13.5942C13.3127 12.5395 13.8998 11.5961 14.7427 10.92C15.5855 10.2438 16.6337 9.87519 17.7143 9.875H44.0625V5.125ZM4.875 59.75V57.375H12V59.75C12 60.3799 11.7498 60.984 11.3044 61.4294C10.859 61.8748 10.2549 62.125 9.625 62.125H7.25C6.62011 62.125 6.01602 61.8748 5.57062 61.4294C5.12522 60.984 4.875 60.3799 4.875 59.75ZM25.0625 47.875C24.4326 47.875 23.8285 47.6248 23.3831 47.1794C22.9377 46.734 22.6875 46.1299 22.6875 45.5C22.6875 44.8701 22.9377 44.266 23.3831 43.8206C23.8285 43.3752 24.4326 43.125 25.0625 43.125H36.9375C37.5674 43.125 38.1715 43.3752 38.6169 43.8206C39.0623 44.266 39.3125 44.8701 39.3125 45.5C39.3125 46.1299 39.0623 46.734 38.6169 47.1794C38.1715 47.6248 37.5674 47.875 36.9375 47.875H25.0625ZM19.125 39.5625C19.125 40.5073 18.7497 41.4135 18.0816 42.0816C17.4135 42.7497 16.5073 43.125 15.5625 43.125C14.6177 43.125 13.7115 42.7497 13.0434 42.0816C12.3753 41.4135 12 40.5073 12 39.5625C12 38.6177 12.3753 37.7115 13.0434 37.0434C13.7115 36.3753 14.6177 36 15.5625 36C16.5073 36 17.4135 36.3753 18.0816 37.0434C18.7497 37.7115 19.125 38.6177 19.125 39.5625ZM46.4375 36C47.3823 36 48.2885 36.3753 48.9566 37.0434C49.6247 37.7115 50 38.6177 50 39.5625C50 40.5073 49.6247 41.4135 48.9566 42.0816C48.2885 42.7497 47.3823 43.125 46.4375 43.125C45.4927 43.125 44.5865 42.7497 43.9184 42.0816C43.2503 41.4135 42.875 40.5073 42.875 39.5625C42.875 38.6177 43.2503 37.7115 43.9184 37.0434C44.5865 36.3753 45.4927 36 46.4375 36Z"
+                      fill="currentColor"
+                    />
+                  </svg>
+                </div>
+                <h2 className="text-center mt-1">จุดจอดรถ</h2>
               </div>
             </div>
             {des[currentTab]}
