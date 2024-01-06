@@ -48,8 +48,8 @@ export default function Stats() {
 
     return (
       <div>
-        <div>จำนวนคนลงทะเบียน: {stats.registrant}</div>
-        <div>จำนวนคนเข้างาน: {stats.participants}</div>
+        <div>จำนวนคนลงทะเบียน: {stats.registrant} คน</div>
+        <div>จำนวนคนเข้างาน: {stats.participants} คน</div>
         <div>
           <div className=" flex items-center gap-3 my-1">
             <hr className=" w-full min-h-5 border-1 border-black " />
@@ -59,7 +59,7 @@ export default function Stats() {
           <ul>
             {Object.entries(stats.gate).map(([gateName, gateValue]) => (
               <li key={gateName}>
-                {gateName}: {gateValue}
+                {gateName}: {gateValue} คน
               </li>
             ))}
           </ul>
@@ -73,7 +73,7 @@ export default function Stats() {
           <ul>
             {Object.entries(stats.gems).map(([gemName, gemValue]) => (
               <li key={gemName}>
-                {gemName}: {gemValue}
+                {gemName}: {gemValue} คน
               </li>
             ))}
           </ul>
@@ -89,7 +89,7 @@ export default function Stats() {
           <span className=" text-white">ย้อนกลับ</span>
         </Link>
       </div>
-      <div className=" flex justify-center">
+      <div className=" flex justify-center pb-10">
         <div>
           <div className=" text-3xl text-[#FFA9E2] mt-4 text-center">
             สถิติงาน
