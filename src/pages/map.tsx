@@ -79,6 +79,7 @@ export default function Map() {
 
   const [mapId, setMapId] = useState<number[]>([]);
   const [filter, setFilter] = useState("All");
+  const [rows, setRows] = useState("")
   const [searchQuery, setSearchQuery] = useState("");
 
   function handleSearch(event: any) {
@@ -106,11 +107,13 @@ export default function Map() {
     setFilter("All");
     const ids = mapData.map((item) => item.id);
     setMapId(ids);
+    setSearchQuery("")
   }
   function handleProgrammes() {
     console.log("Before setMapId:", mapId);
     setFilter("สายการเรียน");
     setMapId([4, 5, 6, 7, 8, 9, 10, 11]);
+    setSearchQuery("")
   }
 
   function handleClubs() {
@@ -119,14 +122,17 @@ export default function Map() {
       1, 2, 3, 15, 16, 17, 18, 19, 20, 21, 22, 29, 30, 31, 32, 33, 34, 35, 43,
       44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 60,
     ]);
+    setSearchQuery("")
   }
   function handleGifted() {
     setFilter("Gifted");
     setMapId([12, 13, 14, 70]);
+    setSearchQuery("")
   }
   function handleOrganizations() {
     setFilter("องค์กร");
     setMapId([54, 55, 56, 57, 58, 59, 68]);
+    setSearchQuery("")
   }
 
   useEffect(() => {
@@ -208,6 +214,7 @@ export default function Map() {
               </div>
               <input
                 onChange={handleSearch}
+                value={searchQuery}
                 className="w-full py-2 max-md:h-8 pr-4 bg-white border rounded-full bg-opacity-20 placeholder:text-white pl-14 border-opacity-40"
                 placeholder="ค้นหา..."
               />
