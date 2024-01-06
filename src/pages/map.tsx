@@ -144,6 +144,9 @@ export default function Map() {
     if (searchQuery !== "") {
       handleNameSearch();
     }
+    else{
+      setMapId(mapData.map((item) => item.id))
+    }
   }, [searchQuery]);
 
   return (
