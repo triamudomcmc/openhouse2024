@@ -8,17 +8,17 @@ export default function Map() {
     { id: 1, name: "ชมรมสิ่งละอันพันละน้อยและ กสร. การงานอาชีพ" },
     { id: 2, name: "ชมรมเพาะพันธุ์ไม้" },
     { id: 3, name: "ชมรมการ์ตูน" },
-    { id: 4, name: "ศิลป์ญี่ปุ่น" },
-    { id: 5, name: "ศิลป์จีน" },
-    { id: 6, name: "ศิลป์เกาหลี" },
-    { id: 7, name: "ศิลป์สเปน" },
-    { id: 8, name: "ศิลป์ฝรั่งเศส" },
-    { id: 9, name: "ศิลป์เยอรมัน" },
-    { id: 10, name: "วิทย์-คณิต" },
-    { id: 11, name: "ศิลป์คำนวณ" },
-    { id: 12, name: "โครงการพัฒนาศักยภาพนักเรียน \nความสามารถพิเศษด้านวิทยาศาสตร์" },
-    { id: 13, name: "โครงการพัฒนาศักยภาพนักเรียน \nความสามารถพิเศษด้านคณิตศาสตร์" },
-    { id: 14, name: "โครงการพัฒนาศักยภาพนักเรียน \nความสามารถพิเศษด้านภาษาอังกฤษ" },
+    { id: 4, name: "สายศิลป์ญี่ปุ่น" },
+    { id: 5, name: "สายศิลป์จีน" },
+    { id: 6, name: "สายศิลป์เกาหลี" },
+    { id: 7, name: "สายศิลป์สเปน" },
+    { id: 8, name: "สายศิลป์ฝรั่งเศส" },
+    { id: 9, name: "สายศิลป์เยอรมัน" },
+    { id: 10, name: "สายวิทย์-คณิต" },
+    { id: 11, name: "สายศิลป์คำนวณ" },
+    { id: 12, name: "กิฟต์วิทยาศาสตร์" },
+    { id: 13, name: "กิฟต์คณิตศาสตร์" },
+    { id: 14, name: "กิฟต์ภาษาอังกฤษ" },
     { id: 15, name: "ชมรมเพื่อนที่ปรึกษาและงานแนะแนว" },
     { id: 16, name: "ชมรมดนตรีสากล" },
     { id: 17, name: "ชมรมนิเทศศิลป" },
@@ -39,7 +39,7 @@ export default function Map() {
     { id: 32, name: "ชมรมภาษาสเปน" },
     { id: 33, name: "ชมรมภาษาเยอรมัน" },
     { id: 34, name: "ชมรมภาษาฝรั่งเศส" },
-    { id: 35, name: "ชมรมและกสร.ภาษาต่างประเทศที่ 2" },
+    { id: 35, name: "ชมรมและ กสร.ภาษาต่างประเทศที่ 2" },
     { id: 36, name: "หน่วยงานภายนอก" },
     { id: 37, name: "หน่วยงานภายนอก" },
     { id: 38, name: "หน่วยงานภายนอก" },
@@ -53,7 +53,7 @@ export default function Map() {
     { id: 46, name: "ชมรมสังคมศึกษาและ กสร. สังคมศึกษา" },
     { id: 47, name: "ชมรมเศรษฐศาสตร์" },
     { id: 48, name: "ชมรมผู้บำเพ็ญประโยชน์" },
-    { id: 49, name: "ชมรมเยาวชนฯ" },
+    { id: 49, name: "ชมรมผู้นําเยาวชนสาธารณสุขฯ" },
     { id: 50, name: "ชมรมวิทยาศาสตร์และ กสร. วิทยาศาสตร์" },
     { id: 51, name: "ชมรมวิทยาศาสตร์" },
     { id: 52, name: "ชมรมโลกศาสตร์" },
@@ -61,10 +61,10 @@ export default function Map() {
     { id: 54, name: "สปค.ต.อ." },
     { id: 55, name: "สนตอ." },
     { id: 56, name: "สปค.รร.ต.อ." },
-    { id: 57, name: "กช." },
-    { id: 58, name: "กน." },
+    { id: 57, name: "คณะกรรมการงานกิจกรรมพัฒนาผู้เรียน (กช.)" },
+    { id: 58, name: "คณะกรรมการนักเรียน (กน.)" },
     { id: 59, name: "AIC" },
-    { id: 60, name: "ชมรมนันทนาการกิฬาและ กสร. สุขศึกษาฯ" },
+    { id: 60, name: "ชมรมนันทนาการกีฬาและ กสร. สุขศึกษาฯ" },
     { id: 61, name: "สโมสรอาจารย์ โรงเรียนฯ" },
     { id: 62, name: "โรงเรียนมักกะสัน" },
     { id: 63, name: "โรงเรียนเตรียมฯ สุวินทวงศ์" },
@@ -72,19 +72,19 @@ export default function Map() {
     { id: 65, name: "โรงเรียนเตรียมฯ ภาคตะวันออกฯ" },
     { id: 66, name: "โรงเรียนเตรียมฯ ภาคใต้" },
     { id: 67, name: "ชมรมถ่ายภาพ" },
-    { id: 68, name: "TUPRO" },
+    { id: 68, name: "นักเรียนผู้ช่วยงานประชาสัมพันธ์ (TUPRO)" },
     { id: 69, name: "ชมรมภาษาไทยและ กสร. ภาษาไทย" },
-    { id: 70, name: "โครงการพัฒนาศักยภาพนักเรียน \nความสามารถพิเศษด้านภาษาไทย" },
+    { id: 70, name: "กิฟต์ภาษาไทย" },
   ];
 
   const [mapId, setMapId] = useState<number[]>([]);
   const [filter, setFilter] = useState("All");
-  const [rows, setRows] = useState("")
+  const [rows, setRows] = useState("");
   const [searchQuery, setSearchQuery] = useState("");
 
   function handleSearch(event: any) {
     setSearchQuery(event.target.value);
-    setFilter("All")
+    setFilter("All");
   }
 
   function handleNameSearch() {
@@ -99,7 +99,7 @@ export default function Map() {
     } else {
       // Handle the case when no matching name is found
       console.log("No matching name found");
-      setMapId(mapData.map((item) => item.id) )
+      setMapId(mapData.map((item) => item.id));
     }
   }
 
@@ -107,13 +107,13 @@ export default function Map() {
     setFilter("All");
     const ids = mapData.map((item) => item.id);
     setMapId(ids);
-    setSearchQuery("")
+    setSearchQuery("");
   }
   function handleProgrammes() {
     console.log("Before setMapId:", mapId);
     setFilter("สายการเรียน");
     setMapId([4, 5, 6, 7, 8, 9, 10, 11]);
-    setSearchQuery("")
+    setSearchQuery("");
   }
 
   function handleClubs() {
@@ -122,17 +122,17 @@ export default function Map() {
       1, 2, 3, 15, 16, 17, 18, 19, 20, 21, 22, 29, 30, 31, 32, 33, 34, 35, 43,
       44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 60,
     ]);
-    setSearchQuery("")
+    setSearchQuery("");
   }
   function handleGifted() {
     setFilter("Gifted");
     setMapId([12, 13, 14, 70]);
-    setSearchQuery("")
+    setSearchQuery("");
   }
   function handleOrganizations() {
     setFilter("องค์กร");
     setMapId([54, 55, 56, 57, 58, 59, 68]);
-    setSearchQuery("")
+    setSearchQuery("");
   }
 
   useEffect(() => {
@@ -143,9 +143,8 @@ export default function Map() {
   useEffect(() => {
     if (searchQuery !== "") {
       handleNameSearch();
-    }
-    else{
-      setMapId(mapData.map((item) => item.id))
+    } else {
+      setMapId(mapData.map((item) => item.id));
     }
   }, [searchQuery]);
 
@@ -241,9 +240,9 @@ export default function Map() {
             )}
           </TransformWrapper>
           <MapSvg
-                    className="cursor-grab w-[90vw] md:hidden h-auto md:h-[64rem] "
-                    id={mapId}
-                  />
+            className="cursor-grab w-[90vw] md:hidden h-auto md:h-[64rem] "
+            id={mapId}
+          />
         </div>
       </div>
       <div className="flex justify-center my-12">
