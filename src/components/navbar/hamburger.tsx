@@ -228,6 +228,19 @@ export default function Hamburger() {
                 การเดินทางมาโรงเรียน
               </div>
             </Link>
+            <Link
+              className=" w-full "
+              href="/map"
+              onClick={() => {
+                setShowShows(false);
+                setShowOther(false);
+                setIsOpen(false);
+              }}
+            >
+              <div className=" text-left pl-8 text-white bg-[#462A86] bg-opacity-80 py-2 text-sm">
+                ผังงาน
+              </div>
+            </Link>
           </motion.div>
         )}
         <Link

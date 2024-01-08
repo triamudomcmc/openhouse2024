@@ -19,7 +19,6 @@ import Landing4 from "@/vectors/landing/landing4";
 import Landing4Mountain from "@/vectors/landing/landing4Mountain";
 import Landing4Sun from "@/vectors/landing/landing4Sun";
 import Landing5 from "@/vectors/landing/landing5";
-import { AIC } from "@/vectors/organization";
 import Landing6 from "@/vectors/landing/landing6";
 import Landing1M from "@/vectors/landing/landing1M";
 import Landing2M from "@/vectors/landing/landing2M";
@@ -528,7 +527,7 @@ export default function Home() {
                 </motion.div>
               </Link>
             </div>
-            {/* <div className="  mt-7 flex max-md:justify-center ">
+            <div className="  mt-7 flex max-md:justify-center ">
               <Link href={"/map"}>
                 <motion.div
                   whileHover={{ scale: 1.05 }}
@@ -538,7 +537,7 @@ export default function Home() {
                   แผนผังงาน
                 </motion.div>
               </Link>
-            </div> */}
+            </div>
           </div>
         </section>
       </div>

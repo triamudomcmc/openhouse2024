@@ -3,6 +3,22 @@ import { MagnifyingGlassIcon } from "@heroicons/react/24/outline";
 import { useState, useEffect } from "react";
 import { TransformWrapper, TransformComponent } from "react-zoom-pan-pinch";
 
+function chunkArray(inputArray: any[], perChunk: number = 10) {
+  const result = inputArray.reduce((resultArray, item, index) => {
+    const chunkIndex = Math.floor(index / perChunk);
+
+    if (!resultArray[chunkIndex]) {
+      resultArray[chunkIndex] = []; // start a new chunk
+    }
+
+    resultArray[chunkIndex].push(item);
+
+    return resultArray;
+  }, []);
+
+  return result as any[][];
+}
+
 export default function Map() {
   const mapData = [
     { id: 1, name: "ชมรมสิ่งละอันพันละน้อยและ กสร. การงานอาชีพ" },
@@ -75,6 +91,7 @@ export default function Map() {
     { id: 68, name: "นักเรียนผู้ช่วยงานประชาสัมพันธ์ (TUPRO)" },
     { id: 69, name: "ชมรมภาษาไทยและ กสร. ภาษาไทย" },
     { id: 70, name: "กิฟต์ภาษาไทย" },
+    { id:71, name: "ห้องสมุด"}
   ];
 
   const [mapId, setMapId] = useState<number[]>([]);
@@ -120,7 +137,7 @@ export default function Map() {
     setFilter("ชมรม");
     setMapId([
       1, 2, 3, 15, 16, 17, 18, 19, 20, 21, 22, 29, 30, 31, 32, 33, 34, 35, 43,
-      44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 60,
+      44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 60, 71,
     ]);
     setSearchQuery("");
   }
@@ -246,19 +263,25 @@ export default function Map() {
         </div>
       </div>
       <div className="flex justify-center my-12">
-        <div className="grid grid-flow-col grid-rows-70 md:grid-rows-30 lg:grid-rows-16 gap-x-2 text-sm w-fit">
-          {mapId.map((id) => (
-            <div key={id} className="m-1 w-fit">
-              <div className="flex items-center">
-                <div className="bg-white rounded-full h-6 w-6 flex justify-center items-center leading-relaxed ">
-                  {id < 10 ? `0${id}` : id}
-                </div>
-                <div className="ml-2 text-white whitespace-pre-line">
-                  {mapData.find((item) => item.id === id)?.name}
-                </div>
+        <div className="grid grid-cols-2 md:grid-cols-3 px-4 gap-y-12 gap-x-2 text-sm w-fit">
+          {chunkArray(mapId, 10).map((mapChunk) => {
+            return (
+              <div className="flex flex-col -gap-y-2">
+                {mapChunk.map((id) => (
+                  <div key={id} className="m-1 w-full">
+                    <div className="grid gap-x-2 grid-cols-12 items-center">
+                      <div className="col-span-2 bg-white font-semibold rounded-full w-6 h-auto aspect-square flex justify-center items-center leading-relaxed">
+                        {id < 10 ? `0${id}` : id}
+                      </div>
+                      <div className="col-span-10 text-white whitespace-pre-line">
+                        {mapData.find((item) => item.id === id)?.name}
+                      </div>
+                    </div>
+                  </div>
+                ))}
               </div>
-            </div>
-          ))}
+            );
+          })}
         </div>
       </div>
     </div>

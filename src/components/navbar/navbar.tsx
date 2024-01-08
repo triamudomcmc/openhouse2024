@@ -199,8 +199,8 @@ export default function Navbar() {
                   </Link>
                   <Link
                     href="/directions"
-                    // className="showOther block w-full  font-normal py-2 px-2 border-b"
-                    className="showOther block w-full  font-normal py-2 px-2 "
+                    className="showOther block w-full  font-normal py-2 px-2 border-b"
+                    //className="showOther block w-full  font-normal py-2 px-2 "
                     onClick={() => {
                       setShowOther(false);
                       setShowShows(false);
@@ -208,7 +208,7 @@ export default function Navbar() {
                   >
                     การเดินทางมาโรงเรียน
                   </Link>
-                  {/* <Link
+                  <Link
                     href="/map"
                     className="showOther block w-full  font-normal py-2 px-2"
                     onClick={() => {
@@ -217,7 +217,7 @@ export default function Navbar() {
                     }}
                   >
                     ผังงาน
-                  </Link> */}
+                  </Link>
                 </motion.div>
               )}
             </div>

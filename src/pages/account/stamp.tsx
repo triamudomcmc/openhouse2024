@@ -8,6 +8,9 @@ import GemsStamp from "@/vectors/gemStamp";
 
 export default function Stamp() {
   const [gems, setGems] = useState(0);
+  const [complete, setComplete] = useState(false);
+  const [showConfirm,setShowConfirm] = useState(false)
+  const [id,setId] = useState("")
   const [username, setUsername] = useState("");
   const router = useRouter();
   const { data: session, status } = useSession({
@@ -48,8 +51,9 @@ export default function Stamp() {
   async function userRequest() {
     try {
       const response = await axios.request(config);
-      setUsername(response.data.username);+
-      setGems(response.data.estamp)
+      setUsername(response.data.username);
+      setId(response.data.id)
+      setGems(response.data.estamp);
     } catch (error) {}
   }
 
@@ -63,22 +67,51 @@ export default function Stamp() {
     data: userData,
   };
 
+  let data = JSON.stringify({
+    "id": id
+  });
+  
+  let stampconfig = {
+    method: 'post',
+    maxBodyLength: Infinity,
+    url: 'https://openhouse2024-backend.vercel.app/api/estamp/reset',
+    headers: { 
+      'Content-Type': 'application/json'
+    },
+    data : data
+  };
+  
+  async function makeRequest() {
+    try {
+      const response = await axios.request(stampconfig);
+      console.log(JSON.stringify(response.data));
+      location.reload()
+    }
+    catch (error) {
+      console.log(error);
+    }
+  }
+
   useEffect(() => {
     hasAccountRequest();
   }, [status]);
 
-//   function addGems(gems: number) {
-//     setGems(gems + 1);
-//     if (gems >= 12) {
-//       setGems(0);
-//     }
-//   }
+  function summit() {
+    makeRequest()
+  }
 
-//   useEffect(() => {
-//     setTimeout(() => {
-//       addGems(gems);
-//     }, 300);
-//   }, [gems]);
+  //   function addGems(gems: number) {
+  //     setGems(gems + 1);
+  //     if (gems >= 12) {
+  //       setGems(0);
+  //     }
+  //   }
+
+  useEffect(() => {
+    if (gems === 12) {
+      setComplete(true);
+    }
+  }, [gems]);
 
   return (
     <div className=" w-screen min-h-screen bg-gradient-to-b from-[#622279] to-[#623AD4] relative ">
@@ -97,10 +130,45 @@ export default function Stamp() {
             </div>
           </div>
           <div className=" flex justify-center">
-          <div className=" mt-9">{GemsStamp(gems)}</div></div>
+            <div className=" mt-9">{GemsStamp(gems)}</div>
+          </div>
           <div className=" mt-3 text-[#9C9C9C]">สะสมแล้ว {gems} / 12</div>
+          {complete && (
+            <button className=" text-white font-Montserrat text-xl font-bold text-center px-6 py-2 bg-[#FC53C3] rounded-xl mt-6  " onClick={() => {setShowConfirm(true)}}>
+              รับของรางวัล
+            </button>
+          )}
         </div>
       </div>
+      {showConfirm && (
+        <div className=" fixed top-0 left-0 h-screen w-screen bg-black bg-opacity-30">
+          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
+            <div className=" text-center bg-white px-8 py-11 w-[300px] rounded-2xl">
+              <div>
+                <div className=" text-[#FC53C3] text-2xl font-semibold">
+                  ยืนยันการรับของรางวัล
+                </div>
+                <div className=" flex w-full justify-around mt-4">
+                  <button
+                    className=" text-[#929292] w-[100px] py-2 bg-[#D9D9D9] rounded-full"
+                    onClick={() => {
+                      setShowConfirm(false);
+                    }}
+                  >
+                    ยกเลิก
+                  </button>
+                  <button
+                    className=" text-white w-[100px] py-2 bg-[#FC53C3] rounded-full"
+                    onClick={summit}
+                  >
+                    ยืนยัน
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      )}
     </div>
   );
 }

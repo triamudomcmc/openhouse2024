@@ -35,7 +35,7 @@ const config: Config = {
         glow: "0 0 10px rgba(255, 83, 197, 0.1), 0 0 25px rgba(255, 255,255, 0.4)",
       },
       gridTemplateRows: {
-        "16": "repeat(16, minmax(0, 1fr))",
+        "10": "repeat(10, minmax(0, 1fr))",
         "30": "repeat(30, minmax(0, 1fr))",
         "70": "repeat(70, minmax(0, 1fr))",
       },

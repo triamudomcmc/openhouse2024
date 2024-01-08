@@ -41,6 +41,10 @@ export default function AddStaff() {
       console.log(JSON.stringify(response.data));
       setSuccess(true)
       setFailed(false)
+
+      setTimeout(() => {
+        setSuccess(false)
+      }, 3000);
     } catch (error) {
       console.log(error);
       setSuccess(false)
