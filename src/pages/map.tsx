@@ -91,7 +91,7 @@ export default function Map() {
     { id: 68, name: "นักเรียนผู้ช่วยงานประชาสัมพันธ์ (TUPRO)" },
     { id: 69, name: "ชมรมภาษาไทยและ กสร. ภาษาไทย" },
     { id: 70, name: "กิฟต์ภาษาไทย" },
-    { id:71, name: "ห้องสมุด"}
+    { id: 71, name: "ห้องสมุด" },
   ];
 
   const [mapId, setMapId] = useState<number[]>([]);
@@ -264,9 +264,9 @@ export default function Map() {
       </div>
       <div className="flex justify-center my-12">
         <div className="grid grid-cols-2 md:grid-cols-3 px-4 gap-y-12 gap-x-2 text-sm w-fit">
-          {chunkArray(mapId, 10).map((mapChunk) => {
+          {chunkArray(mapId, 10).map((mapChunk, chunkIndex) => {
             return (
-              <div className="flex flex-col -gap-y-2">
+              <div key={chunkIndex} className="flex flex-col -gap-y-2">
                 {mapChunk.map((id) => (
                   <div key={id} className="m-1 w-full">
                     <div className="grid gap-x-2 grid-cols-12 items-center">
