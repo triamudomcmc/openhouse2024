@@ -108,7 +108,7 @@ export default function Stamp() {
   //   }
 
   useEffect(() => {
-    if (gems === 12) {
+    if (gems >= 12) {
       setComplete(true);
     }
   }, [gems]);
