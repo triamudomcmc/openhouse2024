@@ -34,56 +34,63 @@ const Countdown: React.FC<CountdownProps> = ({ targetDate }) => {
 
   return (
     <div className=" ">
-      <div className=" flex justify-center    ">
+      <div className="flex justify-center">
         <div>
-          { !session && <Link href="/auth" className=" flex justify-center max-md:hidden">
-            <motion.button
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-              className="bg-gradient-to-br from-[#581AB0] to-[#11185E]  font-bold text-white text-5xl rounded-full px-11 py-2 -mt- "
-            >
-              ลงทะเบียน
-            </motion.button>
-          </Link>}
+          {!session && (
+            <Link href="/auth" className="flex justify-center max-md:hidden">
+              <motion.button
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+                className="bg-gradient-to-br from-[#581AB0] to-[#11185E]  font-bold text-white text-5xl rounded-full px-11 py-2 -mt- "
+              >
+                ลงทะเบียน
+              </motion.button>
+            </Link>
+          )}
           <div className="text-[32px] font-semibold bg-fuchsia-500 bg-opacity-70 mt-4  rounded-[100px] text-white max-md:hidden px-10 py-1">
             12-13 JANUARY 2024
           </div>
         </div>
       </div>
-      <div className=" grid grid-cols-4 max-md:min-w-[252px]   gap-5 md:text-[54px] sm:text-[26px] font-semibold my-5">
-        <div className=" block text-center ">
-          <div className=" md:w-24 md:h-24 sm:w-12 sm:h-12 bg-white md:rounded-[20px] sm:rounded-[10px] shadow-md flex justify-center items-center  ">
-            <p className=" m-auto text-purple-700  ">{daysRemaining}</p>
+      {daysRemaining > 0 &&
+      hoursRemaining > 0 &&
+      minsRemaining > 0 &&
+      secsRemaining > 0 ? (
+        <div className=" grid grid-cols-4 max-md:min-w-[252px]   gap-5 md:text-[54px] sm:text-[26px] font-semibold my-5">
+          <div className=" block text-center ">
+            <div className=" md:w-24 md:h-24 sm:w-12 sm:h-12 bg-white md:rounded-[20px] sm:rounded-[10px] shadow-md flex justify-center items-center  ">
+              <p className=" m-auto text-purple-700  ">{daysRemaining}</p>
+            </div>
+            <div className=" mt-3 opacity-60 text-center text-white md:text-2xl sm:text-lg">
+              day
+            </div>
           </div>
-          <div className=" mt-3 opacity-60 text-center text-white md:text-2xl sm:text-lg">
-            day
+          <div className=" block text-center">
+            <div className=" md:w-24 md:h-24 sm:w-12 sm:h-12 bg-white md:rounded-[20px] sm:rounded-[10px] shadow-md flex items-center ">
+              <p className=" m-auto text-purple-700">{hoursRemaining}</p>
+            </div>
+            <div className=" mt-3 opacity-60 text-center text-white md:text-2xl sm:text-lg">
+              hour
+            </div>
+          </div>
+          <div className=" block text-center">
+            <div className=" md:w-24 md:h-24 sm:w-12 sm:h-12 bg-white md:rounded-[20px] sm:rounded-[10px] shadow-md flex items-center ">
+              <p className=" m-auto text-purple-700">{minsRemaining}</p>
+            </div>
+            <div className=" mt-3 opacity-60 text-center text-white md:text-2xl sm:text-lg">
+              min
+            </div>
+          </div>
+          <div className=" block text-center">
+            <div className=" md:w-24 md:h-24 sm:w-12 sm:h-12 bg-white md:rounded-[20px] sm:rounded-[10px] shadow-md flex items-center ">
+              <p className=" m-auto text-purple-700">{secsRemaining}</p>
+            </div>
+            <div className=" mt-3 opacity-60 text-center text-white md:text-2xl sm:text-lg">
+              sec
+            </div>
           </div>
         </div>
-        <div className=" block text-center">
-          <div className=" md:w-24 md:h-24 sm:w-12 sm:h-12 bg-white md:rounded-[20px] sm:rounded-[10px] shadow-md flex items-center ">
-            <p className=" m-auto text-purple-700">{hoursRemaining}</p>
-          </div>
-          <div className=" mt-3 opacity-60 text-center text-white md:text-2xl sm:text-lg">
-            hour
-          </div>
-        </div>
-        <div className=" block text-center">
-          <div className=" md:w-24 md:h-24 sm:w-12 sm:h-12 bg-white md:rounded-[20px] sm:rounded-[10px] shadow-md flex items-center ">
-            <p className=" m-auto text-purple-700">{minsRemaining}</p>
-          </div>
-          <div className=" mt-3 opacity-60 text-center text-white md:text-2xl sm:text-lg">
-            min
-          </div>
-        </div>
-        <div className=" block text-center">
-          <div className=" md:w-24 md:h-24 sm:w-12 sm:h-12 bg-white md:rounded-[20px] sm:rounded-[10px] shadow-md flex items-center ">
-            <p className=" m-auto text-purple-700">{secsRemaining}</p>
-          </div>
-          <div className=" mt-3 opacity-60 text-center text-white md:text-2xl sm:text-lg">
-            sec
-          </div>
-        </div>
-      </div>
+      ) : null}
     </div>
   );
 };
