@@ -16,7 +16,7 @@ const Club = ({ data }: { data: any }) => {
 
   return (
     <Link passHref href={data.path}>
-      <div className="bg-[#2C006A] text-white text-center w-[300px] sm:w-[212px] cursor-pointer rounded-lg sm:mr-6 mt-6 backdrop-blur-lg backdrop-filter pb-[10px] border border-white border-opacity-20">
+      <div className="bg-[#2C006A] text-white text-center w-[300px] sm:w-[212px] cursor-pointer rounded-xl sm:mr-6 mt-6 backdrop-blur-lg backdrop-filter pb-[10px]  border-white border-opacity-20">
         <div>
           <div className="relative">
             {/*<span className="absolute bottom-[12px] right-[6px] text-[10px] z-[2] text-gray-700 bg-white px-2 py-[0.6px] font-medium rounded-sm text-sm">12.10</span>*/}
@@ -132,7 +132,7 @@ const Page = ({ contents }: { contents: any }) => {
                   onChange={(e) => {
                     setTimeout(() => setSearchContext(e.target.value));
                   }}
-                  className="w-full py-2 pr-4 bg-white border rounded-full bg-opacity-20 placeholder:text-white pl-14 border-opacity-40"
+                  className="w-full py-2 pr-4 bg-white text-[#400591] border rounded-full bg-opacity-20 placeholder:text-white pl-14 border-opacity-40"
                   placeholder="ค้นหาชมรม..."
                 />
               </div>

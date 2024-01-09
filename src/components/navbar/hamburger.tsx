@@ -238,7 +238,7 @@ export default function Hamburger() {
               }}
             >
               <div className=" text-left pl-8 text-white bg-[#462A86] bg-opacity-80 py-2 text-sm">
-                ผังงาน
+              แผนผังงาน
               </div>
             </Link>
           </motion.div>

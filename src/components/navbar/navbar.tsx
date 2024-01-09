@@ -216,7 +216,7 @@ export default function Navbar() {
                       setShowShows(false);
                     }}
                   >
-                    ผังงาน
+                    แผนผังงาน
                   </Link>
                 </motion.div>
               )}
