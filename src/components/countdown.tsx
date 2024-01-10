@@ -52,9 +52,9 @@ const Countdown: React.FC<CountdownProps> = ({ targetDate }) => {
           </div>
         </div>
       </div>
-      {daysRemaining > 0 &&
-      hoursRemaining > 0 &&
-      minsRemaining > 0 &&
+      {daysRemaining > 0 ||
+      hoursRemaining > 0 ||
+      minsRemaining > 0 ||
       secsRemaining > 0 ? (
         <div className=" grid grid-cols-4 max-md:min-w-[252px]   gap-5 md:text-[54px] sm:text-[26px] font-semibold my-5">
           <div className=" block text-center ">
