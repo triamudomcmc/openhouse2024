@@ -19,6 +19,12 @@ export const Programme = ({
       <motion.div
         whileHover={{ scale: 1.05 }}
         whileTap={{ scale: 0.95 }}
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+        transition={{
+          duration: 0.2,
+          delay: 0.2
+        }}
         className={`text-center cursor-pointer ${className} `}
       >
         <div>
@@ -29,7 +35,9 @@ export const Programme = ({
           />
         </div>
         <div className={`max-w-[250px] mx-auto `}>
-          <h3 className="font-light lg:text-2xl md:text-lg text-white">{thainame}</h3>
+          <h3 className="font-light lg:text-2xl md:text-lg text-white">
+            {thainame}
+          </h3>
         </div>
       </motion.div>
     </Link>

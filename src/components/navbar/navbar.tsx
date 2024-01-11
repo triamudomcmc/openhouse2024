@@ -51,7 +51,7 @@ export default function Navbar() {
   return (
     <div ref={navbarRef} className="fixed top-0 w-full z-[999]">
       <div className=" fixed top-0 w-full z-[999]">
-        <nav className=" max-md:hidden bg-[#935AE3] bg-opacity-90 flex align-middle  justify-between gap-10 text-center z-20 top-0 h-16 text-white ">
+        <nav className=" max-md:hidden bg-[#2C1865] bg-opacity-90 flex align-middle  justify-between gap-10 text-center z-20 top-0 h-16 text-white ">
           <div className="flex w-1/2 justify-center h-full items-center">
             <Link className=" w-fit flex items-center " href="/">
               <OPHLogo className=" h-12" />
@@ -105,7 +105,7 @@ export default function Navbar() {
               </button>
               {showShows && (
                 <motion.div
-                  className=" absolute block top-9 -left-[25px]  shadow-xl py-2  w-40  bg-[#774CB4] bg-opacity-90  rounded-xl text-center"
+                  className=" absolute block top-9 -left-[25px]  shadow-xl py-2  w-40  bg-[#2C1865] bg-opacity-90  rounded-xl text-center"
                   initial={{ opacity: 0, y: -10 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   transition={{
@@ -262,7 +262,7 @@ export default function Navbar() {
             </div>
           </div>
         </nav>
-        <nav className=" md:hidden bg-[#935AE3] bg-opacity-80 flex align-middle justify-between px-2 gap-10 h-16  text-center z-20 top-0 ">
+        <nav className=" md:hidden bg-[#2C1865] bg-opacity-80 flex align-middle justify-between px-2 gap-10 h-16  text-center z-20 top-0 ">
           <Link href="/" className=" items-center flex justify-center  ">
             <OPHLogo className=" h-8 w-auto" />
             <OPHText className=" h-10" />

@@ -78,8 +78,8 @@ export default function Hamburger() {
         ref={navbarRef}
         className={
           isOpen
-            ? "overflow-x-hidden absolute left-0 translate-x-0  z-10 w-full bg-[#7f52bd] overflow-hidden  bg-opacity-80 top-16 duration-500 ease-out transition-all  "
-            : "absolute z-60 w-full bg-[#7f52bd] overflow-hidden bg-opacity-80 top-16 translate-x-full duration-500 ease-out transition-all"
+            ? "overflow-x-hidden absolute left-0 translate-x-0  z-10 w-full bg-[#2C1865] overflow-hidden  bg-opacity-80 top-16 duration-500 ease-out transition-all  "
+            : "absolute z-60 w-full bg-[#2C1865] overflow-hidden bg-opacity-80 top-16 translate-x-full duration-500 ease-out transition-all"
         }
       >
         <Link

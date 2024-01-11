@@ -152,7 +152,15 @@ export default function Home() {
               />
             </div>
           </div>
-          <div className=" absolute lg:top-20 top-5 md:right-16 max-md:left-5 md:text-right text-left ">
+          <motion.div
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1}}
+            transition={{
+              duration: 0.2,
+              delay: 0.1,
+            }}
+            className=" absolute lg:top-20 top-5 md:right-16 max-md:left-5 md:text-right text-left "
+          >
             <div className=" md:text-[80px] text-[40px] font-bold text-white ">
               สายการเรียน
             </div>
@@ -161,7 +169,7 @@ export default function Home() {
               <br />
               สายการเรียนที่สนใจ
             </div>
-          </div>
+          </motion.div>
           <div className="md:hidden">
             <div className=" absolute top-20  left-[85%] -translate-x-[85%]  z-50 mt-14   ">
               <Programme
@@ -237,6 +245,12 @@ export default function Home() {
                 <motion.button
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
+                  initial={{ opacity: 0, y: 10 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{
+                    duration: 0.2,
+                    delay: 0.1,
+                  }}
                 >
                   <GiftedSci className="xl:w-auto lg:w-[339px] md:w-[271px] " />
                 </motion.button>
@@ -247,6 +261,12 @@ export default function Home() {
                 <motion.button
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
+                  initial={{ opacity: 0, y: 10 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{
+                    duration: 0.2,
+                    delay: 0.1,
+                  }}
                 >
                   <GiftedMath className="xl:w-auto lg:w-[252px] md:w-[201px]" />
                 </motion.button>
@@ -257,6 +277,12 @@ export default function Home() {
                 <motion.button
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
+                  initial={{ opacity: 0, y: 10 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{
+                    duration: 0.2,
+                    delay: 0.1,
+                  }}
                 >
                   <GiftedThai className="xl:w-auto lg:w-[410px] md:w-[328px] " />
                 </motion.button>
@@ -267,6 +293,12 @@ export default function Home() {
                 <motion.button
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
+                  initial={{ opacity: 0, y: 10 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{
+                    duration: 0.2,
+                    delay: 0.1,
+                  }}
                 >
                   <GiftedEng className="xl:w-auto lg:w-[170px] md:w-[136px] " />
                 </motion.button>
@@ -280,6 +312,12 @@ export default function Home() {
                   <motion.button
                     whileHover={{ scale: 1.05 }}
                     whileTap={{ scale: 0.95 }}
+                    initial={{ opacity: 0, y: 10 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    transition={{
+                      duration: 0.2,
+                      delay: 0.1,
+                    }}
                   >
                     <GiftedThaiM className=" " />
                   </motion.button>
@@ -290,6 +328,12 @@ export default function Home() {
                   <motion.button
                     whileHover={{ scale: 1.05 }}
                     whileTap={{ scale: 0.95 }}
+                    initial={{ opacity: 0, y: 10 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    transition={{
+                      duration: 0.2,
+                      delay: 0.1,
+                    }}
                   >
                     <GiftedEngM className=" flex items-center " />
                   </motion.button>
@@ -300,6 +344,12 @@ export default function Home() {
                   <motion.button
                     whileHover={{ scale: 1.05 }}
                     whileTap={{ scale: 0.95 }}
+                    initial={{ opacity: 0, y: 10 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    transition={{
+                      duration: 0.2,
+                      delay: 0.1,
+                    }}
                   >
                     <GiftedMathM className=" " />
                   </motion.button>
@@ -310,6 +360,12 @@ export default function Home() {
                   <motion.button
                     whileHover={{ scale: 1.05 }}
                     whileTap={{ scale: 0.95 }}
+                    initial={{ opacity: 0, y: 10 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    transition={{
+                      duration: 0.2,
+                      delay: 0.1,
+                    }}
                   >
                     <GiftedSciM className=" " />
                   </motion.button>
@@ -342,8 +398,16 @@ export default function Home() {
               <motion.button
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
+                whileInView={{ opacity: 1 }}
+                  transition={{
+                    duration: 0.2,
+                    delay: 0.1,
+                  }}
               >
-                <div className=" relative">
+                <motion.div
+                  className=" relative"
+                  initial={{ scale: 1.05 }}
+                >
                   <Landing4Sun className="xl:w-auto md:w-[410px] sm:w-[275px] " />
                   <div className=" absolute top-1/2 -translate-y-1/2 left-1/2 -translate-x-1/2 font-bold md:text-8xl sm:text-5xl text-transparent bg-clip-text bg-gradient-to-b from-[#2F0A64] to-[#FC53C3] ">
                     ชมรม
@@ -367,7 +431,7 @@ export default function Home() {
                       />
                     </svg>
                   </div>
-                </div>
+                </motion.div>
               </motion.button>
             </Link>
           </div>
@@ -390,6 +454,12 @@ export default function Home() {
                 <motion.div
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
+                  initial={{ opacity: 0 }}
+                  whileInView={{ opacity: 1}}
+                  transition={{
+                    duration: 0.2,
+                    delay: 0.1,
+                  }}
                   className={`text-center cursor-pointer max-xl:w-[161px] `}
                 >
                   <img src="/assets/organization/AIC.png" className="mx-auto" />
@@ -401,6 +471,12 @@ export default function Home() {
                 <motion.div
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
+                  initial={{ opacity: 0}}
+                  whileInView={{ opacity: 1 }}
+                  transition={{
+                    duration: 0.2,
+                    delay: 0.1,
+                  }}
                   className={`text-center cursor-pointer max-xl:w-[212px] `}
                 >
                   <img
@@ -415,6 +491,12 @@ export default function Home() {
                 <motion.div
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
+                  initial={{ opacity: 0 }}
+                    whileInView={{ opacity: 1}}
+                    transition={{
+                      duration: 0.2,
+                      delay: 0.1,
+                    }}
                   className={`text-center cursor-pointer max-xl:w-[191px] `}
                 >
                   <img
@@ -429,6 +511,12 @@ export default function Home() {
                 <motion.div
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
+                  initial={{ opacity: 0}}
+                    whileInView={{ opacity: 1 }}
+                    transition={{
+                      duration: 0.2,
+                      delay: 0.1,
+                    }}
                   className={`text-center cursor-pointer max-xl:w-[160px] `}
                 >
                   <img
@@ -445,6 +533,12 @@ export default function Home() {
                 <motion.div
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
+                  initial={{ opacity: 0}}
+                  whileInView={{ opacity: 1 }}
+                  transition={{
+                    duration: 0.2,
+                    delay: 0.1,
+                  }}
                   className={`text-center cursor-pointer w-[129px] `}
                 >
                   <img
@@ -457,6 +551,12 @@ export default function Home() {
                 <motion.div
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
+                  initial={{ opacity: 0}}
+                  whileInView={{ opacity: 1 }}
+                  transition={{
+                    duration: 0.2,
+                    delay: 0.1,
+                  }}
                   className={`text-center cursor-pointer w-[187px] -ml-12 mt-14 `}
                 >
                   <img
@@ -471,6 +571,12 @@ export default function Home() {
                 <motion.div
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
+                  initial={{ opacity: 0}}
+                  whileInView={{ opacity: 1 }}
+                  transition={{
+                    duration: 0.2,
+                    delay: 0.1,
+                  }}
                   className={`text-center cursor-pointer w-[169px] `}
                 >
                   <img
@@ -483,6 +589,12 @@ export default function Home() {
                 <motion.div
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
+                  initial={{ opacity: 0}}
+                  whileInView={{ opacity: 1 }}
+                  transition={{
+                    duration: 0.2,
+                    delay: 0.1,
+                  }}
                   className={`text-center cursor-pointer w-[156px] mt-14 `}
                 >
                   <img
@@ -510,6 +622,12 @@ export default function Home() {
                 <motion.div
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
+                  initial={{ opacity: 0}}
+                  whileInView={{ opacity: 1}}
+                  transition={{
+                    duration: 0.2,
+                    delay: 0.1,
+                  }}
                   className={` md:text-left text-center cursor-pointer md:w-[310px] w-[200px] text-white md:text-[40px] sm:text-[20px] font-medium px-7 py-1 bg-[#7D5496] md:rounded-[30.50px] rounded-2xl`}
                 >
                   การสอบเข้า ม.4
@@ -521,6 +639,12 @@ export default function Home() {
                 <motion.div
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
+                  initial={{ opacity: 0}}
+                  whileInView={{ opacity: 1}}
+                  transition={{
+                    duration: 0.2,
+                    delay: 0.2,
+                  }}
                   className={` md:text-left text-center cursor-pointer text-white md:text-[40px] sm:text-[20px] md:w-[550px] w-[330px] font-medium px-7 py-1 bg-[#7D5496] md:rounded-[30.50px] rounded-2xl`}
                 >
                   การเดินทางมาโรงเรียนเตรียมฯ
@@ -532,6 +656,12 @@ export default function Home() {
                 <motion.div
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
+                  initial={{ opacity: 0}}
+                  whileInView={{ opacity: 1}}
+                  transition={{
+                    duration: 0.2,
+                    delay: 0.3,
+                  }}
                   className={` md:text-left text-center cursor-pointer text-white md:text-[40px] sm:text-[20px]  font-medium px-7 py-1 bg-[#7D5496] md:rounded-[30.50px] rounded-2xl`}
                 >
                   แผนผังงาน
