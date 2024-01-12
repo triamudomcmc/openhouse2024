@@ -148,6 +148,7 @@ export default function Stamp() {
                 <div className=" text-[#FC53C3] text-2xl font-semibold">
                   ยืนยันการรับของรางวัล
                 </div>
+                <div className=" text-red-600 font-semibold">*กดเฉพาะเมื่ออยู่ที่ซุ้ม กช. เท่านั้น*</div>
                 <div className=" flex w-full justify-around mt-4">
                   <button
                     className=" text-[#929292] w-[100px] py-2 bg-[#D9D9D9] rounded-full"
