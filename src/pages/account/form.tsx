@@ -467,7 +467,7 @@ export default function Form() {
                       onChange={() => platformChange("Twitter")}
                       checked={platform.includes("Twitter")}
                     />
-                    Twitter: @triamudomoph
+                    X: @triamudomoph
                   </label>
                   <label className="block mt-4">
                     <input
