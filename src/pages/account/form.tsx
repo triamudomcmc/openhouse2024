@@ -182,6 +182,9 @@ export default function Form() {
     setRoles("อื่น ๆ");
     setStudent(false);
   }
+  useEffect(() => {
+    router.push("/account/timeout");
+});
 
   const platformChange = (value: string) => {
     // Check if the value is already selected
