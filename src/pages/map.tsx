@@ -266,6 +266,7 @@ export default function Map() {
         <div className="grid grid-cols-2 md:grid-cols-3 px-4 gap-y-12 gap-x-2 text-sm w-fit">
           {chunkArray(mapId, 10).map((mapChunk, chunkIndex) => {
             return (
+              //P'Thee was here
               <div key={chunkIndex} className="flex flex-col -gap-y-2">
                 {mapChunk.map((id) => (
                   <div key={id} className="m-1 w-full">

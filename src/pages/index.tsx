@@ -32,11 +32,14 @@ import Landing4MountainM from "@/vectors/landing/landing4MountainM";
 import Landing5M from "@/vectors/landing/landing5M";
 import Landing6M from "@/vectors/landing/landing6M";
 import { useSession } from "next-auth/react";
+import { useWindowDimensions } from "@/utilities/useWindowDimensions";
+import Confetti from "react-confetti";
 
 export default function Home() {
   const router = useRouter();
   const { data: session, status } = useSession();
   const targetDate = new Date(Date.UTC(2024, 0, 12, 1, 0, 0));
+  const { width, height } = useWindowDimensions();
   useEffect(() => {
     // User email is available, make the API request
     //router.push("/auth")
@@ -46,6 +49,9 @@ export default function Home() {
   return (
     <>
       <div className="w-screen overflow-hidden">
+        <div className=" fixed top-0 left-0 z-[998]">
+          <Confetti width={width} height={height} gravity={0.02} numberOfPieces={30} />
+        </div>
         <main className="relative flex items-center justify-center w-screen overflow-hidden">
           <div className=" relative w-full -z-10 ">
             <div className=" relative w-full -z-10 max-md:hidden  ">
@@ -154,7 +160,7 @@ export default function Home() {
           </div>
           <motion.div
             initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1}}
+            whileInView={{ opacity: 1 }}
             transition={{
               duration: 0.2,
               delay: 0.1,
@@ -399,15 +405,12 @@ export default function Home() {
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
                 whileInView={{ opacity: 1 }}
-                  transition={{
-                    duration: 0.2,
-                    delay: 0.1,
-                  }}
+                transition={{
+                  duration: 0.2,
+                  delay: 0.1,
+                }}
               >
-                <motion.div
-                  className=" relative"
-                  initial={{ scale: 1.05 }}
-                >
+                <motion.div className=" relative" initial={{ scale: 1.05 }}>
                   <Landing4Sun className="xl:w-auto md:w-[410px] sm:w-[275px] " />
                   <div className=" absolute top-1/2 -translate-y-1/2 left-1/2 -translate-x-1/2 font-bold md:text-8xl sm:text-5xl text-transparent bg-clip-text bg-gradient-to-b from-[#2F0A64] to-[#FC53C3] ">
                     ชมรม
@@ -455,7 +458,7 @@ export default function Home() {
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
                   initial={{ opacity: 0 }}
-                  whileInView={{ opacity: 1}}
+                  whileInView={{ opacity: 1 }}
                   transition={{
                     duration: 0.2,
                     delay: 0.1,
@@ -471,7 +474,7 @@ export default function Home() {
                 <motion.div
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
-                  initial={{ opacity: 0}}
+                  initial={{ opacity: 0 }}
                   whileInView={{ opacity: 1 }}
                   transition={{
                     duration: 0.2,
@@ -492,11 +495,11 @@ export default function Home() {
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
                   initial={{ opacity: 0 }}
-                    whileInView={{ opacity: 1}}
-                    transition={{
-                      duration: 0.2,
-                      delay: 0.1,
-                    }}
+                  whileInView={{ opacity: 1 }}
+                  transition={{
+                    duration: 0.2,
+                    delay: 0.1,
+                  }}
                   className={`text-center cursor-pointer max-xl:w-[191px] `}
                 >
                   <img
@@ -511,12 +514,12 @@ export default function Home() {
                 <motion.div
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
-                  initial={{ opacity: 0}}
-                    whileInView={{ opacity: 1 }}
-                    transition={{
-                      duration: 0.2,
-                      delay: 0.1,
-                    }}
+                  initial={{ opacity: 0 }}
+                  whileInView={{ opacity: 1 }}
+                  transition={{
+                    duration: 0.2,
+                    delay: 0.1,
+                  }}
                   className={`text-center cursor-pointer max-xl:w-[160px] `}
                 >
                   <img
@@ -533,7 +536,7 @@ export default function Home() {
                 <motion.div
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
-                  initial={{ opacity: 0}}
+                  initial={{ opacity: 0 }}
                   whileInView={{ opacity: 1 }}
                   transition={{
                     duration: 0.2,
@@ -551,7 +554,7 @@ export default function Home() {
                 <motion.div
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
-                  initial={{ opacity: 0}}
+                  initial={{ opacity: 0 }}
                   whileInView={{ opacity: 1 }}
                   transition={{
                     duration: 0.2,
@@ -571,7 +574,7 @@ export default function Home() {
                 <motion.div
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
-                  initial={{ opacity: 0}}
+                  initial={{ opacity: 0 }}
                   whileInView={{ opacity: 1 }}
                   transition={{
                     duration: 0.2,
@@ -589,7 +592,7 @@ export default function Home() {
                 <motion.div
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
-                  initial={{ opacity: 0}}
+                  initial={{ opacity: 0 }}
                   whileInView={{ opacity: 1 }}
                   transition={{
                     duration: 0.2,
@@ -622,8 +625,8 @@ export default function Home() {
                 <motion.div
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
-                  initial={{ opacity: 0}}
-                  whileInView={{ opacity: 1}}
+                  initial={{ opacity: 0 }}
+                  whileInView={{ opacity: 1 }}
                   transition={{
                     duration: 0.2,
                     delay: 0.1,
@@ -639,8 +642,8 @@ export default function Home() {
                 <motion.div
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
-                  initial={{ opacity: 0}}
-                  whileInView={{ opacity: 1}}
+                  initial={{ opacity: 0 }}
+                  whileInView={{ opacity: 1 }}
                   transition={{
                     duration: 0.2,
                     delay: 0.2,
@@ -656,8 +659,8 @@ export default function Home() {
                 <motion.div
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
-                  initial={{ opacity: 0}}
-                  whileInView={{ opacity: 1}}
+                  initial={{ opacity: 0 }}
+                  whileInView={{ opacity: 1 }}
                   transition={{
                     duration: 0.2,
                     delay: 0.3,

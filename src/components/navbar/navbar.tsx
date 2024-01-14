@@ -179,7 +179,7 @@ export default function Navbar() {
               </button>
               {showOther && (
                 <motion.div
-                  className=" absolute block top-9 -left-[25px]  shadow-xl   w-40  bg-[#774CB4] bg-opacity-90  rounded-xl text-center"
+                  className=" absolute block top-9 -left-[25px]  shadow-xl   w-40  bg-[#2C1865] bg-opacity-90  rounded-xl text-center"
                   initial={{ opacity: 0, y: -10 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   transition={{
